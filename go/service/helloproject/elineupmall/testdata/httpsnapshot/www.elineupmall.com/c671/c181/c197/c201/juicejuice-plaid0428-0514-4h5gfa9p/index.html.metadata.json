@@ -1,0 +1,49 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Access-Control-Allow-Credentials": [
+			"true"
+		],
+		"Access-Control-Allow-Headers": [
+			"Origin, Authorization, Accept"
+		],
+		"Access-Control-Allow-Methods": [
+			"POST, GET, OPTIONS"
+		],
+		"Access-Control-Allow-Origin": [
+			"*"
+		],
+		"Cache-Control": [
+			"no-store, no-cache, must-revalidate"
+		],
+		"Connection": [
+			"keep-alive"
+		],
+		"Content-Type": [
+			"text/html; charset=utf-8"
+		],
+		"Date": [
+			"Sun, 14 May 2023 14:16:09 GMT"
+		],
+		"Expires": [
+			"Thu, 19 Nov 1981 08:52:00 GMT"
+		],
+		"Pragma": [
+			"no-cache"
+		],
+		"Server": [
+			"nginx"
+		],
+		"Set-Cookie": [
+			"sid_customer_b4300=5f796681a9b0cf8d298c42a506d7c5e3-C; expires=Sun, 28-May-2023 14:16:08 GMT; Max-Age=1209600; path=/; domain=.elineupmall.com; secure"
+		],
+		"Vary": [
+			"Accept-Encoding"
+		],
+		"X-Frame-Options": [
+			"SAMEORIGIN"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/www.elineupmall.com/c671/c181/c197/c201/juicejuice-plaid0428-0514-4h5gfa9p/index.html"
+}

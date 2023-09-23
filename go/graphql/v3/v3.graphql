@@ -1,0 +1,17 @@
+extend type Query {
+  helloproject: HelloProjectQuery!
+  me: MeQuery!
+}
+
+scalar Time
+scalar Upload
+scalar Any
+scalar Map
+
+extend type HPEvent {
+  tickets: [HPFCEventTicket!]
+}
+
+extend type HPFeedItem {
+  myViewHistory: HPViewHistory
+}

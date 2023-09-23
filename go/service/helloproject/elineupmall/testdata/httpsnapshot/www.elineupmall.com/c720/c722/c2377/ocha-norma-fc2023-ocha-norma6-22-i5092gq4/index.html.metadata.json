@@ -1,0 +1,49 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Access-Control-Allow-Credentials": [
+			"true"
+		],
+		"Access-Control-Allow-Headers": [
+			"Origin, Authorization, Accept"
+		],
+		"Access-Control-Allow-Methods": [
+			"POST, GET, OPTIONS"
+		],
+		"Access-Control-Allow-Origin": [
+			"*"
+		],
+		"Cache-Control": [
+			"no-store, no-cache, must-revalidate"
+		],
+		"Connection": [
+			"keep-alive"
+		],
+		"Content-Type": [
+			"text/html; charset=utf-8"
+		],
+		"Date": [
+			"Sun, 14 May 2023 14:32:28 GMT"
+		],
+		"Expires": [
+			"Thu, 19 Nov 1981 08:52:00 GMT"
+		],
+		"Pragma": [
+			"no-cache"
+		],
+		"Server": [
+			"nginx"
+		],
+		"Set-Cookie": [
+			"sid_customer_b4300=166d78b67f8d39e66df418491b6ece1c-C; expires=Sun, 28-May-2023 14:32:27 GMT; Max-Age=1209600; path=/; domain=.elineupmall.com; secure"
+		],
+		"Vary": [
+			"Accept-Encoding"
+		],
+		"X-Frame-Options": [
+			"SAMEORIGIN"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/www.elineupmall.com/c720/c722/c2377/ocha-norma-fc2023-ocha-norma6-22-i5092gq4/index.html"
+}

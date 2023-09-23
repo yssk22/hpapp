@@ -1,0 +1,29 @@
+# The file is used from ../../e2e_test.go
+
+schema:
+  - ./testdata/e2e/models/gqlgen.graphql
+  - ./testdata/e2e/gqlgen/schema.graphql
+
+exec:
+  filename: ./testdata/e2e/gqlgen/exec_generated.go
+  package: gqlgen
+
+resolver:
+  layout: single-file
+  filename: ./testdata/e2e/gqlgen/gqlgen/resolver.go
+  package: gqlgen
+
+autobind:
+
+models:
+  ID:
+    model:
+      - github.com/99designs/gqlgen/graphql.ID
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32
+  Int:
+    model:
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32

@@ -1,0 +1,198 @@
+type HelloProjectQuery @goModel(model: "hpapp.yssk22.dev/go/graphql/v3/helloproject.HelloProjectQuery") {
+  artists(after: Cursor, first: Int, before: Cursor, last: Int): [HPArtist]
+  feed(params: HPFeedQueryParamsInput!, after: Cursor, first: Int, before: Cursor, last: Int): HPFeedItemConnection
+}
+
+input HPFeedQueryParamsInput @goModel(model: "hpapp.yssk22.dev/go/graphql/v3/helloproject.HPFeedQueryParams") {
+  memberIDs: [String!]
+  assetTypes: [HPAssetType!]
+  useMemberTaggings: Boolean
+}
+
+enum HPAssetType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPAssetType") {
+  ameblo
+  elineup_mall
+  instagram
+  tiktok
+  twitter
+  youtube
+}
+
+type MeQuery @goModel(model: "hpapp.yssk22.dev/go/graphql/v3/me.MeQuery") {
+  id: ID!
+  username: String!
+  clientId: String
+  clientName: String
+  clientIsVerified: Boolean
+  authentications: [Auth]
+  followings: [HPFollow]
+  sortHistories(after: Cursor, first: Int, before: Cursor, last: Int): HPSortHistoryConnection
+  events(after: Cursor, first: Int, before: Cursor, last: Int): HPEventConnection
+  favorites(params: MeFavoriteQueryParamsInput!, after: Cursor, first: Int, before: Cursor, last: Int): HPFeedItemConnection
+}
+
+input MeFavoriteQueryParamsInput @goModel(model: "hpapp.yssk22.dev/go/graphql/v3/me.MeFavoriteQueryParams") {
+  memberIDs: [String!]
+  assetTypes: [HPAssetType!]
+}
+
+type Misc @goModel(model: "hpapp.yssk22.dev/go/graphql/v3.Misc") {
+  version: String!
+}
+
+type Mutation @goModel(model: "hpapp.yssk22.dev/go/graphql/v3.Mutation") {
+  authenticate: User
+  me: MeMutation
+}
+
+type MeMutation @goModel(model: "hpapp.yssk22.dev/go/graphql/v3/me.MeMutation") {
+  authenticate: User
+  removeAuthentication: Auth
+  upsertFollow(params: HPFollowUpsertParamsInput!): HPFollow
+  upsertEvents(params: UpsertEventsParamsInput!): [HPEvent]
+  upsertViewHistory(params: HPViewHistoryUpsertParamsInput!): HPViewHistory
+}
+
+input HPFollowUpsertParamsInput @goModel(model: "hpapp.yssk22.dev/go/service/helloproject/user.HPFollowUpsertParams") {
+  memberId: Int!
+  followType: HPFollowType!
+}
+
+input UpsertEventsParamsInput @goModel(model: "hpapp.yssk22.dev/go/service/helloproject/upfc.UpsertEventsParams") {
+  fcMemberSha256: String!
+  userId: Int!
+  applications: [EventTicketApplicationInput!]
+}
+
+input HPViewHistoryUpsertParamsInput @goModel(model: "hpapp.yssk22.dev/go/service/helloproject/feed.HPViewHistoryUpsertParams") {
+  feedId: Int!
+  userId: Int!
+  isFavorite: Boolean!
+}
+
+enum HPFollowType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPFollowType") {
+  follow
+  follow_with_notification
+  unfollow
+}
+
+input EventTicketApplicationInput @goModel(model: "hpapp.yssk22.dev/go/service/helloproject/upfc.EventTicketApplication") {
+  title: String!
+  openAt: Time
+  startAt: Time!
+  fullyQualifiedVenueName: String!
+  num: Int!
+  status: HPEventFCTicketStatus!
+  applicationId: String
+  applicationStartDate: Time
+  applicationDueDate: Time
+  paymentStartDate: Time
+  paymentDueDate: Time
+}
+
+enum HPEventFCTicketStatus @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPEventFCTicketStatus") {
+  completed
+  payment_overdue
+  pending_payment
+  rejected
+  submitted
+  unknown
+}
+
+type Media @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.Media") {
+  url: String!
+  blobId: Int!
+  type: HPBlobType!
+  width: Int!
+  height: Int!
+  thumbnailUrl: String!
+  thumbnailWidth: Int!
+  thumbnailHeight: Int!
+}
+
+enum HPBlobType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPBlobType") {
+  image
+  text
+  unknown
+  video
+}
+
+type HPBlobThumbnail @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.HPBlobThumbnail") {
+  storagePath: String!
+  sourceImageUrl: String!
+  width: Int!
+  height: Int!
+}
+
+type ReactNavigationPush @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.ReactNavigationPush") {
+  path: String!
+  params: Map
+  pushMessage: ExpoPushMessage!
+
+  toPushMessage(tokens: [String!]): Message
+}
+
+type ExpoPushMessage @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.ExpoPushMessage") {
+  title: String!
+  body: String!
+  ttlSeconds: Int!
+  priority: MessagePriority!
+  sound: String!
+  badge: Int!
+  imageUrl: String!
+}
+
+type Message @goModel(model: "hpapp.yssk22.dev/go/system/push.Message") {
+  to: [String!]
+  title: String!
+  body: String!
+  ttlSeconds: Int!
+  priority: MessagePriority!
+  sound: String!
+  badge: Int!
+  imageUrl: String!
+  data: Map
+}
+
+enum MessagePriority @goModel(model: "hpapp.yssk22.dev/go/system/push.MessagePriority") {
+  default
+  high
+  normal
+}
+
+type HPSortResult @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.HPSortResult") {
+  records: [HPSortResultRecord!]
+}
+
+type HPSortResultRecord @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.HPSortResultRecord") {
+  artistId: Int!
+  artistKey: String!
+  memberId: Int!
+  memberKey: String!
+}
+
+type HPIgCrawlArgs @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.HPIgCrawlArgs") {
+  id: ID!
+  shortcode: String!
+  caption: String!
+  displayUrl: String!
+  videoUrl: String!
+  ownerUsername: String!
+  ownerId: String!
+  hashtags: [String!]
+  childPosts: [HPIgCrawlArgsChildPost!]
+  timestamp: Time!
+  commentsCount: Int!
+  likesCount: Int!
+  videoViewCount: Int!
+}
+
+type HPIgCrawlArgsChildPost @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.HPIgCrawlArgsChildPost") {
+  id: ID!
+  type: String!
+  displayUrl: String!
+  videoUrl: String!
+  likesCount: Int!
+  videoViewCount: Int!
+}
+

@@ -1,0 +1,26 @@
+{
+  "value": {
+    "id": 17179869185,
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "storage_path": "hpblob.hpapp.yssk22.dev/stat.ameba.jp/user_images/20220915/21/juicejuice-official/e1/3f/j/o1080144015175167070.jpg",
+    "source_url": "https://stat.ameba.jp/user_images/20220915/21/juicejuice-official/e1/3f/j/o1080144015175167070.jpg",
+    "source_html_url": "https://ameblo.jp/juicejuice-official/entry-12764506169.html",
+    "status": "ready_to_host",
+    "type": "image",
+    "sub_type": "jpeg",
+    "width": 1080,
+    "height": 1440,
+    "size": 171912,
+    "owner_artist_id": 3,
+    "owner_member_id": 8589934673,
+    "faces": {
+      "left": 0,
+      "top": 0,
+      "bottom": 0,
+      "right": 0
+    },
+    "face_recognition_status": "unknown",
+    "edges": {}
+  }
+}

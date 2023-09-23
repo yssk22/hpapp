@@ -1,0 +1,26 @@
+name: CI - Go
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "go/**"
+      - ".github/workflows/ci-go.yml"
+  pull_request:
+    branches:
+      - main
+      - develop
+    paths:
+      - "go/**"
+      - ".github/workflows/ci-go.yml"
+
+jobs:
+  test-go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v4
+        with:
+          go-version: "1.18.3"
+          cache-dependency-path: "go/go.sum"
+      - run: cd go && go test ./...

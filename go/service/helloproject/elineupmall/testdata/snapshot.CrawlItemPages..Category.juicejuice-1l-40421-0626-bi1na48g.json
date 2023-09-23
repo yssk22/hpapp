@@ -1,0 +1,59 @@
+{
+  "value": {
+    "id": 21474836485,
+    "crawled_at": "2020-10-30T00:00:00+09:00",
+    "last_error_message": "",
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "permalink": "https://www.elineupmall.com/c671/c181/c197/c201/juicejuice-1l-40421-0626-bi1na48g/",
+    "name": "工藤由愛(Juice=Juice)「写真集『多幸感～タコカン～』」よりパート1　L判 4枚　［0421-0626］",
+    "description": "■Shop販売写真■［WebStore販売期間］2023年4月21日(金)18:00～2023年6月26日(月)23:59 ※期間内でも、定数に達した場合は終了いたします。あらかじめご注意下さい。＜発送予定日＞クレジットカード決済は注文完了メール到着後、コンビニ・Pay-easy・Paypal決済はご入金通知後、10営業日(土日祝除く)以内※ご注文に予約商品が含まれる場合は、発送予定日が最も遅い商品に合わせてまとめて発送いたします。",
+    "supplier": "ハロー！プロジェクトオフィシャルショップ Web Store",
+    "price": 640,
+    "images": [
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/217/574b46b2fafbbe3bd0eebcfc9ce6c7f3.jpg"
+      }
+    ],
+    "category": "PhotoAlbumOther",
+    "order_start_at": "2023-04-21T00:00:00+09:00",
+    "order_end_at": "2023-06-26T00:00:00+09:00",
+    "edges": {
+      "tagged_artists": [
+        {
+          "id": 3,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "last_error_message": "",
+          "created_at": "2019-11-28T03:01:46Z",
+          "updated_at": "2023-04-14T01:30:35Z",
+          "key": "juicejuice",
+          "name": "Juice=Juice",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/e8c5fc90c206cb0c0496600d85534cb7a2eaa6b8.jpg",
+          "index": 2,
+          "edges": {}
+        }
+      ],
+      "tagged_members": [
+        {
+          "id": 8589934623,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "error_count": 1,
+          "last_error_message": "not crawled",
+          "created_at": "2019-11-28T03:01:51Z",
+          "updated_at": "2023-04-14T01:31:12Z",
+          "key": "yume_kudou",
+          "artist_key": "juicejuice",
+          "name": "工藤由愛",
+          "name_kana": "クドウユメ",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/76c48a3d838713c29034644bb2e7b271080f00b9.jpg",
+          "date_of_birth": "2004-09-27T15:00:00Z",
+          "blood_type": "A",
+          "hometown": "北海道",
+          "join_at": "2019-06-13T15:00:00Z",
+          "artist_id": 3,
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

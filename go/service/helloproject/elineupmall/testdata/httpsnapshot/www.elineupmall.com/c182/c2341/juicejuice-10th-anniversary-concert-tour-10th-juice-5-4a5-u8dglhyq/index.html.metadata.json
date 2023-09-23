@@ -1,0 +1,49 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Access-Control-Allow-Credentials": [
+			"true"
+		],
+		"Access-Control-Allow-Headers": [
+			"Origin, Authorization, Accept"
+		],
+		"Access-Control-Allow-Methods": [
+			"POST, GET, OPTIONS"
+		],
+		"Access-Control-Allow-Origin": [
+			"*"
+		],
+		"Cache-Control": [
+			"no-store, no-cache, must-revalidate"
+		],
+		"Connection": [
+			"keep-alive"
+		],
+		"Content-Type": [
+			"text/html; charset=utf-8"
+		],
+		"Date": [
+			"Sun, 14 May 2023 14:29:38 GMT"
+		],
+		"Expires": [
+			"Thu, 19 Nov 1981 08:52:00 GMT"
+		],
+		"Pragma": [
+			"no-cache"
+		],
+		"Server": [
+			"nginx"
+		],
+		"Set-Cookie": [
+			"sid_customer_b4300=e5c23d5d46af860e631206f360ef6172-C; expires=Sun, 28-May-2023 14:29:38 GMT; Max-Age=1209600; path=/; domain=.elineupmall.com; secure"
+		],
+		"Vary": [
+			"Accept-Encoding"
+		],
+		"X-Frame-Options": [
+			"SAMEORIGIN"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/www.elineupmall.com/c182/c2341/juicejuice-10th-anniversary-concert-tour-10th-juice-5-4a5-u8dglhyq/index.html"
+}

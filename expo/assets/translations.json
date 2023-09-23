@@ -1,0 +1,51 @@
+{
+  "Home": {
+    "ja": "ホーム"
+  },
+  "Artists": {
+    "ja": "アーティスト"
+  },
+  "Events": {
+    "ja": "イベント"
+  },
+  "Goods": {
+    "ja": "グッズ"
+  },
+  "Settings": {
+    "ja": "設定"
+  },
+  "By Sort": {
+    "ja": "ソート順"
+  },
+  "By Group": {
+    "ja": "グループ順"
+  },
+  "By Age": {
+    "ja": "年齢順"
+  },
+  "%{age} yo": {
+    "ja": "%{age}歳"
+  },
+  "By Join Date": {
+    "ja": "加入順"
+  },
+  "NO-SORT-YET": {
+    "ja": "まだソートを一度もやっていません。試しますか?",
+    "en": "You haven't had any sort yet, do you try it?"
+  },
+  "Theme Settings": {
+    "ja": "テーマの設定"
+  },
+  "Primary Color": {
+    "ja": "プライマリーカラー"
+  },
+  "Secondary Color": {
+    "ja": "セカンダリーカラー"
+  },
+  "Background Color": {
+    "ja": "バックグラウンドカラー"
+  },
+  "Logout": {
+    "ja": "ログアウト"
+  }
+}

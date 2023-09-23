@@ -1,0 +1,68 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Accept-Ch": [
+			"Sec-CH-UA-Full"
+		],
+		"Accept-Ranges": [
+			"bytes"
+		],
+		"Age": [
+			"0"
+		],
+		"Cache-Control": [
+			"max-age=20, stale-while-revalidate=60"
+		],
+		"Content-Security-Policy": [
+			"upgrade-insecure-requests"
+		],
+		"Content-Type": [
+			"application/json; charset=utf-8"
+		],
+		"Date": [
+			"Wed, 17 May 2023 03:07:21 GMT"
+		],
+		"Etag": [
+			"W/\"50-cGHD8b9XYaWKTmjvjsLdgWRCeAo\""
+		],
+		"Origin-Trial": [
+			"AgkzE0SdPqccfaG9xo/nbroJVd9BqLU0uZCCQbV46yVUMHh4r8RDCAWLKP8BgMPiXpQLpE/b2F9w+bJKwTj9Zg8AAAB1eyJvcmlnaW4iOiJodHRwczovL2FtZWJsby5qcDo0NDMiLCJmZWF0dXJlIjoiU2VuZEZ1bGxVc2VyQWdlbnRBZnRlclJlZHVjdGlvbiIsImV4cGlyeSI6MTY4NDg4NjM5OSwiaXNTdWJkb21haW4iOnRydWV9"
+		],
+		"Permissions-Policy": [
+			"ch-ua-full=*"
+		],
+		"Server-Timing": [
+			"total; dur=9.586224999999999; desc=\"Total Response Time\"",
+			"MISS-CLUSTER, fastly;desc=\"Edge time\";dur=15"
+		],
+		"Set-Cookie": [
+			"platform=b2YSh6; Domain=ameblo.jp; Path=/; Expires=Wed, 17 May 2023 04:07:21 GMT; Secure; HttpOnly;"
+		],
+		"Timing-Allow-Origin": [
+			"*"
+		],
+		"Vary": [
+			"Origin,Accept-Encoding,X-Loading"
+		],
+		"X-Cdn-Ttl": [
+			"86400.000"
+		],
+		"X-Content-Type-Options": [
+			"nosniff"
+		],
+		"X-Is-Default-Ttl": [
+			"false"
+		],
+		"X-Loading": [
+			"?0"
+		],
+		"X-Timer": [
+			"S1684292841.025945,VS0,VE15"
+		],
+		"X-User-Agent": [
+			"desktop"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/ameblo.jp/_api/blogEntryReactions;amebaId=angerme-amerika;blogId=10049720710;entryIds=12792338631?returnMeta=true"
+}

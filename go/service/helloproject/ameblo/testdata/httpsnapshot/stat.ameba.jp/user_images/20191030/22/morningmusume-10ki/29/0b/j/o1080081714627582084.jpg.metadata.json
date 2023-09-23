@@ -1,0 +1,40 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Accept-Ranges": [
+			"bytes"
+		],
+		"Access-Control-Allow-Origin": [
+			"*"
+		],
+		"Age": [
+			"476965"
+		],
+		"Cache-Control": [
+			"max-age=17280000, immutable"
+		],
+		"Content-Length": [
+			"105901"
+		],
+		"Content-Type": [
+			"image/jpeg"
+		],
+		"Date": [
+			"Wed, 17 May 2023 04:16:09 GMT"
+		],
+		"Etag": [
+			"\"qFH2YOXtb4BrLkwBQ1g/2AgfgcP59OZ1QpXtIgB+1FY\""
+		],
+		"Fastly-Io-Info": [
+			"ifsz=490794 idim=1080x817 ifmt=jpeg ofsz=105901 odim=1080x817 ofmt=jpeg"
+		],
+		"Fastly-Stats": [
+			"io=1"
+		],
+		"X-Timer": [
+			"S1684296970.787386,VS0,VE2"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/stat.ameba.jp/user_images/20191030/22/morningmusume-10ki/29/0b/j/o1080081714627582084.jpg"
+}

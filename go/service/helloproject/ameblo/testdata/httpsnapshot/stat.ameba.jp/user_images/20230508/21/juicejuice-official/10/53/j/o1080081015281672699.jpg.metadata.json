@@ -1,0 +1,40 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Accept-Ranges": [
+			"bytes"
+		],
+		"Access-Control-Allow-Origin": [
+			"*"
+		],
+		"Age": [
+			"746483"
+		],
+		"Cache-Control": [
+			"max-age=17280000, immutable"
+		],
+		"Content-Length": [
+			"85768"
+		],
+		"Content-Type": [
+			"image/jpeg"
+		],
+		"Date": [
+			"Wed, 17 May 2023 04:16:09 GMT"
+		],
+		"Etag": [
+			"\"hiHZJrA4hDQsI6s44LXTxtGU3Y7a51WW4CxoSmX4E1U\""
+		],
+		"Fastly-Io-Info": [
+			"ifsz=155094 idim=1080x810 ifmt=jpeg ofsz=85768 odim=1080x810 ofmt=jpeg"
+		],
+		"Fastly-Stats": [
+			"io=1"
+		],
+		"X-Timer": [
+			"S1684296969.424673,VS0,VE0"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/stat.ameba.jp/user_images/20230508/21/juicejuice-official/10/53/j/o1080081015281672699.jpg"
+}

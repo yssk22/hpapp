@@ -1,0 +1,49 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Access-Control-Allow-Credentials": [
+			"true"
+		],
+		"Access-Control-Allow-Headers": [
+			"Origin, Authorization, Accept"
+		],
+		"Access-Control-Allow-Methods": [
+			"POST, GET, OPTIONS"
+		],
+		"Access-Control-Allow-Origin": [
+			"*"
+		],
+		"Cache-Control": [
+			"no-store, no-cache, must-revalidate"
+		],
+		"Connection": [
+			"keep-alive"
+		],
+		"Content-Type": [
+			"text/html; charset=utf-8"
+		],
+		"Date": [
+			"Sat, 13 May 2023 17:07:36 GMT"
+		],
+		"Expires": [
+			"Thu, 19 Nov 1981 08:52:00 GMT"
+		],
+		"Pragma": [
+			"no-cache"
+		],
+		"Server": [
+			"nginx"
+		],
+		"Set-Cookie": [
+			"sid_customer_b4300=8eef8849aaed8e449c5844c0a6c50f84-C; expires=Sat, 27-May-2023 17:07:32 GMT; Max-Age=1209600; path=/; domain=.elineupmall.com; secure"
+		],
+		"Vary": [
+			"Accept-Encoding"
+		],
+		"X-Frame-Options": [
+			"SAMEORIGIN"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/www.elineupmall.com/c671/c181/c197/page-4/index.html?items_per_page=1000"
+}

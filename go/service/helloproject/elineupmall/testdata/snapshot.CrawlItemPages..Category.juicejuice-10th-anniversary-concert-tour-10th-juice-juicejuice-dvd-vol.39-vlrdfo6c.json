@@ -1,0 +1,39 @@
+{
+  "value": {
+    "id": 21474836488,
+    "crawled_at": "2020-10-30T00:00:00+09:00",
+    "last_error_message": "",
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "permalink": "https://www.elineupmall.com/c182/c2341/juicejuice-10th-anniversary-concert-tour-10th-juice-juicejuice-dvd-vol.39-vlrdfo6c/",
+    "name": "Juice＝Juice 10th ANNIVERSARY CONCERT TOUR ～10th Juice～ Juice=Juice DVDマガジン Vol.39",
+    "description": "収録時間:約86分WE LOVE【スイッチング映像】をテーマに、コンサートステージのビジョンに映るメンバーたちのパフォーマンスを分析する新企画。今回は2022年の秋ツアーを振り返ります。ツアースタッフ(映像チーム)だからこそ捉えることができるメンバーの表情やパフォーマンス、また地方公演でしか見られないトークや凱旋公演の様子など、メンバーたちのおすすめシーンを紹介します。本番前後のバックステージの様子も収めました。Hello! Project 2023 Spring CITY CIRCUIT 「Juice＝Juice 10th ANNIVERSARY CONCERT TOUR ～10th Juice～」※通信販売受付期間:2023年4月15日(土)14:30～2023年7月11日(火)23:59※発送予定日:決済完了後(コンビニ・Pay-easy・Paypal決済はご入金通知後)、10営業日(土日祝除く)以内※複数商品を一度にご注文した中で、予約商品(未発売商品)がある場合は発送予定日が最も遅い商品に合わせてまとめて発送致します。※商品画像は、画像の表示環境により実際の商品の色とは多少異なる場合がございます。予めご了承ください。",
+    "supplier": "UF Goods Land",
+    "price": 3000,
+    "is_out_of_stock": true,
+    "images": [
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/216/734ccc4642b1d4eb366a70a4e95ecf85.jpg"
+      }
+    ],
+    "category": "DVDMagazine",
+    "order_start_at": "2023-04-15T00:00:00+09:00",
+    "order_end_at": "2023-07-11T00:00:00+09:00",
+    "edges": {
+      "tagged_artists": [
+        {
+          "id": 3,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "last_error_message": "",
+          "created_at": "2019-11-28T03:01:46Z",
+          "updated_at": "2023-04-14T01:30:35Z",
+          "key": "juicejuice",
+          "name": "Juice=Juice",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/e8c5fc90c206cb0c0496600d85534cb7a2eaa6b8.jpg",
+          "index": 2,
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "value": {
+    "id": 34359738369,
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "source_id": 42949672961,
+    "asset_type": "instagram",
+    "title": "入江里咲ちゃんの紹介ラップです！  有澤一華  An Introduction song for Irie Risa-chan   Ichika Arisawa  #juicejuice #入江里咲　",
+    "post_at": "2021-12-14T13:20:44Z",
+    "source_url": "https://instagram.com/p/CXdvgAuhK2G/",
+    "image_url": "http://localhost:8080/blob/hpblob.hpapp.yssk22.dev/www.instagram.com/p/CXdvgAuhK2G/0/image.jpg",
+    "media": [
+      {
+        "url": "http://localhost:8080/blob/hpblob.hpapp.yssk22.dev/www.instagram.com/p/CXdvgAuhK2G/0/video.mp4",
+        "blob_id": 17179869185,
+        "type": "video",
+        "width": 720,
+        "height": 720,
+        "thumbnail_url": "http://localhost:8080/blob/hpblob.hpapp.yssk22.dev/www.instagram.com/p/CXdvgAuhK2G/0/image.jpg",
+        "thumbnail_width": 540,
+        "thumbnail_height": 540
+      }
+    ],
+    "owner_artist_id": 3,
+    "edges": {
+      "owner_artist": {
+        "id": 3,
+        "crawled_at": "2023-04-14T01:30:00Z",
+        "last_error_message": "",
+        "created_at": "2019-11-28T03:01:46Z",
+        "updated_at": "2023-04-14T01:30:35Z",
+        "key": "juicejuice",
+        "name": "Juice=Juice",
+        "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/e8c5fc90c206cb0c0496600d85534cb7a2eaa6b8.jpg",
+        "index": 2,
+        "edges": {}
+      },
+      "tagged_artists": [
+        {
+          "id": 3,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "last_error_message": "",
+          "created_at": "2019-11-28T03:01:46Z",
+          "updated_at": "2023-04-14T01:30:35Z",
+          "key": "juicejuice",
+          "name": "Juice=Juice",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/e8c5fc90c206cb0c0496600d85534cb7a2eaa6b8.jpg",
+          "index": 2,
+          "edges": {}
+        }
+      ],
+      "tagged_members": [
+        {
+          "id": 8589934672,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "error_count": 1,
+          "last_error_message": "not crawled",
+          "created_at": "2021-07-07T11:03:22Z",
+          "updated_at": "2023-04-14T01:31:12Z",
+          "key": "ichika_arisawa",
+          "artist_key": "juicejuice",
+          "name": "有澤一華",
+          "name_kana": "アリサワイチカ",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/71803dc103e2bc2fecb53aee6e16be89faf10380.jpg",
+          "date_of_birth": "2003-12-22T15:00:00Z",
+          "blood_type": "O",
+          "hometown": "大阪府",
+          "join_at": "2021-07-06T15:00:00Z",
+          "artist_id": 3,
+          "edges": {}
+        },
+        {
+          "id": 8589934673,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "error_count": 1,
+          "last_error_message": "not crawled",
+          "created_at": "2021-07-07T11:03:22Z",
+          "updated_at": "2023-04-14T01:31:12Z",
+          "key": "risa_irie",
+          "artist_key": "juicejuice",
+          "name": "入江里咲",
+          "name_kana": "イリエリサ",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/6bac4ab49dff3a3f43b6bffebc62e9bbcaca583b.jpg",
+          "date_of_birth": "2005-10-17T15:00:00Z",
+          "blood_type": "A",
+          "hometown": "千葉県",
+          "join_at": "2021-07-06T15:00:00Z",
+          "artist_id": 3,
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

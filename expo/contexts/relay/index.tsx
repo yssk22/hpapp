@@ -1,0 +1,103 @@
+import { useMemo } from "react";
+import Constants from "expo-constants";
+import { WithTimeout } from "@hpapp/foundation/function";
+import { RelayEnvironmentProvider, useRelayEnvironment } from "react-relay";
+import {
+  Network,
+  RequestParameters,
+  Variables,
+  Environment,
+  Store,
+  RecordSource,
+} from "relay-runtime";
+import { wrapRenderable } from "@hpapp/foundation/errors";
+import { useCurrentUser } from "@hpapp/features/auth";
+
+export interface HttpClientConfig {
+  Endpoint?: string;
+  NetworkTimeoutSecond: number;
+  ExtraHeaderFn?: () => Promise<Record<string, string>>;
+}
+
+function getDefaultGraphQLEndpoint() {
+  const override = Constants.expoConfig?.extra?.hpapp?.graphql_endpoint;
+  const hostUri = Constants.manifest?.hostUri; // ip:port
+  if (typeof override === "string") {
+    return override;
+  }
+  if (typeof hostUri === "string") {
+    const ip = hostUri.split(":")[0];
+    return "http://" + ip + ":8080/graphql/v3";
+  }
+  throw new Error(
+    "Couldn't get GraphQL endpoint. Did you set expo.extra.hpapp.graphql_endpoint properly?"
+  );
+}
+
+function createEnvironment(config: HttpClientConfig, userToken?: string) {
+  const endpoint = config.Endpoint || getDefaultGraphQLEndpoint();
+  const network = Network.create(
+    async (operation: RequestParameters, variables: Variables) => {
+      const resp = await WithTimeout<Response>(
+        config.NetworkTimeoutSecond * 1000,
+        (async () => {
+          const headers: { [key: string]: string } = {
+            "Content-Type": "application/json",
+          };
+          if (config.ExtraHeaderFn !== undefined) {
+            const extra = await config.ExtraHeaderFn();
+            Object.assign(headers, extra);
+          }
+          if (userToken !== undefined) {
+            headers["Authorization"] = "Bearer " + userToken;
+          }
+          try {
+            return await fetch(endpoint, {
+              method: "POST",
+              headers: headers,
+              body: JSON.stringify({
+                query: operation.text,
+                variables,
+              }),
+            });
+          } catch (err) {
+            throw wrapRenderable(err);
+          }
+        })()
+      );
+      try {
+        const json = await resp.json();
+        return json;
+      } catch (err) {
+        throw wrapRenderable(err);
+      }
+    }
+  );
+  const store = new Store(new RecordSource());
+  return new Environment({
+    network,
+    store,
+  });
+}
+
+function RelayProvider({
+  children,
+  config,
+}: {
+  children: React.ReactNode;
+  config: HttpClientConfig;
+}) {
+  const [user] = useCurrentUser();
+  const environment = useMemo(() => {
+    return createEnvironment(config, user?.accessToken);
+  }, [config, user?.accessToken]);
+  return (
+    <RelayEnvironmentProvider environment={environment}>
+      {children}
+    </RelayEnvironmentProvider>
+  );
+}
+
+const useRelay = useRelayEnvironment;
+
+export { RelayProvider, useRelay };

@@ -1,0 +1,20 @@
+name: OP - Reject pull requests to main
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  close-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read # this is required when the repository gets private
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Close PR
+        if: github.actor != 'yssk22'
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} --body "Closing this PR. Please see [How To Contribute](https://github.com/yssk22/hpapp/blob/main/docs/how-to-contribute.md)."
+          gh pr close ${{ github.event.pull_request.number }} --repo ${{ github.repository }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

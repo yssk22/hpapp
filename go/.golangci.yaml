@@ -1,0 +1,17 @@
+# .golangci-lint.yaml
+run:
+  deadline: 5m
+
+# enable default linters and additions
+linters:
+  disable-all: false
+  enable:
+    - gosec
+    - gocritic
+linters-settings:
+  gocritic:
+    enabled-checks:
+      - ruleguard
+    settings:
+      ruleguard:
+        rules: ./devtool/linter/rules.go

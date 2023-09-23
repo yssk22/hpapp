@@ -1,0 +1,45 @@
+{
+  "value": {
+    "id": 21474836482,
+    "crawled_at": "2020-10-30T00:00:00+09:00",
+    "last_error_message": "",
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "permalink": "https://www.elineupmall.com/c182/c2366/ocha-norma-concert-tour-2023-spring-a52-7bhj8fri/",
+    "name": "OCHA NORMA CONCERT TOUR 2023 SPRING ～グローイング・アップ！～ ソロA5ワイドサイズ生写真2枚セット【斉藤円香】",
+    "description": "OCHA NORMA CONCERT TOUR 2023 SPRING ～グローイング・アップ！～※通信販売受付期間:2023年5月3日(水・祝)13:30～2023年6月21日(水)23:59※発送予定日:決済完了後(コンビニ・Pay-easy・Paypal決済はご入金通知後)、10営業日(土日祝除く)以内※複数商品を一度にご注文した中で、予約商品(未発売商品)がある場合は発送予定日が最も遅い商品に合わせてまとめて発送致します。※商品画像は、画像の表示環境により実際の商品の色とは多少異なる場合がございます。予めご了承ください。",
+    "supplier": "UF Goods Land",
+    "price": 1200,
+    "images": [
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/218/7adc49a381ac191ed3949a5eb8693d98.jpg"
+      }
+    ],
+    "category": "PhotoA5",
+    "order_start_at": "2023-05-03T00:00:00+09:00",
+    "order_end_at": "2023-06-21T00:00:00+09:00",
+    "edges": {
+      "tagged_members": [
+        {
+          "id": 8590061983,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "error_count": 1,
+          "last_error_message": "not crawled",
+          "created_at": "2021-12-24T04:33:14Z",
+          "updated_at": "2023-04-14T01:31:12Z",
+          "key": "madoka_saito",
+          "artist_key": "ochanorma",
+          "name": "斉藤円香",
+          "name_kana": "サイトウマドカ",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/b81d1d75619a3c859d59bb99a90ab80ad5388e1f.jpg",
+          "date_of_birth": "2002-10-27T15:00:00Z",
+          "blood_type": "O",
+          "hometown": "埼玉県",
+          "join_at": "2021-12-11T15:00:00Z",
+          "artist_id": 8,
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "go.lintTool":"golangci-lint",
+    "go.lintFlags": [
+        "--config=${workspaceFolder}/.golangci.yaml",
+        "--skip-dirs=\"service/schema/enums\"",
+    ]
+}

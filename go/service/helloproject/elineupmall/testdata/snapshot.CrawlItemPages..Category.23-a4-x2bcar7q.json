@@ -1,0 +1,58 @@
+{
+  "value": {
+    "id": 21474836483,
+    "crawled_at": "2020-10-30T00:00:00+09:00",
+    "last_error_message": "",
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "permalink": "https://www.elineupmall.com/c720/c722/c2374/23-a4-x2bcar7q/",
+    "name": "モーニング娘。'23 岡村ほまれバースデーイベント A4サイズ生写真",
+    "description": "商品お届け予定:2023年6月下旬予定※商品画像は、画像の表示環境により実際の商品の色とは多少異なる場合がございます。予めご了承ください。          カテゴリ:モーニング娘。'23 岡村ほまれバースデーイベント   受付締切日:2023年5月30日(火)23:59   商品お届け予定:2023年6月下旬予定      ※こちらの商品はご入金頂いてから発送までにお時間を頂いてしまいますので、予めご了承ください。   ※複数商品を一度にご注文の場合は、発送予定日が最も遅い商品に合わせてまとめて発送致します。   ※郵便振込でのご購入はできませんので予めご了承下さい。 郵便振込でお申し込みいただいた場合は手数料を差し引いてご返金させて頂きますので予めご了承ください。",
+    "supplier": "Hello! Projectオフィシャルファンクラブショップ",
+    "price": 1600,
+    "is_limited_to_fc": true,
+    "images": [
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/218/6dd44f631047e2418c261be397a54a27.jpg"
+      }
+    ],
+    "category": "PhotoA4",
+    "order_end_at": "2023-05-30T00:00:00+09:00",
+    "edges": {
+      "tagged_artists": [
+        {
+          "id": 1,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "last_error_message": "",
+          "created_at": "2019-11-28T03:01:24Z",
+          "updated_at": "2023-04-14T01:30:13Z",
+          "key": "morningmusume",
+          "name": "モーニング娘。'23",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/a2b54229290db6b0794c5b21fca2320fae829f58.jpg",
+          "edges": {}
+        }
+      ],
+      "tagged_members": [
+        {
+          "id": 8589934604,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "error_count": 1,
+          "last_error_message": "not crawled",
+          "created_at": "2019-11-28T03:01:32Z",
+          "updated_at": "2023-04-14T01:31:12Z",
+          "key": "homare_okamura",
+          "artist_key": "morningmusume",
+          "name": "岡村ほまれ",
+          "name_kana": "オカムラホマレ",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/5fd2b829ba5435613ca5ac64dbbb24d342a865b2.jpg",
+          "date_of_birth": "2005-05-08T15:00:00Z",
+          "blood_type": "A",
+          "hometown": "東京都",
+          "join_at": "2019-06-21T15:00:00Z",
+          "artist_id": 1,
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

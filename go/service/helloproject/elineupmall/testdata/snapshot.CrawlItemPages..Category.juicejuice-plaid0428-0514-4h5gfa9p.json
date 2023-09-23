@@ -1,0 +1,57 @@
+{
+  "value": {
+    "id": 21474836499,
+    "crawled_at": "2020-10-30T00:00:00+09:00",
+    "last_error_message": "",
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "permalink": "https://www.elineupmall.com/c671/c181/c197/c201/juicejuice-plaid0428-0514-4h5gfa9p/",
+    "name": "入江里咲(Juice=Juice)【受注】『＜Plaid＞フィギュアスタンドキーホルダー』［0428-0514］",
+    "description": "「Shopオリジナル 2023 Plaid」のフィギュアスタンドキーホルダーを、4/28(金)～5/14(日)の期間、受注生産予約受付いたします。[仕様]本人の身長の約1/20スケールサイズ。ソロ台座、ボールチェーン付き。[ご予約期間]4/28(金)18:00～5/14(日)23:59※締め切り時間直前は混み合うことがあるため、お時間に余裕をもってご注文をお願いいたします。[発送開始日]7月上旬より順次発送開始※期間内でも生産予定数の上限に達した際には、発送日の変更をさせていただく場合がございます。※※受注生産のグッズなど、発送日が決まっている商品がご注文に含まれる場合、全ての商品が揃った時点で一括配送となります。通常商品を先に受け取りたい場合は、別々にご注文されることをお勧めいたします。",
+    "supplier": "ハロー！プロジェクトオフィシャルショップ Web Store",
+    "price": 1000,
+    "images": [
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/217/d313ee48f8701c46890119b46bf58299.jpg"
+      }
+    ],
+    "category": "FSK",
+    "edges": {
+      "tagged_artists": [
+        {
+          "id": 3,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "last_error_message": "",
+          "created_at": "2019-11-28T03:01:46Z",
+          "updated_at": "2023-04-14T01:30:35Z",
+          "key": "juicejuice",
+          "name": "Juice=Juice",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/e8c5fc90c206cb0c0496600d85534cb7a2eaa6b8.jpg",
+          "index": 2,
+          "edges": {}
+        }
+      ],
+      "tagged_members": [
+        {
+          "id": 8589934673,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "error_count": 1,
+          "last_error_message": "not crawled",
+          "created_at": "2021-07-07T11:03:22Z",
+          "updated_at": "2023-04-14T01:31:12Z",
+          "key": "risa_irie",
+          "artist_key": "juicejuice",
+          "name": "入江里咲",
+          "name_kana": "イリエリサ",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/6bac4ab49dff3a3f43b6bffebc62e9bbcaca583b.jpg",
+          "date_of_birth": "2005-10-17T15:00:00Z",
+          "blood_type": "A",
+          "hometown": "千葉県",
+          "join_at": "2021-07-06T15:00:00Z",
+          "artist_id": 3,
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

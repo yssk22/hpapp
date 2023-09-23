@@ -1,0 +1,38 @@
+{
+  "value": {
+    "id": 21474836492,
+    "crawled_at": "2020-10-30T00:00:00+09:00",
+    "last_error_message": "",
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "permalink": "https://www.elineupmall.com/c182/c2343/beyooooonds-concert-tourneo-beyo-beyooooonds-dqp35n9a/",
+    "name": "BEYOOOOONDS CONCERT TOUR「NEO BEYO」 BEYOOOOONDS ペンライト",
+    "description": "ライトは12色対応です。 Hello! Project 2023 Spring CITY CIRCUIT「BEYOOOOONDS CONCERT TOUR「NEO BEYO」」※通信販売受付期間:2023年3月19日(日)13:30～2023年7月11日(火)23:59※発送予定日:決済完了後(コンビニ・Pay-easy・Paypal決済はご入金通知後)、10営業日(土日祝除く)以内※複数商品を一度にご注文した中で、予約商品(未発売商品)がある場合は発送予定日が最も遅い商品に合わせてまとめて発送致します。※商品画像は、画像の表示環境により実際の商品の色とは多少異なる場合がございます。予めご了承ください。",
+    "supplier": "UF Goods Land",
+    "price": 3200,
+    "images": [
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/213/ca573305204549de24b6e48951058dc2.jpg"
+      }
+    ],
+    "category": "Penlight",
+    "order_start_at": "2023-03-19T00:00:00+09:00",
+    "order_end_at": "2023-07-11T00:00:00+09:00",
+    "edges": {
+      "tagged_artists": [
+        {
+          "id": 7,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "last_error_message": "",
+          "created_at": "2019-11-28T03:02:10Z",
+          "updated_at": "2023-04-14T01:31:00Z",
+          "key": "beyooooonds",
+          "name": "BEYOOOOONDS",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/1f31f94b6561562d779cf8df2076f9d3c4d23f90.jpg",
+          "index": 4,
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

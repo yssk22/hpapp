@@ -1,0 +1,12 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "useUnknownInCatchVariables": true,
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {
+       "@hpapp/*": ["./*"]
+    },
+  },
+  "exclude": ["./scripts/*"]
+}

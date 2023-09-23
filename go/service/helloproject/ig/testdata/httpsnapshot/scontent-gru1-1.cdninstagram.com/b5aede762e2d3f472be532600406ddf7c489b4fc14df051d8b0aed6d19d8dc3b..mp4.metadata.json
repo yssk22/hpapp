@@ -1,0 +1,37 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Alt-Svc": [
+			"h3=\":443\"; ma=86400"
+		],
+		"Cache-Control": [
+			"max-age=1209600, no-transform"
+		],
+		"Content-Length": [
+			"3262575"
+		],
+		"Content-Type": [
+			"video/mp4"
+		],
+		"Cross-Origin-Resource-Policy": [
+			"same-origin"
+		],
+		"Date": [
+			"Sun, 14 May 2023 15:35:15 GMT"
+		],
+		"Timing-Allow-Origin": [
+			"*"
+		],
+		"X-Fb-Trip-Id": [
+			"1679558926"
+		],
+		"X-Fb-Vts-Requestid": [
+			"7448E83AFABB716"
+		],
+		"X-Frame-Options": [
+			"DENY"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/scontent-gru1-1.cdninstagram.com/b5aede762e2d3f472be532600406ddf7c489b4fc14df051d8b0aed6d19d8dc3b..mp4"
+}

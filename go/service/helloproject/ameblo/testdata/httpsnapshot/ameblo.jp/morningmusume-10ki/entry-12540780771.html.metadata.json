@@ -1,0 +1,68 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Accept-Ch": [
+			"Sec-CH-UA-Full"
+		],
+		"Accept-Ranges": [
+			"bytes"
+		],
+		"Age": [
+			"0"
+		],
+		"Cache-Control": [
+			"max-age=5"
+		],
+		"Content-Security-Policy": [
+			"upgrade-insecure-requests"
+		],
+		"Content-Type": [
+			"text/html; charset=utf-8"
+		],
+		"Date": [
+			"Wed, 17 May 2023 03:39:21 GMT"
+		],
+		"Etag": [
+			"W/\"13da2-bCYPZWa/hCl4OoP96cCxAD3/yPc\""
+		],
+		"Origin-Trial": [
+			"AgkzE0SdPqccfaG9xo/nbroJVd9BqLU0uZCCQbV46yVUMHh4r8RDCAWLKP8BgMPiXpQLpE/b2F9w+bJKwTj9Zg8AAAB1eyJvcmlnaW4iOiJodHRwczovL2FtZWJsby5qcDo0NDMiLCJmZWF0dXJlIjoiU2VuZEZ1bGxVc2VyQWdlbnRBZnRlclJlZHVjdGlvbiIsImV4cGlyeSI6MTY4NDg4NjM5OSwiaXNTdWJkb21haW4iOnRydWV9"
+		],
+		"Permissions-Policy": [
+			"ch-ua-full=*"
+		],
+		"Server-Timing": [
+			"data; dur=84, rendering; dur=17, total; dur=107.362929; desc=\"Total Response Time\"",
+			"MISS-CLUSTER, fastly;desc=\"Edge time\";dur=137"
+		],
+		"Set-Cookie": [
+			"platform=b2YSh6; Domain=ameblo.jp; Path=/; Expires=Wed, 17 May 2023 04:39:21 GMT; Secure; HttpOnly;"
+		],
+		"Timing-Allow-Origin": [
+			"*"
+		],
+		"Vary": [
+			"Origin,Accept-Encoding,X-User-Agent,X-Loading"
+		],
+		"X-Cdn-Ttl": [
+			"86400.000"
+		],
+		"X-Content-Type-Options": [
+			"nosniff"
+		],
+		"X-Is-Default-Ttl": [
+			"false"
+		],
+		"X-Loading": [
+			"?0"
+		],
+		"X-Timer": [
+			"S1684294761.486785,VS0,VE137"
+		],
+		"X-User-Agent": [
+			"desktop"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/ameblo.jp/morningmusume-10ki/entry-12540780771.html"
+}

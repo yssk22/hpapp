@@ -1,0 +1,25 @@
+schema:
+  - ./v3.graphql
+  - ./generated/schema.graphql
+  - ./generated/ent.graphql
+
+exec:
+  filename: ./generated/exec_generated.go
+  package: generated
+
+resolver:
+  layout: single-file
+  filename: ./resolver/resolver.go
+  package: resolver
+
+autobind:
+  - hpapp.yssk22.dev/go/service/ent
+
+models:
+  ID:
+    model:
+      - github.com/99designs/gqlgen/graphql.ID
+      - github.com/99designs/gqlgen/graphql.IntID
+  Node:
+    model:
+      - hpapp.yssk22.dev/go/service/ent.Noder

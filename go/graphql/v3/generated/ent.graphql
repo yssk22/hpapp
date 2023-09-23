@@ -1,0 +1,500 @@
+directive @goField(forceResolver: Boolean, name: String) on FIELD_DEFINITION | INPUT_FIELD_DEFINITION
+directive @goModel(model: String, models: [String!]) on OBJECT | INPUT_OBJECT | SCALAR | ENUM | INTERFACE | UNION
+type Auth implements Node {
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  """oauth provider name"""
+  providerName: String!
+}
+"""
+Define a Relay Cursor type:
+https://relay.dev/graphql/connections.htm#sec-Cursor
+"""
+scalar Cursor
+type HPAmebloPost implements Node {
+  id: ID!
+  crawledAt: Time
+  errorCount: Int!
+  lastErrorMessage: String
+  recrawlRequired: Boolean
+  createdAt: Time
+  updatedAt: Time
+  path: String!
+  nextPath: String
+  prevPath: String
+  artistKey: String!
+  memberKey: String
+  title: String!
+  description: String!
+  theme: String
+  postAt: Time!
+  source: HPAmebloPostSource!
+  images: [Media!]
+  likes: Int
+  comments: Int
+  reblogs: Int
+  ownerArtistID: ID
+  ownerMemberID: ID
+  ownerArtist: HPArtist
+  ownerMember: HPMember
+  taggedArtists: [HPArtist!]
+  taggedMembers: [HPMember!]
+  blobs: [HPBlob!]
+}
+"""HPAmebloPostSource is enum for the field source"""
+enum HPAmebloPostSource @goModel(model: "hpapp.yssk22.dev/go/service/ent/hpameblopost.Source") {
+  rss
+  list
+  entry
+}
+type HPArtist implements Node {
+  id: ID!
+  crawledAt: Time
+  errorCount: Int!
+  lastErrorMessage: String
+  recrawlRequired: Boolean
+  createdAt: Time
+  updatedAt: Time
+  key: String!
+  name: String!
+  thumbnailURL: String!
+  index: Int!
+  members: [HPMember!]
+}
+type HPBlob implements Node {
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  storagePath: String!
+  sourceURL: String!
+  sourceHTMLURL: String!
+  status: HPBlobHPBlobStatus!
+  statusMessage: String
+  statusErrorCount: Int
+  type: HPBlobHPBlobType!
+  subType: HPBlobHPBlobSubType!
+  width: Int
+  height: Int
+  size: Int
+  ownerArtistID: ID
+  ownerMemberID: ID
+  numFaces: Int
+  faceRecognitionStatus: HPBlobHPBlobFaceRecognitionStatus
+  thumbnail: HPBlobThumbnail
+  durationSeconds: Float
+  ownerArtist: HPArtist
+  ownerMember: HPMember
+  amebloPosts: [HPAmebloPost!]
+  igPosts: [HPIgPost!]
+}
+"""HPBlobHPBlobFaceRecognitionStatus is enum for the field face_recognition_status"""
+enum HPBlobHPBlobFaceRecognitionStatus @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPBlobFaceRecognitionStatus") {
+  error
+  face_automatically_labeled
+  face_detected
+  face_manually_labeled
+  unknown
+}
+"""HPBlobHPBlobStatus is enum for the field status"""
+enum HPBlobHPBlobStatus @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPBlobStatus") {
+  error
+  need_download
+  ready_to_host
+  unknown
+}
+"""HPBlobHPBlobSubType is enum for the field sub_type"""
+enum HPBlobHPBlobSubType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPBlobSubType") {
+  html
+  jpeg
+  mp4
+  unknown
+}
+"""HPBlobHPBlobType is enum for the field type"""
+enum HPBlobHPBlobType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPBlobType") {
+  image
+  text
+  unknown
+  video
+}
+type HPElineupMallItem implements Node {
+  id: ID!
+  crawledAt: Time
+  errorCount: Int!
+  lastErrorMessage: String
+  recrawlRequired: Boolean
+  createdAt: Time
+  updatedAt: Time
+  permalink: String!
+  name: String!
+  description: String!
+  supplier: String!
+  price: Int!
+  isLimitedToFc: Boolean!
+  isOutOfStock: Boolean!
+  images: [Media!]!
+  category: HPElineupMallItemHPElineupMallItemCategory!
+  orderStartAt: Time
+  orderEndAt: Time
+  taggedArtists: [HPArtist!]
+  taggedMembers: [HPMember!]
+}
+"""HPElineupMallItemHPElineupMallItemCategory is enum for the field category"""
+enum HPElineupMallItemHPElineupMallItemCategory @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPElineupMallItemCategory") {
+  Blueray
+  ClearFile
+  ColllectionOther
+  ColllectionPhoto
+  ColllectionPinnapPoster
+  DVD
+  DVDMagazine
+  DVDMagazineOther
+  FSK
+  KeyringOther
+  MicrofiberTowel
+  MufflerTowel
+  Other
+  Penlight
+  Photo2L
+  PhotoA4
+  PhotoA5
+  PhotoAlbum
+  PhotoAlbumOther
+  PhotoBook
+  PhotoBookOther
+  PhotoDaily
+  PhotoOther
+  TShirt
+}
+type HPEvent implements Node {
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  key: String!
+  displayTitles: [String!]!
+  openAt: Time
+  startAt: Time!
+  venue: String!
+  prefecture: String!
+  source: HPEventHPEventSource!
+}
+"""A connection to a list of items."""
+type HPEventConnection {
+  """A list of edges."""
+  edges: [HPEventEdge]
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+  """Identifies the total count of items in the connection."""
+  totalCount: Int!
+}
+"""An edge in a connection."""
+type HPEventEdge {
+  """The item at the end of the edge."""
+  node: HPEvent
+  """A cursor for use in pagination."""
+  cursor: Cursor!
+}
+"""HPEventHPEventSource is enum for the field source"""
+enum HPEventHPEventSource @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPEventSource") {
+  fc_scrape
+}
+type HPFCEventTicket implements Node {
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  num: Int!
+  status: HPFCEventTicketHPEventFCTicketStatus!
+  fcMemberSha256: String!
+  applicationTitle: String!
+  applicationID: String
+  applicationStartDate: Time
+  applicationDueDate: Time
+  paymentStartDate: Time
+  paymentDueDate: Time
+}
+"""HPFCEventTicketHPEventFCTicketStatus is enum for the field status"""
+enum HPFCEventTicketHPEventFCTicketStatus @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPEventFCTicketStatus") {
+  Completed
+  PaymentOverdue
+  PendingPayment
+  Rejected
+  Submitted
+  Unknown
+}
+type HPFeedItem implements Node {
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  sourceID: Int!
+  assetType: HPFeedItemHPAssetType!
+  title: String!
+  postAt: Time!
+  sourceURL: String!
+  imageURL: String
+  media: [Media!]!
+  ownerArtistID: ID
+  ownerMemberID: ID
+  ownerArtist: HPArtist
+  ownerMember: HPMember
+  taggedArtists: [HPArtist!]
+  taggedMembers: [HPMember!]
+}
+"""A connection to a list of items."""
+type HPFeedItemConnection {
+  """A list of edges."""
+  edges: [HPFeedItemEdge]
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+  """Identifies the total count of items in the connection."""
+  totalCount: Int!
+}
+"""An edge in a connection."""
+type HPFeedItemEdge {
+  """The item at the end of the edge."""
+  node: HPFeedItem
+  """A cursor for use in pagination."""
+  cursor: Cursor!
+}
+"""HPFeedItemHPAssetType is enum for the field asset_type"""
+enum HPFeedItemHPAssetType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPAssetType") {
+  ameblo
+  elineupmall
+  instagram
+  tiktok
+  twitter
+  youtube
+}
+"""Ordering options for HPFeedItem connections"""
+input HPFeedItemOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPFeedItems."""
+  field: HPFeedItemOrderField!
+}
+"""Properties by which HPFeedItem connections can be ordered."""
+enum HPFeedItemOrderField {
+  postAt
+}
+type HPFollow implements Node {
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  type: HPFollowHPFollowType!
+  user: User!
+  member: HPMember!
+}
+"""HPFollowHPFollowType is enum for the field type"""
+enum HPFollowHPFollowType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPFollowType") {
+  follow
+  follow_with_notification
+  unfollow
+}
+type HPIgPost implements Node {
+  id: ID!
+  crawledAt: Time
+  errorCount: Int!
+  lastErrorMessage: String
+  recrawlRequired: Boolean
+  createdAt: Time
+  updatedAt: Time
+  shortcode: String!
+  description: String!
+  postAt: Time!
+  media: [Media!]!
+  likes: Int!
+  comments: Int!
+  recrawlArgs: HPIgCrawlArgs
+  ownerArtistID: ID
+  ownerMemberID: ID
+  ownerArtist: HPArtist
+  ownerMember: HPMember
+  taggedArtists: [HPArtist!]
+  taggedMembers: [HPMember!]
+  blobs: [HPBlob!]
+}
+"""A connection to a list of items."""
+type HPIgPostConnection {
+  """A list of edges."""
+  edges: [HPIgPostEdge]
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+  """Identifies the total count of items in the connection."""
+  totalCount: Int!
+}
+"""An edge in a connection."""
+type HPIgPostEdge {
+  """The item at the end of the edge."""
+  node: HPIgPost
+  """A cursor for use in pagination."""
+  cursor: Cursor!
+}
+type HPMember implements Node {
+  id: ID!
+  crawledAt: Time
+  errorCount: Int!
+  lastErrorMessage: String
+  recrawlRequired: Boolean
+  createdAt: Time
+  updatedAt: Time
+  key: String!
+  artistKey: String!
+  name: String!
+  nameKana: String!
+  thumbnailURL: String!
+  dateOfBirth: Time!
+  bloodType: String!
+  hometown: String!
+  joinAt: Time
+  graduateAt: Time
+  artistID: ID
+  artist: HPArtist
+}
+"""A connection to a list of items."""
+type HPMemberConnection {
+  """A list of edges."""
+  edges: [HPMemberEdge]
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+  """Identifies the total count of items in the connection."""
+  totalCount: Int!
+}
+"""An edge in a connection."""
+type HPMemberEdge {
+  """The item at the end of the edge."""
+  node: HPMember
+  """A cursor for use in pagination."""
+  cursor: Cursor!
+}
+type HPSortHistory implements Node {
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  sortResult: HPSortResult!
+  owner: User
+}
+"""A connection to a list of items."""
+type HPSortHistoryConnection {
+  """A list of edges."""
+  edges: [HPSortHistoryEdge]
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+  """Identifies the total count of items in the connection."""
+  totalCount: Int!
+}
+"""An edge in a connection."""
+type HPSortHistoryEdge {
+  """The item at the end of the edge."""
+  node: HPSortHistory
+  """A cursor for use in pagination."""
+  cursor: Cursor!
+}
+type HPViewHistory implements Node {
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  contentID: Int!
+  """post_at field value on content to query histories by post_at range"""
+  contentPostAt: Time!
+  assetType: HPViewHistoryHPAssetType!
+  isFavorite: Boolean!
+  feed: HPFeedItem
+}
+"""A connection to a list of items."""
+type HPViewHistoryConnection {
+  """A list of edges."""
+  edges: [HPViewHistoryEdge]
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+  """Identifies the total count of items in the connection."""
+  totalCount: Int!
+}
+"""An edge in a connection."""
+type HPViewHistoryEdge {
+  """The item at the end of the edge."""
+  node: HPViewHistory
+  """A cursor for use in pagination."""
+  cursor: Cursor!
+}
+"""HPViewHistoryHPAssetType is enum for the field asset_type"""
+enum HPViewHistoryHPAssetType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPAssetType") {
+  ameblo
+  elineupmall
+  instagram
+  tiktok
+  twitter
+  youtube
+}
+"""
+An object with an ID.
+Follows the [Relay Global Object Identification Specification](https://relay.dev/graphql/objectidentification.htm)
+"""
+interface Node @goModel(model: "hpapp.yssk22.dev/go/service/ent.Noder") {
+  """The id of the object."""
+  id: ID!
+}
+"""Possible directions in which to order a list of items when provided an `orderBy` argument."""
+enum OrderDirection {
+  """Specifies an ascending order for a given `orderBy` argument."""
+  ASC
+  """Specifies a descending order for a given `orderBy` argument."""
+  DESC
+}
+"""
+Information about pagination in a connection.
+https://relay.dev/graphql/connections.htm#sec-undefined.PageInfo
+"""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+  """When paginating backwards, the cursor to continue."""
+  startCursor: Cursor
+  """When paginating forwards, the cursor to continue."""
+  endCursor: Cursor
+}
+type Query {
+  """Fetches an object given its ID."""
+  node(
+    """ID of the object."""
+    id: ID!
+  ): Node
+  """Lookup nodes by a list of IDs."""
+  nodes(
+    """The list of node IDs."""
+    ids: [ID!]!
+  ): [Node]!
+}
+type User implements Node {
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  """unique identifier with [a-z0-9][a-z0-9_.]+"""
+  username: String!
+  """access token for the first party clients to access"""
+  accessToken: String!
+  auth: [Auth!]
+  notificationSettings: [UserNotificationSetting!]
+  hpviewHistory: [HPViewHistory!]
+  hpmemberFollowing: [HPFollow!]
+  hpsortHistory: [HPSortHistory!]
+  hpfcEventTickets: [HPFCEventTicket!]
+}
+type UserNotificationSetting implements Node {
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  """expo token"""
+  token: String!
+  """expo slug value (project name)"""
+  slug: String!
+  """human friendly name (taken on client side)"""
+  name: String!
+  """notify when a new post is created"""
+  enableNewPosts: Boolean!
+  """notify when a payment is started"""
+  enablePaymentStart: Boolean!
+  """notify when a payment due date is close"""
+  enablePaymentDue: Boolean!
+  user: User
+}

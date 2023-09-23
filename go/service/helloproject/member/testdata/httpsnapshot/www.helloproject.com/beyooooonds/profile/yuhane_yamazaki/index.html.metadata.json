@@ -1,0 +1,41 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Cache-Control": [
+			"no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+		],
+		"Content-Type": [
+			"text/html; charset=utf-8"
+		],
+		"Date": [
+			"Tue, 09 May 2023 04:55:00 GMT"
+		],
+		"Expires": [
+			"Thu, 19 Nov 1981 08:52:00 GMT"
+		],
+		"Pragma": [
+			"no-cache"
+		],
+		"Server": [
+			"Apache"
+		],
+		"Set-Cookie": [
+			"HELLO_PROJECT=ve4a06g8s71jlqqualcnu7s5m3; path=/",
+			"viewmode=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0"
+		],
+		"Vary": [
+			"Accept-Encoding,User-Agent"
+		],
+		"X-Content-Type-Options": [
+			"nosniff"
+		],
+		"X-Ua-Compatible": [
+			"IE=edge,chrome=1"
+		],
+		"X-Xss-Protection": [
+			"1; mode=block"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/www.helloproject.com/beyooooonds/profile/yuhane_yamazaki/index.html"
+}

@@ -1,0 +1,40 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Accept-Ranges": [
+			"bytes"
+		],
+		"Access-Control-Allow-Origin": [
+			"*"
+		],
+		"Age": [
+			"2132218"
+		],
+		"Cache-Control": [
+			"max-age=17280000, immutable"
+		],
+		"Content-Length": [
+			"161831"
+		],
+		"Content-Type": [
+			"image/jpeg"
+		],
+		"Date": [
+			"Wed, 17 May 2023 04:16:09 GMT"
+		],
+		"Etag": [
+			"\"ZRNr9oeineOrydVsQN09rcfEhfFKDXpXH6y3KJ/12dM\""
+		],
+		"Fastly-Io-Info": [
+			"ifsz=262111 idim=1080x810 ifmt=jpeg ofsz=161831 odim=1080x810 ofmt=jpeg"
+		],
+		"Fastly-Stats": [
+			"io=1"
+		],
+		"X-Timer": [
+			"S1684296970.715026,VS0,VE2"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/stat.ameba.jp/user_images/20230305/21/angerme-amerika/9a/91/j/o1080081015251550898.jpg"
+}

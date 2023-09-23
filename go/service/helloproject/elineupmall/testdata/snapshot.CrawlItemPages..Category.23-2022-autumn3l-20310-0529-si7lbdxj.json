@@ -1,0 +1,58 @@
+{
+  "value": {
+    "id": 21474836487,
+    "crawled_at": "2020-10-30T00:00:00+09:00",
+    "last_error_message": "",
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "permalink": "https://www.elineupmall.com/c671/c181/c197/c199/23-2022-autumn3l-20310-0529-si7lbdxj/",
+    "name": "譜久村聖(モーニング娘。'23)「ハロプロビジュアルフォトブック 2022 Autumn」パート3　L判 2枚　［0310-0529］",
+    "description": "■Shop販売写真■［WebStore販売期間］2023年3月10日(金)18:00～2023年5月29日(月)23:59 ※期間内でも、定数に達した場合は終了いたします。あらかじめご注意下さい。＜発送予定日＞クレジットカード決済は注文完了メール到着後、コンビニ・Pay-easy・Paypal決済はご入金通知後、10営業日(土日祝除く)以内※ご注文に予約商品が含まれる場合は、発送予定日が最も遅い商品に合わせてまとめて発送いたします。",
+    "supplier": "ハロー！プロジェクトオフィシャルショップ Web Store",
+    "price": 320,
+    "images": [
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/213/b282751cdc4802ea85570895186443bf.jpg"
+      }
+    ],
+    "category": "PhotoBookOther",
+    "order_start_at": "2023-03-10T00:00:00+09:00",
+    "order_end_at": "2023-05-29T00:00:00+09:00",
+    "edges": {
+      "tagged_artists": [
+        {
+          "id": 1,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "last_error_message": "",
+          "created_at": "2019-11-28T03:01:24Z",
+          "updated_at": "2023-04-14T01:30:13Z",
+          "key": "morningmusume",
+          "name": "モーニング娘。'23",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/a2b54229290db6b0794c5b21fca2320fae829f58.jpg",
+          "edges": {}
+        }
+      ],
+      "tagged_members": [
+        {
+          "id": 8589934592,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "error_count": 1,
+          "last_error_message": "not crawled",
+          "created_at": "2019-11-28T03:01:24Z",
+          "updated_at": "2023-04-14T01:31:12Z",
+          "key": "mizuki_fukumura",
+          "artist_key": "morningmusume",
+          "name": "譜久村聖",
+          "name_kana": "フクムラミズキ",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/e0128ade28fc7dea22fbe37f6eaaf98baec0aa64.jpg",
+          "date_of_birth": "1996-10-29T15:00:00Z",
+          "blood_type": "O",
+          "hometown": "東京都",
+          "join_at": "2011-01-01T15:00:00Z",
+          "artist_id": 1,
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

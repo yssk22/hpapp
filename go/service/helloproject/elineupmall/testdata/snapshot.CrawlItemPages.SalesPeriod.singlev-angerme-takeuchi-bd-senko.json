@@ -1,0 +1,59 @@
+{
+  "value": {
+    "id": 21474836483,
+    "crawled_at": "2020-10-30T00:00:00+09:00",
+    "last_error_message": "",
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "permalink": "https://www.elineupmall.com/c671/singlev-angerme-takeuchi-bd-senko/",
+    "name": "【先行受注】アンジュルム シングルV「行かなくちゃ」Blu-ray Disc ※特典あり",
+    "description": "アンジュルム シングルV「行かなくちゃ」BDの発売が決定しました！6月21日(水)に行われる、アンジュルム竹内朱莉卒業公演 横浜アリーナ会場での先行販売に先駆けて、当サイト、e-LineUP!Mall内 アップフロントワークス Web Storeで先行受注販売を行います！  e-LineUP!Mall内 アップフロントワークス Web Store限定特典として、竹内朱莉ソロL版生写真2枚付き！！ ≪6月21日(水)アンジュルム竹内朱莉卒業公演 横浜アリーナ会場先行・e-LineUP!Mall内アップフロントワークス Web Store 先行受注商品≫先行受注期間:2023年5月11日(木)18:00 ～ 2023年5月31日(水)23:59商品発送予定日:2023年6月21日(水)以降順次発送予定＊6月21日(水)に横浜アリーナで行われる、アンジュルム竹内朱莉卒業公演『ANGERME CONCERT 2023 BIG LOVE 竹内朱莉 FINAL LIVE「アンジュルムより愛をこめて」』会場 グッズ売場 先行商品です。会場では特典は付きません。＊一般発売日は7月12日を予定しております。アンジュルム竹内朱莉 ソロ曲「行かなくちゃ」Music Videoに加えて、「アイノケダモノ feat.竹内朱莉 Ver.」・「同窓生 feat.竹内朱莉 Ver.」・「行かなくちゃ」メイキング映像を収録したBlu-ray Discです。[収録予定曲]「行かなくちゃ」Music Videoアイノケダモノ feat.竹内朱莉 Ver.同窓生 feat.竹内朱莉 Ver.「行かなくちゃ」メイキング映像収録時間:本編:約14分＋特典映像:約10分(予定)※こちらの商品はBlu-ray Discです。※収録内容は予定となります。変更になる場合もございます。予め、ご了承下さい。※こちらの商品は予約商品でございます。   ご入金いただいてから発送までにお時間いただいてしまいますことを予めご了承下さい。※複数商品を一度にご注文した中で、予約商品(未発売商品)がある場合は発送予定日が最も遅い商品に合わせてまとめて発送致します。\u003c↓↓↓e-LineUP!Mall内 アップフロントワークス Web Store　その他のアンジュルム/スマイレージ商品はコチラ↓↓↓＞DVD「ANGERME 1st Overseas Live Tour in Paris」DVD「OTODAMA SEA STUDIO 2017 夏だ！海だ！アンジュルムだ！！」アンジュルム イベントV「限りあるMoment／ミラー・ミラー」アンジュルム イベントV「愛さえあればなんにもいらない／ナミダイロノケツイ／魔女っ子メグちゃん」スマイレージ ベストアルバム完全版①発売記念スペシャルコンサートスマイレージ イベントV「地球は今日も愛を育む」その他商品はコチラからご覧ください。",
+    "supplier": "アップフロントワークス Web Store",
+    "price": 2000,
+    "images": [
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/218/97ff4194b51c6bd8b00b5f5371360304.jpg"
+      }
+    ],
+    "category": "Other",
+    "order_start_at": "2023-05-11T00:00:00+09:00",
+    "order_end_at": "2023-05-31T00:00:00+09:00",
+    "edges": {
+      "tagged_artists": [
+        {
+          "id": 2,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "last_error_message": "",
+          "created_at": "2019-11-28T03:01:37Z",
+          "updated_at": "2023-04-14T01:30:24Z",
+          "key": "angerme",
+          "name": "アンジュルム",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/9cfe6de40ddf271dbcf8d86e025ca8bad7cc85b3.jpg",
+          "index": 1,
+          "edges": {}
+        }
+      ],
+      "tagged_members": [
+        {
+          "id": 8589934606,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "error_count": 1,
+          "last_error_message": "not crawled",
+          "created_at": "2019-11-28T03:01:38Z",
+          "updated_at": "2023-04-14T01:31:12Z",
+          "key": "akari_takeuchi",
+          "artist_key": "angerme",
+          "name": "竹内朱莉",
+          "name_kana": "タケウチアカリ",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/11fa80e37b00f1a1d665f766fcf43a0ef639dd13.jpg",
+          "date_of_birth": "1997-11-22T15:00:00Z",
+          "blood_type": "O",
+          "hometown": "埼玉県",
+          "join_at": "2011-08-13T15:00:00Z",
+          "artist_id": 2,
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

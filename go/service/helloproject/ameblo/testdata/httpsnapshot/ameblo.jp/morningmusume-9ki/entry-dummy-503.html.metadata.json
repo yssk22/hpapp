@@ -1,0 +1,27 @@
+{
+  "status_code": 503,
+  "status": "503 Service Unavailable",
+  "header": {
+    "Accept-Ch": ["Sec-CH-UA-Full"],
+    "Accept-Ranges": ["bytes"],
+    "Content-Length": ["11074"],
+    "Content-Security-Policy": ["upgrade-insecure-requests"],
+    "Content-Type": ["text/html; charset=utf-8"],
+    "Date": ["Tue, 14 Mar 2023 17:05:48 GMT"],
+    "Origin-Trial": [
+      "AgkzE0SdPqccfaG9xo/nbroJVd9BqLU0uZCCQbV46yVUMHh4r8RDCAWLKP8BgMPiXpQLpE/b2F9w+bJKwTj9Zg8AAAB1eyJvcmlnaW4iOiJodHRwczovL2FtZWJsby5qcDo0NDMiLCJmZWF0dXJlIjoiU2VuZEZ1bGxVc2VyQWdlbnRBZnRlclJlZHVjdGlvbiIsImV4cGlyeSI6MTY4NDg4NjM5OSwiaXNTdWJkb21haW4iOnRydWV9"
+    ],
+    "Permissions-Policy": ["ch-ua-full=*"],
+    "Retry-After": ["0"],
+    "Server-Timing": ["ERROR, fastly;desc=\"Edge time\";dur=0"],
+    "Set-Cookie": [
+      "platform=b2YSh6; Domain=ameblo.jp; Path=/; Expires=Tue, 14 Mar 2023 18:05:48 GMT; Secure; HttpOnly;"
+    ],
+    "Timing-Allow-Origin": ["*"],
+    "X-Content-Type-Options": ["nosniff"],
+    "X-Loading": ["?1"],
+    "X-Timer": ["S1678813549.596616,VS0,VE0"],
+    "X-User-Agent": ["desktop"]
+  },
+  "content_path": "testdata/httpsnapshot/ameblo.jp/morningmusume-9ki/entry-dummy-503.html"
+}

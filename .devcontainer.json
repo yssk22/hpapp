@@ -1,0 +1,32 @@
+{
+    "dockerFile": "containers/Dockerfile",
+    "runArgs": [
+        "--shm-size=4g",
+        "--volume=/var/run/docker.sock:/var/run/docker.sock"
+    ],
+    "forwardPorts": [
+        3306,
+        19000,
+        19002,
+        8080
+    ],
+    "onCreateCommand": ["/bin/bash", "/workspaces/sites/containers/onCreateCommand.sh"],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+				"GitHub.copilot",
+				"GitHub.vscode-pull-request-github",
+				"eamodio.gitlens",
+				"golang.go",
+				"esbenp.prettier-vscode",
+				"expo.vscode-expo-tools",
+				"mhutchie.git-graph",
+				"oderwat.indent-rainbow",
+				"Orta.vscode-jest",
+				"bierner.markdown-mermaid",
+				"meta.relay",
+				"Gruntfuggly.todo-tree"
+			]
+        }
+    },
+}

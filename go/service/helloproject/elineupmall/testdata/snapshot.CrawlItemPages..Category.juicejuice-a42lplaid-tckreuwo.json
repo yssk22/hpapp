@@ -1,0 +1,60 @@
+{
+  "value": {
+    "id": 21474836501,
+    "crawled_at": "2020-10-30T00:00:00+09:00",
+    "last_error_message": "",
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "permalink": "https://www.elineupmall.com/c671/c181/c197/c201/juicejuice-a42lplaid-tckreuwo/",
+    "name": "入江里咲(Juice=Juice)『ソロA4クリアファイル+2L写真＜Plaid＞』",
+    "description": "ショップ定番商品「A4クリアファイル」が新ビジュアル・新デザインで発売になります。2L写真付きです。[仕様]A4サイズクリアファイル2L写真付き＜発送予定日＞クレジットカード決済は注文完了メール到着後、コンビニ・Pay-easy・Paypal決済はご入金通知後、10営業日(土日祝除く)以内※ご注文に予約商品が含まれる場合は、発送予定日が最も遅い商品に合わせてまとめて発送いたします。",
+    "supplier": "ハロー！プロジェクトオフィシャルショップ Web Store",
+    "price": 750,
+    "images": [
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/218/7bc0c2c917b24adb06a7b99c205e64ce.jpg"
+      },
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/219/ca193793ddd798ef07f513dbf5dc989a.jpg"
+      }
+    ],
+    "category": "ClearFile",
+    "edges": {
+      "tagged_artists": [
+        {
+          "id": 3,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "last_error_message": "",
+          "created_at": "2019-11-28T03:01:46Z",
+          "updated_at": "2023-04-14T01:30:35Z",
+          "key": "juicejuice",
+          "name": "Juice=Juice",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/e8c5fc90c206cb0c0496600d85534cb7a2eaa6b8.jpg",
+          "index": 2,
+          "edges": {}
+        }
+      ],
+      "tagged_members": [
+        {
+          "id": 8589934673,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "error_count": 1,
+          "last_error_message": "not crawled",
+          "created_at": "2021-07-07T11:03:22Z",
+          "updated_at": "2023-04-14T01:31:12Z",
+          "key": "risa_irie",
+          "artist_key": "juicejuice",
+          "name": "入江里咲",
+          "name_kana": "イリエリサ",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/6bac4ab49dff3a3f43b6bffebc62e9bbcaca583b.jpg",
+          "date_of_birth": "2005-10-17T15:00:00Z",
+          "blood_type": "A",
+          "hometown": "千葉県",
+          "join_at": "2021-07-06T15:00:00Z",
+          "artist_id": 3,
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

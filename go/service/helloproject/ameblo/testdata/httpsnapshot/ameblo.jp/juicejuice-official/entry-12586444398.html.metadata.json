@@ -1,0 +1,68 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Accept-Ch": [
+			"Sec-CH-UA-Full"
+		],
+		"Accept-Ranges": [
+			"bytes"
+		],
+		"Age": [
+			"0"
+		],
+		"Cache-Control": [
+			"max-age=5"
+		],
+		"Content-Security-Policy": [
+			"upgrade-insecure-requests"
+		],
+		"Content-Type": [
+			"text/html; charset=utf-8"
+		],
+		"Date": [
+			"Wed, 17 May 2023 04:02:56 GMT"
+		],
+		"Etag": [
+			"W/\"eea8-TsQcdigzP5ynGEU7Z5C53Fa61UQ\""
+		],
+		"Origin-Trial": [
+			"AgkzE0SdPqccfaG9xo/nbroJVd9BqLU0uZCCQbV46yVUMHh4r8RDCAWLKP8BgMPiXpQLpE/b2F9w+bJKwTj9Zg8AAAB1eyJvcmlnaW4iOiJodHRwczovL2FtZWJsby5qcDo0NDMiLCJmZWF0dXJlIjoiU2VuZEZ1bGxVc2VyQWdlbnRBZnRlclJlZHVjdGlvbiIsImV4cGlyeSI6MTY4NDg4NjM5OSwiaXNTdWJkb21haW4iOnRydWV9"
+		],
+		"Permissions-Policy": [
+			"ch-ua-full=*"
+		],
+		"Server-Timing": [
+			"data; dur=94, rendering; dur=11, total; dur=107.83529399999999; desc=\"Total Response Time\"",
+			"MISS-CLUSTER, fastly;desc=\"Edge time\";dur=119"
+		],
+		"Set-Cookie": [
+			"platform=b2YSh6; Domain=ameblo.jp; Path=/; Expires=Wed, 17 May 2023 05:02:56 GMT; Secure; HttpOnly;"
+		],
+		"Timing-Allow-Origin": [
+			"*"
+		],
+		"Vary": [
+			"Origin,Accept-Encoding,X-User-Agent,X-Loading"
+		],
+		"X-Cdn-Ttl": [
+			"86400.000"
+		],
+		"X-Content-Type-Options": [
+			"nosniff"
+		],
+		"X-Is-Default-Ttl": [
+			"false"
+		],
+		"X-Loading": [
+			"?0"
+		],
+		"X-Timer": [
+			"S1684296177.699748,VS0,VE119"
+		],
+		"X-User-Agent": [
+			"desktop"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/ameblo.jp/juicejuice-official/entry-12586444398.html"
+}

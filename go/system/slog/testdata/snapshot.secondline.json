@@ -1,0 +1,14 @@
+{
+  "value": {
+    "name": "unknown",
+    "source_path": "/workspaces/sites/oss/hpapp.yssk22.dev/go/system/slog/slog_test.go",
+    "source_line": 52,
+    "severity": "INFO",
+    "timestamp": "1996-10-30T00:00:00+09:00",
+    "message": "test2",
+    "attributes": {
+      "foo1": "bar1",
+      "foo2": "bar2"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "value": {
+    "id": 21474836490,
+    "crawled_at": "2020-10-30T00:00:00+09:00",
+    "last_error_message": "",
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "permalink": "https://www.elineupmall.com/c182/c2342/e-lineupmall23-25th-anniversary-concert-tour-glad-quarter-century-dvdl6-oq2d9xnw/",
+    "name": "【e-LineUP!Mall限定】モーニング娘。'23  25th ANNIVERSARY CONCERT TOUR ～glad quarter-century～ DVDマガジンオフショットL判生写真6枚セット",
+    "description": "Hello! Project 2023 Spring CITY CIRCUIT 「モーニング娘。'23  25th ANNIVERSARY CONCERT TOUR ～glad quarter-century～」※通信販売受付期間:2023年3月19日(日)13:30～2023年7月11日(火)23:59※発送予定日:決済完了後(コンビニ・Pay-easy・Paypal決済はご入金通知後)、10営業日(土日祝除く)以内※複数商品を一度にご注文した中で、予約商品(未発売商品)がある場合は発送予定日が最も遅い商品に合わせてまとめて発送致します。※商品画像は、画像の表示環境により実際の商品の色とは多少異なる場合がございます。予めご了承ください。",
+    "supplier": "UF Goods Land",
+    "price": 1080,
+    "images": [
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/213/513cfbd8192582c11085e4899da63de8.jpg"
+      }
+    ],
+    "category": "DVDMagazineOther",
+    "order_start_at": "2023-03-19T00:00:00+09:00",
+    "order_end_at": "2023-07-11T00:00:00+09:00",
+    "edges": {
+      "tagged_artists": [
+        {
+          "id": 1,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "last_error_message": "",
+          "created_at": "2019-11-28T03:01:24Z",
+          "updated_at": "2023-04-14T01:30:13Z",
+          "key": "morningmusume",
+          "name": "モーニング娘。'23",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/a2b54229290db6b0794c5b21fca2320fae829f58.jpg",
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "value": {
+    "Field1": "Foo",
+    "ExcludedField": "Bar"
+  }
+}

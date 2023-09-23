@@ -1,0 +1,31 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Cache-Control": [
+			"max-age=900"
+		],
+		"Content-Language": [
+			"en-US"
+		],
+		"Content-Type": [
+			"application/xml;charset=UTF-8"
+		],
+		"Date": [
+			"Tue, 16 May 2023 12:12:53 GMT"
+		],
+		"Server": [
+			"Apache"
+		],
+		"Surrogate-Control": [
+			"max-age=900"
+		],
+		"Surrogate-Key": [
+			"services/system services/system/api blogger/morningmusume-10ki blog-info/morningmusume-10ki entry-list/morningmusume-10ki"
+		],
+		"Vary": [
+			"Accept-Encoding"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/rssblog.ameba.jp/morningmusume-10ki/rss20.xml"
+}

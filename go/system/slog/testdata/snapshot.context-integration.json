@@ -1,0 +1,20 @@
+{
+  "value": {
+    "name": "unknown",
+    "source_path": "/workspaces/sites/oss/hpapp.yssk22.dev/go/system/slog/slog_test.go",
+    "source_line": 26,
+    "severity": "INFO",
+    "timestamp": "2023-05-19T02:57:21.189258829Z",
+    "message": "test1",
+    "context_instance": {
+      "id": "TBD",
+      "timestamp": "2023-05-19T02:57:21.189228943Z",
+      "attributes": {
+        "foo": "bar"
+      }
+    },
+    "attributes": {
+      "foo1": "bar1"
+    }
+  }
+}

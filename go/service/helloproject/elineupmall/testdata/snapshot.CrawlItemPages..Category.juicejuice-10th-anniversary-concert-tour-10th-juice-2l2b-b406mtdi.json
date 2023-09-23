@@ -1,0 +1,45 @@
+{
+  "value": {
+    "id": 21474836500,
+    "crawled_at": "2020-10-30T00:00:00+09:00",
+    "last_error_message": "",
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "permalink": "https://www.elineupmall.com/c182/c2341/juicejuice-10th-anniversary-concert-tour-10th-juice-2l2b-b406mtdi/",
+    "name": "Juice＝Juice 10th ANNIVERSARY CONCERT TOUR ～10th Juice～ ソロ2L判生写真2枚セットB【入江里咲】",
+    "description": "Hello! Project 2023 Spring CITY CIRCUIT 「Juice＝Juice 10th ANNIVERSARY CONCERT TOUR ～10th Juice～」※通信販売受付期間:2023年4月30日(日)14:30～2023年7月11日(火)23:59※発送予定日:決済完了後(コンビニ・Pay-easy・Paypal決済はご入金通知後)、10営業日(土日祝除く)以内※複数商品を一度にご注文した中で、予約商品(未発売商品)がある場合は発送予定日が最も遅い商品に合わせてまとめて発送致します。※商品画像は、画像の表示環境により実際の商品の色とは多少異なる場合がございます。予めご了承ください。",
+    "supplier": "UF Goods Land",
+    "price": 600,
+    "images": [
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/217/ba8de95f7451cc81399c8cac402f6596.jpg"
+      }
+    ],
+    "category": "Photo2L",
+    "order_start_at": "2023-04-30T00:00:00+09:00",
+    "order_end_at": "2023-07-11T00:00:00+09:00",
+    "edges": {
+      "tagged_members": [
+        {
+          "id": 8589934673,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "error_count": 1,
+          "last_error_message": "not crawled",
+          "created_at": "2021-07-07T11:03:22Z",
+          "updated_at": "2023-04-14T01:31:12Z",
+          "key": "risa_irie",
+          "artist_key": "juicejuice",
+          "name": "入江里咲",
+          "name_kana": "イリエリサ",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/6bac4ab49dff3a3f43b6bffebc62e9bbcaca583b.jpg",
+          "date_of_birth": "2005-10-17T15:00:00Z",
+          "blood_type": "A",
+          "hometown": "千葉県",
+          "join_at": "2021-07-06T15:00:00Z",
+          "artist_id": 3,
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Accept-Ranges": [
+			"bytes"
+		],
+		"Alt-Svc": [
+			"h3=\":443\"; ma=86400"
+		],
+		"Cache-Control": [
+			"max-age=1209600, no-transform"
+		],
+		"Content-Digest": [
+			"adler32=359852881"
+		],
+		"Content-Length": [
+			"158262"
+		],
+		"Content-Type": [
+			"image/jpeg"
+		],
+		"Cross-Origin-Resource-Policy": [
+			"same-origin"
+		],
+		"Date": [
+			"Sun, 14 May 2023 15:35:24 GMT"
+		],
+		"Last-Modified": [
+			"Mon, 03 Apr 2023 08:49:18 GMT"
+		],
+		"Timing-Allow-Origin": [
+			"*"
+		],
+		"X-Fbtype": [
+			"29350"
+		],
+		"X-Frame-Options": [
+			"DENY"
+		],
+		"X-Needle-Checksum": [
+			"1960377239"
+		],
+		"X-Storage-Error-Category": [
+			"dfs:none;sc_p:200:WSE_NOT_SET"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/instagram.fbho3-2.fna.fbcdn.net/37553bdb2d6fa0cfd7f5a9f7bf694ee862a5023a8ef18eb2f626cc8a953d24b0..webp"
+}

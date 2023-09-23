@@ -1,0 +1,36 @@
+{
+  "settings": {
+    "go.lintOnSave": "package",
+    "go.useLanguageServer": true,
+    "[go]": {
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      },
+      "editor.snippetSuggestions": "none"
+    },
+    "[go.mod]": {
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      }
+    },
+    "gopls": {
+      // Add parameter placeholders when completing a function.
+      "usePlaceholders": true,
+      // If true, enable additional analyses with staticcheck.
+      // Warning: This will significantly increase memory usage.
+      "staticcheck": false
+    },
+    "go.alternateTools": {},
+    "git.inputValidationLength": 120,
+    "git.ignoreLimitWarning": true,
+    "githubPullRequests.ignoredPullRequestBranches": ["master", "develop"],
+    "jest.disabledWorkspaceFolders": ["go", "containers", "expo"]
+  },
+  "folders": [
+    {
+      "path": "."
+    }
+  ]
+}
