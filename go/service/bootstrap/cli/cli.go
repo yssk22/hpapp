@@ -6,16 +6,16 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"hpapp.yssk22.dev/go/service/auth/appuser"
-	"hpapp.yssk22.dev/go/service/auth/client"
-	"hpapp.yssk22.dev/go/service/bootstrap/config"
-	"hpapp.yssk22.dev/go/service/bootstrap/http/task"
-	"hpapp.yssk22.dev/go/system/database"
-	"hpapp.yssk22.dev/go/system/environment"
-	"hpapp.yssk22.dev/go/system/http/s2s"
-	"hpapp.yssk22.dev/go/system/settings"
+	"github.com/yssk22/hpapp/go/service/auth/appuser"
+	"github.com/yssk22/hpapp/go/service/auth/client"
+	"github.com/yssk22/hpapp/go/service/bootstrap/config"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/task"
+	"github.com/yssk22/hpapp/go/system/database"
+	"github.com/yssk22/hpapp/go/system/environment"
+	"github.com/yssk22/hpapp/go/system/http/s2s"
+	"github.com/yssk22/hpapp/go/system/settings"
 
-	_ "hpapp.yssk22.dev/go/service/ent/runtime"
+	_ "github.com/yssk22/hpapp/go/service/ent/runtime"
 )
 
 // RunCLI runs a cmmand

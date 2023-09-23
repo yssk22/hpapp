@@ -6,15 +6,15 @@ import (
 	"os"
 	"path/filepath"
 
-	"hpapp.yssk22.dev/go/foundation/kvs"
-	"hpapp.yssk22.dev/go/system/database"
-	"hpapp.yssk22.dev/go/system/environment"
-	"hpapp.yssk22.dev/go/system/http/external"
-	"hpapp.yssk22.dev/go/system/http/s2s"
-	"hpapp.yssk22.dev/go/system/push"
-	"hpapp.yssk22.dev/go/system/settings"
-	"hpapp.yssk22.dev/go/system/slog"
-	"hpapp.yssk22.dev/go/system/storage"
+	"github.com/yssk22/hpapp/go/foundation/kvs"
+	"github.com/yssk22/hpapp/go/system/database"
+	"github.com/yssk22/hpapp/go/system/environment"
+	"github.com/yssk22/hpapp/go/system/http/external"
+	"github.com/yssk22/hpapp/go/system/http/s2s"
+	"github.com/yssk22/hpapp/go/system/push"
+	"github.com/yssk22/hpapp/go/system/settings"
+	"github.com/yssk22/hpapp/go/system/slog"
+	"github.com/yssk22/hpapp/go/system/storage"
 )
 
 type devcontainer struct {

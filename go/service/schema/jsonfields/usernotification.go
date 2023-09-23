@@ -3,8 +3,8 @@ package jsonfields
 import (
 	"encoding/json"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/system/push"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/system/push"
 )
 
 type ReactNavigationPush struct {

@@ -8,9 +8,9 @@ import (
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"hpapp.yssk22.dev/go/foundation/errors"
-	ccontext "hpapp.yssk22.dev/go/system/context"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/foundation/errors"
+	ccontext "github.com/yssk22/hpapp/go/system/context"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 // WithGraphQLSchema sets up the graphql endoints under the given path

@@ -5,8 +5,8 @@ import (
 	"entgo.io/ent/dialect/entsql"
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
-	"hpapp.yssk22.dev/go/service/schema/mixin"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/service/schema/mixin"
 )
 
 // HPAmebloPost holds the schema definition for the HPAmebloPost entity.

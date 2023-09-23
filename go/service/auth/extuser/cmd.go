@@ -5,8 +5,8 @@ import (
 	"sort"
 
 	"github.com/spf13/cobra"
-	"hpapp.yssk22.dev/go/foundation/cli"
-	"hpapp.yssk22.dev/go/foundation/object"
+	"github.com/yssk22/hpapp/go/foundation/cli"
+	"github.com/yssk22/hpapp/go/foundation/object"
 )
 
 const AuthFilePath = "./data/localauth.json"

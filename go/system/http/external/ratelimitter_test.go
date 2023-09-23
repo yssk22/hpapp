@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/yssk22/hpapp/go/foundation/assert"
 	"golang.org/x/time/rate"
-	"hpapp.yssk22.dev/go/foundation/assert"
 )
 
 func TestRateLimitter(t *testing.T) {

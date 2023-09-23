@@ -1,13 +1,13 @@
-type Query @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.Query") {
+type Query @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.Query") {
   node(id: ID!): Node
   queryExample: TypeExample
 }
 
-interface Node @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.Node") {
+interface Node @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.Node") {
   id: ID!
 }
 
-type TypeExample @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.TypeExample") {
+type TypeExample @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.TypeExample") {
   id: ID!
   fieldString: String!
   fieldNullableSrinrg: String
@@ -37,36 +37,36 @@ type TypeExample @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/tes
   methodWithResult(complexQueryParams: ComplexResultInput): ComplexResult
 }
 
-scalar YesNo @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.YesNo")
+scalar YesNo @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.YesNo")
 
-enum MyEnum @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.MyEnum") {
+enum MyEnum @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.MyEnum") {
   value_a
   value_b
 }
 
-type ComplexField @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.ComplexField") {
+type ComplexField @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.ComplexField") {
   fieldString: String!
   fieldNullableSrinrg: String
 }
 
-scalar ComplexFieldWithMarshaler @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.ComplexFieldWithMarshaler")
+scalar ComplexFieldWithMarshaler @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.ComplexFieldWithMarshaler")
 
-interface ComplexInterface @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.ComplexInterface") {
+interface ComplexInterface @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.ComplexInterface") {
   fieldLikeMethod: [String!]
   methodToCall(aa: String!): ComplexField!
 }
 
-type EmbeddedField @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.EmbeddedField") {
+type EmbeddedField @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.EmbeddedField") {
   embeddedFieldString: String!
   embeddedFieldNullableSrinrg: String
 }
 
-type ComplexResult @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.ComplexResult") {
+type ComplexResult @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.ComplexResult") {
   fieldString: String!
   fieldNullableSrinrg: String
 }
 
-input ComplexParamsInput @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.ComplexParams") {
+input ComplexParamsInput @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.ComplexParams") {
   fieldString: String!
   fieldNullableSrinrg: String
   fieldUserDefinedScalar: YesNo!
@@ -76,12 +76,12 @@ input ComplexParamsInput @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/
   fieldStruct: NestedComplexParamsInput!
 }
 
-input ComplexResultInput @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.ComplexResult") {
+input ComplexResultInput @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.ComplexResult") {
   fieldString: String!
   fieldNullableSrinrg: String
 }
 
-input NestedComplexParamsInput @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.NestedComplexParams") {
+input NestedComplexParamsInput @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.NestedComplexParams") {
   field: String!
   fieldStruct: DeepNestedComplexParamsInput!
   fieldUserDefinedScalar: YesNo!
@@ -90,15 +90,15 @@ input NestedComplexParamsInput @goModel(model: "hpapp.yssk22.dev/go/devtool/gene
   fieldNullableEnum: MyEnum
 }
 
-input DeepNestedComplexParamsInput @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.DeepNestedComplexParams") {
+input DeepNestedComplexParamsInput @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.DeepNestedComplexParams") {
   field: String!
 }
 
-type Mutation @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.Mutation") {
+type Mutation @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.Mutation") {
   exampleMutation: MutationExample
 }
 
-type MutationExample @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.MutationExample") {
+type MutationExample @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.MutationExample") {
   methodWithContext(complexQueryParams: ComplexParamsInput): ComplexResult
   methodWithoutContext(complexQueryParams: ComplexParamsInput): ComplexResult
   methodWithContextAlias(complexQueryParams: ComplexParamsInput): ComplexResult

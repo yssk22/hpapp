@@ -1,6 +1,6 @@
 package jsonfields
 
-import "hpapp.yssk22.dev/go/service/schema/enums"
+import "github.com/yssk22/hpapp/go/service/schema/enums"
 
 type Media struct {
 	Url    string           `json:"url,omitempty"`     // original url

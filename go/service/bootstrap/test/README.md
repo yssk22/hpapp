@@ -2,7 +2,7 @@
 
 ## アサーション
 
-テストを実装する際は [hellproject.app/go/foundation/assert](/hpapp.yssk22.dev/gofoundation/assert/) パッケージを用いてアサーションを行います。よくある Boolean アサーション、Nil アサーション、等価アサーションに加えて、スナップショットアサーションを使うことができます。
+テストを実装する際は [hellproject.app/go/foundation/assert](/github.com/yssk22/hpapp/gofoundation/assert/) パッケージを用いてアサーションを行います。よくある Boolean アサーション、Nil アサーション、等価アサーションに加えて、スナップショットアサーションを使うことができます。
 
 ### スナップショットアサーション
 
@@ -48,12 +48,12 @@ TODO: Fail メッセージ
 
 ## サービステスト実装時の外部リソースの利用
 
-service ディレクトリ以下のテスト実装では、 `hpapp.yssk22.dev/goservice/test` パッケージを使うことでテスト用に構成された外部リソース(データベース、ログ出力ストリーム、設定用 KVS 等)を使ったインテグレーションテストを実装することができます。
+service ディレクトリ以下のテスト実装では、 `github.com/yssk22/hpapp/goservice/test` パッケージを使うことでテスト用に構成された外部リソース(データベース、ログ出力ストリーム、設定用 KVS 等)を使ったインテグレーションテストを実装することができます。
 
 ```go
 import (
     "testing"
-    "hpapp.yssk22.dev/goservice/test"
+    "github.com/yssk22/hpapp/goservice/test"
 )
 
 func TestServiceIntegration(t *testing.T) {

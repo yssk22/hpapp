@@ -9,10 +9,10 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"hpapp.yssk22.dev/go/service/ent/hpevent"
-	"hpapp.yssk22.dev/go/service/ent/hpfceventticket"
-	"hpapp.yssk22.dev/go/service/ent/user"
-	"hpapp.yssk22.dev/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/service/ent/hpevent"
+	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
+	"github.com/yssk22/hpapp/go/service/ent/user"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
 )
 
 // HPFCEventTicket is the model entity for the HPFCEventTicket schema.

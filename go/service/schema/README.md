@@ -1,6 +1,6 @@
 # データベース
 
-hpapp ではデータベースに RDB を採用しています。 `hpapp.yssk22.dev/go/system/database` パッケージはデータベース接続のみを提供し、実際のクエリは ent フレームワークによって `hpapp.yssk22.dev/go/service/ent` パッケージに実装されています。このパッケージは ent フレームワークにより `hpapp.yssk22.dev/go/service/schema` から自動生成されます。
+hpapp ではデータベースに RDB を採用しています。 `github.com/yssk22/hpapp/go/system/database` パッケージはデータベース接続のみを提供し、実際のクエリは ent フレームワークによって `github.com/yssk22/hpapp/go/service/ent` パッケージに実装されています。このパッケージは ent フレームワークにより `github.com/yssk22/hpapp/go/service/schema` から自動生成されます。
 
 ## ent フレームワークを利用したデータアクセス
 

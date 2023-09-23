@@ -8,8 +8,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/ent/hpameblopost"
-	"hpapp.yssk22.dev/go/service/ent/predicate"
+	"github.com/yssk22/hpapp/go/service/ent/hpameblopost"
+	"github.com/yssk22/hpapp/go/service/ent/predicate"
 )
 
 // HPAmebloPostDelete is the builder for deleting a HPAmebloPost entity.

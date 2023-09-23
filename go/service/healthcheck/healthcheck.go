@@ -5,10 +5,10 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"hpapp.yssk22.dev/go/service/bootstrap/config"
-	"hpapp.yssk22.dev/go/service/bootstrap/http/middleware"
-	"hpapp.yssk22.dev/go/service/bootstrap/http/task"
-	"hpapp.yssk22.dev/go/system/database"
+	"github.com/yssk22/hpapp/go/service/bootstrap/config"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/middleware"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/task"
+	"github.com/yssk22/hpapp/go/system/database"
 )
 
 // NewService returns a new Service for health check

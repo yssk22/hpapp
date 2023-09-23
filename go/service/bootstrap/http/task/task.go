@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"strings"
 
-	"hpapp.yssk22.dev/go/service/errors"
-	"hpapp.yssk22.dev/go/system/http/s2s"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/service/errors"
+	"github.com/yssk22/hpapp/go/system/http/s2s"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 type TaskPolicy string

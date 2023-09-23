@@ -4,11 +4,11 @@ import (
 	"context"
 	"testing"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/service/auth/appuser"
-	"hpapp.yssk22.dev/go/service/auth/client"
-	"hpapp.yssk22.dev/go/service/bootstrap/test"
-	"hpapp.yssk22.dev/go/service/entutil"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/service/auth/appuser"
+	"github.com/yssk22/hpapp/go/service/auth/client"
+	"github.com/yssk22/hpapp/go/service/bootstrap/test"
+	"github.com/yssk22/hpapp/go/service/entutil"
 )
 
 func TestHPSortHistory(t *testing.T) {

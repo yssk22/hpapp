@@ -6,7 +6,7 @@ import (
 
 	"github.com/dghubble/oauth1"
 	"github.com/dghubble/oauth1/twitter"
-	"hpapp.yssk22.dev/go/system/settings"
+	"github.com/yssk22/hpapp/go/system/settings"
 )
 
 var (

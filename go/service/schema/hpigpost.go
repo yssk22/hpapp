@@ -7,8 +7,8 @@ import (
 	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
-	"hpapp.yssk22.dev/go/service/schema/mixin"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/service/schema/mixin"
 )
 
 type HPIgPost struct {

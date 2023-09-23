@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"hpapp.yssk22.dev/go/foundation/errors"
+	"github.com/yssk22/hpapp/go/foundation/errors"
 )
 
 var (

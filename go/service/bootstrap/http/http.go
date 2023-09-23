@@ -12,13 +12,13 @@ import (
 
 	"github.com/99designs/gqlgen/graphql"
 
-	"hpapp.yssk22.dev/go/service/auth/appuser/oauth1"
-	"hpapp.yssk22.dev/go/service/bootstrap/config"
-	"hpapp.yssk22.dev/go/service/bootstrap/http/middleware"
-	"hpapp.yssk22.dev/go/service/bootstrap/http/task"
-	"hpapp.yssk22.dev/go/system/environment"
+	"github.com/yssk22/hpapp/go/service/auth/appuser/oauth1"
+	"github.com/yssk22/hpapp/go/service/bootstrap/config"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/middleware"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/task"
+	"github.com/yssk22/hpapp/go/system/environment"
 
-	_ "hpapp.yssk22.dev/go/service/ent/runtime"
+	_ "github.com/yssk22/hpapp/go/service/ent/runtime"
 )
 
 type httpConfig struct {

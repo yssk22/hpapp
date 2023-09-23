@@ -5,8 +5,8 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/yssk22/hpapp/go/devtool/generator/helper"
 	"golang.org/x/tools/go/packages"
-	"hpapp.yssk22.dev/go/devtool/generator/helper"
 )
 
 // Generator is an interface to define how enum is implemented

@@ -5,12 +5,12 @@ package enttest
 import (
 	"context"
 
-	"hpapp.yssk22.dev/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent"
 	// required by schema hooks.
-	_ "hpapp.yssk22.dev/go/service/ent/runtime"
+	_ "github.com/yssk22/hpapp/go/service/ent/runtime"
 
 	"entgo.io/ent/dialect/sql/schema"
-	"hpapp.yssk22.dev/go/service/ent/migrate"
+	"github.com/yssk22/hpapp/go/service/ent/migrate"
 )
 
 type (

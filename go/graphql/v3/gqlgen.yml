@@ -13,7 +13,7 @@ resolver:
   package: resolver
 
 autobind:
-  - hpapp.yssk22.dev/go/service/ent
+  - github.com/yssk22/hpapp/go/service/ent
 
 models:
   ID:
@@ -22,4 +22,4 @@ models:
       - github.com/99designs/gqlgen/graphql.IntID
   Node:
     model:
-      - hpapp.yssk22.dev/go/service/ent.Noder
+      - github.com/yssk22/hpapp/go/service/ent.Noder

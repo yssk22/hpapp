@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"strings"
 
-	"hpapp.yssk22.dev/go/foundation/object"
-	"hpapp.yssk22.dev/go/foundation/stringutil"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/helloproject/feed"
-	"hpapp.yssk22.dev/go/service/schema/enums"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/foundation/object"
+	"github.com/yssk22/hpapp/go/foundation/stringutil"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/helloproject/feed"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 type igPostFeedable struct{}

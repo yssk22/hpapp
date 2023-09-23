@@ -7,8 +7,8 @@ import (
 	"errors"
 	"net/http"
 
-	"hpapp.yssk22.dev/go/service/bootstrap/http/middleware"
-	ccontext "hpapp.yssk22.dev/go/system/context"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/middleware"
+	ccontext "github.com/yssk22/hpapp/go/system/context"
 )
 
 type Client interface {

@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"sync"
 
-	"hpapp.yssk22.dev/go/foundation/kvs"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/foundation/kvs"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 type jsonfile struct {

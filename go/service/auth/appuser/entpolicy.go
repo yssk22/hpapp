@@ -6,9 +6,9 @@ import (
 	"strconv"
 
 	"entgo.io/ent/entql"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/ent/privacy"
-	"hpapp.yssk22.dev/go/service/errors"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/privacy"
+	"github.com/yssk22/hpapp/go/service/errors"
 )
 
 func AlwaysAllow() privacy.QueryMutationRule {

@@ -5,10 +5,10 @@ import (
 	"fmt"
 
 	jwt "github.com/dgrijalva/jwt-go"
-	"hpapp.yssk22.dev/go/foundation/stringutil"
-	"hpapp.yssk22.dev/go/service/errors"
-	"hpapp.yssk22.dev/go/system/clock"
-	"hpapp.yssk22.dev/go/system/settings"
+	"github.com/yssk22/hpapp/go/foundation/stringutil"
+	"github.com/yssk22/hpapp/go/service/errors"
+	"github.com/yssk22/hpapp/go/system/clock"
+	"github.com/yssk22/hpapp/go/system/settings"
 )
 
 const (

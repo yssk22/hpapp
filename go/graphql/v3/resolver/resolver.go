@@ -4,13 +4,13 @@ import (
 	"context"
 	"strconv"
 
-	"hpapp.yssk22.dev/go/foundation/slice"
-	v3 "hpapp.yssk22.dev/go/graphql/v3"
-	"hpapp.yssk22.dev/go/graphql/v3/generated"
-	"hpapp.yssk22.dev/go/graphql/v3/helloproject"
-	"hpapp.yssk22.dev/go/graphql/v3/me"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/entutil"
+	"github.com/yssk22/hpapp/go/foundation/slice"
+	v3 "github.com/yssk22/hpapp/go/graphql/v3"
+	"github.com/yssk22/hpapp/go/graphql/v3/generated"
+	"github.com/yssk22/hpapp/go/graphql/v3/helloproject"
+	"github.com/yssk22/hpapp/go/graphql/v3/me"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/entutil"
 )
 
 type Resolver struct{}

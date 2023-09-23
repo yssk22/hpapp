@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	ccontext "hpapp.yssk22.dev/go/system/context"
+	ccontext "github.com/yssk22/hpapp/go/system/context"
 )
 
 type contextNowKey struct{}

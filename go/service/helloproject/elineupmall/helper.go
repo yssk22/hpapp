@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"hpapp.yssk22.dev/go/foundation/timeutil"
-	"hpapp.yssk22.dev/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/foundation/timeutil"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
 )
 
 type SalesPeriod struct {

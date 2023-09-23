@@ -12,14 +12,14 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/ent/auth"
-	"hpapp.yssk22.dev/go/service/ent/hpfceventticket"
-	"hpapp.yssk22.dev/go/service/ent/hpfollow"
-	"hpapp.yssk22.dev/go/service/ent/hpsorthistory"
-	"hpapp.yssk22.dev/go/service/ent/hpviewhistory"
-	"hpapp.yssk22.dev/go/service/ent/predicate"
-	"hpapp.yssk22.dev/go/service/ent/user"
-	"hpapp.yssk22.dev/go/service/ent/usernotificationsetting"
+	"github.com/yssk22/hpapp/go/service/ent/auth"
+	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
+	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
+	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
+	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/predicate"
+	"github.com/yssk22/hpapp/go/service/ent/user"
+	"github.com/yssk22/hpapp/go/service/ent/usernotificationsetting"
 )
 
 // UserQuery is the builder for querying User entities.

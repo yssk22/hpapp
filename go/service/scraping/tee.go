@@ -4,7 +4,7 @@ import (
 	"context"
 	"io"
 
-	"hpapp.yssk22.dev/go/system/storage"
+	"github.com/yssk22/hpapp/go/system/storage"
 )
 
 // NewStorageTeeScraper returns a new scraper that runs inner scraper while the content is copied to storage.

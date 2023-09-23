@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-	"hpapp.yssk22.dev/go/foundation/stringutil"
+	"github.com/yssk22/hpapp/go/foundation/stringutil"
 )
 
 // HTMLHead is a struct for tags data under <head> in an html content

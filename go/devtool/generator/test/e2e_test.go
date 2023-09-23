@@ -12,12 +12,12 @@ import (
 	"testing"
 	"time"
 
-	"hpapp.yssk22.dev/go/devtool/generator"
-	"hpapp.yssk22.dev/go/devtool/generator/entgo"
-	"hpapp.yssk22.dev/go/devtool/generator/graphql/gqlgen"
-	"hpapp.yssk22.dev/go/devtool/generator/graphql/schema"
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/foundation/netutil"
+	"github.com/yssk22/hpapp/go/devtool/generator"
+	"github.com/yssk22/hpapp/go/devtool/generator/entgo"
+	"github.com/yssk22/hpapp/go/devtool/generator/graphql/gqlgen"
+	"github.com/yssk22/hpapp/go/devtool/generator/graphql/schema"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/netutil"
 )
 
 func TestE2E(t *testing.T) {
@@ -37,11 +37,11 @@ func TestE2E(t *testing.T) {
 		schema.NewGenerator(
 			schema.WithOutputFile("./testdata/e2e/gqlgen/schema.graphql"),
 			schema.WithRoot(
-				"hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.Query",
-				"hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models.Mutation",
+				"github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.Query",
+				"github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models.Mutation",
 			),
 		),
-		gqlgen.NewResolverGenerator("./testdata/e2e/gqlgen/resolver.go", "hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models"),
+		gqlgen.NewResolverGenerator("./testdata/e2e/gqlgen/resolver.go", "github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models"),
 		gqlgen.NewGQLGenGenerator("./testdata/e2e/models/gqlgen.yml"),
 	))
 	assertFileIsCreated("./testdata/e2e/models/entgo_enum.go")

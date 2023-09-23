@@ -8,8 +8,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/ent/hpfceventticket"
-	"hpapp.yssk22.dev/go/service/ent/predicate"
+	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
+	"github.com/yssk22/hpapp/go/service/ent/predicate"
 )
 
 // HPFCEventTicketDelete is the builder for deleting a HPFCEventTicket entity.

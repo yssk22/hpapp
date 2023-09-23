@@ -6,8 +6,8 @@ import (
 	"sort"
 	"strings"
 
-	"hpapp.yssk22.dev/go/devtool/generator/enum"
-	"hpapp.yssk22.dev/go/foundation/stringutil"
+	"github.com/yssk22/hpapp/go/devtool/generator/enum"
+	"github.com/yssk22/hpapp/go/foundation/stringutil"
 )
 
 var (

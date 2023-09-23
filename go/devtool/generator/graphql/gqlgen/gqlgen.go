@@ -3,7 +3,7 @@ package gqlgen
 import (
 	"github.com/99designs/gqlgen/api"
 	"github.com/99designs/gqlgen/codegen/config"
-	"hpapp.yssk22.dev/go/devtool/generator"
+	"github.com/yssk22/hpapp/go/devtool/generator"
 )
 
 // wrapper for gqlgen generate

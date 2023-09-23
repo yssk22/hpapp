@@ -5,15 +5,15 @@ import (
 	"fmt"
 	"net/url"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/foundation/slice"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/ent/hpameblopost"
-	"hpapp.yssk22.dev/go/service/ent/hpasset"
-	"hpapp.yssk22.dev/go/service/ent/predicate"
-	"hpapp.yssk22.dev/go/service/entutil"
-	"hpapp.yssk22.dev/go/service/schema/enums"
-	"hpapp.yssk22.dev/go/service/scraping"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/hpameblopost"
+	"github.com/yssk22/hpapp/go/service/ent/hpasset"
+	"github.com/yssk22/hpapp/go/service/ent/predicate"
+	"github.com/yssk22/hpapp/go/service/entutil"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/service/scraping"
 )
 
 // CrawlerTarget is an abstract interface to get the crawl args for ameblo URLs

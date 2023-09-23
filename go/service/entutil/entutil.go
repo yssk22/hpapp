@@ -6,13 +6,13 @@ import (
 
 	"entgo.io/ent/dialect/sql"
 	"github.com/spf13/cobra"
-	"hpapp.yssk22.dev/go/service/bootstrap/config"
-	"hpapp.yssk22.dev/go/service/bootstrap/http/middleware"
-	"hpapp.yssk22.dev/go/service/bootstrap/http/task"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/system/database"
-	"hpapp.yssk22.dev/go/system/slog"
-	// _ "hpapp.yssk22.dev/go/service/ent/runtime"
+	"github.com/yssk22/hpapp/go/service/bootstrap/config"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/middleware"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/task"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/system/database"
+	"github.com/yssk22/hpapp/go/system/slog"
+	// _ "github.com/yssk22/hpapp/go/service/ent/runtime"
 )
 
 func NewClient(ctx context.Context) *ent.Client {

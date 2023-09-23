@@ -11,12 +11,12 @@ import (
 
 	"github.com/abema/go-mp4"
 	"github.com/sunfish-shogi/bufseekio"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/schema/enums"
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
-	"hpapp.yssk22.dev/go/service/scraping"
-	"hpapp.yssk22.dev/go/system/slog"
-	"hpapp.yssk22.dev/go/system/storage"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/service/scraping"
+	"github.com/yssk22/hpapp/go/system/slog"
+	"github.com/yssk22/hpapp/go/system/storage"
 )
 
 type VideoProcessor func(context.Context, *ent.HPBlobUpdateOne, *ent.HPBlob, io.Reader, slog.Attributes) error

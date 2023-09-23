@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"hpapp.yssk22.dev/go/system/clock"
-	"hpapp.yssk22.dev/go/system/context"
+	"github.com/yssk22/hpapp/go/system/clock"
+	"github.com/yssk22/hpapp/go/system/context"
 )
 
 // Record is a structured logging record

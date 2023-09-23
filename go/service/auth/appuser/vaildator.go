@@ -3,7 +3,7 @@ package appuser
 import (
 	"context"
 
-	"hpapp.yssk22.dev/go/service/errors"
+	"github.com/yssk22/hpapp/go/service/errors"
 )
 
 type authValidator struct {

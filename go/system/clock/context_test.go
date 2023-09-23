@@ -5,10 +5,10 @@ import (
 	"testing"
 	"time"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/foundation/timeutil"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/timeutil"
 
-	ccontext "hpapp.yssk22.dev/go/system/context"
+	ccontext "github.com/yssk22/hpapp/go/system/context"
 )
 
 func TestContext(t *testing.T) {

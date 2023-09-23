@@ -1,7 +1,7 @@
 package client
 
 import (
-	"hpapp.yssk22.dev/go/system/settings"
+	"github.com/yssk22/hpapp/go/system/settings"
 )
 
 var (

@@ -10,8 +10,8 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"hpapp.yssk22.dev/go/service/ent/hpevent"
-	"hpapp.yssk22.dev/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/service/ent/hpevent"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
 )
 
 // HPEvent is the model entity for the HPEvent schema.

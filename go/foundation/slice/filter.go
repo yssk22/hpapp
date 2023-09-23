@@ -1,6 +1,6 @@
 package slice
 
-import "hpapp.yssk22.dev/go/foundation/errors"
+import "github.com/yssk22/hpapp/go/foundation/errors"
 
 // Filter returns a filtered elements that matches condition f from the slice
 func Filter[T any](list []T, f func(i int, v T) (bool, error)) ([]T, error) {

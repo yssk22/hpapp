@@ -5,7 +5,7 @@ import (
 	"go/types"
 	"strings"
 
-	"hpapp.yssk22.dev/go/foundation/stringutil"
+	"github.com/yssk22/hpapp/go/foundation/stringutil"
 )
 
 var (

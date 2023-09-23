@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"sync"
 
-	"hpapp.yssk22.dev/go/foundation/errors"
+	"github.com/yssk22/hpapp/go/foundation/errors"
 )
 
 // Map iterate the slice with it's pointer

@@ -5,8 +5,8 @@ package hpasset
 import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
-	"hpapp.yssk22.dev/go/service/ent/predicate"
-	"hpapp.yssk22.dev/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/service/ent/predicate"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
 )
 
 // ID filters vertices based on their ID field.

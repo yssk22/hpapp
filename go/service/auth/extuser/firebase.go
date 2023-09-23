@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	firebase "firebase.google.com/go/v4"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 type firebaseAuthenticator struct {

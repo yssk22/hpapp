@@ -6,13 +6,13 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"hpapp.yssk22.dev/go/foundation/stringutil"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/ent/hpfeeditem"
-	"hpapp.yssk22.dev/go/service/ent/usernotificationsetting"
-	"hpapp.yssk22.dev/go/service/entutil"
-	"hpapp.yssk22.dev/go/service/push"
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/foundation/stringutil"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
+	"github.com/yssk22/hpapp/go/service/ent/usernotificationsetting"
+	"github.com/yssk22/hpapp/go/service/entutil"
+	"github.com/yssk22/hpapp/go/service/push"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
 )
 
 type amebloPostNotification struct {

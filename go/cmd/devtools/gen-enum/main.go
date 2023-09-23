@@ -5,9 +5,9 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"hpapp.yssk22.dev/go/devtool/generator"
-	"hpapp.yssk22.dev/go/devtool/generator/entgo"
-	"hpapp.yssk22.dev/go/devtool/generator/graphql/gqlgen"
+	"github.com/yssk22/hpapp/go/devtool/generator"
+	"github.com/yssk22/hpapp/go/devtool/generator/entgo"
+	"github.com/yssk22/hpapp/go/devtool/generator/graphql/gqlgen"
 )
 
 func main() {

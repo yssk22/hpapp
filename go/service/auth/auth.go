@@ -4,12 +4,12 @@ import (
 	"net/http"
 
 	"github.com/spf13/cobra"
-	"hpapp.yssk22.dev/go/service/auth/appuser"
-	"hpapp.yssk22.dev/go/service/auth/client"
-	"hpapp.yssk22.dev/go/service/auth/extuser"
-	"hpapp.yssk22.dev/go/service/bootstrap/config"
-	"hpapp.yssk22.dev/go/service/bootstrap/http/middleware"
-	"hpapp.yssk22.dev/go/service/bootstrap/http/task"
+	"github.com/yssk22/hpapp/go/service/auth/appuser"
+	"github.com/yssk22/hpapp/go/service/auth/client"
+	"github.com/yssk22/hpapp/go/service/auth/extuser"
+	"github.com/yssk22/hpapp/go/service/bootstrap/config"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/middleware"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/task"
 )
 
 func NewAuthService(

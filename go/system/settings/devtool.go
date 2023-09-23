@@ -7,8 +7,8 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/yssk22/hpapp/go/devtool"
 	"golang.org/x/tools/go/packages"
-	"hpapp.yssk22.dev/go/devtool"
 )
 
 type ItemInfo struct {
@@ -25,7 +25,7 @@ func CaptureSettings(packageName string) ([]*ItemInfo, error) {
 	}
 	var defs []*ItemInfo
 	for _, pkg := range pkgs {
-		if pkg.ID == "hpapp.yssk22.dev/go/system/settings" {
+		if pkg.ID == "github.com/yssk22/hpapp/go/system/settings" {
 			continue
 		}
 		vars := getItemVars(pkg)

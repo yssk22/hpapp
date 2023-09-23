@@ -5,8 +5,8 @@ import (
 	"go/types"
 	"strings"
 
-	"hpapp.yssk22.dev/go/devtool/generator/helper"
-	"hpapp.yssk22.dev/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/devtool/generator/helper"
+	"github.com/yssk22/hpapp/go/foundation/slice"
 )
 
 type structDependency struct {

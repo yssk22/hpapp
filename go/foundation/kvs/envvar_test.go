@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/foundation/errors"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/errors"
 )
 
 func TestEnvvar(t *testing.T) {

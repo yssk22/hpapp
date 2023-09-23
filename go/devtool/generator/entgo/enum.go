@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"hpapp.yssk22.dev/go/devtool/generator"
-	"hpapp.yssk22.dev/go/devtool/generator/enum"
+	"github.com/yssk22/hpapp/go/devtool/generator"
+	"github.com/yssk22/hpapp/go/devtool/generator/enum"
 )
 
 func NewEnumGenerator(dir string, options ...EnumGeneratorOption) generator.Generator {

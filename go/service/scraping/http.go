@@ -7,8 +7,8 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"hpapp.yssk22.dev/go/foundation/object"
-	"hpapp.yssk22.dev/go/system/http/external"
+	"github.com/yssk22/hpapp/go/foundation/object"
+	"github.com/yssk22/hpapp/go/system/http/external"
 )
 
 // ErrHttp is aservice error when fetch fails with non-200 code

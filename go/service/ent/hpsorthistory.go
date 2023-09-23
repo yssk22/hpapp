@@ -10,9 +10,9 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"hpapp.yssk22.dev/go/service/ent/hpsorthistory"
-	"hpapp.yssk22.dev/go/service/ent/user"
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
+	"github.com/yssk22/hpapp/go/service/ent/user"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
 )
 
 // HPSortHistory is the model entity for the HPSortHistory schema.

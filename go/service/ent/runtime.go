@@ -2,4 +2,4 @@
 
 package ent
 
-// The schema-stitching logic is generated in hpapp.yssk22.dev/go/service/ent/runtime/runtime.go
+// The schema-stitching logic is generated in github.com/yssk22/hpapp/go/service/ent/runtime/runtime.go

@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 var runtimeHooks []func(ent.Mutator) ent.Mutator

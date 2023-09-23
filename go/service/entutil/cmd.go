@@ -7,10 +7,10 @@ import (
 
 	"entgo.io/ent/dialect/sql/schema"
 	"github.com/spf13/cobra"
-	"hpapp.yssk22.dev/go/foundation/cli"
-	"hpapp.yssk22.dev/go/foundation/slice"
-	"hpapp.yssk22.dev/go/service/ent/migrate"
-	"hpapp.yssk22.dev/go/system/database"
+	"github.com/yssk22/hpapp/go/foundation/cli"
+	"github.com/yssk22/hpapp/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/service/ent/migrate"
+	"github.com/yssk22/hpapp/go/system/database"
 )
 
 var cmdExport = &cobra.Command{

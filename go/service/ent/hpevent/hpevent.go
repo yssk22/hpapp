@@ -9,7 +9,7 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"github.com/99designs/gqlgen/graphql"
-	"hpapp.yssk22.dev/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
 )
 
 const (
@@ -94,7 +94,7 @@ func ValidColumn(column string) bool {
 // package on the initialization of the application. Therefore,
 // it should be imported in the main as follows:
 //
-//	import _ "hpapp.yssk22.dev/go/service/ent/runtime"
+//	import _ "github.com/yssk22/hpapp/go/service/ent/runtime"
 //
 var (
 	Hooks [1]ent.Hook

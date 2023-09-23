@@ -3,17 +3,17 @@ package devtool
 import (
 	"testing"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/assert"
 )
 
 func TestParseFullQualifiedName(t *testing.T) {
 	a := assert.NewTestAssert(t)
-	pkg, name := ParseFullQualifiedName("hpapp.yssk22.dev/go/foundation/assert.Foo")
-	a.Equals("hpapp.yssk22.dev/go/foundation/assert", pkg)
+	pkg, name := ParseFullQualifiedName("github.com/yssk22/hpapp/go/foundation/assert.Foo")
+	a.Equals("github.com/yssk22/hpapp/go/foundation/assert", pkg)
 	a.Equals("Foo", name)
 
-	pkg, name = ParseFullQualifiedName("hpapp.yssk22.dev/go/foundation/assert")
-	a.Equals("hpapp.yssk22.dev/go/foundation/assert", pkg)
+	pkg, name = ParseFullQualifiedName("github.com/yssk22/hpapp/go/foundation/assert")
+	a.Equals("github.com/yssk22/hpapp/go/foundation/assert", pkg)
 	a.Equals("", name)
 
 	pkg, name = ParseFullQualifiedName("Foo")

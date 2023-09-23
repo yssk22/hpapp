@@ -4,10 +4,10 @@ import (
 	"context"
 
 	"github.com/99designs/gqlgen/graphql"
-	"hpapp.yssk22.dev/go/service/auth/appuser"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/ent/hpviewhistory"
-	"hpapp.yssk22.dev/go/service/ent/user"
+	"github.com/yssk22/hpapp/go/service/auth/appuser"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/user"
 )
 
 // HPFeedItemResolver is a custom resolver to cusotmize the edge between HPFeedItem and HPViewHistory not to leak view histories not owned by the current user.

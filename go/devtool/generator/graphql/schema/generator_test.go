@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"hpapp.yssk22.dev/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/assert"
 )
 
 func TestValid(t *testing.T) {
@@ -13,19 +13,19 @@ func TestValid(t *testing.T) {
 	var got bytes.Buffer
 	generator := NewGenerator(
 		WithRoot(
-			"hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.Query",
-			"hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.Mutation",
+			"github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.Query",
+			"github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.Mutation",
 		),
 		withOutput(&got),
 	)
 	err := generator.Generate()
 	a.Nil(err)
 	expect :=
-		`type Query @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.Query") {
+		`type Query @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.Query") {
   root: Root!
 }
 
-type Root @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.Root") {
+type Root @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.Root") {
   id: ID!
   fieldString: String!
   fieldNullableString: String
@@ -53,16 +53,16 @@ type Root @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphql/schema/
   methodWithErrorReturn(i: Int!): String!
 }
 
-scalar YesNo @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.YesNo")
+scalar YesNo @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.YesNo")
 
-scalar MyScalar @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.MyScalar")
+scalar MyScalar @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.MyScalar")
 
-enum MyEnum @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.MyEnum") {
+enum MyEnum @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.MyEnum") {
   bar
   foo
 }
 
-type MyComplexType @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.MyComplexType") implements MyInterface {
+type MyComplexType @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.MyComplexType") implements MyInterface {
   id: ID!
   nested: NestedMyComplexType!
 
@@ -70,25 +70,25 @@ type MyComplexType @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphq
   interfaceMethod(i: Int!): String!
 }
 
-interface MyInterface @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.MyInterface") {
+interface MyInterface @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.MyInterface") {
   id: ID!
   interfaceMethod(i: Int!): String!
 }
 
-type NestedMyComplexType @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.NestedMyComplexType") {
+type NestedMyComplexType @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.NestedMyComplexType") {
   id: ID!
 }
 
-input MyComplexTypeInput @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.MyComplexType") {
+input MyComplexTypeInput @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.MyComplexType") {
   id: ID!
   nested: NestedMyComplexTypeInput!
 }
 
-input NestedMyComplexTypeInput @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.NestedMyComplexType") {
+input NestedMyComplexTypeInput @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.NestedMyComplexType") {
   id: ID!
 }
 
-type Mutation @goModel(model: "hpapp.yssk22.dev/go/devtool/generator/graphql/schema/testdata.Mutation") {
+type Mutation @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.Mutation") {
   foo: String!
 }
 

@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	"hpapp.yssk22.dev/go/foundation/errors"
-	"hpapp.yssk22.dev/go/foundation/slice"
-	"hpapp.yssk22.dev/go/system/database"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/foundation/errors"
+	"github.com/yssk22/hpapp/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/system/database"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 var (

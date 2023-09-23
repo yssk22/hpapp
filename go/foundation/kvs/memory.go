@@ -3,7 +3,7 @@ package kvs
 import (
 	"context"
 
-	"hpapp.yssk22.dev/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/foundation/slice"
 )
 
 // MemmoryStore is a simple in-memory key-value store.

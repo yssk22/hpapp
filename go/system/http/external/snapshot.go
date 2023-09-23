@@ -12,8 +12,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 // Snapshot returns *http.Client that creates snapshot files at {basedir}/{domain}/{path}

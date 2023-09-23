@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"hpapp.yssk22.dev/go/foundation/errors"
-	"hpapp.yssk22.dev/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/foundation/errors"
+	"github.com/yssk22/hpapp/go/foundation/slice"
 )
 
 // Evvar returns KVS interface to read the environment variables

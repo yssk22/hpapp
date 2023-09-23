@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/assert"
 )
 
 // TestExportAndImport is defined in ./test directory to avoid cyclic import

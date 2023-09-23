@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/service/bootstrap/test"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/service/bootstrap/test"
 )
 
 func TestTee(t *testing.T) {

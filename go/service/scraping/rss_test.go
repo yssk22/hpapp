@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/assert"
 )
 
 func TestRSS2(t *testing.T) {

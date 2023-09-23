@@ -11,8 +11,8 @@ import (
 	"net/http"
 	"path"
 
-	"hpapp.yssk22.dev/go/service/errors"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/service/errors"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 // Provider is an interface to process oauth

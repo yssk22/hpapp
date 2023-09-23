@@ -1,19 +1,19 @@
 {
   "roots": [
-    "hpapp.yssk22.dev/go/graphql/v3/helloproject.HelloProjectQuery",
-    "hpapp.yssk22.dev/go/graphql/v3/me.MeQuery",
-    "hpapp.yssk22.dev/go/graphql/v3.Misc",
+    "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HelloProjectQuery",
+    "github.com/yssk22/hpapp/go/graphql/v3/me.MeQuery",
+    "github.com/yssk22/hpapp/go/graphql/v3.Misc",
 
-    "hpapp.yssk22.dev/go/graphql/v3.Mutation",
+    "github.com/yssk22/hpapp/go/graphql/v3.Mutation",
 
-    "hpapp.yssk22.dev/go/service/schema/jsonfields.Media",
-    "hpapp.yssk22.dev/go/service/schema/jsonfields.HPBlobThumbnail",
-    "hpapp.yssk22.dev/go/service/schema/jsonfields.ReactNavigationPush",
-    "hpapp.yssk22.dev/go/service/schema/jsonfields.HPSortResult",
-    "hpapp.yssk22.dev/go/service/schema/jsonfields.HPIgCrawlArgs"
+    "github.com/yssk22/hpapp/go/service/schema/jsonfields.Media",
+    "github.com/yssk22/hpapp/go/service/schema/jsonfields.HPBlobThumbnail",
+    "github.com/yssk22/hpapp/go/service/schema/jsonfields.ReactNavigationPush",
+    "github.com/yssk22/hpapp/go/service/schema/jsonfields.HPSortResult",
+    "github.com/yssk22/hpapp/go/service/schema/jsonfields.HPIgCrawlArgs"
   ],
   "exclude_packages": [
-    "hpapp.yssk22.dev/go/service/ent",
+    "github.com/yssk22/hpapp/go/service/ent",
     "entgo.io/contrib/entgql"
   ]
 }
