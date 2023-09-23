@@ -73,7 +73,7 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-relay": "^15.0.0",
     "eas-cli": "3.10.0",
-    "graphql": "^16.6.0",
+    "graphql": "^16.8.1",
     "jest": "^29.5.0",
     "jest-expo": "^48.0.2",
     "relay-compiler": "^15.0.0",
