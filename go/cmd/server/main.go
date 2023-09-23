@@ -1,10 +1,10 @@
 package main
 
 import (
-	"hpapp.yssk22.dev/go/graphql"
-	"hpapp.yssk22.dev/go/service/auth/appuser/oauth1"
-	"hpapp.yssk22.dev/go/service/bootstrap"
-	"hpapp.yssk22.dev/go/service/bootstrap/http"
+	"github.com/yssk22/hpapp/go/graphql"
+	"github.com/yssk22/hpapp/go/service/auth/appuser/oauth1"
+	"github.com/yssk22/hpapp/go/service/bootstrap"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http"
 )
 
 func main() {

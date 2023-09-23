@@ -6,7 +6,7 @@ import (
 	"context"
 	"fmt"
 
-	"hpapp.yssk22.dev/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent"
 
 	"entgo.io/ent/entql"
 	"entgo.io/ent/privacy"

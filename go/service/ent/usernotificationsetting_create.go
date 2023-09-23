@@ -11,9 +11,9 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/ent/user"
-	"hpapp.yssk22.dev/go/service/ent/usernotificationlog"
-	"hpapp.yssk22.dev/go/service/ent/usernotificationsetting"
+	"github.com/yssk22/hpapp/go/service/ent/user"
+	"github.com/yssk22/hpapp/go/service/ent/usernotificationlog"
+	"github.com/yssk22/hpapp/go/service/ent/usernotificationsetting"
 )
 
 // UserNotificationSettingCreate is the builder for creating a UserNotificationSetting entity.

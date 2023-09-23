@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/99designs/gqlgen/graphql"
-	"hpapp.yssk22.dev/go/service/auth/appuser"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/ent/hpfceventticket"
+	"github.com/yssk22/hpapp/go/service/auth/appuser"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 )
 
 // HPEventResolver is a custom resolver to cusotmize the edge between HPEvent and HPFCEventTicket.

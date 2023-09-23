@@ -11,9 +11,9 @@ import (
 
 	_ "golang.org/x/image/webp"
 
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/schema/enums"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 type ImageProcessor func(context.Context, *ent.HPBlobUpdateOne, *ent.HPBlob, io.Reader, slog.Attributes) error

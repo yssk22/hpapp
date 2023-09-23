@@ -7,9 +7,9 @@ import (
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
 	"entgo.io/ent/schema/index"
-	"hpapp.yssk22.dev/go/service/auth/appuser"
-	"hpapp.yssk22.dev/go/service/ent/privacy"
-	"hpapp.yssk22.dev/go/service/schema/mixin"
+	"github.com/yssk22/hpapp/go/service/auth/appuser"
+	"github.com/yssk22/hpapp/go/service/ent/privacy"
+	"github.com/yssk22/hpapp/go/service/schema/mixin"
 )
 
 // Auth holds the schema definition for the Auth entity.

@@ -4,14 +4,14 @@ package bootstrap
 import (
 	"path/filepath"
 
-	"hpapp.yssk22.dev/go/service/auth"
-	"hpapp.yssk22.dev/go/service/auth/extuser"
-	"hpapp.yssk22.dev/go/service/bootstrap/config"
-	"hpapp.yssk22.dev/go/service/entutil"
-	"hpapp.yssk22.dev/go/service/healthcheck"
-	"hpapp.yssk22.dev/go/service/helloproject/member"
-	"hpapp.yssk22.dev/go/system/environment"
-	"hpapp.yssk22.dev/go/system/environment/devcontainer"
+	"github.com/yssk22/hpapp/go/service/auth"
+	"github.com/yssk22/hpapp/go/service/auth/extuser"
+	"github.com/yssk22/hpapp/go/service/bootstrap/config"
+	"github.com/yssk22/hpapp/go/service/entutil"
+	"github.com/yssk22/hpapp/go/service/healthcheck"
+	"github.com/yssk22/hpapp/go/service/helloproject/member"
+	"github.com/yssk22/hpapp/go/system/environment"
+	"github.com/yssk22/hpapp/go/system/environment/devcontainer"
 )
 
 func GetDefaultEnvironment() environment.Environment {

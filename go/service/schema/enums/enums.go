@@ -1,3 +1,3 @@
 package enums
 
-//go:generate go run hpapp.yssk22.dev/go/cmd/devtools/gen-enum ./
+//go:generate go run github.com/yssk22/hpapp/go/cmd/devtools/gen-enum ./

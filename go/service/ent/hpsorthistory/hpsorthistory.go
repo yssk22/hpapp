@@ -57,7 +57,7 @@ func ValidColumn(column string) bool {
 // package on the initialization of the application. Therefore,
 // it should be imported in the main as follows:
 //
-//	import _ "hpapp.yssk22.dev/go/service/ent/runtime"
+//	import _ "github.com/yssk22/hpapp/go/service/ent/runtime"
 //
 var (
 	Hooks  [2]ent.Hook

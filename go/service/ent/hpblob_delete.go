@@ -8,8 +8,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/ent/hpblob"
-	"hpapp.yssk22.dev/go/service/ent/predicate"
+	"github.com/yssk22/hpapp/go/service/ent/hpblob"
+	"github.com/yssk22/hpapp/go/service/ent/predicate"
 )
 
 // HPBlobDelete is the builder for deleting a HPBlob entity.

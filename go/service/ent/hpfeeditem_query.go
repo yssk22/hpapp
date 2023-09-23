@@ -11,11 +11,11 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/ent/hpartist"
-	"hpapp.yssk22.dev/go/service/ent/hpfeeditem"
-	"hpapp.yssk22.dev/go/service/ent/hpmember"
-	"hpapp.yssk22.dev/go/service/ent/hpviewhistory"
-	"hpapp.yssk22.dev/go/service/ent/predicate"
+	"github.com/yssk22/hpapp/go/service/ent/hpartist"
+	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
+	"github.com/yssk22/hpapp/go/service/ent/hpmember"
+	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/predicate"
 )
 
 // HPFeedItemQuery is the builder for querying HPFeedItem entities.

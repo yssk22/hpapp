@@ -3,9 +3,9 @@ package auth
 import (
 	"context"
 
-	"hpapp.yssk22.dev/go/service/auth/appuser"
-	"hpapp.yssk22.dev/go/service/auth/client"
-	"hpapp.yssk22.dev/go/service/bootstrap/http/task"
+	"github.com/yssk22/hpapp/go/service/auth/appuser"
+	"github.com/yssk22/hpapp/go/service/auth/client"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/task"
 )
 
 func AllowAdmins[T any]() task.TaskOption[T] {

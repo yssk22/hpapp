@@ -7,9 +7,9 @@ import (
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
 	"entgo.io/ent/schema/index"
-	"hpapp.yssk22.dev/go/service/schema/enums"
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
-	"hpapp.yssk22.dev/go/service/schema/mixin"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/service/schema/mixin"
 )
 
 type HPFeedItem struct {

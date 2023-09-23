@@ -6,11 +6,11 @@ import (
 	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/auth/appuser"
-	"hpapp.yssk22.dev/go/service/auth/client"
-	"hpapp.yssk22.dev/go/service/ent/privacy"
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
-	"hpapp.yssk22.dev/go/service/schema/mixin"
+	"github.com/yssk22/hpapp/go/service/auth/appuser"
+	"github.com/yssk22/hpapp/go/service/auth/client"
+	"github.com/yssk22/hpapp/go/service/ent/privacy"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/service/schema/mixin"
 )
 
 // HPSortHistory holds the schema definition for the historical records for HPSort

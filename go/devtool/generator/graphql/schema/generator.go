@@ -8,10 +8,10 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/yssk22/hpapp/go/devtool"
+	"github.com/yssk22/hpapp/go/devtool/generator"
+	"github.com/yssk22/hpapp/go/foundation/slice"
 	"golang.org/x/tools/go/packages"
-	"hpapp.yssk22.dev/go/devtool"
-	"hpapp.yssk22.dev/go/devtool/generator"
-	"hpapp.yssk22.dev/go/foundation/slice"
 )
 
 var (

@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/assert"
 )
 
 func TestFileProvider(t *testing.T) {

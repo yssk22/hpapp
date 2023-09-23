@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 // ServiceError is an interface to avoid over wrapping by errors.Wrap

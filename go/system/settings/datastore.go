@@ -5,9 +5,9 @@ import (
 	"fmt"
 
 	gcpdatastore "cloud.google.com/go/datastore"
-	"hpapp.yssk22.dev/go/foundation/errors"
-	"hpapp.yssk22.dev/go/foundation/kvs"
-	"hpapp.yssk22.dev/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/foundation/errors"
+	"github.com/yssk22/hpapp/go/foundation/kvs"
+	"github.com/yssk22/hpapp/go/foundation/slice"
 )
 
 type datastore struct {

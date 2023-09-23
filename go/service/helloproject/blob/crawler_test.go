@@ -5,13 +5,13 @@ import (
 	"testing"
 	"time"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/foundation/timeutil"
-	"hpapp.yssk22.dev/go/service/bootstrap/test"
-	"hpapp.yssk22.dev/go/service/ent/hpmember"
-	"hpapp.yssk22.dev/go/service/entutil"
-	"hpapp.yssk22.dev/go/service/schema/enums"
-	"hpapp.yssk22.dev/go/system/storage"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/timeutil"
+	"github.com/yssk22/hpapp/go/service/bootstrap/test"
+	"github.com/yssk22/hpapp/go/service/ent/hpmember"
+	"github.com/yssk22/hpapp/go/service/entutil"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/system/storage"
 )
 
 func TestMediaCrawler(t *testing.T) {

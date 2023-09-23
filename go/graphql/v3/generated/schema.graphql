@@ -1,15 +1,15 @@
-type HelloProjectQuery @goModel(model: "hpapp.yssk22.dev/go/graphql/v3/helloproject.HelloProjectQuery") {
+type HelloProjectQuery @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HelloProjectQuery") {
   artists(after: Cursor, first: Int, before: Cursor, last: Int): [HPArtist]
   feed(params: HPFeedQueryParamsInput!, after: Cursor, first: Int, before: Cursor, last: Int): HPFeedItemConnection
 }
 
-input HPFeedQueryParamsInput @goModel(model: "hpapp.yssk22.dev/go/graphql/v3/helloproject.HPFeedQueryParams") {
+input HPFeedQueryParamsInput @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HPFeedQueryParams") {
   memberIDs: [String!]
   assetTypes: [HPAssetType!]
   useMemberTaggings: Boolean
 }
 
-enum HPAssetType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPAssetType") {
+enum HPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPAssetType") {
   ameblo
   elineup_mall
   instagram
@@ -18,7 +18,7 @@ enum HPAssetType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPAss
   youtube
 }
 
-type MeQuery @goModel(model: "hpapp.yssk22.dev/go/graphql/v3/me.MeQuery") {
+type MeQuery @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeQuery") {
   id: ID!
   username: String!
   clientId: String
@@ -31,21 +31,21 @@ type MeQuery @goModel(model: "hpapp.yssk22.dev/go/graphql/v3/me.MeQuery") {
   favorites(params: MeFavoriteQueryParamsInput!, after: Cursor, first: Int, before: Cursor, last: Int): HPFeedItemConnection
 }
 
-input MeFavoriteQueryParamsInput @goModel(model: "hpapp.yssk22.dev/go/graphql/v3/me.MeFavoriteQueryParams") {
+input MeFavoriteQueryParamsInput @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeFavoriteQueryParams") {
   memberIDs: [String!]
   assetTypes: [HPAssetType!]
 }
 
-type Misc @goModel(model: "hpapp.yssk22.dev/go/graphql/v3.Misc") {
+type Misc @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3.Misc") {
   version: String!
 }
 
-type Mutation @goModel(model: "hpapp.yssk22.dev/go/graphql/v3.Mutation") {
+type Mutation @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3.Mutation") {
   authenticate: User
   me: MeMutation
 }
 
-type MeMutation @goModel(model: "hpapp.yssk22.dev/go/graphql/v3/me.MeMutation") {
+type MeMutation @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeMutation") {
   authenticate: User
   removeAuthentication: Auth
   upsertFollow(params: HPFollowUpsertParamsInput!): HPFollow
@@ -53,30 +53,30 @@ type MeMutation @goModel(model: "hpapp.yssk22.dev/go/graphql/v3/me.MeMutation") 
   upsertViewHistory(params: HPViewHistoryUpsertParamsInput!): HPViewHistory
 }
 
-input HPFollowUpsertParamsInput @goModel(model: "hpapp.yssk22.dev/go/service/helloproject/user.HPFollowUpsertParams") {
+input HPFollowUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/user.HPFollowUpsertParams") {
   memberId: Int!
   followType: HPFollowType!
 }
 
-input UpsertEventsParamsInput @goModel(model: "hpapp.yssk22.dev/go/service/helloproject/upfc.UpsertEventsParams") {
+input UpsertEventsParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.UpsertEventsParams") {
   fcMemberSha256: String!
   userId: Int!
   applications: [EventTicketApplicationInput!]
 }
 
-input HPViewHistoryUpsertParamsInput @goModel(model: "hpapp.yssk22.dev/go/service/helloproject/feed.HPViewHistoryUpsertParams") {
+input HPViewHistoryUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/feed.HPViewHistoryUpsertParams") {
   feedId: Int!
   userId: Int!
   isFavorite: Boolean!
 }
 
-enum HPFollowType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPFollowType") {
+enum HPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFollowType") {
   follow
   follow_with_notification
   unfollow
 }
 
-input EventTicketApplicationInput @goModel(model: "hpapp.yssk22.dev/go/service/helloproject/upfc.EventTicketApplication") {
+input EventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.EventTicketApplication") {
   title: String!
   openAt: Time
   startAt: Time!
@@ -90,7 +90,7 @@ input EventTicketApplicationInput @goModel(model: "hpapp.yssk22.dev/go/service/h
   paymentDueDate: Time
 }
 
-enum HPEventFCTicketStatus @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPEventFCTicketStatus") {
+enum HPEventFCTicketStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketStatus") {
   completed
   payment_overdue
   pending_payment
@@ -99,7 +99,7 @@ enum HPEventFCTicketStatus @goModel(model: "hpapp.yssk22.dev/go/service/schema/e
   unknown
 }
 
-type Media @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.Media") {
+type Media @goModel(model: "github.com/yssk22/hpapp/go/service/schema/jsonfields.Media") {
   url: String!
   blobId: Int!
   type: HPBlobType!
@@ -110,21 +110,21 @@ type Media @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.Media"
   thumbnailHeight: Int!
 }
 
-enum HPBlobType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPBlobType") {
+enum HPBlobType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPBlobType") {
   image
   text
   unknown
   video
 }
 
-type HPBlobThumbnail @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.HPBlobThumbnail") {
+type HPBlobThumbnail @goModel(model: "github.com/yssk22/hpapp/go/service/schema/jsonfields.HPBlobThumbnail") {
   storagePath: String!
   sourceImageUrl: String!
   width: Int!
   height: Int!
 }
 
-type ReactNavigationPush @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.ReactNavigationPush") {
+type ReactNavigationPush @goModel(model: "github.com/yssk22/hpapp/go/service/schema/jsonfields.ReactNavigationPush") {
   path: String!
   params: Map
   pushMessage: ExpoPushMessage!
@@ -132,7 +132,7 @@ type ReactNavigationPush @goModel(model: "hpapp.yssk22.dev/go/service/schema/jso
   toPushMessage(tokens: [String!]): Message
 }
 
-type ExpoPushMessage @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.ExpoPushMessage") {
+type ExpoPushMessage @goModel(model: "github.com/yssk22/hpapp/go/service/schema/jsonfields.ExpoPushMessage") {
   title: String!
   body: String!
   ttlSeconds: Int!
@@ -142,7 +142,7 @@ type ExpoPushMessage @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfie
   imageUrl: String!
 }
 
-type Message @goModel(model: "hpapp.yssk22.dev/go/system/push.Message") {
+type Message @goModel(model: "github.com/yssk22/hpapp/go/system/push.Message") {
   to: [String!]
   title: String!
   body: String!
@@ -154,24 +154,24 @@ type Message @goModel(model: "hpapp.yssk22.dev/go/system/push.Message") {
   data: Map
 }
 
-enum MessagePriority @goModel(model: "hpapp.yssk22.dev/go/system/push.MessagePriority") {
+enum MessagePriority @goModel(model: "github.com/yssk22/hpapp/go/system/push.MessagePriority") {
   default
   high
   normal
 }
 
-type HPSortResult @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.HPSortResult") {
+type HPSortResult @goModel(model: "github.com/yssk22/hpapp/go/service/schema/jsonfields.HPSortResult") {
   records: [HPSortResultRecord!]
 }
 
-type HPSortResultRecord @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.HPSortResultRecord") {
+type HPSortResultRecord @goModel(model: "github.com/yssk22/hpapp/go/service/schema/jsonfields.HPSortResultRecord") {
   artistId: Int!
   artistKey: String!
   memberId: Int!
   memberKey: String!
 }
 
-type HPIgCrawlArgs @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.HPIgCrawlArgs") {
+type HPIgCrawlArgs @goModel(model: "github.com/yssk22/hpapp/go/service/schema/jsonfields.HPIgCrawlArgs") {
   id: ID!
   shortcode: String!
   caption: String!
@@ -187,7 +187,7 @@ type HPIgCrawlArgs @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfield
   videoViewCount: Int!
 }
 
-type HPIgCrawlArgsChildPost @goModel(model: "hpapp.yssk22.dev/go/service/schema/jsonfields.HPIgCrawlArgsChildPost") {
+type HPIgCrawlArgsChildPost @goModel(model: "github.com/yssk22/hpapp/go/service/schema/jsonfields.HPIgCrawlArgsChildPost") {
   id: ID!
   type: String!
   displayUrl: String!

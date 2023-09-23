@@ -3,7 +3,7 @@ package settings
 import (
 	"context"
 
-	"hpapp.yssk22.dev/go/foundation/kvs"
+	"github.com/yssk22/hpapp/go/foundation/kvs"
 )
 
 type contextKvsKey struct{}

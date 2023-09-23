@@ -9,7 +9,7 @@ import (
 	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/field"
 	"entgo.io/ent/schema/mixin"
-	"hpapp.yssk22.dev/go/system/clock"
+	"github.com/yssk22/hpapp/go/system/clock"
 )
 
 // Timestamp implements the ent.Mixin for adding timestamps into fields

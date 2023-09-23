@@ -3,9 +3,9 @@ package v3
 import (
 	"context"
 
-	"hpapp.yssk22.dev/go/graphql/v3/me"
-	"hpapp.yssk22.dev/go/service/auth/appuser"
-	"hpapp.yssk22.dev/go/service/ent"
+	"github.com/yssk22/hpapp/go/graphql/v3/me"
+	"github.com/yssk22/hpapp/go/service/auth/appuser"
+	"github.com/yssk22/hpapp/go/service/ent"
 )
 
 type Mutation struct{}

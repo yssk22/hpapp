@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/foundation/kvs"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/kvs"
 )
 
 func TestString(t *testing.T) {

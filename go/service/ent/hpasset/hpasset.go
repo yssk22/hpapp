@@ -8,7 +8,7 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"github.com/99designs/gqlgen/graphql"
-	"hpapp.yssk22.dev/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
 )
 
 const (

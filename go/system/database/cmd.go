@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 
 	"github.com/spf13/cobra"
-	"hpapp.yssk22.dev/go/foundation/cli"
+	"github.com/yssk22/hpapp/go/foundation/cli"
 )
 
 const (

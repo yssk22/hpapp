@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
+	"github.com/yssk22/hpapp/go/foundation/assert"
 	"golang.org/x/net/context"
-	"hpapp.yssk22.dev/go/foundation/assert"
 )
 
 func TestJSON(t *testing.T) {

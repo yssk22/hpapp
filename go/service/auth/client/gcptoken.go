@@ -4,9 +4,9 @@ import (
 	"context"
 	"strings"
 
+	"github.com/yssk22/hpapp/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/system/settings"
 	"google.golang.org/api/idtoken"
-	"hpapp.yssk22.dev/go/foundation/slice"
-	"hpapp.yssk22.dev/go/system/settings"
 )
 
 type gcpServiceToServiceAuth struct {

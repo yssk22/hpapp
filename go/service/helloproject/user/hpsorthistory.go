@@ -3,10 +3,10 @@ package user
 import (
 	"context"
 
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/entutil"
-	"hpapp.yssk22.dev/go/service/errors"
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/entutil"
+	"github.com/yssk22/hpapp/go/service/errors"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
 )
 
 type HPSortHistoryCreateParams struct {

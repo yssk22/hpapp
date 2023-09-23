@@ -6,8 +6,8 @@ import (
 	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/ent/privacy"
-	"hpapp.yssk22.dev/go/service/schema/mixin"
+	"github.com/yssk22/hpapp/go/service/ent/privacy"
+	"github.com/yssk22/hpapp/go/service/schema/mixin"
 )
 
 // HPArtist holds the schema definition for the HPArtist entity.

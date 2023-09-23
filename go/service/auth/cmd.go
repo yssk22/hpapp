@@ -2,7 +2,7 @@ package auth
 
 import (
 	"github.com/spf13/cobra"
-	"hpapp.yssk22.dev/go/service/auth/extuser"
+	"github.com/yssk22/hpapp/go/service/auth/extuser"
 )
 
 const AuthFilePath = "./data/localauth.json"

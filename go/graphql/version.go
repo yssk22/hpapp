@@ -2,8 +2,8 @@ package graphql
 
 import (
 	"github.com/99designs/gqlgen/graphql"
-	v3 "hpapp.yssk22.dev/go/graphql/v3/generated"
-	v3resolver "hpapp.yssk22.dev/go/graphql/v3/resolver"
+	v3 "github.com/yssk22/hpapp/go/graphql/v3/generated"
+	v3resolver "github.com/yssk22/hpapp/go/graphql/v3/resolver"
 )
 
 func V3() graphql.ExecutableSchema {

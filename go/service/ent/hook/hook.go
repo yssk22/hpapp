@@ -6,7 +6,7 @@ import (
 	"context"
 	"fmt"
 
-	"hpapp.yssk22.dev/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent"
 )
 
 // The AuthFunc type is an adapter to allow the use of ordinary

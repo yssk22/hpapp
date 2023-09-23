@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"hpapp.yssk22.dev/go/devtool/generator"
+	"github.com/yssk22/hpapp/go/devtool/generator"
 )
 
 func NewResolverGenerator(path string, modelPackage string, options ...ResolverGeneratorOption) generator.Generator {

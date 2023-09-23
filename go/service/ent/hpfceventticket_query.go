@@ -11,10 +11,10 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/ent/hpevent"
-	"hpapp.yssk22.dev/go/service/ent/hpfceventticket"
-	"hpapp.yssk22.dev/go/service/ent/predicate"
-	"hpapp.yssk22.dev/go/service/ent/user"
+	"github.com/yssk22/hpapp/go/service/ent/hpevent"
+	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
+	"github.com/yssk22/hpapp/go/service/ent/predicate"
+	"github.com/yssk22/hpapp/go/service/ent/user"
 )
 
 // HPFCEventTicketQuery is the builder for querying HPFCEventTicket entities.

@@ -11,11 +11,11 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/ent/hpartist"
-	"hpapp.yssk22.dev/go/service/ent/hpelineupmallitem"
-	"hpapp.yssk22.dev/go/service/ent/hpmember"
-	"hpapp.yssk22.dev/go/service/schema/enums"
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/service/ent/hpartist"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
+	"github.com/yssk22/hpapp/go/service/ent/hpmember"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
 )
 
 // HPElineupMallItemCreate is the builder for creating a HPElineupMallItem entity.

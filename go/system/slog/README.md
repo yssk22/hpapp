@@ -1,6 +1,6 @@
 # slog パッケージでのロギング
 
-hpapp では [hpapp.yssk22.dev/gosystem/slog](hpapp.yssk22.dev/gosystem/slog) パッケージを使って構造化ログを出力します。構造化ログは必ず message フィールドを持ち、必要に応じてその他の構造化されたデータを追加することができます。slog パッケージは system および service を実装するときにのみ利用し、 foundation を実装する際には利用しないでください。
+hpapp では [github.com/yssk22/hpapp/gosystem/slog](github.com/yssk22/hpapp/gosystem/slog) パッケージを使って構造化ログを出力します。構造化ログは必ず message フィールドを持ち、必要に応じてその他の構造化されたデータを追加することができます。slog パッケージは system および service を実装するときにのみ利用し、 foundation を実装する際には利用しないでください。
 
 ## `slog.Name(string)`
 

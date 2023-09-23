@@ -1,9 +1,9 @@
 package main
 
 import (
-	"hpapp.yssk22.dev/go/service/bootstrap/cli"
-	"hpapp.yssk22.dev/go/system/database"
-	"hpapp.yssk22.dev/go/system/environment/devcontainer"
+	"github.com/yssk22/hpapp/go/service/bootstrap/cli"
+	"github.com/yssk22/hpapp/go/system/database"
+	"github.com/yssk22/hpapp/go/system/environment/devcontainer"
 )
 
 func main() {

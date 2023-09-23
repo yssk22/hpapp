@@ -4,16 +4,16 @@ import (
 	"context"
 
 	"github.com/spf13/cobra"
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/foundation/slice"
-	"hpapp.yssk22.dev/go/service/auth"
-	"hpapp.yssk22.dev/go/service/bootstrap/config"
-	"hpapp.yssk22.dev/go/service/bootstrap/http/middleware"
-	"hpapp.yssk22.dev/go/service/bootstrap/http/task"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/ent/hpartist"
-	"hpapp.yssk22.dev/go/service/ent/hpmember"
-	"hpapp.yssk22.dev/go/service/entutil"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/service/auth"
+	"github.com/yssk22/hpapp/go/service/bootstrap/config"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/middleware"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/task"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/hpartist"
+	"github.com/yssk22/hpapp/go/service/ent/hpmember"
+	"github.com/yssk22/hpapp/go/service/entutil"
 )
 
 type memberService struct {

@@ -16,7 +16,7 @@ import (
 	"github.com/99designs/gqlgen/graphql/introspection"
 	gqlparser "github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"
-	"hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models"
+	"github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models"
 )
 
 // region    ************************** generated!.gotpl **************************
@@ -546,7 +546,7 @@ func (ec *executionContext) field_MutationExample_methodWithContextAlias_args(ct
 	var arg0 *models.ComplexParams
 	if tmp, ok := rawArgs["complexQueryParams"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("complexQueryParams"))
-		arg0, err = ec.unmarshalOComplexParamsInput2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
+		arg0, err = ec.unmarshalOComplexParamsInput2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -561,7 +561,7 @@ func (ec *executionContext) field_MutationExample_methodWithContext_args(ctx con
 	var arg0 *models.ComplexParams
 	if tmp, ok := rawArgs["complexQueryParams"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("complexQueryParams"))
-		arg0, err = ec.unmarshalOComplexParamsInput2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
+		arg0, err = ec.unmarshalOComplexParamsInput2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -576,7 +576,7 @@ func (ec *executionContext) field_MutationExample_methodWithoutContext_args(ctx 
 	var arg0 *models.ComplexParams
 	if tmp, ok := rawArgs["complexQueryParams"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("complexQueryParams"))
-		arg0, err = ec.unmarshalOComplexParamsInput2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
+		arg0, err = ec.unmarshalOComplexParamsInput2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -621,7 +621,7 @@ func (ec *executionContext) field_TypeExample_methodWithAlias_args(ctx context.C
 	var arg0 *models.ComplexParams
 	if tmp, ok := rawArgs["complexQueryParams"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("complexQueryParams"))
-		arg0, err = ec.unmarshalOComplexParamsInput2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
+		arg0, err = ec.unmarshalOComplexParamsInput2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -636,7 +636,7 @@ func (ec *executionContext) field_TypeExample_methodWithContext_args(ctx context
 	var arg0 *models.ComplexParams
 	if tmp, ok := rawArgs["complexQueryParams"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("complexQueryParams"))
-		arg0, err = ec.unmarshalOComplexParamsInput2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
+		arg0, err = ec.unmarshalOComplexParamsInput2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -651,7 +651,7 @@ func (ec *executionContext) field_TypeExample_methodWithResult_args(ctx context.
 	var arg0 *models.ComplexResult
 	if tmp, ok := rawArgs["complexQueryParams"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("complexQueryParams"))
-		arg0, err = ec.unmarshalOComplexResultInput2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, tmp)
+		arg0, err = ec.unmarshalOComplexResultInput2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -666,7 +666,7 @@ func (ec *executionContext) field_TypeExample_methodWithoutContext_args(ctx cont
 	var arg0 *models.ComplexParams
 	if tmp, ok := rawArgs["complexQueryParams"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("complexQueryParams"))
-		arg0, err = ec.unmarshalOComplexParamsInput2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
+		arg0, err = ec.unmarshalOComplexParamsInput2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -681,7 +681,7 @@ func (ec *executionContext) field_TypeExample_methodWithoutError_args(ctx contex
 	var arg0 *models.ComplexParams
 	if tmp, ok := rawArgs["complexQueryParams"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("complexQueryParams"))
-		arg0, err = ec.unmarshalOComplexParamsInput2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
+		arg0, err = ec.unmarshalOComplexParamsInput2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -1008,7 +1008,7 @@ func (ec *executionContext) _Mutation_exampleMutation(ctx context.Context, field
 	}
 	res := resTmp.(*models.MutationExample)
 	fc.Result = res
-	return ec.marshalOMutationExample2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMutationExample(ctx, field.Selections, res)
+	return ec.marshalOMutationExample2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMutationExample(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Mutation_exampleMutation(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1057,7 +1057,7 @@ func (ec *executionContext) _MutationExample_methodWithContext(ctx context.Conte
 	}
 	res := resTmp.(*models.ComplexResult)
 	fc.Result = res
-	return ec.marshalOComplexResult2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
+	return ec.marshalOComplexResult2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_MutationExample_methodWithContext(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1115,7 +1115,7 @@ func (ec *executionContext) _MutationExample_methodWithoutContext(ctx context.Co
 	}
 	res := resTmp.(*models.ComplexResult)
 	fc.Result = res
-	return ec.marshalOComplexResult2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
+	return ec.marshalOComplexResult2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_MutationExample_methodWithoutContext(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1173,7 +1173,7 @@ func (ec *executionContext) _MutationExample_methodWithContextAlias(ctx context.
 	}
 	res := resTmp.(*models.ComplexResult)
 	fc.Result = res
-	return ec.marshalOComplexResult2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
+	return ec.marshalOComplexResult2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_MutationExample_methodWithContextAlias(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1231,7 +1231,7 @@ func (ec *executionContext) _Query_node(ctx context.Context, field graphql.Colle
 	}
 	res := resTmp.(models.Node)
 	fc.Result = res
-	return ec.marshalONode2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐNode(ctx, field.Selections, res)
+	return ec.marshalONode2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐNode(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_node(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1283,7 +1283,7 @@ func (ec *executionContext) _Query_queryExample(ctx context.Context, field graph
 	}
 	res := resTmp.(*models.TypeExample)
 	fc.Result = res
-	return ec.marshalOTypeExample2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐTypeExample(ctx, field.Selections, res)
+	return ec.marshalOTypeExample2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐTypeExample(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_queryExample(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1935,7 +1935,7 @@ func (ec *executionContext) _TypeExample_fieldUserDefinedScalar(ctx context.Cont
 	}
 	res := resTmp.(models.YesNo)
 	fc.Result = res
-	return ec.marshalNYesNo2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx, field.Selections, res)
+	return ec.marshalNYesNo2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_fieldUserDefinedScalar(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1976,7 +1976,7 @@ func (ec *executionContext) _TypeExample_fieldNullableUserDefinedScalar(ctx cont
 	}
 	res := resTmp.(*models.YesNo)
 	fc.Result = res
-	return ec.marshalOYesNo2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx, field.Selections, res)
+	return ec.marshalOYesNo2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_fieldNullableUserDefinedScalar(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -2020,7 +2020,7 @@ func (ec *executionContext) _TypeExample_fieldUserDefinedEnum(ctx context.Contex
 	}
 	res := resTmp.(models.MyEnum)
 	fc.Result = res
-	return ec.marshalNMyEnum2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx, field.Selections, res)
+	return ec.marshalNMyEnum2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_fieldUserDefinedEnum(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -2064,7 +2064,7 @@ func (ec *executionContext) _TypeExample_fieldStruct(ctx context.Context, field 
 	}
 	res := resTmp.(models.ComplexField)
 	fc.Result = res
-	return ec.marshalNComplexField2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexField(ctx, field.Selections, res)
+	return ec.marshalNComplexField2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexField(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_fieldStruct(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -2114,7 +2114,7 @@ func (ec *executionContext) _TypeExample_filedStructWithMarshaler(ctx context.Co
 	}
 	res := resTmp.(models.ComplexFieldWithMarshaler)
 	fc.Result = res
-	return ec.marshalNComplexFieldWithMarshaler2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexFieldWithMarshaler(ctx, field.Selections, res)
+	return ec.marshalNComplexFieldWithMarshaler2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexFieldWithMarshaler(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_filedStructWithMarshaler(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -2155,7 +2155,7 @@ func (ec *executionContext) _TypeExample_fieldNullableComplex(ctx context.Contex
 	}
 	res := resTmp.(*models.ComplexField)
 	fc.Result = res
-	return ec.marshalOComplexField2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexField(ctx, field.Selections, res)
+	return ec.marshalOComplexField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexField(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_fieldNullableComplex(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -2202,7 +2202,7 @@ func (ec *executionContext) _TypeExample_fieldInterface(ctx context.Context, fie
 	}
 	res := resTmp.(models.ComplexInterface)
 	fc.Result = res
-	return ec.marshalOComplexInterface2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexInterface(ctx, field.Selections, res)
+	return ec.marshalOComplexInterface2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexInterface(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_fieldInterface(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -2369,7 +2369,7 @@ func (ec *executionContext) _TypeExample_embeddedField(ctx context.Context, fiel
 	}
 	res := resTmp.(models.EmbeddedField)
 	fc.Result = res
-	return ec.marshalNEmbeddedField2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐEmbeddedField(ctx, field.Selections, res)
+	return ec.marshalNEmbeddedField2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐEmbeddedField(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_embeddedField(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -2416,7 +2416,7 @@ func (ec *executionContext) _TypeExample_methodWithContext(ctx context.Context, 
 	}
 	res := resTmp.(*models.ComplexResult)
 	fc.Result = res
-	return ec.marshalOComplexResult2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
+	return ec.marshalOComplexResult2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_methodWithContext(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -2474,7 +2474,7 @@ func (ec *executionContext) _TypeExample_methodWithoutContext(ctx context.Contex
 	}
 	res := resTmp.(*models.ComplexResult)
 	fc.Result = res
-	return ec.marshalOComplexResult2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
+	return ec.marshalOComplexResult2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_methodWithoutContext(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -2532,7 +2532,7 @@ func (ec *executionContext) _TypeExample_methodWithoutError(ctx context.Context,
 	}
 	res := resTmp.(*models.ComplexResult)
 	fc.Result = res
-	return ec.marshalOComplexResult2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
+	return ec.marshalOComplexResult2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_methodWithoutError(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -2590,7 +2590,7 @@ func (ec *executionContext) _TypeExample_methodWithAlias(ctx context.Context, fi
 	}
 	res := resTmp.(*models.ComplexResult)
 	fc.Result = res
-	return ec.marshalOComplexResult2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
+	return ec.marshalOComplexResult2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_methodWithAlias(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -2648,7 +2648,7 @@ func (ec *executionContext) _TypeExample_methodWithResult(ctx context.Context, f
 	}
 	res := resTmp.(*models.ComplexResult)
 	fc.Result = res
-	return ec.marshalOComplexResult2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
+	return ec.marshalOComplexResult2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_TypeExample_methodWithResult(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -4488,7 +4488,7 @@ func (ec *executionContext) unmarshalInputComplexParamsInput(ctx context.Context
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("fieldUserDefinedScalar"))
-			it.FieldUserDefinedScalar, err = ec.unmarshalNYesNo2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx, v)
+			it.FieldUserDefinedScalar, err = ec.unmarshalNYesNo2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -4496,7 +4496,7 @@ func (ec *executionContext) unmarshalInputComplexParamsInput(ctx context.Context
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("fieldNullUserDefinedScalar"))
-			it.FieldNullUserDefinedScalar, err = ec.unmarshalOYesNo2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx, v)
+			it.FieldNullUserDefinedScalar, err = ec.unmarshalOYesNo2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -4504,7 +4504,7 @@ func (ec *executionContext) unmarshalInputComplexParamsInput(ctx context.Context
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("fieldEnum"))
-			it.FieldEnum, err = ec.unmarshalNMyEnum2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx, v)
+			it.FieldEnum, err = ec.unmarshalNMyEnum2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -4512,7 +4512,7 @@ func (ec *executionContext) unmarshalInputComplexParamsInput(ctx context.Context
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("fieldNullableEnum"))
-			it.FieldNullableEnum, err = ec.unmarshalOMyEnum2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx, v)
+			it.FieldNullableEnum, err = ec.unmarshalOMyEnum2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -4520,7 +4520,7 @@ func (ec *executionContext) unmarshalInputComplexParamsInput(ctx context.Context
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("fieldStruct"))
-			it.FieldStruct, err = ec.unmarshalNNestedComplexParamsInput2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐNestedComplexParams(ctx, v)
+			it.FieldStruct, err = ec.unmarshalNNestedComplexParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐNestedComplexParams(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -4620,7 +4620,7 @@ func (ec *executionContext) unmarshalInputNestedComplexParamsInput(ctx context.C
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("fieldStruct"))
-			it.FieldStruct, err = ec.unmarshalNDeepNestedComplexParamsInput2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐDeepNestedComplexParams(ctx, v)
+			it.FieldStruct, err = ec.unmarshalNDeepNestedComplexParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐDeepNestedComplexParams(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -4628,7 +4628,7 @@ func (ec *executionContext) unmarshalInputNestedComplexParamsInput(ctx context.C
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("fieldUserDefinedScalar"))
-			it.FieldUserDefinedScalar, err = ec.unmarshalNYesNo2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx, v)
+			it.FieldUserDefinedScalar, err = ec.unmarshalNYesNo2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -4636,7 +4636,7 @@ func (ec *executionContext) unmarshalInputNestedComplexParamsInput(ctx context.C
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("fieldNullUserDefinedScalar"))
-			it.FieldNullUserDefinedScalar, err = ec.unmarshalOYesNo2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx, v)
+			it.FieldNullUserDefinedScalar, err = ec.unmarshalOYesNo2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -4644,7 +4644,7 @@ func (ec *executionContext) unmarshalInputNestedComplexParamsInput(ctx context.C
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("fieldEnum"))
-			it.FieldEnum, err = ec.unmarshalNMyEnum2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx, v)
+			it.FieldEnum, err = ec.unmarshalNMyEnum2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -4652,7 +4652,7 @@ func (ec *executionContext) unmarshalInputNestedComplexParamsInput(ctx context.C
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("fieldNullableEnum"))
-			it.FieldNullableEnum, err = ec.unmarshalOMyEnum2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx, v)
+			it.FieldNullableEnum, err = ec.unmarshalOMyEnum2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -5488,26 +5488,26 @@ func (ec *executionContext) marshalNBoolean2bool(ctx context.Context, sel ast.Se
 	return res
 }
 
-func (ec *executionContext) marshalNComplexField2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexField(ctx context.Context, sel ast.SelectionSet, v models.ComplexField) graphql.Marshaler {
+func (ec *executionContext) marshalNComplexField2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexField(ctx context.Context, sel ast.SelectionSet, v models.ComplexField) graphql.Marshaler {
 	return ec._ComplexField(ctx, sel, &v)
 }
 
-func (ec *executionContext) unmarshalNComplexFieldWithMarshaler2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexFieldWithMarshaler(ctx context.Context, v interface{}) (models.ComplexFieldWithMarshaler, error) {
+func (ec *executionContext) unmarshalNComplexFieldWithMarshaler2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexFieldWithMarshaler(ctx context.Context, v interface{}) (models.ComplexFieldWithMarshaler, error) {
 	var res models.ComplexFieldWithMarshaler
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNComplexFieldWithMarshaler2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexFieldWithMarshaler(ctx context.Context, sel ast.SelectionSet, v models.ComplexFieldWithMarshaler) graphql.Marshaler {
+func (ec *executionContext) marshalNComplexFieldWithMarshaler2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexFieldWithMarshaler(ctx context.Context, sel ast.SelectionSet, v models.ComplexFieldWithMarshaler) graphql.Marshaler {
 	return v
 }
 
-func (ec *executionContext) unmarshalNDeepNestedComplexParamsInput2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐDeepNestedComplexParams(ctx context.Context, v interface{}) (models.DeepNestedComplexParams, error) {
+func (ec *executionContext) unmarshalNDeepNestedComplexParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐDeepNestedComplexParams(ctx context.Context, v interface{}) (models.DeepNestedComplexParams, error) {
 	res, err := ec.unmarshalInputDeepNestedComplexParamsInput(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNEmbeddedField2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐEmbeddedField(ctx context.Context, sel ast.SelectionSet, v models.EmbeddedField) graphql.Marshaler {
+func (ec *executionContext) marshalNEmbeddedField2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐEmbeddedField(ctx context.Context, sel ast.SelectionSet, v models.EmbeddedField) graphql.Marshaler {
 	return ec._EmbeddedField(ctx, sel, &v)
 }
 
@@ -5556,17 +5556,17 @@ func (ec *executionContext) marshalNInt2int(ctx context.Context, sel ast.Selecti
 	return res
 }
 
-func (ec *executionContext) unmarshalNMyEnum2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx context.Context, v interface{}) (models.MyEnum, error) {
+func (ec *executionContext) unmarshalNMyEnum2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx context.Context, v interface{}) (models.MyEnum, error) {
 	var res models.MyEnum
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNMyEnum2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx context.Context, sel ast.SelectionSet, v models.MyEnum) graphql.Marshaler {
+func (ec *executionContext) marshalNMyEnum2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx context.Context, sel ast.SelectionSet, v models.MyEnum) graphql.Marshaler {
 	return v
 }
 
-func (ec *executionContext) unmarshalNNestedComplexParamsInput2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐNestedComplexParams(ctx context.Context, v interface{}) (models.NestedComplexParams, error) {
+func (ec *executionContext) unmarshalNNestedComplexParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐNestedComplexParams(ctx context.Context, v interface{}) (models.NestedComplexParams, error) {
 	res, err := ec.unmarshalInputNestedComplexParamsInput(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
@@ -5586,13 +5586,13 @@ func (ec *executionContext) marshalNString2string(ctx context.Context, sel ast.S
 	return res
 }
 
-func (ec *executionContext) unmarshalNYesNo2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx context.Context, v interface{}) (models.YesNo, error) {
+func (ec *executionContext) unmarshalNYesNo2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx context.Context, v interface{}) (models.YesNo, error) {
 	var res models.YesNo
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNYesNo2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx context.Context, sel ast.SelectionSet, v models.YesNo) graphql.Marshaler {
+func (ec *executionContext) marshalNYesNo2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx context.Context, sel ast.SelectionSet, v models.YesNo) graphql.Marshaler {
 	return v
 }
 
@@ -5875,21 +5875,21 @@ func (ec *executionContext) marshalOBoolean2ᚖbool(ctx context.Context, sel ast
 	return res
 }
 
-func (ec *executionContext) marshalOComplexField2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexField(ctx context.Context, sel ast.SelectionSet, v *models.ComplexField) graphql.Marshaler {
+func (ec *executionContext) marshalOComplexField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexField(ctx context.Context, sel ast.SelectionSet, v *models.ComplexField) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return ec._ComplexField(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalOComplexInterface2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexInterface(ctx context.Context, sel ast.SelectionSet, v models.ComplexInterface) graphql.Marshaler {
+func (ec *executionContext) marshalOComplexInterface2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexInterface(ctx context.Context, sel ast.SelectionSet, v models.ComplexInterface) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return ec._ComplexInterface(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalOComplexParamsInput2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx context.Context, v interface{}) (*models.ComplexParams, error) {
+func (ec *executionContext) unmarshalOComplexParamsInput2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexParams(ctx context.Context, v interface{}) (*models.ComplexParams, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -5897,14 +5897,14 @@ func (ec *executionContext) unmarshalOComplexParamsInput2ᚖhpappᚗyssk22ᚗdev
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalOComplexResult2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx context.Context, sel ast.SelectionSet, v *models.ComplexResult) graphql.Marshaler {
+func (ec *executionContext) marshalOComplexResult2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx context.Context, sel ast.SelectionSet, v *models.ComplexResult) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return ec._ComplexResult(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalOComplexResultInput2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx context.Context, v interface{}) (*models.ComplexResult, error) {
+func (ec *executionContext) unmarshalOComplexResultInput2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐComplexResult(ctx context.Context, v interface{}) (*models.ComplexResult, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -5960,14 +5960,14 @@ func (ec *executionContext) marshalOMap2map(ctx context.Context, sel ast.Selecti
 	return res
 }
 
-func (ec *executionContext) marshalOMutationExample2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMutationExample(ctx context.Context, sel ast.SelectionSet, v *models.MutationExample) graphql.Marshaler {
+func (ec *executionContext) marshalOMutationExample2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMutationExample(ctx context.Context, sel ast.SelectionSet, v *models.MutationExample) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return ec._MutationExample(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalOMyEnum2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx context.Context, v interface{}) (*models.MyEnum, error) {
+func (ec *executionContext) unmarshalOMyEnum2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx context.Context, v interface{}) (*models.MyEnum, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -5976,14 +5976,14 @@ func (ec *executionContext) unmarshalOMyEnum2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevt
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalOMyEnum2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx context.Context, sel ast.SelectionSet, v *models.MyEnum) graphql.Marshaler {
+func (ec *executionContext) marshalOMyEnum2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐMyEnum(ctx context.Context, sel ast.SelectionSet, v *models.MyEnum) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return v
 }
 
-func (ec *executionContext) marshalONode2hpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐNode(ctx context.Context, sel ast.SelectionSet, v models.Node) graphql.Marshaler {
+func (ec *executionContext) marshalONode2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐNode(ctx context.Context, sel ast.SelectionSet, v models.Node) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
@@ -6140,14 +6140,14 @@ func (ec *executionContext) marshalOString2ᚖstring(ctx context.Context, sel as
 	return res
 }
 
-func (ec *executionContext) marshalOTypeExample2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐTypeExample(ctx context.Context, sel ast.SelectionSet, v *models.TypeExample) graphql.Marshaler {
+func (ec *executionContext) marshalOTypeExample2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐTypeExample(ctx context.Context, sel ast.SelectionSet, v *models.TypeExample) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return ec._TypeExample(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalOYesNo2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx context.Context, v interface{}) (*models.YesNo, error) {
+func (ec *executionContext) unmarshalOYesNo2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx context.Context, v interface{}) (*models.YesNo, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -6156,7 +6156,7 @@ func (ec *executionContext) unmarshalOYesNo2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevto
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalOYesNo2ᚖhpappᚗyssk22ᚗdevᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx context.Context, sel ast.SelectionSet, v *models.YesNo) graphql.Marshaler {
+func (ec *executionContext) marshalOYesNo2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋdevtoolᚋgeneratorᚋtestᚋtestdataᚋe2eᚋmodelsᚐYesNo(ctx context.Context, sel ast.SelectionSet, v *models.YesNo) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}

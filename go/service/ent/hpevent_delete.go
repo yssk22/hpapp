@@ -8,8 +8,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/ent/hpevent"
-	"hpapp.yssk22.dev/go/service/ent/predicate"
+	"github.com/yssk22/hpapp/go/service/ent/hpevent"
+	"github.com/yssk22/hpapp/go/service/ent/predicate"
 )
 
 // HPEventDelete is the builder for deleting a HPEvent entity.

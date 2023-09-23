@@ -3,14 +3,14 @@ package helloproject
 import (
 	"context"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/foundation/slice"
-	"hpapp.yssk22.dev/go/graphql/common"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/ent/hpfeeditem"
-	"hpapp.yssk22.dev/go/service/ent/hpmember"
-	"hpapp.yssk22.dev/go/service/entutil"
-	"hpapp.yssk22.dev/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/graphql/common"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
+	"github.com/yssk22/hpapp/go/service/ent/hpmember"
+	"github.com/yssk22/hpapp/go/service/entutil"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
 )
 
 type HelloProjectQuery struct{}

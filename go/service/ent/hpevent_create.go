@@ -11,11 +11,11 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/ent/hpartist"
-	"hpapp.yssk22.dev/go/service/ent/hpevent"
-	"hpapp.yssk22.dev/go/service/ent/hpfceventticket"
-	"hpapp.yssk22.dev/go/service/ent/hpmember"
-	"hpapp.yssk22.dev/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/service/ent/hpartist"
+	"github.com/yssk22/hpapp/go/service/ent/hpevent"
+	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
+	"github.com/yssk22/hpapp/go/service/ent/hpmember"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
 )
 
 // HPEventCreate is the builder for creating a HPEvent entity.

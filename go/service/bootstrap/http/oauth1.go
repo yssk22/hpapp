@@ -1,7 +1,7 @@
 package http
 
 import (
-	"hpapp.yssk22.dev/go/service/auth/appuser/oauth1"
+	"github.com/yssk22/hpapp/go/service/auth/appuser/oauth1"
 )
 
 // WithGraphQLSchema sets up the graphql endoints under the given path

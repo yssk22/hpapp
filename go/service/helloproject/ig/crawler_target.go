@@ -5,10 +5,10 @@ import (
 	"encoding/json"
 	"os"
 
-	"hpapp.yssk22.dev/go/foundation/slice"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/ent/hpigpost"
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/hpigpost"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
 )
 
 // CrawlerTarget is an abstract interface to get the crawl args for ig blobs

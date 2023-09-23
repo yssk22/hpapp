@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"hpapp.yssk22.dev/go/service/ent/privacy"
+	"github.com/yssk22/hpapp/go/service/ent/privacy"
 )
 
 var (

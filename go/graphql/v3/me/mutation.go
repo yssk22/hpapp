@@ -3,11 +3,11 @@ package me
 import (
 	"context"
 
-	"hpapp.yssk22.dev/go/service/auth/appuser"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/helloproject/feed"
-	"hpapp.yssk22.dev/go/service/helloproject/upfc"
-	"hpapp.yssk22.dev/go/service/helloproject/user"
+	"github.com/yssk22/hpapp/go/service/auth/appuser"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/helloproject/feed"
+	"github.com/yssk22/hpapp/go/service/helloproject/upfc"
+	"github.com/yssk22/hpapp/go/service/helloproject/user"
 )
 
 type MeMutation struct{}

@@ -84,7 +84,7 @@ $ go test -v -bench=. ./system/clock/
 --- PASS: TestContext (0.00s)
 goos: linux
 goarch: amd64
-pkg: hpapp.yssk22.dev/gosystem/clock
+pkg: github.com/yssk22/hpapp/gosystem/clock
 cpu: AMD Ryzen 9 3900X 12-Core Processor
 BenchmarkNow
 BenchmarkNow-24                 27254952                42.73 ns/op

@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"strconv"
 
-	"hpapp.yssk22.dev/go/foundation/stringutil"
-	"hpapp.yssk22.dev/go/service/auth/extuser"
-	"hpapp.yssk22.dev/go/service/ent"
-	entauth "hpapp.yssk22.dev/go/service/ent/auth"
-	entuser "hpapp.yssk22.dev/go/service/ent/user"
-	"hpapp.yssk22.dev/go/service/entutil"
-	"hpapp.yssk22.dev/go/service/errors"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/foundation/stringutil"
+	"github.com/yssk22/hpapp/go/service/auth/extuser"
+	"github.com/yssk22/hpapp/go/service/ent"
+	entauth "github.com/yssk22/hpapp/go/service/ent/auth"
+	entuser "github.com/yssk22/hpapp/go/service/ent/user"
+	"github.com/yssk22/hpapp/go/service/entutil"
+	"github.com/yssk22/hpapp/go/service/errors"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 func DeleteUser(ctx context.Context, id string) error {

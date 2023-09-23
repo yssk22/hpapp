@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"os"
 
-	"hpapp.yssk22.dev/go/foundation/stringutil"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/foundation/stringutil"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 type fileAuthenticator struct {

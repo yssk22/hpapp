@@ -43,7 +43,7 @@ type HPAmebloPost implements Node {
   blobs: [HPBlob!]
 }
 """HPAmebloPostSource is enum for the field source"""
-enum HPAmebloPostSource @goModel(model: "hpapp.yssk22.dev/go/service/ent/hpameblopost.Source") {
+enum HPAmebloPostSource @goModel(model: "github.com/yssk22/hpapp/go/service/ent/hpameblopost.Source") {
   rss
   list
   entry
@@ -89,7 +89,7 @@ type HPBlob implements Node {
   igPosts: [HPIgPost!]
 }
 """HPBlobHPBlobFaceRecognitionStatus is enum for the field face_recognition_status"""
-enum HPBlobHPBlobFaceRecognitionStatus @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPBlobFaceRecognitionStatus") {
+enum HPBlobHPBlobFaceRecognitionStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPBlobFaceRecognitionStatus") {
   error
   face_automatically_labeled
   face_detected
@@ -97,21 +97,21 @@ enum HPBlobHPBlobFaceRecognitionStatus @goModel(model: "hpapp.yssk22.dev/go/serv
   unknown
 }
 """HPBlobHPBlobStatus is enum for the field status"""
-enum HPBlobHPBlobStatus @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPBlobStatus") {
+enum HPBlobHPBlobStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPBlobStatus") {
   error
   need_download
   ready_to_host
   unknown
 }
 """HPBlobHPBlobSubType is enum for the field sub_type"""
-enum HPBlobHPBlobSubType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPBlobSubType") {
+enum HPBlobHPBlobSubType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPBlobSubType") {
   html
   jpeg
   mp4
   unknown
 }
 """HPBlobHPBlobType is enum for the field type"""
-enum HPBlobHPBlobType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPBlobType") {
+enum HPBlobHPBlobType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPBlobType") {
   image
   text
   unknown
@@ -140,7 +140,7 @@ type HPElineupMallItem implements Node {
   taggedMembers: [HPMember!]
 }
 """HPElineupMallItemHPElineupMallItemCategory is enum for the field category"""
-enum HPElineupMallItemHPElineupMallItemCategory @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPElineupMallItemCategory") {
+enum HPElineupMallItemHPElineupMallItemCategory @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPElineupMallItemCategory") {
   Blueray
   ClearFile
   ColllectionOther
@@ -195,7 +195,7 @@ type HPEventEdge {
   cursor: Cursor!
 }
 """HPEventHPEventSource is enum for the field source"""
-enum HPEventHPEventSource @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPEventSource") {
+enum HPEventHPEventSource @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventSource") {
   fc_scrape
 }
 type HPFCEventTicket implements Node {
@@ -213,7 +213,7 @@ type HPFCEventTicket implements Node {
   paymentDueDate: Time
 }
 """HPFCEventTicketHPEventFCTicketStatus is enum for the field status"""
-enum HPFCEventTicketHPEventFCTicketStatus @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPEventFCTicketStatus") {
+enum HPFCEventTicketHPEventFCTicketStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketStatus") {
   Completed
   PaymentOverdue
   PendingPayment
@@ -256,7 +256,7 @@ type HPFeedItemEdge {
   cursor: Cursor!
 }
 """HPFeedItemHPAssetType is enum for the field asset_type"""
-enum HPFeedItemHPAssetType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPAssetType") {
+enum HPFeedItemHPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPAssetType") {
   ameblo
   elineupmall
   instagram
@@ -284,7 +284,7 @@ type HPFollow implements Node {
   member: HPMember!
 }
 """HPFollowHPFollowType is enum for the field type"""
-enum HPFollowHPFollowType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPFollowType") {
+enum HPFollowHPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFollowType") {
   follow
   follow_with_notification
   unfollow
@@ -416,7 +416,7 @@ type HPViewHistoryEdge {
   cursor: Cursor!
 }
 """HPViewHistoryHPAssetType is enum for the field asset_type"""
-enum HPViewHistoryHPAssetType @goModel(model: "hpapp.yssk22.dev/go/service/schema/enums.HPAssetType") {
+enum HPViewHistoryHPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPAssetType") {
   ameblo
   elineupmall
   instagram
@@ -428,7 +428,7 @@ enum HPViewHistoryHPAssetType @goModel(model: "hpapp.yssk22.dev/go/service/schem
 An object with an ID.
 Follows the [Relay Global Object Identification Specification](https://relay.dev/graphql/objectidentification.htm)
 """
-interface Node @goModel(model: "hpapp.yssk22.dev/go/service/ent.Noder") {
+interface Node @goModel(model: "github.com/yssk22/hpapp/go/service/ent.Noder") {
   """The id of the object."""
   id: ID!
 }

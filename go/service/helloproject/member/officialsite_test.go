@@ -6,15 +6,15 @@ import (
 	"testing"
 	"time"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/foundation/timeutil"
-	"hpapp.yssk22.dev/go/service/bootstrap/test"
-	"hpapp.yssk22.dev/go/service/ent"
-	"hpapp.yssk22.dev/go/service/ent/hpartist"
-	"hpapp.yssk22.dev/go/service/ent/hpasset"
-	"hpapp.yssk22.dev/go/service/ent/hpmember"
-	"hpapp.yssk22.dev/go/service/entutil"
-	"hpapp.yssk22.dev/go/system/settings"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/timeutil"
+	"github.com/yssk22/hpapp/go/service/bootstrap/test"
+	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/hpartist"
+	"github.com/yssk22/hpapp/go/service/ent/hpasset"
+	"github.com/yssk22/hpapp/go/service/ent/hpmember"
+	"github.com/yssk22/hpapp/go/service/entutil"
+	"github.com/yssk22/hpapp/go/system/settings"
 )
 
 func TestCrawlArtists(t *testing.T) {

@@ -7,8 +7,8 @@ import (
 	"entgo.io/ent"
 	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/field"
-	"hpapp.yssk22.dev/go/service/schema/enums"
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
 )
 
 // TestEnt is a test table to implement tests for ent related stuff

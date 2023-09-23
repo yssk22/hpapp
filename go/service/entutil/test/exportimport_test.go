@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/foundation/errors"
-	"hpapp.yssk22.dev/go/service/bootstrap/test"
-	"hpapp.yssk22.dev/go/service/entutil"
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/errors"
+	"github.com/yssk22/hpapp/go/service/bootstrap/test"
+	"github.com/yssk22/hpapp/go/service/entutil"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
 )
 
 func TestExportAndImport(t *testing.T) {

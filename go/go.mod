@@ -1,4 +1,4 @@
-module hpapp.yssk22.dev/go
+module github.com/yssk22/hpapp/go
 
 go 1.18
 

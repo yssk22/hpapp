@@ -8,16 +8,16 @@ import (
 	"path/filepath"
 	"strings"
 
-	"hpapp.yssk22.dev/go/foundation/assert"
-	"hpapp.yssk22.dev/go/foundation/kvs"
-	"hpapp.yssk22.dev/go/foundation/slice"
-	"hpapp.yssk22.dev/go/system/database"
-	"hpapp.yssk22.dev/go/system/environment"
-	"hpapp.yssk22.dev/go/system/http/external"
-	"hpapp.yssk22.dev/go/system/http/s2s"
-	"hpapp.yssk22.dev/go/system/push"
-	"hpapp.yssk22.dev/go/system/slog"
-	"hpapp.yssk22.dev/go/system/storage"
+	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/kvs"
+	"github.com/yssk22/hpapp/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/system/database"
+	"github.com/yssk22/hpapp/go/system/environment"
+	"github.com/yssk22/hpapp/go/system/http/external"
+	"github.com/yssk22/hpapp/go/system/http/s2s"
+	"github.com/yssk22/hpapp/go/system/push"
+	"github.com/yssk22/hpapp/go/system/slog"
+	"github.com/yssk22/hpapp/go/system/storage"
 )
 
 type gotest struct {

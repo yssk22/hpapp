@@ -47,7 +47,7 @@ func main() {
 				schemaDir,
 				&gen.Config{
 					Target:  targetDir,
-					Package: "hpapp.yssk22.dev/go/service/ent",
+					Package: "github.com/yssk22/hpapp/go/service/ent",
 				},
 				opts...,
 			)

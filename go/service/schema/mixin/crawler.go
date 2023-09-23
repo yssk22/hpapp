@@ -6,7 +6,7 @@ import (
 	"entgo.io/ent/schema/field"
 	"entgo.io/ent/schema/mixin"
 
-	"hpapp.yssk22.dev/go/service/schema/jsonfields"
+	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
 )
 
 // Crawler implements the ent.Mixin for tables inserted/updated by cralwer

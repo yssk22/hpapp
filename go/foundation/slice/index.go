@@ -1,6 +1,6 @@
 package slice
 
-import "hpapp.yssk22.dev/go/foundation/object"
+import "github.com/yssk22/hpapp/go/foundation/object"
 
 func Index[T comparable](list []T, v T) int {
 	return IndexFunc(list, func(_ int, vv T) bool {

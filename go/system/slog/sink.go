@@ -6,7 +6,7 @@ import (
 	"io"
 
 	"cloud.google.com/go/logging"
-	"hpapp.yssk22.dev/go/foundation/errors"
+	"github.com/yssk22/hpapp/go/foundation/errors"
 )
 
 // Sink is an interface to implement logging sink

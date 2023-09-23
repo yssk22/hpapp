@@ -6,8 +6,8 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/yssk22/hpapp/go/system/slog"
 	"golang.org/x/time/rate"
-	"hpapp.yssk22.dev/go/system/slog"
 )
 
 type DomainRateConfig struct {

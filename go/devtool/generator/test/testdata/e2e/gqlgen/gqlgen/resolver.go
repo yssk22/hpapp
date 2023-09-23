@@ -5,8 +5,8 @@ package gqlgen
 import (
 	"context"
 
-	"hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/gqlgen"
-	"hpapp.yssk22.dev/go/devtool/generator/test/testdata/e2e/models"
+	"github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/gqlgen"
+	"github.com/yssk22/hpapp/go/devtool/generator/test/testdata/e2e/models"
 )
 
 type Resolver struct{}

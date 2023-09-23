@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"strings"
 
-	"hpapp.yssk22.dev/go/service/bootstrap/http/middleware"
-	"hpapp.yssk22.dev/go/service/ent"
-	ccontext "hpapp.yssk22.dev/go/system/context"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http/middleware"
+	"github.com/yssk22/hpapp/go/service/ent"
+	ccontext "github.com/yssk22/hpapp/go/system/context"
 )
 
 // ProviderAuthResult is a result of authentication by the given provider.

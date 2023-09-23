@@ -10,8 +10,8 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"hpapp.yssk22.dev/go/service/ent/auth"
-	"hpapp.yssk22.dev/go/service/ent/user"
+	"github.com/yssk22/hpapp/go/service/ent/auth"
+	"github.com/yssk22/hpapp/go/service/ent/user"
 )
 
 // Auth is the model entity for the Auth schema.

@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"strconv"
 
-	"hpapp.yssk22.dev/go/service/ent"
-	entuser "hpapp.yssk22.dev/go/service/ent/user"
-	"hpapp.yssk22.dev/go/service/entutil"
-	"hpapp.yssk22.dev/go/system/settings"
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/service/ent"
+	entuser "github.com/yssk22/hpapp/go/service/ent/user"
+	"github.com/yssk22/hpapp/go/service/entutil"
+	"github.com/yssk22/hpapp/go/system/settings"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 func EntUser(user *ent.User) User {

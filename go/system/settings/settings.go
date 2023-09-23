@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"hpapp.yssk22.dev/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/foundation/slice"
 )
 
 // Item is an interface to define a settings item.

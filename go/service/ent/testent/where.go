@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"entgo.io/ent/dialect/sql"
-	"hpapp.yssk22.dev/go/service/ent/predicate"
-	"hpapp.yssk22.dev/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/service/ent/predicate"
+	"github.com/yssk22/hpapp/go/service/schema/enums"
 )
 
 // ID filters vertices based on their ID field.

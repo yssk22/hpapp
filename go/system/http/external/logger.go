@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	"hpapp.yssk22.dev/go/system/slog"
+	"github.com/yssk22/hpapp/go/system/slog"
 )
 
 // Logger returns a *http.Client that logs the round trip

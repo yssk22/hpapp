@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	expo "github.com/nathancoleman/exponent-server-sdk-golang/sdk"
-	"hpapp.yssk22.dev/go/foundation/errors"
-	"hpapp.yssk22.dev/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/foundation/errors"
+	"github.com/yssk22/hpapp/go/foundation/slice"
 )
 
 // NewExpoClient returns a Client implementation.

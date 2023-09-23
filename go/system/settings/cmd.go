@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"hpapp.yssk22.dev/go/foundation/cli"
-	"hpapp.yssk22.dev/go/foundation/kvs"
-	"hpapp.yssk22.dev/go/foundation/slice"
+	"github.com/yssk22/hpapp/go/foundation/cli"
+	"github.com/yssk22/hpapp/go/foundation/kvs"
+	"github.com/yssk22/hpapp/go/foundation/slice"
 )
 
 // SettingsCommand provides the followng commands
@@ -28,7 +28,7 @@ func SettingsCommand() *cobra.Command {
 			RunE: func(cmd *cobra.Command, args []string) error {
 				ctx := cmd.Context()
 				w := cli.NewTableWriter([]string{"Key", "Type", "Package", "Var", "Current Value"})
-				defs, err := CaptureSettings("hpapp.yssk22.dev/go/...")
+				defs, err := CaptureSettings("github.com/yssk22/hpapp/go/...")
 				if err != nil {
 					return err
 				}
