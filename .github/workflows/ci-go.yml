@@ -26,3 +26,5 @@ jobs:
           go-version: "1.18.3"
           cache-dependency-path: "go/go.sum"
       - run: cd go && go test ./...
+        env:
+          HPAPP_TEST_APIFY_TOKEN: ${{ secrets.HPAPP_TEST_APIFY_TOKEN }}
