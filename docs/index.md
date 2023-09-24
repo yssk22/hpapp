@@ -17,6 +17,10 @@
 
 ### Commands
 
+### Misc
+
+- [envvars](./go/envvars.md)
+
 ## Expo iOS/Android Native Application
 
 ## Contribute

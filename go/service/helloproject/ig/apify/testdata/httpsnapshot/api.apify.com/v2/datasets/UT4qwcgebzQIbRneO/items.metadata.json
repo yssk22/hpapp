@@ -1,0 +1,61 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Access-Control-Allow-Headers": [
+			"User-Agent, Content-Type, X-Apify-Request-Origin"
+		],
+		"Access-Control-Allow-Methods": [
+			"GET, POST"
+		],
+		"Access-Control-Allow-Origin": [
+			"*"
+		],
+		"Access-Control-Expose-Headers": [
+			"X-Apify-Pagination-Total, X-Apify-Pagination-Offset, X-Apify-Pagination-Desc, X-Apify-Pagination-Count, X-Apify-Pagination-Limit"
+		],
+		"Cache-Control": [
+			"no-cache, no-store, must-revalidate"
+		],
+		"Content-Type": [
+			"application/json; charset=utf-8"
+		],
+		"Date": [
+			"Sun, 14 May 2023 16:15:23 GMT"
+		],
+		"Expires": [
+			"0"
+		],
+		"Pragma": [
+			"no-cache"
+		],
+		"Referrer-Policy": [
+			"no-referrer"
+		],
+		"Vary": [
+			"Accept-Encoding"
+		],
+		"X-Apify-Pagination-Count": [
+			"1"
+		],
+		"X-Apify-Pagination-Desc": [
+			"false"
+		],
+		"X-Apify-Pagination-Limit": [
+			"999999999999"
+		],
+		"X-Apify-Pagination-Offset": [
+			"0"
+		],
+		"X-Apify-Pagination-Total": [
+			"1"
+		],
+		"X-Ratelimit-Limit": [
+			"30"
+		],
+		"X-Robots-Tag": [
+			"none"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/api.apify.com/v2/datasets/UT4qwcgebzQIbRneO/items"
+}

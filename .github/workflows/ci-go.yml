@@ -17,6 +17,8 @@ on:
 jobs:
   test-go:
     runs-on: ubuntu-latest
+    environment:
+      name: ci-go
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v4
