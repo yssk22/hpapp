@@ -132,8 +132,8 @@ type CrawlArtistPageArgs struct {
 }
 
 var (
-	CrawlArtistPageArgsListItemsPerPage = settings.NewInt("services.helloproject.elineupmall.list_items_per_page", 1000)
-	CrawlArtistPageArgsMaxItemsPerCrawl = settings.NewInt("services.helloproject.elineupmall.max_items_per_crawl", 200)
+	CrawlArtistPageArgsListItemsPerPage = settings.NewInt("service.helloproject.elineupmall.list_items_per_page", 1000)
+	CrawlArtistPageArgsMaxItemsPerCrawl = settings.NewInt("service.helloproject.elineupmall.max_items_per_crawl", 200)
 )
 
 func (s *elineupmallService) CrawlArtistPageTask() *task.TaskSpec[CrawlArtistPageArgs] {
