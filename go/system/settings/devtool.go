@@ -41,7 +41,7 @@ func CaptureSettings(packageName string) ([]*ItemInfo, error) {
 	return defs, nil
 }
 
-var typeName = regexp.MustCompile(`hpapp\.yssk22\.dev/go/system/settings\.Item\[(.+)\]`)
+var typeName = regexp.MustCompile(`github\.com/yssk22/hpapp/go/system/settings\.Item\[(.+)\]`)
 
 func getItemVars(pkg *packages.Package) []*ItemInfo {
 	var defs []*ItemInfo

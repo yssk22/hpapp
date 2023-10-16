@@ -32,8 +32,8 @@ import (
 )
 
 var (
-	MaxUrlsPerCrawlerTask = settings.NewInt("services.helloproject.ameblo.max_urls_per_crawler_task", 200)
-	ExcludedAssetKeys     = settings.NewStringArray("services.helloproject.ameblo.excluded_asset_keys", []string{
+	MaxUrlsPerCrawlerTask = settings.NewInt("service.helloproject.ameblo.max_urls_per_crawler_task", 200)
+	ExcludedAssetKeys     = settings.NewStringArray("service.helloproject.ameblo.excluded_asset_keys", []string{
 		"satodamai",
 		"countrygirls",
 		"kobushi-factory",

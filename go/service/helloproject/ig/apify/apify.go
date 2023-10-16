@@ -13,6 +13,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
 	"github.com/yssk22/hpapp/go/service/scraping"
 	"github.com/yssk22/hpapp/go/system/http/external"
+	"github.com/yssk22/hpapp/go/system/settings"
 	"github.com/yssk22/hpapp/go/system/slog"
 )
 
@@ -35,6 +36,60 @@ const (
 	// ref: https://console.apify.com/actors/dSCLg0C3YEZ83HzYX#/information/latest/readme
 	ActorTypeInstagramProfileScraper ApifyActorType = "apify~instagram-profile-scraper"
 )
+
+var (
+	ApifyLatestToken      = settings.NewString("service.helloproject.ig.apify.apify_latest_token", "")
+	ApifyLatestTaskName   = settings.NewString("service.helloproject.ig.apify.apify_latest_task_name", "yssk22~instagram-profile-scraper-task")
+	ApifyBackfillToken    = settings.NewString("service.helloproject.ig.apify.apify_backfill_token", "")
+	ApifyBackfillTaskName = settings.NewString("service.helloproject.ig.apify.apify_backfill_task_name", "yssk22dev~instagram-scraper-task-backfill")
+)
+
+// NewLatestTarget ruturns ig.CrawlerTarget to scrape the latest posts from the Apify.
+func NewLatestTarget() ig.CrawlerTarget {
+	return &apifySettings{
+		tokenSettings:    ApifyLatestToken,
+		taskNameSettings: ApifyLatestTaskName,
+		actorType:        ActorTypeInstagramProfileScraper,
+		prevalidation:    false,
+	}
+}
+
+// NewBackfillTarget rtuturns ig.CrawlerTarget to scrape the posts from Apify backfill task
+func NewBackfillTarget() ig.CrawlerTarget {
+	return &apifySettings{
+		tokenSettings:    ApifyBackfillToken,
+		taskNameSettings: ApifyBackfillTaskName,
+		actorType:        ActorTypeInstagramScraper,
+		prevalidation:    true,
+	}
+}
+
+type apifySettings struct {
+	tokenSettings    settings.Item[string]
+	taskNameSettings settings.Item[string]
+	actorType        ApifyActorType
+	prevalidation    bool
+}
+
+func (a *apifySettings) GetCrawlArgs(ctx context.Context) ([]jsonfields.HPIgCrawlArgs, error) {
+	token := settings.GetX(ctx, a.tokenSettings)
+	if token == "" {
+		slog.Warning(ctx,
+			fmt.Sprintf("apify tokenSettings is empty so nothing is crawled."),
+			slog.Name("services.helloproject.iig.apify.tokenSettings"),
+		)
+		return []jsonfields.HPIgCrawlArgs{}, nil
+	}
+	taskName := settings.GetX(ctx, a.taskNameSettings)
+	if taskName == "" {
+		slog.Warning(ctx,
+			fmt.Sprintf("apify taskName is empty so nothing is crawled."),
+			slog.Name("services.helloproject.iig.apify.taskNameSettings"),
+		)
+		return []jsonfields.HPIgCrawlArgs{}, nil
+	}
+	return NewTargetFromApifyLatest(token, a.actorType, taskName, a.prevalidation).GetCrawlArgs(ctx)
+}
 
 // NewTargetFromApifyLatest returns a new CrawlerTarget from the Apify latest result.
 func NewTargetFromApifyLatest(token string, actorType ApifyActorType, taskName string, prevalidation bool) ig.CrawlerTarget {

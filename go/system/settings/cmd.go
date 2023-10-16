@@ -5,6 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/yssk22/hpapp/go/foundation/cli"
+	"github.com/yssk22/hpapp/go/foundation/errors"
 	"github.com/yssk22/hpapp/go/foundation/kvs"
 	"github.com/yssk22/hpapp/go/foundation/slice"
 )
@@ -38,7 +39,12 @@ func SettingsCommand() *cobra.Command {
 				store := ctx.Value(ctxKvsKey).(kvs.KVS)
 				values, err := store.GetMulti(ctx, keys...)
 				if err != nil {
-					return err
+					if errs, ok := err.(errors.MultiError); ok {
+						err = errs[0]
+					}
+					if err != kvs.ErrKeyNotFound {
+						return err
+					}
 				}
 				for i, d := range defs {
 					v := values[i]

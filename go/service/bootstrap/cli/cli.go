@@ -9,6 +9,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/auth/appuser"
 	"github.com/yssk22/hpapp/go/service/auth/client"
 	"github.com/yssk22/hpapp/go/service/bootstrap/config"
+	"github.com/yssk22/hpapp/go/service/bootstrap/http"
 	"github.com/yssk22/hpapp/go/service/bootstrap/http/task"
 	"github.com/yssk22/hpapp/go/system/database"
 	"github.com/yssk22/hpapp/go/system/environment"
@@ -18,11 +19,15 @@ import (
 	_ "github.com/yssk22/hpapp/go/service/ent/runtime"
 )
 
-// RunCLI runs a cmmand
+// RunCLI runs a command
 func RunCLI(e environment.Environment, services ...config.Service) {
 	cmd := &cobra.Command{}
+
+	cmd.PersistentFlags().Bool("prod", false, "run in production env") // flag is defined to avoid error, but actually not used in cmd since main() function should parse it.
+
 	cmd.AddCommand(settings.SettingsCommand())
 	cmd.AddCommand(database.Command())
+	cmd.AddCommand(http.Command(e, services...))
 	for _, s := range services {
 		scmd := s.Command()
 		if scmd != nil {

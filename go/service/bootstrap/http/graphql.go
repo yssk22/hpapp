@@ -13,34 +13,6 @@ import (
 	"github.com/yssk22/hpapp/go/system/slog"
 )
 
-// WithGraphQLSchema sets up the graphql endoints under the given path
-// This option can be called multiple times to add multiple graphql endpoints
-func WithGraphQLSchema(path string, schema graphql.ExecutableSchema) HttpOption {
-	return func(cfg *httpConfig) {
-		cfg.GraphQLSchemas[path] = schema
-	}
-}
-
-// WithGraphQLPlaygroundPath adds a playground handler under the given path per a graphql schema
-// For example, if you setup like follows
-//
-//    WithGraphQLShema("/v1/graphql/", graphQLV1),
-//    WithGraphQLShema("/v2/graphql/", graphQLV2),
-//    WithGraphQLShema("/v3/graphql/", graphQLV3),
-//    WithGraphQLPlaygroundPath("playground"),
-//
-// The playground will be available at the following paths:
-//
-//    /v1/graphql/playground'
-//	  /v2/graphql/playground/
-// 	  /v3/graphql/playground/
-//
-func WithGraphQLPlaygroundPath(path string) HttpOption {
-	return func(cfg *httpConfig) {
-		cfg.GraphQLPlaygroundPath = path
-	}
-}
-
 func genGraphQLHandler(schema graphql.ExecutableSchema) http.Handler {
 	h := handler.NewDefaultServer(schema)
 	h.Use(&graphQLLogging{})
