@@ -1,0 +1,93 @@
+name: GCP - Go
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "go/**"
+      - ".github/workflows/gcp-go.yml"
+jobs:
+  build-and-publish-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+      id-token: "write"
+    environment:
+      name: gcp-go
+    steps:
+      - uses: actions/checkout@v2
+      - uses: google-github-actions/setup-gcloud@v1
+        with:
+          version: "392.0.0"
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+      - id: "auth"
+        name: "Authenticate to Google Cloud"
+        uses: "google-github-actions/auth@v1"
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCLOUD_USER }}
+      - run: |
+          gcloud auth configure-docker --quiet
+      - uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ github.ref }}-${{ github.sha }}
+          restore-keys: |
+            ${{ github.ref }}-${{ github.sha }}
+            ${{ github.ref }}
+            refs/head/main
+      - uses: docker/setup-buildx-action@v2
+      - uses: docker/build-push-action@v3
+        with:
+          context: ./
+          file: ./go/Dockerfile
+          builder: ${{ steps.buildx.outputs.name }}
+          push: true
+          tags: ${{ secrets.DOCKER_TAG_PREFIX }}:${{ github.sha }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
+          provenance: false
+          build-args: |
+            datastore_settings_kind=${{ secrets.GCP_DATASTORE_SETTINGS_KIND }}
+            gcp_project_id=${{ secrets.GCP_PROJECT_ID }}
+  deploy-cloudrun-api:
+    needs: [build-and-publish-image]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+      id-token: "write"
+    environment:
+      name: gcp-go
+    strategy:
+      matrix:
+        service_name: ["hpapp-api", "hpapp-async", "hpapp-asynclarge"]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ github.ref }}-${{ github.sha }}
+          restore-keys: |
+            ${{ github.ref }}-${{ github.sha }}
+            ${{ github.ref }}
+            refs/head/main
+      - uses: google-github-actions/setup-gcloud@v1
+        with:
+          version: "392.0.0"
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+      - id: "auth"
+        name: "Authenticate to Google Cloud"
+        uses: "google-github-actions/auth@v1"
+        with:
+          workload_identity_provider: ${{ env.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCLOUD_USER }}
+      - run:
+          | # we use the same command line arguments for instance deployment while we configure differently (e.g. memory size) on Console
+          gcloud run deploy ${{ matrix.service_name }} \
+          --image ${{ secrets.DOCKER_TAG_PREFIX }}:${{ github.sha }} \
+          --ingress all \
+          --allow-unauthenticated \
+          --region ${{ secrets.GCP_CLOUD_RUN_REGION }} \
+          --service-account ${{ secrets.GCP_CLOUD_RUN_USER }} \
+          --quiet
