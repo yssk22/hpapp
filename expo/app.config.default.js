@@ -26,7 +26,7 @@ const ANDROID_VERSION_CODE = BUILD_NUMBER - 202301010000;
 module.exports = {
   expo: {
     name: "hpapp",
-    slug: "!!YOU HAVE TO SET BY YOU IN YOUR myconfig.js!!",
+    slug: "hpapp",
     scheme: "hpapp",
     version: packageJson.version,
     orientation: "portrait",
@@ -76,7 +76,18 @@ module.exports = {
     ],
     extra: {
       eas: {},
-      hpapp: {},
+      hpapp: {
+        graphQLEndpoint:
+          "this has to be configured in config/{configName}/secrets.json",
+        auth: {
+          google: {
+            iosClientId:
+              "this has to be configured in config/{configName}/secrets.json",
+            androidClientId:
+              "this has to be configured in config/{configName}/secrets.json",
+          },
+        },
+      },
     },
   },
 };

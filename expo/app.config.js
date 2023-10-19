@@ -1,3 +1,4 @@
+const path = require("path");
 const fs = require("fs");
 const config = require("./app.config.default").expo;
 
@@ -8,12 +9,39 @@ module.exports = (_) => {
       process.env["REACT_NATIVE_PACKAGER_HOSTNAME"] +
       ":8080/graphql/v3";
   }
+  const cfgName = process.env["HPAPP_CONFIG_NAME"];
+  if (cfgName === undefined || cfgName === "") {
+    throw new Error(
+      "HPAPP_CONFIG_NAME has to be specified in eas.json OR environment variable"
+    );
+  }
 
-  // use developer specific configuration (e.g slug, bundleidentifier, ...etc)
-  // using myconfi.js if it exists
-  const configure = fs.existsSync("./myconfig.js")
-    ? require("./myconfig")
-    : ({ config }) => config;
-  const myconfig = configure({ config });
-  return myconfig;
+  // set resources located in config/{name}/ directory
+  config.icon = path.join("config", cfgName, "icon.png");
+  config.splash.image = path.join("config", cfgName, "splash.png");
+
+  const isEAS = process.env.EAS_BUILD === "true";
+  const easEnvvarPrefix = cfgName.toUpperCase() + "_";
+  const iosGoogleServicesFilePath = isEAS
+    ? process.env[easEnvvarPrefix + "GOOGLE_SERVICES_INFO_PLIST"]
+    : path.join("config", cfgName, "GoogleService-Info.plist");
+  const androidGoogleServicesFilePath = isEAS
+    ? process.env[easEnvvarPrefix + "GOOGLE_SERVICES_JSON"]
+    : path.join("config", cfgName, "google-services.json");
+  const secretsJsonPath = isEAS
+    ? process.env[easEnvvarPrefix + "SECRETS_JSON"]
+    : path.join("config", cfgName, "secrets.json");
+
+  config.ios.googleServicesFile = iosGoogleServicesFilePath;
+  config.android.googleServicesFile = androidGoogleServicesFilePath;
+
+  const secretsJson = JSON.parse(fs.readFileSync(secretsJsonPath).toString());
+  config.extra.hpapp.graphQLEndpoint = secretsJson.extra.hpapp.graphQLEndpoint;
+  config.extra.hpapp.auth.google = secretsJson.extra.hpapp.auth.google;
+
+  // finally load the environment specific app.config.js
+  const configure = require("./" +
+    path.join("config", cfgName, "app.config.js"));
+
+  return configure(config);
 };
