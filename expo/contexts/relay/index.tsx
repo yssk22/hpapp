@@ -20,7 +20,8 @@ export interface HttpClientConfig {
 }
 
 function getDefaultGraphQLEndpoint() {
-  const override = Constants.expoConfig?.extra?.hpapp?.graphql_endpoint;
+  console.log(Constants.expoConfig?.extra?.hpapp);
+  const override = Constants.expoConfig?.extra?.hpapp?.graphQLEndpoint;
   const hostUri = Constants.manifest?.hostUri; // ip:port
   if (typeof override === "string") {
     return override;

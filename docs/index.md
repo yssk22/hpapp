@@ -5,7 +5,7 @@
 - [Architecture](./archtecture.md)
 - [Production Environment](./production.md)
 
-## Go Http Server
+## Go HTTP Server
 
 ### Libraries
 
@@ -21,7 +21,9 @@
 
 - [envvars](./go/envvars.md)
 
-## Expo iOS/Android Native Application
+## iOS/Android Native Application
+
+- [ios/Android Development](./expo/development.md)
 
 ## Contribute
 

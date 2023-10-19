@@ -6,9 +6,8 @@
     ],
     "forwardPorts": [
         3306,
-        19000,
-        19002,
-        8080
+        8080,
+        8081
     ],
     "onCreateCommand": ["/bin/bash", "/workspaces/sites/containers/onCreateCommand.sh"],
     "customizations": {

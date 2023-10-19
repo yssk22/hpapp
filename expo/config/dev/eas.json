@@ -3,13 +3,13 @@
     "version": "3.10.0"
   },
   "build": {
-    "development": {
+    "dev": {
       "env": {
-        "IS_DEV": "1"
+        "HPAPP_CONFIG_NAME":"dev"
       },
       "developmentClient": true,
       "distribution": "internal",
-      "channel": "development",
+      "channel": "dev",
       "android": {
         "buildType": "apk"
       }

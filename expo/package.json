@@ -4,14 +4,13 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
+    "start": "expo start --dev-client --lan",
+    "start-go": "yarn expo start",
+    "build-dev": "HPAPP_CONFIG_NAME=dev ./scripts/eas-build.sh",
+    "build-prod": "HPAPP_CONFIG_NAME=prod yarn eas build --profile prod --platform ios --non-interactive",
     "relay": "node ./scripts/genschema.js && yarn relay-compiler",
-    "genscreen": "node ./scripts/genscreen.js",
-    "test": "jest",
-    "start": "expo start",
-    "devclient": "expo start --dev-client",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "test": "yarn jest ./",
+    "genscreen": "node ./scripts/genscreen.js"
   },
   "relay": {
     "src": "./",
