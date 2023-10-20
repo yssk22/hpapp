@@ -1,6 +1,9 @@
 import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { defineScreen } from "@hpapp/features/root/protected/stack";
+import {
+  defineScreen,
+  useNavigationOption,
+} from "@hpapp/features/root/protected/stack";
 import HomeTab from "@hpapp/features/home/HomeTab";
 import EventsTab from "@hpapp/features/home/Events";
 import SettingsTab from "@hpapp/features/settings/SettingsTab";
@@ -70,44 +73,39 @@ function getTabBarIconFn(iconName: string) {
   };
 }
 
-export default defineScreen(
-  "/",
-  function () {
-    const [primary, contrast] = useColor("primary");
-    return (
-      <Tab.Navigator
-        screenOptions={({ route }) => {
-          return {
-            headerStyle: {
-              backgroundColor: primary,
-            },
-            headerTintColor: contrast,
-            headerTitleStyle: {
-              fontWeight: "bold",
-              fontFamily: Fonts.Main,
-            },
-          };
-        }}
-      >
-        {Tabs.map((tab) => {
-          return (
-            <Tab.Screen
-              key={tab.name}
-              name={t(tab.name)}
-              component={tab.component}
-              options={{
-                tabBarIcon: getTabBarIconFn(tab.icon),
-              }}
-            />
-          );
-        })}
-      </Tab.Navigator>
-    );
-  },
-  {
-    headerShown: false,
-  }
-);
+export default defineScreen("/", function () {
+  useNavigationOption({ headerShown: false });
+  const [primary, contrast] = useColor("primary");
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => {
+        return {
+          headerStyle: {
+            backgroundColor: primary,
+          },
+          headerTintColor: contrast,
+          headerTitleStyle: {
+            fontWeight: "bold",
+            fontFamily: Fonts.Main,
+          },
+        };
+      }}
+    >
+      {Tabs.map((tab) => {
+        return (
+          <Tab.Screen
+            key={tab.name}
+            name={t(tab.name)}
+            component={tab.component}
+            options={{
+              tabBarIcon: getTabBarIconFn(tab.icon),
+            }}
+          />
+        );
+      })}
+    </Tab.Navigator>
+  );
+});
 
 const styles = StyleSheet.create({
   container: {
