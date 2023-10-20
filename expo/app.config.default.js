@@ -77,14 +77,11 @@ module.exports = {
     extra: {
       eas: {},
       hpapp: {
-        graphQLEndpoint:
-          "this has to be configured in config/{configName}/secrets.json",
+        graphQLEndpoint: "http://localhost:8080/graphql/v3",
         auth: {
           google: {
-            iosClientId:
-              "this has to be configured in config/{configName}/secrets.json",
-            androidClientId:
-              "this has to be configured in config/{configName}/secrets.json",
+            iosClientId: null,
+            androidClientId: null,
           },
         },
       },

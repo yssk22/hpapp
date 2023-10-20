@@ -1,0 +1,41 @@
+name: EAS - build
+on:
+  workflow_dispatch:
+    inputs:
+      config:
+        description: "HPAPP_CONFIG_NAME set"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - prod
+      platform:
+        description: "Platform to build for"
+        required: true
+        default: "ios"
+        type: choice
+        options:
+          - ios
+          - android
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: eas
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "yarn"
+          cache-dependency-path: "expo/package.json"
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+      - run: cd expo && yarn install
+      - run: cd expo && ./scripts/eas-build.sh
+        env:
+          HPAPP_CONFIG_NAME: ${{inputs.config}}
+          HPAPP_CONFIG_PLATFORM: ${{inputs.platform}}

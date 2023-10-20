@@ -32,12 +32,18 @@ module.exports = (_) => {
     ? process.env[easEnvvarPrefix + "SECRETS_JSON"]
     : path.join("config", cfgName, "secrets.json");
 
-  config.ios.googleServicesFile = iosGoogleServicesFilePath;
-  config.android.googleServicesFile = androidGoogleServicesFilePath;
-
-  const secretsJson = JSON.parse(fs.readFileSync(secretsJsonPath).toString());
-  config.extra.hpapp.graphQLEndpoint = secretsJson.extra.hpapp.graphQLEndpoint;
-  config.extra.hpapp.auth.google = secretsJson.extra.hpapp.auth.google;
+  if (fs.existsSync(iosGoogleServicesFilePath)) {
+    config.ios.googleServicesFile = iosGoogleServicesFilePath;
+  }
+  if (fs.existsSync(androidGoogleServicesFilePath)) {
+    config.android.googleServicesFile = androidGoogleServicesFilePath;
+  }
+  if (fs.existsSync(secretsJsonPath)) {
+    const secretsJson = JSON.parse(fs.readFileSync(secretsJsonPath).toString());
+    config.extra.hpapp.graphQLEndpoint =
+      secretsJson.extra.hpapp.graphQLEndpoint;
+    config.extra.hpapp.auth.google = secretsJson.extra.hpapp.auth.google;
+  }
 
   // finally load the environment specific app.config.js
   const configure = require("./" +
