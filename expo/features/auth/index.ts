@@ -29,6 +29,15 @@ function useCurrentUser() {
   return useSettings(CurrentUserSettings);
 }
 
+type UserTier = "admin" | "fcmember" | "normal" | "guest";
+
+function useUserTier(user: User | undefined): UserTier {
+  if (!user) {
+    return "guest";
+  }
+  return "normal";
+}
+
 function useLogout() {
   const [_, setUser] = useSettings(CurrentUserSettings);
   return useCallback(() => {
@@ -40,4 +49,12 @@ type LoginContainer = React.ElementType<{
   onAuthenticated: (user: User) => void;
 }>;
 
-export { User, CurrentUserSettings, useCurrentUser, useLogout, LoginContainer };
+export {
+  User,
+  CurrentUserSettings,
+  useCurrentUser,
+  useUserTier,
+  useLogout,
+  LoginContainer,
+  UserTier,
+};
