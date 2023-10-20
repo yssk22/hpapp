@@ -1,6 +1,9 @@
 import { StyleSheet, ScrollView } from "react-native";
 import { Icon, ListItem } from "@rneui/themed";
-import { defineScreen } from "@hpapp/features/root/protected/stack";
+import {
+  defineScreen,
+  useScreenTitle,
+} from "@hpapp/features/root/protected/stack";
 import {
   AvailableColors,
   ColorScheme,
@@ -22,13 +25,11 @@ export default defineScreen(
     title: string;
     scheme: ColorScheme;
   }) {
+    useScreenTitle(title);
     const navigation = useNavigation();
     const [config, updateConfig] = useLocalUserConfig();
     const [_, updateTheme] = useAppTheme();
     const [current] = useColor(scheme);
-    useEffect(() => {
-      navigation.setOptions({ title: title });
-    }, [title]);
     return (
       <ScrollView>
         {AvailableColors.map((a) => {

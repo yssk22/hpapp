@@ -1,6 +1,8 @@
 import { View, Text, Button } from "react-native";
 import { createStackNavigator, useNavigation, defineScreen } from "./index";
 import { screen, render, fireEvent } from "@testing-library/react-native";
+import { AppThemeProvider } from "@hpapp/contexts/settings/theme";
+import TestRoot from "@hpapp/features/root/TestRoot";
 
 test("stack", async () => {
   function Root({ children }: { children: React.ReactElement }) {
@@ -57,12 +59,14 @@ test("stack", async () => {
 
   function StackContainer() {
     return (
-      <>
-        <Stack
-          screens={[HomeScreen, ScreenWithParams, ScreenWithoutParams]}
-          initialRouteName="/"
-        />
-      </>
+      <TestRoot>
+        <AppThemeProvider>
+          <Stack
+            screens={[HomeScreen, ScreenWithParams, ScreenWithoutParams]}
+            initialRouteName="/"
+          />
+        </AppThemeProvider>
+      </TestRoot>
     );
   }
 
