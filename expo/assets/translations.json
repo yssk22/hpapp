@@ -2,6 +2,9 @@
   "Home": {
     "ja": "ホーム"
   },
+  "I agree": {
+    "ja": "同意します"
+  },
   "Artists": {
     "ja": "アーティスト"
   },
@@ -44,6 +47,9 @@
   },
   "Background Color": {
     "ja": "バックグラウンドカラー"
+  },
+  "FC Settings": {
+    "ja": "ファンクラブ設定"
   },
   "Logout": {
     "ja": "ログアウト"
