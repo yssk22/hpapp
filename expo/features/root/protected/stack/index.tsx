@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useMemo } from "react";
+import React, { forwardRef, useCallback, useEffect, useMemo } from "react";
 import {
   createNativeStackNavigator as createNavigator,
   NativeStackNavigationOptions,
@@ -197,16 +197,35 @@ const useNavigation = () => {
 
 type Navigation = ReturnType<typeof useNavigation>;
 
-function defineScreen<P>(
-  path: string,
-  component: React.ElementType<P>,
-  options?: NativeStackNavigationOptions
-) {
+function defineScreen<P>(path: string, component: React.ElementType<P>) {
   return {
     path,
     component,
-    options,
   };
 }
 
-export { createStackNavigator, useNavigation, Navigation, defineScreen };
+// shortcut for useNavigationOption({title: title})
+function useScreenTitle(title: string) {
+  const navigation = useNavigation();
+  useEffect(() => {
+    navigation.setOptions({
+      title,
+    });
+  }, [title]);
+}
+
+function useNavigationOption(options: Partial<NativeStackNavigationOptions>) {
+  const navigation = useNavigation();
+  useEffect(() => {
+    navigation.setOptions(options);
+  }, [options]);
+}
+
+export {
+  createStackNavigator,
+  useNavigation,
+  Navigation,
+  defineScreen,
+  useScreenTitle,
+  useNavigationOption,
+};
