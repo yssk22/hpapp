@@ -5,6 +5,7 @@ import S1 from './features/feed/FeedItemScreen';
 import S2 from './features/home/HomeScreen';
 import S3 from './features/settings/theme/ThemeColorSelectorScreen';
 import S4 from './features/settings/theme/ThemeSettingsScreen';
+import S5 from './features/upfc/UPFCSettingsScreen';
 
 const Screens = [
   S0,
@@ -12,5 +13,6 @@ const Screens = [
   S2,
   S3,
   S4,
+  S5,
 ];
 export default Screens;
