@@ -6,6 +6,7 @@ import ThemeSettingsScreen from "@hpapp/features/settings/theme/ThemeSettingsScr
 import { ListItem } from "@rneui/base";
 import { t } from "@hpapp/system/i18n";
 import LogoutListItem from "@hpapp/features/settings/LogoutListItem";
+import VersionSignature from "@hpapp/features/settings/VersionSignature";
 
 export default function SettingsTab() {
   return (
@@ -15,6 +16,8 @@ export default function SettingsTab() {
       </NavigationListItem>
       <Divider />
       <LogoutListItem />
+      <Divider />
+      <VersionSignature />
     </ScrollView>
   );
 }
