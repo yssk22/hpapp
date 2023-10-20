@@ -1,9 +1,10 @@
 import { AnalyticsProvider } from "@hpapp/contexts/analytics";
 import { RelayProvider } from "@hpapp/contexts/relay";
 import { SettingsProvider } from "@hpapp/contexts/settings";
+import { LocalUserConfigurationSettings } from "@hpapp/contexts/settings/useLocalUserConfig";
 import { CurrentUserSettings } from "@hpapp/features/auth";
 
-const settings = [CurrentUserSettings];
+const settings = [CurrentUserSettings, LocalUserConfigurationSettings];
 
 export default function TestRoot({
   children,

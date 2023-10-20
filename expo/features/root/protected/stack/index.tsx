@@ -77,6 +77,8 @@ function createStackNavigator<P extends ScreenParams>(
       | React.Ref<NavigationContainerRef<ReactNavigation.RootParamList>>
       | undefined
   ): JSX.Element {
+    const [primary, contrastPrimary] = useColor("primary");
+    const [secondary, _] = useColor("secondary");
     const { screens, onStateChange, initialRouteName, ...navigatorProps } =
       props;
     const screenMap = screens.reduce((map, s) => {
@@ -117,13 +119,16 @@ function createStackNavigator<P extends ScreenParams>(
             options={{
               headerBackTitle: "",
               headerBackTitleVisible: false,
-
+              headerTintColor: contrastPrimary,
+              headerStyle: {
+                backgroundColor: primary,
+              },
               ...options,
             }}
           />
         );
       });
-    }, [screens]);
+    }, [screens, primary, contrastPrimary]);
     return (
       <NavigationContainer
         ref={ref}
@@ -132,8 +137,12 @@ function createStackNavigator<P extends ScreenParams>(
         theme={{
           ...DefaultTheme,
           colors: {
-            ...DefaultTheme.colors,
-            background: "#ffffff",
+            primary: primary,
+            background: contrastPrimary,
+            card: contrastPrimary,
+            text: primary,
+            border: contrastPrimary,
+            notification: secondary,
           },
         }}
       >
@@ -197,10 +206,14 @@ const useNavigation = () => {
 
 type Navigation = ReturnType<typeof useNavigation>;
 
-function defineScreen<P>(path: string, component: React.ElementType<P>) {
+function defineScreen<P extends ScreenParams>(
+  path: string,
+  component: React.ElementType<P>
+): Screen<P> {
   return {
     path,
     component,
+    options: {},
   };
 }
 
