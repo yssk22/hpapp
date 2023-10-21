@@ -32,7 +32,7 @@ jobs:
           cache-dependency-path: "expo/package.json"
       - uses: expo/expo-github-action@v8
         with:
-          eas-version: latest
+          eas-version: 5.4.0
           token: ${{ secrets.EXPO_TOKEN }}
       - run: cd expo && yarn install
       - run: cd expo && ./scripts/eas-build.sh
