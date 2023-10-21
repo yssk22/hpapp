@@ -32,6 +32,9 @@ module.exports = (_) => {
     ? process.env[easEnvvarPrefix + "SECRETS_JSON"]
     : path.join("config", cfgName, "secrets.json");
 
+  console.log("isEAS", isEAS);
+  console.log(iosGoogleServicesFilePath);
+
   if (fs.existsSync(iosGoogleServicesFilePath)) {
     config.ios.googleServicesFile = iosGoogleServicesFilePath;
   }
