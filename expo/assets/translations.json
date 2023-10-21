@@ -51,6 +51,24 @@
   "FC Settings": {
     "ja": "ファンクラブ設定"
   },
+  "FC Member Number": {
+    "ja": "FC会員番号"
+  },
+  "FC Password": {
+    "ja": "FCパスワード"
+  },
+  "Sync Events to Calendar": {
+    "ja": "カレンダーにイベントを同期する"
+  },
+  "Event Prefix": {
+    "ja": "イベントのプレフィックス"
+  },
+  "Save": {
+    "ja": "保存"
+  },
+  "Clear": {
+    "ja": "クリア"
+  },
   "Logout": {
     "ja": "ログアウト"
   }

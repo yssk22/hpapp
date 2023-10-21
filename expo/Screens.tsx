@@ -5,7 +5,7 @@ import S1 from './features/feed/FeedItemScreen';
 import S2 from './features/home/HomeScreen';
 import S3 from './features/settings/theme/ThemeColorSelectorScreen';
 import S4 from './features/settings/theme/ThemeSettingsScreen';
-import S5 from './features/upfc/UPFCSettingsScreen';
+import S5 from './features/upfc/settings/UPFCSettingsScreen';
 
 const Screens = [
   S0,

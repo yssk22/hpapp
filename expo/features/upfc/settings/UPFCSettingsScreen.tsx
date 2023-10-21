@@ -6,6 +6,7 @@ import {
   useScreenTitle,
 } from "@hpapp/features/root/protected/stack";
 import ConsentGate from "@hpapp/features/policy/ConsentGate";
+import UPFCSettingsForm from "@hpapp/features/upfc/settings/UPFCSettingsForm";
 
 export default defineScreen("/upfc/settings/", function UPFCSettingScreen() {
   useScreenTitle(t("FC Settings"));
@@ -25,7 +26,7 @@ export default defineScreen("/upfc/settings/", function UPFCSettingScreen() {
         }}
         pass={userConfig!.consentOnUPFCDataPolicy || false}
       >
-        <></>
+        <UPFCSettingsForm />
       </ConsentGate>
     </>
   );

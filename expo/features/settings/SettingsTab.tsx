@@ -7,7 +7,7 @@ import { ListItem } from "@rneui/base";
 import { t } from "@hpapp/system/i18n";
 import LogoutListItem from "@hpapp/features/settings/LogoutListItem";
 import VersionSignature from "@hpapp/features/settings/VersionSignature";
-import UPFCSettingsScreen from "@hpapp/features/upfc/UPFCSettingsScreen";
+import UPFCSettingsScreen from "@hpapp/features/upfc/settings/UPFCSettingsScreen";
 
 export default function SettingsTab() {
   return (
