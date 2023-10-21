@@ -11,13 +11,18 @@ import ProtectedRoot from "@hpapp/features/root/protected/ProtectedRoot";
 import GuestRoot from "@hpapp/features/root/GuestRoot";
 import { ScreenList } from "@hpapp/features/root/protected/stack";
 import { LocalUserConfigurationSettings } from "@hpapp/contexts/settings/useLocalUserConfig";
+import { UPFCSettings } from "@hpapp/features/upfc/settings/UPFCSettings";
 import {
   useFonts,
   BIZUDGothic_400Regular,
   BIZUDGothic_700Bold,
 } from "@expo-google-fonts/biz-udgothic";
 
-const settings = [CurrentUserSettings, LocalUserConfigurationSettings];
+const settings = [
+  CurrentUserSettings,
+  LocalUserConfigurationSettings,
+  UPFCSettings,
+];
 
 function UserRoot({
   LoginContainer,

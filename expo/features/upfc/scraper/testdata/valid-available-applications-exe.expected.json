@@ -1,0 +1,29 @@
+[
+  {
+    "name": "アンジュルム　日本武道館　先々行",
+    "applicationStartDate": "2021-09-12T15:00:00.000Z",
+    "applicationDueDate": "2021-09-19T15:00:00.000Z",
+    "paymentOpenDate": "2021-09-21T15:00:00.000Z",
+    "paymentDueDate": "2021-09-29T15:00:00.000Z",
+    "applicationID": "DM_316",
+    "tickets": []
+  },
+  {
+    "name": "Juice=Juice横浜アリーナ先々行",
+    "applicationStartDate": "2021-09-23T15:00:00.000Z",
+    "applicationDueDate": "2021-09-28T15:00:00.000Z",
+    "paymentOpenDate": "2021-09-28T15:00:00.000Z",
+    "paymentDueDate": "2021-10-02T15:00:00.000Z",
+    "applicationID": "DM_317",
+    "tickets": []
+  },
+  {
+    "name": "モーニング娘。’21　日本武道館　先々行",
+    "applicationStartDate": "2021-09-23T15:00:00.000Z",
+    "applicationDueDate": "2021-09-28T15:00:00.000Z",
+    "paymentOpenDate": "2021-09-28T15:00:00.000Z",
+    "paymentDueDate": "2021-10-02T15:00:00.000Z",
+    "applicationID": "DM_318",
+    "tickets": []
+  }
+]
