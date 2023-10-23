@@ -60,6 +60,9 @@
   "Sync Events to Calendar": {
     "ja": "カレンダーにイベントを同期する"
   },
+  "Do not sync": {
+    "ja": "同期しない"
+  },
   "Event Prefix": {
     "ja": "イベントのプレフィックス"
   },
