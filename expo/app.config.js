@@ -3,12 +3,6 @@ const fs = require("fs");
 const config = require("./app.config.default").expo;
 
 module.exports = (_) => {
-  if (process.env["REACT_NATIVE_PACKAGER_HOSTNAME"] != "") {
-    config.extra.hpapp.graphql_endpoint =
-      "http://" +
-      process.env["REACT_NATIVE_PACKAGER_HOSTNAME"] +
-      ":8080/graphql/v3";
-  }
   const cfgName = process.env["HPAPP_CONFIG_NAME"];
   if (cfgName === undefined || cfgName === "") {
     throw new Error(
@@ -31,9 +25,6 @@ module.exports = (_) => {
   const secretsJsonPath = isEAS
     ? process.env[easEnvvarPrefix + "SECRETS_JSON"]
     : path.join("config", cfgName, "secrets.json");
-
-  console.log("isEAS", isEAS);
-  console.log(iosGoogleServicesFilePath);
 
   if (fs.existsSync(iosGoogleServicesFilePath)) {
     config.ios.googleServicesFile = iosGoogleServicesFilePath;

@@ -12,6 +12,7 @@ import {
 } from "relay-runtime";
 import { wrapRenderable } from "@hpapp/foundation/errors";
 import { useCurrentUser } from "@hpapp/features/auth";
+import * as logging from "@hpapp/system/logging";
 
 export interface HttpClientConfig {
   Endpoint?: string;
@@ -20,18 +21,17 @@ export interface HttpClientConfig {
 }
 
 function getDefaultGraphQLEndpoint() {
-  console.log(Constants.expoConfig?.extra?.hpapp);
-  const override = Constants.expoConfig?.extra?.hpapp?.graphQLEndpoint;
-  const hostUri = Constants.manifest?.hostUri; // ip:port
-  if (typeof override === "string") {
-    return override;
+  const endpoint = Constants.expoConfig?.extra?.hpapp?.graphQLEndpoint;
+  const hostUri = Constants.manifest?.hostUri; // ip:port if app is running with Metro
+  if (typeof endpoint === "string") {
+    return endpoint;
   }
   if (typeof hostUri === "string") {
     const ip = hostUri.split(":")[0];
     return "http://" + ip + ":8080/graphql/v3";
   }
   throw new Error(
-    "Couldn't get GraphQL endpoint. Did you set expo.extra.hpapp.graphql_endpoint properly?"
+    "Couldn't get GraphQL endpoint. Did you set expo.extra.hpapp.graphqlEndpoint properly?"
   );
 }
 
@@ -66,10 +66,30 @@ function createEnvironment(config: HttpClientConfig, userToken?: string) {
           }
         })()
       );
+      const eventName = `contexts.relay.graphql.${operation.name}`;
       try {
         const json = await resp.json();
+        logging.Info(eventName, "GraphQL success", {
+          request: {
+            body: {
+              query: operation.text,
+              variables, // TODO: get rid of potentially sensitive information
+            },
+          },
+          response: json,
+        });
         return json;
       } catch (err) {
+        logging.Error(eventName, "GraphQL error", {
+          request: {
+            body: {
+              query: operation.text,
+              variables, // TODO: get rid of potentially sensitive information
+            },
+          },
+          // TODO: capture response text here
+          error: err,
+        });
         throw wrapRenderable(err);
       }
     }
