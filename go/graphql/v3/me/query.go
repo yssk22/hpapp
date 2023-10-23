@@ -24,6 +24,8 @@ import (
 
 type MeQuery struct{}
 
+func (h *MeQuery) IsNode() {}
+
 func (h *MeQuery) ID(ctx context.Context) (string, error) {
 	return appuser.CurrentUser(ctx).ID(), nil
 }

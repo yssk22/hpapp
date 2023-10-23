@@ -62,7 +62,7 @@ enum MyEnum @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphq
   foo
 }
 
-type MyComplexType @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.MyComplexType") implements MyInterface {
+type MyComplexType implements MyInterface @goModel(model: "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/testdata.MyComplexType") {
   id: ID!
   nested: NestedMyComplexType!
 

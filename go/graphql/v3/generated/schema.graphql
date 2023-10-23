@@ -1,4 +1,5 @@
-type HelloProjectQuery @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HelloProjectQuery") {
+type HelloProjectQuery implements Node @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HelloProjectQuery") {
+  id: ID!
   artists(after: Cursor, first: Int, before: Cursor, last: Int): [HPArtist]
   feed(params: HPFeedQueryParamsInput!, after: Cursor, first: Int, before: Cursor, last: Int): HPFeedItemConnection
 }
@@ -18,7 +19,7 @@ enum HPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enum
   youtube
 }
 
-type MeQuery @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeQuery") {
+type MeQuery implements Node @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeQuery") {
   id: ID!
   username: String!
   clientId: String
