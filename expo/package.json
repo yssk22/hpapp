@@ -14,13 +14,16 @@
   },
   "relay": {
     "src": "./",
-    "schema": "./schema.graphql",
+    "schema": "./generated/schema.graphql",
     "language": "typescript",
     "exclude": [
       "**/node_modules/**",
       "**/__mocks__/**",
       "**/__generated__/**"
-    ]
+    ],
+    "customScalars": {
+      "Time": "string"
+    }
   },
   "hpapp": {
     "graphql_version": "v3"
@@ -63,6 +66,7 @@
     "react-native-root-toast": "^3.5.1",
     "react-native-safe-area-context": "4.5.0",
     "react-native-screens": "~3.20.0",
+    "react-native-svg": "^13.14.0",
     "react-native-tab-view": "^3.5.2",
     "react-native-web": "~0.18.10",
     "react-native-webview": "11.26.0",

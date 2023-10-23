@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<d53ee5a5725c10e6f8c83493e8098565>>
+ * @generated SignedSource<<77b9c73220d39e2fd2231a7f8355e760>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -181,7 +181,8 @@ return {
               }
             ],
             "storageKey": null
-          }
+          },
+          (v0/*: any*/)
         ],
         "storageKey": null
       },
@@ -342,12 +343,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "d8e4c770edceb1e1e1b57a362670080b",
+    "cacheID": "7c3f13e016d11c9730b7daec9e9fa277",
     "id": null,
     "metadata": {},
     "name": "servicerootQuery",
     "operationKind": "query",
-    "text": "query servicerootQuery {\n  helloproject {\n    ...helloprojectFragment\n  }\n  me {\n    ...meFragment\n    id\n  }\n}\n\nfragment helloprojectFragment on HelloProjectQuery {\n  artists {\n    id\n    key\n    name\n    thumbnailURL\n    members {\n      id\n      key\n      artistKey\n      name\n      nameKana\n      thumbnailURL\n      dateOfBirth\n      bloodType\n      joinAt\n      graduateAt\n    }\n  }\n}\n\nfragment meFragment on MeQuery {\n  id\n  username\n  clientId\n  clientName\n  followings {\n    type\n    member {\n      id\n    }\n    id\n  }\n  sortHistories(first: 1) {\n    edges {\n      node {\n        id\n        createdAt\n        sortResult {\n          records {\n            artistId\n            memberId\n            memberKey\n          }\n        }\n      }\n    }\n  }\n}\n"
+    "text": "query servicerootQuery {\n  helloproject {\n    ...helloprojectFragment\n    id\n  }\n  me {\n    ...meFragment\n    id\n  }\n}\n\nfragment helloprojectFragment on HelloProjectQuery {\n  artists {\n    id\n    key\n    name\n    thumbnailURL\n    members {\n      id\n      key\n      artistKey\n      name\n      nameKana\n      thumbnailURL\n      dateOfBirth\n      bloodType\n      joinAt\n      graduateAt\n    }\n  }\n}\n\nfragment meFragment on MeQuery {\n  id\n  username\n  clientId\n  clientName\n  followings {\n    type\n    member {\n      id\n    }\n    id\n  }\n  sortHistories(first: 1) {\n    edges {\n      node {\n        id\n        createdAt\n        sortResult {\n          records {\n            artistId\n            memberId\n            memberKey\n          }\n        }\n      }\n    }\n  }\n}\n"
   }
 };
 })();
