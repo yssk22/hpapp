@@ -135,9 +135,14 @@ func (d *structDependency) getMethods() ([]Method, []Dependency, error) {
 func (d *structDependency) getInterface() ([]GraphQLType, []Dependency, error) {
 	var dependencies []Dependency
 	var interfaces []GraphQLType
+	var hasID bool
 	for i := 0; i < d.namedRef.NumMethods(); i++ {
 		method := d.namedRef.Method(i)
 		if method.Exported() {
+			if method.Name() == "ID" {
+				// TODO: signature check
+				hasID = true
+			}
 			continue
 		}
 		if method.Name() == "implements" {
@@ -153,6 +158,9 @@ func (d *structDependency) getInterface() ([]GraphQLType, []Dependency, error) {
 				interfaces = append(interfaces, obj.Type)
 			}
 		}
+	}
+	if hasID {
+		interfaces = append(interfaces, GraphQLType("Node"))
 	}
 	return interfaces, dependencies, nil
 }
@@ -189,7 +197,6 @@ func (t *typeSchema) typeDeclaration() string {
 	} else {
 		token = append(token, fmt.Sprintf("type %s", t.name))
 	}
-	token = append(token, goModelDirective(t.dependency.FullyQualifiedName()))
 	if !strings.HasSuffix(string(t.name), "Input") {
 		if len(t.interfaces) > 0 && !t.isInput {
 			strs, _ := slice.Map(t.interfaces, func(_ int, typ GraphQLType) (string, error) {
@@ -198,6 +205,7 @@ func (t *typeSchema) typeDeclaration() string {
 			token = append(token, fmt.Sprintf("implements %s", strings.Join(strs, " & ")))
 		}
 	}
+	token = append(token, goModelDirective(t.dependency.FullyQualifiedName()))
 	token = append(token, "{")
 	return strings.Join(token, " ")
 }

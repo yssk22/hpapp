@@ -15,6 +15,12 @@ import (
 
 type HelloProjectQuery struct{}
 
+func (h *HelloProjectQuery) IsNode() {}
+
+func (h *HelloProjectQuery) ID() string {
+	return "helloproject"
+}
+
 func (h *HelloProjectQuery) Artists(ctx context.Context, after *ent.Cursor, first *int, before *ent.Cursor, last *int) ([]*ent.HPArtist, error) {
 	client := entutil.NewClient(ctx)
 	return client.HPArtist.Query().All(ctx)
