@@ -24,6 +24,7 @@ func (HPFeedItem) Mixin() []ent.Mixin {
 func (HPFeedItem) Indexes() []ent.Index {
 	return []ent.Index{
 		index.Fields("post_at"),
+		index.Fields("post_at", "id"),
 		index.Fields("owner_member_id", "asset_type", "post_at", "id"),
 	}
 }
