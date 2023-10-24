@@ -355,6 +355,11 @@ var (
 				Unique:  false,
 				Columns: []*schema.Column{HpFeedItemsColumns[6]},
 			},
+			{
+				Name:    "hpfeeditem_owner_member_id_asset_type_post_at_id",
+				Unique:  false,
+				Columns: []*schema.Column{HpFeedItemsColumns[11], HpFeedItemsColumns[4], HpFeedItemsColumns[6], HpFeedItemsColumns[0]},
+			},
 		},
 	}
 	// HpFollowsColumns holds the columns for the "hp_follows" table.

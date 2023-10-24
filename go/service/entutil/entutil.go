@@ -21,8 +21,8 @@ func NewClient(ctx context.Context) *ent.Client {
 	for _, h := range runtimeHooks {
 		c.Use(h)
 	}
+	// return c.Debug() // use Debug() to show executed SQLs.
 	return c
-	// return c
 }
 
 func RunTx[T any](ctx context.Context, f func(tx *ent.Tx) (T, error)) (v T, err error) {
