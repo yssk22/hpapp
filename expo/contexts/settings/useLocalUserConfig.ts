@@ -12,6 +12,7 @@ type LocalUserConfiguration = {
   consentOnUPFCDataPolicy?: boolean;
 
   amebloOptimizedView: boolean;
+  feedUseMemberTaggings: boolean;
 };
 
 const LocalUserConfigurationSettings =
@@ -30,6 +31,7 @@ const LocalUserConfigurationSettings =
         consentOnUPFCDataPolicy: false,
 
         amebloOptimizedView: false,
+        feedUseMemberTaggings: true,
       },
     }
   );

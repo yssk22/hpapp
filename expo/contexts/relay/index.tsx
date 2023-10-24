@@ -39,6 +39,7 @@ function createEnvironment(config: HttpClientConfig, userToken?: string) {
   const endpoint = config.Endpoint || getDefaultGraphQLEndpoint();
   const network = Network.create(
     async (operation: RequestParameters, variables: Variables) => {
+      const start = new Date();
       const resp = await WithTimeout<Response>(
         config.NetworkTimeoutSecond * 1000,
         (async () => {
@@ -66,6 +67,7 @@ function createEnvironment(config: HttpClientConfig, userToken?: string) {
           }
         })()
       );
+      const benchmark = new Date().getTime() - start.getTime();
       const eventName = `contexts.relay.graphql.${operation.name}`;
       try {
         const json = await resp.json();
@@ -77,6 +79,7 @@ function createEnvironment(config: HttpClientConfig, userToken?: string) {
             },
           },
           response: json,
+          benchmark,
         });
         return json;
       } catch (err) {
@@ -89,6 +92,7 @@ function createEnvironment(config: HttpClientConfig, userToken?: string) {
           },
           // TODO: capture response text here
           error: err,
+          benchmark,
         });
         throw wrapRenderable(err);
       }
