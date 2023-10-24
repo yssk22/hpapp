@@ -21041,7 +21041,7 @@ func (ec *executionContext) unmarshalInputHPFeedQueryParamsInput(ctx context.Con
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"memberIDs", "assetTypes", "useMemberTaggings"}
+	fieldsInOrder := [...]string{"memberIDs", "assetTypes", "useMemberTaggings", "minPostAt"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
@@ -21069,6 +21069,14 @@ func (ec *executionContext) unmarshalInputHPFeedQueryParamsInput(ctx context.Con
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("useMemberTaggings"))
 			it.UseMemberTaggings, err = ec.unmarshalOBoolean2ᚖbool(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "minPostAt":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("minPostAt"))
+			it.MinPostAt, err = ec.unmarshalOTime2ᚖtimeᚐTime(ctx, v)
 			if err != nil {
 				return it, err
 			}

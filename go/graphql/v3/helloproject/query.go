@@ -2,6 +2,7 @@ package helloproject
 
 import (
 	"context"
+	"time"
 
 	"github.com/yssk22/hpapp/go/foundation/assert"
 	"github.com/yssk22/hpapp/go/foundation/slice"
@@ -30,6 +31,7 @@ type HPFeedQueryParams struct {
 	MemberIDs         []string
 	AssetTypes        []enums.HPAssetType
 	UseMemberTaggings *bool
+	MinPostAt         *time.Time
 }
 
 func (h *HelloProjectQuery) Feed(ctx context.Context, params HPFeedQueryParams, after *ent.Cursor, first *int, before *ent.Cursor, last *int) (*ent.HPFeedItemConnection, error) {
@@ -38,11 +40,20 @@ func (h *HelloProjectQuery) Feed(ctx context.Context, params HPFeedQueryParams, 
 	q := client.HPFeedItem.Query()
 	memberIds := assert.X(slice.MapStringToInt(params.MemberIDs))
 	if params.UseMemberTaggings != nil && *params.UseMemberTaggings {
+		// TODO: #28 Revisit Tagged Feed Feature
+		// The following query doesn't genereate an optimisitic SQL so we adds post_at filter to narrow down the scope of row scan.
 		q.Where(hpfeeditem.HasTaggedMembersWith(hpmember.IDIn(memberIds...)))
 	} else {
-		q.Where(hpfeeditem.HasOwnerMemberWith(hpmember.IDIn(memberIds...)))
+		q.Where(hpfeeditem.OwnerMemberIDIn(memberIds...))
 	}
 	q.Where(hpfeeditem.AssetTypeIn(params.AssetTypes...))
-	q.Order(ent.Desc(hpfeeditem.FieldPostAt))
-	return q.Paginate(ctx, after, first, before, last)
+	if params.MinPostAt != nil {
+		// TODO: #28 Revisit Tagged Feed Feature
+		// If a client sends a MinPostAt parameter, the query can narrow down the number of rows to scan so that it can return the result faster.
+		q.Where(hpfeeditem.PostAtGTE(*params.MinPostAt))
+	}
+	return q.Paginate(ctx, after, first, before, last, ent.WithHPFeedItemOrder(&ent.HPFeedItemOrder{
+		Direction: "DESC",
+		Field:     ent.HPFeedItemOrderFieldPostAt,
+	}))
 }
