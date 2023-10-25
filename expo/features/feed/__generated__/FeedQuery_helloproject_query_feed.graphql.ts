@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<e4dbefea5c98eab6628909f576fb4527>>
+ * @generated SignedSource<<5918db2e4b13ce75f7e909d20a028132>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -15,7 +15,7 @@ export type FeedQuery_helloproject_query_feed$data = {
     readonly edges: ReadonlyArray<{
       readonly node: {
         readonly id: string;
-        readonly " $fragmentSpreads": FragmentRefs<"FeedItemFragment">;
+        readonly " $fragmentSpreads": FragmentRefs<"FeedListItemFragment">;
       } | null;
     } | null> | null;
   } | null;
@@ -115,7 +115,7 @@ return {
                 {
                   "args": null,
                   "kind": "FragmentSpread",
-                  "name": "FeedItemFragment"
+                  "name": "FeedListItemFragment"
                 },
                 {
                   "alias": null,
@@ -172,6 +172,6 @@ return {
 };
 })();
 
-(node as any).hash = "690f754d736e06d2775e6d43534956ab";
+(node as any).hash = "5b8c49515bf5d614e6023c2240cb9dfa";
 
 export default node;

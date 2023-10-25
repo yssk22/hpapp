@@ -2,7 +2,7 @@ import { LogLevel, LogSink } from "@hpapp/system/logging/types";
 import Constants from "expo-constants";
 
 const consoleEvents: Array<RegExp> = (
-  Constants.expoConfig?.extra?.hpapp?.consoleEvents || []
+  Constants.expoConfig?.extra?.hpapp?.consoleEvents || [".*"]
 ).map((re: string) => {
   return new RegExp(re);
 });
