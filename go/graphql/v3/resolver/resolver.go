@@ -2,6 +2,7 @@ package resolver
 
 import (
 	"context"
+	"fmt"
 	"strconv"
 
 	"github.com/yssk22/hpapp/go/foundation/slice"
@@ -16,21 +17,21 @@ import (
 type Resolver struct{}
 
 func (r *queryResolver) Node(ctx context.Context, id string) (ent.Noder, error) {
+	if id == "helloproject" {
+		return &helloproject.HelloProjectQuery{}, nil
+	}
 	entid, err := strconv.Atoi(id)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("not a valid node id")
 	}
 	return entutil.NewClient(ctx).Noder(ctx, entid)
 }
 
+// TODO: this might cause the performance issue if a client requests too many id
 func (r *queryResolver) Nodes(ctx context.Context, ids []string) ([]ent.Noder, error) {
-	entids, err := slice.Map(ids, func(_ int, id string) (int, error) {
-		return strconv.Atoi(id)
+	return slice.Map(ids, func(_ int, id string) (ent.Noder, error) {
+		return r.Node(ctx, id)
 	})
-	if err != nil {
-		return nil, err
-	}
-	return entutil.NewClient(ctx).Noders(ctx, entids)
 }
 
 func (r *queryResolver) Helloproject(ctx context.Context) (*helloproject.HelloProjectQuery, error) {
