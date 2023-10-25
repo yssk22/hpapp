@@ -39,21 +39,22 @@ function createEnvironment(config: HttpClientConfig, userToken?: string) {
   const endpoint = config.Endpoint || getDefaultGraphQLEndpoint();
   const network = Network.create(
     async (operation: RequestParameters, variables: Variables) => {
+      const eventName = `contexts.relay.graphql.${operation.name}`;
       const start = new Date();
-      const resp = await WithTimeout<Response>(
-        config.NetworkTimeoutSecond * 1000,
-        (async () => {
-          const headers: { [key: string]: string } = {
-            "Content-Type": "application/json",
-          };
-          if (config.ExtraHeaderFn !== undefined) {
-            const extra = await config.ExtraHeaderFn();
-            Object.assign(headers, extra);
-          }
-          if (userToken !== undefined) {
-            headers["Authorization"] = "Bearer " + userToken;
-          }
-          try {
+      try {
+        const resp = await WithTimeout<Response>(
+          config.NetworkTimeoutSecond * 1000,
+          (async () => {
+            const headers: { [key: string]: string } = {
+              "Content-Type": "application/json",
+            };
+            if (config.ExtraHeaderFn !== undefined) {
+              const extra = await config.ExtraHeaderFn();
+              Object.assign(headers, extra);
+            }
+            if (userToken !== undefined) {
+              headers["Authorization"] = "Bearer " + userToken;
+            }
             return await fetch(endpoint, {
               method: "POST",
               headers: headers,
@@ -62,15 +63,10 @@ function createEnvironment(config: HttpClientConfig, userToken?: string) {
                 variables,
               }),
             });
-          } catch (err) {
-            throw wrapRenderable(err);
-          }
-        })()
-      );
-      const benchmark = new Date().getTime() - start.getTime();
-      const eventName = `contexts.relay.graphql.${operation.name}`;
-      try {
+          })()
+        );
         const json = await resp.json();
+        const benchmark = new Date().getTime() - start.getTime();
         logging.Info(eventName, "GraphQL success", {
           request: {
             body: {
@@ -83,6 +79,7 @@ function createEnvironment(config: HttpClientConfig, userToken?: string) {
         });
         return json;
       } catch (err) {
+        const benchmark = new Date().getTime() - start.getTime();
         logging.Error(eventName, "GraphQL error", {
           request: {
             body: {

@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<5939e557657126fcaf756a7c7e7d0856>>
+ * @generated SignedSource<<f5595f200f7a1e3cac794cff1447652a>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -11,14 +11,10 @@
 import { Fragment, ReaderFragment } from 'relay-runtime';
 export type HPFeedItemHPAssetType = "ameblo" | "elineupmall" | "instagram" | "tiktok" | "twitter" | "youtube" | "%future added value";
 import { FragmentRefs } from "relay-runtime";
-export type FeedItemFragment$data = {
+export type FeedListItemFragment$data = {
   readonly assetType: HPFeedItemHPAssetType;
   readonly id: string;
   readonly imageURL: string | null;
-  readonly myViewHistory: {
-    readonly id: string;
-    readonly isFavorite: boolean;
-  } | null;
   readonly ownerMember: {
     readonly id: string;
     readonly key: string;
@@ -31,11 +27,12 @@ export type FeedItemFragment$data = {
     readonly key: string;
   }> | null;
   readonly title: string;
-  readonly " $fragmentType": "FeedItemFragment";
+  readonly " $fragmentSpreads": FragmentRefs<"FeedListItemViewHistoryIconFragment">;
+  readonly " $fragmentType": "FeedListItemFragment";
 };
-export type FeedItemFragment$key = {
-  readonly " $data"?: FeedItemFragment$data;
-  readonly " $fragmentSpreads": FragmentRefs<"FeedItemFragment">;
+export type FeedListItemFragment$key = {
+  readonly " $data"?: FeedListItemFragment$data;
+  readonly " $fragmentSpreads": FragmentRefs<"FeedListItemFragment">;
 };
 
 const node: ReaderFragment = (function(){
@@ -60,7 +57,7 @@ return {
   "argumentDefinitions": [],
   "kind": "Fragment",
   "metadata": null,
-  "name": "FeedItemFragment",
+  "name": "FeedListItemFragment",
   "selections": [
     (v0/*: any*/),
     {
@@ -126,28 +123,9 @@ return {
       "storageKey": null
     },
     {
-      "kind": "ClientExtension",
-      "selections": [
-        {
-          "alias": null,
-          "args": null,
-          "concreteType": "HPViewHistory",
-          "kind": "LinkedField",
-          "name": "myViewHistory",
-          "plural": false,
-          "selections": [
-            (v0/*: any*/),
-            {
-              "alias": null,
-              "args": null,
-              "kind": "ScalarField",
-              "name": "isFavorite",
-              "storageKey": null
-            }
-          ],
-          "storageKey": null
-        }
-      ]
+      "args": null,
+      "kind": "FragmentSpread",
+      "name": "FeedListItemViewHistoryIconFragment"
     }
   ],
   "type": "HPFeedItem",
@@ -155,6 +133,6 @@ return {
 };
 })();
 
-(node as any).hash = "af1b6f16efca9e8c086cc91246a625e7";
+(node as any).hash = "d54fab5bf167a458740ef1e842ea1ca5";
 
 export default node;

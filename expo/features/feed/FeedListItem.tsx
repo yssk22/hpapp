@@ -1,15 +1,17 @@
 import { View, Text, StyleSheet } from "react-native";
-import { FeedItemFragment$key } from "@hpapp/features/feed/__generated__/FeedItemFragment.graphql";
+import { FeedListItemFragment$key } from "@hpapp/features/feed/__generated__/FeedListItemFragment.graphql";
 import { graphql, useFragment } from "react-relay";
 import ExternalImage from "@hpapp/features/common/components/image";
 import * as date from "@hpapp/foundation/date";
 import { useColor } from "@hpapp/contexts/settings/theme";
 import { Icon } from "@rneui/themed";
-import { FontSize, IconSize, Spacing } from "@hpapp/features/common/constants";
+import { IconSize, Spacing } from "@hpapp/features/common/constants";
 import AssetIcon from "@hpapp/features/feed/AssetIcon";
+import ListItem from "@hpapp/features/common/components/list/ListItem";
+import FeedListItemViewHistoryIcon from "@hpapp/features/feed/FeedListItemViewHistoryIcon";
 
-const FeedItemFragmentGraphQL = graphql`
-  fragment FeedItemFragment on HPFeedItem {
+const FeedListItemFragmentGraphQL = graphql`
+  fragment FeedListItemFragment on HPFeedItem {
     id
     title
     sourceID
@@ -25,55 +27,44 @@ const FeedItemFragmentGraphQL = graphql`
       id
       key
     }
-    myViewHistory {
-      id
-      isFavorite
-    }
+    ...FeedListItemViewHistoryIconFragment
   }
 `;
 
-export default function FeedItem({ data }: { data: FeedItemFragment$key }) {
-  const item = useFragment<FeedItemFragment$key>(FeedItemFragmentGraphQL, data);
+export default function FeedListItem({
+  data,
+}: {
+  data: FeedListItemFragment$key;
+}) {
+  const item = useFragment<FeedListItemFragment$key>(
+    FeedListItemFragmentGraphQL,
+    data
+  );
   const imageUrl = item.imageURL || "";
   const dateString = date.toDateTimeString(item.postAt);
   const [primary] = useColor("primary");
   const [secondary] = useColor("secondary");
   return (
-    <View style={styles.container}>
+    <ListItem
+      containerStyle={styles.container}
+      rightContent={<ExternalImage uri={imageUrl} style={styles.image} />}
+    >
       <View style={styles.titleAndMetadata}>
         <Text style={styles.title}>{item.title}</Text>
         <View style={styles.metadata}>
           {/* TODO: AssetIcon needs rebuild: <AssetIcon type={item.assetType} size={IconSize.Small} /> */}
           <Text style={styles.dateString}>{dateString}</Text>
-          {item.myViewHistory == undefined && (
-            <Icon
-              type="entypo"
-              name="new"
-              size={IconSize.Small}
-              color={secondary}
-            />
-          )}
-          {item.myViewHistory?.isFavorite && (
-            <Icon
-              type="entypo"
-              name="heart"
-              size={IconSize.Small}
-              color={secondary}
-            />
-          )}
+          <FeedListItemViewHistoryIcon data={item} />
         </View>
       </View>
-      <ExternalImage uri={imageUrl} style={styles.image} />
-    </View>
+    </ListItem>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
-    height: 90,
-    flexDirection: "row",
-    padding: Spacing.XSmall,
+    height: 100,
+    padding: Spacing.Small,
   },
   image: {
     width: 80,
@@ -82,6 +73,8 @@ const styles = StyleSheet.create({
   titleAndMetadata: {
     flexGrow: 1,
     flexDirection: "column",
+    justifyContent: "center",
+    marginRight: Spacing.Medium,
   },
   title: {
     flexGrow: 1,

@@ -11,12 +11,14 @@ export default function HomeTabFeed() {
   const followings = useMe()
     .followings.filter((f) => f.type != "unfollow")
     .map((f) => f.memberId);
+  const numFetch = followings.length > 10 ? followings.length + 10 : 15;
   return (
     <View style={styles.container}>
       <Feed
-        numFetch={20}
+        numFetch={numFetch}
         assetTypes={["ameblo", "instagram", "tiktok", "twitter"]}
         memberIds={followings}
+        useMemberTaggings={config?.feedUseMemberTaggings || false}
       />
     </View>
   );

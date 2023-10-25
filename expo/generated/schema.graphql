@@ -508,6 +508,7 @@ input HPFeedQueryParamsInput @goModel(model: "github.com/yssk22/hpapp/go/graphql
   memberIDs: [String!]
   assetTypes: [HPAssetType!]
   useMemberTaggings: Boolean
+  minPostAt: Time
 }
 
 enum HPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPAssetType") {
