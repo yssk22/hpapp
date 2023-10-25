@@ -16,7 +16,6 @@ class Console implements LogSink {
     data?: Record<string, any> | undefined
   ): void {
     // isFocus event
-    console.log(Constants.expoConfig?.extra?.hpapp?.consoleEvents);
     const isFocus =
       consoleEvents.filter((r) => {
         return r.test(event);

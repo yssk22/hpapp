@@ -77,6 +77,7 @@ module.exports = {
     extra: {
       eas: {},
       hpapp: {
+        useLocalLogin: true,
         graphQLEndpoint: "http://localhost:8080/graphql/v3",
         auth: {
           google: {

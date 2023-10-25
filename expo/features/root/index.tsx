@@ -36,9 +36,7 @@ function UserRoot({
     return <ProtectedRoot screens={screens} />;
   }
   return (
-    <GuestRoot>
-      <LoginContainer onAuthenticated={setUser} />
-    </GuestRoot>
+    <GuestRoot LoginContainer={LoginContainer} onAuthenticated={setUser} />
   );
 }
 

@@ -11,7 +11,7 @@ module.exports = (config) => {
   config.ios.bundleIdentifier = "dev.yssk22.hpapp.dev";
   // package name used in your Goolge Developer Account
   config.android.package = "dev.yssk22.hpapp.dev";
-
+  config.extra.hpapp.env = "dev";
   config.extra.hpapp.isBeta = false;
   config.extra.hpapp.isDev = true;
   return config;
