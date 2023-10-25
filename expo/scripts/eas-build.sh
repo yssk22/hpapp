@@ -13,11 +13,11 @@ if [ -z $HPAPP_CONFIG_PLATFORM ]; then
 fi
 
 EAS_JSON=$BASEDIR/config/$HPAPP_CONFIG_NAME/eas.json
-
-if [ ! -f $EAS_JSON ]; then
-    echo "$EAS_JSON does not exist."
-    exit 1
-fi
+ICON_PNG=$BASEDIR/config/$HPAPP_CONFIG_NAME/icon.png
+SPLASH_PNG=$BASEDIR/config/$HPAPP_CONFIG_NAME/splash.png
 
 cp $EAS_JSON $BASEDIR/eas.json
+cp $ICON_PNG $BASEDIR/assets/icon.png
+cp $SPLASH_PNG $BASEDIR/assets/splash.png
+
 yarn eas build --profile $HPAPP_CONFIG_NAME --platform $HPAPP_CONFIG_PLATFORM --non-interactive

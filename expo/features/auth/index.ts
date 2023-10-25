@@ -1,6 +1,7 @@
 import { useSettings } from "@hpapp/contexts/settings";
 import { SecureStorage, SettingsStore } from "@hpapp/system/kvs";
 import React, { useCallback } from "react";
+import * as logging from "@hpapp/system/logging";
 
 interface User {
   id: string;
@@ -25,8 +26,28 @@ const CurrentUserSettings = SettingsStore.register<User>(
   }
 );
 
-function useCurrentUser() {
-  return useSettings(CurrentUserSettings);
+function useCurrentUser(): [User | undefined, (user: User | null) => void] {
+  const [user, setUser] = useSettings(CurrentUserSettings);
+  const setUserWithLoggig = useCallback(
+    (update: User | null) => {
+      if (user) {
+        if (update == null) {
+          logging.Info("features.auth.logout", "logout", {
+            userid: user.id,
+          });
+        }
+      } else {
+        if (update) {
+          logging.Info("features.auth.login", "login", {
+            userid: update.id,
+          });
+        }
+      }
+      setUser(update);
+    },
+    [setUser]
+  );
+  return [user, setUserWithLoggig];
 }
 
 type UserTier = "admin" | "fcmember" | "normal" | "guest";
@@ -39,7 +60,7 @@ function useUserTier(user: User | undefined): UserTier {
 }
 
 function useLogout() {
-  const [_, setUser] = useSettings(CurrentUserSettings);
+  const [user, setUser] = useCurrentUser();
   return useCallback(() => {
     setUser(null);
   }, [setUser]);

@@ -18,7 +18,7 @@ func TestAuth(t *testing.T) {
 		a := assert.NewTestAssert(t)
 		extauth := extuser.NewMockAuthenticator()
 		u, err := appuser.Authenticate(extuser.WithUser(ctx, extauth.VerifyToken(ctx, "invalid")))
-		a.Equals(appuser.ErrAuthenticationRequired, err)
+		a.Equals(appuser.ErrExtUserNotAuthenticated, err)
 		a.Nil(u)
 	})
 
@@ -58,10 +58,10 @@ func TestAuth(t *testing.T) {
 				a := assert.NewTestAssert(t)
 				mizukiCtx := appuser.WithUser(ctx, appuser.EntUser(mizuki))
 				_, err := appuser.Authenticate(mizukiCtx)
-				a.Equals(appuser.ErrAuthenticationRequired, err)
+				a.Equals(appuser.ErrExtUserNotAuthenticated, err)
 
 				_, err = appuser.Authenticate(ctx)
-				a.Equals(appuser.ErrAuthenticationRequired, err)
+				a.Equals(appuser.ErrExtUserNotAuthenticated, err)
 			})
 			mizukiCtx := appuser.WithUser(ctx, appuser.EntUser(mizuki))
 

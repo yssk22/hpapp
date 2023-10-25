@@ -77,6 +77,7 @@ func (v *authValidator) validate(ctx context.Context, user User) (User, error) {
 }
 
 var (
+	ErrExtUserNotAuthenticated     = errors.New("extuser authentication is required")
 	ErrAuthenticationRequired      = errors.New("user authentication is required")
 	ErrAdminAuthenticationRequired = errors.New("admin authentication is required")
 	ErrNotAuthorized               = errors.New("not authorized")

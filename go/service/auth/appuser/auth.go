@@ -48,7 +48,7 @@ func AddAuthentication(ctx context.Context) (*ent.Auth, error) {
 	}
 	euser := extuser.CurrentUser(ctx)
 	if euser == nil {
-		return nil, errors.Wrap(ctx, fmt.Errorf("no ext user"))
+		return nil, ErrExtUserNotAuthenticated
 	}
 	client := entutil.NewClient(ctx)
 
@@ -98,7 +98,7 @@ func RemoveAuthentication(ctx context.Context) (*ent.Auth, error) {
 	}
 	euser := extuser.CurrentUser(ctx)
 	if euser == nil {
-		return nil, errors.Wrap(ctx, fmt.Errorf("no ext user"))
+		return nil, ErrExtUserNotAuthenticated
 	}
 	adminCtx := WithAdmin(ctx)
 	authrecord, err := getAuthRecordByExternalAuthResult(adminCtx, euser)
@@ -132,7 +132,7 @@ func MigrateAuthentication(ctx context.Context) (*ent.Auth, error) {
 	}
 	extuser := extuser.CurrentUser(ctx)
 	if extuser == nil {
-		return nil, errors.Wrap(ctx, fmt.Errorf("no ext user"))
+		return nil, ErrExtUserNotAuthenticated
 	}
 	adminCtx := WithAdmin(ctx)
 	authrecord, err := getAuthRecordByExternalAuthResult(adminCtx, extuser)
@@ -190,7 +190,7 @@ func Authenticate(ctx context.Context) (*ent.User, error) {
 	// authenticate with the external provider, then refresh the access token for the user to use
 	euser := extuser.CurrentUser(ctx)
 	if euser == nil {
-		return nil, ErrAuthenticationRequired
+		return nil, ErrExtUserNotAuthenticated
 	}
 	adminCtx := WithAdmin(ctx)
 	authRecord, err := getAuthRecordByExternalAuthResult(adminCtx, euser)
