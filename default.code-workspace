@@ -26,15 +26,15 @@
     "git.inputValidationLength": 120,
     "git.ignoreLimitWarning": true,
     "githubPullRequests.ignoredPullRequestBranches": ["master", "develop"],
-    "jest.disabledWorkspaceFolders": ["go", "containers", "expo"],
+    "jest.disabledWorkspaceFolders": [
+      "docs",
+      ".github",
+      "go", 
+      "containers", 
+    ],
+    "git.openRepositoryInParentFolders": "always",
   },
   "folders": [
-    {
-      "path": "expo",
-    },
-    {
-      "path": "go",
-    },
     {
       "path": "docs",
     },
@@ -42,8 +42,13 @@
       "path": ".github",
     },
     {
-      "path": ".",
-      "name": "__repository_root__",
+      "path": "expo",
+    },
+    {
+      "path": "go",
+    },
+    {
+      "path": "containers",
     }
   ]
 }
