@@ -1,28 +1,28 @@
-import React from "react";
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import React from 'react';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 
-type StyleProps = React.ComponentProps<typeof View>["style"];
+type StyleProps = React.ComponentProps<typeof View>['style'];
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   left: {
-    justifyContent: "center",
-    alignItems: "flex-start",
-    minWidth: 0,
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    minWidth: 0
   },
   center: {
     flexGrow: 1,
     flex: 1,
-    minWidth: 0,
+    minWidth: 0
   },
   right: {
-    justifyContent: "center",
-    alignItems: "flex-end",
-    minWidth: 0,
-  },
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    minWidth: 0
+  }
 });
 
 export type ListItemProps = {

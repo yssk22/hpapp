@@ -1,4 +1,4 @@
-import { readFile } from "@hpapp/foundation/test_helper";
+import { readFile } from '@hpapp/foundation/test_helper';
 
 export default class FileFetcher {
   private username: string;
@@ -26,8 +26,8 @@ export default class FileFetcher {
   }
 
   async postCredential(username: string, password: string): Promise<string> {
-    if (username != this.username || password != this.password) {
-      return "";
+    if (username !== this.username || password !== this.password) {
+      return '';
     }
     return await readFile(this.paths.redirectPageHtmlPath);
   }

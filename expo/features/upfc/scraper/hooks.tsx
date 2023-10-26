@@ -1,7 +1,7 @@
-import { Scraper } from './types';
 import DemoScraper from './DemoScraper';
 import UPFCScraper from './UPFCScraper';
 import URLFetcher from './URLFetcher';
+import { Scraper } from './types';
 
 const scraper = new UPFCScraper(new URLFetcher());
 const demoScraper = new DemoScraper();

@@ -1,20 +1,12 @@
-import { LogLevel, LogSink } from "@hpapp/system/logging/types";
-import Console from "@hpapp/system/logging/Console";
+import Console from '@hpapp/system/logging/Console';
+import { LogSink } from '@hpapp/system/logging/types';
 
-let sink: LogSink = Console;
+const sink: LogSink = Console;
 
-export function Info(
-  event: string,
-  message: string,
-  data?: Record<string, any>
-) {
-  sink.Log("info", event, message, data);
+export function Info(event: string, message: string, data?: Record<string, any>) {
+  sink.Log('info', event, message, data);
 }
 
-export function Error(
-  event: string,
-  message: string,
-  data?: Record<string, any>
-) {
-  sink.Log("error", event, message, data);
+export function Error(event: string, message: string, data?: Record<string, any>) {
+  sink.Log('error', event, message, data);
 }

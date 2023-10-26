@@ -1,34 +1,19 @@
-import { StyleSheet, ScrollView } from "react-native";
-import { Icon, ListItem } from "@rneui/themed";
-import {
-  defineScreen,
-  useScreenTitle,
-} from "@hpapp/features/root/protected/stack";
-import {
-  AvailableColors,
-  ColorScheme,
-  useAppTheme,
-  useColor,
-} from "@hpapp/contexts/settings/theme";
-import { useEffect } from "react";
-import { useNavigation } from "@react-navigation/native";
-import useLocalUserConfig from "@hpapp/contexts/settings/useLocalUserConfig";
-import { IconSize, Spacing } from "@hpapp/features/common/constants";
-import Text from "@hpapp/features/common/components/Text";
+import { AvailableColors, ColorScheme, useAppTheme, useColor } from '@hpapp/contexts/settings/theme';
+import useLocalUserConfig from '@hpapp/contexts/settings/useLocalUserConfig';
+import Text from '@hpapp/features/common/components/Text';
+import { IconSize, Spacing } from '@hpapp/features/common/constants';
+import { defineScreen, useScreenTitle } from '@hpapp/features/root/protected/stack';
+import { useNavigation } from '@react-navigation/native';
+import { Icon, ListItem } from '@rneui/themed';
+import { StyleSheet, ScrollView } from 'react-native';
 
 export default defineScreen(
-  "/settings/theme/colors/",
-  function ThemeColorSelectorScreen({
-    title,
-    scheme,
-  }: {
-    title: string;
-    scheme: ColorScheme;
-  }) {
+  '/settings/theme/colors/',
+  function ThemeColorSelectorScreen({ title, scheme }: { title: string; scheme: ColorScheme }) {
     useScreenTitle(title);
     const navigation = useNavigation();
     const [config, updateConfig] = useLocalUserConfig();
-    const [_, updateTheme] = useAppTheme();
+    const [, updateTheme] = useAppTheme();
     const [current] = useColor(scheme);
     return (
       <ScrollView>
@@ -40,13 +25,13 @@ export default defineScreen(
               containerStyle={styles.listItemContainer}
               onPress={() => {
                 switch (scheme) {
-                  case "primary":
+                  case 'primary':
                     config!.themePrimaryColorKey = a.key;
                     break;
-                  case "secondary":
+                  case 'secondary':
                     config!.themeSecondaryColorKey = a.key;
                     break;
-                  case "background":
+                  case 'background':
                     config!.themeBackgroundColorKey = a.key;
                     break;
                   default:
@@ -54,24 +39,15 @@ export default defineScreen(
                 }
                 updateConfig(config!);
                 updateTheme(
-                  config!.themePrimaryColorKey || "hpofficial",
-                  config!.themeSecondaryColorKey || "hotpink",
-                  config!.themeBackgroundColorKey || "white"
+                  config!.themePrimaryColorKey ?? 'hpofficial',
+                  config!.themeSecondaryColorKey ?? 'hotpink',
+                  config!.themeBackgroundColorKey ?? 'white'
                 );
                 navigation.goBack();
               }}
             >
-              <Text
-                style={[
-                  styles.listItemTitle,
-                  { backgroundColor: a.color, color: a.contrastColor },
-                ]}
-              >
-                {a.name}
-              </Text>
-              {a.color === current && (
-                <Icon type="entypo" name="check" size={IconSize.Small} />
-              )}
+              <Text style={[styles.listItemTitle, { backgroundColor: a.color, color: a.contrastColor }]}>{a.name}</Text>
+              {a.color === current && <Icon type="entypo" name="check" size={IconSize.Small} />}
             </ListItem>
           );
         })}
@@ -82,14 +58,14 @@ export default defineScreen(
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   listItemContainer: {
-    padding: Spacing.XSmall,
+    padding: Spacing.XSmall
   },
   listItemTitle: {
     paddingHorizontal: Spacing.XSmall,
     paddingVertical: Spacing.XXSmall,
-    width: "50%",
-  },
+    width: '50%'
+  }
 });

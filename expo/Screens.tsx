@@ -8,13 +8,5 @@ import S4 from './features/settings/theme/ThemeColorSelectorScreen';
 import S5 from './features/settings/theme/ThemeSettingsScreen';
 import S6 from './features/upfc/settings/UPFCSettingsScreen';
 
-const Screens = [
-  S0,
-  S1,
-  S2,
-  S3,
-  S4,
-  S5,
-  S6,
-];
+const Screens = [S0, S1, S2, S3, S4, S5, S6];
 export default Screens;

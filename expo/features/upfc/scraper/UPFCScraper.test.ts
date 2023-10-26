@@ -1,83 +1,49 @@
-import * as path from "path";
-import UPFCScraper from "./UPFCScraper";
-import FileFetcher from "./FileFetcher";
-import {
-  ErrAuthentication,
-  EventApplicationTickets,
-} from "@hpapp/features/upfc/scraper/types";
-import { readFileAsJSON } from "@hpapp/foundation/test_helper";
+import { ErrAuthentication, EventApplicationTickets } from '@hpapp/features/upfc/scraper/types';
+import { readFileAsJSON } from '@hpapp/foundation/test_helper';
+import * as path from 'path';
 
-describe("Scraper", () => {
-  describe("authorize", () => {
-    it("should return true if valid redirection page is responded", async () => {
-      const fetcher = new FileFetcher("mizuki", "fukumura", {
-        redirectPageHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-redirect.html"
-        ),
-        openEventApplicationsHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-available-applications.html"
-        ),
-        openExecEventApplicationsHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-available-applications-exe.html"
-        ),
-        ticketsHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-tickets-page.html"
-        ),
+import FileFetcher from './FileFetcher';
+import UPFCScraper from './UPFCScraper';
+
+describe('Scraper', () => {
+  describe('authorize', () => {
+    it('should return true if valid redirection page is responded', async () => {
+      const fetcher = new FileFetcher('mizuki', 'fukumura', {
+        redirectPageHtmlPath: path.join(__dirname, './testdata/valid-redirect.html'),
+        openEventApplicationsHtmlPath: path.join(__dirname, './testdata/valid-available-applications.html'),
+        openExecEventApplicationsHtmlPath: path.join(__dirname, './testdata/valid-available-applications-exe.html'),
+        ticketsHtmlPath: path.join(__dirname, './testdata/valid-tickets-page.html')
       });
       const scraper = new UPFCScraper(fetcher);
-      const result = await scraper.authenticate("mizuki", "fukumura");
+      const result = await scraper.authenticate('mizuki', 'fukumura');
       expect(result).toBe(true);
     });
 
-    it("should throw ErrAuthentication if wrong redirection page is responded", async () => {
-      const fetcher = new FileFetcher("mizuki", "fukumura", {
-        redirectPageHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-no-events.html"
-        ),
-        openEventApplicationsHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-available-applications.html"
-        ),
-        openExecEventApplicationsHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-available-applications-exe.html"
-        ),
-        ticketsHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-tickets-page.html"
-        ),
+    it('should throw ErrAuthentication if wrong redirection page is responded', async () => {
+      const fetcher = new FileFetcher('mizuki', 'fukumura', {
+        redirectPageHtmlPath: path.join(__dirname, './testdata/valid-no-events.html'),
+        openEventApplicationsHtmlPath: path.join(__dirname, './testdata/valid-available-applications.html'),
+        openExecEventApplicationsHtmlPath: path.join(__dirname, './testdata/valid-available-applications-exe.html'),
+        ticketsHtmlPath: path.join(__dirname, './testdata/valid-tickets-page.html')
       });
       const scraper = new UPFCScraper(fetcher);
       expect.assertions(1);
-      return scraper
-        .authenticate("mizuki", "fukumura")
-        .catch((e) => expect(e).toBe(ErrAuthentication));
+      return scraper.authenticate('mizuki', 'fukumura').catch((e) => expect(e).toBe(ErrAuthentication));
     });
   });
 
-  describe("getEventApplications", () => {
-    it("should return all Applications in tickets page", async () => {
-      const fetcher = new FileFetcher("mizuki", "fukumura", {
-        redirectPageHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-redirect.html"
-        ),
-        openEventApplicationsHtmlPath: "",
-        openExecEventApplicationsHtmlPath: "",
-        ticketsHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-tickets-page.html"
-        ),
+  describe('getEventApplications', () => {
+    it('should return all Applications in tickets page', async () => {
+      const fetcher = new FileFetcher('mizuki', 'fukumura', {
+        redirectPageHtmlPath: path.join(__dirname, './testdata/valid-redirect.html'),
+        openEventApplicationsHtmlPath: '',
+        openExecEventApplicationsHtmlPath: '',
+        ticketsHtmlPath: path.join(__dirname, './testdata/valid-tickets-page.html')
       });
       const scraper = new UPFCScraper(fetcher);
       const got = await scraper.getEventApplications();
-      const expected = await readFileAsJSON<Array<EventApplicationTickets>>(
-        path.join(__dirname, "./testdata/valid-tickets-page.expected.json")
+      const expected = await readFileAsJSON<EventApplicationTickets[]>(
+        path.join(__dirname, './testdata/valid-tickets-page.expected.json')
       );
       expect(got.length).toBe(expected.length);
       expected.forEach((e, i) => {
@@ -97,111 +63,68 @@ describe("Scraper", () => {
     });
   });
 
-  describe("getEventApplications", () => {
-    it("should return all Applications in applications page", async () => {
-      const fetcher = new FileFetcher("mizuki", "fukumura", {
-        redirectPageHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-redirect.html"
-        ),
-        openEventApplicationsHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-available-applications.html"
-        ),
-        openExecEventApplicationsHtmlPath: "",
-        ticketsHtmlPath: path.join(__dirname, "./testdata/test-no-event.html"),
+  describe('getEventApplications', () => {
+    it('should return all Applications in applications page', async () => {
+      const fetcher = new FileFetcher('mizuki', 'fukumura', {
+        redirectPageHtmlPath: path.join(__dirname, './testdata/valid-redirect.html'),
+        openEventApplicationsHtmlPath: path.join(__dirname, './testdata/valid-available-applications.html'),
+        openExecEventApplicationsHtmlPath: '',
+        ticketsHtmlPath: path.join(__dirname, './testdata/test-no-event.html')
       });
       const scraper = new UPFCScraper(fetcher);
       const got = await scraper.getEventApplications();
-      const expected = await readFileAsJSON<Array<EventApplicationTickets>>(
-        path.join(
-          __dirname,
-          "./testdata/valid-available-applications.expected.json"
-        )
+      const expected = await readFileAsJSON<EventApplicationTickets[]>(
+        path.join(__dirname, './testdata/valid-available-applications.expected.json')
       );
       expect(got.length).toBe(expected.length);
       expected.forEach((e, i) => {
         const g = got[i];
         expect(g.name).toBe(e.name);
         expect(g.applicationID).toBe(e.applicationID);
-        expect(g.applicationStartDate!.getTime()).toBe(
-          new Date(e.applicationStartDate!).getTime()
-        );
-        expect(g.applicationDueDate!.getTime()).toBe(
-          new Date(e.applicationDueDate!).getTime()
-        );
-        expect(g.paymentOpenDate!.getTime()).toBe(
-          new Date(e.paymentOpenDate!).getTime()
-        );
-        expect(g.paymentDueDate!.getTime()).toBe(
-          new Date(e.paymentDueDate!).getTime()
-        );
+        expect(g.applicationStartDate!.getTime()).toBe(new Date(e.applicationStartDate!).getTime());
+        expect(g.applicationDueDate!.getTime()).toBe(new Date(e.applicationDueDate!).getTime());
+        expect(g.paymentOpenDate!.getTime()).toBe(new Date(e.paymentOpenDate!).getTime());
+        expect(g.paymentDueDate!.getTime()).toBe(new Date(e.paymentDueDate!).getTime());
       });
     });
 
-    it("should return all Applications in applications page (exe)", async () => {
-      const fetcher = new FileFetcher("mizuki", "fukumura", {
-        redirectPageHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-redirect.html"
-        ),
-        openEventApplicationsHtmlPath: "",
-        openExecEventApplicationsHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-available-applications-exe.html"
-        ),
-        ticketsHtmlPath: path.join(__dirname, "./testdata/test-no-event.html"),
+    it('should return all Applications in applications page (exe)', async () => {
+      const fetcher = new FileFetcher('mizuki', 'fukumura', {
+        redirectPageHtmlPath: path.join(__dirname, './testdata/valid-redirect.html'),
+        openEventApplicationsHtmlPath: '',
+        openExecEventApplicationsHtmlPath: path.join(__dirname, './testdata/valid-available-applications-exe.html'),
+        ticketsHtmlPath: path.join(__dirname, './testdata/test-no-event.html')
       });
       const scraper = new UPFCScraper(fetcher);
       const got = await scraper.getEventApplications();
-      const expected = await readFileAsJSON<Array<EventApplicationTickets>>(
-        path.join(
-          __dirname,
-          "./testdata/valid-available-applications-exe.expected.json"
-        )
+      const expected = await readFileAsJSON<EventApplicationTickets[]>(
+        path.join(__dirname, './testdata/valid-available-applications-exe.expected.json')
       );
       expect(got.length).toBe(expected.length);
       expected.forEach((e, i) => {
         const g = got[i];
         expect(g.name).toBe(e.name);
         expect(g.applicationID).toBe(e.applicationID);
-        expect(g.applicationStartDate!.getTime()).toBe(
-          new Date(e.applicationStartDate!).getTime()
-        );
-        expect(g.applicationDueDate!.getTime()).toBe(
-          new Date(e.applicationDueDate!).getTime()
-        );
-        expect(g.paymentOpenDate!.getTime()).toBe(
-          new Date(e.paymentOpenDate!).getTime()
-        );
-        expect(g.paymentDueDate!.getTime()).toBe(
-          new Date(e.paymentDueDate!).getTime()
-        );
+        expect(g.applicationStartDate!.getTime()).toBe(new Date(e.applicationStartDate!).getTime());
+        expect(g.applicationDueDate!.getTime()).toBe(new Date(e.applicationDueDate!).getTime());
+        expect(g.paymentOpenDate!.getTime()).toBe(new Date(e.paymentOpenDate!).getTime());
+        expect(g.paymentDueDate!.getTime()).toBe(new Date(e.paymentDueDate!).getTime());
       });
     });
-    it("should return all Applications listed in tickets, applications, and exe applications", async () => {
-      const fetcher = new FileFetcher("mizuki", "fukumura", {
-        redirectPageHtmlPath: path.join(
-          __dirname,
-          "./testdata/valid-redirect.html"
-        ),
-        openEventApplicationsHtmlPath: path.join(
-          __dirname,
-          "./testdata/integration-test-available-applications.html"
-        ),
+    it('should return all Applications listed in tickets, applications, and exe applications', async () => {
+      const fetcher = new FileFetcher('mizuki', 'fukumura', {
+        redirectPageHtmlPath: path.join(__dirname, './testdata/valid-redirect.html'),
+        openEventApplicationsHtmlPath: path.join(__dirname, './testdata/integration-test-available-applications.html'),
         openExecEventApplicationsHtmlPath: path.join(
           __dirname,
-          "./testdata/integration-test-available-applications-exe.html"
+          './testdata/integration-test-available-applications-exe.html'
         ),
-        ticketsHtmlPath: path.join(
-          __dirname,
-          "./testdata/integration-test-tickets.html"
-        ),
+        ticketsHtmlPath: path.join(__dirname, './testdata/integration-test-tickets.html')
       });
       const scraper = new UPFCScraper(fetcher);
       const got = await scraper.getEventApplications();
-      const expected = await readFileAsJSON<Array<EventApplicationTickets>>(
-        path.join(__dirname, "./testdata/integration-test.exepected.json")
+      const expected = await readFileAsJSON<EventApplicationTickets[]>(
+        path.join(__dirname, './testdata/integration-test.exepected.json')
       );
 
       expect(got.length).toBe(expected.length);
@@ -210,18 +133,10 @@ describe("Scraper", () => {
         expect(g.name).toBe(e.name);
         expect(g.applicationID).toBe(e.applicationID);
         if (g.applicationStartDate !== undefined) {
-          expect(g.applicationStartDate!.getTime()).toBe(
-            new Date(e.applicationStartDate!).getTime()
-          );
-          expect(g.applicationDueDate!.getTime()).toBe(
-            new Date(e.applicationDueDate!).getTime()
-          );
-          expect(g.paymentOpenDate!.getTime()).toBe(
-            new Date(e.paymentOpenDate!).getTime()
-          );
-          expect(g.paymentDueDate!.getTime()).toBe(
-            new Date(e.paymentDueDate!).getTime()
-          );
+          expect(g.applicationStartDate!.getTime()).toBe(new Date(e.applicationStartDate!).getTime());
+          expect(g.applicationDueDate!.getTime()).toBe(new Date(e.applicationDueDate!).getTime());
+          expect(g.paymentOpenDate!.getTime()).toBe(new Date(e.paymentOpenDate!).getTime());
+          expect(g.paymentDueDate!.getTime()).toBe(new Date(e.paymentDueDate!).getTime());
         }
       });
     });

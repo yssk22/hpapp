@@ -1,16 +1,9 @@
-import {
-  createContext,
-  useContext,
-  useMemo,
-  useState,
-  useEffect,
-  useCallback,
-} from "react";
-import SettingsStore from "@hpapp/system/kvs/SettingsStore";
+import SettingsStore from '@hpapp/system/kvs/SettingsStore';
+import { createContext, useContext, useMemo, useState, useEffect, useCallback } from 'react';
 
 export interface SettingsContext {
   store: Map<string, unknown>;
-  settingsList: Array<SettingsStore<unknown>>;
+  settingsList: SettingsStore<unknown>[];
   setValue: (key: string, value: unknown) => void;
 }
 
@@ -18,17 +11,15 @@ const contextObj = createContext<SettingsContext>({
   store: new Map(),
   settingsList: [],
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  setValue: (_key: string, _value: unknown) => {
-    return;
-  },
+  setValue: (_key: string, _value: unknown) => {}
 });
 
 function SettingsProvider({
   children,
-  settings,
+  settings
 }: {
   children: React.ReactElement;
-  settings: Array<SettingsStore<unknown>>;
+  settings: SettingsStore<unknown>[];
 }) {
   const Provider = contextObj.Provider;
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -37,9 +28,7 @@ function SettingsProvider({
   useEffect(() => {
     // load all settings registered in Settings Store
     (async () => {
-      const values = await Promise.all(
-        settings.map(async (s) => await s.load())
-      );
+      const values = await Promise.all(settings.map(async (s) => await s.load()));
       const nextStore = new Map(store);
       values.forEach((value, i) => {
         const key = settings[i].storageKey;
@@ -51,13 +40,13 @@ function SettingsProvider({
   }, [settings]);
   const value = useMemo(() => {
     return {
-      store: store,
+      store,
       settingsList: settings,
       setValue: async (key: string, value: unknown) => {
         const nextStore = new Map(store);
         nextStore.set(key, value);
         setStore(nextStore);
-      },
+      }
     };
   }, [store, settings]);
   if (isLoading) {
@@ -66,9 +55,7 @@ function SettingsProvider({
   return <Provider value={value}>{children}</Provider>;
 }
 
-function useSettings<T>(
-  settings: SettingsStore<T>
-): [T | undefined, (value: T | null) => Promise<void>] {
+function useSettings<T>(settings: SettingsStore<T>): [T | undefined, (value: T | null) => Promise<void>] {
   const ctx = useContext(contextObj);
   const value = ctx.store.get(settings.storageKey);
   const setValue = useCallback(
@@ -84,14 +71,12 @@ function useSettings<T>(
     [ctx.setValue, settings]
   );
   if (!ctx.store.has(settings.storageKey)) {
-    throw new Error(
-      `SettingsStore('${settings.storageKey}') is not initialized with context`
-    );
+    throw new Error(`SettingsStore('${settings.storageKey}') is not initialized with context`);
   }
   return [value as T, setValue];
 }
 
-const useAllSettings = (): Array<SettingsStore<unknown>> => {
+const useAllSettings = (): SettingsStore<unknown>[] => {
   const ctx = useContext(contextObj);
   return ctx.settingsList;
 };

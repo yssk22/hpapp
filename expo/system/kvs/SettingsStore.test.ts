@@ -1,11 +1,11 @@
-import MemoryStorage from "./MemoryStorage";
-import SettingsStore from "./SettingsStore";
+import MemoryStorage from './MemoryStorage';
+import SettingsStore from './SettingsStore';
 
-test("Settings", async () => {
+test('Settings', async () => {
   const storage = new MemoryStorage();
-  const mizuki = SettingsStore.register("mizuki.fukumura", storage, {
+  const mizuki = SettingsStore.register('mizuki.fukumura', storage, {
     defaultValue: 10,
-    description: "test",
+    description: 'test'
   });
   const defaultValue = await mizuki.load();
   expect(defaultValue).toBe(10);
@@ -14,10 +14,10 @@ test("Settings", async () => {
   expect(newValue).toBe(20);
 
   // when the key is redefined, the old setting can be still fetched by using 'migrationFrom'
-  const risa = SettingsStore.register("risa.irie", storage, {
+  const risa = SettingsStore.register('risa.irie', storage, {
     defaultValue: 30,
-    description: "new version of test",
-    migrationFrom: mizuki,
+    description: 'new version of test',
+    migrationFrom: mizuki
   });
   const risaValue = await risa.load();
   expect(risaValue).toBe(20);

@@ -1,21 +1,9 @@
-import {
-  graphql,
-  useQueryLoader,
-  usePreloadedQuery,
-  PreloadedQuery,
-  useFragment,
-} from "react-relay";
-import { Suspense, createContext, useContext, useEffect, useMemo } from "react";
-import ErrorBoundary from "@hpapp/features/misc/ErrorBoundary";
-import { servicerootQuery } from "@hpapp/contexts/serviceroot/__generated__/servicerootQuery.graphql";
-import {
-  HelloProject,
-  useHelloprojectFragment,
-  HPArtist,
-  HPMember,
-} from "@hpapp/contexts/serviceroot/helloproject";
-import { useMeFragment } from "@hpapp/contexts/serviceroot/me";
-import { Me } from "@hpapp/contexts/serviceroot/me";
+import { servicerootQuery } from '@hpapp/contexts/serviceroot/__generated__/servicerootQuery.graphql';
+import { HelloProject, useHelloprojectFragment, HPArtist, HPMember } from '@hpapp/contexts/serviceroot/helloproject';
+import { useMeFragment, Me } from '@hpapp/contexts/serviceroot/me';
+import ErrorBoundary from '@hpapp/features/misc/ErrorBoundary';
+import { Suspense, createContext, useContext, useEffect, useMemo } from 'react';
+import { graphql, useQueryLoader, usePreloadedQuery, PreloadedQuery } from 'react-relay';
 
 const servicerootQueryGraphQL = graphql`
   query servicerootQuery {
@@ -39,7 +27,7 @@ const ctx = createContext<ServiceRoot | null>(null);
 function ServiceRootProvider({
   errorFallback,
   loadingFallback,
-  children,
+  children
 }: {
   errorFallback: React.ReactElement;
   loadingFallback: React.ReactElement;
@@ -55,9 +43,7 @@ function ServiceRootProvider({
 }
 
 function LoadServiceRootQuery({ children }: { children: React.ReactElement }) {
-  const [queryRef, loadQuery] = useQueryLoader<servicerootQuery>(
-    servicerootQueryGraphQL
-  );
+  const [queryRef, loadQuery] = useQueryLoader<servicerootQuery>(servicerootQueryGraphQL);
   const load = useMemo(() => {
     return () => loadQuery({});
   }, [loadQuery]);
@@ -78,23 +64,20 @@ function LoadServiceRootQuery({ children }: { children: React.ReactElement }) {
 function RenderServiceRootQuery({
   queryRef,
   reload,
-  children,
+  children
 }: {
   queryRef: PreloadedQuery<servicerootQuery, Record<string, unknown>>;
   reload: () => void;
   children: React.ReactElement;
 }) {
-  const data = usePreloadedQuery<servicerootQuery>(
-    servicerootQueryGraphQL,
-    queryRef
-  );
+  const data = usePreloadedQuery<servicerootQuery>(servicerootQueryGraphQL, queryRef);
   const hp = useHelloprojectFragment(data.helloproject);
   const me = useMeFragment(data.me);
   const serviceRoot = useMemo(() => {
     return {
       hp,
       me,
-      reload,
+      reload
     };
   }, [hp, me]);
   return <ctx.Provider value={serviceRoot}>{children}</ctx.Provider>;
@@ -115,11 +98,4 @@ function useSeviveRootReload() {
   return value!.reload;
 }
 
-export {
-  HPArtist,
-  HPMember,
-  ServiceRootProvider,
-  useHelloProject,
-  useMe,
-  useSeviveRootReload,
-};
+export { HPArtist, HPMember, ServiceRootProvider, useHelloProject, useMe, useSeviveRootReload };

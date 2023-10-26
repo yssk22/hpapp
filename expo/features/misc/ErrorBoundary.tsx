@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default class ErrorBoundary extends React.Component<
   {
@@ -9,20 +9,17 @@ export default class ErrorBoundary extends React.Component<
     hasError: boolean;
   }
 > {
-  constructor(props: {
-    fallback: React.ReactElement;
-    children: React.ReactElement;
-  }) {
+  constructor(props: { fallback: React.ReactElement; children: React.ReactElement }) {
     super(props);
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error: unknown) {
+  static getDerivedStateFromError() {
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
 
-  componentDidCatch(error: any, info: any) {}
+  componentDidCatch() {}
 
   render() {
     if (this.state.hasError) {

@@ -1,21 +1,16 @@
-import { StyleSheet, View } from "react-native";
-import { useHelloProject } from "@hpapp/contexts/serviceroot";
-import Text from "@hpapp/features/common/components/Text";
-import MemberIcon from "@hpapp/features/artist/MemberIcon";
-import {
-  Spacing,
-  FontSize,
-  MemberIconSize,
-  IconSize,
-} from "@hpapp/features/common/constants";
-import { Divider } from "@rneui/themed";
-import HPSortResultRankDiffIcon from "@hpapp/features/artist/sort/HPSortResultRankDiffIcon";
-import FollowIcon from "@hpapp/features/artist/FollowIcon";
+import { useHelloProject } from '@hpapp/contexts/serviceroot';
+import FollowIcon from '@hpapp/features/artist/FollowIcon';
+import MemberIcon from '@hpapp/features/artist/MemberIcon';
+import HPSortResultRankDiffIcon from '@hpapp/features/artist/sort/HPSortResultRankDiffIcon';
+import Text from '@hpapp/features/common/components/Text';
+import { Spacing, FontSize, MemberIconSize, IconSize } from '@hpapp/features/common/constants';
+import { Divider } from '@rneui/themed';
+import { StyleSheet, View } from 'react-native';
 
 export default function HPSortResultListItem({
   memberId,
   previousRank,
-  rank,
+  rank
 }: {
   memberId: string;
   previousRank?: number;
@@ -49,32 +44,32 @@ export default function HPSortResultListItem({
 const styles = StyleSheet.create({
   container: {
     height: 50,
-    alignItems: "center",
-    flexDirection: "row",
-    paddingLeft: Spacing.Medium,
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingLeft: Spacing.Medium
   },
   rank: {
     width: 50,
-    paddingRight: Spacing.Medium,
+    paddingRight: Spacing.Medium
   },
   rankText: {
-    textAlign: "right",
-    fontSize: FontSize.Small,
+    textAlign: 'right',
+    fontSize: FontSize.Small
   },
   rankDiff: {
-    paddingRight: Spacing.Medium,
+    paddingRight: Spacing.Medium
   },
   name: {
-    paddingLeft: Spacing.Medium,
+    paddingLeft: Spacing.Medium
   },
   nameText: {
-    textAlign: "right",
-    fontSize: FontSize.Small,
+    textAlign: 'right',
+    fontSize: FontSize.Small
   },
   followIcon: {
     flexGrow: 1,
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
-    marginRight: Spacing.Medium,
-  },
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    marginRight: Spacing.Medium
+  }
 });

@@ -1,9 +1,8 @@
-import React, { useCallback } from "react";
-import { View, StyleSheet, ActionSheetIOS } from "react-native";
-import { Icon, Input } from "@rneui/themed";
-import { Picker } from "@react-native-picker/picker";
-import { Platform } from "react-native";
-import { IconSize, Spacing } from "@hpapp/features/common/constants";
+import { IconSize } from '@hpapp/features/common/constants';
+import { Picker } from '@react-native-picker/picker';
+import { Icon, Input } from '@rneui/themed';
+import React, { useCallback } from 'react';
+import { View, StyleSheet, ActionSheetIOS, Platform } from 'react-native';
 
 type DropdownItem = {
   key?: string;
@@ -14,26 +13,22 @@ type DropdownItem = {
 type DropdownProps = {
   selectedValue: string | undefined;
   onValueChange: (value: string) => void;
-  items: Array<DropdownItem>;
+  items: DropdownItem[];
 };
 
-function DropdownAndroid({
-  selectedValue,
-  onValueChange,
-  items,
-}: DropdownProps) {
+function DropdownAndroid({ selectedValue, onValueChange, items }: DropdownProps) {
   return (
     <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
       {items.map((c) => {
         return (
           <Picker.Item
-            key={c.key || c.label}
+            key={c.key ?? c.label}
             label={c.label}
             value={c.value}
             style={{
               marginTop: 3,
               marginBottom: 3,
-              borderRadius: 0,
+              borderRadius: 0
             }}
           />
         );
@@ -44,17 +39,17 @@ function DropdownAndroid({
 
 const iOSStyles = StyleSheet.create({
   icon: {
-    position: "absolute",
+    position: 'absolute',
     top: 28,
-    right: 10,
-  },
+    right: 10
+  }
 });
 
 function DropdownIOS({ selectedValue, onValueChange, items }: DropdownProps) {
   const onPress = useCallback(() => {
     ActionSheetIOS.showActionSheetWithOptions(
       {
-        options: items.map((i) => i.label),
+        options: items.map((i) => i.label)
       },
       (buttonIndex) => {
         onValueChange(items[buttonIndex].value);
@@ -67,13 +62,13 @@ function DropdownIOS({ selectedValue, onValueChange, items }: DropdownProps) {
   return (
     <>
       <View style={iOSStyles.icon}>
-        <Icon size={IconSize.Small} name="triangle-down" type={"entypo"} />
+        <Icon size={IconSize.Small} name="triangle-down" type="entypo" />
       </View>
-      <Input disabled={true} value={valueText} onPressIn={onPress} />
+      <Input disabled value={valueText} onPressIn={onPress} />
     </>
   );
 }
 
-const Dropdown = Platform.OS === "ios" ? DropdownIOS : DropdownAndroid;
+const Dropdown = Platform.OS === 'ios' ? DropdownIOS : DropdownAndroid;
 
 export default Dropdown;

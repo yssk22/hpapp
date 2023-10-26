@@ -1,4 +1,4 @@
-import { SettingsStore, SecureStorage } from "@hpapp/system/kvs";
+import { SettingsStore, SecureStorage } from '@hpapp/system/kvs';
 
 type UPFCConfig = {
   username: string;
@@ -8,17 +8,17 @@ type UPFCConfig = {
 };
 
 const UPFCSettings = SettingsStore.register<UPFCConfig>(
-  "hpapp.upfc.config",
+  'hpapp.upfc.config',
   new SecureStorage({
-    keychainService: "hpapp.upfc.config",
+    keychainService: 'hpapp.upfc.config'
   }),
   {
     migrationFrom: SettingsStore.register<UPFCConfig>(
-      "hpapp.settings.fanclub",
+      'hpapp.settings.fanclub',
       new SecureStorage({
-        keychainService: "hpapp.settings.fanclub.credentials",
+        keychainService: 'hpapp.settings.fanclub.credentials'
       })
-    ),
+    )
   }
 );
 

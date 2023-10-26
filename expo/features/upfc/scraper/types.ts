@@ -23,14 +23,14 @@ export type EventApplication = {
 };
 
 export type EventApplicationTickets = {
-  tickets: Array<EventTicket>;
+  tickets: EventTicket[];
 } & EventApplication;
 
 export type TicketStatus = '申込済' | '入金待' | '入金済' | '落選' | '入金忘' | '不明';
 
 export interface Scraper {
   authenticate(username: string, password: string): Promise<boolean>;
-  getEventApplications(): Promise<Array<EventApplicationTickets>>;
+  getEventApplications(): Promise<EventApplicationTickets[]>;
 }
 
 export interface Fetcher {

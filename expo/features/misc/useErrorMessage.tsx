@@ -1,9 +1,9 @@
-import React, { useCallback, useState } from "react";
-import { Text } from "react-native";
-import { renderError } from "@hpapp/foundation/errors";
+import { renderError } from '@hpapp/foundation/errors';
+import React, { useCallback, useState } from 'react';
+import { Text } from 'react-native';
 
 export default function useErrorMessage(): [
-  ({ testID = "errorMessage" }: { testID?: string }) => React.ReactElement,
+  ({ testID = 'errorMessage' }: { testID?: string }) => React.ReactElement,
   (e: unknown) => void
 ] {
   const [error, setError] = useState<string | null>(null);
@@ -14,9 +14,7 @@ export default function useErrorMessage(): [
     [setError]
   );
   const component = useCallback(
-    ({ testID = "errorMessage" }: { testID?: string }) => (
-      <>{error && <Text testID={testID}>{error}</Text>}</>
-    ),
+    ({ testID = 'errorMessage' }: { testID?: string }) => <>{error && <Text testID={testID}>{error}</Text>}</>,
     [error]
   );
   return [component, setErrorMessage];

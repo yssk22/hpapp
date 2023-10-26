@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext } from 'react';
 
 export interface Analytics {
   logEvent(name: string, properties?: Record<string, any>): Promise<void>;
@@ -9,14 +9,14 @@ const defaultAnalytics = {
     return new Promise((resolve) => {
       resolve();
     });
-  },
+  }
 };
 
 const ctx = createContext<Analytics>(defaultAnalytics);
 
 export function AnalyticsProvider({
   analytics = defaultAnalytics,
-  children,
+  children
 }: {
   analytics?: Analytics;
   children: React.ReactNode;

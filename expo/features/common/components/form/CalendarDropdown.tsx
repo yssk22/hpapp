@@ -1,16 +1,16 @@
-import { useEffect, useMemo, useState } from "react";
-import { Platform } from "react-native";
-import * as Calendar from "expo-calendar";
-import Dropdown from "@hpapp/features/common/components/form/Dropdown";
+import Dropdown from '@hpapp/features/common/components/form/Dropdown';
+import * as Calendar from 'expo-calendar';
+import { useEffect, useMemo, useState } from 'react';
+import { Platform } from 'react-native';
 
-const NULL_CALENDER_VALUE = "__CALENDER_IS_NULL__";
+const NULL_CALENDER_VALUE = '__CALENDER_IS_NULL__';
 
 export type CalendarDropdownProps = {
   renderIfPermissionDenied: React.ReactElement;
   onSelect: (calender: Calendar.Calendar | null) => void;
   includeNull?: boolean;
   nullText?: string;
-} & Omit<React.ComponentProps<typeof Dropdown>, "onValueChange" | "items">;
+} & Omit<React.ComponentProps<typeof Dropdown>, 'onValueChange' | 'items'>;
 
 // CalenderDropdown provides a Dropdown component for calendars defined in users Operating System.
 export default function CalendarDropdown({
@@ -18,31 +18,24 @@ export default function CalendarDropdown({
   includeNull,
   nullText,
   onSelect,
-  selectedValue,
+  selectedValue
 }: CalendarDropdownProps) {
-  const [isRequestingPermission, setIsRequsetingPermission] =
-    useState<boolean>(true);
+  const [isRequestingPermission, setIsRequsetingPermission] = useState<boolean>(true);
   const [calendars, setCalendars] = useState<Calendar.Calendar[]>([]);
   useEffect(() => {
     (async () => {
       let reminderGranted = true;
       const { granted } = await Calendar.requestCalendarPermissionsAsync();
-      if (Platform.OS === "ios") {
+      if (Platform.OS === 'ios') {
         const { granted } = await Calendar.requestRemindersPermissionsAsync();
         reminderGranted = granted;
       }
       if (granted && reminderGranted) {
-        const calendars = await Calendar.getCalendarsAsync(
-          Calendar.EntityTypes.EVENT
-        );
+        const calendars = await Calendar.getCalendarsAsync(Calendar.EntityTypes.EVENT);
         // for Android, getEventsAsync return nothing if the calender is not visible so
         // users have to select from only visible calendars.
-        if (Platform.OS === "android") {
-          setCalendars(
-            calendars.filter(
-              (c) => c.isVisible === true && c.allowsModifications
-            )
-          );
+        if (Platform.OS === 'android') {
+          setCalendars(calendars.filter((c) => c.isVisible === true && c.allowsModifications));
         } else {
           setCalendars(calendars.filter((c) => c.allowsModifications));
         }
@@ -55,17 +48,17 @@ export default function CalendarDropdown({
       return {
         key: c.id,
         label: c.title,
-        value: c.id,
+        value: c.id
       };
     });
 
     if (nullText) {
       return [
         {
-          key: "null",
+          key: 'null',
           label: nullText,
-          value: NULL_CALENDER_VALUE,
-        },
+          value: NULL_CALENDER_VALUE
+        }
       ].concat(calendarItems);
     }
     return calendarItems;
@@ -73,7 +66,7 @@ export default function CalendarDropdown({
   if (isRequestingPermission) {
     return null;
   }
-  if (calendars.length == 0) {
+  if (calendars.length === 0) {
     return renderIfPermissionDenied;
   }
   return (

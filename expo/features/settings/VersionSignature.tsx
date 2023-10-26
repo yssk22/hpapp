@@ -1,27 +1,24 @@
-import { useCurrentUser, useUserRoles } from "@hpapp/features/auth";
-import Link from "@hpapp/features/common/components/Link";
-import Text from "@hpapp/features/common/components/Text";
-import React from "react";
-import { View, StyleSheet } from "react-native";
-import { FontSize, Spacing } from "@hpapp/features/common/constants";
-import {
-  ApplicationVersion,
-  BuildNumber,
-} from "@hpapp/features/common/version";
+import { useCurrentUser, useUserRoles } from '@hpapp/features/auth';
+import Link from '@hpapp/features/common/components/Link';
+import Text from '@hpapp/features/common/components/Text';
+import { FontSize, Spacing } from '@hpapp/features/common/constants';
+import { ApplicationVersion, BuildNumber } from '@hpapp/features/common/version';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "flex-end",
-    padding: Spacing.Small,
+    alignItems: 'flex-end',
+    padding: Spacing.Small
   },
   text: {
     fontSize: FontSize.Small,
-    fontStyle: "italic",
-  },
+    fontStyle: 'italic'
+  }
 });
 
 const VersionSignature: React.FC = () => {
-  const [user, _] = useCurrentUser();
+  const [user] = useCurrentUser();
   const roles = useUserRoles(user);
   return (
     <View style={styles.container}>
@@ -32,7 +29,7 @@ const VersionSignature: React.FC = () => {
         Version {ApplicationVersion} (Buld: {BuildNumber})
       </Text>
       <Text style={styles.text}>
-        ID: {user?.id} ({roles.join(", ")})
+        ID: {user?.id} ({roles.join(', ')})
       </Text>
     </View>
   );

@@ -1,24 +1,23 @@
-import { HPMember, useHelloProject, useMe } from "@hpapp/contexts/serviceroot";
-import { HPFollowType } from "@hpapp/contexts/serviceroot/me";
-import { ColorScheme, useColor } from "@hpapp/contexts/settings/theme";
-import { color } from "@rneui/base";
-import { Icon } from "@rneui/themed";
+import { HPMember, useHelloProject, useMe } from '@hpapp/contexts/serviceroot';
+import { HPFollowType } from '@hpapp/contexts/serviceroot/me';
+import { ColorScheme, useColor } from '@hpapp/contexts/settings/theme';
+import { Icon } from '@rneui/themed';
 
 function getIconName(type: HPFollowType) {
   switch (type) {
-    case "follow":
-      return "account-check";
-    case "follow_with_notification":
-      return "bell-check";
+    case 'follow':
+      return 'account-check';
+    case 'follow_with_notification':
+      return 'bell-check';
     default:
       return null;
   }
 }
 
 export default function FollowIcon({
-  colorScheme = "primary",
+  colorScheme = 'primary',
   member,
-  size,
+  size
 }: {
   member: HPMember | string;
   colorScheme?: ColorScheme;
@@ -29,12 +28,10 @@ export default function FollowIcon({
   const m = hp.useMember(member);
   const followType = me.useFollowType(m!.id);
   const iconName = getIconName(followType);
-  const [color, _] = useColor(colorScheme);
+  const [color] = useColor(colorScheme);
   if (iconName === null) {
     return null;
   }
 
-  return (
-    <Icon type="material-community" name={iconName} size={size} color={color} />
-  );
+  return <Icon type="material-community" name={iconName} size={size} color={color} />;
 }

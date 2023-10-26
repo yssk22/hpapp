@@ -1,10 +1,10 @@
-import Text from "@hpapp/features/common/components/Text";
-import { ListItem } from "@rneui/themed";
+import Text from '@hpapp/features/common/components/Text';
+import { ListItem } from '@rneui/themed';
 
 export default function DevOnlySettingsListItem({
   name,
   value,
-  displayValue,
+  displayValue
 }: {
   name: string;
   value: string;
@@ -15,7 +15,7 @@ export default function DevOnlySettingsListItem({
       <ListItem
         onPress={() => {
           // console output so that developer can copy on their terminal.
-          console.log("Settings", name, ":", value);
+          console.log('Settings', name, ':', value);
         }}
       >
         <ListItem.Content>
@@ -23,7 +23,7 @@ export default function DevOnlySettingsListItem({
             <Text>{name}</Text>
           </ListItem.Title>
           <ListItem.Subtitle>
-            <Text>{displayValue || value}</Text>
+            <Text>{displayValue ?? value}</Text>
           </ListItem.Subtitle>
         </ListItem.Content>
       </ListItem>

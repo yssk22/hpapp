@@ -1,6 +1,7 @@
-import { useSettings } from "@hpapp/contexts/settings";
-import { ColorKey } from "./theme";
-import { SettingsStore, AsyncStorage } from "@hpapp/system/kvs";
+import { useSettings } from '@hpapp/contexts/settings';
+import { SettingsStore, AsyncStorage } from '@hpapp/system/kvs';
+
+import { ColorKey } from './theme';
 
 type LocalUserConfiguration = {
   completeOnboarding?: boolean;
@@ -17,28 +18,27 @@ type LocalUserConfiguration = {
   adminEnableDevOnly: boolean;
 };
 
-const LocalUserConfigurationSettings =
-  SettingsStore.register<LocalUserConfiguration>(
-    // we keep the legacy format of the setings key
-    "hpapp.user.local_user_config",
-    new AsyncStorage(),
-    {
-      defaultValue: {
-        completeOnboarding: false,
-        themePrimaryColorKey: "hpofficial",
-        themeSecondaryColorKey: "hotpink",
-        themeBackgroundColorKey: "white",
-        consentOnPrivacy: false,
-        consentOnToS: false,
-        consentOnUPFCDataPolicy: false,
+const LocalUserConfigurationSettings = SettingsStore.register<LocalUserConfiguration>(
+  // we keep the legacy format of the setings key
+  'hpapp.user.local_user_config',
+  new AsyncStorage(),
+  {
+    defaultValue: {
+      completeOnboarding: false,
+      themePrimaryColorKey: 'hpofficial',
+      themeSecondaryColorKey: 'hotpink',
+      themeBackgroundColorKey: 'white',
+      consentOnPrivacy: false,
+      consentOnToS: false,
+      consentOnUPFCDataPolicy: false,
 
-        amebloOptimizedView: false,
-        feedUseMemberTaggings: true,
+      amebloOptimizedView: false,
+      feedUseMemberTaggings: true,
 
-        adminEnableDevOnly: false,
-      },
+      adminEnableDevOnly: false
     }
-  );
+  }
+);
 
 export default function useLocalUserConfig() {
   return useSettings(LocalUserConfigurationSettings);

@@ -1,7 +1,6 @@
-import { HPArtist, useHelloProject } from "@hpapp/contexts/serviceroot";
-import ArtistCard from "@hpapp/features/artist/ArtistCard";
-import { useEffect, useState } from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { useHelloProject } from '@hpapp/contexts/serviceroot';
+import ArtistCard from '@hpapp/features/artist/ArtistCard';
+import { FlatList } from 'react-native';
 
 export default function ByGroupView() {
   const hp = useHelloProject();
@@ -16,9 +15,3 @@ export default function ByGroupView() {
     />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

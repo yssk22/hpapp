@@ -1,20 +1,18 @@
-import React, { forwardRef, useCallback, useEffect, useMemo } from "react";
-import {
-  createNativeStackNavigator as createNavigator,
-  NativeStackNavigationOptions,
-  NativeStackNavigationProp,
-} from "@react-navigation/native-stack";
+import { useColor } from '@hpapp/contexts/settings/theme';
 import {
   DefaultTheme,
   NavigationContainer,
   NavigationContainerRef,
   NavigationState as NavigationStateOrig,
-} from "@react-navigation/native";
-import {
   useNavigation as useNavigationOrig,
-  useRoute,
-} from "@react-navigation/native";
-import { useColor } from "@hpapp/contexts/settings/theme";
+  useRoute
+} from '@react-navigation/native';
+import {
+  createNativeStackNavigator as createNavigator,
+  NativeStackNavigationOptions,
+  NativeStackNavigationProp
+} from '@react-navigation/native-stack';
+import React, { forwardRef, useCallback, useEffect, useMemo } from 'react';
 
 export type ScreenParams = { [key: string]: unknown };
 export type Screen<P extends ScreenParams> = {
@@ -22,13 +20,9 @@ export type Screen<P extends ScreenParams> = {
   component: React.ElementType<P>;
   options?: NativeStackNavigationOptions;
 };
-export type ScreenList = Array<Screen<any>>;
+export type ScreenList = Screen<any>[];
 
-type ComponentPropType<T> = T extends
-  | React.ComponentType<infer P>
-  | React.Component<infer P>
-  ? P
-  : never;
+type ComponentPropType<T> = T extends React.ComponentType<infer P> | React.Component<infer P> ? P : never;
 
 type Route<P extends ScreenParams> = {
   key: string;
@@ -46,23 +40,15 @@ function screenComponent<P extends ScreenParams>(
     const route = useRoute<Route<P>>();
     const props = route.params;
     const Component = screen.component;
-    return (
-      <RootComponent>{React.createElement(Component, props)}</RootComponent>
-    );
+    return <RootComponent>{React.createElement(Component, props)}</RootComponent>;
   };
 }
 
 type StackProps<P extends ScreenParams> = {
   initialRouteName: string;
   screens: ScreenList;
-  onStateChange?: (args: {
-    params: Readonly<object | undefined>;
-    screen: Screen<P>;
-  }) => void;
-} & Omit<
-  ComponentPropType<ReturnType<typeof createNavigator>["Navigator"]>,
-  "children"
->;
+  onStateChange?: (args: { params: Readonly<object | undefined>; screen: Screen<P> }) => void;
+} & Omit<ComponentPropType<ReturnType<typeof createNavigator>['Navigator']>, 'children'>;
 
 function createStackNavigator<P extends ScreenParams>(
   props: {
@@ -70,29 +56,29 @@ function createStackNavigator<P extends ScreenParams>(
   } = {}
 ) {
   const stack = createNavigator();
-  const rootComponent = props.rootComponent || React.Fragment;
+  const rootComponent = props.rootComponent ?? React.Fragment;
   return forwardRef(function Navigator(
     props: StackProps<P>,
-    ref?:
-      | React.Ref<NavigationContainerRef<ReactNavigation.RootParamList>>
-      | undefined
+    ref?: React.Ref<NavigationContainerRef<ReactNavigation.RootParamList>> | undefined
   ): JSX.Element {
-    const [primary, contrastPrimary] = useColor("primary");
-    const [secondary, _] = useColor("secondary");
-    const { screens, onStateChange, initialRouteName, ...navigatorProps } =
-      props;
-    const screenMap = screens.reduce((map, s) => {
-      map.set(s.path, s);
-      return map;
-    }, new Map() as Map<string, Screen<P>>);
+    const [primary, contrastPrimary] = useColor('primary');
+    const [secondary] = useColor('secondary');
+    const { screens, onStateChange, initialRouteName, ...navigatorProps } = props;
+    const screenMap = screens.reduce(
+      (map, s) => {
+        map.set(s.path, s);
+        return map;
+      },
+      new Map() as Map<string, Screen<P>>
+    );
     const handleStateChange = useCallback(
       (state: NavigationStateOrig | undefined) => {
         if (state) {
           const currentRoute = state.routes[state.index];
           onStateChange &&
             onStateChange({
-              params: currentRoute.params || {},
-              screen: screenMap.get(currentRoute.name)!,
+              params: currentRoute.params ?? {},
+              screen: screenMap.get(currentRoute.name)!
             });
         }
       },
@@ -104,26 +90,26 @@ function createStackNavigator<P extends ScreenParams>(
         onStateChange &&
           onStateChange({
             params: {},
-            screen: screen,
+            screen
           });
       }
     }, [initialRouteName, screenMap, onStateChange]);
     const Screens = useMemo(() => {
       return screens.map((screen) => {
-        const options = screen.options || {};
+        const options = screen.options ?? {};
         return (
           <stack.Screen
             key={screen.path}
             name={screen.path}
             component={screenComponent(screen, rootComponent)}
             options={{
-              headerBackTitle: "",
+              headerBackTitle: '',
               headerBackTitleVisible: false,
               headerTintColor: contrastPrimary,
               headerStyle: {
-                backgroundColor: primary,
+                backgroundColor: primary
               },
-              ...options,
+              ...options
             }}
           />
         );
@@ -137,19 +123,16 @@ function createStackNavigator<P extends ScreenParams>(
         theme={{
           ...DefaultTheme,
           colors: {
-            primary: primary,
+            primary,
             background: contrastPrimary,
             card: contrastPrimary,
             text: primary,
             border: contrastPrimary,
-            notification: secondary,
-          },
+            notification: secondary
+          }
         }}
       >
-        <stack.Navigator
-          initialRouteName={initialRouteName}
-          {...navigatorProps}
-        >
+        <stack.Navigator initialRouteName={initialRouteName} {...navigatorProps}>
           {Screens}
         </stack.Navigator>
       </NavigationContainer>
@@ -158,10 +141,7 @@ function createStackNavigator<P extends ScreenParams>(
 }
 
 const useNavigation = () => {
-  const navigation =
-    useNavigationOrig<
-      NativeStackNavigationProp<Record<string, object | undefined>>
-    >();
+  const navigation = useNavigationOrig<NativeStackNavigationProp<Record<string, object | undefined>>>();
   const { navigate, replace, push, canGoBack, ...rest } = navigation;
   return useMemo(() => {
     function _navigate<P extends ScreenParams>(screen: Screen<P>, params?: P) {
@@ -199,21 +179,18 @@ const useNavigation = () => {
       push: _push,
       replace: _replace,
       canGoBack: _canGoBack,
-      ...rest,
+      ...rest
     };
   }, [navigate]);
 };
 
 type Navigation = ReturnType<typeof useNavigation>;
 
-function defineScreen<P extends ScreenParams>(
-  path: string,
-  component: React.ElementType<P>
-): Screen<P> {
+function defineScreen<P extends ScreenParams>(path: string, component: React.ElementType<P>): Screen<P> {
   return {
     path,
     component,
-    options: {},
+    options: {}
   };
 }
 
@@ -222,7 +199,7 @@ function useScreenTitle(title: string) {
   const navigation = useNavigation();
   useEffect(() => {
     navigation.setOptions({
-      title,
+      title
     });
   }, [title]);
 }
@@ -234,11 +211,4 @@ function useNavigationOption(options: Partial<NativeStackNavigationOptions>) {
   }, [options]);
 }
 
-export {
-  createStackNavigator,
-  useNavigation,
-  Navigation,
-  defineScreen,
-  useScreenTitle,
-  useNavigationOption,
-};
+export { createStackNavigator, useNavigation, Navigation, defineScreen, useScreenTitle, useNavigationOption };

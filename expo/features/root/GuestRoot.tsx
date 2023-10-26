@@ -1,18 +1,15 @@
-import { View, StyleSheet, Image } from "react-native";
-import { LoginContainer, User } from "@hpapp/features/auth";
-import { useAssets } from "expo-asset";
+import { LoginContainer, User } from '@hpapp/features/auth';
+import { useAssets } from 'expo-asset';
+import { View, StyleSheet, Image } from 'react-native';
 
 export default function GuestRoot({
   LoginContainer,
-  onAuthenticated,
+  onAuthenticated
 }: {
   LoginContainer: LoginContainer;
   onAuthenticated: (user: User) => void;
 }) {
-  const [loaded] = useAssets([
-    require(`assets/icon.png`),
-    require(`assets/splash.png`),
-  ]);
+  const [loaded] = useAssets([require(`assets/icon.png`), require(`assets/splash.png`)]);
   if (!loaded) {
     return <></>;
   }
@@ -24,7 +21,7 @@ export default function GuestRoot({
           source={{
             uri: icon.uri!,
             height: icon.height!,
-            width: icon.width!,
+            width: icon.width!
           }}
           style={styles.img}
           resizeMode="contain"
@@ -37,15 +34,15 @@ export default function GuestRoot({
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 1,
+    flex: 1
   },
   container: {
     flexGrow: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   img: {
-    width: "80%",
-    height: "40%",
-  },
+    width: '80%',
+    height: '40%'
+  }
 });

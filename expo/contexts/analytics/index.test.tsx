@@ -1,8 +1,9 @@
-import { renderHook, act } from "@testing-library/react-native";
-import { AnalyticsProvider, useAnalytics } from "./index";
-import React from "react";
+import { renderHook, act } from '@testing-library/react-native';
+import React from 'react';
 
-test("should provide a default analytics provider", () => {
+import { AnalyticsProvider, useAnalytics } from './index';
+
+test('should provide a default analytics provider', () => {
   const wrapper = ({ children }: { children: React.ReactNode }) => {
     return <AnalyticsProvider>{children}</AnalyticsProvider>;
   };
@@ -10,9 +11,9 @@ test("should provide a default analytics provider", () => {
   expect(result.current.logEvent).not.toBeNull();
 });
 
-test("should provide a custom analytics provider", () => {
+test('should provide a custom analytics provider', () => {
   const custom = {
-    logEvent: jest.fn(),
+    logEvent: jest.fn()
   };
 
   const wrapper = ({ children }: { children: React.ReactNode }) => {
@@ -22,7 +23,7 @@ test("should provide a custom analytics provider", () => {
   const { result } = renderHook(() => useAnalytics(), { wrapper });
 
   act(() => {
-    result.current.logEvent("foo");
+    result.current.logEvent('foo');
   });
-  expect(custom.logEvent).toBeCalledWith("foo");
+  expect(custom.logEvent).toBeCalledWith('foo');
 });
