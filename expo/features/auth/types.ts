@@ -4,6 +4,6 @@ interface User {
   accessToken: string;
 }
 
-type UserRole = "admin" | "developer" | "fcmember" | "user" | "guest";
+type UserRole = 'admin' | 'developer' | 'fcmember' | 'user' | 'guest';
 
 export { User, UserRole };

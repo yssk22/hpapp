@@ -1,24 +1,13 @@
-import { StyleSheet } from "react-native";
-import { View } from "react-native";
-import { Divider, ListItem } from "@rneui/themed";
-import { toDateString, getAge } from "@hpapp/foundation/date";
-import MemberIcon from "@hpapp/features/artist/MemberIcon";
-import {
-  FontSize,
-  MemberIconSize,
-  Spacing,
-} from "@hpapp/features/common/constants";
-import { t } from "@hpapp/system/i18n";
-import Text from "@hpapp/features/common/components/Text";
-import { HPMember } from "@hpapp/contexts/serviceroot";
+import { HPMember } from '@hpapp/contexts/serviceroot';
+import MemberIcon from '@hpapp/features/artist/MemberIcon';
+import Text from '@hpapp/features/common/components/Text';
+import { FontSize, MemberIconSize, Spacing } from '@hpapp/features/common/constants';
+import { toDateString, getAge } from '@hpapp/foundation/date';
+import { t } from '@hpapp/system/i18n';
+import { Divider, ListItem } from '@rneui/themed';
+import { StyleSheet, View } from 'react-native';
 
-export default function GroupedViewListItem({
-  label,
-  members,
-}: {
-  label: string;
-  members: Array<HPMember>;
-}) {
+export default function GroupedViewListItem({ label, members }: { label: string; members: HPMember[] }) {
   return (
     <>
       <View style={styles.container}>
@@ -38,8 +27,7 @@ export default function GroupedViewListItem({
                   </ListItem.Title>
                   <ListItem.Subtitle>
                     <Text style={styles.memberSubtitleText}>
-                      {toDateString(m.dateOfBirth)}:{" "}
-                      {t("%{age} yo", { age: getAge(m.dateOfBirth) })}
+                      {toDateString(m.dateOfBirth)}: {t('%{age} yo', { age: getAge(m.dateOfBirth) })}
                     </Text>
                   </ListItem.Subtitle>
                 </ListItem.Content>
@@ -56,30 +44,30 @@ export default function GroupedViewListItem({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   labelContainer: {
-    backgroundColor: "#ffffff",
+    backgroundColor: '#ffffff',
     paddingLeft: Spacing.Medium,
     paddingRight: Spacing.Medium,
-    justifyContent: "center",
-    alignItems: "center",
-    width: 80,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 80
   },
   label: {
-    fontSize: FontSize.Large,
+    fontSize: FontSize.Large
   },
   membersContainer: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   memberListItem: {
-    padding: Spacing.XSmall,
+    padding: Spacing.XSmall
   },
   memberName: {
-    marginBottom: Spacing.XSmall,
+    marginBottom: Spacing.XSmall
   },
   memberNameText: {},
   memberSubtitleText: {
-    fontSize: FontSize.Small,
-  },
+    fontSize: FontSize.Small
+  }
 });

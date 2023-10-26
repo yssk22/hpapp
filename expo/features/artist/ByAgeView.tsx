@@ -1,8 +1,8 @@
-import { useMemo } from "react";
-import { FlatList, StyleSheet } from "react-native";
-import { HPMember, useHelloProject } from "@hpapp/contexts/serviceroot";
-import GroupedViewListItem from "@hpapp/features/artist/GroupedViewListItem";
-import { getAcademicYear } from "@hpapp/foundation/date";
+import { HPMember, useHelloProject } from '@hpapp/contexts/serviceroot';
+import GroupedViewListItem from '@hpapp/features/artist/GroupedViewListItem';
+import { getAcademicYear } from '@hpapp/foundation/date';
+import { useMemo } from 'react';
+import { FlatList } from 'react-native';
 
 export default function ByAgeView() {
   const hp = useHelloProject();
@@ -11,7 +11,7 @@ export default function ByAgeView() {
     return [...members].sort((m1, m2) => {
       const d1 = new Date(m1.dateOfBirth).getTime();
       const d2 = new Date(m2.dateOfBirth).getTime();
-      if (d1 == d2) {
+      if (d1 === d2) {
         return 0;
       } else if (d1 > d2) {
         return 1;
@@ -22,17 +22,17 @@ export default function ByAgeView() {
   const grouped = useMemo(() => {
     return sorted.reduce(
       (
-        v: Array<{
+        v: {
           academicYear: string;
-          members: Array<HPMember>;
-        }>,
+          members: HPMember[];
+        }[],
         c: HPMember
       ) => {
         const academicYear = getAcademicYear(c.dateOfBirth);
         if (v.length === 0 || v[v.length - 1].academicYear !== academicYear) {
           v.push({
             academicYear,
-            members: [c],
+            members: [c]
           });
           return v;
         }
@@ -59,9 +59,3 @@ export default function ByAgeView() {
     />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

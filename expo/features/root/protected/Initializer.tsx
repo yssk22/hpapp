@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function Initialize({
   initializers,
-  children,
+  children
 }: {
-  initializers: Array<() => Promise<void>>;
+  initializers: (() => Promise<void>)[];
   children: React.ReactElement;
 }) {
-  const [state, setState] = useState(false);
+  const [, setState] = useState(false);
   useEffect(() => {
     Promise.all(initializers.map((i) => i())).then(() => {
       setState(true);

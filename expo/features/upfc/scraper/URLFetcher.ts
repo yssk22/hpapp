@@ -13,10 +13,10 @@ export default class URLFetcher {
     const resp = await fetch(url, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
       },
       body: params.toString(),
-      credentials: 'include',
+      credentials: 'include'
     });
     if (!resp.ok) {
       throw ErrInvalidStatusCode;
@@ -38,7 +38,7 @@ export default class URLFetcher {
 
   async fetch(url: string): Promise<string> {
     const resp = await fetch(url, {
-      credentials: 'include',
+      credentials: 'include'
     });
     if (!resp.ok) {
       throw ErrInvalidStatusCode;

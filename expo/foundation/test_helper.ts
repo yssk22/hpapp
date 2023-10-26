@@ -1,9 +1,9 @@
-import { readFile as readFileOrig } from "fs";
+import { readFile as readFileOrig } from 'fs';
 
 function readFile(path: string): Promise<string> {
   return new Promise((resolve) => {
     readFileOrig(path, (err, data) => {
-      return err ? resolve("") : resolve(data.toString());
+      return err ? resolve('') : resolve(data.toString());
     });
   });
 }

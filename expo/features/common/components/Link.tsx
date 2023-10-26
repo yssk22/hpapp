@@ -1,6 +1,6 @@
-import { useCallback } from 'react';
-import { openURL } from 'expo-linking';
 import Text from '@hpapp/features/common/components/Text';
+import { openURL } from 'expo-linking';
+import { useCallback } from 'react';
 
 type TextProps = React.ComponentProps<typeof Text>;
 

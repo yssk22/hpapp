@@ -1,4 +1,4 @@
-import * as object from "./object";
+import * as object from './object';
 
 type maybeDate = Date | string | number | null | undefined;
 type maybeNumber = number | null | undefined;
@@ -8,47 +8,44 @@ const N_HOURS = 60 * N_MINUTES;
 const N_DAYS = 24 * N_HOURS;
 const N_WEEKS = 7 * N_DAYS;
 
-const INVALID_DATE_STRING = "-";
+const INVALID_DATE_STRING = '-';
 const DATE_STRING_REGEXP = /\d{4}\/\d{2}\/\d{2}/;
 
 const TimezoneOffset = {
   JST: -9 * 60,
-  UTC: 0,
+  UTC: 0
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const isDate = (t: any): boolean => {
-  return t && t.getFullYear;
+  return t?.getFullYear;
 };
 
 const isInvalidDate = (t: Date): boolean => {
-  return t.toString() === "Invalid Date";
+  return t.toString() === 'Invalid Date';
 };
 
 const n = (d: number): string => {
   if (d >= 10) {
-    return "" + d;
+    return '' + d;
   }
-  return "0" + d;
+  return '0' + d;
 };
 
 const parseDate = (t: maybeDate): Date => {
   if (t == null) {
-    return new Date("Invalid Date"); // invalid
+    return new Date('Invalid Date'); // invalid
   }
   if (t instanceof Date) {
     return t;
   }
-  if (typeof t === "number") {
+  if (typeof t === 'number') {
     return new Date(t * 1000);
   }
   return new Date(t);
 };
 
-const convertTimezone = (
-  t: Date,
-  timezoneOffset: maybeNumber = TimezoneOffset.JST
-): Date => {
+const convertTimezone = (t: Date, timezoneOffset: maybeNumber = TimezoneOffset.JST): Date => {
   if (timezoneOffset == null) {
     return t;
   }
@@ -60,13 +57,13 @@ const convertTimezone = (
 };
 
 const WeekdayString = [
-  ["Sunday", "Sun"],
-  ["Monday", "Mon"],
-  ["Tuesday", "Tue"],
-  ["Wednesday", "Wed"],
-  ["Thursday", "Thu"],
-  ["Friday", "Fri"],
-  ["Saturday", "Sat"],
+  ['Sunday', 'Sun'],
+  ['Monday', 'Mon'],
+  ['Tuesday', 'Tue'],
+  ['Wednesday', 'Wed'],
+  ['Thursday', 'Thu'],
+  ['Friday', 'Fri'],
+  ['Saturday', 'Sat']
 ];
 
 const toWeekdayString = (t: maybeDate): string => {
@@ -103,18 +100,12 @@ const toTimeString = (t: maybeDate, timezoneOffset?: maybeNumber): string => {
   return `${n(t.getHours())}:${n(t.getMinutes())}`;
 };
 
-const toDateTimeString = (
-  t: maybeDate,
-  timezoneOffset?: maybeNumber
-): string => {
+const toDateTimeString = (t: maybeDate, timezoneOffset?: maybeNumber): string => {
   t = parseDate(t);
   if (!t) {
     return INVALID_DATE_STRING;
   }
-  return `${toDateString(t, timezoneOffset)} ${toTimeString(
-    t,
-    timezoneOffset
-  )}`;
+  return `${toDateString(t, timezoneOffset)} ${toTimeString(t, timezoneOffset)}`;
 };
 
 const getToday = (): Date => {
@@ -218,5 +209,5 @@ export {
   toQueryString,
   toNullableQueryString,
   isDate,
-  isDateString,
+  isDateString
 };

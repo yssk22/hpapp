@@ -3,6 +3,6 @@ function OAuthSettingsScreen() {
 }
 
 export default {
-  path: "/auth/settings/",
-  component: OAuthSettingsScreen,
+  path: '/auth/settings/',
+  component: OAuthSettingsScreen
 };

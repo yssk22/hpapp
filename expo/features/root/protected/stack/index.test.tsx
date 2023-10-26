@@ -1,30 +1,27 @@
-import { View, Text, Button } from "react-native";
-import { createStackNavigator, useNavigation, defineScreen } from "./index";
-import { screen, render, fireEvent } from "@testing-library/react-native";
-import { AppThemeProvider } from "@hpapp/contexts/settings/theme";
-import TestRoot from "@hpapp/features/root/TestRoot";
+import { AppThemeProvider } from '@hpapp/contexts/settings/theme';
+import TestRoot from '@hpapp/features/root/TestRoot';
+import { screen, render, fireEvent } from '@testing-library/react-native';
+import { View, Text, Button } from 'react-native';
 
-test("stack", async () => {
+import { createStackNavigator, useNavigation, defineScreen } from './index';
+
+test('stack', async () => {
   function Root({ children }: { children: React.ReactElement }) {
     return children;
   }
 
   const Stack = createStackNavigator({ rootComponent: Root });
 
-  const ScreenWithParams = defineScreen(
-    "/with/params",
-    function ({ param1 }: { param1: number }) {
-      const navigation = useNavigation();
-      return (
-        <View>
-          <Text>ScreenWithParams</Text>
-          <Text>param1={param1}</Text>
-        </View>
-      );
-    }
-  );
+  const ScreenWithParams = defineScreen('/with/params', function ({ param1 }: { param1: number }) {
+    return (
+      <View>
+        <Text>ScreenWithParams</Text>
+        <Text>param1={param1}</Text>
+      </View>
+    );
+  });
 
-  const ScreenWithoutParams = defineScreen("/without/params", function () {
+  const ScreenWithoutParams = defineScreen('/without/params', function () {
     const navigation = useNavigation();
     return (
       <View>
@@ -36,12 +33,12 @@ test("stack", async () => {
             // param1: number is enforced by typescript compiler (not javascript)
             navigation.push(ScreenWithParams, { param1: 10 });
           }}
-        ></Button>
+        />
       </View>
     );
   });
 
-  const HomeScreen = defineScreen("/", function () {
+  const HomeScreen = defineScreen('/', function () {
     const navigation = useNavigation();
     return (
       <View>
@@ -50,9 +47,9 @@ test("stack", async () => {
           testID="btnNavigateToScreenWithoutParams"
           title="ScreenWithoutParams"
           onPress={() => {
-            navigation.push(ScreenWithoutParams, { path: "a" });
+            navigation.push(ScreenWithoutParams, { path: 'a' });
           }}
-        ></Button>
+        />
       </View>
     );
   });
@@ -61,34 +58,27 @@ test("stack", async () => {
     return (
       <TestRoot>
         <AppThemeProvider>
-          <Stack
-            screens={[HomeScreen, ScreenWithParams, ScreenWithoutParams]}
-            initialRouteName="/"
-          />
+          <Stack screens={[HomeScreen, ScreenWithParams, ScreenWithoutParams]} initialRouteName="/" />
         </AppThemeProvider>
       </TestRoot>
     );
   }
 
   render(<StackContainer />);
-  let text = await screen.findByText("HomeScreen");
+  let text = await screen.findByText('HomeScreen');
   expect(text).toBeTruthy();
-  const buttonToScreenWithoutParams = await screen.findByTestId(
-    "btnNavigateToScreenWithoutParams"
-  );
+  const buttonToScreenWithoutParams = await screen.findByTestId('btnNavigateToScreenWithoutParams');
   expect(buttonToScreenWithoutParams).toBeTruthy();
   fireEvent.press(buttonToScreenWithoutParams);
 
-  text = await screen.findByText("ScreenWithoutParams");
+  text = await screen.findByText('ScreenWithoutParams');
   expect(text).toBeTruthy();
-  const buttonToScreenWithParams = await screen.findByTestId(
-    "btnNavigateToScreenWithParams"
-  );
+  const buttonToScreenWithParams = await screen.findByTestId('btnNavigateToScreenWithParams');
   expect(buttonToScreenWithParams).toBeTruthy();
   fireEvent.press(buttonToScreenWithParams);
 
-  text = await screen.findByText("ScreenWithParams");
+  text = await screen.findByText('ScreenWithParams');
   expect(text).toBeTruthy();
-  text = await screen.findByText("param1=10");
+  text = await screen.findByText('param1=10');
   expect(text).toBeTruthy();
 });

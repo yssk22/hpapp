@@ -1,5 +1,5 @@
-import * as FileSystem from "expo-file-system";
-import { useEffect, useState } from "react";
+import * as FileSystem from 'expo-file-system';
+import { useEffect, useState } from 'react';
 
 type Metadata = {
   sourceURI?: string;
@@ -7,7 +7,7 @@ type Metadata = {
   timestamp?: number;
 };
 
-const cacheDir = FileSystem.cacheDirectory + "uricache";
+const cacheDir = FileSystem.cacheDirectory + 'uricache';
 
 function useCachedURI(uri: string): string | null {
   const [localUri, setLocalUri] = useState<string | null>(null);
@@ -24,10 +24,10 @@ function useCachedURI(uri: string): string | null {
         mounted && setLocalUri(created);
         return created;
       }
-      () => {
-        mounted = false;
-      };
     })();
+    return () => {
+      mounted = false;
+    };
   }, [uri]);
   return localUri;
 }
@@ -35,7 +35,7 @@ function useCachedURI(uri: string): string | null {
 const getCacheURI = async (uri: string): Promise<string | null> => {
   const encoded = encodeURIComponent(encodeURIComponent(uri));
   try {
-    const metadataUri = cacheDir + "/" + encoded + ".metadata";
+    const metadataUri = cacheDir + '/' + encoded + '.metadata';
     const str = await FileSystem.readAsStringAsync(metadataUri);
     const metadata = JSON.parse(str) as Metadata;
     const cacheURI = metadata.cacheURI!;
@@ -64,8 +64,8 @@ const initURICache = async (): Promise<void> => {
 const createCacheURI = async (uri: string): Promise<string | null> => {
   try {
     const encoded = encodeURIComponent(encodeURIComponent(uri));
-    const cacheURI = cacheDir + "/" + encoded + ".cache";
-    const metadataUri = cacheDir + "/" + encoded + ".metadata";
+    const cacheURI = cacheDir + '/' + encoded + '.cache';
+    const metadataUri = cacheDir + '/' + encoded + '.metadata';
     const result = await FileSystem.downloadAsync(uri, cacheURI);
     if (result.status !== 200) {
       return null;
@@ -74,11 +74,12 @@ const createCacheURI = async (uri: string): Promise<string | null> => {
       metadataUri,
       JSON.stringify({
         sourceURI: uri,
-        cacheURI: cacheURI,
-        timestamp: new Date().getTime(),
+        cacheURI,
+        timestamp: new Date().getTime()
       })
     );
     return cacheURI;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (e) {
     return null;
   }

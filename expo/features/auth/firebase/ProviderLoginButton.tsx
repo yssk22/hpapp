@@ -1,9 +1,8 @@
-import React, { useCallback } from "react";
-import { StyleSheet, View, Text } from "react-native";
-
-import { Provider } from "@hpapp/features/auth/firebase/providers/types";
-import { Spacing } from "@hpapp/features/common/constants";
-import { Button } from "@rneui/themed";
+import { Provider } from '@hpapp/features/auth/firebase/providers/types';
+import { Spacing } from '@hpapp/features/common/constants';
+import { Button } from '@rneui/themed';
+import React, { useCallback } from 'react';
+import { StyleSheet, View, Text } from 'react-native';
 
 export type ProviderButtonSpec = {
   key: string;
@@ -17,7 +16,7 @@ export type ProviderButtonSpec = {
 export default function ProviderLoginButton({
   spec,
   disabled,
-  onPress,
+  onPress
 }: {
   spec: ProviderButtonSpec;
   disabled: boolean;
@@ -35,9 +34,7 @@ export default function ProviderLoginButton({
       onPress={handlePress}
     >
       <View style={styles.icon}>{spec.icon}</View>
-      <Text style={[styles.buttonText, { color: spec.textColor }]}>
-        {spec.text}
-      </Text>
+      <Text style={[styles.buttonText, { color: spec.textColor }]}>{spec.text}</Text>
     </Button>
   );
 }
@@ -48,15 +45,15 @@ const styles = StyleSheet.create({
     height: 44,
     borderRadius: 5,
     marginBottom: Spacing.Medium,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   buttonText: {
     flexGrow: 1,
-    fontWeight: "bold",
-    fontSize: 17,
+    fontWeight: 'bold',
+    fontSize: 17
   },
   icon: {
-    marginRight: Spacing.XSmall,
-  },
+    marginRight: Spacing.XSmall
+  }
 });

@@ -1,6 +1,4 @@
-import * as WebBrowser from "expo-web-browser";
-import { FirebaseAuthTypes } from "@react-native-firebase/auth";
-import { AuthRequestConfig, DiscoveryDocument } from "expo-auth-session";
+import * as WebBrowser from 'expo-web-browser';
 
 // required to make expo-web-browser work
 WebBrowser.maybeCompleteAuthSession();

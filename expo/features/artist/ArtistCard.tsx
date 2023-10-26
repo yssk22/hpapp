@@ -1,10 +1,10 @@
-import { HPArtist } from "@hpapp/contexts/helloproject";
-import MemberIcon from "@hpapp/features/artist/MemberIcon";
-import { Spacing } from "@hpapp/features/common/constants";
-import { Card } from "@rneui/themed";
-import { useCallback, useMemo, useState } from "react";
-import { View, StyleSheet, LayoutChangeEvent } from "react-native";
-import Text from "@hpapp/features/common/components/Text";
+import { HPArtist } from '@hpapp/contexts/helloproject';
+import MemberIcon from '@hpapp/features/artist/MemberIcon';
+import Text from '@hpapp/features/common/components/Text';
+import { Spacing } from '@hpapp/features/common/constants';
+import { Card } from '@rneui/themed';
+import { useCallback, useMemo, useState } from 'react';
+import { View, StyleSheet, LayoutChangeEvent } from 'react-native';
 
 const MemberIconSize = 60;
 const MemberIconMargin = MemberIconSize / 10;
@@ -21,9 +21,7 @@ export default function ArtistCard({ artist }: { artist: HPArtist }) {
     return (artist.members || []).filter((m) => m.graduateAt === null);
   }, [artist]);
   const paddings = useMemo(() => {
-    const membersPerRow = Math.floor(
-      componentWidth / (MemberIconSize + MemberIconMargin * 2)
-    );
+    const membersPerRow = Math.floor(componentWidth / (MemberIconSize + MemberIconMargin * 2));
     if (membersPerRow === 0) {
       return [];
     }
@@ -37,7 +35,7 @@ export default function ArtistCard({ artist }: { artist: HPArtist }) {
   return (
     <Card>
       <Card.Title>
-        <Text bold style={{ textAlign: "left" }}>
+        <Text bold style={{ textAlign: 'left' }}>
           {artist.name}
         </Text>
       </Card.Title>
@@ -51,12 +49,7 @@ export default function ArtistCard({ artist }: { artist: HPArtist }) {
           );
         })}
         {paddings.map((_, i) => {
-          return (
-            <View
-              style={[styles.padding, styles.memberIcon]}
-              key={`padding_${i}`}
-            ></View>
-          );
+          return <View style={[styles.padding, styles.memberIcon]} key={`padding_${i}`} />;
         })}
       </View>
     </Card>
@@ -66,17 +59,17 @@ export default function ArtistCard({ artist }: { artist: HPArtist }) {
 const styles = StyleSheet.create({
   membersContainer: {
     flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around'
   },
   memberIcon: {
     marginRight: MemberIconMargin,
     marginLeft: MemberIconMargin,
-    marginBottom: Spacing.Medium,
+    marginBottom: Spacing.Medium
   },
   padding: {
     width: MemberIconSize,
-    height: MemberIconSize,
-  },
+    height: MemberIconSize
+  }
 });

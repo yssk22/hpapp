@@ -1,12 +1,11 @@
-import { graphql, useFragment } from "react-relay";
-import { FragmentRefs } from "relay-runtime";
 import {
   meFragment$key,
   meFragment$data,
-  HPFollowHPFollowType,
-} from "@hpapp/contexts/serviceroot/__generated__/meFragment.graphql";
-import { useMemo } from "react";
-import { HPMember } from "@hpapp/contexts/serviceroot/helloproject";
+  HPFollowHPFollowType
+} from '@hpapp/contexts/serviceroot/__generated__/meFragment.graphql';
+import { useMemo } from 'react';
+import { graphql, useFragment } from 'react-relay';
+import { FragmentRefs } from 'relay-runtime';
 
 const meFragmentGraphQL = graphql`
   fragment meFragment on MeQuery {
@@ -38,10 +37,10 @@ const meFragmentGraphQL = graphql`
   }
 `;
 
-type SortResult = Array<{
+type SortResult = {
   memberId: string;
   previousRank?: number;
-}>;
+}[];
 
 type HPFollowType = HPFollowHPFollowType;
 
@@ -57,7 +56,7 @@ class Me {
   public readonly clientId: string;
   public readonly clientName: string;
 
-  public readonly followings: Array<HPFollow>;
+  public readonly followings: HPFollow[];
   private readonly followingsMap: Map<string, HPFollow>;
 
   public readonly sortResult: SortResult | null;
@@ -73,7 +72,7 @@ class Me {
       .map((f) => {
         return {
           type: f!.type,
-          memberId: f!.member.id,
+          memberId: f!.member.id
         };
       });
     this.followingsMap = this.followings.reduce((a, v) => {
@@ -90,7 +89,7 @@ class Me {
         .map((r) => {
           return {
             memberId: r.memberId.toString(),
-            previousRank: -1,
+            previousRank: -1
           };
         });
     }
@@ -98,13 +97,11 @@ class Me {
 
   public useFollowType(memberId: string) {
     const follow = this.followingsMap.get(memberId);
-    return follow?.type || "unfollow";
+    return follow?.type ?? 'unfollow';
   }
 }
 
-function useMeFragment(me: {
-  readonly " $fragmentSpreads": FragmentRefs<"meFragment">;
-}) {
+function useMeFragment(me: { readonly ' $fragmentSpreads': FragmentRefs<'meFragment'> }) {
   const me$ = useFragment<meFragment$key>(meFragmentGraphQL, me);
   return useMemo(() => {
     return new Me(me$);

@@ -1,6 +1,6 @@
-import { KeyValueStorage } from "./types";
+import { KeyValueStorage } from './types';
 
-export default class MemoryStorage<T> implements KeyValueStorage {
+export default class MemoryStorage implements KeyValueStorage {
   private storage: Map<string, string>;
 
   constructor() {

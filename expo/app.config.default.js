@@ -1,18 +1,14 @@
-const packageJson = require("./package.json");
+const packageJson = require('./package.json');
 
 function format(n) {
   if (n < 10) {
-    return "0" + n.toString();
+    return '0' + n.toString();
   }
   return n.toString();
 }
 const t = new Date();
 const BUILD_NUMBER =
-  t.getFullYear() +
-  format(t.getMonth() + 1) +
-  format(t.getDate()) +
-  format(t.getHours()) +
-  format(t.getMinutes());
+  t.getFullYear() + format(t.getMonth() + 1) + format(t.getDate()) + format(t.getHours()) + format(t.getMinutes());
 
 // Automatically allocate version number based on the timestamp
 // it is required to increment anyway when uploading the binary to the store so
@@ -25,67 +21,66 @@ const ANDROID_VERSION_CODE = BUILD_NUMBER - 202301010000;
 
 module.exports = {
   expo: {
-    name: "hpapp",
-    slug: "hpapp",
-    scheme: "hpapp",
+    name: 'hpapp',
+    slug: 'hpapp',
+    scheme: 'hpapp',
     version: packageJson.version,
-    orientation: "portrait",
-    icon: "./assets/icon.png",
-    userInterfaceStyle: "light",
+    orientation: 'portrait',
+    icon: './assets/icon.png',
+    userInterfaceStyle: 'light',
     splash: {
-      image: "./assets/splash.png",
-      resizeMode: "contain",
-      backgroundColor: "#ffffff",
+      image: './assets/splash.png',
+      resizeMode: 'contain',
+      backgroundColor: '#ffffff'
     },
-    assetBundlePatterns: ["**/*"],
+    assetBundlePatterns: ['**/*'],
     ios: {
-      bundleIdentifier: "app.helloproject.hpapp",
+      bundleIdentifier: 'app.helloproject.hpapp',
       buildNumber: IOS_BUILD_NUMBER,
       supportsTablet: true,
-      supportsTablet: true,
       config: {
-        usesNonExemptEncryption: false,
+        usesNonExemptEncryption: false
       },
       infoPlist: {
-        CFBundleAllowMixedLocalizations: true,
-      },
+        CFBundleAllowMixedLocalizations: true
+      }
     },
     android: {
-      package: "app.helloproject.hpapp",
+      package: 'app.helloproject.hpapp',
       versionCode: ANDROID_VERSION_CODE,
       adaptiveIcon: {
-        foregroundImage: "./assets/adaptive-icon.png",
-        backgroundColor: "#ffffff",
-      },
+        foregroundImage: './assets/adaptive-icon.png',
+        backgroundColor: '#ffffff'
+      }
     },
     web: {
-      bundler: "metro",
-      favicon: "./assets/favicon.png",
+      bundler: 'metro',
+      favicon: './assets/favicon.png'
     },
     plugins: [
-      "@react-native-firebase/app",
-      "expo-localization",
+      '@react-native-firebase/app',
+      'expo-localization',
       [
-        "expo-build-properties",
+        'expo-build-properties',
         {
           ios: {
-            useFrameworks: "static",
-          },
-        },
-      ],
+            useFrameworks: 'static'
+          }
+        }
+      ]
     ],
     extra: {
       eas: {},
       hpapp: {
         useLocalLogin: true,
-        graphQLEndpoint: "http://localhost:8080/graphql/v3",
+        graphQLEndpoint: 'http://localhost:8080/graphql/v3',
         auth: {
           google: {
             iosClientId: null,
-            androidClientId: null,
-          },
-        },
-      },
-    },
-  },
+            androidClientId: null
+          }
+        }
+      }
+    }
+  }
 };

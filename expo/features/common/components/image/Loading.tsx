@@ -1,9 +1,8 @@
-import React, { ComponentProps } from "react";
-import { ActivityIndicator, StyleSheet, View } from "react-native";
-import { Image } from "react-native";
+import React, { ComponentProps } from 'react';
+import { ActivityIndicator, StyleSheet, View, Image } from 'react-native';
 // import { ColorScheme, useColor } from "src/models/theme/rneui";
 
-type ImageProps = Omit<ComponentProps<typeof Image>, "source"> & {
+type ImageProps = Omit<ComponentProps<typeof Image>, 'source'> & {
   //   colorScheme?: ColorScheme;
   circle?: boolean;
 };
@@ -30,19 +29,19 @@ export default function ImageLoading({
   //   };
   return (
     <View style={[style, styles.spinner]}>
-      <ActivityIndicator color={"#ff0000"} />
+      <ActivityIndicator color="#ff0000" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   spinner: {
-    position: "absolute",
-    alignContent: "center",
-    justifyContent: "center",
+    position: 'absolute',
+    alignContent: 'center',
+    justifyContent: 'center',
     top: 0,
     bottom: 0,
     left: 0,
-    right: 0,
-  },
+    right: 0
+  }
 });

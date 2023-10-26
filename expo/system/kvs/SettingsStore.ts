@@ -1,5 +1,5 @@
-import { KeyValueStorage } from "./types";
-import JSONStore from "./JSONStore";
+import JSONStore from './JSONStore';
+import { KeyValueStorage } from './types';
 
 type SettingsStoreOptions<T> = {
   readonly defaultValue?: T;
@@ -38,11 +38,7 @@ export default class SettingsStore<T> {
   private data: T | undefined;
   readonly options?: SettingsStoreOptions<T>;
 
-  private constructor(
-    storageKey: string,
-    storage: KeyValueStorage,
-    options?: SettingsStoreOptions<T>
-  ) {
+  private constructor(storageKey: string, storage: KeyValueStorage, options?: SettingsStoreOptions<T>) {
     this.storageKey = storageKey;
     this.storage = new JSONStore(storage);
     this.data = undefined;
@@ -52,7 +48,7 @@ export default class SettingsStore<T> {
 
   async load(): Promise<T | undefined> {
     if (this.data === undefined) {
-      const stored = (await this.storage.get(this.storageKey)) || undefined;
+      const stored = (await this.storage.get(this.storageKey)) ?? undefined;
       const timestamp = stored?.meta?.timestamp;
       if (timestamp !== undefined) {
         this.data = stored!.value;
@@ -81,9 +77,9 @@ export default class SettingsStore<T> {
     await this.storage.set(this.storageKey, {
       meta: {
         key: this.storageKey,
-        timestamp: new Date().getTime(),
+        timestamp: new Date().getTime()
       },
-      value: data,
+      value: data
     });
     this.loaded = true;
   }

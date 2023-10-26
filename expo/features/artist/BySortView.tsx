@@ -1,10 +1,9 @@
-import { ScrollView, StyleSheet, View } from "react-native";
-import { Text } from "@rneui/themed";
-import { useHelloProject, useMe } from "@hpapp/contexts/serviceroot";
-import { t } from "@hpapp/system/i18n";
-import { graphql } from "react-relay";
-import HPSortResultListView from "@hpapp/features/artist/sort/HPSortResultListView";
-import { useMemo } from "react";
+import { useMe } from '@hpapp/contexts/serviceroot';
+import HPSortResultListView from '@hpapp/features/artist/sort/HPSortResultListView';
+import { t } from '@hpapp/system/i18n';
+import { Text } from '@rneui/themed';
+import { useMemo } from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 export default function BySortView() {
   const me = useMe();
@@ -15,14 +14,14 @@ export default function BySortView() {
     return me.sortResult.map((r) => {
       return {
         memberId: r.memberId,
-        previousRank: undefined,
+        previousRank: undefined
       };
     });
   }, [me.sortResult]);
   if (result === null) {
     return (
       <View style={styles.container}>
-        <Text>{t("NO-SORT-YET")}</Text>
+        <Text>{t('NO-SORT-YET')}</Text>
       </View>
     );
   }
@@ -36,7 +35,7 @@ export default function BySortView() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 });

@@ -1,6 +1,6 @@
-import { graphql } from "react-relay";
-import { usePromisifyMutation } from "@hpapp/features/common/hooks/promisify";
-import { useAuthAuthenticateMutation } from "@hpapp/features/auth/hooks/__generated__/useAuthAuthenticateMutation.graphql";
+import { useAuthAuthenticateMutation } from '@hpapp/features/auth/hooks/__generated__/useAuthAuthenticateMutation.graphql';
+import { usePromisifyMutation } from '@hpapp/features/common/hooks/promisify';
+import { graphql } from 'react-relay';
 
 const useAuthAuthenticateMutationGraphQL = graphql`
   mutation useAuthAuthenticateMutation {
@@ -13,7 +13,5 @@ const useAuthAuthenticateMutationGraphQL = graphql`
 `;
 
 export default function useAuth() {
-  return usePromisifyMutation<useAuthAuthenticateMutation>(
-    useAuthAuthenticateMutationGraphQL
-  );
+  return usePromisifyMutation<useAuthAuthenticateMutation>(useAuthAuthenticateMutationGraphQL);
 }

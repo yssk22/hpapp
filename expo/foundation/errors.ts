@@ -10,7 +10,7 @@ class RenderaleError {
   constructor(msg: string, e: unknown) {
     this.message = msg;
     this.inner = e;
-    this.name = "RenderableError";
+    this.name = 'RenderableError';
   }
 
   render() {
@@ -19,11 +19,11 @@ class RenderaleError {
 }
 
 function isRenderable(value: unknown): value is Renderable {
-  if (typeof value !== "object" || value === null) {
+  if (typeof value !== 'object' || value === null) {
     return false;
   }
   const { render } = value as Record<keyof Renderable, unknown>;
-  if (typeof render !== "function") {
+  if (typeof render !== 'function') {
     return false;
   }
   return true;
@@ -46,7 +46,7 @@ function renderError(e: unknown) {
       console.error(e);
     }
   }
-  return "something went wrong";
+  return 'something went wrong';
 }
 
 function wrapRenderable(e: unknown) {
@@ -56,7 +56,7 @@ function wrapRenderable(e: unknown) {
   if (e === null || e === undefined) {
     return null;
   }
-  return new RenderaleError("something went wrong", e);
+  return new RenderaleError('something went wrong', e);
 }
 
 export { renderError, Renderable, wrapRenderable, RenderaleError };

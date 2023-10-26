@@ -1,6 +1,7 @@
-import FirebaseAuth, { FirebaseAuthTypes } from "@react-native-firebase/auth";
-import { Provider } from "./types";
-import { useCallback, useState } from "react";
+import FirebaseAuth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
+import { useCallback, useState } from 'react';
+
+import { Provider } from './types';
 
 const auth = FirebaseAuth();
 
@@ -20,7 +21,11 @@ export default abstract class Firebase extends Provider {
 
   public useAuthenticate(): [() => Promise<boolean>, boolean] {
     const fn = this.useFirebaseCredential();
+    // FIXME:
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [isAuthenticating, setIsAuthenticating] = useState(false);
+    // FIXME:
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const authenticate = useCallback(async () => {
       setIsAuthenticating(true);
       try {
@@ -29,13 +34,8 @@ export default abstract class Firebase extends Provider {
           return false;
         }
         const user = await auth.signInWithCredential(credentials);
-        const idToken = await user.user.getIdToken();
-        return true;
-        // return {
-        //   provider: this.getKey(),
-        //   accessToken: idToken,
-        //   refreshToken: "",
-        // };
+        const token = await user.user?.getIdToken();
+        return token !== null;
       } finally {
         setIsAuthenticating(false);
       }

@@ -1,4 +1,4 @@
-import { KeyValueStorage } from "./types";
+import { KeyValueStorage } from './types';
 
 // JSONStore is a wrapper KeyValueStorage to enforce stored value as a specific type T.
 // DO NOT use T which doesn't support JSON.parse (like Date)

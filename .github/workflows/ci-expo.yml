@@ -25,3 +25,4 @@ jobs:
           cache: "yarn"
           cache-dependency-path: "expo/package.json"
       - run: cd expo && yarn install && yarn test
+      - run: cd expo && yarn lint

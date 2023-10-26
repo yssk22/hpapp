@@ -1,14 +1,10 @@
-import React, { useCallback } from "react";
-import { View, StyleSheet } from "react-native";
-import {
-  Screen,
-  ScreenParams,
-  useNavigation,
-} from "@hpapp/features/root/protected/stack";
-import { IconSize, Spacing } from "@hpapp/features/common/constants";
-import { ListItem } from "@rneui/base";
-import { Icon } from "@rneui/themed";
-import Text from "@hpapp/features/common/components/Text";
+import Text from '@hpapp/features/common/components/Text';
+import { IconSize, Spacing } from '@hpapp/features/common/constants';
+import { Screen, ScreenParams, useNavigation } from '@hpapp/features/root/protected/stack';
+import { ListItem } from '@rneui/base';
+import { Icon } from '@rneui/themed';
+import React, { useCallback } from 'react';
+import { View, StyleSheet } from 'react-native';
 
 type ListItemProps = React.ComponentProps<typeof ListItem>;
 
@@ -35,15 +31,9 @@ export default function NavigationListItem<P extends ScreenParams>({
     return navigation.push(screen, params);
   }, [screen, params, replace]);
   return (
-    <ListItem
-      onPress={handleOnPress}
-      containerStyle={[styles.containerStyle, containerStyle]}
-      {...rest}
-    >
+    <ListItem onPress={handleOnPress} containerStyle={[styles.containerStyle, containerStyle]} {...rest}>
       {leftContent}
-      <ListItem.Content>
-        {typeof children === "string" ? <Text>{children}</Text> : children}
-      </ListItem.Content>
+      <ListItem.Content>{typeof children === 'string' ? <Text>{children}</Text> : children}</ListItem.Content>
       <View style={styles.rightContent}>
         <Icon name="navigate-next" size={IconSize.Small} />
       </View>
@@ -53,10 +43,10 @@ export default function NavigationListItem<P extends ScreenParams>({
 
 const styles = StyleSheet.create({
   containerStyle: {
-    padding: Spacing.Small,
+    padding: Spacing.Small
   },
   rightContent: {
-    justifyContent: "center",
-    alignItems: "flex-end",
-  },
+    justifyContent: 'center',
+    alignItems: 'flex-end'
+  }
 });

@@ -1,16 +1,9 @@
-import { RenderaleError } from "@hpapp/foundation/errors";
-import { useMemo } from "react";
-import { useMutation } from "react-relay";
-import {
-  MutationParameters,
-  GraphQLTaggedNode,
-  VariablesOf,
-  PayloadError,
-} from "relay-runtime";
+import { RenderaleError } from '@hpapp/foundation/errors';
+import { useMemo } from 'react';
+import { useMutation } from 'react-relay';
+import { MutationParameters, GraphQLTaggedNode, VariablesOf, PayloadError } from 'relay-runtime';
 
-function getFirstMessageFromPayloadError(
-  err: PayloadError[] | null
-): Error | null {
+function getFirstMessageFromPayloadError(err: PayloadError[] | null): Error | null {
   if (err === null) {
     return null;
   }
@@ -20,11 +13,11 @@ function getFirstMessageFromPayloadError(
 // usePromisify converts the GraphQL mutation call v to async/promise function call.
 function usePromisifyMutation<T extends MutationParameters>(
   mutation: GraphQLTaggedNode
-): [(input: VariablesOf<T>) => Promise<T["response"]>, boolean] {
+): [(input: VariablesOf<T>) => Promise<T['response']>, boolean] {
   const [commit, isCommiting] = useMutation<T>(mutation);
   const p = useMemo(
     () => async (v: VariablesOf<T>) => {
-      return new Promise<T["response"]>((resolve, reject) => {
+      return new Promise<T['response']>((resolve, reject) => {
         commit({
           variables: v,
           onError: (err) => {
@@ -37,7 +30,7 @@ function usePromisifyMutation<T extends MutationParameters>(
               return;
             }
             resolve(data);
-          },
+          }
         });
       });
     },

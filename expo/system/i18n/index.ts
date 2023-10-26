@@ -1,5 +1,5 @@
-import * as Localization from "expo-localization";
-import { I18n, TranslateOptions } from "i18n-js";
+import * as Localization from 'expo-localization';
+import { I18n, TranslateOptions } from 'i18n-js';
 
 type TranslationCotentOriginalFormat = {
   [key: string]: {
@@ -14,18 +14,16 @@ type TranslationContent = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const original = require("@hpapp/assets/translations.json");
+const original = require('@hpapp/assets/translations.json');
 
 // convert original format to i18n-js format.
-const convertTranslations = (
-  src: TranslationCotentOriginalFormat
-): TranslationContent => {
+const convertTranslations = (src: TranslationCotentOriginalFormat): TranslationContent => {
   const content: TranslationContent = {
-    en: {},
+    en: {}
   };
   for (const key in src) {
     const trans = src[key];
-    content["en"][key] = key;
+    content['en'][key] = key;
     for (const lang in trans) {
       if (content[lang] === undefined) {
         content[lang] = {};
@@ -39,7 +37,7 @@ const convertTranslations = (
 const i18n = new I18n(convertTranslations(original));
 const locale = Localization.getLocales()[0].languageCode;
 
-i18n.locale = ["ja", "en"].indexOf(locale) >= 0 ? locale : "en";
+i18n.locale = ['ja', 'en'].indexOf(locale) >= 0 ? locale : 'en';
 i18n.enableFallback = true;
 
 const t = (msg: string, options?: TranslateOptions) => {

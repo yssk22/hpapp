@@ -1,5 +1,6 @@
-import * as SecureStore from "expo-secure-store";
-import { KeyValueStorage } from "./types";
+import * as SecureStore from 'expo-secure-store';
+
+import { KeyValueStorage } from './types';
 
 export default class SecureStorage implements KeyValueStorage {
   private options: SecureStore.SecureStoreOptions | undefined;
