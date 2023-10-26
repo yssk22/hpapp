@@ -1,13 +1,8 @@
+import { useCallback } from "react";
+import { User } from "@hpapp/features/auth/types";
 import { useSettings } from "@hpapp/contexts/settings";
 import { SecureStorage, SettingsStore } from "@hpapp/system/kvs";
-import React, { useCallback } from "react";
 import * as logging from "@hpapp/system/logging";
-
-interface User {
-  id: string;
-  username: string;
-  accessToken: string;
-}
 
 const storage = new SecureStorage();
 
@@ -17,7 +12,7 @@ const LegacyCurrentUserSettings = SettingsStore.register<User>(
   storage
 );
 
-const CurrentUserSettings = SettingsStore.register<User>(
+export const CurrentUserSettings = SettingsStore.register<User>(
   "hpapp.auth.current_user",
   storage,
   // migration from v2.x
@@ -26,7 +21,10 @@ const CurrentUserSettings = SettingsStore.register<User>(
   }
 );
 
-function useCurrentUser(): [User | undefined, (user: User | null) => void] {
+export default function useCurrentUser(): [
+  User | undefined,
+  (user: User | null) => void
+] {
   const [user, setUser] = useSettings(CurrentUserSettings);
   const setUserWithLoggig = useCallback(
     (update: User | null) => {
@@ -49,33 +47,3 @@ function useCurrentUser(): [User | undefined, (user: User | null) => void] {
   );
   return [user, setUserWithLoggig];
 }
-
-type UserTier = "admin" | "fcmember" | "normal" | "guest";
-
-function useUserTier(user: User | undefined): UserTier {
-  if (!user) {
-    return "guest";
-  }
-  return "normal";
-}
-
-function useLogout() {
-  const [user, setUser] = useCurrentUser();
-  return useCallback(() => {
-    setUser(null);
-  }, [setUser]);
-}
-
-type LoginContainer = React.ElementType<{
-  onAuthenticated: (user: User) => void;
-}>;
-
-export {
-  User,
-  CurrentUserSettings,
-  useCurrentUser,
-  useUserTier,
-  useLogout,
-  LoginContainer,
-  UserTier,
-};

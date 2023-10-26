@@ -13,6 +13,8 @@ type LocalUserConfiguration = {
 
   amebloOptimizedView: boolean;
   feedUseMemberTaggings: boolean;
+
+  adminEnableDevOnly: boolean;
 };
 
 const LocalUserConfigurationSettings =
@@ -32,6 +34,8 @@ const LocalUserConfigurationSettings =
 
         amebloOptimizedView: false,
         feedUseMemberTaggings: true,
+
+        adminEnableDevOnly: false,
       },
     }
   );
