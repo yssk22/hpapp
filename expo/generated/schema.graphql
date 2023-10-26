@@ -1,5 +1,64 @@
 directive @goField(forceResolver: Boolean, name: String) on FIELD_DEFINITION | INPUT_FIELD_DEFINITION
+
 directive @goModel(model: String, models: [String!]) on OBJECT | INPUT_OBJECT | SCALAR | ENUM | INTERFACE | UNION
+
+type Query {
+  helloproject: HelloProjectQuery!
+  me: MeQuery!
+  """Fetches an object given its ID."""
+  node(
+    """ID of the object."""
+    id: ID!
+  ): Node
+  """Lookup nodes by a list of IDs."""
+  nodes(
+    """The list of node IDs."""
+    ids: [ID!]!
+  ): [Node]!
+}
+
+scalar Time
+
+scalar Upload
+
+scalar Any
+
+scalar Map
+
+type HPEvent implements Node {
+  tickets: [HPFCEventTicket!]
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  key: String!
+  displayTitles: [String!]!
+  openAt: Time
+  startAt: Time!
+  venue: String!
+  prefecture: String!
+  source: HPEventHPEventSource!
+}
+
+type HPFeedItem implements Node {
+  myViewHistory: HPViewHistory
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  sourceID: Int!
+  assetType: HPFeedItemHPAssetType!
+  title: String!
+  postAt: Time!
+  sourceURL: String!
+  imageURL: String
+  media: [Media!]!
+  ownerArtistID: ID
+  ownerMemberID: ID
+  ownerArtist: HPArtist
+  ownerMember: HPMember
+  taggedArtists: [HPArtist!]
+  taggedMembers: [HPMember!]
+}
+
 type Auth implements Node {
   id: ID!
   createdAt: Time
@@ -7,11 +66,13 @@ type Auth implements Node {
   """oauth provider name"""
   providerName: String!
 }
+
 """
 Define a Relay Cursor type:
 https://relay.dev/graphql/connections.htm#sec-Cursor
 """
 scalar Cursor
+
 type HPAmebloPost implements Node {
   id: ID!
   crawledAt: Time
@@ -42,12 +103,14 @@ type HPAmebloPost implements Node {
   taggedMembers: [HPMember!]
   blobs: [HPBlob!]
 }
+
 """HPAmebloPostSource is enum for the field source"""
 enum HPAmebloPostSource @goModel(model: "github.com/yssk22/hpapp/go/service/ent/hpameblopost.Source") {
   rss
   list
   entry
 }
+
 type HPArtist implements Node {
   id: ID!
   crawledAt: Time
@@ -62,6 +125,7 @@ type HPArtist implements Node {
   index: Int!
   members: [HPMember!]
 }
+
 type HPBlob implements Node {
   id: ID!
   createdAt: Time
@@ -88,7 +152,10 @@ type HPBlob implements Node {
   amebloPosts: [HPAmebloPost!]
   igPosts: [HPIgPost!]
 }
-"""HPBlobHPBlobFaceRecognitionStatus is enum for the field face_recognition_status"""
+
+"""
+HPBlobHPBlobFaceRecognitionStatus is enum for the field face_recognition_status
+"""
 enum HPBlobHPBlobFaceRecognitionStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPBlobFaceRecognitionStatus") {
   error
   face_automatically_labeled
@@ -96,6 +163,7 @@ enum HPBlobHPBlobFaceRecognitionStatus @goModel(model: "github.com/yssk22/hpapp/
   face_manually_labeled
   unknown
 }
+
 """HPBlobHPBlobStatus is enum for the field status"""
 enum HPBlobHPBlobStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPBlobStatus") {
   error
@@ -103,6 +171,7 @@ enum HPBlobHPBlobStatus @goModel(model: "github.com/yssk22/hpapp/go/service/sche
   ready_to_host
   unknown
 }
+
 """HPBlobHPBlobSubType is enum for the field sub_type"""
 enum HPBlobHPBlobSubType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPBlobSubType") {
   html
@@ -110,6 +179,7 @@ enum HPBlobHPBlobSubType @goModel(model: "github.com/yssk22/hpapp/go/service/sch
   mp4
   unknown
 }
+
 """HPBlobHPBlobType is enum for the field type"""
 enum HPBlobHPBlobType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPBlobType") {
   image
@@ -117,6 +187,7 @@ enum HPBlobHPBlobType @goModel(model: "github.com/yssk22/hpapp/go/service/schema
   unknown
   video
 }
+
 type HPElineupMallItem implements Node {
   id: ID!
   crawledAt: Time
@@ -139,7 +210,10 @@ type HPElineupMallItem implements Node {
   taggedArtists: [HPArtist!]
   taggedMembers: [HPMember!]
 }
-"""HPElineupMallItemHPElineupMallItemCategory is enum for the field category"""
+
+"""
+HPElineupMallItemHPElineupMallItemCategory is enum for the field category
+"""
 enum HPElineupMallItemHPElineupMallItemCategory @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPElineupMallItemCategory") {
   Blueray
   ClearFile
@@ -166,18 +240,7 @@ enum HPElineupMallItemHPElineupMallItemCategory @goModel(model: "github.com/yssk
   PhotoOther
   TShirt
 }
-type HPEvent implements Node {
-  id: ID!
-  createdAt: Time
-  updatedAt: Time
-  key: String!
-  displayTitles: [String!]!
-  openAt: Time
-  startAt: Time!
-  venue: String!
-  prefecture: String!
-  source: HPEventHPEventSource!
-}
+
 """A connection to a list of items."""
 type HPEventConnection {
   """A list of edges."""
@@ -187,6 +250,7 @@ type HPEventConnection {
   """Identifies the total count of items in the connection."""
   totalCount: Int!
 }
+
 """An edge in a connection."""
 type HPEventEdge {
   """The item at the end of the edge."""
@@ -194,10 +258,12 @@ type HPEventEdge {
   """A cursor for use in pagination."""
   cursor: Cursor!
 }
+
 """HPEventHPEventSource is enum for the field source"""
 enum HPEventHPEventSource @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventSource") {
   fc_scrape
 }
+
 type HPFCEventTicket implements Node {
   id: ID!
   createdAt: Time
@@ -212,6 +278,7 @@ type HPFCEventTicket implements Node {
   paymentStartDate: Time
   paymentDueDate: Time
 }
+
 """HPFCEventTicketHPEventFCTicketStatus is enum for the field status"""
 enum HPFCEventTicketHPEventFCTicketStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketStatus") {
   Completed
@@ -221,24 +288,7 @@ enum HPFCEventTicketHPEventFCTicketStatus @goModel(model: "github.com/yssk22/hpa
   Submitted
   Unknown
 }
-type HPFeedItem implements Node {
-  id: ID!
-  createdAt: Time
-  updatedAt: Time
-  sourceID: Int!
-  assetType: HPFeedItemHPAssetType!
-  title: String!
-  postAt: Time!
-  sourceURL: String!
-  imageURL: String
-  media: [Media!]!
-  ownerArtistID: ID
-  ownerMemberID: ID
-  ownerArtist: HPArtist
-  ownerMember: HPMember
-  taggedArtists: [HPArtist!]
-  taggedMembers: [HPMember!]
-}
+
 """A connection to a list of items."""
 type HPFeedItemConnection {
   """A list of edges."""
@@ -248,6 +298,7 @@ type HPFeedItemConnection {
   """Identifies the total count of items in the connection."""
   totalCount: Int!
 }
+
 """An edge in a connection."""
 type HPFeedItemEdge {
   """The item at the end of the edge."""
@@ -255,6 +306,7 @@ type HPFeedItemEdge {
   """A cursor for use in pagination."""
   cursor: Cursor!
 }
+
 """HPFeedItemHPAssetType is enum for the field asset_type"""
 enum HPFeedItemHPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPAssetType") {
   ameblo
@@ -264,6 +316,7 @@ enum HPFeedItemHPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/s
   twitter
   youtube
 }
+
 """Ordering options for HPFeedItem connections"""
 input HPFeedItemOrder {
   """The ordering direction."""
@@ -271,10 +324,12 @@ input HPFeedItemOrder {
   """The field by which to order HPFeedItems."""
   field: HPFeedItemOrderField!
 }
+
 """Properties by which HPFeedItem connections can be ordered."""
 enum HPFeedItemOrderField {
   postAt
 }
+
 type HPFollow implements Node {
   id: ID!
   createdAt: Time
@@ -283,12 +338,14 @@ type HPFollow implements Node {
   user: User!
   member: HPMember!
 }
+
 """HPFollowHPFollowType is enum for the field type"""
 enum HPFollowHPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFollowType") {
   follow
   follow_with_notification
   unfollow
 }
+
 type HPIgPost implements Node {
   id: ID!
   crawledAt: Time
@@ -312,6 +369,7 @@ type HPIgPost implements Node {
   taggedMembers: [HPMember!]
   blobs: [HPBlob!]
 }
+
 """A connection to a list of items."""
 type HPIgPostConnection {
   """A list of edges."""
@@ -321,6 +379,7 @@ type HPIgPostConnection {
   """Identifies the total count of items in the connection."""
   totalCount: Int!
 }
+
 """An edge in a connection."""
 type HPIgPostEdge {
   """The item at the end of the edge."""
@@ -328,6 +387,7 @@ type HPIgPostEdge {
   """A cursor for use in pagination."""
   cursor: Cursor!
 }
+
 type HPMember implements Node {
   id: ID!
   crawledAt: Time
@@ -349,6 +409,7 @@ type HPMember implements Node {
   artistID: ID
   artist: HPArtist
 }
+
 """A connection to a list of items."""
 type HPMemberConnection {
   """A list of edges."""
@@ -358,6 +419,7 @@ type HPMemberConnection {
   """Identifies the total count of items in the connection."""
   totalCount: Int!
 }
+
 """An edge in a connection."""
 type HPMemberEdge {
   """The item at the end of the edge."""
@@ -365,6 +427,7 @@ type HPMemberEdge {
   """A cursor for use in pagination."""
   cursor: Cursor!
 }
+
 type HPSortHistory implements Node {
   id: ID!
   createdAt: Time
@@ -372,6 +435,7 @@ type HPSortHistory implements Node {
   sortResult: HPSortResult!
   owner: User
 }
+
 """A connection to a list of items."""
 type HPSortHistoryConnection {
   """A list of edges."""
@@ -381,6 +445,7 @@ type HPSortHistoryConnection {
   """Identifies the total count of items in the connection."""
   totalCount: Int!
 }
+
 """An edge in a connection."""
 type HPSortHistoryEdge {
   """The item at the end of the edge."""
@@ -388,6 +453,7 @@ type HPSortHistoryEdge {
   """A cursor for use in pagination."""
   cursor: Cursor!
 }
+
 type HPViewHistory implements Node {
   id: ID!
   createdAt: Time
@@ -399,6 +465,7 @@ type HPViewHistory implements Node {
   isFavorite: Boolean!
   feed: HPFeedItem
 }
+
 """A connection to a list of items."""
 type HPViewHistoryConnection {
   """A list of edges."""
@@ -408,6 +475,7 @@ type HPViewHistoryConnection {
   """Identifies the total count of items in the connection."""
   totalCount: Int!
 }
+
 """An edge in a connection."""
 type HPViewHistoryEdge {
   """The item at the end of the edge."""
@@ -415,6 +483,7 @@ type HPViewHistoryEdge {
   """A cursor for use in pagination."""
   cursor: Cursor!
 }
+
 """HPViewHistoryHPAssetType is enum for the field asset_type"""
 enum HPViewHistoryHPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPAssetType") {
   ameblo
@@ -424,6 +493,7 @@ enum HPViewHistoryHPAssetType @goModel(model: "github.com/yssk22/hpapp/go/servic
   twitter
   youtube
 }
+
 """
 An object with an ID.
 Follows the [Relay Global Object Identification Specification](https://relay.dev/graphql/objectidentification.htm)
@@ -432,13 +502,17 @@ interface Node @goModel(model: "github.com/yssk22/hpapp/go/service/ent.Noder") {
   """The id of the object."""
   id: ID!
 }
-"""Possible directions in which to order a list of items when provided an `orderBy` argument."""
+
+"""
+Possible directions in which to order a list of items when provided an `orderBy` argument.
+"""
 enum OrderDirection {
   """Specifies an ascending order for a given `orderBy` argument."""
   ASC
   """Specifies a descending order for a given `orderBy` argument."""
   DESC
 }
+
 """
 Information about pagination in a connection.
 https://relay.dev/graphql/connections.htm#sec-undefined.PageInfo
@@ -453,18 +527,7 @@ type PageInfo {
   """When paginating forwards, the cursor to continue."""
   endCursor: Cursor
 }
-type Query {
-  """Fetches an object given its ID."""
-  node(
-    """ID of the object."""
-    id: ID!
-  ): Node
-  """Lookup nodes by a list of IDs."""
-  nodes(
-    """The list of node IDs."""
-    ids: [ID!]!
-  ): [Node]!
-}
+
 type User implements Node {
   id: ID!
   createdAt: Time
@@ -480,6 +543,7 @@ type User implements Node {
   hpsortHistory: [HPSortHistory!]
   hpfcEventTickets: [HPFCEventTicket!]
 }
+
 type UserNotificationSetting implements Node {
   id: ID!
   createdAt: Time
@@ -498,6 +562,7 @@ type UserNotificationSetting implements Node {
   enablePaymentDue: Boolean!
   user: User
 }
+
 type HelloProjectQuery implements Node @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HelloProjectQuery") {
   id: ID!
   artists(after: Cursor, first: Int, before: Cursor, last: Int): [HPArtist]
@@ -630,7 +695,6 @@ type ReactNavigationPush @goModel(model: "github.com/yssk22/hpapp/go/service/sch
   path: String!
   params: Map
   pushMessage: ExpoPushMessage!
-
   toPushMessage(tokens: [String!]): Message
 }
 
@@ -698,36 +762,7 @@ type HPIgCrawlArgsChildPost @goModel(model: "github.com/yssk22/hpapp/go/service/
   videoViewCount: Int!
 }
 
-type Query {
-  helloproject: HelloProjectQuery!
-  me: MeQuery!
-}
-
-scalar Time
-scalar Upload
-scalar Any
-scalar Map
-
-extend type HPEvent {
-  tickets: [HPFCEventTicket!]
-}
-
-extend type HPFeedItem {
-  myViewHistory: HPViewHistory
-}
-type Query {
-
-  """Fetches an object given its ID."""
-  node(
-    """ID of the object."""
-    id: ID!
-  ): Node
-  """Lookup nodes by a list of IDs."""
-  nodes(
-    """The list of node IDs."""
-    ids: [ID!]!
-  ): [Node]!
-
-  helloproject: HelloProjectQuery!
-  me: MeQuery!
+schema {
+  query: Query
+  mutation: Mutation
 }

@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<f842443b25fb94d7b1867c2bc420a067>>
+ * @generated SignedSource<<0e32b51cbb06752b84c227e117d45484>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -29,34 +29,29 @@ const node: ReaderFragment = {
   "name": "FeedListItemViewHistoryIconFragment",
   "selections": [
     {
-      "kind": "ClientExtension",
+      "alias": null,
+      "args": null,
+      "concreteType": "HPViewHistory",
+      "kind": "LinkedField",
+      "name": "myViewHistory",
+      "plural": false,
       "selections": [
         {
           "alias": null,
           "args": null,
-          "concreteType": "HPViewHistory",
-          "kind": "LinkedField",
-          "name": "myViewHistory",
-          "plural": false,
-          "selections": [
-            {
-              "alias": null,
-              "args": null,
-              "kind": "ScalarField",
-              "name": "id",
-              "storageKey": null
-            },
-            {
-              "alias": null,
-              "args": null,
-              "kind": "ScalarField",
-              "name": "isFavorite",
-              "storageKey": null
-            }
-          ],
+          "kind": "ScalarField",
+          "name": "id",
+          "storageKey": null
+        },
+        {
+          "alias": null,
+          "args": null,
+          "kind": "ScalarField",
+          "name": "isFavorite",
           "storageKey": null
         }
-      ]
+      ],
+      "storageKey": null
     }
   ],
   "type": "HPFeedItem",

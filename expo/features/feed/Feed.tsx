@@ -75,7 +75,7 @@ function FeedLoader({
     params: {
       assetTypes: assetTypes,
       memberIDs: memberIds,
-      useMemberTaggings: useMemberTaggings || true,
+      useMemberTaggings: useMemberTaggings,
       minPostAt: minPostAt,
     },
   });
