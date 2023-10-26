@@ -75,7 +75,7 @@ func (a *apifySettings) GetCrawlArgs(ctx context.Context) ([]jsonfields.HPIgCraw
 	token := settings.GetX(ctx, a.tokenSettings)
 	if token == "" {
 		slog.Warning(ctx,
-			fmt.Sprintf("apify tokenSettings is empty so nothing is crawled."),
+			"apify tokenSettings is empty so nothing is crawled.",
 			slog.Name("services.helloproject.iig.apify.tokenSettings"),
 		)
 		return []jsonfields.HPIgCrawlArgs{}, nil
@@ -83,7 +83,7 @@ func (a *apifySettings) GetCrawlArgs(ctx context.Context) ([]jsonfields.HPIgCraw
 	taskName := settings.GetX(ctx, a.taskNameSettings)
 	if taskName == "" {
 		slog.Warning(ctx,
-			fmt.Sprintf("apify taskName is empty so nothing is crawled."),
+			"apify taskName is empty so nothing is crawled.",
 			slog.Name("services.helloproject.iig.apify.taskNameSettings"),
 		)
 		return []jsonfields.HPIgCrawlArgs{}, nil

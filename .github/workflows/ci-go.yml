@@ -28,3 +28,8 @@ jobs:
       - run: cd go && go test ./...
         env:
           HPAPP_TEST_APIFY_TOKEN: ${{ secrets.HPAPP_TEST_APIFY_TOKEN }}
+      - uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.52.2
+          working-directory: ./go
+          args: --config=.golangci.yaml --print-issued-lines=false --out-format=colored-line-number --issues-exit-code=0 ./...
