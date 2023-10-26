@@ -1,4 +1,4 @@
-import { useCurrentUser, useUserTier } from "@hpapp/features/auth";
+import { useCurrentUser, useUserRoles } from "@hpapp/features/auth";
 import Link from "@hpapp/features/common/components/Link";
 import Text from "@hpapp/features/common/components/Text";
 import React from "react";
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
 const VersionSignature: React.FC = () => {
   const [user, _] = useCurrentUser();
-  const tier = useUserTier(user);
+  const roles = useUserRoles(user);
   return (
     <View style={styles.container}>
       <Link href="https://twitter.com/hellofanapp">
@@ -32,7 +32,7 @@ const VersionSignature: React.FC = () => {
         Version {ApplicationVersion} (Buld: {BuildNumber})
       </Text>
       <Text style={styles.text}>
-        ID: {user?.id} ({tier})
+        ID: {user?.id} ({roles.join(", ")})
       </Text>
     </View>
   );

@@ -3,9 +3,10 @@
 import S0 from './features/auth/OAuthSettingsScreen';
 import S1 from './features/feed/FeedItemScreen';
 import S2 from './features/home/HomeScreen';
-import S3 from './features/settings/theme/ThemeColorSelectorScreen';
-import S4 from './features/settings/theme/ThemeSettingsScreen';
-import S5 from './features/upfc/settings/UPFCSettingsScreen';
+import S3 from './features/settings/devonly/DevOnlySettingsScreen';
+import S4 from './features/settings/theme/ThemeColorSelectorScreen';
+import S5 from './features/settings/theme/ThemeSettingsScreen';
+import S6 from './features/upfc/settings/UPFCSettingsScreen';
 
 const Screens = [
   S0,
@@ -14,5 +15,6 @@ const Screens = [
   S3,
   S4,
   S5,
+  S6,
 ];
 export default Screens;
