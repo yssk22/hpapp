@@ -4,7 +4,6 @@ import { graphql, useFragment } from "react-relay";
 import ExternalImage from "@hpapp/features/common/components/image";
 import * as date from "@hpapp/foundation/date";
 import { useColor } from "@hpapp/contexts/settings/theme";
-import { Icon } from "@rneui/themed";
 import { IconSize, Spacing } from "@hpapp/features/common/constants";
 import AssetIcon from "@hpapp/features/feed/AssetIcon";
 import ListItem from "@hpapp/features/common/components/list/ListItem";
@@ -52,7 +51,7 @@ export default function FeedListItem({
       <View style={styles.titleAndMetadata}>
         <Text style={styles.title}>{item.title}</Text>
         <View style={styles.metadata}>
-          {/* TODO: AssetIcon needs rebuild: <AssetIcon type={item.assetType} size={IconSize.Small} /> */}
+          <AssetIcon type={item.assetType} size={IconSize.Small} />
           <Text style={styles.dateString}>{dateString}</Text>
           <FeedListItemViewHistoryIcon data={item} />
         </View>
@@ -83,6 +82,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   dateString: {
+    marginLeft: Spacing.XSmall,
     marginRight: Spacing.Small,
   },
   icon: {
