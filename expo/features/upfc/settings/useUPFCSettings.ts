@@ -1,3 +1,4 @@
+import { useSettings } from '@hpapp/contexts/settings';
 import { SettingsStore, SecureStorage } from '@hpapp/system/kvs';
 
 type UPFCConfig = {
@@ -21,5 +22,9 @@ const UPFCSettings = SettingsStore.register<UPFCConfig>(
     )
   }
 );
+
+export default function useUPFCSettings() {
+  return useSettings(UPFCSettings);
+}
 
 export { UPFCSettings, UPFCConfig };

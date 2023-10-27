@@ -1,9 +1,8 @@
-import { useSettings } from '@hpapp/contexts/settings';
 import { useColor } from '@hpapp/contexts/settings/theme';
 import { Spacing } from '@hpapp/features/common/constants';
 import { DemoScraper, useScraper } from '@hpapp/features/upfc/scraper';
-import { UPFCSettings } from '@hpapp/features/upfc/settings/UPFCSettings';
 import UPFCSettingsFormInputs from '@hpapp/features/upfc/settings/UPFCSettingsFormInputs';
+import useUPFCSettings from '@hpapp/features/upfc/settings/useUPFCSettings';
 import { t } from '@hpapp/system/i18n';
 import { Button } from '@rneui/themed';
 import { useCallback, useState } from 'react';
@@ -27,7 +26,7 @@ export default function UPFCSettingsForm() {
   const scraper = useScraper(false);
   const [isSaving, setIsSaving] = useState(false);
   const [lastError, setLastError] = useState<unknown | null>(null);
-  const [config, setConfig] = useSettings(UPFCSettings);
+  const [config, setConfig] = useUPFCSettings();
   const [username, setUsername] = useState(config?.username ?? '');
   const [password, setPassword] = useState(config?.password ?? '');
   const [calendarId, setCalendarId] = useState(config?.calendarId ?? '');
