@@ -14,7 +14,8 @@ export default function DevOnlySettingsListItem({
     <>
       <ListItem
         onPress={() => {
-          // console output so that developer can copy on their terminal.
+          // intentional console output so that developer can copy on their terminal.
+          // eslint-disable-next-line no-console
           console.log('Settings', name, ':', value);
         }}
       >

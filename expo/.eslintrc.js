@@ -11,7 +11,8 @@ module.exports = {
         project: './tsconfig.json'
       },
       rules: {
-        'no-array-constructor': 'off'
+        'no-array-constructor': 'off',
+        'no-console': 'error'
       }
     }
   ]

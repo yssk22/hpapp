@@ -9,4 +9,10 @@ function NormalizeA<T>(v: T | T[]) {
   return [v];
 }
 
-export { In, NormalizeA };
+function filterNulls<T>(v: (T | null | undefined)[]): T[] {
+  return v.filter((vv): vv is T => {
+    return vv !== null && vv !== undefined;
+  });
+}
+
+export { In, NormalizeA, filterNulls };

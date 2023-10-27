@@ -9,8 +9,8 @@ import React, { createContext, useContext, useMemo } from 'react';
 
 export interface UPFCContext {
   isConfigured: boolean;
-  data: EventApplicationTickets[] | null;
   isLoading: boolean;
+  data: EventApplicationTickets[] | null;
   reload: () => void;
 }
 

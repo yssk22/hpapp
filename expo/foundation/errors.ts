@@ -41,8 +41,10 @@ function renderError(e: unknown) {
   //   it doesn't actually contain any readable sources.
   if (__DEV__) {
     if ((e as Error).stack) {
+      // eslint-disable-next-line no-console
       console.error((e as Error).stack);
     } else {
+      // eslint-disable-next-line no-console
       console.error(e);
     }
   }
