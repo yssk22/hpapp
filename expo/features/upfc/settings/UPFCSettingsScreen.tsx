@@ -1,7 +1,7 @@
-import { useSettings } from '@hpapp/contexts/settings';
-import { LocalUserConfigurationSettings } from '@hpapp/contexts/settings/useLocalUserConfig';
 import ConsentGate from '@hpapp/features/policy/ConsentGate';
 import { defineScreen, useScreenTitle } from '@hpapp/features/root/protected/stack';
+import { useSettings } from '@hpapp/features/settings/context';
+import { LocalUserConfigurationSettings } from '@hpapp/features/settings/context/useLocalUserConfig';
 import UPFCSettingsForm from '@hpapp/features/upfc/settings/UPFCSettingsForm';
 import { t } from '@hpapp/system/i18n';
 

@@ -1,8 +1,8 @@
-import { useColor } from '@hpapp/contexts/settings/theme';
 import ByAgeView from '@hpapp/features/artist/ByAgeView';
 import ByGroupView from '@hpapp/features/artist/ByGroupView';
 import BySortView from '@hpapp/features/artist/BySortView';
 import Text from '@hpapp/features/common/components/Text';
+import { useColor } from '@hpapp/features/settings/context/theme';
 import { t } from '@hpapp/system/i18n';
 import { useState } from 'react';
 import { TouchableHighlight, useWindowDimensions } from 'react-native';

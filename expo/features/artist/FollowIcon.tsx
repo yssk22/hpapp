@@ -1,6 +1,6 @@
-import { HPMember, useHelloProject, useMe } from '@hpapp/contexts/serviceroot';
-import { HPFollowType } from '@hpapp/contexts/serviceroot/me';
-import { ColorScheme, useColor } from '@hpapp/contexts/settings/theme';
+import { HPMember, useHelloProject, useMe } from '@hpapp/features/root/protected/context';
+import { HPFollowType } from '@hpapp/features/root/protected/context/me';
+import { ColorScheme, useColor } from '@hpapp/features/settings/context/theme';
 import { Icon } from '@rneui/themed';
 
 function getIconName(type: HPFollowType) {

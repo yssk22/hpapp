@@ -1,5 +1,5 @@
-import { useColor } from '@hpapp/contexts/settings/theme';
 import useAssetContent from '@hpapp/features/common/hooks/asset';
+import { useColor } from '@hpapp/features/settings/context/theme';
 import { t } from '@hpapp/system/i18n';
 import { Header } from '@rneui/base';
 import { Button } from '@rneui/themed';

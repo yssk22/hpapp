@@ -1,5 +1,5 @@
-import { useMe } from '@hpapp/contexts/serviceroot';
 import HPSortResultListView from '@hpapp/features/artist/sort/HPSortResultListView';
+import { useMe } from '@hpapp/features/root/protected/context';
 import { t } from '@hpapp/system/i18n';
 import { Text } from '@rneui/themed';
 import { useMemo } from 'react';

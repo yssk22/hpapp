@@ -1,5 +1,5 @@
-import { HPMember, useHelloProject } from '@hpapp/contexts/serviceroot';
 import GroupedViewListItem from '@hpapp/features/artist/GroupedViewListItem';
+import { HPMember, useHelloProject } from '@hpapp/features/root/protected/context';
 import { getAcademicYear } from '@hpapp/foundation/date';
 import { useMemo } from 'react';
 import { FlatList } from 'react-native';

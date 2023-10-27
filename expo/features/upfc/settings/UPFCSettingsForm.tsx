@@ -1,5 +1,5 @@
-import { useColor } from '@hpapp/contexts/settings/theme';
 import { Spacing } from '@hpapp/features/common/constants';
+import { useColor } from '@hpapp/features/settings/context/theme';
 import { DemoScraper, useScraper } from '@hpapp/features/upfc/scraper';
 import UPFCSettingsFormInputs from '@hpapp/features/upfc/settings/UPFCSettingsFormInputs';
 import useUPFCSettings from '@hpapp/features/upfc/settings/useUPFCSettings';

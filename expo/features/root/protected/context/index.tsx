@@ -1,7 +1,12 @@
-import { servicerootQuery } from '@hpapp/contexts/serviceroot/__generated__/servicerootQuery.graphql';
-import { HelloProject, useHelloprojectFragment, HPArtist, HPMember } from '@hpapp/contexts/serviceroot/helloproject';
-import { useMeFragment, Me } from '@hpapp/contexts/serviceroot/me';
 import ErrorBoundary from '@hpapp/features/misc/ErrorBoundary';
+import { servicerootQuery } from '@hpapp/features/root/protected/context/__generated__/servicerootQuery.graphql';
+import {
+  HelloProject,
+  useHelloprojectFragment,
+  HPArtist,
+  HPMember
+} from '@hpapp/features/root/protected/context/helloproject';
+import { useMeFragment, Me } from '@hpapp/features/root/protected/context/me';
 import { Suspense, createContext, useContext, useEffect, useMemo } from 'react';
 import { graphql, useQueryLoader, usePreloadedQuery, PreloadedQuery } from 'react-relay';
 

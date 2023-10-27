@@ -1,12 +1,12 @@
 import { useFonts, BIZUDGothic_400Regular, BIZUDGothic_700Bold } from '@expo-google-fonts/biz-udgothic';
-import { Analytics, AnalyticsProvider } from '@hpapp/contexts/analytics';
-import { RelayProvider, HttpClientConfig } from '@hpapp/contexts/relay';
-import { SettingsProvider } from '@hpapp/contexts/settings';
-import { LocalUserConfigurationSettings } from '@hpapp/contexts/settings/useLocalUserConfig';
 import { CurrentUserSettings, LoginContainer, useCurrentUser } from '@hpapp/features/auth';
 import GuestRoot from '@hpapp/features/root/GuestRoot';
+import { Analytics, AnalyticsProvider } from '@hpapp/features/root/context/analytics';
+import { RelayProvider, HttpClientConfig } from '@hpapp/features/root/context/relay';
 import ProtectedRoot from '@hpapp/features/root/protected/ProtectedRoot';
 import { ScreenList } from '@hpapp/features/root/protected/stack';
+import { SettingsProvider } from '@hpapp/features/settings/context';
+import { LocalUserConfigurationSettings } from '@hpapp/features/settings/context/useLocalUserConfig';
 import { UPFCSettings } from '@hpapp/features/upfc/settings/useUPFCSettings';
 import React from 'react';
 

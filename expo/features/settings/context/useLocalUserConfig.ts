@@ -1,4 +1,4 @@
-import { useSettings } from '@hpapp/contexts/settings';
+import { useSettings } from '@hpapp/features/settings/context';
 import { SettingsStore, AsyncStorage } from '@hpapp/system/kvs';
 
 import { ColorKey } from './theme';

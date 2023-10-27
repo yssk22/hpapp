@@ -1,7 +1,7 @@
-import { useColor } from '@hpapp/contexts/settings/theme';
 import Text from '@hpapp/features/common/components/Text';
 import CalendarDropdown from '@hpapp/features/common/components/form/CalendarDropdown';
 import { Spacing } from '@hpapp/features/common/constants';
+import { useColor } from '@hpapp/features/settings/context/theme';
 import { ErrAuthentication } from '@hpapp/features/upfc/scraper';
 import { t } from '@hpapp/system/i18n';
 import { Input } from '@rneui/themed';

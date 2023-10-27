@@ -1,7 +1,7 @@
 import {
   helloprojectFragment$data,
   helloprojectFragment$key
-} from '@hpapp/contexts/serviceroot/__generated__/helloprojectFragment.graphql';
+} from '@hpapp/features/root/protected/context/__generated__/helloprojectFragment.graphql';
 import { useMemo } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import { FragmentRefs } from 'relay-runtime';

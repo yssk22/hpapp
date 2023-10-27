@@ -1,4 +1,4 @@
-import { useSettings } from '@hpapp/contexts/settings';
+import { useSettings } from '@hpapp/features/settings/context';
 import { SettingsStore, SecureStorage } from '@hpapp/system/kvs';
 
 type UPFCConfig = {

@@ -1,4 +1,3 @@
-import { useColor } from '@hpapp/contexts/settings/theme';
 import ArtistsTab from '@hpapp/features/artist/ArtistsTab';
 import { Fonts } from '@hpapp/features/common/constants';
 import EventsTab from '@hpapp/features/home/Events';
@@ -6,6 +5,7 @@ import GoodsTab from '@hpapp/features/home/GoodsTab';
 import HomeTab from '@hpapp/features/home/HomeTab';
 import { defineScreen, useNavigationOption } from '@hpapp/features/root/protected/stack';
 import SettingsTab from '@hpapp/features/settings/SettingsTab';
+import { useColor } from '@hpapp/features/settings/context/theme';
 import { t } from '@hpapp/system/i18n';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
