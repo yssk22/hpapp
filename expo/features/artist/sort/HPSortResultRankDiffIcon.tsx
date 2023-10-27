@@ -1,5 +1,5 @@
-import { useColor } from '@hpapp/contexts/settings/theme';
 import { IconSize } from '@hpapp/features/common/constants';
+import { useColor } from '@hpapp/features/settings/context/theme';
 import { Icon } from '@rneui/themed';
 import React from 'react';
 

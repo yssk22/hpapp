@@ -1,7 +1,7 @@
-import { HPMember } from '@hpapp/contexts/serviceroot';
 import MemberIcon from '@hpapp/features/artist/MemberIcon';
 import Text from '@hpapp/features/common/components/Text';
 import { FontSize, MemberIconSize, Spacing } from '@hpapp/features/common/constants';
+import { HPMember } from '@hpapp/features/root/protected/context';
 import { toDateString, getAge } from '@hpapp/foundation/date';
 import { t } from '@hpapp/system/i18n';
 import { Divider, ListItem } from '@rneui/themed';

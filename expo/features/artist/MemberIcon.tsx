@@ -1,6 +1,6 @@
-import { HPMember, useHelloProject } from '@hpapp/contexts/serviceroot';
 import ExternalImage from '@hpapp/features/common/components/image';
 import { MemberIconSize } from '@hpapp/features/common/constants';
+import { HPMember, useHelloProject } from '@hpapp/features/root/protected/context';
 import { View } from 'react-native';
 
 export default function MemberIcon({

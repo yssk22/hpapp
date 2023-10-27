@@ -1,4 +1,4 @@
-import useLocalUserConfig from '@hpapp/contexts/settings/useLocalUserConfig';
+import useLocalUserConfig from '@hpapp/features/settings/context/useLocalUserConfig';
 import { createTheme, CreateThemeOptions, useTheme, ThemeProvider, Colors, Theme } from '@rneui/themed';
 import React from 'react';
 

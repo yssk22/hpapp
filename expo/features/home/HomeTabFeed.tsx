@@ -1,6 +1,6 @@
-import { useMe } from '@hpapp/contexts/serviceroot';
-import useLocalUserConfig from '@hpapp/contexts/settings/useLocalUserConfig';
 import Feed from '@hpapp/features/feed/Feed';
+import { useMe } from '@hpapp/features/root/protected/context';
+import useLocalUserConfig from '@hpapp/features/settings/context/useLocalUserConfig';
 import { View, StyleSheet } from 'react-native';
 
 export default function HomeTabFeed() {

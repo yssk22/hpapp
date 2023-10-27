@@ -1,7 +1,7 @@
 import { renderHook, act } from '@testing-library/react-native';
 import React from 'react';
 
-import { AnalyticsProvider, useAnalytics } from './index';
+import { AnalyticsProvider, useAnalytics } from './analytics';
 
 test('should provide a default analytics provider', () => {
   const wrapper = ({ children }: { children: React.ReactNode }) => {

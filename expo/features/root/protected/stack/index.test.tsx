@@ -1,5 +1,5 @@
-import { AppThemeProvider } from '@hpapp/contexts/settings/theme';
 import TestRoot from '@hpapp/features/root/TestRoot';
+import { AppThemeProvider } from '@hpapp/features/settings/context/theme';
 import { screen, render, fireEvent } from '@testing-library/react-native';
 import { View, Text, Button } from 'react-native';
 

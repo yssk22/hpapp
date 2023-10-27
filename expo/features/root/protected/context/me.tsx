@@ -2,7 +2,7 @@ import {
   meFragment$key,
   meFragment$data,
   HPFollowHPFollowType
-} from '@hpapp/contexts/serviceroot/__generated__/meFragment.graphql';
+} from '@hpapp/features/root/protected/context/__generated__/meFragment.graphql';
 import { useMemo } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import { FragmentRefs } from 'relay-runtime';

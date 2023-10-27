@@ -1,5 +1,5 @@
-import { useSettings } from '@hpapp/contexts/settings';
 import { User } from '@hpapp/features/auth/types';
+import { useSettings } from '@hpapp/features/settings/context';
 import { SecureStorage, SettingsStore } from '@hpapp/system/kvs';
 import * as logging from '@hpapp/system/logging';
 import { useCallback } from 'react';

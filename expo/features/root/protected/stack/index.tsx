@@ -1,4 +1,4 @@
-import { useColor } from '@hpapp/contexts/settings/theme';
+import { useColor } from '@hpapp/features/settings/context/theme';
 import {
   DefaultTheme,
   NavigationContainer,

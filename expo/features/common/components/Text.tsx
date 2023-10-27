@@ -1,5 +1,5 @@
-import { useColor } from '@hpapp/contexts/settings/theme';
 import { FontSize, Fonts } from '@hpapp/features/common/constants';
+import { useColor } from '@hpapp/features/settings/context/theme';
 import React from 'react';
 import { Text as Text_, StyleSheet } from 'react-native';
 

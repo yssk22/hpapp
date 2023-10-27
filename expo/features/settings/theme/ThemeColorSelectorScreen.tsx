@@ -1,8 +1,8 @@
-import { AvailableColors, ColorScheme, useAppTheme, useColor } from '@hpapp/contexts/settings/theme';
-import useLocalUserConfig from '@hpapp/contexts/settings/useLocalUserConfig';
 import Text from '@hpapp/features/common/components/Text';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
 import { defineScreen, useScreenTitle } from '@hpapp/features/root/protected/stack';
+import { AvailableColors, ColorScheme, useAppTheme, useColor } from '@hpapp/features/settings/context/theme';
+import useLocalUserConfig from '@hpapp/features/settings/context/useLocalUserConfig';
 import { useNavigation } from '@react-navigation/native';
 import { Icon, ListItem } from '@rneui/themed';
 import { StyleSheet, ScrollView } from 'react-native';

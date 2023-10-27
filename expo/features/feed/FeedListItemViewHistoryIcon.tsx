@@ -1,6 +1,6 @@
-import { useColor } from '@hpapp/contexts/settings/theme';
 import { IconSize } from '@hpapp/features/common/constants';
 import { FeedListItemViewHistoryIconFragment$key } from '@hpapp/features/feed/__generated__/FeedListItemViewHistoryIconFragment.graphql';
+import { useColor } from '@hpapp/features/settings/context/theme';
 import { Icon } from '@rneui/themed';
 import { graphql, useFragment } from 'react-relay';
 
