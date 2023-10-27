@@ -1,15 +1,13 @@
-import { FontSize, Fonts } from '@hpapp/features/common/constants';
+import { FontSize } from '@hpapp/features/common/constants';
 import { useColor } from '@hpapp/features/settings/context/theme';
 import React from 'react';
 import { Text as Text_, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   text: {
-    fontFamily: Fonts.Main,
     fontSize: FontSize.Medium
   },
   textBold: {
-    fontFamily: Fonts.Bold,
     fontSize: FontSize.Medium
   }
 });

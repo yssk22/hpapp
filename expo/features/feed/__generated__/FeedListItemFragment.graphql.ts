@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<6b957c316d972596acb53c00802c2df4>>
+ * @generated SignedSource<<f5595f200f7a1e3cac794cff1447652a>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -17,10 +17,15 @@ export type FeedListItemFragment$data = {
   readonly imageURL: string | null;
   readonly ownerMember: {
     readonly id: string;
+    readonly key: string;
   } | null;
   readonly postAt: string;
   readonly sourceID: number;
   readonly sourceURL: string;
+  readonly taggedMembers: ReadonlyArray<{
+    readonly id: string;
+    readonly key: string;
+  }> | null;
   readonly title: string;
   readonly " $fragmentSpreads": FragmentRefs<"FeedListItemViewHistoryIconFragment">;
   readonly " $fragmentType": "FeedListItemFragment";
@@ -37,7 +42,17 @@ var v0 = {
   "kind": "ScalarField",
   "name": "id",
   "storageKey": null
-};
+},
+v1 = [
+  (v0/*: any*/),
+  {
+    "alias": null,
+    "args": null,
+    "kind": "ScalarField",
+    "name": "key",
+    "storageKey": null
+  }
+];
 return {
   "argumentDefinitions": [],
   "kind": "Fragment",
@@ -94,9 +109,17 @@ return {
       "kind": "LinkedField",
       "name": "ownerMember",
       "plural": false,
-      "selections": [
-        (v0/*: any*/)
-      ],
+      "selections": (v1/*: any*/),
+      "storageKey": null
+    },
+    {
+      "alias": null,
+      "args": null,
+      "concreteType": "HPMember",
+      "kind": "LinkedField",
+      "name": "taggedMembers",
+      "plural": true,
+      "selections": (v1/*: any*/),
       "storageKey": null
     },
     {
@@ -110,6 +133,6 @@ return {
 };
 })();
 
-(node as any).hash = "6b375a3caabd3a62a7f967e8409b71e5";
+(node as any).hash = "d54fab5bf167a458740ef1e842ea1ca5";
 
 export default node;

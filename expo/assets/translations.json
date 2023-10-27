@@ -5,6 +5,27 @@
   "I agree": {
     "ja": "同意します"
   },
+  "Pending Payments": {
+    "ja": "入金待ち"
+  },
+  "Payment Due": {
+    "ja": "入金締切"
+  },
+  "# of Tickets": {
+    "ja": "チケット数"
+  },
+  "Next Events": {
+    "ja": "次のイベント"
+  },
+  "Open At": {
+    "ja": "開場時間"
+  },
+  "Start At": {
+    "ja": "開演時間"
+  },
+  "Latest Posts": {
+    "ja": "最新の投稿"
+  },
   "Artists": {
     "ja": "アーティスト"
   },

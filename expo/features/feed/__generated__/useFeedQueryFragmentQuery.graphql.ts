@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<2f878c99f341ddd904dcd985839991c2>>
+ * @generated SignedSource<<4cc8299415c0847531ca3ab4a1076020>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -17,20 +17,20 @@ export type HPFeedQueryParamsInput = {
   minPostAt?: string | null;
   useMemberTaggings?: boolean | null;
 };
-export type FeedQueryFragmentQuery$variables = {
+export type useFeedQueryFragmentQuery$variables = {
   after?: any | null;
   first?: number | null;
   id: string;
   params: HPFeedQueryParamsInput;
 };
-export type FeedQueryFragmentQuery$data = {
+export type useFeedQueryFragmentQuery$data = {
   readonly node: {
-    readonly " $fragmentSpreads": FragmentRefs<"FeedQuery_helloproject_query_feed">;
+    readonly " $fragmentSpreads": FragmentRefs<"useFeedQuery_helloproject_query_feed">;
   } | null;
 };
-export type FeedQueryFragmentQuery = {
-  response: FeedQueryFragmentQuery$data;
-  variables: FeedQueryFragmentQuery$variables;
+export type useFeedQueryFragmentQuery = {
+  response: useFeedQueryFragmentQuery$data;
+  variables: useFeedQueryFragmentQuery$variables;
 };
 
 const node: ConcreteRequest = (function(){
@@ -112,7 +112,7 @@ return {
     ],
     "kind": "Fragment",
     "metadata": null,
-    "name": "FeedQueryFragmentQuery",
+    "name": "useFeedQueryFragmentQuery",
     "selections": [
       {
         "alias": null,
@@ -125,7 +125,7 @@ return {
           {
             "args": null,
             "kind": "FragmentSpread",
-            "name": "FeedQuery_helloproject_query_feed"
+            "name": "useFeedQuery_helloproject_query_feed"
           }
         ],
         "storageKey": null
@@ -143,7 +143,7 @@ return {
       (v2/*: any*/)
     ],
     "kind": "Operation",
-    "name": "FeedQueryFragmentQuery",
+    "name": "useFeedQueryFragmentQuery",
     "selections": [
       {
         "alias": null,
@@ -327,16 +327,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "a8f519b1100c76cfd1ed2bbe373ec322",
+    "cacheID": "230ea689d4104853ac886d6b21abd598",
     "id": null,
     "metadata": {},
-    "name": "FeedQueryFragmentQuery",
+    "name": "useFeedQueryFragmentQuery",
     "operationKind": "query",
-    "text": "query FeedQueryFragmentQuery(\n  $after: Cursor\n  $first: Int\n  $params: HPFeedQueryParamsInput!\n  $id: ID!\n) {\n  node(id: $id) {\n    __typename\n    ...FeedQuery_helloproject_query_feed\n    id\n  }\n}\n\nfragment FeedListItemFragment on HPFeedItem {\n  id\n  title\n  sourceID\n  sourceURL\n  imageURL\n  assetType\n  postAt\n  ownerMember {\n    id\n    key\n  }\n  taggedMembers {\n    id\n    key\n  }\n  ...FeedListItemViewHistoryIconFragment\n}\n\nfragment FeedListItemViewHistoryIconFragment on HPFeedItem {\n  myViewHistory {\n    id\n    isFavorite\n  }\n}\n\nfragment FeedQuery_helloproject_query_feed on HelloProjectQuery {\n  feed(params: $params, first: $first, after: $after) {\n    edges {\n      node {\n        id\n        ...FeedListItemFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  id\n}\n"
+    "text": "query useFeedQueryFragmentQuery(\n  $after: Cursor\n  $first: Int\n  $params: HPFeedQueryParamsInput!\n  $id: ID!\n) {\n  node(id: $id) {\n    __typename\n    ...useFeedQuery_helloproject_query_feed\n    id\n  }\n}\n\nfragment FeedListItemFragment on HPFeedItem {\n  id\n  title\n  sourceID\n  sourceURL\n  imageURL\n  assetType\n  postAt\n  ownerMember {\n    id\n    key\n  }\n  taggedMembers {\n    id\n    key\n  }\n  ...FeedListItemViewHistoryIconFragment\n}\n\nfragment FeedListItemViewHistoryIconFragment on HPFeedItem {\n  myViewHistory {\n    id\n    isFavorite\n  }\n}\n\nfragment useFeedQuery_helloproject_query_feed on HelloProjectQuery {\n  feed(params: $params, first: $first, after: $after) {\n    edges {\n      node {\n        id\n        ...FeedListItemFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  id\n}\n"
   }
 };
 })();
 
-(node as any).hash = "5b8c49515bf5d614e6023c2240cb9dfa";
+(node as any).hash = "4310868218d058d88bb4e8e7488033d1";
 
 export default node;

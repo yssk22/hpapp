@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<5c48c763d7884161d7c9e69ae47ddb5d>>
+ * @generated SignedSource<<36fabcd9104b2325d880a87aa1cee387>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -17,19 +17,19 @@ export type HPFeedQueryParamsInput = {
   minPostAt?: string | null;
   useMemberTaggings?: boolean | null;
 };
-export type FeedQuery$variables = {
+export type useFeedFeedQuery$variables = {
   after?: any | null;
   first?: number | null;
   params: HPFeedQueryParamsInput;
 };
-export type FeedQuery$data = {
+export type useFeedFeedQuery$data = {
   readonly helloproject: {
-    readonly " $fragmentSpreads": FragmentRefs<"FeedQuery_helloproject_query_feed">;
+    readonly " $fragmentSpreads": FragmentRefs<"useFeedQuery_helloproject_query_feed">;
   };
 };
-export type FeedQuery = {
-  response: FeedQuery$data;
-  variables: FeedQuery$variables;
+export type useFeedFeedQuery = {
+  response: useFeedFeedQuery$data;
+  variables: useFeedFeedQuery$variables;
 };
 
 const node: ConcreteRequest = (function(){
@@ -91,7 +91,7 @@ return {
     ],
     "kind": "Fragment",
     "metadata": null,
-    "name": "FeedQuery",
+    "name": "useFeedFeedQuery",
     "selections": [
       {
         "alias": null,
@@ -104,7 +104,7 @@ return {
           {
             "args": null,
             "kind": "FragmentSpread",
-            "name": "FeedQuery_helloproject_query_feed"
+            "name": "useFeedQuery_helloproject_query_feed"
           }
         ],
         "storageKey": null
@@ -121,7 +121,7 @@ return {
       (v0/*: any*/)
     ],
     "kind": "Operation",
-    "name": "FeedQuery",
+    "name": "useFeedFeedQuery",
     "selections": [
       {
         "alias": null,
@@ -303,16 +303,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "028ae092aa02f43bb343d4f5ca6f6650",
+    "cacheID": "8e271ec0e07a4452a06a0521ffd59b4d",
     "id": null,
     "metadata": {},
-    "name": "FeedQuery",
+    "name": "useFeedFeedQuery",
     "operationKind": "query",
-    "text": "query FeedQuery(\n  $params: HPFeedQueryParamsInput!\n  $first: Int\n  $after: Cursor\n) {\n  helloproject {\n    ...FeedQuery_helloproject_query_feed\n    id\n  }\n}\n\nfragment FeedListItemFragment on HPFeedItem {\n  id\n  title\n  sourceID\n  sourceURL\n  imageURL\n  assetType\n  postAt\n  ownerMember {\n    id\n    key\n  }\n  taggedMembers {\n    id\n    key\n  }\n  ...FeedListItemViewHistoryIconFragment\n}\n\nfragment FeedListItemViewHistoryIconFragment on HPFeedItem {\n  myViewHistory {\n    id\n    isFavorite\n  }\n}\n\nfragment FeedQuery_helloproject_query_feed on HelloProjectQuery {\n  feed(params: $params, first: $first, after: $after) {\n    edges {\n      node {\n        id\n        ...FeedListItemFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  id\n}\n"
+    "text": "query useFeedFeedQuery(\n  $params: HPFeedQueryParamsInput!\n  $first: Int\n  $after: Cursor\n) {\n  helloproject {\n    ...useFeedQuery_helloproject_query_feed\n    id\n  }\n}\n\nfragment FeedListItemFragment on HPFeedItem {\n  id\n  title\n  sourceID\n  sourceURL\n  imageURL\n  assetType\n  postAt\n  ownerMember {\n    id\n    key\n  }\n  taggedMembers {\n    id\n    key\n  }\n  ...FeedListItemViewHistoryIconFragment\n}\n\nfragment FeedListItemViewHistoryIconFragment on HPFeedItem {\n  myViewHistory {\n    id\n    isFavorite\n  }\n}\n\nfragment useFeedQuery_helloproject_query_feed on HelloProjectQuery {\n  feed(params: $params, first: $first, after: $after) {\n    edges {\n      node {\n        id\n        ...FeedListItemFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  id\n}\n"
   }
 };
 })();
 
-(node as any).hash = "8109a2525a73d74d21bcd1a9ca57a1dc";
+(node as any).hash = "ca31d7a1c2ed72859f64b0631ff65e83";
 
 export default node;

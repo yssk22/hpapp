@@ -11,7 +11,7 @@ import { Suspense, createContext, useContext, useEffect, useMemo } from 'react';
 import { graphql, useQueryLoader, usePreloadedQuery, PreloadedQuery } from 'react-relay';
 
 const servicerootQueryGraphQL = graphql`
-  query servicerootQuery {
+  query contextServiceRootQuery {
     helloproject {
       ...helloprojectFragment
     }
