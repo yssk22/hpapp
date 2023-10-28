@@ -8,7 +8,7 @@ type FeedNode = NonNullable<
   NonNullable<NonNullable<NonNullable<ReturnType<typeof useFeed>['data']['feed']>['edges']>[number]>['node']
 >;
 
-export default class FeedSection implements HomeTabSection<FeedNode> {
+export default class HomeFeedSection implements HomeTabSection<FeedNode> {
   public readonly data: FeedNode[];
 
   constructor(data: FeedNode[]) {

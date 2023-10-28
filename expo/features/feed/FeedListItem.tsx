@@ -42,7 +42,8 @@ export default function FeedListItem({ data }: { data: FeedListItemFragment$key 
       <View style={styles.titleAndMetadata}>
         <Text style={styles.title}>{item.title}</Text>
         <View style={styles.metadata}>
-          <AssetIcon type={item.assetType} size={IconSize.Small} />
+          {/* FIXME: #42 react-native-svg doesn't work with Expo 48.0
+            <AssetIcon type={item.assetType} size={IconSize.Small} /> */}
           <Text style={styles.dateString}>{dateString}</Text>
           <FeedListItemViewHistoryIcon data={item} />
         </View>

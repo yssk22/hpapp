@@ -1,10 +1,10 @@
+import HomeFeedSection from '@hpapp/features/feed/HomeFeedSection';
 import useFeed from '@hpapp/features/feed/useFeed';
 import { HomeTabSection } from '@hpapp/features/home/types';
 import { useMe } from '@hpapp/features/root/protected/context';
 import { useColor } from '@hpapp/features/settings/context/theme';
 import useLocalUserConfig from '@hpapp/features/settings/context/useLocalUserConfig';
 import { useUPFC } from '@hpapp/features/upfc/context';
-import FeedSection from '@hpapp/features/upfc/home/FeedSection';
 import NextEventsSection from '@hpapp/features/upfc/home/NextEventsSection';
 import PendingPaymentsSection from '@hpapp/features/upfc/home/PendingPaymentsSection';
 import { useMemo } from 'react';
@@ -28,7 +28,7 @@ export default function HomeTabSectionList() {
     return [
       new PendingPaymentsSection(color, upfc.data ?? []),
       new NextEventsSection(color, upfc.data ?? []),
-      new FeedSection((feed.data.feed?.edges ?? []).filter((edge) => edge?.node != null).map((edge) => edge!.node!))
+      new HomeFeedSection((feed.data.feed?.edges ?? []).filter((edge) => edge?.node != null).map((edge) => edge!.node!))
     ];
   }, [upfc.data, feed]);
   return (
