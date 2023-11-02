@@ -9,6 +9,7 @@ on:
         type: choice
         options:
           - dev
+          - beta
           - prod
       platform:
         description: "Platform to build for"

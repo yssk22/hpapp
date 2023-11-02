@@ -1,0 +1,19 @@
+{
+    "cli": {
+      "version": "5.4.0"
+    },
+    "build": {
+      "beta": {
+        "env": {
+          "HPAPP_CONFIG_NAME":"beta"
+        },
+        "developmentClient": false,
+        "distribution": "internal",
+        "channel": "beta",
+        "android": {
+          "buildType": "apk"
+        }
+      }
+    }
+  }
+  

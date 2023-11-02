@@ -43,12 +43,12 @@ Edit `./config/$HPAPP_CONFIG_NAME/eas.json`. You just need to replace `"dev"` wi
 
 ### Firebase configuration file
 
-You need to obtain `GoogleService-Info.plist` and `google-service.json` from your Firebase project as described in [the Help Center article](https://support.google.com/firebase/answer/7015592).
+You need to obtain `GoogleService-Info.plist` and `google-services.json` from your Firebase project as described in [the Help Center article](https://support.google.com/firebase/answer/7015592).
 
 Once you get these files, put them in `./config/$HPAPP_CONFIG_NAME/` directory and upload them as EAS credential.
 
 ```
-$ yarn eas secret:create --scope project --name DEV_GOOGLE_SERVICES_JSON --type file --value ./config/dev/google-service.json
+$ yarn eas secret:create --scope project --name DEV_GOOGLE_SERVICES_JSON --type file --value ./config/dev/google-services.json
 $ yarn eas secret:create --scope project --name DEV_GOOGLE_SERVICES_INFO_PLIST --type file --value ./config/dev/GoogleService-Info.plist
 ```
 
@@ -88,8 +88,14 @@ $ ./scripts/eas-build.sh
 
 The script start the build proces only for iOS by default. If you want to build Android as well, you can use HPAPP_CONFIG_PLATFORM.
 
+For the very first build, you may need to setup project credentials such as Distribution Certificate, Provisioning Proile, Push Notification Key, ...etc. You can pass HPAPP_CONFIG_INTERACTIVE=1 to setup these credentials interactively.
+
 ```
+
+```
+
 $ HPAPP_CONFIG_PLATFORM=android ./scripts/eas-build.sh
+
 ```
 
 The script simply copy `eas.json` from the config directory and run `yarn eas build --profile ${HPAPP_CONFIG_NAME} --platform ${HPAPP_CONFIG_PLATFORM} --non-interactive` command.
@@ -105,13 +111,17 @@ so that your react native packager to bind with the address.
 Note that your_container_address can be the same sa your host IP if you use the port forwarding in vscode Remote Container Development.
 
 ```
+
 $ export REACT_NATIVE_PACKAGER_HOSTNAME={your_container_address}
+
 ```
 
 Then you can start the devclient with the following command.
 
 ```
+
 $ yarn start
+
 ```
 
 Now it's time to launch your development build and connect your environment to test the app!
@@ -119,3 +129,4 @@ Now it's time to launch your development build and connect your environment to t
 ## Expo Go client to develop
 
 This may or may not work.
+```
