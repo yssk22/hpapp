@@ -1,4 +1,10 @@
 {
+  "Update is available. Tap to install.": {
+    "ja": "アップデートが利用可能です。タップしてインストール。"
+  },
+  "Updating...": {
+    "ja": "アップデート中..."
+  },
   "Home": {
     "ja": "ホーム"
   },
