@@ -1,7 +1,6 @@
 import ExternalImage from '@hpapp/features/common/components/image';
 import ListItem from '@hpapp/features/common/components/list/ListItem';
-import { IconSize, Spacing } from '@hpapp/features/common/constants';
-import AssetIcon from '@hpapp/features/feed/AssetIcon';
+import { Spacing } from '@hpapp/features/common/constants';
 import FeedListItemViewHistoryIcon from '@hpapp/features/feed/FeedListItemViewHistoryIcon';
 import { FeedListItemFragment$key } from '@hpapp/features/feed/__generated__/FeedListItemFragment.graphql';
 import * as date from '@hpapp/foundation/date';

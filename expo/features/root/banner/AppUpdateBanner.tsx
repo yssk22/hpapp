@@ -4,6 +4,7 @@ import { useColor } from '@hpapp/features/settings/context/theme';
 import * as Updates from 'expo-updates';
 import { useState, useEffect } from 'react';
 import { AppState, AppStateStatus, TouchableOpacity, StyleSheet, View } from 'react-native';
+import * as logging from 'system/logging';
 
 const styles = StyleSheet.create({
   container: {
@@ -47,7 +48,10 @@ export default function AppUpdateBanner({
           setUpdateCheckState(new Date());
           setUpdateAvailable(update.isAvailable);
         }
-      } catch (e) {
+      } catch (e: any) {
+        logging.Error('features.root.banner.AppUpdateBanner', 'failed to check update', {
+          error: e.toString()
+        });
         if (!unmounted) {
           setUpdateCheckState(null);
           setUpdateAvailable(false);

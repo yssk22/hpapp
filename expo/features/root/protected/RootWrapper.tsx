@@ -1,4 +1,3 @@
-import AppUpdateBanner from '@hpapp/features/root/banner/AppUpdateBanner';
 import { useColor } from '@hpapp/features/settings/context/theme';
 import { View } from 'react-native';
 

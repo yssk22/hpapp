@@ -1,5 +1,6 @@
 import * as FileSystem from 'expo-file-system';
 import { useEffect, useState } from 'react';
+import * as logging from 'system/logging';
 
 type Metadata = {
   sourceURI?: string;
@@ -79,8 +80,10 @@ const createCacheURI = async (uri: string): Promise<string | null> => {
       })
     );
     return cacheURI;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (e) {
+  } catch (e: any) {
+    logging.Error('features.common.hooks.uricache.createCacheURI', 'failed to create a cache URI', {
+      error: e.toString()
+    });
     return null;
   }
 };
