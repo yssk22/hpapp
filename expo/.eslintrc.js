@@ -12,7 +12,9 @@ module.exports = {
       },
       rules: {
         'no-array-constructor': 'off',
-        'no-console': 'error'
+        'no-console': 'error',
+        'no-unused-vars': 'error',
+        '@typescript-eslint/no-unused-vars': 'error'
       }
     }
   ]

@@ -4,7 +4,6 @@ import LoadError from '@hpapp/features/root/protected/LoadError';
 import RootWrapper from '@hpapp/features/root/protected/RootWrapper';
 import { ServiceRootProvider } from '@hpapp/features/root/protected/context';
 import { Screen, ScreenParams, createStackNavigator } from '@hpapp/features/root/protected/stack';
-import { AppThemeProvider } from '@hpapp/features/settings/context/theme';
 import { useNavigationContainerRef } from '@react-navigation/native';
 import { Text } from '@rneui/base';
 
