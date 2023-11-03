@@ -2,12 +2,15 @@ import ArtistsTab from '@hpapp/features/artist/ArtistsTab';
 import EventsTab from '@hpapp/features/home/Events';
 import GoodsTab from '@hpapp/features/home/GoodsTab';
 import HomeTab from '@hpapp/features/home/HomeTab';
+import AppUpdateBanner from '@hpapp/features/root/banner/AppUpdateBanner';
 import { defineScreen, useNavigationOption } from '@hpapp/features/root/protected/stack';
 import SettingsTab from '@hpapp/features/settings/SettingsTab';
 import { useColor } from '@hpapp/features/settings/context/theme';
 import { UPFCProvider } from '@hpapp/features/upfc/context';
 import { t } from '@hpapp/system/i18n';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
@@ -46,6 +49,18 @@ const Tabs: TabSpec[] = [
     icon: 'settings'
   }
 ];
+
+function tabComponent(c: React.ElementType<any>) {
+  return function TabComponent() {
+    return (
+      <View style={styles.tab}>
+        <AppUpdateBanner />
+        {React.createElement(c)}
+      </View>
+    );
+  };
+}
+
 function getTabBarIconFn(iconName: string) {
   return function ({ focused, color, size }: { focused: boolean; color: string; size: number }) {
     return <Ionicons name={focused ? iconName : `${iconName}-outline`} size={size} color={color} />;
@@ -75,7 +90,7 @@ export default defineScreen('/', function () {
             <Tab.Screen
               key={tab.name}
               name={t(tab.name)}
-              component={tab.component}
+              component={tabComponent(tab.component)}
               options={{
                 tabBarIcon: getTabBarIconFn(tab.icon)
               }}
@@ -85,4 +100,10 @@ export default defineScreen('/', function () {
       </Tab.Navigator>
     </UPFCProvider>
   );
+});
+
+const styles = StyleSheet.create({
+  tab: {
+    flex: 1
+  }
 });

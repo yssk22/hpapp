@@ -7,7 +7,6 @@ import { Screen, ScreenParams, createStackNavigator } from '@hpapp/features/root
 import { AppThemeProvider } from '@hpapp/features/settings/context/theme';
 import { useNavigationContainerRef } from '@react-navigation/native';
 import { Text } from '@rneui/base';
-import React from 'react';
 
 const Stack = createStackNavigator({
   rootComponent: RootWrapper
@@ -19,18 +18,16 @@ export default function ProtectedRoot({ screens }: { screens: Screen<ScreenParam
   const navigation = useNavigationContainerRef<ReactNavigation.RootParamList>();
   return (
     <Initialize initializers={initializers}>
-      <AppThemeProvider>
-        <ServiceRootProvider
-          errorFallback={<LoadError />}
-          loadingFallback={
-            <>
-              <Text>Loading</Text>
-            </>
-          }
-        >
-          <Stack ref={navigation} screens={screens} initialRouteName="/" />
-        </ServiceRootProvider>
-      </AppThemeProvider>
+      <ServiceRootProvider
+        errorFallback={<LoadError />}
+        loadingFallback={
+          <>
+            <Text>Loading</Text>
+          </>
+        }
+      >
+        <Stack ref={navigation} screens={screens} initialRouteName="/" />
+      </ServiceRootProvider>
     </Initialize>
   );
 }

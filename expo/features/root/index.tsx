@@ -6,6 +6,7 @@ import { RelayProvider, HttpClientConfig } from '@hpapp/features/root/context/re
 import ProtectedRoot from '@hpapp/features/root/protected/ProtectedRoot';
 import { ScreenList } from '@hpapp/features/root/protected/stack';
 import { SettingsProvider } from '@hpapp/features/settings/context';
+import { AppThemeProvider } from '@hpapp/features/settings/context/theme';
 import { LocalUserConfigurationSettings } from '@hpapp/features/settings/context/useLocalUserConfig';
 import { UPFCSettings } from '@hpapp/features/upfc/settings/useUPFCSettings';
 import React from 'react';
@@ -42,11 +43,13 @@ export default function Root({
   }
   return (
     <SettingsProvider settings={settings}>
-      <AnalyticsProvider analytics={analytics}>
-        <RelayProvider config={httpClientConfig}>
-          <UserRoot LoginContainer={loginContainer} screens={screens} />
-        </RelayProvider>
-      </AnalyticsProvider>
+      <AppThemeProvider>
+        <AnalyticsProvider analytics={analytics}>
+          <RelayProvider config={httpClientConfig}>
+            <UserRoot LoginContainer={loginContainer} screens={screens} />
+          </RelayProvider>
+        </AnalyticsProvider>
+      </AppThemeProvider>
     </SettingsProvider>
   );
 }
