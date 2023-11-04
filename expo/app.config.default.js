@@ -69,6 +69,12 @@ module.exports = {
         }
       ]
     ],
+    updates: {
+      url: 'https://u.expo.dev/{eas-project-id}'
+    },
+    runtimeVersion: {
+      policy: 'appVersion'
+    },
     extra: {
       eas: {},
       hpapp: {

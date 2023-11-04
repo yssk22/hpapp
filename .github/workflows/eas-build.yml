@@ -36,7 +36,7 @@ jobs:
           eas-version: 5.4.0
           token: ${{ secrets.EXPO_TOKEN }}
       - run: cd expo && yarn install
-      - run: cd expo && ./scripts/eas-build.sh
+      - run: cd expo && ./scripts/eas.sh build --profile ${{inputs.config}} --platform ${{inputs.platform}} --non-interactive
         env:
           HPAPP_CONFIG_NAME: ${{inputs.config}}
           HPAPP_CONFIG_PLATFORM: ${{inputs.platform}}

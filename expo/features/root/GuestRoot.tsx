@@ -1,4 +1,5 @@
 import { LoginContainer, User } from '@hpapp/features/auth';
+import Text from '@hpapp/features/common/components/Text';
 import AppUpdateBanner from '@hpapp/features/root/banner/AppUpdateBanner';
 import { useAssets } from 'expo-asset';
 import { View, StyleSheet, Image } from 'react-native';
@@ -28,6 +29,9 @@ export default function GuestRoot({
           resizeMode="contain"
         />
         <AppUpdateBanner />
+        <View style={{ height: 20 }}>
+          <Text>FOO</Text>
+        </View>
         <LoginContainer onAuthenticated={onAuthenticated} />
       </View>
     </View>

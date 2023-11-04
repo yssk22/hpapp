@@ -14,5 +14,7 @@ module.exports = (config) => {
   config.extra.hpapp.env = 'beta';
   config.extra.hpapp.isBeta = false;
   config.extra.hpapp.isDev = true;
+
+  config.updates.url = 'https://u.expo.dev/a02053d4-d2a0-44d4-9c98-9eba39f8f3a8';
   return config;
 };
