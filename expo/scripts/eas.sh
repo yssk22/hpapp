@@ -16,8 +16,5 @@ EAS_JSON=$BASEDIR/config/$HPAPP_CONFIG_NAME/eas.json
 
 cp $EAS_JSON $BASEDIR/eas.json
 
-if [ "$HPAPP_CONFIG_INTERACTIVE" = "1" ]; then
-    yarn eas build --profile $HPAPP_CONFIG_NAME --platform $HPAPP_CONFIG_PLATFORM
-else
-    yarn eas build --profile $HPAPP_CONFIG_NAME --platform $HPAPP_CONFIG_PLATFORM --non-interactive
-fi
+# echo $@
+yarn eas $@
