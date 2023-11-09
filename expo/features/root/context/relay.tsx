@@ -70,7 +70,7 @@ function createEnvironment(config: HttpClientConfig, userToken?: string) {
       return json;
     } catch (err) {
       const benchmark = new Date().getTime() - start.getTime();
-      logging.Error(eventName, 'GraphQL error', {
+      logging.Error(eventName, `GraphQL error: ${(err as Error).message}`, {
         request: {
           body: {
             query: operation.text,
