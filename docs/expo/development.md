@@ -52,6 +52,10 @@ $ yarn eas secret:create --scope project --name DEV_GOOGLE_SERVICES_JSON --type 
 $ yarn eas secret:create --scope project --name DEV_GOOGLE_SERVICES_INFO_PLIST --type file --value ./config/dev/GoogleService-Info.plist
 ```
 
+### Firebase AppCheck Configuration
+
+If you use Firebase Authentication with AppCheck, you need to configure AppCheck on your firebase project [[ref](https://firebase.google.com/docs/app-check/ios/devicecheck-provider?authuser=0&hl=ja)].
+
 ### secrets.json
 
 `secrets.json` is a file to define application specific configuratons which we don't want to share with others. You need to put it under `./config/$HPAPP_CONFIG_NAME/secrets.json` as well. The file is something like that.
