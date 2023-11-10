@@ -7,14 +7,15 @@
     "start": "expo start --dev-client --lan",
     "start-go": "yarn expo start",
     "eas-build-pre-install": "./scripts/eas-build-pre-install.sh",
-    "build-dev": "HPAPP_CONFIG_NAME=dev ./scripts/eas.sh build --profile dev --non-interactive",
-    "build-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh build --profile beta --non-interactive",
-    "build-prod": "HPAPP_CONFIG_NAME=prod ./scripts/eas.sh build --profile prod --non-interactive",
-    "update-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh update --channel beta --non-interactive --auto",
     "relay": "node ./scripts/genschema.js && yarn relay-compiler",
     "test": "yarn jest ./",
     "lint": "yarn eslint ./",
-    "genscreen": "node ./scripts/genscreen.js"
+    "genscreen": "node ./scripts/genscreen.js",
+    "start-dev": "HPAPP_CONFIG_NAME=dev expo start --dev-client --lan",
+    "build-dev": "HPAPP_CONFIG_NAME=dev ./scripts/eas.sh build --profile dev --non-interactive",
+    "build-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh build --profile beta --non-interactive",
+    "build-prod": "HPAPP_CONFIG_NAME=prod ./scripts/eas.sh build --profile prod --non-interactive",
+    "update-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh update --channel beta --non-interactive --auto"
   },
   "relay": {
     "src": "./",
