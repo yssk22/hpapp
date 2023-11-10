@@ -1,6 +1,7 @@
 import Text from '@hpapp/features/common/components/Text';
 import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { useColor } from '@hpapp/features/settings/context/theme';
+import Constants from 'expo-constants';
 import * as Updates from 'expo-updates';
 import { useState, useEffect } from 'react';
 import { AppState, AppStateStatus, TouchableOpacity, StyleSheet, View } from 'react-native';
@@ -49,9 +50,11 @@ export default function AppUpdateBanner({
           setUpdateAvailable(update.isAvailable);
         }
       } catch (e: any) {
-        logging.Error('features.root.banner.AppUpdateBanner', 'failed to check update', {
-          error: e.toString()
-        });
+        if (Constants.expoConfig?.extra?.hpapp?.isDev !== true) {
+          logging.Error('features.root.banner.AppUpdateBanner', 'failed to check update', {
+            error: e.toString()
+          });
+        }
         if (!unmounted) {
           setUpdateCheckState(null);
           setUpdateAvailable(false);

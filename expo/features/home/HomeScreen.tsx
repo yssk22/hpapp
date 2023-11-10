@@ -1,4 +1,5 @@
 import ArtistsTab from '@hpapp/features/artist/ArtistsTab';
+import Loading from '@hpapp/features/common/components/Loading';
 import EventsTab from '@hpapp/features/home/Events';
 import GoodsTab from '@hpapp/features/home/GoodsTab';
 import HomeTab from '@hpapp/features/home/HomeTab';
@@ -9,7 +10,7 @@ import { useColor } from '@hpapp/features/settings/context/theme';
 import { UPFCProvider } from '@hpapp/features/upfc/context';
 import { t } from '@hpapp/system/i18n';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -54,8 +55,10 @@ function tabComponent(c: React.ElementType<any>) {
   return function TabComponent() {
     return (
       <View style={styles.tab}>
-        <AppUpdateBanner />
-        {React.createElement(c)}
+        <Suspense fallback={<Loading />}>
+          <AppUpdateBanner />
+          {React.createElement(c)}
+        </Suspense>
       </View>
     );
   };
