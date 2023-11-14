@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<36fabcd9104b2325d880a87aa1cee387>>
+ * @generated SignedSource<<4dc1d5445174582f0b27801f41f55bbb>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -17,19 +17,19 @@ export type HPFeedQueryParamsInput = {
   minPostAt?: string | null;
   useMemberTaggings?: boolean | null;
 };
-export type useFeedFeedQuery$variables = {
+export type FeedContextQuery$variables = {
   after?: any | null;
   first?: number | null;
   params: HPFeedQueryParamsInput;
 };
-export type useFeedFeedQuery$data = {
+export type FeedContextQuery$data = {
   readonly helloproject: {
-    readonly " $fragmentSpreads": FragmentRefs<"useFeedQuery_helloproject_query_feed">;
+    readonly " $fragmentSpreads": FragmentRefs<"FeedContextQuery_helloproject_query_feed">;
   };
 };
-export type useFeedFeedQuery = {
-  response: useFeedFeedQuery$data;
-  variables: useFeedFeedQuery$variables;
+export type FeedContextQuery = {
+  response: FeedContextQuery$data;
+  variables: FeedContextQuery$variables;
 };
 
 const node: ConcreteRequest = (function(){
@@ -91,7 +91,7 @@ return {
     ],
     "kind": "Fragment",
     "metadata": null,
-    "name": "useFeedFeedQuery",
+    "name": "FeedContextQuery",
     "selections": [
       {
         "alias": null,
@@ -104,7 +104,7 @@ return {
           {
             "args": null,
             "kind": "FragmentSpread",
-            "name": "useFeedQuery_helloproject_query_feed"
+            "name": "FeedContextQuery_helloproject_query_feed"
           }
         ],
         "storageKey": null
@@ -121,7 +121,7 @@ return {
       (v0/*: any*/)
     ],
     "kind": "Operation",
-    "name": "useFeedFeedQuery",
+    "name": "FeedContextQuery",
     "selections": [
       {
         "alias": null,
@@ -292,7 +292,7 @@ return {
               "params"
             ],
             "handle": "connection",
-            "key": "FeedQuery_helloproject_query_feed",
+            "key": "FeedContextQuery_helloproject_query_feed",
             "kind": "LinkedHandle",
             "name": "feed"
           },
@@ -303,16 +303,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "8e271ec0e07a4452a06a0521ffd59b4d",
+    "cacheID": "d5c3ccae2fdda3c342091d9ce203c534",
     "id": null,
     "metadata": {},
-    "name": "useFeedFeedQuery",
+    "name": "FeedContextQuery",
     "operationKind": "query",
-    "text": "query useFeedFeedQuery(\n  $params: HPFeedQueryParamsInput!\n  $first: Int\n  $after: Cursor\n) {\n  helloproject {\n    ...useFeedQuery_helloproject_query_feed\n    id\n  }\n}\n\nfragment FeedListItemFragment on HPFeedItem {\n  id\n  title\n  sourceID\n  sourceURL\n  imageURL\n  assetType\n  postAt\n  ownerMember {\n    id\n    key\n  }\n  taggedMembers {\n    id\n    key\n  }\n  ...FeedListItemViewHistoryIconFragment\n}\n\nfragment FeedListItemViewHistoryIconFragment on HPFeedItem {\n  myViewHistory {\n    id\n    isFavorite\n  }\n}\n\nfragment useFeedQuery_helloproject_query_feed on HelloProjectQuery {\n  feed(params: $params, first: $first, after: $after) {\n    edges {\n      node {\n        id\n        ...FeedListItemFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  id\n}\n"
+    "text": "query FeedContextQuery(\n  $params: HPFeedQueryParamsInput!\n  $first: Int\n  $after: Cursor\n) {\n  helloproject {\n    ...FeedContextQuery_helloproject_query_feed\n    id\n  }\n}\n\nfragment FeedContextQuery_helloproject_query_feed on HelloProjectQuery {\n  feed(params: $params, first: $first, after: $after) {\n    edges {\n      node {\n        id\n        ...FeedListItemFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  id\n}\n\nfragment FeedListItemFragment on HPFeedItem {\n  id\n  title\n  sourceID\n  sourceURL\n  imageURL\n  assetType\n  postAt\n  ownerMember {\n    id\n    key\n  }\n  taggedMembers {\n    id\n    key\n  }\n  ...FeedListItemViewHistoryIconFragment\n}\n\nfragment FeedListItemViewHistoryIconFragment on HPFeedItem {\n  myViewHistory {\n    id\n    isFavorite\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "ca31d7a1c2ed72859f64b0631ff65e83";
+(node as any).hash = "7bcde21bf4d8d7fb5bbcf3ee35ca0489";
 
 export default node;
