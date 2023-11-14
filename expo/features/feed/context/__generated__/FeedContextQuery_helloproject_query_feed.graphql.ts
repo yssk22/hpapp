@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<942073a66c3318958fbabcb5998a571e>>
+ * @generated SignedSource<<416932390cff358a0f0d66d0006f02da>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -10,7 +10,7 @@
 
 import { ReaderFragment, RefetchableFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
-export type useFeedQuery_helloproject_query_feed$data = {
+export type FeedContextQuery_helloproject_query_feed$data = {
   readonly feed: {
     readonly edges: ReadonlyArray<{
       readonly node: {
@@ -20,11 +20,11 @@ export type useFeedQuery_helloproject_query_feed$data = {
     } | null> | null;
   } | null;
   readonly id: string;
-  readonly " $fragmentType": "useFeedQuery_helloproject_query_feed";
+  readonly " $fragmentType": "FeedContextQuery_helloproject_query_feed";
 };
-export type useFeedQuery_helloproject_query_feed$key = {
-  readonly " $data"?: useFeedQuery_helloproject_query_feed$data;
-  readonly " $fragmentSpreads": FragmentRefs<"useFeedQuery_helloproject_query_feed">;
+export type FeedContextQuery_helloproject_query_feed$key = {
+  readonly " $data"?: FeedContextQuery_helloproject_query_feed$data;
+  readonly " $fragmentSpreads": FragmentRefs<"FeedContextQuery_helloproject_query_feed">;
 };
 
 const node: ReaderFragment = (function(){
@@ -75,11 +75,11 @@ return {
       "fragmentPathInResult": [
         "node"
       ],
-      "operation": require('./useFeedQueryFragmentQuery.graphql'),
+      "operation": require('./FeedContextQueryFragmentQuery.graphql'),
       "identifierField": "id"
     }
   },
-  "name": "useFeedQuery_helloproject_query_feed",
+  "name": "FeedContextQuery_helloproject_query_feed",
   "selections": [
     {
       "alias": "feed",
@@ -92,7 +92,7 @@ return {
       ],
       "concreteType": "HPFeedItemConnection",
       "kind": "LinkedField",
-      "name": "__FeedQuery_helloproject_query_feed_connection",
+      "name": "__FeedContextQuery_helloproject_query_feed_connection",
       "plural": false,
       "selections": [
         {
@@ -172,6 +172,6 @@ return {
 };
 })();
 
-(node as any).hash = "4310868218d058d88bb4e8e7488033d1";
+(node as any).hash = "8086d44e7fab8a475bc632ea014a3594";
 
 export default node;
