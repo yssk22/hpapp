@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>push - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package push
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/system/push"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#Send">func Send(ctx context.Context, m *Message) ([]string, error)</a></dd>
+			
+				
+				<dd><a href="index.html#WithClient">func WithClient(ctx context.Context, store Client) context.Context</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Client">type Client</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewExpoClient">func NewExpoClient(ctx context.Context, accessToken string) Client</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewMockClient">func NewMockClient(context.Context) Client</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Message">type Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GetMockSentMessages">func GetMockSentMessages(ctx context.Context) []*Message</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MessagePriority">type MessagePriority</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/push/expo.go">expo.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/push/mock.go">mock.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/push/push.go">push.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="Send">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/push/push.go?s=2220:2280#L38">Send</a>
+				<a class="permalink" href="index.html#Send">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Send(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m *<a href="index.html#Message">Message</a>) ([]<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			<p>Send sends a push message and returns their message IDs
+A single message can be split into multiple message ids when needed.
+
+			
+			
+
+		
+			
+			
+			<h2 id="WithClient">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/push/push.go?s=2383:2449#L46">WithClient</a>
+				<a class="permalink" href="index.html#WithClient">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WithClient(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, store <a href="index.html#Client">Client</a>) <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a></pre>
+			
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Client">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/push/push.go?s=1963:2087#L31">Client</a>
+				<a class="permalink" href="index.html#Client">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Client interface {
+    <span class="comment">// Send an message and returns the message IDs</span>
+    Send(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="index.html#Message">Message</a>) ([]<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewExpoClient">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/push/expo.go?s=354:420#L4">NewExpoClient</a>
+					<a class="permalink" href="index.html#NewExpoClient">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewExpoClient(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, accessToken <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#Client">Client</a></pre>
+				<p>NewExpoClient returns a Client implementation.
+If you enable Enhanced Security for Push Notifications, you have to set a valid acces token.
+
+				
+				
+			
+				
+				<h3 id="NewMockClient">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/push/mock.go?s=44:86#L1">NewMockClient</a>
+					<a class="permalink" href="index.html#NewMockClient">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewMockClient(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="index.html#Client">Client</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Message">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/push/push.go?s=367:1961#L5">Message</a>
+				<a class="permalink" href="index.html#Message">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Message is a struct to present push message for mobile applications
+We don&apos;t use the platform specific features such as subtitle on iOS.
+
+			<pre>type Message struct {
+<span id="Message.To"></span>    <span class="comment">// To is a slice of distinations. Each sender should recognize the distination to identify their actual address.</span>
+    To []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;to,omitempty&#34;`
+<span id="Message.Title"></span>    <span class="comment">// Title is the title to display in the notification. Often displayed above the notification body</span>
+    Title <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;title,omitempty&#34;`
+    <span class="comment">// Title is a message to display in the notification.</span>
+<span id="Message.Body"></span>    Body <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;body&#34;`
+    <span class="comment">// TTL is the number of seconds for which the message may be kept around for redelivery if it hasn&#39;t been delivered yet.</span>
+    <span class="comment">// Defaults to undefined in order to use the respective defaults of each provider (0 for iOS/APNs and 2419200 (4 weeks) for Android/FCM).</span>
+<span id="Message.TTLSeconds"></span>    TTLSeconds <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a> `json:&#34;ttl,omitempty&#34;`
+    <span class="comment">// The delivery priority of the message. Specify &#34;default&#34; or omit this field to use the default priority on each platform (&#34;normal&#34; on Android and &#34;high&#34; on iOS).</span>
+<span id="Message.Priority"></span>    Priority <a href="index.html#MessagePriority">MessagePriority</a> `json:&#34;priority,omitempty&#34;`
+<span id="Message.Sound"></span>    <span class="comment">// Sound is a sound when the recipient receives this notification. Specify &#34;default&#34; to play the device&#39;s default notification sound,</span>
+    <span class="comment">// or omit this field to play no sound. Custom sounds are not supported.</span>
+    Sound <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;sound,omitempty&#34;`
+<span id="Message.Badge"></span>    <span class="comment">// Badge is	a number to display in the badge on the app icon. Specify zero to clear the badge.</span>
+    Badge <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a> `json:&#34;badge,omitempty&#34;`
+
+    <span class="comment">// Image is an configuration for the badge in push notification.</span>
+    <span class="comment">// The field is not yet supprted by Expo Push API.</span>
+<span id="Message.ImageUrl"></span>    ImageUrl <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;image_url,omitempty&#34;`
+
+<span id="Message.Data"></span>    <span class="comment">// Data contains the service specific data (so some clients recognize some fields)</span>
+    Data map[<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>]interface{} `json:&#34;data,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="GetMockSentMessages">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/push/mock.go?s=325:381#L11">GetMockSentMessages</a>
+					<a class="permalink" href="index.html#GetMockSentMessages">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func GetMockSentMessages(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) []*<a href="index.html#Message">Message</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="MessagePriority">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/push/push.go?s=32:59#L1">MessagePriority</a>
+				<a class="permalink" href="index.html#MessagePriority">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MessagePriority <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="MessagePriorityDefault">MessagePriorityDefault</span> <a href="index.html#MessagePriority">MessagePriority</a> = &#34;default&#34;
+    <span id="MessagePriorityNormal">MessagePriorityNormal</span>  <a href="index.html#MessagePriority">MessagePriority</a> = &#34;normal&#34;
+    <span id="MessagePriorityHigh">MessagePriorityHigh</span>    <a href="index.html#MessagePriority">MessagePriority</a> = &#34;high&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

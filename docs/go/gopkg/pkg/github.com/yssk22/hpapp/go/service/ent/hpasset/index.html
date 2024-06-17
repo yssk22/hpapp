@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>hpasset - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package hpasset
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/ent/hpasset"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#And">func And(predicates ...predicate.HPAsset) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeEQ">func AssetTypeEQ(v enums.HPAssetType) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeIn">func AssetTypeIn(vs ...enums.HPAssetType) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeNEQ">func AssetTypeNEQ(v enums.HPAssetType) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeNotIn">func AssetTypeNotIn(vs ...enums.HPAssetType) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeValidator">func AssetTypeValidator(at enums.HPAssetType) error</a></dd>
+			
+				
+				<dd><a href="index.html#HasAmebloPosts">func HasAmebloPosts() predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#HasAmebloPostsWith">func HasAmebloPostsWith(preds ...predicate.HPAmebloPost) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#HasArtist">func HasArtist() predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#HasArtistWith">func HasArtistWith(preds ...predicate.HPArtist) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#HasIgPosts">func HasIgPosts() predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#HasIgPostsWith">func HasIgPostsWith(preds ...predicate.HPIgPost) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#HasMembers">func HasMembers() predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#HasMembersWith">func HasMembersWith(preds ...predicate.HPMember) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#ID">func ID(id int) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#IDEQ">func IDEQ(id int) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#IDGT">func IDGT(id int) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#IDGTE">func IDGTE(id int) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#IDIn">func IDIn(ids ...int) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#IDLT">func IDLT(id int) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#IDLTE">func IDLTE(id int) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#IDNEQ">func IDNEQ(id int) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#IDNotIn">func IDNotIn(ids ...int) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#Key">func Key(v string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyContains">func KeyContains(v string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyContainsFold">func KeyContainsFold(v string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyEQ">func KeyEQ(v string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyEqualFold">func KeyEqualFold(v string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyGT">func KeyGT(v string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyGTE">func KeyGTE(v string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyHasPrefix">func KeyHasPrefix(v string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyHasSuffix">func KeyHasSuffix(v string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyIn">func KeyIn(vs ...string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyLT">func KeyLT(v string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyLTE">func KeyLTE(v string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyNEQ">func KeyNEQ(v string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#KeyNotIn">func KeyNotIn(vs ...string) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#Not">func Not(p predicate.HPAsset) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#Or">func Or(predicates ...predicate.HPAsset) predicate.HPAsset</a></dd>
+			
+				
+				<dd><a href="index.html#ValidColumn">func ValidColumn(column string) bool</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Order">type Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByAmebloPosts">func ByAmebloPosts(term sql.OrderTerm, terms ...sql.OrderTerm) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByAmebloPostsCount">func ByAmebloPostsCount(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByArtistField">func ByArtistField(field string, opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByAssetType">func ByAssetType(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByID">func ByID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByIgPosts">func ByIgPosts(term sql.OrderTerm, terms ...sql.OrderTerm) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByIgPostsCount">func ByIgPostsCount(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByKey">func ByKey(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByMembers">func ByMembers(term sql.OrderTerm, terms ...sql.OrderTerm) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByMembersCount">func ByMembersCount(opts ...sql.OrderTermOption) Order</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go">hpasset.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go">where.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span class="comment">// Label holds the string label denoting the hpasset type in the database.</span>
+    <span id="Label">Label</span> = &#34;hp_asset&#34;
+    <span class="comment">// FieldID holds the string denoting the id field in the database.</span>
+    <span id="FieldID">FieldID</span> = &#34;id&#34;
+    <span class="comment">// FieldKey holds the string denoting the key field in the database.</span>
+    <span id="FieldKey">FieldKey</span> = &#34;key&#34;
+    <span class="comment">// FieldAssetType holds the string denoting the asset_type field in the database.</span>
+    <span id="FieldAssetType">FieldAssetType</span> = &#34;asset_type&#34;
+    <span class="comment">// EdgeArtist holds the string denoting the artist edge name in mutations.</span>
+    <span id="EdgeArtist">EdgeArtist</span> = &#34;artist&#34;
+    <span class="comment">// EdgeMembers holds the string denoting the members edge name in mutations.</span>
+    <span id="EdgeMembers">EdgeMembers</span> = &#34;members&#34;
+    <span class="comment">// EdgeAmebloPosts holds the string denoting the ameblo_posts edge name in mutations.</span>
+    <span id="EdgeAmebloPosts">EdgeAmebloPosts</span> = &#34;ameblo_posts&#34;
+    <span class="comment">// EdgeIgPosts holds the string denoting the ig_posts edge name in mutations.</span>
+    <span id="EdgeIgPosts">EdgeIgPosts</span> = &#34;ig_posts&#34;
+    <span class="comment">// Table holds the table name of the hpasset in the database.</span>
+    <span id="Table">Table</span> = &#34;hp_assets&#34;
+    <span class="comment">// ArtistTable is the table that holds the artist relation/edge.</span>
+    <span id="ArtistTable">ArtistTable</span> = &#34;hp_assets&#34;
+    <span class="comment">// ArtistInverseTable is the table name for the HPArtist entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpartist&#34; package.</span>
+    <span id="ArtistInverseTable">ArtistInverseTable</span> = &#34;hp_artists&#34;
+    <span class="comment">// ArtistColumn is the table column denoting the artist relation/edge.</span>
+    <span id="ArtistColumn">ArtistColumn</span> = &#34;hp_artist_assets&#34;
+    <span class="comment">// MembersTable is the table that holds the members relation/edge. The primary key declared below.</span>
+    <span id="MembersTable">MembersTable</span> = &#34;hp_member_assets&#34;
+    <span class="comment">// MembersInverseTable is the table name for the HPMember entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpmember&#34; package.</span>
+    <span id="MembersInverseTable">MembersInverseTable</span> = &#34;hp_members&#34;
+    <span class="comment">// AmebloPostsTable is the table that holds the ameblo_posts relation/edge.</span>
+    <span id="AmebloPostsTable">AmebloPostsTable</span> = &#34;hp_ameblo_posts&#34;
+    <span class="comment">// AmebloPostsInverseTable is the table name for the HPAmebloPost entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpameblopost&#34; package.</span>
+    <span id="AmebloPostsInverseTable">AmebloPostsInverseTable</span> = &#34;hp_ameblo_posts&#34;
+    <span class="comment">// AmebloPostsColumn is the table column denoting the ameblo_posts relation/edge.</span>
+    <span id="AmebloPostsColumn">AmebloPostsColumn</span> = &#34;hp_asset_ameblo_posts&#34;
+    <span class="comment">// IgPostsTable is the table that holds the ig_posts relation/edge.</span>
+    <span id="IgPostsTable">IgPostsTable</span> = &#34;hp_ig_posts&#34;
+    <span class="comment">// IgPostsInverseTable is the table name for the HPIgPost entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpigpost&#34; package.</span>
+    <span id="IgPostsInverseTable">IgPostsInverseTable</span> = &#34;hp_ig_posts&#34;
+    <span class="comment">// IgPostsColumn is the table column denoting the ig_posts relation/edge.</span>
+    <span id="IgPostsColumn">IgPostsColumn</span> = &#34;hp_asset_ig_posts&#34;
+)</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				<p>Columns holds all SQL columns for hpasset fields.
+
+				<pre>var <span id="Columns">Columns</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{
+    <a href="index.html#FieldID">FieldID</a>,
+    <a href="index.html#FieldKey">FieldKey</a>,
+    <a href="index.html#FieldAssetType">FieldAssetType</a>,
+}</pre>
+			
+				<p>ForeignKeys holds the SQL foreign-keys that are owned by the &quot;hp_assets&quot;
+table and are not defined as standalone fields in the schema.
+
+				<pre>var <span id="ForeignKeys">ForeignKeys</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{
+    &#34;hp_artist_assets&#34;,
+}</pre>
+			
+				
+				<pre>var (
+    <span class="comment">// MembersPrimaryKey and MembersColumn2 are the table columns denoting the</span>
+    <span class="comment">// primary key for the members relation (M2M).</span>
+    <span id="MembersPrimaryKey">MembersPrimaryKey</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{&#34;hp_member_id&#34;, &#34;hp_asset_id&#34;}
+)</pre>
+			
+		
+		
+			
+			
+			<h2 id="And">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=7722:7781#L240">And</a>
+				<a class="permalink" href="index.html#And">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func And(predicates ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>And groups predicates with the AND operator between them.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=3944:3999#L118">AssetTypeEQ</a>
+				<a class="permalink" href="index.html#AssetTypeEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>AssetTypeEQ applies the EQ predicate on the &quot;asset_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=4340:4399#L130">AssetTypeIn</a>
+				<a class="permalink" href="index.html#AssetTypeIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>AssetTypeIn applies the In predicate on the &quot;asset_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=4142:4198#L124">AssetTypeNEQ</a>
+				<a class="permalink" href="index.html#AssetTypeNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeNEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>AssetTypeNEQ applies the NEQ predicate on the &quot;asset_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=4604:4666#L139">AssetTypeNotIn</a>
+				<a class="permalink" href="index.html#AssetTypeNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeNotIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>AssetTypeNotIn applies the NotIn predicate on the &quot;asset_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeValidator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=3666:3717#L86">AssetTypeValidator</a>
+				<a class="permalink" href="index.html#AssetTypeValidator">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeValidator(at <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			<p>AssetTypeValidator is a validator for the &quot;asset_type&quot; field enum values. It is called by the builders before save.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasAmebloPosts">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=6283:6322#L194">HasAmebloPosts</a>
+				<a class="permalink" href="index.html#HasAmebloPosts">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasAmebloPosts() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>HasAmebloPosts applies the HasEdge predicate on the &quot;ameblo_posts&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasAmebloPostsWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=6680:6754#L205">HasAmebloPostsWith</a>
+				<a class="permalink" href="index.html#HasAmebloPostsWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasAmebloPostsWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAmebloPost">HPAmebloPost</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>HasAmebloPostsWith applies the HasEdge predicate on the &quot;ameblo_posts&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasArtist">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=4866:4900#L148">HasArtist</a>
+				<a class="permalink" href="index.html#HasArtist">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasArtist() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>HasArtist applies the HasEdge predicate on the &quot;artist&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasArtistWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=5236:5301#L159">HasArtistWith</a>
+				<a class="permalink" href="index.html#HasArtistWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasArtistWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPArtist">HPArtist</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>HasArtistWith applies the HasEdge predicate on the &quot;artist&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasIgPosts">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=7022:7057#L217">HasIgPosts</a>
+				<a class="permalink" href="index.html#HasIgPosts">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasIgPosts() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>HasIgPosts applies the HasEdge predicate on the &quot;ig_posts&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasIgPostsWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=7399:7465#L228">HasIgPostsWith</a>
+				<a class="permalink" href="index.html#HasIgPostsWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasIgPostsWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPIgPost">HPIgPost</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>HasIgPostsWith applies the HasEdge predicate on the &quot;ig_posts&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasMembers">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=5563:5598#L171">HasMembers</a>
+				<a class="permalink" href="index.html#HasMembers">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasMembers() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>HasMembers applies the HasEdge predicate on the &quot;members&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasMembersWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=5945:6011#L182">HasMembersWith</a>
+				<a class="permalink" href="index.html#HasMembersWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasMembersWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPMember">HPMember</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>HasMembersWith applies the HasEdge predicate on the &quot;members&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="ID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=285:318#L3">ID</a>
+				<a class="permalink" href="index.html#ID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ID(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>ID filters vertices based on their ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=426:461#L8">IDEQ</a>
+				<a class="permalink" href="index.html#IDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDEQ(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>IDEQ applies the EQ predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=1030:1065#L28">IDGT</a>
+				<a class="permalink" href="index.html#IDGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDGT(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>IDGT applies the GT predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=1175:1211#L33">IDGTE</a>
+				<a class="permalink" href="index.html#IDGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDGTE(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>IDGTE applies the GTE predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=716:755#L18">IDIn</a>
+				<a class="permalink" href="index.html#IDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDIn(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>IDIn applies the In predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=1320:1355#L38">IDLT</a>
+				<a class="permalink" href="index.html#IDLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDLT(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>IDLT applies the LT predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=1465:1501#L43">IDLTE</a>
+				<a class="permalink" href="index.html#IDLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDLTE(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>IDLTE applies the LTE predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=571:607#L13">IDNEQ</a>
+				<a class="permalink" href="index.html#IDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDNEQ(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>IDNEQ applies the NEQ predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=873:915#L23">IDNotIn</a>
+				<a class="permalink" href="index.html#IDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDNotIn(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>IDNotIn applies the NotIn predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Key">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=1645:1681#L48">Key</a>
+				<a class="permalink" href="index.html#Key">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Key(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>Key applies equality check predicate on the &quot;key&quot; field. It&apos;s identical to KeyEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyContains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=3045:3089#L93">KeyContains</a>
+				<a class="permalink" href="index.html#KeyContains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyContains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyContains applies the Contains predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=3761:3809#L113">KeyContainsFold</a>
+				<a class="permalink" href="index.html#KeyContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyContainsFold applies the ContainsFold predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=1793:1831#L53">KeyEQ</a>
+				<a class="permalink" href="index.html#KeyEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyEQ applies the EQ predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyEqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=3577:3622#L108">KeyEqualFold</a>
+				<a class="permalink" href="index.html#KeyEqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyEqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyEqualFold applies the EqualFold predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=2425:2463#L73">KeyGT</a>
+				<a class="permalink" href="index.html#KeyGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyGT applies the GT predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=2577:2616#L78">KeyGTE</a>
+				<a class="permalink" href="index.html#KeyGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyGTE applies the GTE predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyHasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=3221:3266#L98">KeyHasPrefix</a>
+				<a class="permalink" href="index.html#KeyHasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyHasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyHasPrefix applies the HasPrefix predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyHasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=3399:3444#L103">KeyHasSuffix</a>
+				<a class="permalink" href="index.html#KeyHasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyHasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyHasSuffix applies the HasSuffix predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=2097:2139#L63">KeyIn</a>
+				<a class="permalink" href="index.html#KeyIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyIn applies the In predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=2729:2767#L83">KeyLT</a>
+				<a class="permalink" href="index.html#KeyLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyLT applies the LT predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=2881:2920#L88">KeyLTE</a>
+				<a class="permalink" href="index.html#KeyLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyLTE applies the LTE predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=1945:1984#L58">KeyNEQ</a>
+				<a class="permalink" href="index.html#KeyNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyNEQ applies the NEQ predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="KeyNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=2261:2306#L68">KeyNotIn</a>
+				<a class="permalink" href="index.html#KeyNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func KeyNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>KeyNotIn applies the NotIn predicate on the &quot;key&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Not">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=8289:8336#L265">Not</a>
+				<a class="permalink" href="index.html#Not">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Not(p <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>Not applies the not operator on the given predicate.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Or">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/where.go?s=7992:8050#L251">Or</a>
+				<a class="permalink" href="index.html#Or">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Or(predicates ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAsset">HPAsset</a></pre>
+			<p>Or groups predicates with the OR operator between them.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ValidColumn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=3331:3367#L71">ValidColumn</a>
+				<a class="permalink" href="index.html#ValidColumn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ValidColumn(column <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a></pre>
+			<p>ValidColumn reports if the column name is valid (part of the table columns).
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Order">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=3980:4010#L96">Order</a>
+				<a class="permalink" href="index.html#Order">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Order defines the ordering method for the HPAsset queries.
+
+			<pre>type Order func(*<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#Selector">Selector</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="ByAmebloPosts">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=5484:5552#L142">ByAmebloPosts</a>
+					<a class="permalink" href="index.html#ByAmebloPosts">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByAmebloPosts(term <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>, terms ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByAmebloPosts orders the results by ameblo_posts terms.
+
+				
+				
+			
+				
+				<h3 id="ByAmebloPostsCount">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=5259:5317#L135">ByAmebloPostsCount</a>
+					<a class="permalink" href="index.html#ByAmebloPostsCount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByAmebloPostsCount(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByAmebloPostsCount orders the results by ameblo_posts count.
+
+				
+				
+			
+				
+				<h3 id="ByArtistField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=4536:4603#L114">ByArtistField</a>
+					<a class="permalink" href="index.html#ByArtistField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByArtistField(field <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByArtistField orders the results by artist field.
+
+				
+				
+			
+				
+				<h3 id="ByAssetType">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=4367:4418#L109">ByAssetType</a>
+					<a class="permalink" href="index.html#ByAssetType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByAssetType(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByAssetType orders the results by the asset_type field.
+
+				
+				
+			
+				
+				<h3 id="ByID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=4056:4100#L99">ByID</a>
+					<a class="permalink" href="index.html#ByID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByID orders the results by the id field.
+
+				
+				
+			
+				
+				<h3 id="ByIgPosts">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=5959:6023#L156">ByIgPosts</a>
+					<a class="permalink" href="index.html#ByIgPosts">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByIgPosts(term <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>, terms ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByIgPosts orders the results by ig_posts terms.
+
+				
+				
+			
+				
+				<h3 id="ByIgPostsCount">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=5750:5804#L149">ByIgPostsCount</a>
+					<a class="permalink" href="index.html#ByIgPostsCount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByIgPostsCount(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByIgPostsCount orders the results by ig_posts count.
+
+				
+				
+			
+				
+				<h3 id="ByKey">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=4204:4249#L104">ByKey</a>
+					<a class="permalink" href="index.html#ByKey">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByKey(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByKey orders the results by the key field.
+
+				
+				
+			
+				
+				<h3 id="ByMembers">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=4993:5057#L128">ByMembers</a>
+					<a class="permalink" href="index.html#ByMembers">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByMembers(term <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>, terms ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByMembers orders the results by members terms.
+
+				
+				
+			
+				
+				<h3 id="ByMembersCount">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpasset/hpasset.go?s=4785:4839#L121">ByMembersCount</a>
+					<a class="permalink" href="index.html#ByMembersCount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByMembersCount(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByMembersCount orders the results by members count.
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

@@ -1,0 +1,3001 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>hpfceventticket - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package hpfceventticket
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/ent/hpfceventticket"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#And">func And(predicates ...predicate.HPFCEventTicket) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationDueDate">func ApplicationDueDate(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationDueDateEQ">func ApplicationDueDateEQ(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationDueDateGT">func ApplicationDueDateGT(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationDueDateGTE">func ApplicationDueDateGTE(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationDueDateIn">func ApplicationDueDateIn(vs ...time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationDueDateIsNil">func ApplicationDueDateIsNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationDueDateLT">func ApplicationDueDateLT(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationDueDateLTE">func ApplicationDueDateLTE(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationDueDateNEQ">func ApplicationDueDateNEQ(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationDueDateNotIn">func ApplicationDueDateNotIn(vs ...time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationDueDateNotNil">func ApplicationDueDateNotNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationID">func ApplicationID(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDContains">func ApplicationIDContains(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDContainsFold">func ApplicationIDContainsFold(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDEQ">func ApplicationIDEQ(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDEqualFold">func ApplicationIDEqualFold(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDGT">func ApplicationIDGT(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDGTE">func ApplicationIDGTE(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDHasPrefix">func ApplicationIDHasPrefix(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDHasSuffix">func ApplicationIDHasSuffix(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDIn">func ApplicationIDIn(vs ...string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDIsNil">func ApplicationIDIsNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDLT">func ApplicationIDLT(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDLTE">func ApplicationIDLTE(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDNEQ">func ApplicationIDNEQ(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDNotIn">func ApplicationIDNotIn(vs ...string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationIDNotNil">func ApplicationIDNotNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationStartDate">func ApplicationStartDate(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationStartDateEQ">func ApplicationStartDateEQ(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationStartDateGT">func ApplicationStartDateGT(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationStartDateGTE">func ApplicationStartDateGTE(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationStartDateIn">func ApplicationStartDateIn(vs ...time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationStartDateIsNil">func ApplicationStartDateIsNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationStartDateLT">func ApplicationStartDateLT(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationStartDateLTE">func ApplicationStartDateLTE(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationStartDateNEQ">func ApplicationStartDateNEQ(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationStartDateNotIn">func ApplicationStartDateNotIn(vs ...time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationStartDateNotNil">func ApplicationStartDateNotNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitle">func ApplicationTitle(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleContains">func ApplicationTitleContains(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleContainsFold">func ApplicationTitleContainsFold(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleEQ">func ApplicationTitleEQ(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleEqualFold">func ApplicationTitleEqualFold(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleGT">func ApplicationTitleGT(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleGTE">func ApplicationTitleGTE(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleHasPrefix">func ApplicationTitleHasPrefix(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleHasSuffix">func ApplicationTitleHasSuffix(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleIn">func ApplicationTitleIn(vs ...string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleLT">func ApplicationTitleLT(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleLTE">func ApplicationTitleLTE(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleNEQ">func ApplicationTitleNEQ(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ApplicationTitleNotIn">func ApplicationTitleNotIn(vs ...string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAt">func CreatedAt(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtEQ">func CreatedAtEQ(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtGT">func CreatedAtGT(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtGTE">func CreatedAtGTE(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtIn">func CreatedAtIn(vs ...time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtIsNil">func CreatedAtIsNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtLT">func CreatedAtLT(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtLTE">func CreatedAtLTE(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtNEQ">func CreatedAtNEQ(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtNotIn">func CreatedAtNotIn(vs ...time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtNotNil">func CreatedAtNotNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256">func FcMemberSha256(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256Contains">func FcMemberSha256Contains(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256ContainsFold">func FcMemberSha256ContainsFold(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256EQ">func FcMemberSha256EQ(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256EqualFold">func FcMemberSha256EqualFold(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256GT">func FcMemberSha256GT(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256GTE">func FcMemberSha256GTE(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256HasPrefix">func FcMemberSha256HasPrefix(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256HasSuffix">func FcMemberSha256HasSuffix(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256In">func FcMemberSha256In(vs ...string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256LT">func FcMemberSha256LT(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256LTE">func FcMemberSha256LTE(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256NEQ">func FcMemberSha256NEQ(v string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#FcMemberSha256NotIn">func FcMemberSha256NotIn(vs ...string) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#HasEvent">func HasEvent() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#HasEventWith">func HasEventWith(preds ...predicate.HPEvent) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#HasUser">func HasUser() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#HasUserWith">func HasUserWith(preds ...predicate.User) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ID">func ID(id int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#IDEQ">func IDEQ(id int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#IDGT">func IDGT(id int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#IDGTE">func IDGTE(id int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#IDIn">func IDIn(ids ...int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#IDLT">func IDLT(id int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#IDLTE">func IDLTE(id int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#IDNEQ">func IDNEQ(id int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#IDNotIn">func IDNotIn(ids ...int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#Not">func Not(p predicate.HPFCEventTicket) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#Num">func Num(v int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#NumEQ">func NumEQ(v int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#NumGT">func NumGT(v int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#NumGTE">func NumGTE(v int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#NumIn">func NumIn(vs ...int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#NumLT">func NumLT(v int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#NumLTE">func NumLTE(v int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#NumNEQ">func NumNEQ(v int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#NumNotIn">func NumNotIn(vs ...int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#Or">func Or(predicates ...predicate.HPFCEventTicket) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerUserID">func OwnerUserID(v int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerUserIDEQ">func OwnerUserIDEQ(v int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerUserIDIn">func OwnerUserIDIn(vs ...int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerUserIDNEQ">func OwnerUserIDNEQ(v int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerUserIDNotIn">func OwnerUserIDNotIn(vs ...int) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentDueDate">func PaymentDueDate(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentDueDateEQ">func PaymentDueDateEQ(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentDueDateGT">func PaymentDueDateGT(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentDueDateGTE">func PaymentDueDateGTE(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentDueDateIn">func PaymentDueDateIn(vs ...time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentDueDateIsNil">func PaymentDueDateIsNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentDueDateLT">func PaymentDueDateLT(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentDueDateLTE">func PaymentDueDateLTE(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentDueDateNEQ">func PaymentDueDateNEQ(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentDueDateNotIn">func PaymentDueDateNotIn(vs ...time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentDueDateNotNil">func PaymentDueDateNotNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentStartDate">func PaymentStartDate(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentStartDateEQ">func PaymentStartDateEQ(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentStartDateGT">func PaymentStartDateGT(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentStartDateGTE">func PaymentStartDateGTE(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentStartDateIn">func PaymentStartDateIn(vs ...time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentStartDateIsNil">func PaymentStartDateIsNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentStartDateLT">func PaymentStartDateLT(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentStartDateLTE">func PaymentStartDateLTE(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentStartDateNEQ">func PaymentStartDateNEQ(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentStartDateNotIn">func PaymentStartDateNotIn(vs ...time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#PaymentStartDateNotNil">func PaymentStartDateNotNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#StatusEQ">func StatusEQ(v enums.HPEventFCTicketStatus) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#StatusIn">func StatusIn(vs ...enums.HPEventFCTicketStatus) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#StatusNEQ">func StatusNEQ(v enums.HPEventFCTicketStatus) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#StatusNotIn">func StatusNotIn(vs ...enums.HPEventFCTicketStatus) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#StatusValidator">func StatusValidator(s enums.HPEventFCTicketStatus) error</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAt">func UpdatedAt(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtEQ">func UpdatedAtEQ(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtGT">func UpdatedAtGT(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtGTE">func UpdatedAtGTE(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtIn">func UpdatedAtIn(vs ...time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtIsNil">func UpdatedAtIsNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtLT">func UpdatedAtLT(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtLTE">func UpdatedAtLTE(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtNEQ">func UpdatedAtNEQ(v time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtNotIn">func UpdatedAtNotIn(vs ...time.Time) predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtNotNil">func UpdatedAtNotNil() predicate.HPFCEventTicket</a></dd>
+			
+				
+				<dd><a href="index.html#ValidColumn">func ValidColumn(column string) bool</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Order">type Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByApplicationDueDate">func ByApplicationDueDate(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByApplicationID">func ByApplicationID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByApplicationStartDate">func ByApplicationStartDate(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByApplicationTitle">func ByApplicationTitle(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByCreatedAt">func ByCreatedAt(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByEventField">func ByEventField(field string, opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByFcMemberSha256">func ByFcMemberSha256(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByID">func ByID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByNum">func ByNum(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByOwnerUserID">func ByOwnerUserID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByPaymentDueDate">func ByPaymentDueDate(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByPaymentStartDate">func ByPaymentStartDate(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByStatus">func ByStatus(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByUpdatedAt">func ByUpdatedAt(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByUserField">func ByUserField(field string, opts ...sql.OrderTermOption) Order</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go">hpfceventticket.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go">where.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span class="comment">// Label holds the string label denoting the hpfceventticket type in the database.</span>
+    <span id="Label">Label</span> = &#34;hpfc_event_ticket&#34;
+    <span class="comment">// FieldID holds the string denoting the id field in the database.</span>
+    <span id="FieldID">FieldID</span> = &#34;id&#34;
+    <span class="comment">// FieldCreatedAt holds the string denoting the created_at field in the database.</span>
+    <span id="FieldCreatedAt">FieldCreatedAt</span> = &#34;created_at&#34;
+    <span class="comment">// FieldUpdatedAt holds the string denoting the updated_at field in the database.</span>
+    <span id="FieldUpdatedAt">FieldUpdatedAt</span> = &#34;updated_at&#34;
+    <span class="comment">// FieldNum holds the string denoting the num field in the database.</span>
+    <span id="FieldNum">FieldNum</span> = &#34;num&#34;
+    <span class="comment">// FieldStatus holds the string denoting the status field in the database.</span>
+    <span id="FieldStatus">FieldStatus</span> = &#34;status&#34;
+    <span class="comment">// FieldFcMemberSha256 holds the string denoting the fc_member_sha256 field in the database.</span>
+    <span id="FieldFcMemberSha256">FieldFcMemberSha256</span> = &#34;fc_member_sha256&#34;
+    <span class="comment">// FieldApplicationTitle holds the string denoting the application_title field in the database.</span>
+    <span id="FieldApplicationTitle">FieldApplicationTitle</span> = &#34;application_title&#34;
+    <span class="comment">// FieldApplicationID holds the string denoting the application_id field in the database.</span>
+    <span id="FieldApplicationID">FieldApplicationID</span> = &#34;application_id&#34;
+    <span class="comment">// FieldApplicationStartDate holds the string denoting the application_start_date field in the database.</span>
+    <span id="FieldApplicationStartDate">FieldApplicationStartDate</span> = &#34;application_start_date&#34;
+    <span class="comment">// FieldApplicationDueDate holds the string denoting the application_due_date field in the database.</span>
+    <span id="FieldApplicationDueDate">FieldApplicationDueDate</span> = &#34;application_due_date&#34;
+    <span class="comment">// FieldPaymentStartDate holds the string denoting the payment_start_date field in the database.</span>
+    <span id="FieldPaymentStartDate">FieldPaymentStartDate</span> = &#34;payment_start_date&#34;
+    <span class="comment">// FieldPaymentDueDate holds the string denoting the payment_due_date field in the database.</span>
+    <span id="FieldPaymentDueDate">FieldPaymentDueDate</span> = &#34;payment_due_date&#34;
+    <span class="comment">// FieldOwnerUserID holds the string denoting the owner_user_id field in the database.</span>
+    <span id="FieldOwnerUserID">FieldOwnerUserID</span> = &#34;user_hpfc_event_tickets&#34;
+    <span class="comment">// EdgeEvent holds the string denoting the event edge name in mutations.</span>
+    <span id="EdgeEvent">EdgeEvent</span> = &#34;event&#34;
+    <span class="comment">// EdgeUser holds the string denoting the user edge name in mutations.</span>
+    <span id="EdgeUser">EdgeUser</span> = &#34;user&#34;
+    <span class="comment">// Table holds the table name of the hpfceventticket in the database.</span>
+    <span id="Table">Table</span> = &#34;hpfc_event_tickets&#34;
+    <span class="comment">// EventTable is the table that holds the event relation/edge.</span>
+    <span id="EventTable">EventTable</span> = &#34;hpfc_event_tickets&#34;
+    <span class="comment">// EventInverseTable is the table name for the HPEvent entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpevent&#34; package.</span>
+    <span id="EventInverseTable">EventInverseTable</span> = &#34;hp_events&#34;
+    <span class="comment">// EventColumn is the table column denoting the event relation/edge.</span>
+    <span id="EventColumn">EventColumn</span> = &#34;hp_event_hpfc_event_tickets&#34;
+    <span class="comment">// UserTable is the table that holds the user relation/edge.</span>
+    <span id="UserTable">UserTable</span> = &#34;hpfc_event_tickets&#34;
+    <span class="comment">// UserInverseTable is the table name for the User entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;user&#34; package.</span>
+    <span id="UserInverseTable">UserInverseTable</span> = &#34;users&#34;
+    <span class="comment">// UserColumn is the table column denoting the user relation/edge.</span>
+    <span id="UserColumn">UserColumn</span> = &#34;user_hpfc_event_tickets&#34;
+)</pre>
+			
+				
+				<pre>const <span id="DefaultStatus">DefaultStatus</span> <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a> = &#34;Submitted&#34;</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				<p>Note that the variables below are initialized by the runtime
+package on the initialization of the application. Therefore,
+it should be imported in the main as follows:
+<pre>import _ &quot;github.com/yssk22/hpapp/go/service/ent/runtime&quot;
+</pre>
+
+				<pre>var (
+    <span id="Hooks">Hooks</span>  [2]<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Hook">Hook</a>
+    <span id="Policy">Policy</span> <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Policy">Policy</a>
+)</pre>
+			
+				<p>Columns holds all SQL columns for hpfceventticket fields.
+
+				<pre>var <span id="Columns">Columns</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{
+    <a href="index.html#FieldID">FieldID</a>,
+    <a href="index.html#FieldCreatedAt">FieldCreatedAt</a>,
+    <a href="index.html#FieldUpdatedAt">FieldUpdatedAt</a>,
+    <a href="index.html#FieldNum">FieldNum</a>,
+    <a href="index.html#FieldStatus">FieldStatus</a>,
+    <a href="index.html#FieldFcMemberSha256">FieldFcMemberSha256</a>,
+    <a href="index.html#FieldApplicationTitle">FieldApplicationTitle</a>,
+    <a href="index.html#FieldApplicationID">FieldApplicationID</a>,
+    <a href="index.html#FieldApplicationStartDate">FieldApplicationStartDate</a>,
+    <a href="index.html#FieldApplicationDueDate">FieldApplicationDueDate</a>,
+    <a href="index.html#FieldPaymentStartDate">FieldPaymentStartDate</a>,
+    <a href="index.html#FieldPaymentDueDate">FieldPaymentDueDate</a>,
+    <a href="index.html#FieldOwnerUserID">FieldOwnerUserID</a>,
+}</pre>
+			
+				<p>ForeignKeys holds the SQL foreign-keys that are owned by the &quot;hpfc_event_tickets&quot;
+table and are not defined as standalone fields in the schema.
+
+				<pre>var <span id="ForeignKeys">ForeignKeys</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{
+    &#34;hp_event_hpfc_event_tickets&#34;,
+}</pre>
+			
+		
+		
+			
+			
+			<h2 id="And">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=31559:31634#L746">And</a>
+				<a class="permalink" href="index.html#And">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func And(predicates ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>And groups predicates with the AND operator between them.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationDueDate">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=3547:3609#L85">ApplicationDueDate</a>
+				<a class="permalink" href="index.html#ApplicationDueDate">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationDueDate(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationDueDate applies equality check predicate on the &quot;application_due_date&quot; field. It&apos;s identical to ApplicationDueDateEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationDueDateEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=22526:22590#L530">ApplicationDueDateEQ</a>
+				<a class="permalink" href="index.html#ApplicationDueDateEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationDueDateEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationDueDateEQ applies the EQ predicate on the &quot;application_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationDueDateGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=23482:23546#L550">ApplicationDueDateGT</a>
+				<a class="permalink" href="index.html#ApplicationDueDateGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationDueDateGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationDueDateGT applies the GT predicate on the &quot;application_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationDueDateGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=23715:23780#L555">ApplicationDueDateGTE</a>
+				<a class="permalink" href="index.html#ApplicationDueDateGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationDueDateGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationDueDateGTE applies the GTE predicate on the &quot;application_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationDueDateIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=22992:23060#L540">ApplicationDueDateIn</a>
+				<a class="permalink" href="index.html#ApplicationDueDateIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationDueDateIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationDueDateIn applies the In predicate on the &quot;application_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationDueDateIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=24420:24476#L570">ApplicationDueDateIsNil</a>
+				<a class="permalink" href="index.html#ApplicationDueDateIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationDueDateIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationDueDateIsNil applies the IsNil predicate on the &quot;application_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationDueDateLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=23948:24012#L560">ApplicationDueDateLT</a>
+				<a class="permalink" href="index.html#ApplicationDueDateLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationDueDateLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationDueDateLT applies the LT predicate on the &quot;application_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationDueDateLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=24181:24246#L565">ApplicationDueDateLTE</a>
+				<a class="permalink" href="index.html#ApplicationDueDateLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationDueDateLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationDueDateLTE applies the LTE predicate on the &quot;application_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationDueDateNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=22759:22824#L535">ApplicationDueDateNEQ</a>
+				<a class="permalink" href="index.html#ApplicationDueDateNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationDueDateNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationDueDateNEQ applies the NEQ predicate on the &quot;application_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationDueDateNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=23237:23308#L545">ApplicationDueDateNotIn</a>
+				<a class="permalink" href="index.html#ApplicationDueDateNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationDueDateNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationDueDateNotIn applies the NotIn predicate on the &quot;application_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationDueDateNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=24652:24709#L575">ApplicationDueDateNotNil</a>
+				<a class="permalink" href="index.html#ApplicationDueDateNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationDueDateNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationDueDateNotNil applies the NotNil predicate on the &quot;application_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=3000:3054#L75">ApplicationID</a>
+				<a class="permalink" href="index.html#ApplicationID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationID(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationID applies equality check predicate on the &quot;application_id&quot; field. It&apos;s identical to ApplicationIDEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDContains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=18490:18552#L445">ApplicationIDContains</a>
+				<a class="permalink" href="index.html#ApplicationIDContains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDContains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDContains applies the Contains predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=19856:19922#L475">ApplicationIDContainsFold</a>
+				<a class="permalink" href="index.html#ApplicationIDContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDContainsFold applies the ContainsFold predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=16782:16838#L405">ApplicationIDEQ</a>
+				<a class="permalink" href="index.html#ApplicationIDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDEQ applies the EQ predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDEqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=19615:19678#L470">ApplicationIDEqualFold</a>
+				<a class="permalink" href="index.html#ApplicationIDEqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDEqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDEqualFold applies the EqualFold predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=17642:17698#L425">ApplicationIDGT</a>
+				<a class="permalink" href="index.html#ApplicationIDGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDGT applies the GT predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=17851:17908#L430">ApplicationIDGTE</a>
+				<a class="permalink" href="index.html#ApplicationIDGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDGTE applies the GTE predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDHasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=18723:18786#L450">ApplicationIDHasPrefix</a>
+				<a class="permalink" href="index.html#ApplicationIDHasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDHasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDHasPrefix applies the HasPrefix predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDHasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=18958:19021#L455">ApplicationIDHasSuffix</a>
+				<a class="permalink" href="index.html#ApplicationIDHasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDHasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDHasSuffix applies the HasSuffix predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=17200:17260#L415">ApplicationIDIn</a>
+				<a class="permalink" href="index.html#ApplicationIDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDIn applies the In predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=19185:19236#L460">ApplicationIDIsNil</a>
+				<a class="permalink" href="index.html#ApplicationIDIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDIsNil applies the IsNil predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=18060:18116#L435">ApplicationIDLT</a>
+				<a class="permalink" href="index.html#ApplicationIDLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDLT applies the LT predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=18269:18326#L440">ApplicationIDLTE</a>
+				<a class="permalink" href="index.html#ApplicationIDLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDLTE applies the LTE predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=16991:17048#L410">ApplicationIDNEQ</a>
+				<a class="permalink" href="index.html#ApplicationIDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDNEQ applies the NEQ predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=17421:17484#L420">ApplicationIDNotIn</a>
+				<a class="permalink" href="index.html#ApplicationIDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDNotIn applies the NotIn predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationIDNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=19396:19448#L465">ApplicationIDNotNil</a>
+				<a class="permalink" href="index.html#ApplicationIDNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationIDNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationIDNotNil applies the NotNil predicate on the &quot;application_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationStartDate">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=3268:3332#L80">ApplicationStartDate</a>
+				<a class="permalink" href="index.html#ApplicationStartDate">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationStartDate(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationStartDate applies equality check predicate on the &quot;application_start_date&quot; field. It&apos;s identical to ApplicationStartDateEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationStartDateEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=20098:20164#L480">ApplicationStartDateEQ</a>
+				<a class="permalink" href="index.html#ApplicationStartDateEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationStartDateEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationStartDateEQ applies the EQ predicate on the &quot;application_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationStartDateGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=21086:21152#L500">ApplicationStartDateGT</a>
+				<a class="permalink" href="index.html#ApplicationStartDateGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationStartDateGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationStartDateGT applies the GT predicate on the &quot;application_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationStartDateGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=21327:21394#L505">ApplicationStartDateGTE</a>
+				<a class="permalink" href="index.html#ApplicationStartDateGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationStartDateGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationStartDateGTE applies the GTE predicate on the &quot;application_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationStartDateIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=20580:20650#L490">ApplicationStartDateIn</a>
+				<a class="permalink" href="index.html#ApplicationStartDateIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationStartDateIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationStartDateIn applies the In predicate on the &quot;application_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationStartDateIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=22056:22114#L520">ApplicationStartDateIsNil</a>
+				<a class="permalink" href="index.html#ApplicationStartDateIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationStartDateIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationStartDateIsNil applies the IsNil predicate on the &quot;application_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationStartDateLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=21568:21634#L510">ApplicationStartDateLT</a>
+				<a class="permalink" href="index.html#ApplicationStartDateLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationStartDateLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationStartDateLT applies the LT predicate on the &quot;application_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationStartDateLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=21809:21876#L515">ApplicationStartDateLTE</a>
+				<a class="permalink" href="index.html#ApplicationStartDateLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationStartDateLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationStartDateLTE applies the LTE predicate on the &quot;application_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationStartDateNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=20339:20406#L485">ApplicationStartDateNEQ</a>
+				<a class="permalink" href="index.html#ApplicationStartDateNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationStartDateNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationStartDateNEQ applies the NEQ predicate on the &quot;application_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationStartDateNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=20833:20906#L495">ApplicationStartDateNotIn</a>
+				<a class="permalink" href="index.html#ApplicationStartDateNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationStartDateNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationStartDateNotIn applies the NotIn predicate on the &quot;application_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationStartDateNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=22296:22355#L525">ApplicationStartDateNotNil</a>
+				<a class="permalink" href="index.html#ApplicationStartDateNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationStartDateNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationStartDateNotNil applies the NotNil predicate on the &quot;application_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitle">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=2748:2805#L70">ApplicationTitle</a>
+				<a class="permalink" href="index.html#ApplicationTitle">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitle(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitle applies equality check predicate on the &quot;application_title&quot; field. It&apos;s identical to ApplicationTitleEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleContains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=15557:15622#L380">ApplicationTitleContains</a>
+				<a class="permalink" href="index.html#ApplicationTitleContains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleContains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleContains applies the Contains predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=16549:16618#L400">ApplicationTitleContainsFold</a>
+				<a class="permalink" href="index.html#ApplicationTitleContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleContainsFold applies the ContainsFold predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=13753:13812#L340">ApplicationTitleEQ</a>
+				<a class="permalink" href="index.html#ApplicationTitleEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleEQ applies the EQ predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleEqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=16296:16362#L395">ApplicationTitleEqualFold</a>
+				<a class="permalink" href="index.html#ApplicationTitleEqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleEqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleEqualFold applies the EqualFold predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=14661:14720#L360">ApplicationTitleGT</a>
+				<a class="permalink" href="index.html#ApplicationTitleGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleGT applies the GT predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=14882:14942#L365">ApplicationTitleGTE</a>
+				<a class="permalink" href="index.html#ApplicationTitleGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleGTE applies the GTE predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleHasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=15802:15868#L385">ApplicationTitleHasPrefix</a>
+				<a class="permalink" href="index.html#ApplicationTitleHasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleHasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleHasPrefix applies the HasPrefix predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleHasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=16049:16115#L390">ApplicationTitleHasSuffix</a>
+				<a class="permalink" href="index.html#ApplicationTitleHasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleHasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleHasSuffix applies the HasSuffix predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=14195:14258#L350">ApplicationTitleIn</a>
+				<a class="permalink" href="index.html#ApplicationTitleIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleIn applies the In predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=15103:15162#L370">ApplicationTitleLT</a>
+				<a class="permalink" href="index.html#ApplicationTitleLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleLT applies the LT predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=15324:15384#L375">ApplicationTitleLTE</a>
+				<a class="permalink" href="index.html#ApplicationTitleLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleLTE applies the LTE predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=13974:14034#L345">ApplicationTitleNEQ</a>
+				<a class="permalink" href="index.html#ApplicationTitleNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleNEQ applies the NEQ predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ApplicationTitleNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=14428:14494#L355">ApplicationTitleNotIn</a>
+				<a class="permalink" href="index.html#ApplicationTitleNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ApplicationTitleNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ApplicationTitleNotIn applies the NotIn predicate on the &quot;application_title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=1825:1878#L50">CreatedAt</a>
+				<a class="permalink" href="index.html#CreatedAt">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAt(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>CreatedAt applies equality check predicate on the &quot;created_at&quot; field. It&apos;s identical to CreatedAtEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=4511:4566#L105">CreatedAtEQ</a>
+				<a class="permalink" href="index.html#CreatedAtEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>CreatedAtEQ applies the EQ predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=5319:5374#L125">CreatedAtGT</a>
+				<a class="permalink" href="index.html#CreatedAtGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>CreatedAtGT applies the GT predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=5515:5571#L130">CreatedAtGTE</a>
+				<a class="permalink" href="index.html#CreatedAtGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>CreatedAtGTE applies the GTE predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=4903:4962#L115">CreatedAtIn</a>
+				<a class="permalink" href="index.html#CreatedAtIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>CreatedAtIn applies the In predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=6109:6156#L145">CreatedAtIsNil</a>
+				<a class="permalink" href="index.html#CreatedAtIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>CreatedAtIsNil applies the IsNil predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=5711:5766#L135">CreatedAtLT</a>
+				<a class="permalink" href="index.html#CreatedAtLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>CreatedAtLT applies the LT predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=5907:5963#L140">CreatedAtLTE</a>
+				<a class="permalink" href="index.html#CreatedAtLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>CreatedAtLTE applies the LTE predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=4707:4763#L110">CreatedAtNEQ</a>
+				<a class="permalink" href="index.html#CreatedAtNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>CreatedAtNEQ applies the NEQ predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=5111:5173#L120">CreatedAtNotIn</a>
+				<a class="permalink" href="index.html#CreatedAtNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>CreatedAtNotIn applies the NotIn predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=6304:6352#L150">CreatedAtNotNil</a>
+				<a class="permalink" href="index.html#CreatedAtNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>CreatedAtNotNil applies the NotNil predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=2491:2546#L65">FcMemberSha256</a>
+				<a class="permalink" href="index.html#FcMemberSha256">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256 applies equality check predicate on the &quot;fc_member_sha256&quot; field. It&apos;s identical to FcMemberSha256EQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256Contains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=12554:12617#L315">FcMemberSha256Contains</a>
+				<a class="permalink" href="index.html#FcMemberSha256Contains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256Contains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256Contains applies the Contains predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256ContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=13518:13585#L335">FcMemberSha256ContainsFold</a>
+				<a class="permalink" href="index.html#FcMemberSha256ContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256ContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256ContainsFold applies the ContainsFold predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256EQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=10806:10863#L275">FcMemberSha256EQ</a>
+				<a class="permalink" href="index.html#FcMemberSha256EQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256EQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256EQ applies the EQ predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256EqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=13272:13336#L330">FcMemberSha256EqualFold</a>
+				<a class="permalink" href="index.html#FcMemberSha256EqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256EqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256EqualFold applies the EqualFold predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256GT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=11686:11743#L295">FcMemberSha256GT</a>
+				<a class="permalink" href="index.html#FcMemberSha256GT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256GT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256GT applies the GT predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256GTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=11900:11958#L300">FcMemberSha256GTE</a>
+				<a class="permalink" href="index.html#FcMemberSha256GTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256GTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256GTE applies the GTE predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256HasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=12792:12856#L320">FcMemberSha256HasPrefix</a>
+				<a class="permalink" href="index.html#FcMemberSha256HasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256HasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256HasPrefix applies the HasPrefix predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256HasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=13032:13096#L325">FcMemberSha256HasSuffix</a>
+				<a class="permalink" href="index.html#FcMemberSha256HasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256HasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256HasSuffix applies the HasSuffix predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256In">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=11234:11295#L285">FcMemberSha256In</a>
+				<a class="permalink" href="index.html#FcMemberSha256In">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256In(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256In applies the In predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256LT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=12114:12171#L305">FcMemberSha256LT</a>
+				<a class="permalink" href="index.html#FcMemberSha256LT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256LT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256LT applies the LT predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256LTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=12328:12386#L310">FcMemberSha256LTE</a>
+				<a class="permalink" href="index.html#FcMemberSha256LTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256LTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256LTE applies the LTE predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256NEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=11020:11078#L280">FcMemberSha256NEQ</a>
+				<a class="permalink" href="index.html#FcMemberSha256NEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256NEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256NEQ applies the NEQ predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FcMemberSha256NotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=11460:11524#L290">FcMemberSha256NotIn</a>
+				<a class="permalink" href="index.html#FcMemberSha256NotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FcMemberSha256NotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>FcMemberSha256NotIn applies the NotIn predicate on the &quot;fc_member_sha256&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasEvent">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=30139:30180#L700">HasEvent</a>
+				<a class="permalink" href="index.html#HasEvent">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasEvent() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>HasEvent applies the HasEdge predicate on the &quot;event&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasEventWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=30520:30591#L711">HasEventWith</a>
+				<a class="permalink" href="index.html#HasEventWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasEventWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPEvent">HPEvent</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>HasEventWith applies the HasEdge predicate on the &quot;event&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=30854:30894#L723">HasUser</a>
+				<a class="permalink" href="index.html#HasUser">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasUser() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>HasUser applies the HasEdge predicate on the &quot;user&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasUserWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=31230:31297#L734">HasUserWith</a>
+				<a class="permalink" href="index.html#HasUserWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasUserWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#User">User</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>HasUserWith applies the HasEdge predicate on the &quot;user&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="ID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=302:343#L5">ID</a>
+				<a class="permalink" href="index.html#ID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ID(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>ID filters vertices based on their ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=459:502#L10">IDEQ</a>
+				<a class="permalink" href="index.html#IDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDEQ(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>IDEQ applies the EQ predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=1127:1170#L30">IDGT</a>
+				<a class="permalink" href="index.html#IDGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDGT(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>IDGT applies the GT predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=1288:1332#L35">IDGTE</a>
+				<a class="permalink" href="index.html#IDGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDGTE(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>IDGTE applies the GTE predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=781:828#L20">IDIn</a>
+				<a class="permalink" href="index.html#IDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDIn(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>IDIn applies the In predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=1449:1492#L40">IDLT</a>
+				<a class="permalink" href="index.html#IDLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDLT(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>IDLT applies the LT predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=1610:1654#L45">IDLTE</a>
+				<a class="permalink" href="index.html#IDLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDLTE(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>IDLTE applies the LTE predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=620:664#L15">IDNEQ</a>
+				<a class="permalink" href="index.html#IDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDNEQ(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>IDNEQ applies the NEQ predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=954:1004#L25">IDNotIn</a>
+				<a class="permalink" href="index.html#IDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDNotIn(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>IDNotIn applies the NotIn predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Not">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=32174:32237#L771">Not</a>
+				<a class="permalink" href="index.html#Not">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Not(p <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>Not applies the not operator on the given predicate.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Num">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=2264:2305#L60">Num</a>
+				<a class="permalink" href="index.html#Num">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Num(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>Num applies equality check predicate on the &quot;num&quot; field. It&apos;s identical to NumEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=8462:8505#L205">NumEQ</a>
+				<a class="permalink" href="index.html#NumEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>NumEQ applies the EQ predicate on the &quot;num&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=9146:9189#L225">NumGT</a>
+				<a class="permalink" href="index.html#NumGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>NumGT applies the GT predicate on the &quot;num&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=9311:9355#L230">NumGTE</a>
+				<a class="permalink" href="index.html#NumGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>NumGTE applies the GTE predicate on the &quot;num&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=8792:8839#L215">NumIn</a>
+				<a class="permalink" href="index.html#NumIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>NumIn applies the In predicate on the &quot;num&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=9476:9519#L235">NumLT</a>
+				<a class="permalink" href="index.html#NumLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>NumLT applies the LT predicate on the &quot;num&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=9641:9685#L240">NumLTE</a>
+				<a class="permalink" href="index.html#NumLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>NumLTE applies the LTE predicate on the &quot;num&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=8627:8671#L210">NumNEQ</a>
+				<a class="permalink" href="index.html#NumNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>NumNEQ applies the NEQ predicate on the &quot;num&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=8969:9019#L220">NumNotIn</a>
+				<a class="permalink" href="index.html#NumNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>NumNotIn applies the NotIn predicate on the &quot;num&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Or">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=31853:31927#L757">Or</a>
+				<a class="permalink" href="index.html#Or">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Or(predicates ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>Or groups predicates with the OR operator between them.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerUserID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=4321:4370#L100">OwnerUserID</a>
+				<a class="permalink" href="index.html#OwnerUserID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerUserID(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>OwnerUserID applies equality check predicate on the &quot;owner_user_id&quot; field. It&apos;s identical to OwnerUserIDEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerUserIDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=29328:29379#L680">OwnerUserIDEQ</a>
+				<a class="permalink" href="index.html#OwnerUserIDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerUserIDEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>OwnerUserIDEQ applies the EQ predicate on the &quot;owner_user_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerUserIDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=29726:29781#L690">OwnerUserIDIn</a>
+				<a class="permalink" href="index.html#OwnerUserIDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerUserIDIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>OwnerUserIDIn applies the In predicate on the &quot;owner_user_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerUserIDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=29527:29579#L685">OwnerUserIDNEQ</a>
+				<a class="permalink" href="index.html#OwnerUserIDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerUserIDNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>OwnerUserIDNEQ applies the NEQ predicate on the &quot;owner_user_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerUserIDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=29937:29995#L695">OwnerUserIDNotIn</a>
+				<a class="permalink" href="index.html#OwnerUserIDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerUserIDNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>OwnerUserIDNotIn applies the NotIn predicate on the &quot;owner_user_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentDueDate">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=4075:4133#L95">PaymentDueDate</a>
+				<a class="permalink" href="index.html#PaymentDueDate">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentDueDate(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentDueDate applies equality check predicate on the &quot;payment_due_date&quot; field. It&apos;s identical to PaymentDueDateEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentDueDateEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=27142:27202#L630">PaymentDueDateEQ</a>
+				<a class="permalink" href="index.html#PaymentDueDateEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentDueDateEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentDueDateEQ applies the EQ predicate on the &quot;payment_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentDueDateGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=28034:28094#L650">PaymentDueDateGT</a>
+				<a class="permalink" href="index.html#PaymentDueDateGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentDueDateGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentDueDateGT applies the GT predicate on the &quot;payment_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentDueDateGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=28251:28312#L655">PaymentDueDateGTE</a>
+				<a class="permalink" href="index.html#PaymentDueDateGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentDueDateGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentDueDateGTE applies the GTE predicate on the &quot;payment_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentDueDateIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=27576:27640#L640">PaymentDueDateIn</a>
+				<a class="permalink" href="index.html#PaymentDueDateIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentDueDateIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentDueDateIn applies the In predicate on the &quot;payment_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentDueDateIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=28908:28960#L670">PaymentDueDateIsNil</a>
+				<a class="permalink" href="index.html#PaymentDueDateIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentDueDateIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentDueDateIsNil applies the IsNil predicate on the &quot;payment_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentDueDateLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=28468:28528#L660">PaymentDueDateLT</a>
+				<a class="permalink" href="index.html#PaymentDueDateLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentDueDateLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentDueDateLT applies the LT predicate on the &quot;payment_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentDueDateLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=28685:28746#L665">PaymentDueDateLTE</a>
+				<a class="permalink" href="index.html#PaymentDueDateLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentDueDateLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentDueDateLTE applies the LTE predicate on the &quot;payment_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentDueDateNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=27359:27420#L635">PaymentDueDateNEQ</a>
+				<a class="permalink" href="index.html#PaymentDueDateNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentDueDateNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentDueDateNEQ applies the NEQ predicate on the &quot;payment_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentDueDateNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=27805:27872#L645">PaymentDueDateNotIn</a>
+				<a class="permalink" href="index.html#PaymentDueDateNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentDueDateNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentDueDateNotIn applies the NotIn predicate on the &quot;payment_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentDueDateNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=29124:29177#L675">PaymentDueDateNotNil</a>
+				<a class="permalink" href="index.html#PaymentDueDateNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentDueDateNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentDueDateNotNil applies the NotNil predicate on the &quot;payment_due_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentStartDate">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=3816:3876#L90">PaymentStartDate</a>
+				<a class="permalink" href="index.html#PaymentStartDate">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentStartDate(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentStartDate applies equality check predicate on the &quot;payment_start_date&quot; field. It&apos;s identical to PaymentStartDateEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentStartDateEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=24874:24936#L580">PaymentStartDateEQ</a>
+				<a class="permalink" href="index.html#PaymentStartDateEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentStartDateEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentStartDateEQ applies the EQ predicate on the &quot;payment_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentStartDateGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=25798:25860#L600">PaymentStartDateGT</a>
+				<a class="permalink" href="index.html#PaymentStartDateGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentStartDateGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentStartDateGT applies the GT predicate on the &quot;payment_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentStartDateGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=26023:26086#L605">PaymentStartDateGTE</a>
+				<a class="permalink" href="index.html#PaymentStartDateGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentStartDateGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentStartDateGTE applies the GTE predicate on the &quot;payment_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentStartDateIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=25324:25390#L590">PaymentStartDateIn</a>
+				<a class="permalink" href="index.html#PaymentStartDateIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentStartDateIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentStartDateIn applies the In predicate on the &quot;payment_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentStartDateIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=26704:26758#L620">PaymentStartDateIsNil</a>
+				<a class="permalink" href="index.html#PaymentStartDateIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentStartDateIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentStartDateIsNil applies the IsNil predicate on the &quot;payment_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentStartDateLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=26248:26310#L610">PaymentStartDateLT</a>
+				<a class="permalink" href="index.html#PaymentStartDateLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentStartDateLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentStartDateLT applies the LT predicate on the &quot;payment_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentStartDateLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=26473:26536#L615">PaymentStartDateLTE</a>
+				<a class="permalink" href="index.html#PaymentStartDateLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentStartDateLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentStartDateLTE applies the LTE predicate on the &quot;payment_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentStartDateNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=25099:25162#L585">PaymentStartDateNEQ</a>
+				<a class="permalink" href="index.html#PaymentStartDateNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentStartDateNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentStartDateNEQ applies the NEQ predicate on the &quot;payment_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentStartDateNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=25561:25630#L595">PaymentStartDateNotIn</a>
+				<a class="permalink" href="index.html#PaymentStartDateNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentStartDateNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentStartDateNotIn applies the NotIn predicate on the &quot;payment_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PaymentStartDateNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=26928:26983#L625">PaymentStartDateNotNil</a>
+				<a class="permalink" href="index.html#PaymentStartDateNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PaymentStartDateNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>PaymentStartDateNotNil applies the NotNil predicate on the &quot;payment_start_date&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=9812:9882#L245">StatusEQ</a>
+				<a class="permalink" href="index.html#StatusEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>StatusEQ applies the EQ predicate on the &quot;status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=10234:10308#L257">StatusIn</a>
+				<a class="permalink" href="index.html#StatusIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>StatusIn applies the In predicate on the &quot;status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=10023:10094#L251">StatusNEQ</a>
+				<a class="permalink" href="index.html#StatusNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusNEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>StatusNEQ applies the NEQ predicate on the &quot;status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=10511:10588#L266">StatusNotIn</a>
+				<a class="permalink" href="index.html#StatusNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusNotIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>StatusNotIn applies the NotIn predicate on the &quot;status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusValidator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=4409:4466#L107">StatusValidator</a>
+				<a class="permalink" href="index.html#StatusValidator">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusValidator(s <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			<p>StatusValidator is a validator for the &quot;status&quot; field enum values. It is called by the builders before save.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=2054:2107#L55">UpdatedAt</a>
+				<a class="permalink" href="index.html#UpdatedAt">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAt(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>UpdatedAt applies equality check predicate on the &quot;updated_at&quot; field. It&apos;s identical to UpdatedAtEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=6493:6548#L155">UpdatedAtEQ</a>
+				<a class="permalink" href="index.html#UpdatedAtEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>UpdatedAtEQ applies the EQ predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=7301:7356#L175">UpdatedAtGT</a>
+				<a class="permalink" href="index.html#UpdatedAtGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>UpdatedAtGT applies the GT predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=7497:7553#L180">UpdatedAtGTE</a>
+				<a class="permalink" href="index.html#UpdatedAtGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>UpdatedAtGTE applies the GTE predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=6885:6944#L165">UpdatedAtIn</a>
+				<a class="permalink" href="index.html#UpdatedAtIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>UpdatedAtIn applies the In predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=8091:8138#L195">UpdatedAtIsNil</a>
+				<a class="permalink" href="index.html#UpdatedAtIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>UpdatedAtIsNil applies the IsNil predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=7693:7748#L185">UpdatedAtLT</a>
+				<a class="permalink" href="index.html#UpdatedAtLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>UpdatedAtLT applies the LT predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=7889:7945#L190">UpdatedAtLTE</a>
+				<a class="permalink" href="index.html#UpdatedAtLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>UpdatedAtLTE applies the LTE predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=6689:6745#L160">UpdatedAtNEQ</a>
+				<a class="permalink" href="index.html#UpdatedAtNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>UpdatedAtNEQ applies the NEQ predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=7093:7155#L170">UpdatedAtNotIn</a>
+				<a class="permalink" href="index.html#UpdatedAtNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>UpdatedAtNotIn applies the NotIn predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/where.go?s=8286:8334#L200">UpdatedAtNotNil</a>
+				<a class="permalink" href="index.html#UpdatedAtNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFCEventTicket">HPFCEventTicket</a></pre>
+			<p>UpdatedAtNotNil applies the NotNil predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ValidColumn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=3729:3765#L80">ValidColumn</a>
+				<a class="permalink" href="index.html#ValidColumn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ValidColumn(column <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a></pre>
+			<p>ValidColumn reports if the column name is valid (part of the table columns).
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Order">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=4754:4784#L117">Order</a>
+				<a class="permalink" href="index.html#Order">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Order defines the ordering method for the HPFCEventTicket queries.
+
+			<pre>type Order func(*<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#Selector">Selector</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="ByApplicationDueDate">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=6482:6542#L165">ByApplicationDueDate</a>
+					<a class="permalink" href="index.html#ByApplicationDueDate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByApplicationDueDate(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByApplicationDueDate orders the results by the application_due_date field.
+
+				
+				
+			
+				
+				<h3 id="ByApplicationID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=6060:6115#L155">ByApplicationID</a>
+					<a class="permalink" href="index.html#ByApplicationID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByApplicationID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByApplicationID orders the results by the application_id field.
+
+				
+				
+			
+				
+				<h3 id="ByApplicationStartDate">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=6266:6328#L160">ByApplicationStartDate</a>
+					<a class="permalink" href="index.html#ByApplicationStartDate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByApplicationStartDate(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByApplicationStartDate orders the results by the application_start_date field.
+
+				
+				
+			
+				
+				<h3 id="ByApplicationTitle">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=5863:5921#L150">ByApplicationTitle</a>
+					<a class="permalink" href="index.html#ByApplicationTitle">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByApplicationTitle(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByApplicationTitle orders the results by the application_title field.
+
+				
+				
+			
+				
+				<h3 id="ByCreatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=4991:5042#L125">ByCreatedAt</a>
+					<a class="permalink" href="index.html#ByCreatedAt">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByCreatedAt(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByCreatedAt orders the results by the created_at field.
+
+				
+				
+			
+				
+				<h3 id="ByEventField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=7251:7317#L185">ByEventField</a>
+					<a class="permalink" href="index.html#ByEventField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByEventField(field <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByEventField orders the results by event field.
+
+				
+				
+			
+				
+				<h3 id="ByFcMemberSha256">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=5664:5720#L145">ByFcMemberSha256</a>
+					<a class="permalink" href="index.html#ByFcMemberSha256">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByFcMemberSha256(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByFcMemberSha256 orders the results by the fc_member_sha256 field.
+
+				
+				
+			
+				
+				<h3 id="ByID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=4830:4874#L120">ByID</a>
+					<a class="permalink" href="index.html#ByID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByID orders the results by the id field.
+
+				
+				
+			
+				
+				<h3 id="ByNum">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=5328:5373#L135">ByNum</a>
+					<a class="permalink" href="index.html#ByNum">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByNum(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByNum orders the results by the num field.
+
+				
+				
+			
+				
+				<h3 id="ByOwnerUserID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=7080:7133#L180">ByOwnerUserID</a>
+					<a class="permalink" href="index.html#ByOwnerUserID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByOwnerUserID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByOwnerUserID orders the results by the owner_user_id field.
+
+				
+				
+			
+				
+				<h3 id="ByPaymentDueDate">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=6890:6946#L175">ByPaymentDueDate</a>
+					<a class="permalink" href="index.html#ByPaymentDueDate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByPaymentDueDate(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByPaymentDueDate orders the results by the payment_due_date field.
+
+				
+				
+			
+				
+				<h3 id="ByPaymentStartDate">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=6690:6748#L170">ByPaymentStartDate</a>
+					<a class="permalink" href="index.html#ByPaymentStartDate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByPaymentStartDate(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByPaymentStartDate orders the results by the payment_start_date field.
+
+				
+				
+			
+				
+				<h3 id="ByStatus">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=5484:5532#L140">ByStatus</a>
+					<a class="permalink" href="index.html#ByStatus">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByStatus(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByStatus orders the results by the status field.
+
+				
+				
+			
+				
+				<h3 id="ByUpdatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=5166:5217#L130">ByUpdatedAt</a>
+					<a class="permalink" href="index.html#ByUpdatedAt">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByUpdatedAt(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByUpdatedAt orders the results by the updated_at field.
+
+				
+				
+			
+				
+				<h3 id="ByUserField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfceventticket/hpfceventticket.go?s=7492:7557#L192">ByUserField</a>
+					<a class="permalink" href="index.html#ByUserField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByUserField(field <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByUserField orders the results by user field.
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

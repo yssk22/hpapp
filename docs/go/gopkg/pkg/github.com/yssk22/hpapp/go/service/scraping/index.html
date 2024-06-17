@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>scraping - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package scraping
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/scraping"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#IsHttpStatusError">func IsHttpStatusError(err error, code int) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Scrape">func Scrape[T any](ctx context.Context, fetcher Fetcher, scraper Scraper[T]) (*T, error)</a></dd>
+			
+			
+				
+				<dd><a href="index.html#ErrHttp">type ErrHttp</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ErrHttp.DoNotWrap">func (e *ErrHttp) DoNotWrap()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ErrHttp.Error">func (e *ErrHttp) Error() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Fetcher">type Fetcher</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewHTTPFetcher">func NewHTTPFetcher(ctx context.Context, url string, options ...HttpOption) Fetcher</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HTMLHead">type HTMLHead</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HttpOption">type HttpOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithHttpClient">func WithHttpClient(c *http.Client) HttpOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithHttpHeader">func WithHttpHeader(key string, value string) HttpOption</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#RSS2Channel">type RSS2Channel</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#RSS2Doc">type RSS2Doc</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#RSS2Image">type RSS2Image</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#RSS2Item">type RSS2Item</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Scraper">type Scraper</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HTML">func HTML[T any](f func(context.Context, *goquery.Document, *HTMLHead) (*T, error)) Scraper[T]</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JSON">func JSON[T any]() Scraper[T]</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewNilScraper">func NewNilScraper(ctx context.Context) Scraper[int64]</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewStorageTeeScraper">func NewStorageTeeScraper[T any](path string, inner Scraper[T]) (Scraper[T], error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#RSS2">func RSS2[T any](f func(context.Context, *RSS2Doc) (*T, error)) Scraper[T]</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ScraperFunc">type ScraperFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ScraperFunc.Scrape">func (f ScraperFunc[T]) Scrape(ctx context.Context, r io.Reader) (*T, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#XMLTime">type XMLTime</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#XMLTime.UnmarshalXML">func (t *XMLTime) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/html.go">html.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/http.go">http.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/json.go">json.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/nil.go">nil.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/rss.go">rss.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/scraping.go">scraping.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/tee.go">tee.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="IsHttpStatusError">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/http.go?s=2052:2100#L77">IsHttpStatusError</a>
+				<a class="permalink" href="index.html#IsHttpStatusError">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IsHttpStatusError(err <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>, code <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="Scrape">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/scraping.go?s=670:758#L17">Scrape</a>
+				<a class="permalink" href="index.html#Scrape">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Scrape[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>](ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, fetcher <a href="index.html#Fetcher">Fetcher</a>, scraper <a href="index.html#Scraper">Scraper</a>[T]) (*T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			<p>Scrape execute the fetcher and pass the content to the scraper to scrape
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="ErrHttp">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/http.go?s=243:326#L5">ErrHttp</a>
+				<a class="permalink" href="index.html#ErrHttp">&#xb6;</a>
+				
+				
+			</h2>
+			<p>ErrHttp is aservice error when fetch fails with non-200 code
+
+			<pre>type ErrHttp struct {
+<span id="ErrHttp.Response"></span>    Response *<a href="http://127.0.0.1:8888/pkg/net/http/">http</a>.<a href="http://127.0.0.1:8888/pkg/net/http/#Response">Response</a>
+<span id="ErrHttp.Content"></span>    Content  []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>
+<span id="ErrHttp.IOError"></span>    IOError  *<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ErrHttp.DoNotWrap">func (*ErrHttp) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/http.go?s=468:497#L15">DoNotWrap</a>
+					<a class="permalink" href="index.html#ErrHttp.DoNotWrap">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#ErrHttp">ErrHttp</a>) DoNotWrap()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ErrHttp.Error">func (*ErrHttp) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/http.go?s=328:360#L11">Error</a>
+					<a class="permalink" href="index.html#ErrHttp.Error">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#ErrHttp">ErrHttp</a>) Error() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Fetcher">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/scraping.go?s=116:185#L1">Fetcher</a>
+				<a class="permalink" href="index.html#Fetcher">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Fetcher is an interface to get a raw resource for crawled targed.
+
+			<pre>type Fetcher interface {
+    Fetch(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (<a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Reader">Reader</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewHTTPFetcher">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/http.go?s=1195:1278#L43">NewHTTPFetcher</a>
+					<a class="permalink" href="index.html#NewHTTPFetcher">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewHTTPFetcher(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, url <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, options ...<a href="index.html#HttpOption">HttpOption</a>) <a href="index.html#Fetcher">Fetcher</a></pre>
+				<p>NewHTTPFetcher returns a new *HTTPFetcher for the given url with http.Client.
+`client“ can be nil, then http.DefaultClient is used.
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="HTMLHead">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/html.go?s=226:399#L4">HTMLHead</a>
+				<a class="permalink" href="index.html#HTMLHead">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HTMLHead is a struct for tags data under &lt;head&gt; in an html content
+
+			<pre>type HTMLHead struct {
+<span id="HTMLHead.Title"></span>    Title     <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>     `json:&#34;title&#34;`
+<span id="HTMLHead.Canonical"></span>    Canonical <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>     `json:&#34;canonical&#34;`
+<span id="HTMLHead.Meta"></span>    Meta      <a href="http://127.0.0.1:8888/pkg/net/url/">url</a>.<a href="http://127.0.0.1:8888/pkg/net/url/#Values">Values</a> `json:&#34;meta&#34;`
+<span id="HTMLHead.Rel"></span>    Rel       <a href="http://127.0.0.1:8888/pkg/net/url/">url</a>.<a href="http://127.0.0.1:8888/pkg/net/url/#Values">Values</a> `json:&#34;rel&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="HttpOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/http.go?s=546:580#L18">HttpOption</a>
+				<a class="permalink" href="index.html#HttpOption">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HttpOption sets fetcher options for http
+
+			<pre>type HttpOption func(*httpFetcher)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="WithHttpClient">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/http.go?s=628:674#L21">WithHttpClient</a>
+					<a class="permalink" href="index.html#WithHttpClient">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithHttpClient(c *<a href="http://127.0.0.1:8888/pkg/net/http/">http</a>.<a href="http://127.0.0.1:8888/pkg/net/http/#Client">Client</a>) <a href="index.html#HttpOption">HttpOption</a></pre>
+				<p>WithHttpClient to set http.Client to fetch
+
+				
+				
+			
+				
+				<h3 id="WithHttpHeader">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/http.go?s=780:836#L28">WithHttpHeader</a>
+					<a class="permalink" href="index.html#WithHttpHeader">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithHttpHeader(key <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, value <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#HttpOption">HttpOption</a></pre>
+				<p>WithHttpHeader to set a request header to fetch
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="RSS2Channel">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/rss.go?s=266:849#L7">RSS2Channel</a>
+				<a class="permalink" href="index.html#RSS2Channel">&#xb6;</a>
+				
+				
+			</h2>
+			<p>RSS2Channel represents `rss&gt;channel` doc.
+
+			<pre>type RSS2Channel struct {
+<span id="RSS2Channel.Title"></span>    Title          <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>       `xml:&#34;title&#34;`
+<span id="RSS2Channel.Link"></span>    Link           <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>       `xml:&#34;link&#34;`
+<span id="RSS2Channel.Description"></span>    Description    <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>       `xml:&#34;description&#34;`
+<span id="RSS2Channel.Language"></span>    Language       <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>       `xml:&#34;language&#34;`
+<span id="RSS2Channel.Copyright"></span>    Copyright      <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>       `xml:&#34;copyright&#34;`
+<span id="RSS2Channel.ManagingEditor"></span>    ManagingEditor <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>       `xml:&#34;managingEditor&#34;`
+<span id="RSS2Channel.WebMaster"></span>    WebMaster      <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>       `xml:&#34;webMaster&#34;`
+<span id="RSS2Channel.Images"></span>    Images         []*<a href="index.html#RSS2Image">RSS2Image</a> `xml:&#34;images&#34;`
+<span id="RSS2Channel.LastBuildDate"></span>    LastBuildDate  <a href="index.html#XMLTime">XMLTime</a>      `xml:&#34;lastBuildDate&#34;`
+<span id="RSS2Channel.Category"></span>    Category       <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>       `xml:&#34;category&#34;`
+<span id="RSS2Channel.Generator"></span>    Generator      <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>       `xml:&#34;generator&#34;`
+<span id="RSS2Channel.Items"></span>    Items          []*<a href="index.html#RSS2Item">RSS2Item</a>  `xml:&#34;item&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="RSS2Doc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/rss.go?s=124:219#L1">RSS2Doc</a>
+				<a class="permalink" href="index.html#RSS2Doc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>RSS2Doc is a struct to represent RSS 2.0 document
+
+			<pre>type RSS2Doc struct {
+<span id="RSS2Doc.XMLName"></span>    XMLName <a href="http://127.0.0.1:8888/pkg/encoding/xml/">xml</a>.<a href="http://127.0.0.1:8888/pkg/encoding/xml/#Name">Name</a>     `xml:&#34;rss&#34;`
+<span id="RSS2Doc.Channel"></span>    Channel *<a href="index.html#RSS2Channel">RSS2Channel</a> `xml:&#34;channel&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="RSS2Image">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/rss.go?s=900:1068#L23">RSS2Image</a>
+				<a class="permalink" href="index.html#RSS2Image">&#xb6;</a>
+				
+				
+			</h2>
+			<p>RSS2Image represents `rss&gt;channel&gt;image` doc.
+
+			<pre>type RSS2Image struct {
+<span id="RSS2Image.URL"></span>    URL    <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `xml:&#34;url&#34;`
+<span id="RSS2Image.Title"></span>    Title  <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `xml:&#34;title&#34;`
+<span id="RSS2Image.Link"></span>    Link   <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `xml:&#34;link&#34;`
+<span id="RSS2Image.Width"></span>    Width  <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>  `xml:&#34;width&#34;`
+<span id="RSS2Image.Height"></span>    Height <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>  `xml:&#34;height&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="RSS2Item">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/rss.go?s=1109:1490#L32">RSS2Item</a>
+				<a class="permalink" href="index.html#RSS2Item">&#xb6;</a>
+				
+				
+			</h2>
+			<p>RSS2Item represents `rss&gt;item` doc.
+
+			<pre>type RSS2Item struct {
+<span id="RSS2Item.Title"></span>    Title          <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>  `xml:&#34;title&#34;`
+<span id="RSS2Item.Link"></span>    Link           <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>  `xml:&#34;link&#34;`
+<span id="RSS2Item.Description"></span>    Description    <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>  `xml:&#34;description&#34;`
+<span id="RSS2Item.Author"></span>    Author         <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>  `xml:&#34;author&#34;`
+<span id="RSS2Item.Category"></span>    Category       <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>  `xml:&#34;category&#34;`
+<span id="RSS2Item.Comments"></span>    Comments       <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>  `xml:&#34;comments&#34;`
+<span id="RSS2Item.GUID"></span>    GUID           <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>  `xml:&#34;guid&#34;`
+<span id="RSS2Item.PubDate"></span>    PubDate        <a href="index.html#XMLTime">XMLTime</a> `xml:&#34;pubDate&#34;`
+<span id="RSS2Item.ContentEncoded"></span>    ContentEncoded <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>  `xml:&#34;encoded&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Scraper">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/scraping.go?s=234:321#L4">Scraper</a>
+				<a class="permalink" href="index.html#Scraper">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Scraper is an interface to scrape a content
+
+			<pre>type Scraper[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>] interface {
+    Scrape(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, r <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Reader">Reader</a>) (*T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="HTML">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/html.go?s=483:577#L12">HTML</a>
+					<a class="permalink" href="index.html#HTML">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func HTML[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>](f func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="http://127.0.0.1:8888/pkg/github.com/PuerkitoBio/goquery/">goquery</a>.<a href="http://127.0.0.1:8888/pkg/github.com/PuerkitoBio/goquery/#Document">Document</a>, *<a href="index.html#HTMLHead">HTMLHead</a>) (*T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)) <a href="index.html#Scraper">Scraper</a>[T]</pre>
+				<p>HTML returns a scraper for html contents with a custom logic on top of goquery
+
+				
+				
+			
+				
+				<h3 id="JSON">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/json.go?s=126:155#L1">JSON</a>
+					<a class="permalink" href="index.html#JSON">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func JSON[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>]() <a href="index.html#Scraper">Scraper</a>[T]</pre>
+				<p>JSON returns a scraper for json contents to a typed struct
+
+				
+				
+			
+				
+				<h3 id="NewNilScraper">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/nil.go?s=269:323#L4">NewNilScraper</a>
+					<a class="permalink" href="index.html#NewNilScraper">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewNilScraper(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="index.html#Scraper">Scraper</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>]</pre>
+				<p>NewNilScraper returns a Scraper implemenation that doesn&apos;t do anything but just reading the reader and reports the number of bytes read.
+
+				
+				
+			
+				
+				<h3 id="NewStorageTeeScraper">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/tee.go?s=203:286#L1">NewStorageTeeScraper</a>
+					<a class="permalink" href="index.html#NewStorageTeeScraper">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewStorageTeeScraper[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>](path <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, inner <a href="index.html#Scraper">Scraper</a>[T]) (<a href="index.html#Scraper">Scraper</a>[T], <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>NewStorageTeeScraper returns a new scraper that runs inner scraper while the content is copied to storage.
+
+				
+				
+			
+				
+				<h3 id="RSS2">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/rss.go?s=1639:1713#L47">RSS2</a>
+					<a class="permalink" href="index.html#RSS2">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func RSS2[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>](f func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="index.html#RSS2Doc">RSS2Doc</a>) (*T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)) <a href="index.html#Scraper">Scraper</a>[T]</pre>
+				<p>RSS2 returns a scraper for RSS2 with a custom logic on top of RSS2 structs
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="ScraperFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/scraping.go?s=382:456#L9">ScraperFunc</a>
+				<a class="permalink" href="index.html#ScraperFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>ScraperFunc is a function wrapper for Scraper interface
+
+			<pre>type ScraperFunc[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>] func(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, r <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Reader">Reader</a>) (*T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ScraperFunc.Scrape">func (ScraperFunc[T]) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/scraping.go?s=494:570#L12">Scrape</a>
+					<a class="permalink" href="index.html#ScraperFunc.Scrape">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#ScraperFunc">ScraperFunc</a>[T]) Scrape(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, r <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Reader">Reader</a>) (*T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Scrape implements Scraper#Scrape
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="XMLTime">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/rss.go?s=2153:2175#L70">XMLTime</a>
+				<a class="permalink" href="index.html#XMLTime">&#xb6;</a>
+				
+				
+			</h2>
+			<p>XMLTime is an alias type for time.Time to unmarshal XML doc.
+
+			<pre>type XMLTime <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="XMLTime.UnmarshalXML">func (*XMLTime) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/scraping/rss.go?s=2227:2303#L73">UnmarshalXML</a>
+					<a class="permalink" href="index.html#XMLTime.UnmarshalXML">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (t *<a href="index.html#XMLTime">XMLTime</a>) UnmarshalXML(d *<a href="http://127.0.0.1:8888/pkg/encoding/xml/">xml</a>.<a href="http://127.0.0.1:8888/pkg/encoding/xml/#Decoder">Decoder</a>, start <a href="http://127.0.0.1:8888/pkg/encoding/xml/">xml</a>.<a href="http://127.0.0.1:8888/pkg/encoding/xml/#StartElement">StartElement</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>UnmarshalXML to implement xml unmarshalization
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

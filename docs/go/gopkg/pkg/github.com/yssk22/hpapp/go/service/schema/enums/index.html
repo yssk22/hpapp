@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>enums - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package enums
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/schema/enums"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#HPAssetType">type HPAssetType</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAssetType.MarshalGQL">func (e HPAssetType) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAssetType.UnmarshalGQL">func (e *HPAssetType) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAssetType.Values">func (HPAssetType) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPBlobFaceRecognitionStatus">type HPBlobFaceRecognitionStatus</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobFaceRecognitionStatus.MarshalGQL">func (e HPBlobFaceRecognitionStatus) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobFaceRecognitionStatus.UnmarshalGQL">func (e *HPBlobFaceRecognitionStatus) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobFaceRecognitionStatus.Values">func (HPBlobFaceRecognitionStatus) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPBlobStatus">type HPBlobStatus</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobStatus.MarshalGQL">func (e HPBlobStatus) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobStatus.UnmarshalGQL">func (e *HPBlobStatus) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobStatus.Values">func (HPBlobStatus) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPBlobSubType">type HPBlobSubType</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobSubType.MarshalGQL">func (e HPBlobSubType) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobSubType.UnmarshalGQL">func (e *HPBlobSubType) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobSubType.Values">func (HPBlobSubType) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPBlobType">type HPBlobType</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobType.MarshalGQL">func (e HPBlobType) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobType.UnmarshalGQL">func (e *HPBlobType) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobType.Values">func (HPBlobType) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPElineupMallItemCategory">type HPElineupMallItemCategory</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPElineupMallItemCategory.MarshalGQL">func (e HPElineupMallItemCategory) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPElineupMallItemCategory.UnmarshalGQL">func (e *HPElineupMallItemCategory) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPElineupMallItemCategory.Values">func (HPElineupMallItemCategory) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPEventFCTicketStatus">type HPEventFCTicketStatus</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEventFCTicketStatus.MarshalGQL">func (e HPEventFCTicketStatus) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEventFCTicketStatus.UnmarshalGQL">func (e *HPEventFCTicketStatus) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEventFCTicketStatus.Values">func (HPEventFCTicketStatus) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPEventSource">type HPEventSource</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEventSource.MarshalGQL">func (e HPEventSource) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEventSource.UnmarshalGQL">func (e *HPEventSource) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEventSource.Values">func (HPEventSource) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFollowType">type HPFollowType</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFollowType.MarshalGQL">func (e HPFollowType) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFollowType.UnmarshalGQL">func (e *HPFollowType) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFollowType.Values">func (HPFollowType) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPMLStatus">type HPMLStatus</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMLStatus.MarshalGQL">func (e HPMLStatus) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMLStatus.UnmarshalGQL">func (e *HPMLStatus) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMLStatus.Values">func (HPMLStatus) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPMediaFaceRecognitionStatus">type HPMediaFaceRecognitionStatus</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMediaFaceRecognitionStatus.MarshalGQL">func (e HPMediaFaceRecognitionStatus) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMediaFaceRecognitionStatus.UnmarshalGQL">func (e *HPMediaFaceRecognitionStatus) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMediaFaceRecognitionStatus.Values">func (HPMediaFaceRecognitionStatus) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPMediaStatus">type HPMediaStatus</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMediaStatus.MarshalGQL">func (e HPMediaStatus) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMediaStatus.UnmarshalGQL">func (e *HPMediaStatus) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMediaStatus.Values">func (HPMediaStatus) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPMediaType">type HPMediaType</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMediaType.MarshalGQL">func (e HPMediaType) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMediaType.UnmarshalGQL">func (e *HPMediaType) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMediaType.Values">func (HPMediaType) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TestEnum">type TestEnum</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TestEnum.MarshalGQL">func (e TestEnum) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TestEnum.UnmarshalGQL">func (e *TestEnum) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TestEnum.Values">func (TestEnum) Values() (types []string)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UserNotificationStatus">type UserNotificationStatus</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationStatus.MarshalGQL">func (e UserNotificationStatus) MarshalGQL(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationStatus.UnmarshalGQL">func (e *UserNotificationStatus) UnmarshalGQL(v interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationStatus.Values">func (UserNotificationStatus) Values() (types []string)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go">entgo_enum.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/enums.go">enums.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go">gqlgen_enum.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpassettype.go">hpassettype.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpblobfacerecognitionstatus.go">hpblobfacerecognitionstatus.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpblobstatus.go">hpblobstatus.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpblobtype.go">hpblobtype.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpelineupmallitemcategory.go">hpelineupmallitemcategory.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpeventfcticketstatus.go">hpeventfcticketstatus.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpeventsource.go">hpeventsource.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpfollowtype.go">hpfollowtype.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpmediafacerecognitionstatus.go">hpmediafacerecognitionstatus.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpmediastatus.go">hpmediastatus.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpmediatype.go">hpmediatype.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpmlstatus.go">hpmlstatus.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/testenum.go">testenum.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/usernotificationstatus.go">usernotificationstatus.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="HPAssetType">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpassettype.go?s=15:38#L1">HPAssetType</a>
+				<a class="permalink" href="index.html#HPAssetType">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPAssetType <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPAssetTypeAmeblo">HPAssetTypeAmeblo</span>      <a href="index.html#HPAssetType">HPAssetType</a> = &#34;ameblo&#34;
+    <span id="HPAssetTypeYoutube">HPAssetTypeYoutube</span>     <a href="index.html#HPAssetType">HPAssetType</a> = &#34;youtube&#34;
+    <span id="HPAssetTypeTwitter">HPAssetTypeTwitter</span>     <a href="index.html#HPAssetType">HPAssetType</a> = &#34;twitter&#34;
+    <span id="HPAssetTypeInstagram">HPAssetTypeInstagram</span>   <a href="index.html#HPAssetType">HPAssetType</a> = &#34;instagram&#34;
+    <span id="HPAssetTypeTiktok">HPAssetTypeTiktok</span>      <a href="index.html#HPAssetType">HPAssetType</a> = &#34;tiktok&#34;
+    <span id="HPAssetTypeElineupMall">HPAssetTypeElineupMall</span> <a href="index.html#HPAssetType">HPAssetType</a> = &#34;elineupmall&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPAssetType.MarshalGQL">func (HPAssetType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=51:95#L1">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPAssetType.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPAssetType">HPAssetType</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPAssetType.UnmarshalGQL">func (*HPAssetType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=533:588#L16">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPAssetType.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPAssetType">HPAssetType</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPAssetType.Values">func (HPAssetType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=17:61#L1">Values</a>
+					<a class="permalink" href="index.html#HPAssetType.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPAssetType">HPAssetType</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPBlobFaceRecognitionStatus">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpblobfacerecognitionstatus.go?s=15:54#L1">HPBlobFaceRecognitionStatus</a>
+				<a class="permalink" href="index.html#HPBlobFaceRecognitionStatus">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPBlobFaceRecognitionStatus <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPBlobFaceRecognitionStatusUnknown">HPBlobFaceRecognitionStatusUnknown</span>                  <a href="index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a> = &#34;unknown&#34;
+    <span id="HPBlobFaceRecognitionStatusFaceDetected">HPBlobFaceRecognitionStatusFaceDetected</span>             <a href="index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a> = &#34;face_detected&#34;
+    <span id="HPBlobFaceRecognitionStatusFaceManuallyLabeled">HPBlobFaceRecognitionStatusFaceManuallyLabeled</span>      <a href="index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a> = &#34;face_manually_labeled&#34;
+    <span id="HPBlobFaceRecognitionStatusFaceAutomaticallyLabeled">HPBlobFaceRecognitionStatusFaceAutomaticallyLabeled</span> <a href="index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a> = &#34;face_automatically_labeled&#34;
+    <span id="HPBlobFaceRecognitionStatusError">HPBlobFaceRecognitionStatusError</span>                    <a href="index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a> = &#34;error&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPBlobFaceRecognitionStatus.MarshalGQL">func (HPBlobFaceRecognitionStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=897:957#L34">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPBlobFaceRecognitionStatus.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPBlobFaceRecognitionStatus.UnmarshalGQL">func (*HPBlobFaceRecognitionStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=1467:1538#L49">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPBlobFaceRecognitionStatus.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPBlobFaceRecognitionStatus.Values">func (HPBlobFaceRecognitionStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=289:349#L10">Values</a>
+					<a class="permalink" href="index.html#HPBlobFaceRecognitionStatus.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPBlobStatus">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpblobstatus.go?s=15:39#L1">HPBlobStatus</a>
+				<a class="permalink" href="index.html#HPBlobStatus">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPBlobStatus <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPBlobStatusUnknown">HPBlobStatusUnknown</span>      <a href="index.html#HPBlobStatus">HPBlobStatus</a> = &#34;unknown&#34;
+    <span id="HPBlobStatusNeedDownload">HPBlobStatusNeedDownload</span> <a href="index.html#HPBlobStatus">HPBlobStatus</a> = &#34;need_download&#34; <span class="comment">// media may be avaialble from original source but need to copy to the object storage</span>
+    <span id="HPBlobStatusReadyToHost">HPBlobStatusReadyToHost</span>  <a href="index.html#HPBlobStatus">HPBlobStatus</a> = &#34;ready_to_host&#34; <span class="comment">// media is ready to host using canonical key</span>
+    <span id="HPBlobStatusError">HPBlobStatusError</span>        <a href="index.html#HPBlobStatus">HPBlobStatus</a> = &#34;error&#34;         <span class="comment">// media is unavailable due to an error</span>
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPBlobStatus.MarshalGQL">func (HPBlobStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=1944:1989#L65">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPBlobStatus.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPBlobStatus">HPBlobStatus</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPBlobStatus.UnmarshalGQL">func (*HPBlobStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=2303:2359#L78">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPBlobStatus.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPBlobStatus">HPBlobStatus</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPBlobStatus.Values">func (HPBlobStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=679:724#L24">Values</a>
+					<a class="permalink" href="index.html#HPBlobStatus.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPBlobStatus">HPBlobStatus</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPBlobSubType">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpblobtype.go?s=211:236#L2">HPBlobSubType</a>
+				<a class="permalink" href="index.html#HPBlobSubType">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPBlobSubType <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPBlobSubTypeUnknown">HPBlobSubTypeUnknown</span> <a href="index.html#HPBlobSubType">HPBlobSubType</a> = &#34;unknown&#34;
+    <span id="HPBlobSubTypeJpeg">HPBlobSubTypeJpeg</span>    <a href="index.html#HPBlobSubType">HPBlobSubType</a> = &#34;jpeg&#34;
+    <span id="HPBlobSubTypeMp4">HPBlobSubTypeMp4</span>     <a href="index.html#HPBlobSubType">HPBlobSubType</a> = &#34;mp4&#34;
+    <span id="HPBlobSubTypeHtml">HPBlobSubTypeHtml</span>    <a href="index.html#HPBlobSubType">HPBlobSubType</a> = &#34;html&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPBlobSubType.MarshalGQL">func (HPBlobSubType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=2594:2640#L92">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPBlobSubType.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPBlobSubType">HPBlobSubType</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPBlobSubType.UnmarshalGQL">func (*HPBlobSubType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=2921:2978#L105">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPBlobSubType.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPBlobSubType">HPBlobSubType</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPBlobSubType.Values">func (HPBlobSubType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=916:962#L37">Values</a>
+					<a class="permalink" href="index.html#HPBlobSubType.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPBlobSubType">HPBlobSubType</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPBlobType">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpblobtype.go?s=15:37#L1">HPBlobType</a>
+				<a class="permalink" href="index.html#HPBlobType">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPBlobType <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPBlobTypeUnknown">HPBlobTypeUnknown</span> <a href="index.html#HPBlobType">HPBlobType</a> = &#34;unknown&#34;
+    <span id="HPBlobTypeImage">HPBlobTypeImage</span>   <a href="index.html#HPBlobType">HPBlobType</a> = &#34;image&#34;
+    <span id="HPBlobTypeVideo">HPBlobTypeVideo</span>   <a href="index.html#HPBlobType">HPBlobType</a> = &#34;video&#34;
+    <span id="HPBlobTypeText">HPBlobTypeText</span>    <a href="index.html#HPBlobType">HPBlobType</a> = &#34;text&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPBlobType.MarshalGQL">func (HPBlobType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=3180:3223#L119">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPBlobType.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPBlobType">HPBlobType</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPBlobType.UnmarshalGQL">func (*HPBlobType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=3498:3552#L132">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPBlobType.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPBlobType">HPBlobType</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPBlobType.Values">func (HPBlobType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=1142:1185#L50">Values</a>
+					<a class="permalink" href="index.html#HPBlobType.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPBlobType">HPBlobType</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPElineupMallItemCategory">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpelineupmallitemcategory.go?s=15:52#L1">HPElineupMallItemCategory</a>
+				<a class="permalink" href="index.html#HPElineupMallItemCategory">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPElineupMallItemCategory <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPElineupMallItemCategoryOther">HPElineupMallItemCategoryOther</span> <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;Other&#34;
+
+    <span id="HPElineupMallItemCategoryPhotoDaily">HPElineupMallItemCategoryPhotoDaily</span> <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;PhotoDaily&#34;
+    <span id="HPElineupMallItemCategoryPhotoA4">HPElineupMallItemCategoryPhotoA4</span>    <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;PhotoA4&#34;
+    <span id="HPElineupMallItemCategoryPhotoA5">HPElineupMallItemCategoryPhotoA5</span>    <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;PhotoA5&#34;
+    <span id="HPElineupMallItemCategoryPhoto2L">HPElineupMallItemCategoryPhoto2L</span>    <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;Photo2L&#34;
+    <span id="HPElineupMallItemCategoryPhotoOther">HPElineupMallItemCategoryPhotoOther</span> <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;PhotoOther&#34;
+
+    <span id="HPElineupMallItemCategoryPhotoAlbum">HPElineupMallItemCategoryPhotoAlbum</span>              <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;PhotoAlbum&#34;
+    <span id="HPElineupMallItemCategoryPhotoAlbumOther">HPElineupMallItemCategoryPhotoAlbumOther</span>         <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;PhotoAlbumOther&#34;
+    <span id="HPElineupMallItemCategoryPhotoBook">HPElineupMallItemCategoryPhotoBook</span>               <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;PhotoBook&#34;
+    <span id="HPElineupMallItemCategoryPhotoBookOther">HPElineupMallItemCategoryPhotoBookOther</span>          <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;PhotoBookOther&#34;
+    <span id="HPElineupMallItemCategoryDVDMagazine">HPElineupMallItemCategoryDVDMagazine</span>             <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;DVDMagazine&#34;
+    <span id="HPElineupMallItemCategoryDVDMagazineOther">HPElineupMallItemCategoryDVDMagazineOther</span>        <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;DVDMagazineOther&#34;
+    <span id="HPElineupMallItemCategoryDVD">HPElineupMallItemCategoryDVD</span>                     <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;DVD&#34;
+    <span id="HPElineupMallItemCategoryBlueray">HPElineupMallItemCategoryBlueray</span>                 <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;Blueray&#34;
+    <span id="HPElineupMallItemCategoryPenlight">HPElineupMallItemCategoryPenlight</span>                <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;Penlight&#34;
+    <span id="HPElineupMallItemCategoryColllectionPinnapPoster">HPElineupMallItemCategoryColllectionPinnapPoster</span> <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;ColllectionPinnapPoster&#34;
+    <span id="HPElineupMallItemCategoryColllectionPhoto">HPElineupMallItemCategoryColllectionPhoto</span>        <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;ColllectionPhoto&#34;
+    <span id="HPElineupMallItemCategoryColllectionOther">HPElineupMallItemCategoryColllectionOther</span>        <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;ColllectionOther&#34;
+    <span id="HPElineupMallItemCategoryTShirt">HPElineupMallItemCategoryTShirt</span>                  <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;TShirt&#34;
+    <span id="HPElineupMallItemCategoryMicrofiberTowel">HPElineupMallItemCategoryMicrofiberTowel</span>         <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;MicrofiberTowel&#34;
+    <span id="HPElineupMallItemCategoryMufflerTowel">HPElineupMallItemCategoryMufflerTowel</span>            <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;MufflerTowel&#34;
+    <span id="HPElineupMallItemCategoryFSK">HPElineupMallItemCategoryFSK</span>                     <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;FSK&#34;
+    <span id="HPElineupMallItemCategoryKeyringOther">HPElineupMallItemCategoryKeyringOther</span>            <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;KeyringOther&#34;
+    <span id="HPElineupMallItemCategoryClearFile">HPElineupMallItemCategoryClearFile</span>               <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> = &#34;ClearFile&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPElineupMallItemCategory.MarshalGQL">func (HPElineupMallItemCategory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=3748:3806#L146">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPElineupMallItemCategory.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPElineupMallItemCategory.UnmarshalGQL">func (*HPElineupMallItemCategory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=5984:6053#L199">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPElineupMallItemCategory.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPElineupMallItemCategory.Values">func (HPElineupMallItemCategory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=1353:1411#L63">Values</a>
+					<a class="permalink" href="index.html#HPElineupMallItemCategory.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPEventFCTicketStatus">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpeventfcticketstatus.go?s=15:48#L1">HPEventFCTicketStatus</a>
+				<a class="permalink" href="index.html#HPEventFCTicketStatus">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPEventFCTicketStatus <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPEventFCTicketStatusUnknown">HPEventFCTicketStatusUnknown</span>        <a href="index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a> = &#34;Unknown&#34;
+    <span id="HPEventFCTicketStatusSubmitted">HPEventFCTicketStatusSubmitted</span>      <a href="index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a> = &#34;Submitted&#34;
+    <span id="HPEventFCTicketStatusPendingPayment">HPEventFCTicketStatusPendingPayment</span> <a href="index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a> = &#34;PendingPayment&#34;
+    <span id="HPEventFCTicketStatusCompleted">HPEventFCTicketStatusCompleted</span>      <a href="index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a> = &#34;Completed&#34;
+    <span id="HPEventFCTicketStatusRejected">HPEventFCTicketStatusRejected</span>       <a href="index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a> = &#34;Rejected&#34;
+    <span id="HPEventFCTicketStatusPaymentOverdue">HPEventFCTicketStatusPaymentOverdue</span> <a href="index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a> = &#34;PaymentOverdue&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPEventFCTicketStatus.MarshalGQL">func (HPEventFCTicketStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=7652:7706#L253">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPEventFCTicketStatus.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPEventFCTicketStatus.UnmarshalGQL">func (*HPEventFCTicketStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=8235:8300#L270">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPEventFCTicketStatus.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPEventFCTicketStatus.Values">func (HPEventFCTicketStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=2464:2518#L96">Values</a>
+					<a class="permalink" href="index.html#HPEventFCTicketStatus.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPEventFCTicketStatus">HPEventFCTicketStatus</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPEventSource">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpeventsource.go?s=15:40#L1">HPEventSource</a>
+				<a class="permalink" href="index.html#HPEventSource">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPEventSource <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPEventSourceFCScrape">HPEventSourceFCScrape</span> <a href="index.html#HPEventSource">HPEventSource</a> = &#34;fc_scrape&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPEventSource.MarshalGQL">func (HPEventSource) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=8700:8746#L288">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPEventSource.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPEventSource">HPEventSource</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPEventSource.UnmarshalGQL">func (*HPEventSource) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=8840:8897#L295">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPEventSource.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPEventSource">HPEventSource</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPEventSource.Values">func (HPEventSource) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=2831:2877#L111">Values</a>
+					<a class="permalink" href="index.html#HPEventSource.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPEventSource">HPEventSource</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFollowType">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpfollowtype.go?s=15:39#L1">HPFollowType</a>
+				<a class="permalink" href="index.html#HPFollowType">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPFollowType <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPFollowTypeFollowWithNotification">HPFollowTypeFollowWithNotification</span> <a href="index.html#HPFollowType">HPFollowType</a> = &#34;follow_with_notification&#34;
+    <span id="HPFollowTypeFollow">HPFollowTypeFollow</span>                 <a href="index.html#HPFollowType">HPFollowType</a> = &#34;follow&#34;
+    <span id="HPFollowTypeUnfollow">HPFollowTypeUnfollow</span>               <a href="index.html#HPFollowType">HPFollowType</a> = &#34;unfollow&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFollowType.MarshalGQL">func (HPFollowType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=8987:9032#L303">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPFollowType.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPFollowType">HPFollowType</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPFollowType.UnmarshalGQL">func (*HPFollowType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=9292:9348#L314">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPFollowType.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPFollowType">HPFollowType</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPFollowType.Values">func (HPFollowType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=2996:3041#L121">Values</a>
+					<a class="permalink" href="index.html#HPFollowType.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFollowType">HPFollowType</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPMLStatus">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpmlstatus.go?s=15:37#L1">HPMLStatus</a>
+				<a class="permalink" href="index.html#HPMLStatus">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPMLStatus <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPMLStatusNone">HPMLStatusNone</span>        <a href="index.html#HPMLStatus">HPMLStatus</a> = &#34;none&#34;         <span class="comment">// nothing confirmed</span>
+    <span id="HPMLStatusUseTraining">HPMLStatusUseTraining</span> <a href="index.html#HPMLStatus">HPMLStatus</a> = &#34;use_training&#34; <span class="comment">// confirmed the label is correct</span>
+    <span id="HPMLStatusUseSample">HPMLStatusUseSample</span>   <a href="index.html#HPMLStatus">HPMLStatus</a> = &#34;use_samples&#34;  <span class="comment">// confirmed the label is correct but use as samples.</span>
+    <span id="HPMLStatusInReview">HPMLStatusInReview</span>    <a href="index.html#HPMLStatus">HPMLStatus</a> = &#34;in_review&#34;    <span class="comment">// someone is reviewing the label</span>
+    <span id="HPMLStatusExclude">HPMLStatusExclude</span>     <a href="index.html#HPMLStatus">HPMLStatus</a> = &#34;exclude&#34;      <span class="comment">// label is correct but excluded from the training model</span>
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPMLStatus.MarshalGQL">func (HPMLStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=9554:9597#L326">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPMLStatus.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPMLStatus">HPMLStatus</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPMLStatus.UnmarshalGQL">func (*HPMLStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=9964:10018#L341">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPMLStatus.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPMLStatus">HPMLStatus</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPMLStatus.Values">func (HPMLStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=3218:3261#L133">Values</a>
+					<a class="permalink" href="index.html#HPMLStatus.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPMLStatus">HPMLStatus</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPMediaFaceRecognitionStatus">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpmediafacerecognitionstatus.go?s=15:55#L1">HPMediaFaceRecognitionStatus</a>
+				<a class="permalink" href="index.html#HPMediaFaceRecognitionStatus">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPMediaFaceRecognitionStatus <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPMediaFaceRecognitionStatusUnknown">HPMediaFaceRecognitionStatusUnknown</span>                  <a href="index.html#HPMediaFaceRecognitionStatus">HPMediaFaceRecognitionStatus</a> = &#34;unknown&#34;
+    <span id="HPMediaFaceRecognitionStatusFaceDetected">HPMediaFaceRecognitionStatusFaceDetected</span>             <a href="index.html#HPMediaFaceRecognitionStatus">HPMediaFaceRecognitionStatus</a> = &#34;face_detected&#34;
+    <span id="HPMediaFaceRecognitionStatusFaceManuallyLabeled">HPMediaFaceRecognitionStatusFaceManuallyLabeled</span>      <a href="index.html#HPMediaFaceRecognitionStatus">HPMediaFaceRecognitionStatus</a> = &#34;face_manually_labeled&#34;
+    <span id="HPMediaFaceRecognitionStatusFaceAutomaticallyLabeled">HPMediaFaceRecognitionStatusFaceAutomaticallyLabeled</span> <a href="index.html#HPMediaFaceRecognitionStatus">HPMediaFaceRecognitionStatus</a> = &#34;face_automatically_labeled&#34;
+    <span id="HPMediaFaceRecognitionStatusError">HPMediaFaceRecognitionStatusError</span>                    <a href="index.html#HPMediaFaceRecognitionStatus">HPMediaFaceRecognitionStatus</a> = &#34;error&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPMediaFaceRecognitionStatus.MarshalGQL">func (HPMediaFaceRecognitionStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=10281:10342#L357">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPMediaFaceRecognitionStatus.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPMediaFaceRecognitionStatus">HPMediaFaceRecognitionStatus</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPMediaFaceRecognitionStatus.UnmarshalGQL">func (*HPMediaFaceRecognitionStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=10857:10929#L372">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPMediaFaceRecognitionStatus.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPMediaFaceRecognitionStatus">HPMediaFaceRecognitionStatus</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPMediaFaceRecognitionStatus.Values">func (HPMediaFaceRecognitionStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=3461:3522#L147">Values</a>
+					<a class="permalink" href="index.html#HPMediaFaceRecognitionStatus.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPMediaFaceRecognitionStatus">HPMediaFaceRecognitionStatus</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPMediaStatus">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpmediastatus.go?s=15:40#L1">HPMediaStatus</a>
+				<a class="permalink" href="index.html#HPMediaStatus">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPMediaStatus <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPMediaStatusUnknown">HPMediaStatusUnknown</span>      <a href="index.html#HPMediaStatus">HPMediaStatus</a> = &#34;unknown&#34;
+    <span id="HPMediaStatusNeedDownload">HPMediaStatusNeedDownload</span> <a href="index.html#HPMediaStatus">HPMediaStatus</a> = &#34;need_download&#34; <span class="comment">// media may be avaialble from original source but need to copy to the object storage</span>
+    <span id="HPMediaStatusReadyToHost">HPMediaStatusReadyToHost</span>  <a href="index.html#HPMediaStatus">HPMediaStatus</a> = &#34;ready_to_host&#34; <span class="comment">// media is ready to host using canonical key</span>
+    <span id="HPMediaStatusError">HPMediaStatusError</span>        <a href="index.html#HPMediaStatus">HPMediaStatus</a> = &#34;error&#34;         <span class="comment">// media is unavailable due to an error</span>
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPMediaStatus.MarshalGQL">func (HPMediaStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=11340:11386#L388">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPMediaStatus.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPMediaStatus">HPMediaStatus</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPMediaStatus.UnmarshalGQL">func (*HPMediaStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=11704:11761#L401">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPMediaStatus.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPMediaStatus">HPMediaStatus</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPMediaStatus.Values">func (HPMediaStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=3858:3904#L161">Values</a>
+					<a class="permalink" href="index.html#HPMediaStatus.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPMediaStatus">HPMediaStatus</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPMediaType">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/hpmediatype.go?s=15:38#L1">HPMediaType</a>
+				<a class="permalink" href="index.html#HPMediaType">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPMediaType <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="HPMediaTypeUnknown">HPMediaTypeUnknown</span> <a href="index.html#HPMediaType">HPMediaType</a> = &#34;unknown&#34;
+    <span id="HPMediaTypeImage">HPMediaTypeImage</span>   <a href="index.html#HPMediaType">HPMediaType</a> = &#34;image&#34;
+    <span id="HPMediaTypeVideo">HPMediaTypeVideo</span>   <a href="index.html#HPMediaType">HPMediaType</a> = &#34;video&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPMediaType.MarshalGQL">func (HPMediaType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=12000:12044#L415">MarshalGQL</a>
+					<a class="permalink" href="index.html#HPMediaType.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#HPMediaType">HPMediaType</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPMediaType.UnmarshalGQL">func (*HPMediaType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=12261:12316#L426">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#HPMediaType.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#HPMediaType">HPMediaType</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPMediaType.Values">func (HPMediaType) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=4101:4145#L174">Values</a>
+					<a class="permalink" href="index.html#HPMediaType.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPMediaType">HPMediaType</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TestEnum">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/testenum.go?s=15:35#L1">TestEnum</a>
+				<a class="permalink" href="index.html#TestEnum">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type TestEnum <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="TestEnumA">TestEnumA</span> <a href="index.html#TestEnum">TestEnum</a> = &#34;a&#34;
+    <span id="TestEnumB">TestEnumB</span> <a href="index.html#TestEnum">TestEnum</a> = &#34;b&#34;
+    <span id="TestEnumC">TestEnumC</span> <a href="index.html#TestEnum">TestEnum</a> = &#34;c&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TestEnum.MarshalGQL">func (TestEnum) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=12479:12520#L438">MarshalGQL</a>
+					<a class="permalink" href="index.html#TestEnum.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#TestEnum">TestEnum</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="TestEnum.UnmarshalGQL">func (*TestEnum) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=12700:12752#L449">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#TestEnum.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#TestEnum">TestEnum</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="TestEnum.Values">func (TestEnum) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=4299:4340#L186">Values</a>
+					<a class="permalink" href="index.html#TestEnum.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#TestEnum">TestEnum</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UserNotificationStatus">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/usernotificationstatus.go?s=15:49#L1">UserNotificationStatus</a>
+				<a class="permalink" href="index.html#UserNotificationStatus">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type UserNotificationStatus <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="UserNotificationStatusPrepared">UserNotificationStatusPrepared</span> <a href="index.html#UserNotificationStatus">UserNotificationStatus</a> = &#34;prepared&#34;
+    <span id="UserNotificationStatusSent">UserNotificationStatusSent</span>     <a href="index.html#UserNotificationStatus">UserNotificationStatus</a> = &#34;sent&#34;
+    <span id="UserNotificationStatusError">UserNotificationStatusError</span>    <a href="index.html#UserNotificationStatus">UserNotificationStatus</a> = &#34;error&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserNotificationStatus.MarshalGQL">func (UserNotificationStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=12878:12933#L461">MarshalGQL</a>
+					<a class="permalink" href="index.html#UserNotificationStatus.MarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#UserNotificationStatus">UserNotificationStatus</a>) MarshalGQL(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserNotificationStatus.UnmarshalGQL">func (*UserNotificationStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/gqlgen_enum.go?s=13183:13249#L472">UnmarshalGQL</a>
+					<a class="permalink" href="index.html#UserNotificationStatus.UnmarshalGQL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e *<a href="index.html#UserNotificationStatus">UserNotificationStatus</a>) UnmarshalGQL(v interface{}) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserNotificationStatus.Values">func (UserNotificationStatus) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/enums/entgo_enum.go?s=4468:4523#L198">Values</a>
+					<a class="permalink" href="index.html#UserNotificationStatus.Values">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UserNotificationStatus">UserNotificationStatus</a>) Values() (types []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

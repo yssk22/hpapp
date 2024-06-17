@@ -1,0 +1,2347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>testent - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package testent
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/ent/testent"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#And">func And(predicates ...predicate.TestEnt) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BoolField">func BoolField(v bool) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BoolFieldEQ">func BoolFieldEQ(v bool) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BoolFieldIsNil">func BoolFieldIsNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BoolFieldNEQ">func BoolFieldNEQ(v bool) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BoolFieldNotNil">func BoolFieldNotNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BytesField">func BytesField(v []byte) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BytesFieldEQ">func BytesFieldEQ(v []byte) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BytesFieldGT">func BytesFieldGT(v []byte) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BytesFieldGTE">func BytesFieldGTE(v []byte) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BytesFieldIn">func BytesFieldIn(vs ...[]byte) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BytesFieldIsNil">func BytesFieldIsNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BytesFieldLT">func BytesFieldLT(v []byte) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BytesFieldLTE">func BytesFieldLTE(v []byte) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BytesFieldNEQ">func BytesFieldNEQ(v []byte) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BytesFieldNotIn">func BytesFieldNotIn(vs ...[]byte) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#BytesFieldNotNil">func BytesFieldNotNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#EnumFieldEQ">func EnumFieldEQ(v enums.TestEnum) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#EnumFieldIn">func EnumFieldIn(vs ...enums.TestEnum) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#EnumFieldIsNil">func EnumFieldIsNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#EnumFieldNEQ">func EnumFieldNEQ(v enums.TestEnum) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#EnumFieldNotIn">func EnumFieldNotIn(vs ...enums.TestEnum) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#EnumFieldNotNil">func EnumFieldNotNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#EnumFieldValidator">func EnumFieldValidator(ef enums.TestEnum) error</a></dd>
+			
+				
+				<dd><a href="index.html#FloatField">func FloatField(v float64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#FloatFieldEQ">func FloatFieldEQ(v float64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#FloatFieldGT">func FloatFieldGT(v float64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#FloatFieldGTE">func FloatFieldGTE(v float64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#FloatFieldIn">func FloatFieldIn(vs ...float64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#FloatFieldIsNil">func FloatFieldIsNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#FloatFieldLT">func FloatFieldLT(v float64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#FloatFieldLTE">func FloatFieldLTE(v float64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#FloatFieldNEQ">func FloatFieldNEQ(v float64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#FloatFieldNotIn">func FloatFieldNotIn(vs ...float64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#FloatFieldNotNil">func FloatFieldNotNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#ID">func ID(id int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IDEQ">func IDEQ(id int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IDGT">func IDGT(id int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IDGTE">func IDGTE(id int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IDIn">func IDIn(ids ...int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IDLT">func IDLT(id int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IDLTE">func IDLTE(id int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IDNEQ">func IDNEQ(id int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IDNotIn">func IDNotIn(ids ...int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Int64Field">func Int64Field(v int64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Int64FieldEQ">func Int64FieldEQ(v int64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Int64FieldGT">func Int64FieldGT(v int64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Int64FieldGTE">func Int64FieldGTE(v int64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Int64FieldIn">func Int64FieldIn(vs ...int64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Int64FieldIsNil">func Int64FieldIsNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Int64FieldLT">func Int64FieldLT(v int64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Int64FieldLTE">func Int64FieldLTE(v int64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Int64FieldNEQ">func Int64FieldNEQ(v int64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Int64FieldNotIn">func Int64FieldNotIn(vs ...int64) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Int64FieldNotNil">func Int64FieldNotNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IntField">func IntField(v int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IntFieldEQ">func IntFieldEQ(v int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IntFieldGT">func IntFieldGT(v int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IntFieldGTE">func IntFieldGTE(v int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IntFieldIn">func IntFieldIn(vs ...int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IntFieldIsNil">func IntFieldIsNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IntFieldLT">func IntFieldLT(v int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IntFieldLTE">func IntFieldLTE(v int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IntFieldNEQ">func IntFieldNEQ(v int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IntFieldNotIn">func IntFieldNotIn(vs ...int) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#IntFieldNotNil">func IntFieldNotNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#JSONFieldIsNil">func JSONFieldIsNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#JSONFieldNotNil">func JSONFieldNotNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Not">func Not(p predicate.TestEnt) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#Or">func Or(predicates ...predicate.TestEnt) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringField">func StringField(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldContains">func StringFieldContains(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldContainsFold">func StringFieldContainsFold(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldEQ">func StringFieldEQ(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldEqualFold">func StringFieldEqualFold(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldGT">func StringFieldGT(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldGTE">func StringFieldGTE(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldHasPrefix">func StringFieldHasPrefix(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldHasSuffix">func StringFieldHasSuffix(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldIn">func StringFieldIn(vs ...string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldIsNil">func StringFieldIsNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldLT">func StringFieldLT(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldLTE">func StringFieldLTE(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldNEQ">func StringFieldNEQ(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldNotIn">func StringFieldNotIn(vs ...string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#StringFieldNotNil">func StringFieldNotNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextField">func TextField(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldContains">func TextFieldContains(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldContainsFold">func TextFieldContainsFold(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldEQ">func TextFieldEQ(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldEqualFold">func TextFieldEqualFold(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldGT">func TextFieldGT(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldGTE">func TextFieldGTE(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldHasPrefix">func TextFieldHasPrefix(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldHasSuffix">func TextFieldHasSuffix(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldIn">func TextFieldIn(vs ...string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldIsNil">func TextFieldIsNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldLT">func TextFieldLT(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldLTE">func TextFieldLTE(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldNEQ">func TextFieldNEQ(v string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldNotIn">func TextFieldNotIn(vs ...string) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TextFieldNotNil">func TextFieldNotNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TimeField">func TimeField(v time.Time) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TimeFieldEQ">func TimeFieldEQ(v time.Time) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TimeFieldGT">func TimeFieldGT(v time.Time) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TimeFieldGTE">func TimeFieldGTE(v time.Time) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TimeFieldIn">func TimeFieldIn(vs ...time.Time) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TimeFieldIsNil">func TimeFieldIsNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TimeFieldLT">func TimeFieldLT(v time.Time) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TimeFieldLTE">func TimeFieldLTE(v time.Time) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TimeFieldNEQ">func TimeFieldNEQ(v time.Time) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TimeFieldNotIn">func TimeFieldNotIn(vs ...time.Time) predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#TimeFieldNotNil">func TimeFieldNotNil() predicate.TestEnt</a></dd>
+			
+				
+				<dd><a href="index.html#ValidColumn">func ValidColumn(column string) bool</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Order">type Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByBoolField">func ByBoolField(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByEnumField">func ByEnumField(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByFloatField">func ByFloatField(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByID">func ByID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByInt64Field">func ByInt64Field(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByIntField">func ByIntField(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByStringField">func ByStringField(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByTextField">func ByTextField(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByTimeField">func ByTimeField(opts ...sql.OrderTermOption) Order</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go">testent.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go">where.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span class="comment">// Label holds the string label denoting the testent type in the database.</span>
+    <span id="Label">Label</span> = &#34;test_ent&#34;
+    <span class="comment">// FieldID holds the string denoting the id field in the database.</span>
+    <span id="FieldID">FieldID</span> = &#34;id&#34;
+    <span class="comment">// FieldStringField holds the string denoting the string_field field in the database.</span>
+    <span id="FieldStringField">FieldStringField</span> = &#34;string_field&#34;
+    <span class="comment">// FieldTextField holds the string denoting the text_field field in the database.</span>
+    <span id="FieldTextField">FieldTextField</span> = &#34;text_field&#34;
+    <span class="comment">// FieldBytesField holds the string denoting the bytes_field field in the database.</span>
+    <span id="FieldBytesField">FieldBytesField</span> = &#34;bytes_field&#34;
+    <span class="comment">// FieldBoolField holds the string denoting the bool_field field in the database.</span>
+    <span id="FieldBoolField">FieldBoolField</span> = &#34;bool_field&#34;
+    <span class="comment">// FieldTimeField holds the string denoting the time_field field in the database.</span>
+    <span id="FieldTimeField">FieldTimeField</span> = &#34;time_field&#34;
+    <span class="comment">// FieldIntField holds the string denoting the int_field field in the database.</span>
+    <span id="FieldIntField">FieldIntField</span> = &#34;int_field&#34;
+    <span class="comment">// FieldInt64Field holds the string denoting the int64_field field in the database.</span>
+    <span id="FieldInt64Field">FieldInt64Field</span> = &#34;int64_field&#34;
+    <span class="comment">// FieldFloatField holds the string denoting the float_field field in the database.</span>
+    <span id="FieldFloatField">FieldFloatField</span> = &#34;float_field&#34;
+    <span class="comment">// FieldJSONField holds the string denoting the json_field field in the database.</span>
+    <span id="FieldJSONField">FieldJSONField</span> = &#34;json_field&#34;
+    <span class="comment">// FieldEnumField holds the string denoting the enum_field field in the database.</span>
+    <span id="FieldEnumField">FieldEnumField</span> = &#34;enum_field&#34;
+    <span class="comment">// Table holds the table name of the testent in the database.</span>
+    <span id="Table">Table</span> = &#34;test_ents&#34;
+)</pre>
+			
+				
+				<pre>const <span id="DefaultEnumField">DefaultEnumField</span> <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#TestEnum">TestEnum</a> = &#34;b&#34;</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var (
+    <span class="comment">// DefaultStringField holds the default value on creation for the &#34;string_field&#34; field.</span>
+    <span id="DefaultStringField">DefaultStringField</span> <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+    <span class="comment">// DefaultTextField holds the default value on creation for the &#34;text_field&#34; field.</span>
+    <span id="DefaultTextField">DefaultTextField</span> <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+    <span class="comment">// DefaultBytesField holds the default value on creation for the &#34;bytes_field&#34; field.</span>
+    <span id="DefaultBytesField">DefaultBytesField</span> []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>
+    <span class="comment">// DefaultBoolField holds the default value on creation for the &#34;bool_field&#34; field.</span>
+    <span id="DefaultBoolField">DefaultBoolField</span> <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+    <span class="comment">// DefaultTimeField holds the default value on creation for the &#34;time_field&#34; field.</span>
+    <span id="DefaultTimeField">DefaultTimeField</span> <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>
+    <span class="comment">// DefaultIntField holds the default value on creation for the &#34;int_field&#34; field.</span>
+    <span id="DefaultIntField">DefaultIntField</span> <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    <span class="comment">// DefaultInt64Field holds the default value on creation for the &#34;int64_field&#34; field.</span>
+    <span id="DefaultInt64Field">DefaultInt64Field</span> <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>
+    <span class="comment">// DefaultFloatField holds the default value on creation for the &#34;float_field&#34; field.</span>
+    <span id="DefaultFloatField">DefaultFloatField</span> <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>
+    <span class="comment">// DefaultJSONField holds the default value on creation for the &#34;json_field&#34; field.</span>
+    <span id="DefaultJSONField">DefaultJSONField</span> *<a href="../../schema/jsonfields/index.html">jsonfields</a>.<a href="../../schema/jsonfields/index.html#TestJSON">TestJSON</a>
+)</pre>
+			
+				<p>Columns holds all SQL columns for testent fields.
+
+				<pre>var <span id="Columns">Columns</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{
+    <a href="index.html#FieldID">FieldID</a>,
+    <a href="index.html#FieldStringField">FieldStringField</a>,
+    <a href="index.html#FieldTextField">FieldTextField</a>,
+    <a href="index.html#FieldBytesField">FieldBytesField</a>,
+    <a href="index.html#FieldBoolField">FieldBoolField</a>,
+    <a href="index.html#FieldTimeField">FieldTimeField</a>,
+    <a href="index.html#FieldIntField">FieldIntField</a>,
+    <a href="index.html#FieldInt64Field">FieldInt64Field</a>,
+    <a href="index.html#FieldFloatField">FieldFloatField</a>,
+    <a href="index.html#FieldJSONField">FieldJSONField</a>,
+    <a href="index.html#FieldEnumField">FieldEnumField</a>,
+}</pre>
+			
+		
+		
+			
+			
+			<h2 id="And">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=20459:20518#L559">And</a>
+				<a class="permalink" href="index.html#And">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func And(predicates ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>And groups predicates with the AND operator between them.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BoolField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=2281:2321#L64">BoolField</a>
+				<a class="permalink" href="index.html#BoolField">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BoolField(v <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BoolField applies equality check predicate on the &quot;bool_field&quot; field. It&apos;s identical to BoolFieldEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BoolFieldEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=10897:10939#L289">BoolFieldEQ</a>
+				<a class="permalink" href="index.html#BoolFieldEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BoolFieldEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BoolFieldEQ applies the EQ predicate on the &quot;bool_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BoolFieldIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=11253:11292#L299">BoolFieldIsNil</a>
+				<a class="permalink" href="index.html#BoolFieldIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BoolFieldIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BoolFieldIsNil applies the IsNil predicate on the &quot;bool_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BoolFieldNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=11072:11115#L294">BoolFieldNEQ</a>
+				<a class="permalink" href="index.html#BoolFieldNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BoolFieldNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BoolFieldNEQ applies the NEQ predicate on the &quot;bool_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BoolFieldNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=11432:11472#L304">BoolFieldNotNil</a>
+				<a class="permalink" href="index.html#BoolFieldNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BoolFieldNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BoolFieldNotNil applies the NotNil predicate on the &quot;bool_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BytesField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=2069:2112#L59">BytesField</a>
+				<a class="permalink" href="index.html#BytesField">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BytesField(v []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BytesField applies equality check predicate on the &quot;bytes_field&quot; field. It&apos;s identical to BytesFieldEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BytesFieldEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=9061:9106#L239">BytesFieldEQ</a>
+				<a class="permalink" href="index.html#BytesFieldEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BytesFieldEQ(v []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BytesFieldEQ applies the EQ predicate on the &quot;bytes_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BytesFieldGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=9809:9854#L259">BytesFieldGT</a>
+				<a class="permalink" href="index.html#BytesFieldGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BytesFieldGT(v []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BytesFieldGT applies the GT predicate on the &quot;bytes_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BytesFieldGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=9990:10036#L264">BytesFieldGTE</a>
+				<a class="permalink" href="index.html#BytesFieldGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BytesFieldGTE(v []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BytesFieldGTE applies the GTE predicate on the &quot;bytes_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BytesFieldIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=9423:9472#L249">BytesFieldIn</a>
+				<a class="permalink" href="index.html#BytesFieldIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BytesFieldIn(vs ...[]<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BytesFieldIn applies the In predicate on the &quot;bytes_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BytesFieldIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=10539:10579#L279">BytesFieldIsNil</a>
+				<a class="permalink" href="index.html#BytesFieldIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BytesFieldIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BytesFieldIsNil applies the IsNil predicate on the &quot;bytes_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BytesFieldLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=10171:10216#L269">BytesFieldLT</a>
+				<a class="permalink" href="index.html#BytesFieldLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BytesFieldLT(v []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BytesFieldLT applies the LT predicate on the &quot;bytes_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BytesFieldLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=10352:10398#L274">BytesFieldLTE</a>
+				<a class="permalink" href="index.html#BytesFieldLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BytesFieldLTE(v []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BytesFieldLTE applies the LTE predicate on the &quot;bytes_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BytesFieldNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=9242:9288#L244">BytesFieldNEQ</a>
+				<a class="permalink" href="index.html#BytesFieldNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BytesFieldNEQ(v []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BytesFieldNEQ applies the NEQ predicate on the &quot;bytes_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BytesFieldNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=9616:9668#L254">BytesFieldNotIn</a>
+				<a class="permalink" href="index.html#BytesFieldNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BytesFieldNotIn(vs ...[]<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BytesFieldNotIn applies the NotIn predicate on the &quot;bytes_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="BytesFieldNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=10722:10763#L284">BytesFieldNotNil</a>
+				<a class="permalink" href="index.html#BytesFieldNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BytesFieldNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>BytesFieldNotNil applies the NotNil predicate on the &quot;bytes_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="EnumFieldEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=19195:19247#L519">EnumFieldEQ</a>
+				<a class="permalink" href="index.html#EnumFieldEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func EnumFieldEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#TestEnum">TestEnum</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>EnumFieldEQ applies the EQ predicate on the &quot;enum_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="EnumFieldIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=19585:19641#L531">EnumFieldIn</a>
+				<a class="permalink" href="index.html#EnumFieldIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func EnumFieldIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#TestEnum">TestEnum</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>EnumFieldIn applies the In predicate on the &quot;enum_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="EnumFieldIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=20113:20152#L549">EnumFieldIsNil</a>
+				<a class="permalink" href="index.html#EnumFieldIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func EnumFieldIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>EnumFieldIsNil applies the IsNil predicate on the &quot;enum_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="EnumFieldNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=19390:19443#L525">EnumFieldNEQ</a>
+				<a class="permalink" href="index.html#EnumFieldNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func EnumFieldNEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#TestEnum">TestEnum</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>EnumFieldNEQ applies the NEQ predicate on the &quot;enum_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="EnumFieldNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=19846:19905#L540">EnumFieldNotIn</a>
+				<a class="permalink" href="index.html#EnumFieldNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func EnumFieldNotIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#TestEnum">TestEnum</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>EnumFieldNotIn applies the NotIn predicate on the &quot;enum_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="EnumFieldNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=20292:20332#L554">EnumFieldNotNil</a>
+				<a class="permalink" href="index.html#EnumFieldNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func EnumFieldNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>EnumFieldNotNil applies the NotNil predicate on the &quot;enum_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="EnumFieldValidator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go?s=3353:3401#L83">EnumFieldValidator</a>
+				<a class="permalink" href="index.html#EnumFieldValidator">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func EnumFieldValidator(ef <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#TestEnum">TestEnum</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			<p>EnumFieldValidator is a validator for the &quot;enum_field&quot; field enum values. It is called by the builders before save.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FloatField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=3121:3165#L84">FloatField</a>
+				<a class="permalink" href="index.html#FloatField">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FloatField(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>FloatField applies equality check predicate on the &quot;float_field&quot; field. It&apos;s identical to FloatFieldEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FloatFieldEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=16993:17039#L459">FloatFieldEQ</a>
+				<a class="permalink" href="index.html#FloatFieldEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FloatFieldEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>FloatFieldEQ applies the EQ predicate on the &quot;float_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FloatFieldGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=17745:17791#L479">FloatFieldGT</a>
+				<a class="permalink" href="index.html#FloatFieldGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FloatFieldGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>FloatFieldGT applies the GT predicate on the &quot;float_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FloatFieldGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=17927:17974#L484">FloatFieldGTE</a>
+				<a class="permalink" href="index.html#FloatFieldGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FloatFieldGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>FloatFieldGTE applies the GTE predicate on the &quot;float_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FloatFieldIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=17357:17407#L469">FloatFieldIn</a>
+				<a class="permalink" href="index.html#FloatFieldIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FloatFieldIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>FloatFieldIn applies the In predicate on the &quot;float_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FloatFieldIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=18479:18519#L499">FloatFieldIsNil</a>
+				<a class="permalink" href="index.html#FloatFieldIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FloatFieldIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>FloatFieldIsNil applies the IsNil predicate on the &quot;float_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FloatFieldLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=18109:18155#L489">FloatFieldLT</a>
+				<a class="permalink" href="index.html#FloatFieldLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FloatFieldLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>FloatFieldLT applies the LT predicate on the &quot;float_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FloatFieldLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=18291:18338#L494">FloatFieldLTE</a>
+				<a class="permalink" href="index.html#FloatFieldLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FloatFieldLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>FloatFieldLTE applies the LTE predicate on the &quot;float_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FloatFieldNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=17175:17222#L464">FloatFieldNEQ</a>
+				<a class="permalink" href="index.html#FloatFieldNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FloatFieldNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>FloatFieldNEQ applies the NEQ predicate on the &quot;float_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FloatFieldNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=17551:17604#L474">FloatFieldNotIn</a>
+				<a class="permalink" href="index.html#FloatFieldNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FloatFieldNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>FloatFieldNotIn applies the NotIn predicate on the &quot;float_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FloatFieldNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=18662:18703#L504">FloatFieldNotNil</a>
+				<a class="permalink" href="index.html#FloatFieldNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FloatFieldNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>FloatFieldNotNil applies the NotNil predicate on the &quot;float_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=257:290#L4">ID</a>
+				<a class="permalink" href="index.html#ID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ID(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>ID filters vertices based on their ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=398:433#L9">IDEQ</a>
+				<a class="permalink" href="index.html#IDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDEQ(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IDEQ applies the EQ predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=1002:1037#L29">IDGT</a>
+				<a class="permalink" href="index.html#IDGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDGT(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IDGT applies the GT predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=1147:1183#L34">IDGTE</a>
+				<a class="permalink" href="index.html#IDGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDGTE(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IDGTE applies the GTE predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=688:727#L19">IDIn</a>
+				<a class="permalink" href="index.html#IDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDIn(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IDIn applies the In predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=1292:1327#L39">IDLT</a>
+				<a class="permalink" href="index.html#IDLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDLT(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IDLT applies the LT predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=1437:1473#L44">IDLTE</a>
+				<a class="permalink" href="index.html#IDLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDLTE(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IDLTE applies the LTE predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=543:579#L14">IDNEQ</a>
+				<a class="permalink" href="index.html#IDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDNEQ(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IDNEQ applies the NEQ predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=845:887#L24">IDNotIn</a>
+				<a class="permalink" href="index.html#IDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDNotIn(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IDNotIn applies the NotIn predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Int64Field">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=2907:2949#L79">Int64Field</a>
+				<a class="permalink" href="index.html#Int64Field">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Int64Field(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Int64Field applies equality check predicate on the &quot;int64_field&quot; field. It&apos;s identical to Int64FieldEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Int64FieldEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=15163:15207#L409">Int64FieldEQ</a>
+				<a class="permalink" href="index.html#Int64FieldEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Int64FieldEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Int64FieldEQ applies the EQ predicate on the &quot;int64_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Int64FieldGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=15907:15951#L429">Int64FieldGT</a>
+				<a class="permalink" href="index.html#Int64FieldGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Int64FieldGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Int64FieldGT applies the GT predicate on the &quot;int64_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Int64FieldGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=16087:16132#L434">Int64FieldGTE</a>
+				<a class="permalink" href="index.html#Int64FieldGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Int64FieldGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Int64FieldGTE applies the GTE predicate on the &quot;int64_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Int64FieldIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=15523:15571#L419">Int64FieldIn</a>
+				<a class="permalink" href="index.html#Int64FieldIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Int64FieldIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Int64FieldIn applies the In predicate on the &quot;int64_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Int64FieldIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=16633:16673#L449">Int64FieldIsNil</a>
+				<a class="permalink" href="index.html#Int64FieldIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Int64FieldIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Int64FieldIsNil applies the IsNil predicate on the &quot;int64_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Int64FieldLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=16267:16311#L439">Int64FieldLT</a>
+				<a class="permalink" href="index.html#Int64FieldLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Int64FieldLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Int64FieldLT applies the LT predicate on the &quot;int64_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Int64FieldLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=16447:16492#L444">Int64FieldLTE</a>
+				<a class="permalink" href="index.html#Int64FieldLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Int64FieldLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Int64FieldLTE applies the LTE predicate on the &quot;int64_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Int64FieldNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=15343:15388#L414">Int64FieldNEQ</a>
+				<a class="permalink" href="index.html#Int64FieldNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Int64FieldNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Int64FieldNEQ applies the NEQ predicate on the &quot;int64_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Int64FieldNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=15715:15766#L424">Int64FieldNotIn</a>
+				<a class="permalink" href="index.html#Int64FieldNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Int64FieldNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Int64FieldNotIn applies the NotIn predicate on the &quot;int64_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Int64FieldNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=16816:16857#L454">Int64FieldNotNil</a>
+				<a class="permalink" href="index.html#Int64FieldNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Int64FieldNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Int64FieldNotNil applies the NotNil predicate on the &quot;int64_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IntField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=2699:2737#L74">IntField</a>
+				<a class="permalink" href="index.html#IntField">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IntField(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IntField applies equality check predicate on the &quot;int_field&quot; field. It&apos;s identical to IntFieldEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IntFieldEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=13425:13465#L359">IntFieldEQ</a>
+				<a class="permalink" href="index.html#IntFieldEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IntFieldEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IntFieldEQ applies the EQ predicate on the &quot;int_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IntFieldGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=14129:14169#L379">IntFieldGT</a>
+				<a class="permalink" href="index.html#IntFieldGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IntFieldGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IntFieldGT applies the GT predicate on the &quot;int_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IntFieldGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=14299:14340#L384">IntFieldGTE</a>
+				<a class="permalink" href="index.html#IntFieldGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IntFieldGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IntFieldGTE applies the GTE predicate on the &quot;int_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IntFieldIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=13765:13809#L369">IntFieldIn</a>
+				<a class="permalink" href="index.html#IntFieldIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IntFieldIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IntFieldIn applies the In predicate on the &quot;int_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IntFieldIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=14815:14853#L399">IntFieldIsNil</a>
+				<a class="permalink" href="index.html#IntFieldIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IntFieldIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IntFieldIsNil applies the IsNil predicate on the &quot;int_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IntFieldLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=14469:14509#L389">IntFieldLT</a>
+				<a class="permalink" href="index.html#IntFieldLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IntFieldLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IntFieldLT applies the LT predicate on the &quot;int_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IntFieldLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=14639:14680#L394">IntFieldLTE</a>
+				<a class="permalink" href="index.html#IntFieldLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IntFieldLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IntFieldLTE applies the LTE predicate on the &quot;int_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IntFieldNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=13595:13636#L364">IntFieldNEQ</a>
+				<a class="permalink" href="index.html#IntFieldNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IntFieldNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IntFieldNEQ applies the NEQ predicate on the &quot;int_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IntFieldNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=13947:13994#L374">IntFieldNotIn</a>
+				<a class="permalink" href="index.html#IntFieldNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IntFieldNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IntFieldNotIn applies the NotIn predicate on the &quot;int_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IntFieldNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=14990:15029#L404">IntFieldNotNil</a>
+				<a class="permalink" href="index.html#IntFieldNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IntFieldNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>IntFieldNotNil applies the NotNil predicate on the &quot;int_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="JSONFieldIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=18843:18882#L509">JSONFieldIsNil</a>
+				<a class="permalink" href="index.html#JSONFieldIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func JSONFieldIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>JSONFieldIsNil applies the IsNil predicate on the &quot;json_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="JSONFieldNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=19022:19062#L514">JSONFieldNotNil</a>
+				<a class="permalink" href="index.html#JSONFieldNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func JSONFieldNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>JSONFieldNotNil applies the NotNil predicate on the &quot;json_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Not">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=21026:21073#L584">Not</a>
+				<a class="permalink" href="index.html#Not">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Not(p <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Not applies the not operator on the given predicate.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Or">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=20729:20787#L570">Or</a>
+				<a class="permalink" href="index.html#Or">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Or(predicates ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>Or groups predicates with the OR operator between them.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=1642:1686#L49">StringField</a>
+				<a class="permalink" href="index.html#StringField">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringField(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringField applies equality check predicate on the &quot;string_field&quot; field. It&apos;s identical to StringFieldEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldContains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=4817:4869#L129">StringFieldContains</a>
+				<a class="permalink" href="index.html#StringFieldContains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldContains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldContains applies the Contains predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=6039:6095#L159">StringFieldContainsFold</a>
+				<a class="permalink" href="index.html#StringFieldContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldContainsFold applies the ContainsFold predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=3301:3347#L89">StringFieldEQ</a>
+				<a class="permalink" href="index.html#StringFieldEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldEQ applies the EQ predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldEqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=5822:5875#L154">StringFieldEqualFold</a>
+				<a class="permalink" href="index.html#StringFieldEqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldEqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldEqualFold applies the EqualFold predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=4065:4111#L109">StringFieldGT</a>
+				<a class="permalink" href="index.html#StringFieldGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldGT applies the GT predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=4250:4297#L114">StringFieldGTE</a>
+				<a class="permalink" href="index.html#StringFieldGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldGTE applies the GTE predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldHasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=5026:5079#L134">StringFieldHasPrefix</a>
+				<a class="permalink" href="index.html#StringFieldHasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldHasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldHasPrefix applies the HasPrefix predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldHasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=5237:5290#L139">StringFieldHasSuffix</a>
+				<a class="permalink" href="index.html#StringFieldHasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldHasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldHasSuffix applies the HasSuffix predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=3671:3721#L99">StringFieldIn</a>
+				<a class="permalink" href="index.html#StringFieldIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldIn applies the In predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=5440:5481#L144">StringFieldIsNil</a>
+				<a class="permalink" href="index.html#StringFieldIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldIsNil applies the IsNil predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=4435:4481#L119">StringFieldLT</a>
+				<a class="permalink" href="index.html#StringFieldLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldLT applies the LT predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=4620:4667#L124">StringFieldLTE</a>
+				<a class="permalink" href="index.html#StringFieldLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldLTE applies the LTE predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=3486:3533#L94">StringFieldNEQ</a>
+				<a class="permalink" href="index.html#StringFieldNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldNEQ applies the NEQ predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=3868:3921#L104">StringFieldNotIn</a>
+				<a class="permalink" href="index.html#StringFieldNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldNotIn applies the NotIn predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringFieldNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=5627:5669#L149">StringFieldNotNil</a>
+				<a class="permalink" href="index.html#StringFieldNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringFieldNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>StringFieldNotNil applies the NotNil predicate on the &quot;string_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=1856:1898#L54">TextField</a>
+				<a class="permalink" href="index.html#TextField">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextField(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextField applies equality check predicate on the &quot;text_field&quot; field. It&apos;s identical to TextFieldEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldContains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=7690:7740#L204">TextFieldContains</a>
+				<a class="permalink" href="index.html#TextFieldContains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldContains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldContains applies the Contains predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=8864:8918#L234">TextFieldContainsFold</a>
+				<a class="permalink" href="index.html#TextFieldContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldContainsFold applies the ContainsFold predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=6238:6282#L164">TextFieldEQ</a>
+				<a class="permalink" href="index.html#TextFieldEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldEQ applies the EQ predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldEqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=8655:8706#L229">TextFieldEqualFold</a>
+				<a class="permalink" href="index.html#TextFieldEqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldEqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldEqualFold applies the EqualFold predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=6970:7014#L184">TextFieldGT</a>
+				<a class="permalink" href="index.html#TextFieldGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldGT applies the GT predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=7147:7192#L189">TextFieldGTE</a>
+				<a class="permalink" href="index.html#TextFieldGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldGTE applies the GTE predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldHasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=7891:7942#L209">TextFieldHasPrefix</a>
+				<a class="permalink" href="index.html#TextFieldHasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldHasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldHasPrefix applies the HasPrefix predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldHasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=8094:8145#L214">TextFieldHasSuffix</a>
+				<a class="permalink" href="index.html#TextFieldHasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldHasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldHasSuffix applies the HasSuffix predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=6592:6640#L174">TextFieldIn</a>
+				<a class="permalink" href="index.html#TextFieldIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldIn applies the In predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=8289:8328#L219">TextFieldIsNil</a>
+				<a class="permalink" href="index.html#TextFieldIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldIsNil applies the IsNil predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=7324:7368#L194">TextFieldLT</a>
+				<a class="permalink" href="index.html#TextFieldLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldLT applies the LT predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=7501:7546#L199">TextFieldLTE</a>
+				<a class="permalink" href="index.html#TextFieldLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldLTE applies the LTE predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=6415:6460#L169">TextFieldNEQ</a>
+				<a class="permalink" href="index.html#TextFieldNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldNEQ applies the NEQ predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=6781:6832#L179">TextFieldNotIn</a>
+				<a class="permalink" href="index.html#TextFieldNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldNotIn applies the NotIn predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TextFieldNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=8468:8508#L224">TextFieldNotNil</a>
+				<a class="permalink" href="index.html#TextFieldNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TextFieldNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TextFieldNotNil applies the NotNil predicate on the &quot;text_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TimeField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=2489:2534#L69">TimeField</a>
+				<a class="permalink" href="index.html#TimeField">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TimeField(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TimeField applies equality check predicate on the &quot;time_field&quot; field. It&apos;s identical to TimeFieldEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TimeFieldEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=11605:11652#L309">TimeFieldEQ</a>
+				<a class="permalink" href="index.html#TimeFieldEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TimeFieldEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TimeFieldEQ applies the EQ predicate on the &quot;time_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TimeFieldGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=12349:12396#L329">TimeFieldGT</a>
+				<a class="permalink" href="index.html#TimeFieldGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TimeFieldGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TimeFieldGT applies the GT predicate on the &quot;time_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TimeFieldGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=12529:12577#L334">TimeFieldGTE</a>
+				<a class="permalink" href="index.html#TimeFieldGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TimeFieldGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TimeFieldGTE applies the GTE predicate on the &quot;time_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TimeFieldIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=11965:12016#L319">TimeFieldIn</a>
+				<a class="permalink" href="index.html#TimeFieldIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TimeFieldIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TimeFieldIn applies the In predicate on the &quot;time_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TimeFieldIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=13075:13114#L349">TimeFieldIsNil</a>
+				<a class="permalink" href="index.html#TimeFieldIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TimeFieldIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TimeFieldIsNil applies the IsNil predicate on the &quot;time_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TimeFieldLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=12709:12756#L339">TimeFieldLT</a>
+				<a class="permalink" href="index.html#TimeFieldLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TimeFieldLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TimeFieldLT applies the LT predicate on the &quot;time_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TimeFieldLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=12889:12937#L344">TimeFieldLTE</a>
+				<a class="permalink" href="index.html#TimeFieldLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TimeFieldLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TimeFieldLTE applies the LTE predicate on the &quot;time_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TimeFieldNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=11785:11833#L314">TimeFieldNEQ</a>
+				<a class="permalink" href="index.html#TimeFieldNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TimeFieldNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TimeFieldNEQ applies the NEQ predicate on the &quot;time_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TimeFieldNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=12157:12211#L324">TimeFieldNotIn</a>
+				<a class="permalink" href="index.html#TimeFieldNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TimeFieldNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TimeFieldNotIn applies the NotIn predicate on the &quot;time_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TimeFieldNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/where.go?s=13254:13294#L354">TimeFieldNotNil</a>
+				<a class="permalink" href="index.html#TimeFieldNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TimeFieldNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#TestEnt">TestEnt</a></pre>
+			<p>TimeFieldNotNil applies the NotNil predicate on the &quot;time_field&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ValidColumn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go?s=2034:2070#L50">ValidColumn</a>
+				<a class="permalink" href="index.html#ValidColumn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ValidColumn(column <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a></pre>
+			<p>ValidColumn reports if the column name is valid (part of the table columns).
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Order">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go?s=3609:3639#L93">Order</a>
+				<a class="permalink" href="index.html#Order">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Order defines the ordering method for the TestEnt queries.
+
+			<pre>type Order func(*<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#Selector">Selector</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="ByBoolField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go?s=4204:4255#L111">ByBoolField</a>
+					<a class="permalink" href="index.html#ByBoolField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByBoolField(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByBoolField orders the results by the bool_field field.
+
+				
+				
+			
+				
+				<h3 id="ByEnumField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go?s=5083:5134#L136">ByEnumField</a>
+					<a class="permalink" href="index.html#ByEnumField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByEnumField(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByEnumField orders the results by the enum_field field.
+
+				
+				
+			
+				
+				<h3 id="ByFloatField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go?s=4906:4958#L131">ByFloatField</a>
+					<a class="permalink" href="index.html#ByFloatField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByFloatField(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByFloatField orders the results by the float_field field.
+
+				
+				
+			
+				
+				<h3 id="ByID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go?s=3685:3729#L96">ByID</a>
+					<a class="permalink" href="index.html#ByID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByID orders the results by the id field.
+
+				
+				
+			
+				
+				<h3 id="ByInt64Field">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go?s=4727:4779#L126">ByInt64Field</a>
+					<a class="permalink" href="index.html#ByInt64Field">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByInt64Field(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByInt64Field orders the results by the int64_field field.
+
+				
+				
+			
+				
+				<h3 id="ByIntField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go?s=4552:4602#L121">ByIntField</a>
+					<a class="permalink" href="index.html#ByIntField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByIntField(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByIntField orders the results by the int_field field.
+
+				
+				
+			
+				
+				<h3 id="ByStringField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go?s=3850:3903#L101">ByStringField</a>
+					<a class="permalink" href="index.html#ByStringField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByStringField(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByStringField orders the results by the string_field field.
+
+				
+				
+			
+				
+				<h3 id="ByTextField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go?s=4029:4080#L106">ByTextField</a>
+					<a class="permalink" href="index.html#ByTextField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByTextField(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByTextField orders the results by the text_field field.
+
+				
+				
+			
+				
+				<h3 id="ByTimeField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/testent/testent.go?s=4379:4430#L116">ByTimeField</a>
+					<a class="permalink" href="index.html#ByTimeField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByTimeField(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByTimeField orders the results by the time_field field.
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

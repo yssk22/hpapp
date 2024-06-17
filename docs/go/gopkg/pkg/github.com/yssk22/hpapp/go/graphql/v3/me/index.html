@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>me - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package me
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/graphql/v3/me"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#HPEventQueryParams">type HPEventQueryParams</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MeFavoriteQueryParams">type MeFavoriteQueryParams</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MeMutation">type MeMutation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewMutation">func NewMutation(ctx context.Context) (*MeMutation, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeMutation.Authenticate">func (h *MeMutation) Authenticate(ctx context.Context) (*ent.User, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeMutation.RemoveAuthentication">func (h *MeMutation) RemoveAuthentication(ctx context.Context) (*ent.Auth, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeMutation.UpsertEvents">func (h *MeMutation) UpsertEvents(ctx context.Context, params upfc.UpsertEventsParams) ([]*ent.HPEvent, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeMutation.UpsertFollow">func (h *MeMutation) UpsertFollow(ctx context.Context, params user.HPFollowUpsertParams) (*ent.HPFollow, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeMutation.UpsertViewHistory">func (h *MeMutation) UpsertViewHistory(ctx context.Context, params feed.HPViewHistoryUpsertParams) (*ent.HPViewHistory, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#MeQuery">type MeQuery</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeQuery.Authentications">func (h *MeQuery) Authentications(ctx context.Context) ([]*ent.Auth, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeQuery.ClientID">func (h *MeQuery) ClientID(ctx context.Context) *string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeQuery.ClientIsVerified">func (h *MeQuery) ClientIsVerified(ctx context.Context) *bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeQuery.ClientName">func (h *MeQuery) ClientName(ctx context.Context) *string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeQuery.Events">func (h *MeQuery) Events(ctx context.Context, after *ent.Cursor, first *int, before *ent.Cursor, last *int) (*ent.HPEventConnection, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeQuery.Favorites">func (h *MeQuery) Favorites(ctx context.Context, params MeFavoriteQueryParams, after *ent.Cursor, first *int, before *ent.Cursor, last *int) (*ent.HPFeedItemConnection, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeQuery.Followings">func (h *MeQuery) Followings(ctx context.Context) ([]*ent.HPFollow, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeQuery.ID">func (h *MeQuery) ID(ctx context.Context) (string, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeQuery.IsNode">func (h *MeQuery) IsNode()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeQuery.SortHistories">func (h *MeQuery) SortHistories(ctx context.Context, after *ent.Cursor, first *int, before *ent.Cursor, last *int) (*ent.HPSortHistoryConnection, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MeQuery.Username">func (h *MeQuery) Username(ctx context.Context) (string, error)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/mutation.go">mutation.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go">query.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="HPEventQueryParams">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=2350:2384#L67">HPEventQueryParams</a>
+				<a class="permalink" href="index.html#HPEventQueryParams">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPEventQueryParams struct {
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MeFavoriteQueryParams">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=2971:3061#L80">MeFavoriteQueryParams</a>
+				<a class="permalink" href="index.html#MeFavoriteQueryParams">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MeFavoriteQueryParams struct {
+<span id="MeFavoriteQueryParams.MemberIDs"></span>    MemberIDs  []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="MeFavoriteQueryParams.AssetTypes"></span>    AssetTypes []<a href="../../../service/schema/enums/index.html">enums</a>.<a href="../../../service/schema/enums/index.html#HPAssetType">HPAssetType</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MeMutation">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/mutation.go?s=297:321#L3">MeMutation</a>
+				<a class="permalink" href="index.html#MeMutation">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MeMutation struct{}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewMutation">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/mutation.go?s=323:381#L5">NewMutation</a>
+					<a class="permalink" href="index.html#NewMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (*<a href="index.html#MeMutation">MeMutation</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+			
+
+			
+				
+				<h3 id="MeMutation.Authenticate">func (*MeMutation) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/mutation.go?s=505:578#L13">Authenticate</a>
+					<a class="permalink" href="index.html#MeMutation.Authenticate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeMutation">MeMutation</a>) Authenticate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#User">User</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeMutation.RemoveAuthentication">func (*MeMutation) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/mutation.go?s=618:699#L17">RemoveAuthentication</a>
+					<a class="permalink" href="index.html#MeMutation.RemoveAuthentication">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeMutation">MeMutation</a>) RemoveAuthentication(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#Auth">Auth</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeMutation.UpsertEvents">func (*MeMutation) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/mutation.go?s=944:1054#L25">UpsertEvents</a>
+					<a class="permalink" href="index.html#MeMutation.UpsertEvents">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeMutation">MeMutation</a>) UpsertEvents(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, params <a href="../../../service/helloproject/upfc/index.html">upfc</a>.<a href="../../../service/helloproject/upfc/index.html#UpsertEventsParams">UpsertEventsParams</a>) ([]*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#HPEvent">HPEvent</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeMutation.UpsertFollow">func (*MeMutation) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/mutation.go?s=747:858#L21">UpsertFollow</a>
+					<a class="permalink" href="index.html#MeMutation.UpsertFollow">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeMutation">MeMutation</a>) UpsertFollow(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, params <a href="../../../service/helloproject/user/index.html">user</a>.<a href="../../../service/helloproject/user/index.html#HPFollowUpsertParams">HPFollowUpsertParams</a>) (*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#HPFollow">HPFollow</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeMutation.UpsertViewHistory">func (*MeMutation) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/mutation.go?s=1114:1240#L29">UpsertViewHistory</a>
+					<a class="permalink" href="index.html#MeMutation.UpsertViewHistory">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeMutation">MeMutation</a>) UpsertViewHistory(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, params <a href="../../../service/helloproject/feed/index.html">feed</a>.<a href="../../../service/helloproject/feed/index.html#HPViewHistoryUpsertParams">HPViewHistoryUpsertParams</a>) (*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#HPViewHistory">HPViewHistory</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MeQuery">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=896:917#L15">MeQuery</a>
+				<a class="permalink" href="index.html#MeQuery">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MeQuery struct{}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="MeQuery.Authentications">func (*MeQuery) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=1663:1738#L51">Authentications</a>
+					<a class="permalink" href="index.html#MeQuery.Authentications">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeQuery">MeQuery</a>) Authentications(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) ([]*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#Auth">Auth</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeQuery.ClientID">func (*MeQuery) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=1174:1229#L27">ClientID</a>
+					<a class="permalink" href="index.html#MeQuery.ClientID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeQuery">MeQuery</a>) ClientID(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) *<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeQuery.ClientIsVerified">func (*MeQuery) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=1490:1551#L43">ClientIsVerified</a>
+					<a class="permalink" href="index.html#MeQuery.ClientIsVerified">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeQuery">MeQuery</a>) ClientIsVerified(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) *<a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeQuery.ClientName">func (*MeQuery) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=1330:1387#L35">ClientName</a>
+					<a class="permalink" href="index.html#MeQuery.ClientName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeQuery">MeQuery</a>) ClientName(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) *<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeQuery.Events">func (*MeQuery) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=2386:2525#L70">Events</a>
+					<a class="permalink" href="index.html#MeQuery.Events">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeQuery">MeQuery</a>) Events(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, after *<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#Cursor">Cursor</a>, first *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, before *<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#Cursor">Cursor</a>, last *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) (*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#HPEventConnection">HPEventConnection</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeQuery.Favorites">func (*MeQuery) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=3063:3238#L85">Favorites</a>
+					<a class="permalink" href="index.html#MeQuery.Favorites">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeQuery">MeQuery</a>) Favorites(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, params <a href="index.html#MeFavoriteQueryParams">MeFavoriteQueryParams</a>, after *<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#Cursor">Cursor</a>, first *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, before *<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#Cursor">Cursor</a>, last *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) (*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#HPFeedItemConnection">HPFeedItemConnection</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeQuery.Followings">func (*MeQuery) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=1815:1889#L55">Followings</a>
+					<a class="permalink" href="index.html#MeQuery.Followings">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeQuery">MeQuery</a>) Followings(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) ([]*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#HPFollow">HPFollow</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeQuery.ID">func (*MeQuery) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=950:1007#L19">ID</a>
+					<a class="permalink" href="index.html#MeQuery.ID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeQuery">MeQuery</a>) ID(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeQuery.IsNode">func (*MeQuery) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=919:945#L17">IsNode</a>
+					<a class="permalink" href="index.html#MeQuery.IsNode">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeQuery">MeQuery</a>) IsNode()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeQuery.SortHistories">func (*MeQuery) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=1958:2110#L59">SortHistories</a>
+					<a class="permalink" href="index.html#MeQuery.SortHistories">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeQuery">MeQuery</a>) SortHistories(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, after *<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#Cursor">Cursor</a>, first *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, before *<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#Cursor">Cursor</a>, last *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) (*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#HPSortHistoryConnection">HPSortHistoryConnection</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MeQuery.Username">func (*MeQuery) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/me/query.go?s=1056:1119#L23">Username</a>
+					<a class="permalink" href="index.html#MeQuery.Username">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#MeQuery">MeQuery</a>) Username(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

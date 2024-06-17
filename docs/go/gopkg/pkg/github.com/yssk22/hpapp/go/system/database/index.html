@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>database - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package database
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/system/database"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+			
+				
+				<dd><a href="index.html#Command">func Command() *cobra.Command</a></dd>
+			
+				
+				<dd><a href="index.html#NewMySQL">func NewMySQL(opts ...MySQLOption) *sql.DB</a></dd>
+			
+				
+				<dd><a href="index.html#NewSQLite">func NewSQLite(opts ...SQLite3Option) *sql.DB</a></dd>
+			
+				
+				<dd><a href="index.html#SetDatabase">func SetDatabase(ctx context.Context, name string, db *sql.DB) context.Context</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Info">type Info</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FromContext">func FromContext(ctx context.Context) *Info</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MySQLOption">type MySQLOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithMySQLDatabase">func WithMySQLDatabase(database string) MySQLOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithMySQLLocation">func WithMySQLLocation(location string) MySQLOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithMySQLPassword">func WithMySQLPassword(password string) MySQLOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithMySQLUsername">func WithMySQLUsername(username string) MySQLOption</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SQLite3Mode">type SQLite3Mode</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SQLite3Option">type SQLite3Option</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithSQLite3File">func WithSQLite3File(filePath string) SQLite3Option</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithSQLite3Mode">func WithSQLite3Mode(mode SQLite3Mode) SQLite3Option</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/cmd.go">cmd.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/context.go">context.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/database.go">database.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/mysql.go">mysql.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/sqlite.go">sqlite.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span id="SQLite3ModeMemory">SQLite3ModeMemory</span>       = <a href="index.html#SQLite3Mode">SQLite3Mode</a>(&#34;memory&#34;)
+    <span id="SQLite3ModeFile">SQLite3ModeFile</span>         = <a href="index.html#SQLite3Mode">SQLite3Mode</a>(&#34;rwc&#34;)
+    <span id="SQLite3ModeReadOnlyFile">SQLite3ModeReadOnlyFile</span> = <a href="index.html#SQLite3Mode">SQLite3Mode</a>(&#34;ro&#34;)
+)</pre>
+			
+				
+				<pre>const (
+    <span id="DatabasePath">DatabasePath</span> = &#34;./data/helloproject.db&#34;
+)</pre>
+			
+		
+		
+		
+			
+			
+			<h2 id="Command">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/cmd.go?s=184:213#L6">Command</a>
+				<a class="permalink" href="index.html#Command">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Command() *<a href="http://127.0.0.1:8888/pkg/github.com/spf13/cobra/">cobra</a>.<a href="http://127.0.0.1:8888/pkg/github.com/spf13/cobra/#Command">Command</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="NewMySQL">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/mysql.go?s=937:979#L39">NewMySQL</a>
+				<a class="permalink" href="index.html#NewMySQL">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewMySQL(opts ...<a href="index.html#MySQLOption">MySQLOption</a>) *<a href="http://127.0.0.1:8888/pkg/database/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/database/sql/#DB">DB</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="NewSQLite">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/sqlite.go?s=747:792#L33">NewSQLite</a>
+				<a class="permalink" href="index.html#NewSQLite">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewSQLite(opts ...<a href="index.html#SQLite3Option">SQLite3Option</a>) *<a href="http://127.0.0.1:8888/pkg/database/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/database/sql/#DB">DB</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="SetDatabase">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/context.go?s=183:261#L7">SetDatabase</a>
+				<a class="permalink" href="index.html#SetDatabase">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SetDatabase(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, name <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, db *<a href="http://127.0.0.1:8888/pkg/database/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/database/sql/#DB">DB</a>) <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a></pre>
+			
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Info">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/context.go?s=57:104#L1">Info</a>
+				<a class="permalink" href="index.html#Info">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Info struct {
+<span id="Info.Name"></span>    Name <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="Info.DB"></span>    DB   *<a href="http://127.0.0.1:8888/pkg/database/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/database/sql/#DB">DB</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="FromContext">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/context.go?s=351:394#L14">FromContext</a>
+					<a class="permalink" href="index.html#FromContext">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func FromContext(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) *<a href="index.html#Info">Info</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="MySQLOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/mysql.go?s=309:338#L11">MySQLOption</a>
+				<a class="permalink" href="index.html#MySQLOption">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MySQLOption func(*mysql)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="WithMySQLDatabase">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/mysql.go?s=828:879#L33">WithMySQLDatabase</a>
+					<a class="permalink" href="index.html#WithMySQLDatabase">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithMySQLDatabase(database <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#MySQLOption">MySQLOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="WithMySQLLocation">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/mysql.go?s=501:552#L15">WithMySQLLocation</a>
+					<a class="permalink" href="index.html#WithMySQLLocation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithMySQLLocation(location <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#MySQLOption">MySQLOption</a></pre>
+				<p>WithMySQLLocation use the given location to connect to the database
+location string is something like `tcp({host}:{port})` or `unix(/cloudsql/{project}))`
+
+				
+				
+			
+				
+				<h3 id="WithMySQLPassword">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/mysql.go?s=719:770#L27">WithMySQLPassword</a>
+					<a class="permalink" href="index.html#WithMySQLPassword">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithMySQLPassword(password <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#MySQLOption">MySQLOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="WithMySQLUsername">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/mysql.go?s=610:661#L21">WithMySQLUsername</a>
+					<a class="permalink" href="index.html#WithMySQLUsername">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithMySQLUsername(username <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#MySQLOption">MySQLOption</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="SQLite3Mode">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/sqlite.go?s=95:118#L1">SQLite3Mode</a>
+				<a class="permalink" href="index.html#SQLite3Mode">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type SQLite3Mode <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SQLite3Option">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/sqlite.go?s=500:532#L19">SQLite3Option</a>
+				<a class="permalink" href="index.html#SQLite3Option">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type SQLite3Option func(*sqlite)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="WithSQLite3File">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/sqlite.go?s=534:585#L21">WithSQLite3File</a>
+					<a class="permalink" href="index.html#WithSQLite3File">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithSQLite3File(filePath <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#SQLite3Option">SQLite3Option</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="WithSQLite3Mode">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/database/sqlite.go?s=644:696#L27">WithSQLite3Mode</a>
+					<a class="permalink" href="index.html#WithSQLite3Mode">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithSQLite3Mode(mode <a href="index.html#SQLite3Mode">SQLite3Mode</a>) <a href="index.html#SQLite3Option">SQLite3Option</a></pre>
+				
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

@@ -1,0 +1,4234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>hpblob - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package hpblob
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/ent/hpblob"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#And">func And(predicates ...predicate.HPBlob) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAt">func CreatedAt(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtEQ">func CreatedAtEQ(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtGT">func CreatedAtGT(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtGTE">func CreatedAtGTE(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtIn">func CreatedAtIn(vs ...time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtIsNil">func CreatedAtIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtLT">func CreatedAtLT(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtLTE">func CreatedAtLTE(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtNEQ">func CreatedAtNEQ(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtNotIn">func CreatedAtNotIn(vs ...time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtNotNil">func CreatedAtNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#DurationSeconds">func DurationSeconds(v float64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#DurationSecondsEQ">func DurationSecondsEQ(v float64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#DurationSecondsGT">func DurationSecondsGT(v float64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#DurationSecondsGTE">func DurationSecondsGTE(v float64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#DurationSecondsIn">func DurationSecondsIn(vs ...float64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#DurationSecondsIsNil">func DurationSecondsIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#DurationSecondsLT">func DurationSecondsLT(v float64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#DurationSecondsLTE">func DurationSecondsLTE(v float64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#DurationSecondsNEQ">func DurationSecondsNEQ(v float64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#DurationSecondsNotIn">func DurationSecondsNotIn(vs ...float64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#DurationSecondsNotNil">func DurationSecondsNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#FaceRecognitionStatusEQ">func FaceRecognitionStatusEQ(v enums.HPBlobFaceRecognitionStatus) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#FaceRecognitionStatusIn">func FaceRecognitionStatusIn(vs ...enums.HPBlobFaceRecognitionStatus) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#FaceRecognitionStatusIsNil">func FaceRecognitionStatusIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#FaceRecognitionStatusNEQ">func FaceRecognitionStatusNEQ(v enums.HPBlobFaceRecognitionStatus) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#FaceRecognitionStatusNotIn">func FaceRecognitionStatusNotIn(vs ...enums.HPBlobFaceRecognitionStatus) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#FaceRecognitionStatusNotNil">func FaceRecognitionStatusNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#FaceRecognitionStatusValidator">func FaceRecognitionStatusValidator(frs enums.HPBlobFaceRecognitionStatus) error</a></dd>
+			
+				
+				<dd><a href="index.html#FacesIsNil">func FacesIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#FacesNotNil">func FacesNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HasAmebloPosts">func HasAmebloPosts() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HasAmebloPostsWith">func HasAmebloPostsWith(preds ...predicate.HPAmebloPost) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HasIgPosts">func HasIgPosts() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HasIgPostsWith">func HasIgPostsWith(preds ...predicate.HPIgPost) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HasOwnerArtist">func HasOwnerArtist() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HasOwnerArtistWith">func HasOwnerArtistWith(preds ...predicate.HPArtist) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HasOwnerMember">func HasOwnerMember() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HasOwnerMemberWith">func HasOwnerMemberWith(preds ...predicate.HPMember) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#Height">func Height(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HeightEQ">func HeightEQ(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HeightGT">func HeightGT(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HeightGTE">func HeightGTE(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HeightIn">func HeightIn(vs ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HeightIsNil">func HeightIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HeightLT">func HeightLT(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HeightLTE">func HeightLTE(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HeightNEQ">func HeightNEQ(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HeightNotIn">func HeightNotIn(vs ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#HeightNotNil">func HeightNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#ID">func ID(id int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#IDEQ">func IDEQ(id int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#IDGT">func IDGT(id int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#IDGTE">func IDGTE(id int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#IDIn">func IDIn(ids ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#IDLT">func IDLT(id int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#IDLTE">func IDLTE(id int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#IDNEQ">func IDNEQ(id int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#IDNotIn">func IDNotIn(ids ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#Not">func Not(p predicate.HPBlob) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#NumFaces">func NumFaces(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#NumFacesEQ">func NumFacesEQ(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#NumFacesGT">func NumFacesGT(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#NumFacesGTE">func NumFacesGTE(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#NumFacesIn">func NumFacesIn(vs ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#NumFacesIsNil">func NumFacesIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#NumFacesLT">func NumFacesLT(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#NumFacesLTE">func NumFacesLTE(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#NumFacesNEQ">func NumFacesNEQ(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#NumFacesNotIn">func NumFacesNotIn(vs ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#NumFacesNotNil">func NumFacesNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#Or">func Or(predicates ...predicate.HPBlob) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistID">func OwnerArtistID(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistIDEQ">func OwnerArtistIDEQ(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistIDIn">func OwnerArtistIDIn(vs ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistIDIsNil">func OwnerArtistIDIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistIDNEQ">func OwnerArtistIDNEQ(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistIDNotIn">func OwnerArtistIDNotIn(vs ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistIDNotNil">func OwnerArtistIDNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberID">func OwnerMemberID(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberIDEQ">func OwnerMemberIDEQ(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberIDIn">func OwnerMemberIDIn(vs ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberIDIsNil">func OwnerMemberIDIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberIDNEQ">func OwnerMemberIDNEQ(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberIDNotIn">func OwnerMemberIDNotIn(vs ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberIDNotNil">func OwnerMemberIDNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#Size">func Size(v int64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SizeEQ">func SizeEQ(v int64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SizeGT">func SizeGT(v int64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SizeGTE">func SizeGTE(v int64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SizeIn">func SizeIn(vs ...int64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SizeIsNil">func SizeIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SizeLT">func SizeLT(v int64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SizeLTE">func SizeLTE(v int64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SizeNEQ">func SizeNEQ(v int64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SizeNotIn">func SizeNotIn(vs ...int64) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SizeNotNil">func SizeNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURL">func SourceHTMLURL(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLContains">func SourceHTMLURLContains(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLContainsFold">func SourceHTMLURLContainsFold(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLEQ">func SourceHTMLURLEQ(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLEqualFold">func SourceHTMLURLEqualFold(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLGT">func SourceHTMLURLGT(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLGTE">func SourceHTMLURLGTE(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLHasPrefix">func SourceHTMLURLHasPrefix(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLHasSuffix">func SourceHTMLURLHasSuffix(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLIn">func SourceHTMLURLIn(vs ...string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLLT">func SourceHTMLURLLT(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLLTE">func SourceHTMLURLLTE(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLNEQ">func SourceHTMLURLNEQ(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceHTMLURLNotIn">func SourceHTMLURLNotIn(vs ...string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURL">func SourceURL(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLContains">func SourceURLContains(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLContainsFold">func SourceURLContainsFold(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLEQ">func SourceURLEQ(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLEqualFold">func SourceURLEqualFold(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLGT">func SourceURLGT(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLGTE">func SourceURLGTE(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLHasPrefix">func SourceURLHasPrefix(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLHasSuffix">func SourceURLHasSuffix(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLIn">func SourceURLIn(vs ...string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLLT">func SourceURLLT(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLLTE">func SourceURLLTE(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLNEQ">func SourceURLNEQ(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLNotIn">func SourceURLNotIn(vs ...string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusEQ">func StatusEQ(v enums.HPBlobStatus) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusErrorCount">func StatusErrorCount(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusErrorCountEQ">func StatusErrorCountEQ(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusErrorCountGT">func StatusErrorCountGT(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusErrorCountGTE">func StatusErrorCountGTE(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusErrorCountIn">func StatusErrorCountIn(vs ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusErrorCountIsNil">func StatusErrorCountIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusErrorCountLT">func StatusErrorCountLT(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusErrorCountLTE">func StatusErrorCountLTE(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusErrorCountNEQ">func StatusErrorCountNEQ(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusErrorCountNotIn">func StatusErrorCountNotIn(vs ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusErrorCountNotNil">func StatusErrorCountNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusIn">func StatusIn(vs ...enums.HPBlobStatus) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessage">func StatusMessage(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageContains">func StatusMessageContains(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageContainsFold">func StatusMessageContainsFold(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageEQ">func StatusMessageEQ(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageEqualFold">func StatusMessageEqualFold(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageGT">func StatusMessageGT(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageGTE">func StatusMessageGTE(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageHasPrefix">func StatusMessageHasPrefix(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageHasSuffix">func StatusMessageHasSuffix(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageIn">func StatusMessageIn(vs ...string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageIsNil">func StatusMessageIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageLT">func StatusMessageLT(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageLTE">func StatusMessageLTE(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageNEQ">func StatusMessageNEQ(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageNotIn">func StatusMessageNotIn(vs ...string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusMessageNotNil">func StatusMessageNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusNEQ">func StatusNEQ(v enums.HPBlobStatus) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusNotIn">func StatusNotIn(vs ...enums.HPBlobStatus) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StatusValidator">func StatusValidator(s enums.HPBlobStatus) error</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePath">func StoragePath(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathContains">func StoragePathContains(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathContainsFold">func StoragePathContainsFold(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathEQ">func StoragePathEQ(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathEqualFold">func StoragePathEqualFold(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathGT">func StoragePathGT(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathGTE">func StoragePathGTE(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathHasPrefix">func StoragePathHasPrefix(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathHasSuffix">func StoragePathHasSuffix(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathIn">func StoragePathIn(vs ...string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathLT">func StoragePathLT(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathLTE">func StoragePathLTE(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathNEQ">func StoragePathNEQ(v string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#StoragePathNotIn">func StoragePathNotIn(vs ...string) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SubTypeEQ">func SubTypeEQ(v enums.HPBlobSubType) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SubTypeIn">func SubTypeIn(vs ...enums.HPBlobSubType) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SubTypeNEQ">func SubTypeNEQ(v enums.HPBlobSubType) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SubTypeNotIn">func SubTypeNotIn(vs ...enums.HPBlobSubType) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#SubTypeValidator">func SubTypeValidator(st enums.HPBlobSubType) error</a></dd>
+			
+				
+				<dd><a href="index.html#ThumbnailIsNil">func ThumbnailIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#ThumbnailNotNil">func ThumbnailNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#TypeEQ">func TypeEQ(v enums.HPBlobType) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#TypeIn">func TypeIn(vs ...enums.HPBlobType) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#TypeNEQ">func TypeNEQ(v enums.HPBlobType) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#TypeNotIn">func TypeNotIn(vs ...enums.HPBlobType) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#TypeValidator">func TypeValidator(_type enums.HPBlobType) error</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAt">func UpdatedAt(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtEQ">func UpdatedAtEQ(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtGT">func UpdatedAtGT(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtGTE">func UpdatedAtGTE(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtIn">func UpdatedAtIn(vs ...time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtIsNil">func UpdatedAtIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtLT">func UpdatedAtLT(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtLTE">func UpdatedAtLTE(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtNEQ">func UpdatedAtNEQ(v time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtNotIn">func UpdatedAtNotIn(vs ...time.Time) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtNotNil">func UpdatedAtNotNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#ValidColumn">func ValidColumn(column string) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Width">func Width(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#WidthEQ">func WidthEQ(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#WidthGT">func WidthGT(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#WidthGTE">func WidthGTE(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#WidthIn">func WidthIn(vs ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#WidthIsNil">func WidthIsNil() predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#WidthLT">func WidthLT(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#WidthLTE">func WidthLTE(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#WidthNEQ">func WidthNEQ(v int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#WidthNotIn">func WidthNotIn(vs ...int) predicate.HPBlob</a></dd>
+			
+				
+				<dd><a href="index.html#WidthNotNil">func WidthNotNil() predicate.HPBlob</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Order">type Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByAmebloPosts">func ByAmebloPosts(term sql.OrderTerm, terms ...sql.OrderTerm) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByAmebloPostsCount">func ByAmebloPostsCount(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByCreatedAt">func ByCreatedAt(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByDurationSeconds">func ByDurationSeconds(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByFaceRecognitionStatus">func ByFaceRecognitionStatus(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByHeight">func ByHeight(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByID">func ByID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByIgPosts">func ByIgPosts(term sql.OrderTerm, terms ...sql.OrderTerm) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByIgPostsCount">func ByIgPostsCount(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByNumFaces">func ByNumFaces(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByOwnerArtistField">func ByOwnerArtistField(field string, opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByOwnerArtistID">func ByOwnerArtistID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByOwnerMemberField">func ByOwnerMemberField(field string, opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByOwnerMemberID">func ByOwnerMemberID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#BySize">func BySize(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#BySourceHTMLURL">func BySourceHTMLURL(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#BySourceURL">func BySourceURL(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByStatus">func ByStatus(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByStatusErrorCount">func ByStatusErrorCount(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByStatusMessage">func ByStatusMessage(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByStoragePath">func ByStoragePath(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#BySubType">func BySubType(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByType">func ByType(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByUpdatedAt">func ByUpdatedAt(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByWidth">func ByWidth(opts ...sql.OrderTermOption) Order</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go">hpblob.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go">where.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span class="comment">// Label holds the string label denoting the hpblob type in the database.</span>
+    <span id="Label">Label</span> = &#34;hp_blob&#34;
+    <span class="comment">// FieldID holds the string denoting the id field in the database.</span>
+    <span id="FieldID">FieldID</span> = &#34;id&#34;
+    <span class="comment">// FieldCreatedAt holds the string denoting the created_at field in the database.</span>
+    <span id="FieldCreatedAt">FieldCreatedAt</span> = &#34;created_at&#34;
+    <span class="comment">// FieldUpdatedAt holds the string denoting the updated_at field in the database.</span>
+    <span id="FieldUpdatedAt">FieldUpdatedAt</span> = &#34;updated_at&#34;
+    <span class="comment">// FieldStoragePath holds the string denoting the storage_path field in the database.</span>
+    <span id="FieldStoragePath">FieldStoragePath</span> = &#34;storage_path&#34;
+    <span class="comment">// FieldSourceURL holds the string denoting the source_url field in the database.</span>
+    <span id="FieldSourceURL">FieldSourceURL</span> = &#34;source_url&#34;
+    <span class="comment">// FieldSourceHTMLURL holds the string denoting the source_html_url field in the database.</span>
+    <span id="FieldSourceHTMLURL">FieldSourceHTMLURL</span> = &#34;source_html_url&#34;
+    <span class="comment">// FieldStatus holds the string denoting the status field in the database.</span>
+    <span id="FieldStatus">FieldStatus</span> = &#34;status&#34;
+    <span class="comment">// FieldStatusMessage holds the string denoting the status_message field in the database.</span>
+    <span id="FieldStatusMessage">FieldStatusMessage</span> = &#34;status_message&#34;
+    <span class="comment">// FieldStatusErrorCount holds the string denoting the status_error_count field in the database.</span>
+    <span id="FieldStatusErrorCount">FieldStatusErrorCount</span> = &#34;status_error_count&#34;
+    <span class="comment">// FieldType holds the string denoting the type field in the database.</span>
+    <span id="FieldType">FieldType</span> = &#34;type&#34;
+    <span class="comment">// FieldSubType holds the string denoting the sub_type field in the database.</span>
+    <span id="FieldSubType">FieldSubType</span> = &#34;sub_type&#34;
+    <span class="comment">// FieldWidth holds the string denoting the width field in the database.</span>
+    <span id="FieldWidth">FieldWidth</span> = &#34;width&#34;
+    <span class="comment">// FieldHeight holds the string denoting the height field in the database.</span>
+    <span id="FieldHeight">FieldHeight</span> = &#34;height&#34;
+    <span class="comment">// FieldSize holds the string denoting the size field in the database.</span>
+    <span id="FieldSize">FieldSize</span> = &#34;size&#34;
+    <span class="comment">// FieldOwnerArtistID holds the string denoting the owner_artist_id field in the database.</span>
+    <span id="FieldOwnerArtistID">FieldOwnerArtistID</span> = &#34;owner_artist_id&#34;
+    <span class="comment">// FieldOwnerMemberID holds the string denoting the owner_member_id field in the database.</span>
+    <span id="FieldOwnerMemberID">FieldOwnerMemberID</span> = &#34;owner_member_id&#34;
+    <span class="comment">// FieldNumFaces holds the string denoting the num_faces field in the database.</span>
+    <span id="FieldNumFaces">FieldNumFaces</span> = &#34;num_faces&#34;
+    <span class="comment">// FieldFaces holds the string denoting the faces field in the database.</span>
+    <span id="FieldFaces">FieldFaces</span> = &#34;faces&#34;
+    <span class="comment">// FieldFaceRecognitionStatus holds the string denoting the face_recognition_status field in the database.</span>
+    <span id="FieldFaceRecognitionStatus">FieldFaceRecognitionStatus</span> = &#34;face_recognition_status&#34;
+    <span class="comment">// FieldThumbnail holds the string denoting the thumbnail field in the database.</span>
+    <span id="FieldThumbnail">FieldThumbnail</span> = &#34;thumbnail&#34;
+    <span class="comment">// FieldDurationSeconds holds the string denoting the duration_seconds field in the database.</span>
+    <span id="FieldDurationSeconds">FieldDurationSeconds</span> = &#34;duration_seconds&#34;
+    <span class="comment">// EdgeOwnerArtist holds the string denoting the owner_artist edge name in mutations.</span>
+    <span id="EdgeOwnerArtist">EdgeOwnerArtist</span> = &#34;owner_artist&#34;
+    <span class="comment">// EdgeOwnerMember holds the string denoting the owner_member edge name in mutations.</span>
+    <span id="EdgeOwnerMember">EdgeOwnerMember</span> = &#34;owner_member&#34;
+    <span class="comment">// EdgeAmebloPosts holds the string denoting the ameblo_posts edge name in mutations.</span>
+    <span id="EdgeAmebloPosts">EdgeAmebloPosts</span> = &#34;ameblo_posts&#34;
+    <span class="comment">// EdgeIgPosts holds the string denoting the ig_posts edge name in mutations.</span>
+    <span id="EdgeIgPosts">EdgeIgPosts</span> = &#34;ig_posts&#34;
+    <span class="comment">// Table holds the table name of the hpblob in the database.</span>
+    <span id="Table">Table</span> = &#34;hp_blobs&#34;
+    <span class="comment">// OwnerArtistTable is the table that holds the owner_artist relation/edge.</span>
+    <span id="OwnerArtistTable">OwnerArtistTable</span> = &#34;hp_blobs&#34;
+    <span class="comment">// OwnerArtistInverseTable is the table name for the HPArtist entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpartist&#34; package.</span>
+    <span id="OwnerArtistInverseTable">OwnerArtistInverseTable</span> = &#34;hp_artists&#34;
+    <span class="comment">// OwnerArtistColumn is the table column denoting the owner_artist relation/edge.</span>
+    <span id="OwnerArtistColumn">OwnerArtistColumn</span> = &#34;owner_artist_id&#34;
+    <span class="comment">// OwnerMemberTable is the table that holds the owner_member relation/edge.</span>
+    <span id="OwnerMemberTable">OwnerMemberTable</span> = &#34;hp_blobs&#34;
+    <span class="comment">// OwnerMemberInverseTable is the table name for the HPMember entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpmember&#34; package.</span>
+    <span id="OwnerMemberInverseTable">OwnerMemberInverseTable</span> = &#34;hp_members&#34;
+    <span class="comment">// OwnerMemberColumn is the table column denoting the owner_member relation/edge.</span>
+    <span id="OwnerMemberColumn">OwnerMemberColumn</span> = &#34;owner_member_id&#34;
+    <span class="comment">// AmebloPostsTable is the table that holds the ameblo_posts relation/edge. The primary key declared below.</span>
+    <span id="AmebloPostsTable">AmebloPostsTable</span> = &#34;hp_ameblo_post_blobs&#34;
+    <span class="comment">// AmebloPostsInverseTable is the table name for the HPAmebloPost entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpameblopost&#34; package.</span>
+    <span id="AmebloPostsInverseTable">AmebloPostsInverseTable</span> = &#34;hp_ameblo_posts&#34;
+    <span class="comment">// IgPostsTable is the table that holds the ig_posts relation/edge. The primary key declared below.</span>
+    <span id="IgPostsTable">IgPostsTable</span> = &#34;hp_ig_post_blobs&#34;
+    <span class="comment">// IgPostsInverseTable is the table name for the HPIgPost entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpigpost&#34; package.</span>
+    <span id="IgPostsInverseTable">IgPostsInverseTable</span> = &#34;hp_ig_posts&#34;
+)</pre>
+			
+				
+				<pre>const <span id="DefaultFaceRecognitionStatus">DefaultFaceRecognitionStatus</span> <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a> = &#34;unknown&#34;</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var (
+    <span class="comment">// AmebloPostsPrimaryKey and AmebloPostsColumn2 are the table columns denoting the</span>
+    <span class="comment">// primary key for the ameblo_posts relation (M2M).</span>
+    <span id="AmebloPostsPrimaryKey">AmebloPostsPrimaryKey</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{&#34;hp_ameblo_post_id&#34;, &#34;hp_blob_id&#34;}
+    <span class="comment">// IgPostsPrimaryKey and IgPostsColumn2 are the table columns denoting the</span>
+    <span class="comment">// primary key for the ig_posts relation (M2M).</span>
+    <span id="IgPostsPrimaryKey">IgPostsPrimaryKey</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{&#34;hp_ig_post_id&#34;, &#34;hp_blob_id&#34;}
+)</pre>
+			
+				<p>Note that the variables below are initialized by the runtime
+package on the initialization of the application. Therefore,
+it should be imported in the main as follows:
+<pre>import _ &quot;github.com/yssk22/hpapp/go/service/ent/runtime&quot;
+</pre>
+
+				<pre>var (
+    <span id="Hooks">Hooks</span> [1]<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Hook">Hook</a>
+    <span class="comment">// StoragePathValidator is a validator for the &#34;storage_path&#34; field. It is called by the builders before save.</span>
+    <span id="StoragePathValidator">StoragePathValidator</span> func(<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>
+    <span class="comment">// SourceURLValidator is a validator for the &#34;source_url&#34; field. It is called by the builders before save.</span>
+    <span id="SourceURLValidator">SourceURLValidator</span> func(<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>
+    <span class="comment">// SourceHTMLURLValidator is a validator for the &#34;source_html_url&#34; field. It is called by the builders before save.</span>
+    <span id="SourceHTMLURLValidator">SourceHTMLURLValidator</span> func(<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>
+)</pre>
+			
+				<p>Columns holds all SQL columns for hpblob fields.
+
+				<pre>var <span id="Columns">Columns</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{
+    <a href="index.html#FieldID">FieldID</a>,
+    <a href="index.html#FieldCreatedAt">FieldCreatedAt</a>,
+    <a href="index.html#FieldUpdatedAt">FieldUpdatedAt</a>,
+    <a href="index.html#FieldStoragePath">FieldStoragePath</a>,
+    <a href="index.html#FieldSourceURL">FieldSourceURL</a>,
+    <a href="index.html#FieldSourceHTMLURL">FieldSourceHTMLURL</a>,
+    <a href="index.html#FieldStatus">FieldStatus</a>,
+    <a href="index.html#FieldStatusMessage">FieldStatusMessage</a>,
+    <a href="index.html#FieldStatusErrorCount">FieldStatusErrorCount</a>,
+    <a href="index.html#FieldType">FieldType</a>,
+    <a href="index.html#FieldSubType">FieldSubType</a>,
+    <a href="index.html#FieldWidth">FieldWidth</a>,
+    <a href="index.html#FieldHeight">FieldHeight</a>,
+    <a href="index.html#FieldSize">FieldSize</a>,
+    <a href="index.html#FieldOwnerArtistID">FieldOwnerArtistID</a>,
+    <a href="index.html#FieldOwnerMemberID">FieldOwnerMemberID</a>,
+    <a href="index.html#FieldNumFaces">FieldNumFaces</a>,
+    <a href="index.html#FieldFaces">FieldFaces</a>,
+    <a href="index.html#FieldFaceRecognitionStatus">FieldFaceRecognitionStatus</a>,
+    <a href="index.html#FieldThumbnail">FieldThumbnail</a>,
+    <a href="index.html#FieldDurationSeconds">FieldDurationSeconds</a>,
+}</pre>
+			
+		
+		
+			
+			
+			<h2 id="And">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=39585:39642#L1092">And</a>
+				<a class="permalink" href="index.html#And">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func And(predicates ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>And groups predicates with the AND operator between them.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=1654:1698#L50">CreatedAt</a>
+				<a class="permalink" href="index.html#CreatedAt">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAt(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>CreatedAt applies equality check predicate on the &quot;created_at&quot; field. It&apos;s identical to CreatedAtEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=4608:4654#L120">CreatedAtEQ</a>
+				<a class="permalink" href="index.html#CreatedAtEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>CreatedAtEQ applies the EQ predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=5344:5390#L140">CreatedAtGT</a>
+				<a class="permalink" href="index.html#CreatedAtGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>CreatedAtGT applies the GT predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=5522:5569#L145">CreatedAtGTE</a>
+				<a class="permalink" href="index.html#CreatedAtGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>CreatedAtGTE applies the GTE predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=4964:5014#L130">CreatedAtIn</a>
+				<a class="permalink" href="index.html#CreatedAtIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>CreatedAtIn applies the In predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=6062:6100#L160">CreatedAtIsNil</a>
+				<a class="permalink" href="index.html#CreatedAtIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>CreatedAtIsNil applies the IsNil predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=5700:5746#L150">CreatedAtLT</a>
+				<a class="permalink" href="index.html#CreatedAtLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>CreatedAtLT applies the LT predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=5878:5925#L155">CreatedAtLTE</a>
+				<a class="permalink" href="index.html#CreatedAtLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>CreatedAtLTE applies the LTE predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=4786:4833#L125">CreatedAtNEQ</a>
+				<a class="permalink" href="index.html#CreatedAtNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>CreatedAtNEQ applies the NEQ predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=5154:5207#L135">CreatedAtNotIn</a>
+				<a class="permalink" href="index.html#CreatedAtNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>CreatedAtNotIn applies the NotIn predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=6239:6278#L165">CreatedAtNotNil</a>
+				<a class="permalink" href="index.html#CreatedAtNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>CreatedAtNotNil applies the NotNil predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DurationSeconds">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=4424:4472#L115">DurationSeconds</a>
+				<a class="permalink" href="index.html#DurationSeconds">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DurationSeconds(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>DurationSeconds applies equality check predicate on the &quot;duration_seconds&quot; field. It&apos;s identical to DurationSecondsEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DurationSecondsEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=34641:34691#L950">DurationSecondsEQ</a>
+				<a class="permalink" href="index.html#DurationSecondsEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DurationSecondsEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>DurationSecondsEQ applies the EQ predicate on the &quot;duration_seconds&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DurationSecondsGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=35465:35515#L970">DurationSecondsGT</a>
+				<a class="permalink" href="index.html#DurationSecondsGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DurationSecondsGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>DurationSecondsGT applies the GT predicate on the &quot;duration_seconds&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DurationSecondsGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=35665:35716#L975">DurationSecondsGTE</a>
+				<a class="permalink" href="index.html#DurationSecondsGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DurationSecondsGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>DurationSecondsGTE applies the GTE predicate on the &quot;duration_seconds&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DurationSecondsIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=35041:35095#L960">DurationSecondsIn</a>
+				<a class="permalink" href="index.html#DurationSecondsIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DurationSecondsIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>DurationSecondsIn applies the In predicate on the &quot;duration_seconds&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DurationSecondsIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=36271:36315#L990">DurationSecondsIsNil</a>
+				<a class="permalink" href="index.html#DurationSecondsIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DurationSecondsIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>DurationSecondsIsNil applies the IsNil predicate on the &quot;duration_seconds&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DurationSecondsLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=35865:35915#L980">DurationSecondsLT</a>
+				<a class="permalink" href="index.html#DurationSecondsLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DurationSecondsLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>DurationSecondsLT applies the LT predicate on the &quot;duration_seconds&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DurationSecondsLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=36065:36116#L985">DurationSecondsLTE</a>
+				<a class="permalink" href="index.html#DurationSecondsLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DurationSecondsLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>DurationSecondsLTE applies the LTE predicate on the &quot;duration_seconds&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DurationSecondsNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=34841:34892#L955">DurationSecondsNEQ</a>
+				<a class="permalink" href="index.html#DurationSecondsNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DurationSecondsNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>DurationSecondsNEQ applies the NEQ predicate on the &quot;duration_seconds&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DurationSecondsNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=35253:35310#L965">DurationSecondsNotIn</a>
+				<a class="permalink" href="index.html#DurationSecondsNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DurationSecondsNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>DurationSecondsNotIn applies the NotIn predicate on the &quot;duration_seconds&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DurationSecondsNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=36472:36517#L995">DurationSecondsNotNil</a>
+				<a class="permalink" href="index.html#DurationSecondsNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DurationSecondsNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>DurationSecondsNotNil applies the NotNil predicate on the &quot;duration_seconds&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FaceRecognitionStatusEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=32674:32756#L900">FaceRecognitionStatusEQ</a>
+				<a class="permalink" href="index.html#FaceRecognitionStatusEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FaceRecognitionStatusEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>FaceRecognitionStatusEQ applies the EQ predicate on the &quot;face_recognition_status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FaceRecognitionStatusIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=33196:33282#L912">FaceRecognitionStatusIn</a>
+				<a class="permalink" href="index.html#FaceRecognitionStatusIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FaceRecognitionStatusIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>FaceRecognitionStatusIn applies the In predicate on the &quot;face_recognition_status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FaceRecognitionStatusIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=33856:33906#L930">FaceRecognitionStatusIsNil</a>
+				<a class="permalink" href="index.html#FaceRecognitionStatusIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FaceRecognitionStatusIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>FaceRecognitionStatusIsNil applies the IsNil predicate on the &quot;face_recognition_status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FaceRecognitionStatusNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=32935:33018#L906">FaceRecognitionStatusNEQ</a>
+				<a class="permalink" href="index.html#FaceRecognitionStatusNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FaceRecognitionStatusNEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>FaceRecognitionStatusNEQ applies the NEQ predicate on the &quot;face_recognition_status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FaceRecognitionStatusNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=33523:33612#L921">FaceRecognitionStatusNotIn</a>
+				<a class="permalink" href="index.html#FaceRecognitionStatusNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FaceRecognitionStatusNotIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>FaceRecognitionStatusNotIn applies the NotIn predicate on the &quot;face_recognition_status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FaceRecognitionStatusNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=34082:34133#L935">FaceRecognitionStatusNotNil</a>
+				<a class="permalink" href="index.html#FaceRecognitionStatusNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FaceRecognitionStatusNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>FaceRecognitionStatusNotNil applies the NotNil predicate on the &quot;face_recognition_status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FaceRecognitionStatusValidator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=7914:7994#L178">FaceRecognitionStatusValidator</a>
+				<a class="permalink" href="index.html#FaceRecognitionStatusValidator">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FaceRecognitionStatusValidator(frs <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobFaceRecognitionStatus">HPBlobFaceRecognitionStatus</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			<p>FaceRecognitionStatusValidator is a validator for the &quot;face_recognition_status&quot; field enum values. It is called by the builders before save.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FacesIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=32326:32360#L890">FacesIsNil</a>
+				<a class="permalink" href="index.html#FacesIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FacesIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>FacesIsNil applies the IsNil predicate on the &quot;faces&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="FacesNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=32486:32521#L895">FacesNotNil</a>
+				<a class="permalink" href="index.html#FacesNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FacesNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>FacesNotNil applies the NotNil predicate on the &quot;faces&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasAmebloPosts">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=38142:38180#L1046">HasAmebloPosts</a>
+				<a class="permalink" href="index.html#HasAmebloPosts">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasAmebloPosts() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HasAmebloPosts applies the HasEdge predicate on the &quot;ameblo_posts&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasAmebloPostsWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=38543:38616#L1057">HasAmebloPostsWith</a>
+				<a class="permalink" href="index.html#HasAmebloPostsWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasAmebloPostsWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPAmebloPost">HPAmebloPost</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HasAmebloPostsWith applies the HasEdge predicate on the &quot;ameblo_posts&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasIgPosts">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=38883:38917#L1069">HasIgPosts</a>
+				<a class="permalink" href="index.html#HasIgPosts">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasIgPosts() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HasIgPosts applies the HasEdge predicate on the &quot;ig_posts&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasIgPostsWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=39264:39329#L1080">HasIgPostsWith</a>
+				<a class="permalink" href="index.html#HasIgPostsWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasIgPostsWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPIgPost">HPIgPost</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HasIgPostsWith applies the HasEdge predicate on the &quot;ig_posts&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasOwnerArtist">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=36664:36702#L1000">HasOwnerArtist</a>
+				<a class="permalink" href="index.html#HasOwnerArtist">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasOwnerArtist() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HasOwnerArtist applies the HasEdge predicate on the &quot;owner_artist&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasOwnerArtistWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=37059:37128#L1011">HasOwnerArtistWith</a>
+				<a class="permalink" href="index.html#HasOwnerArtistWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasOwnerArtistWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPArtist">HPArtist</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HasOwnerArtistWith applies the HasEdge predicate on the &quot;owner_artist&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasOwnerMember">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=37403:37441#L1023">HasOwnerMember</a>
+				<a class="permalink" href="index.html#HasOwnerMember">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasOwnerMember() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HasOwnerMember applies the HasEdge predicate on the &quot;owner_member&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasOwnerMemberWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=37798:37867#L1034">HasOwnerMemberWith</a>
+				<a class="permalink" href="index.html#HasOwnerMemberWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasOwnerMemberWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPMember">HPMember</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HasOwnerMemberWith applies the HasEdge predicate on the &quot;owner_member&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="Height">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=3374:3409#L90">Height</a>
+				<a class="permalink" href="index.html#Height">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Height(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>Height applies equality check predicate on the &quot;height&quot; field. It&apos;s identical to HeightEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HeightEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=25088:25125#L680">HeightEQ</a>
+				<a class="permalink" href="index.html#HeightEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HeightEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HeightEQ applies the EQ predicate on the &quot;height&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HeightGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=25748:25785#L700">HeightGT</a>
+				<a class="permalink" href="index.html#HeightGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HeightGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HeightGT applies the GT predicate on the &quot;height&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HeightGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=25907:25945#L705">HeightGTE</a>
+				<a class="permalink" href="index.html#HeightGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HeightGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HeightGTE applies the GTE predicate on the &quot;height&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HeightIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=25406:25447#L690">HeightIn</a>
+				<a class="permalink" href="index.html#HeightIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HeightIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HeightIn applies the In predicate on the &quot;height&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HeightIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=26390:26425#L720">HeightIsNil</a>
+				<a class="permalink" href="index.html#HeightIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HeightIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HeightIsNil applies the IsNil predicate on the &quot;height&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HeightLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=26066:26103#L710">HeightLT</a>
+				<a class="permalink" href="index.html#HeightLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HeightLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HeightLT applies the LT predicate on the &quot;height&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HeightLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=26225:26263#L715">HeightLTE</a>
+				<a class="permalink" href="index.html#HeightLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HeightLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HeightLTE applies the LTE predicate on the &quot;height&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HeightNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=25247:25285#L685">HeightNEQ</a>
+				<a class="permalink" href="index.html#HeightNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HeightNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HeightNEQ applies the NEQ predicate on the &quot;height&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HeightNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=25577:25621#L695">HeightNotIn</a>
+				<a class="permalink" href="index.html#HeightNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HeightNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HeightNotIn applies the NotIn predicate on the &quot;height&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HeightNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=26554:26590#L725">HeightNotNil</a>
+				<a class="permalink" href="index.html#HeightNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HeightNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>HeightNotNil applies the NotNil predicate on the &quot;height&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=293:325#L5">ID</a>
+				<a class="permalink" href="index.html#ID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ID(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>ID filters vertices based on their ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=432:466#L10">IDEQ</a>
+				<a class="permalink" href="index.html#IDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDEQ(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>IDEQ applies the EQ predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=1028:1062#L30">IDGT</a>
+				<a class="permalink" href="index.html#IDGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDGT(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>IDGT applies the GT predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=1171:1206#L35">IDGTE</a>
+				<a class="permalink" href="index.html#IDGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDGTE(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>IDGTE applies the GTE predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=718:756#L20">IDIn</a>
+				<a class="permalink" href="index.html#IDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDIn(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>IDIn applies the In predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=1314:1348#L40">IDLT</a>
+				<a class="permalink" href="index.html#IDLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDLT(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>IDLT applies the LT predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=1457:1492#L45">IDLTE</a>
+				<a class="permalink" href="index.html#IDLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDLTE(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>IDLTE applies the LTE predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=575:610#L15">IDNEQ</a>
+				<a class="permalink" href="index.html#IDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDNEQ(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>IDNEQ applies the NEQ predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=873:914#L25">IDNotIn</a>
+				<a class="permalink" href="index.html#IDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDNotIn(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>IDNotIn applies the NotIn predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Not">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=40146:40191#L1117">Not</a>
+				<a class="permalink" href="index.html#Not">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Not(p <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>Not applies the not operator on the given predicate.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumFaces">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=4203:4240#L110">NumFaces</a>
+				<a class="permalink" href="index.html#NumFaces">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumFaces(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>NumFaces applies equality check predicate on the &quot;num_faces&quot; field. It&apos;s identical to NumFacesEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumFacesEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=30613:30652#L840">NumFacesEQ</a>
+				<a class="permalink" href="index.html#NumFacesEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumFacesEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>NumFacesEQ applies the EQ predicate on the &quot;num_faces&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumFacesGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=31309:31348#L860">NumFacesGT</a>
+				<a class="permalink" href="index.html#NumFacesGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumFacesGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>NumFacesGT applies the GT predicate on the &quot;num_faces&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumFacesGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=31477:31517#L865">NumFacesGTE</a>
+				<a class="permalink" href="index.html#NumFacesGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumFacesGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>NumFacesGTE applies the GTE predicate on the &quot;num_faces&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumFacesIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=30949:30992#L850">NumFacesIn</a>
+				<a class="permalink" href="index.html#NumFacesIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumFacesIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>NumFacesIn applies the In predicate on the &quot;num_faces&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumFacesIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=31987:32024#L880">NumFacesIsNil</a>
+				<a class="permalink" href="index.html#NumFacesIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumFacesIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>NumFacesIsNil applies the IsNil predicate on the &quot;num_faces&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumFacesLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=31645:31684#L870">NumFacesLT</a>
+				<a class="permalink" href="index.html#NumFacesLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumFacesLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>NumFacesLT applies the LT predicate on the &quot;num_faces&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumFacesLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=31813:31853#L875">NumFacesLTE</a>
+				<a class="permalink" href="index.html#NumFacesLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumFacesLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>NumFacesLTE applies the LTE predicate on the &quot;num_faces&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumFacesNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=30781:30821#L845">NumFacesNEQ</a>
+				<a class="permalink" href="index.html#NumFacesNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumFacesNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>NumFacesNEQ applies the NEQ predicate on the &quot;num_faces&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumFacesNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=31129:31175#L855">NumFacesNotIn</a>
+				<a class="permalink" href="index.html#NumFacesNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumFacesNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>NumFacesNotIn applies the NotIn predicate on the &quot;num_faces&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumFacesNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=32160:32198#L885">NumFacesNotNil</a>
+				<a class="permalink" href="index.html#NumFacesNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NumFacesNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>NumFacesNotNil applies the NotNil predicate on the &quot;num_faces&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Or">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=39852:39908#L1103">Or</a>
+				<a class="permalink" href="index.html#Or">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Or(predicates ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>Or groups predicates with the OR operator between them.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=3767:3809#L100">OwnerArtistID</a>
+				<a class="permalink" href="index.html#OwnerArtistID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistID(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerArtistID applies equality check predicate on the &quot;owner_artist_id&quot; field. It&apos;s identical to OwnerArtistIDEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistIDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=28288:28332#L780">OwnerArtistIDEQ</a>
+				<a class="permalink" href="index.html#OwnerArtistIDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistIDEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerArtistIDEQ applies the EQ predicate on the &quot;owner_artist_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistIDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=28666:28714#L790">OwnerArtistIDIn</a>
+				<a class="permalink" href="index.html#OwnerArtistIDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistIDIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerArtistIDIn applies the In predicate on the &quot;owner_artist_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistIDIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=29074:29116#L800">OwnerArtistIDIsNil</a>
+				<a class="permalink" href="index.html#OwnerArtistIDIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistIDIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerArtistIDIsNil applies the IsNil predicate on the &quot;owner_artist_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistIDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=28477:28522#L785">OwnerArtistIDNEQ</a>
+				<a class="permalink" href="index.html#OwnerArtistIDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistIDNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerArtistIDNEQ applies the NEQ predicate on the &quot;owner_artist_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistIDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=28867:28918#L795">OwnerArtistIDNotIn</a>
+				<a class="permalink" href="index.html#OwnerArtistIDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistIDNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerArtistIDNotIn applies the NotIn predicate on the &quot;owner_artist_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistIDNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=29268:29311#L805">OwnerArtistIDNotNil</a>
+				<a class="permalink" href="index.html#OwnerArtistIDNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistIDNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerArtistIDNotNil applies the NotNil predicate on the &quot;owner_artist_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=3993:4035#L105">OwnerMemberID</a>
+				<a class="permalink" href="index.html#OwnerMemberID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberID(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerMemberID applies equality check predicate on the &quot;owner_member_id&quot; field. It&apos;s identical to OwnerMemberIDEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberIDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=29456:29500#L810">OwnerMemberIDEQ</a>
+				<a class="permalink" href="index.html#OwnerMemberIDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberIDEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerMemberIDEQ applies the EQ predicate on the &quot;owner_member_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberIDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=29834:29882#L820">OwnerMemberIDIn</a>
+				<a class="permalink" href="index.html#OwnerMemberIDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberIDIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerMemberIDIn applies the In predicate on the &quot;owner_member_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberIDIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=30242:30284#L830">OwnerMemberIDIsNil</a>
+				<a class="permalink" href="index.html#OwnerMemberIDIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberIDIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerMemberIDIsNil applies the IsNil predicate on the &quot;owner_member_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberIDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=29645:29690#L815">OwnerMemberIDNEQ</a>
+				<a class="permalink" href="index.html#OwnerMemberIDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberIDNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerMemberIDNEQ applies the NEQ predicate on the &quot;owner_member_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberIDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=30035:30086#L825">OwnerMemberIDNotIn</a>
+				<a class="permalink" href="index.html#OwnerMemberIDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberIDNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerMemberIDNotIn applies the NotIn predicate on the &quot;owner_member_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberIDNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=30436:30479#L835">OwnerMemberIDNotNil</a>
+				<a class="permalink" href="index.html#OwnerMemberIDNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberIDNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>OwnerMemberIDNotNil applies the NotNil predicate on the &quot;owner_member_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Size">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=3557:3592#L95">Size</a>
+				<a class="permalink" href="index.html#Size">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Size(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>Size applies equality check predicate on the &quot;size&quot; field. It&apos;s identical to SizeEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SizeEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=26708:26745#L730">SizeEQ</a>
+				<a class="permalink" href="index.html#SizeEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SizeEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SizeEQ applies the EQ predicate on the &quot;size&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SizeGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=27344:27381#L750">SizeGT</a>
+				<a class="permalink" href="index.html#SizeGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SizeGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SizeGT applies the GT predicate on the &quot;size&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SizeGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=27497:27535#L755">SizeGTE</a>
+				<a class="permalink" href="index.html#SizeGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SizeGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SizeGTE applies the GTE predicate on the &quot;size&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SizeIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=27014:27055#L740">SizeIn</a>
+				<a class="permalink" href="index.html#SizeIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SizeIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SizeIn applies the In predicate on the &quot;size&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SizeIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=27962:27995#L770">SizeIsNil</a>
+				<a class="permalink" href="index.html#SizeIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SizeIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SizeIsNil applies the IsNil predicate on the &quot;size&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SizeLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=27650:27687#L760">SizeLT</a>
+				<a class="permalink" href="index.html#SizeLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SizeLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SizeLT applies the LT predicate on the &quot;size&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SizeLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=27803:27841#L765">SizeLTE</a>
+				<a class="permalink" href="index.html#SizeLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SizeLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SizeLTE applies the LTE predicate on the &quot;size&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SizeNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=26861:26899#L735">SizeNEQ</a>
+				<a class="permalink" href="index.html#SizeNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SizeNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SizeNEQ applies the NEQ predicate on the &quot;size&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SizeNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=27179:27223#L745">SizeNotIn</a>
+				<a class="permalink" href="index.html#SizeNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SizeNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int64">int64</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SizeNotIn applies the NotIn predicate on the &quot;size&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SizeNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=28118:28152#L775">SizeNotNil</a>
+				<a class="permalink" href="index.html#SizeNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SizeNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SizeNotNil applies the NotNil predicate on the &quot;size&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURL">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=2515:2560#L70">SourceHTMLURL</a>
+				<a class="permalink" href="index.html#SourceHTMLURL">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURL(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURL applies equality check predicate on the &quot;source_html_url&quot; field. It&apos;s identical to SourceHTMLURLEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLContains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=14771:14824#L390">SourceHTMLURLContains</a>
+				<a class="permalink" href="index.html#SourceHTMLURLContains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLContains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLContains applies the Contains predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=15647:15704#L410">SourceHTMLURLContainsFold</a>
+				<a class="permalink" href="index.html#SourceHTMLURLContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLContainsFold applies the ContainsFold predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=13199:13246#L350">SourceHTMLURLEQ</a>
+				<a class="permalink" href="index.html#SourceHTMLURLEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLEQ applies the EQ predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLEqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=15423:15477#L405">SourceHTMLURLEqualFold</a>
+				<a class="permalink" href="index.html#SourceHTMLURLEqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLEqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLEqualFold applies the EqualFold predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=13991:14038#L370">SourceHTMLURLGT</a>
+				<a class="permalink" href="index.html#SourceHTMLURLGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLGT applies the GT predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=14183:14231#L375">SourceHTMLURLGTE</a>
+				<a class="permalink" href="index.html#SourceHTMLURLGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLGTE applies the GTE predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLHasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=14987:15041#L395">SourceHTMLURLHasPrefix</a>
+				<a class="permalink" href="index.html#SourceHTMLURLHasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLHasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLHasPrefix applies the HasPrefix predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLHasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=15205:15259#L400">SourceHTMLURLHasSuffix</a>
+				<a class="permalink" href="index.html#SourceHTMLURLHasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLHasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLHasSuffix applies the HasSuffix predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=13583:13634#L360">SourceHTMLURLIn</a>
+				<a class="permalink" href="index.html#SourceHTMLURLIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLIn applies the In predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=14375:14422#L380">SourceHTMLURLLT</a>
+				<a class="permalink" href="index.html#SourceHTMLURLLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLLT applies the LT predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=14567:14615#L385">SourceHTMLURLLTE</a>
+				<a class="permalink" href="index.html#SourceHTMLURLLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLLTE applies the LTE predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=13391:13439#L355">SourceHTMLURLNEQ</a>
+				<a class="permalink" href="index.html#SourceHTMLURLNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLNEQ applies the NEQ predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceHTMLURLNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=13787:13841#L365">SourceHTMLURLNotIn</a>
+				<a class="permalink" href="index.html#SourceHTMLURLNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceHTMLURLNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceHTMLURLNotIn applies the NotIn predicate on the &quot;source_html_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURL">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=2294:2335#L65">SourceURL</a>
+				<a class="permalink" href="index.html#SourceURL">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURL(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURL applies equality check predicate on the &quot;source_url&quot; field. It&apos;s identical to SourceURLEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLContains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=12189:12238#L325">SourceURLContains</a>
+				<a class="permalink" href="index.html#SourceURLContains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLContains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLContains applies the Contains predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=12997:13050#L345">SourceURLContainsFold</a>
+				<a class="permalink" href="index.html#SourceURLContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLContainsFold applies the ContainsFold predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=10753:10796#L285">SourceURLEQ</a>
+				<a class="permalink" href="index.html#SourceURLEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLEQ applies the EQ predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLEqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=12790:12840#L340">SourceURLEqualFold</a>
+				<a class="permalink" href="index.html#SourceURLEqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLEqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLEqualFold applies the EqualFold predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=11477:11520#L305">SourceURLGT</a>
+				<a class="permalink" href="index.html#SourceURLGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLGT applies the GT predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=11652:11696#L310">SourceURLGTE</a>
+				<a class="permalink" href="index.html#SourceURLGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLGTE applies the GTE predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLHasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=12388:12438#L330">SourceURLHasPrefix</a>
+				<a class="permalink" href="index.html#SourceURLHasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLHasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLHasPrefix applies the HasPrefix predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLHasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=12589:12639#L335">SourceURLHasSuffix</a>
+				<a class="permalink" href="index.html#SourceURLHasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLHasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLHasSuffix applies the HasSuffix predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=11103:11150#L295">SourceURLIn</a>
+				<a class="permalink" href="index.html#SourceURLIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLIn applies the In predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=11827:11870#L315">SourceURLLT</a>
+				<a class="permalink" href="index.html#SourceURLLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLLT applies the LT predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=12002:12046#L320">SourceURLLTE</a>
+				<a class="permalink" href="index.html#SourceURLLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLLTE applies the LTE predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=10928:10972#L290">SourceURLNEQ</a>
+				<a class="permalink" href="index.html#SourceURLNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLNEQ applies the NEQ predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=11290:11340#L300">SourceURLNotIn</a>
+				<a class="permalink" href="index.html#SourceURLNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SourceURLNotIn applies the NotIn predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=15841:15893#L415">StatusEQ</a>
+				<a class="permalink" href="index.html#StatusEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobStatus">HPBlobStatus</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusEQ applies the EQ predicate on the &quot;status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusErrorCount">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=2981:3026#L80">StatusErrorCount</a>
+				<a class="permalink" href="index.html#StatusErrorCount">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusErrorCount(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusErrorCount applies equality check predicate on the &quot;status_error_count&quot; field. It&apos;s identical to StatusErrorCountEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusErrorCountEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=19762:19809#L520">StatusErrorCountEQ</a>
+				<a class="permalink" href="index.html#StatusErrorCountEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusErrorCountEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusErrorCountEQ applies the EQ predicate on the &quot;status_error_count&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusErrorCountGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=20590:20637#L540">StatusErrorCountGT</a>
+				<a class="permalink" href="index.html#StatusErrorCountGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusErrorCountGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusErrorCountGT applies the GT predicate on the &quot;status_error_count&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusErrorCountGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=20791:20839#L545">StatusErrorCountGTE</a>
+				<a class="permalink" href="index.html#StatusErrorCountGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusErrorCountGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusErrorCountGTE applies the GTE predicate on the &quot;status_error_count&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusErrorCountIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=20164:20215#L530">StatusErrorCountIn</a>
+				<a class="permalink" href="index.html#StatusErrorCountIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusErrorCountIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusErrorCountIn applies the In predicate on the &quot;status_error_count&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusErrorCountIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=21400:21445#L560">StatusErrorCountIsNil</a>
+				<a class="permalink" href="index.html#StatusErrorCountIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusErrorCountIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusErrorCountIsNil applies the IsNil predicate on the &quot;status_error_count&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusErrorCountLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=20992:21039#L550">StatusErrorCountLT</a>
+				<a class="permalink" href="index.html#StatusErrorCountLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusErrorCountLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusErrorCountLT applies the LT predicate on the &quot;status_error_count&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusErrorCountLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=21193:21241#L555">StatusErrorCountLTE</a>
+				<a class="permalink" href="index.html#StatusErrorCountLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusErrorCountLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusErrorCountLTE applies the LTE predicate on the &quot;status_error_count&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusErrorCountNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=19963:20011#L525">StatusErrorCountNEQ</a>
+				<a class="permalink" href="index.html#StatusErrorCountNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusErrorCountNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusErrorCountNEQ applies the NEQ predicate on the &quot;status_error_count&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusErrorCountNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=20377:20431#L535">StatusErrorCountNotIn</a>
+				<a class="permalink" href="index.html#StatusErrorCountNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusErrorCountNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusErrorCountNotIn applies the NotIn predicate on the &quot;status_error_count&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusErrorCountNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=21606:21652#L565">StatusErrorCountNotNil</a>
+				<a class="permalink" href="index.html#StatusErrorCountNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusErrorCountNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusErrorCountNotNil applies the NotNil predicate on the &quot;status_error_count&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=16209:16265#L427">StatusIn</a>
+				<a class="permalink" href="index.html#StatusIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobStatus">HPBlobStatus</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusIn applies the In predicate on the &quot;status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessage">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=2743:2788#L75">StatusMessage</a>
+				<a class="permalink" href="index.html#StatusMessage">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessage(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessage applies equality check predicate on the &quot;status_message&quot; field. It&apos;s identical to StatusMessageEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageContains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=18288:18341#L485">StatusMessageContains</a>
+				<a class="permalink" href="index.html#StatusMessageContains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageContains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageContains applies the Contains predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=19546:19603#L515">StatusMessageContainsFold</a>
+				<a class="permalink" href="index.html#StatusMessageContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageContainsFold applies the ContainsFold predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=16724:16771#L445">StatusMessageEQ</a>
+				<a class="permalink" href="index.html#StatusMessageEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageEQ applies the EQ predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageEqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=19323:19377#L510">StatusMessageEqualFold</a>
+				<a class="permalink" href="index.html#StatusMessageEqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageEqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageEqualFold applies the EqualFold predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=17512:17559#L465">StatusMessageGT</a>
+				<a class="permalink" href="index.html#StatusMessageGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageGT applies the GT predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=17703:17751#L470">StatusMessageGTE</a>
+				<a class="permalink" href="index.html#StatusMessageGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageGTE applies the GTE predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageHasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=18503:18557#L490">StatusMessageHasPrefix</a>
+				<a class="permalink" href="index.html#StatusMessageHasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageHasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageHasPrefix applies the HasPrefix predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageHasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=18720:18774#L495">StatusMessageHasSuffix</a>
+				<a class="permalink" href="index.html#StatusMessageHasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageHasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageHasSuffix applies the HasSuffix predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=17106:17157#L455">StatusMessageIn</a>
+				<a class="permalink" href="index.html#StatusMessageIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageIn applies the In predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=18929:18971#L500">StatusMessageIsNil</a>
+				<a class="permalink" href="index.html#StatusMessageIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageIsNil applies the IsNil predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=17894:17941#L475">StatusMessageLT</a>
+				<a class="permalink" href="index.html#StatusMessageLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageLT applies the LT predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=18085:18133#L480">StatusMessageLTE</a>
+				<a class="permalink" href="index.html#StatusMessageLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageLTE applies the LTE predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=16915:16963#L450">StatusMessageNEQ</a>
+				<a class="permalink" href="index.html#StatusMessageNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageNEQ applies the NEQ predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=17309:17363#L460">StatusMessageNotIn</a>
+				<a class="permalink" href="index.html#StatusMessageNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageNotIn applies the NotIn predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusMessageNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=19122:19165#L505">StatusMessageNotNil</a>
+				<a class="permalink" href="index.html#StatusMessageNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusMessageNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusMessageNotNil applies the NotNil predicate on the &quot;status_message&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=16025:16078#L421">StatusNEQ</a>
+				<a class="permalink" href="index.html#StatusNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusNEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobStatus">HPBlobStatus</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusNEQ applies the NEQ predicate on the &quot;status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=16459:16518#L436">StatusNotIn</a>
+				<a class="permalink" href="index.html#StatusNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusNotIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobStatus">HPBlobStatus</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StatusNotIn applies the NotIn predicate on the &quot;status&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StatusValidator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=6811:6859#L146">StatusValidator</a>
+				<a class="permalink" href="index.html#StatusValidator">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StatusValidator(s <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobStatus">HPBlobStatus</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			<p>StatusValidator is a validator for the &quot;status&quot; field enum values. It is called by the builders before save.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePath">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=2082:2125#L60">StoragePath</a>
+				<a class="permalink" href="index.html#StoragePath">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePath(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePath applies equality check predicate on the &quot;storage_path&quot; field. It&apos;s identical to StoragePathEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathContains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=9716:9767#L260">StoragePathContains</a>
+				<a class="permalink" href="index.html#StoragePathContains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathContains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathContains applies the Contains predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=10556:10611#L280">StoragePathContainsFold</a>
+				<a class="permalink" href="index.html#StoragePathContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathContainsFold applies the ContainsFold predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=8216:8261#L220">StoragePathEQ</a>
+				<a class="permalink" href="index.html#StoragePathEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathEQ applies the EQ predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathEqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=10341:10393#L275">StoragePathEqualFold</a>
+				<a class="permalink" href="index.html#StoragePathEqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathEqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathEqualFold applies the EqualFold predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=8972:9017#L240">StoragePathGT</a>
+				<a class="permalink" href="index.html#StoragePathGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathGT applies the GT predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=9155:9201#L245">StoragePathGTE</a>
+				<a class="permalink" href="index.html#StoragePathGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathGTE applies the GTE predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathHasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=9923:9975#L265">StoragePathHasPrefix</a>
+				<a class="permalink" href="index.html#StoragePathHasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathHasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathHasPrefix applies the HasPrefix predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathHasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=10132:10184#L270">StoragePathHasSuffix</a>
+				<a class="permalink" href="index.html#StoragePathHasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathHasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathHasSuffix applies the HasSuffix predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=8582:8631#L230">StoragePathIn</a>
+				<a class="permalink" href="index.html#StoragePathIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathIn applies the In predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=9338:9383#L250">StoragePathLT</a>
+				<a class="permalink" href="index.html#StoragePathLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathLT applies the LT predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=9521:9567#L255">StoragePathLTE</a>
+				<a class="permalink" href="index.html#StoragePathLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathLTE applies the LTE predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=8399:8445#L225">StoragePathNEQ</a>
+				<a class="permalink" href="index.html#StoragePathNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathNEQ applies the NEQ predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="StoragePathNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=8777:8829#L235">StoragePathNotIn</a>
+				<a class="permalink" href="index.html#StoragePathNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StoragePathNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>StoragePathNotIn applies the NotIn predicate on the &quot;storage_path&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SubTypeEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=22615:22669#L600">SubTypeEQ</a>
+				<a class="permalink" href="index.html#SubTypeEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SubTypeEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobSubType">HPBlobSubType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SubTypeEQ applies the EQ predicate on the &quot;sub_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SubTypeIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=22995:23053#L612">SubTypeIn</a>
+				<a class="permalink" href="index.html#SubTypeIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SubTypeIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobSubType">HPBlobSubType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SubTypeIn applies the In predicate on the &quot;sub_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SubTypeNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=22805:22860#L606">SubTypeNEQ</a>
+				<a class="permalink" href="index.html#SubTypeNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SubTypeNEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobSubType">HPBlobSubType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SubTypeNEQ applies the NEQ predicate on the &quot;sub_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SubTypeNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=23251:23312#L621">SubTypeNotIn</a>
+				<a class="permalink" href="index.html#SubTypeNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SubTypeNotIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobSubType">HPBlobSubType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>SubTypeNotIn applies the NotIn predicate on the &quot;sub_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SubTypeValidator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=7475:7526#L166">SubTypeValidator</a>
+				<a class="permalink" href="index.html#SubTypeValidator">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SubTypeValidator(st <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobSubType">HPBlobSubType</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			<p>SubTypeValidator is a validator for the &quot;sub_type&quot; field enum values. It is called by the builders before save.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ThumbnailIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=34282:34320#L940">ThumbnailIsNil</a>
+				<a class="permalink" href="index.html#ThumbnailIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ThumbnailIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>ThumbnailIsNil applies the IsNil predicate on the &quot;thumbnail&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ThumbnailNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=34458:34497#L945">ThumbnailNotNil</a>
+				<a class="permalink" href="index.html#ThumbnailNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ThumbnailNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>ThumbnailNotNil applies the NotNil predicate on the &quot;thumbnail&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TypeEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=21780:21828#L570">TypeEQ</a>
+				<a class="permalink" href="index.html#TypeEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TypeEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobType">HPBlobType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>TypeEQ applies the EQ predicate on the &quot;type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TypeIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=22128:22180#L582">TypeIn</a>
+				<a class="permalink" href="index.html#TypeIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TypeIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobType">HPBlobType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>TypeIn applies the In predicate on the &quot;type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TypeNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=21954:22003#L576">TypeNEQ</a>
+				<a class="permalink" href="index.html#TypeNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TypeNEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobType">HPBlobType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>TypeNEQ applies the NEQ predicate on the &quot;type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TypeNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=22368:22423#L591">TypeNotIn</a>
+				<a class="permalink" href="index.html#TypeNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TypeNotIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobType">HPBlobType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>TypeNotIn applies the NotIn predicate on the &quot;type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TypeValidator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=7145:7193#L156">TypeValidator</a>
+				<a class="permalink" href="index.html#TypeValidator">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TypeValidator(_type <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobType">HPBlobType</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			<p>TypeValidator is a validator for the &quot;type&quot; field enum values. It is called by the builders before save.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=1865:1909#L55">UpdatedAt</a>
+				<a class="permalink" href="index.html#UpdatedAt">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAt(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>UpdatedAt applies equality check predicate on the &quot;updated_at&quot; field. It&apos;s identical to UpdatedAtEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=6410:6456#L170">UpdatedAtEQ</a>
+				<a class="permalink" href="index.html#UpdatedAtEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>UpdatedAtEQ applies the EQ predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=7146:7192#L190">UpdatedAtGT</a>
+				<a class="permalink" href="index.html#UpdatedAtGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>UpdatedAtGT applies the GT predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=7324:7371#L195">UpdatedAtGTE</a>
+				<a class="permalink" href="index.html#UpdatedAtGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>UpdatedAtGTE applies the GTE predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=6766:6816#L180">UpdatedAtIn</a>
+				<a class="permalink" href="index.html#UpdatedAtIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>UpdatedAtIn applies the In predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=7864:7902#L210">UpdatedAtIsNil</a>
+				<a class="permalink" href="index.html#UpdatedAtIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>UpdatedAtIsNil applies the IsNil predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=7502:7548#L200">UpdatedAtLT</a>
+				<a class="permalink" href="index.html#UpdatedAtLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>UpdatedAtLT applies the LT predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=7680:7727#L205">UpdatedAtLTE</a>
+				<a class="permalink" href="index.html#UpdatedAtLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>UpdatedAtLTE applies the LTE predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=6588:6635#L175">UpdatedAtNEQ</a>
+				<a class="permalink" href="index.html#UpdatedAtNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>UpdatedAtNEQ applies the NEQ predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=6956:7009#L185">UpdatedAtNotIn</a>
+				<a class="permalink" href="index.html#UpdatedAtNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>UpdatedAtNotIn applies the NotIn predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=8041:8080#L215">UpdatedAtNotNil</a>
+				<a class="permalink" href="index.html#UpdatedAtNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>UpdatedAtNotNil applies the NotNil predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ValidColumn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=5838:5874#L121">ValidColumn</a>
+				<a class="permalink" href="index.html#ValidColumn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ValidColumn(column <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a></pre>
+			<p>ValidColumn reports if the column name is valid (part of the table columns).
+
+			
+			
+
+		
+			
+			
+			<h2 id="Width">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=3187:3221#L85">Width</a>
+				<a class="permalink" href="index.html#Width">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Width(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>Width applies equality check predicate on the &quot;width&quot; field. It&apos;s identical to WidthEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="WidthEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=23502:23538#L630">WidthEQ</a>
+				<a class="permalink" href="index.html#WidthEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WidthEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>WidthEQ applies the EQ predicate on the &quot;width&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="WidthGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=24146:24182#L650">WidthGT</a>
+				<a class="permalink" href="index.html#WidthGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WidthGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>WidthGT applies the GT predicate on the &quot;width&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="WidthGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=24301:24338#L655">WidthGTE</a>
+				<a class="permalink" href="index.html#WidthGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WidthGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>WidthGTE applies the GTE predicate on the &quot;width&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="WidthIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=23812:23852#L640">WidthIn</a>
+				<a class="permalink" href="index.html#WidthIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WidthIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>WidthIn applies the In predicate on the &quot;width&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="WidthIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=24772:24806#L670">WidthIsNil</a>
+				<a class="permalink" href="index.html#WidthIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WidthIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>WidthIsNil applies the IsNil predicate on the &quot;width&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="WidthLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=24456:24492#L660">WidthLT</a>
+				<a class="permalink" href="index.html#WidthLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WidthLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>WidthLT applies the LT predicate on the &quot;width&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="WidthLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=24611:24648#L665">WidthLTE</a>
+				<a class="permalink" href="index.html#WidthLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WidthLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>WidthLTE applies the LTE predicate on the &quot;width&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="WidthNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=23657:23694#L635">WidthNEQ</a>
+				<a class="permalink" href="index.html#WidthNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WidthNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>WidthNEQ applies the NEQ predicate on the &quot;width&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="WidthNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=23979:24022#L645">WidthNotIn</a>
+				<a class="permalink" href="index.html#WidthNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WidthNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>WidthNotIn applies the NotIn predicate on the &quot;width&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="WidthNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/where.go?s=24932:24967#L675">WidthNotNil</a>
+				<a class="permalink" href="index.html#WidthNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WidthNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPBlob">HPBlob</a></pre>
+			<p>WidthNotNil applies the NotNil predicate on the &quot;width&quot; field.
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Order">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=8292:8322#L188">Order</a>
+				<a class="permalink" href="index.html#Order">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Order defines the ordering method for the HPBlob queries.
+
+			<pre>type Order func(*<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#Selector">Selector</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="ByAmebloPosts">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=12525:12593#L307">ByAmebloPosts</a>
+					<a class="permalink" href="index.html#ByAmebloPosts">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByAmebloPosts(term <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>, terms ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByAmebloPosts orders the results by ameblo_posts terms.
+
+				
+				
+			
+				
+				<h3 id="ByAmebloPostsCount">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=12300:12358#L300">ByAmebloPostsCount</a>
+					<a class="permalink" href="index.html#ByAmebloPostsCount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByAmebloPostsCount(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByAmebloPostsCount orders the results by ameblo_posts count.
+
+				
+				
+			
+				
+				<h3 id="ByCreatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=8529:8580#L196">ByCreatedAt</a>
+					<a class="permalink" href="index.html#ByCreatedAt">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByCreatedAt(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByCreatedAt orders the results by the created_at field.
+
+				
+				
+			
+				
+				<h3 id="ByDurationSeconds">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=11572:11629#L281">ByDurationSeconds</a>
+					<a class="permalink" href="index.html#ByDurationSeconds">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByDurationSeconds(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByDurationSeconds orders the results by the duration_seconds field.
+
+				
+				
+			
+				
+				<h3 id="ByFaceRecognitionStatus">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=11361:11424#L276">ByFaceRecognitionStatus</a>
+					<a class="permalink" href="index.html#ByFaceRecognitionStatus">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByFaceRecognitionStatus(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByFaceRecognitionStatus orders the results by the face_recognition_status field.
+
+				
+				
+			
+				
+				<h3 id="ByHeight">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=10458:10506#L251">ByHeight</a>
+					<a class="permalink" href="index.html#ByHeight">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByHeight(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByHeight orders the results by the height field.
+
+				
+				
+			
+				
+				<h3 id="ByID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=8368:8412#L191">ByID</a>
+					<a class="permalink" href="index.html#ByID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByID orders the results by the id field.
+
+				
+				
+			
+				
+				<h3 id="ByIgPosts">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=13000:13064#L321">ByIgPosts</a>
+					<a class="permalink" href="index.html#ByIgPosts">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByIgPosts(term <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>, terms ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByIgPosts orders the results by ig_posts terms.
+
+				
+				
+			
+				
+				<h3 id="ByIgPostsCount">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=12791:12845#L314">ByIgPostsCount</a>
+					<a class="permalink" href="index.html#ByIgPostsCount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByIgPostsCount(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByIgPostsCount orders the results by ig_posts count.
+
+				
+				
+			
+				
+				<h3 id="ByNumFaces">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=11163:11213#L271">ByNumFaces</a>
+					<a class="permalink" href="index.html#ByNumFaces">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByNumFaces(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByNumFaces orders the results by the num_faces field.
+
+				
+				
+			
+				
+				<h3 id="ByOwnerArtistField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=11764:11836#L286">ByOwnerArtistField</a>
+					<a class="permalink" href="index.html#ByOwnerArtistField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByOwnerArtistField(field <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByOwnerArtistField orders the results by owner_artist field.
+
+				
+				
+			
+				
+				<h3 id="ByOwnerArtistID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=10790:10845#L261">ByOwnerArtistID</a>
+					<a class="permalink" href="index.html#ByOwnerArtistID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByOwnerArtistID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByOwnerArtistID orders the results by the owner_artist_id field.
+
+				
+				
+			
+				
+				<h3 id="ByOwnerMemberField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=12032:12104#L293">ByOwnerMemberField</a>
+					<a class="permalink" href="index.html#ByOwnerMemberField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByOwnerMemberField(field <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByOwnerMemberField orders the results by owner_member field.
+
+				
+				
+			
+				
+				<h3 id="ByOwnerMemberID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=10982:11037#L266">ByOwnerMemberID</a>
+					<a class="permalink" href="index.html#ByOwnerMemberID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByOwnerMemberID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByOwnerMemberID orders the results by the owner_member_id field.
+
+				
+				
+			
+				
+				<h3 id="BySize">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=10616:10662#L256">BySize</a>
+					<a class="permalink" href="index.html#BySize">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func BySize(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>BySize orders the results by the size field.
+
+				
+				
+			
+				
+				<h3 id="BySourceHTMLURL">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=9246:9301#L216">BySourceHTMLURL</a>
+					<a class="permalink" href="index.html#BySourceHTMLURL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func BySourceHTMLURL(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>BySourceHTMLURL orders the results by the source_html_url field.
+
+				
+				
+			
+				
+				<h3 id="BySourceURL">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=9062:9113#L211">BySourceURL</a>
+					<a class="permalink" href="index.html#BySourceURL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func BySourceURL(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>BySourceURL orders the results by the source_url field.
+
+				
+				
+			
+				
+				<h3 id="ByStatus">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=9422:9470#L221">ByStatus</a>
+					<a class="permalink" href="index.html#ByStatus">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByStatus(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByStatus orders the results by the status field.
+
+				
+				
+			
+				
+				<h3 id="ByStatusErrorCount">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=9797:9855#L231">ByStatusErrorCount</a>
+					<a class="permalink" href="index.html#ByStatusErrorCount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByStatusErrorCount(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByStatusErrorCount orders the results by the status_error_count field.
+
+				
+				
+			
+				
+				<h3 id="ByStatusMessage">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=9599:9654#L226">ByStatusMessage</a>
+					<a class="permalink" href="index.html#ByStatusMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByStatusMessage(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByStatusMessage orders the results by the status_message field.
+
+				
+				
+			
+				
+				<h3 id="ByStoragePath">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=8883:8936#L206">ByStoragePath</a>
+					<a class="permalink" href="index.html#ByStoragePath">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByStoragePath(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByStoragePath orders the results by the storage_path field.
+
+				
+				
+			
+				
+				<h3 id="BySubType">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=10136:10185#L241">BySubType</a>
+					<a class="permalink" href="index.html#BySubType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func BySubType(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>BySubType orders the results by the sub_type field.
+
+				
+				
+			
+				
+				<h3 id="ByType">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=9975:10021#L236">ByType</a>
+					<a class="permalink" href="index.html#ByType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByType(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByType orders the results by the type field.
+
+				
+				
+			
+				
+				<h3 id="ByUpdatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=8704:8755#L201">ByUpdatedAt</a>
+					<a class="permalink" href="index.html#ByUpdatedAt">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByUpdatedAt(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByUpdatedAt orders the results by the updated_at field.
+
+				
+				
+			
+				
+				<h3 id="ByWidth">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpblob/hpblob.go?s=10298:10345#L246">ByWidth</a>
+					<a class="permalink" href="index.html#ByWidth">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByWidth(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByWidth orders the results by the width field.
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

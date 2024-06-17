@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>mixin - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package mixin
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/schema/mixin"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#Crawler">type Crawler</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Crawler.Annotation">func (Crawler) Annotation() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Crawler.Edges">func (Crawler) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Crawler.Fields">func (Crawler) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Crawler.Hooks">func (Crawler) Hooks() []ent.Hook</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Crawler.Indexes">func (Crawler) Indexes() []ent.Index</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Timestamp">type Timestamp</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Timestamp.Edges">func (Timestamp) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Timestamp.Fields">func (Timestamp) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Timestamp.Hooks">func (Timestamp) Hooks() []ent.Hook</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Timestamp.Indexes">func (Timestamp) Indexes() []ent.Index</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/crawler.go">crawler.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/timestamp.go">timestamp.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="Crawler">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/crawler.go?s=404:441#L8">Crawler</a>
+				<a class="permalink" href="index.html#Crawler">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Crawler implements the ent.Mixin for tables inserted/updated by cralwer
+Fields added:
+<ul>
+<li>crawled *time.Time (optional)
+<li>error_count Int
+<li>last_error_message *String
+<li>recrawl_required Bool
+</ul>
+
+			<pre>type Crawler struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/mixin/">mixin</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/mixin/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Crawler.Annotation">func (Crawler) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/timestamp.go?s=1181:1228#L50">Annotation</a>
+					<a class="permalink" href="index.html#Crawler.Annotation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Crawler">Crawler</a>) Annotation() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Crawler.Edges">func (Crawler) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/crawler.go?s=843:876#L25">Edges</a>
+					<a class="permalink" href="index.html#Crawler.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Crawler">Crawler</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Crawler.Fields">func (Crawler) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/crawler.go?s=443:478#L12">Fields</a>
+					<a class="permalink" href="index.html#Crawler.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Crawler">Crawler</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Crawler.Hooks">func (Crawler) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/crawler.go?s=948:981#L33">Hooks</a>
+					<a class="permalink" href="index.html#Crawler.Hooks">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Crawler">Crawler</a>) Hooks() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Hook">Hook</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Crawler.Indexes">func (Crawler) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/crawler.go?s=894:930#L29">Indexes</a>
+					<a class="permalink" href="index.html#Crawler.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Crawler">Crawler</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Timestamp">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/timestamp.go?s=373:412#L9">Timestamp</a>
+				<a class="permalink" href="index.html#Timestamp">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Timestamp implements the ent.Mixin for adding timestamps into fields
+Fields added:
+<ul>
+<li>created_at time.Time (immutable)
+<li>updated_at time.Time
+</ul>
+
+			<pre>type Timestamp struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/mixin/">mixin</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/mixin/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Timestamp.Edges">func (Timestamp) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/timestamp.go?s=583:618#L23">Edges</a>
+					<a class="permalink" href="index.html#Timestamp.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Timestamp">Timestamp</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Timestamp.Fields">func (Timestamp) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/timestamp.go?s=414:451#L13">Fields</a>
+					<a class="permalink" href="index.html#Timestamp.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Timestamp">Timestamp</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Timestamp.Hooks">func (Timestamp) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/timestamp.go?s=692:727#L31">Hooks</a>
+					<a class="permalink" href="index.html#Timestamp.Hooks">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Timestamp">Timestamp</a>) Hooks() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Hook">Hook</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Timestamp.Indexes">func (Timestamp) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/mixin/timestamp.go?s=636:674#L27">Indexes</a>
+					<a class="permalink" href="index.html#Timestamp.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Timestamp">Timestamp</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>
