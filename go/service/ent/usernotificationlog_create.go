@@ -300,7 +300,6 @@ func (unlc *UserNotificationLogCreate) createSpec() (*UserNotificationLog, *sqlg
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (unlc *UserNotificationLogCreate) OnConflict(opts ...sql.ConflictOption) *UserNotificationLogUpsertOne {
 	unlc.conflict = opts
 	return &UserNotificationLogUpsertOne{
@@ -314,7 +313,6 @@ func (unlc *UserNotificationLogCreate) OnConflict(opts ...sql.ConflictOption) *U
 //	client.UserNotificationLog.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (unlc *UserNotificationLogCreate) OnConflictColumns(columns ...string) *UserNotificationLogUpsertOne {
 	unlc.conflict = append(unlc.conflict, sql.ConflictColumns(columns...))
 	return &UserNotificationLogUpsertOne{
@@ -421,7 +419,6 @@ func (u *UserNotificationLogUpsert) UpdateStatusMessage() *UserNotificationLogUp
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *UserNotificationLogUpsertOne) UpdateNewValues() *UserNotificationLogUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -441,10 +438,9 @@ func (u *UserNotificationLogUpsertOne) UpdateNewValues() *UserNotificationLogUps
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.UserNotificationLog.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.UserNotificationLog.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *UserNotificationLogUpsertOne) Ignore() *UserNotificationLogUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -691,7 +687,6 @@ func (unlcb *UserNotificationLogCreateBulk) ExecX(ctx context.Context) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (unlcb *UserNotificationLogCreateBulk) OnConflict(opts ...sql.ConflictOption) *UserNotificationLogUpsertBulk {
 	unlcb.conflict = opts
 	return &UserNotificationLogUpsertBulk{
@@ -705,7 +700,6 @@ func (unlcb *UserNotificationLogCreateBulk) OnConflict(opts ...sql.ConflictOptio
 //	client.UserNotificationLog.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (unlcb *UserNotificationLogCreateBulk) OnConflictColumns(columns ...string) *UserNotificationLogUpsertBulk {
 	unlcb.conflict = append(unlcb.conflict, sql.ConflictColumns(columns...))
 	return &UserNotificationLogUpsertBulk{
@@ -727,7 +721,6 @@ type UserNotificationLogUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *UserNotificationLogUpsertBulk) UpdateNewValues() *UserNotificationLogUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -752,7 +745,6 @@ func (u *UserNotificationLogUpsertBulk) UpdateNewValues() *UserNotificationLogUp
 //	client.UserNotificationLog.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *UserNotificationLogUpsertBulk) Ignore() *UserNotificationLogUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

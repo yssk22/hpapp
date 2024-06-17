@@ -429,7 +429,6 @@ func (hfic *HPFeedItemCreate) createSpec() (*HPFeedItem, *sqlgraph.CreateSpec) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hfic *HPFeedItemCreate) OnConflict(opts ...sql.ConflictOption) *HPFeedItemUpsertOne {
 	hfic.conflict = opts
 	return &HPFeedItemUpsertOne{
@@ -443,7 +442,6 @@ func (hfic *HPFeedItemCreate) OnConflict(opts ...sql.ConflictOption) *HPFeedItem
 //	client.HPFeedItem.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hfic *HPFeedItemCreate) OnConflictColumns(columns ...string) *HPFeedItemUpsertOne {
 	hfic.conflict = append(hfic.conflict, sql.ConflictColumns(columns...))
 	return &HPFeedItemUpsertOne{
@@ -622,7 +620,6 @@ func (u *HPFeedItemUpsert) ClearOwnerMemberID() *HPFeedItemUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPFeedItemUpsertOne) UpdateNewValues() *HPFeedItemUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -636,10 +633,9 @@ func (u *HPFeedItemUpsertOne) UpdateNewValues() *HPFeedItemUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.HPFeedItem.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.HPFeedItem.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *HPFeedItemUpsertOne) Ignore() *HPFeedItemUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -970,7 +966,6 @@ func (hficb *HPFeedItemCreateBulk) ExecX(ctx context.Context) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hficb *HPFeedItemCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPFeedItemUpsertBulk {
 	hficb.conflict = opts
 	return &HPFeedItemUpsertBulk{
@@ -984,7 +979,6 @@ func (hficb *HPFeedItemCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPFee
 //	client.HPFeedItem.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hficb *HPFeedItemCreateBulk) OnConflictColumns(columns ...string) *HPFeedItemUpsertBulk {
 	hficb.conflict = append(hficb.conflict, sql.ConflictColumns(columns...))
 	return &HPFeedItemUpsertBulk{
@@ -1006,7 +1000,6 @@ type HPFeedItemUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPFeedItemUpsertBulk) UpdateNewValues() *HPFeedItemUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -1025,7 +1018,6 @@ func (u *HPFeedItemUpsertBulk) UpdateNewValues() *HPFeedItemUpsertBulk {
 //	client.HPFeedItem.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *HPFeedItemUpsertBulk) Ignore() *HPFeedItemUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

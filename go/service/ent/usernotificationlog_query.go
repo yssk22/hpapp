@@ -309,7 +309,6 @@ func (unlq *UserNotificationLogQuery) WithReceivers(opts ...func(*UserNotificati
 //		GroupBy(usernotificationlog.FieldCreatedAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (unlq *UserNotificationLogQuery) GroupBy(field string, fields ...string) *UserNotificationLogGroupBy {
 	unlq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &UserNotificationLogGroupBy{build: unlq}
@@ -331,7 +330,6 @@ func (unlq *UserNotificationLogQuery) GroupBy(field string, fields ...string) *U
 //	client.UserNotificationLog.Query().
 //		Select(usernotificationlog.FieldCreatedAt).
 //		Scan(ctx, &v)
-//
 func (unlq *UserNotificationLogQuery) Select(fields ...string) *UserNotificationLogSelect {
 	unlq.ctx.Fields = append(unlq.ctx.Fields, fields...)
 	sbuild := &UserNotificationLogSelect{UserNotificationLogQuery: unlq}

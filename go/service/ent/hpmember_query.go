@@ -640,7 +640,6 @@ func (hmq *HPMemberQuery) WithFollowedBy(opts ...func(*HPFollowQuery)) *HPMember
 //		GroupBy(hpmember.FieldCrawledAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (hmq *HPMemberQuery) GroupBy(field string, fields ...string) *HPMemberGroupBy {
 	hmq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &HPMemberGroupBy{build: hmq}
@@ -662,7 +661,6 @@ func (hmq *HPMemberQuery) GroupBy(field string, fields ...string) *HPMemberGroup
 //	client.HPMember.Query().
 //		Select(hpmember.FieldCrawledAt).
 //		Scan(ctx, &v)
-//
 func (hmq *HPMemberQuery) Select(fields ...string) *HPMemberSelect {
 	hmq.ctx.Fields = append(hmq.ctx.Fields, fields...)
 	sbuild := &HPMemberSelect{HPMemberQuery: hmq}

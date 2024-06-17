@@ -345,7 +345,6 @@ func (hvhq *HPViewHistoryQuery) WithUser(opts ...func(*UserQuery)) *HPViewHistor
 //		GroupBy(hpviewhistory.FieldCreatedAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (hvhq *HPViewHistoryQuery) GroupBy(field string, fields ...string) *HPViewHistoryGroupBy {
 	hvhq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &HPViewHistoryGroupBy{build: hvhq}
@@ -367,7 +366,6 @@ func (hvhq *HPViewHistoryQuery) GroupBy(field string, fields ...string) *HPViewH
 //	client.HPViewHistory.Query().
 //		Select(hpviewhistory.FieldCreatedAt).
 //		Scan(ctx, &v)
-//
 func (hvhq *HPViewHistoryQuery) Select(fields ...string) *HPViewHistorySelect {
 	hvhq.ctx.Fields = append(hvhq.ctx.Fields, fields...)
 	sbuild := &HPViewHistorySelect{HPViewHistoryQuery: hvhq}

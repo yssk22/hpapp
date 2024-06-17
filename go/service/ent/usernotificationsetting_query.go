@@ -346,7 +346,6 @@ func (unsq *UserNotificationSettingQuery) WithNotificationLogs(opts ...func(*Use
 //		GroupBy(usernotificationsetting.FieldCreatedAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (unsq *UserNotificationSettingQuery) GroupBy(field string, fields ...string) *UserNotificationSettingGroupBy {
 	unsq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &UserNotificationSettingGroupBy{build: unsq}
@@ -368,7 +367,6 @@ func (unsq *UserNotificationSettingQuery) GroupBy(field string, fields ...string
 //	client.UserNotificationSetting.Query().
 //		Select(usernotificationsetting.FieldCreatedAt).
 //		Scan(ctx, &v)
-//
 func (unsq *UserNotificationSettingQuery) Select(fields ...string) *UserNotificationSettingSelect {
 	unsq.ctx.Fields = append(unsq.ctx.Fields, fields...)
 	sbuild := &UserNotificationSettingSelect{UserNotificationSettingQuery: unsq}

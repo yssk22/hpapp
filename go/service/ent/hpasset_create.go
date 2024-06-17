@@ -266,7 +266,6 @@ func (hac *HPAssetCreate) createSpec() (*HPAsset, *sqlgraph.CreateSpec) {
 //			SetKey(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hac *HPAssetCreate) OnConflict(opts ...sql.ConflictOption) *HPAssetUpsertOne {
 	hac.conflict = opts
 	return &HPAssetUpsertOne{
@@ -280,7 +279,6 @@ func (hac *HPAssetCreate) OnConflict(opts ...sql.ConflictOption) *HPAssetUpsertO
 //	client.HPAsset.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hac *HPAssetCreate) OnConflictColumns(columns ...string) *HPAssetUpsertOne {
 	hac.conflict = append(hac.conflict, sql.ConflictColumns(columns...))
 	return &HPAssetUpsertOne{
@@ -333,7 +331,6 @@ func (u *HPAssetUpsert) UpdateAssetType() *HPAssetUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPAssetUpsertOne) UpdateNewValues() *HPAssetUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	return u
@@ -342,10 +339,9 @@ func (u *HPAssetUpsertOne) UpdateNewValues() *HPAssetUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.HPAsset.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.HPAsset.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *HPAssetUpsertOne) Ignore() *HPAssetUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -528,7 +524,6 @@ func (hacb *HPAssetCreateBulk) ExecX(ctx context.Context) {
 //			SetKey(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hacb *HPAssetCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPAssetUpsertBulk {
 	hacb.conflict = opts
 	return &HPAssetUpsertBulk{
@@ -542,7 +537,6 @@ func (hacb *HPAssetCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPAssetUp
 //	client.HPAsset.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hacb *HPAssetCreateBulk) OnConflictColumns(columns ...string) *HPAssetUpsertBulk {
 	hacb.conflict = append(hacb.conflict, sql.ConflictColumns(columns...))
 	return &HPAssetUpsertBulk{
@@ -564,7 +558,6 @@ type HPAssetUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPAssetUpsertBulk) UpdateNewValues() *HPAssetUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	return u
@@ -576,7 +569,6 @@ func (u *HPAssetUpsertBulk) UpdateNewValues() *HPAssetUpsertBulk {
 //	client.HPAsset.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *HPAssetUpsertBulk) Ignore() *HPAssetUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

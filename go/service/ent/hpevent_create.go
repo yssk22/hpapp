@@ -356,7 +356,6 @@ func (hec *HPEventCreate) createSpec() (*HPEvent, *sqlgraph.CreateSpec) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hec *HPEventCreate) OnConflict(opts ...sql.ConflictOption) *HPEventUpsertOne {
 	hec.conflict = opts
 	return &HPEventUpsertOne{
@@ -370,7 +369,6 @@ func (hec *HPEventCreate) OnConflict(opts ...sql.ConflictOption) *HPEventUpsertO
 //	client.HPEvent.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hec *HPEventCreate) OnConflictColumns(columns ...string) *HPEventUpsertOne {
 	hec.conflict = append(hec.conflict, sql.ConflictColumns(columns...))
 	return &HPEventUpsertOne{
@@ -507,7 +505,6 @@ func (u *HPEventUpsert) UpdateSource() *HPEventUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPEventUpsertOne) UpdateNewValues() *HPEventUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -521,10 +518,9 @@ func (u *HPEventUpsertOne) UpdateNewValues() *HPEventUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.HPEvent.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.HPEvent.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *HPEventUpsertOne) Ignore() *HPEventUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -806,7 +802,6 @@ func (hecb *HPEventCreateBulk) ExecX(ctx context.Context) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hecb *HPEventCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPEventUpsertBulk {
 	hecb.conflict = opts
 	return &HPEventUpsertBulk{
@@ -820,7 +815,6 @@ func (hecb *HPEventCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPEventUp
 //	client.HPEvent.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hecb *HPEventCreateBulk) OnConflictColumns(columns ...string) *HPEventUpsertBulk {
 	hecb.conflict = append(hecb.conflict, sql.ConflictColumns(columns...))
 	return &HPEventUpsertBulk{
@@ -842,7 +836,6 @@ type HPEventUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPEventUpsertBulk) UpdateNewValues() *HPEventUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -861,7 +854,6 @@ func (u *HPEventUpsertBulk) UpdateNewValues() *HPEventUpsertBulk {
 //	client.HPEvent.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *HPEventUpsertBulk) Ignore() *HPEventUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

@@ -664,7 +664,6 @@ func (hapc *HPAmebloPostCreate) createSpec() (*HPAmebloPost, *sqlgraph.CreateSpe
 //			SetCrawledAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hapc *HPAmebloPostCreate) OnConflict(opts ...sql.ConflictOption) *HPAmebloPostUpsertOne {
 	hapc.conflict = opts
 	return &HPAmebloPostUpsertOne{
@@ -678,7 +677,6 @@ func (hapc *HPAmebloPostCreate) OnConflict(opts ...sql.ConflictOption) *HPAmeblo
 //	client.HPAmebloPost.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hapc *HPAmebloPostCreate) OnConflictColumns(columns ...string) *HPAmebloPostUpsertOne {
 	hapc.conflict = append(hapc.conflict, sql.ConflictColumns(columns...))
 	return &HPAmebloPostUpsertOne{
@@ -1085,7 +1083,6 @@ func (u *HPAmebloPostUpsert) ClearOwnerMemberID() *HPAmebloPostUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPAmebloPostUpsertOne) UpdateNewValues() *HPAmebloPostUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -1099,10 +1096,9 @@ func (u *HPAmebloPostUpsertOne) UpdateNewValues() *HPAmebloPostUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.HPAmebloPost.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.HPAmebloPost.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *HPAmebloPostUpsertOne) Ignore() *HPAmebloPostUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -1699,7 +1695,6 @@ func (hapcb *HPAmebloPostCreateBulk) ExecX(ctx context.Context) {
 //			SetCrawledAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hapcb *HPAmebloPostCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPAmebloPostUpsertBulk {
 	hapcb.conflict = opts
 	return &HPAmebloPostUpsertBulk{
@@ -1713,7 +1708,6 @@ func (hapcb *HPAmebloPostCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPA
 //	client.HPAmebloPost.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hapcb *HPAmebloPostCreateBulk) OnConflictColumns(columns ...string) *HPAmebloPostUpsertBulk {
 	hapcb.conflict = append(hapcb.conflict, sql.ConflictColumns(columns...))
 	return &HPAmebloPostUpsertBulk{
@@ -1735,7 +1729,6 @@ type HPAmebloPostUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPAmebloPostUpsertBulk) UpdateNewValues() *HPAmebloPostUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -1754,7 +1747,6 @@ func (u *HPAmebloPostUpsertBulk) UpdateNewValues() *HPAmebloPostUpsertBulk {
 //	client.HPAmebloPost.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *HPAmebloPostUpsertBulk) Ignore() *HPAmebloPostUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

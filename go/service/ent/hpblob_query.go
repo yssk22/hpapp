@@ -418,7 +418,6 @@ func (hbq *HPBlobQuery) WithIgPosts(opts ...func(*HPIgPostQuery)) *HPBlobQuery {
 //		GroupBy(hpblob.FieldCreatedAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (hbq *HPBlobQuery) GroupBy(field string, fields ...string) *HPBlobGroupBy {
 	hbq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &HPBlobGroupBy{build: hbq}
@@ -440,7 +439,6 @@ func (hbq *HPBlobQuery) GroupBy(field string, fields ...string) *HPBlobGroupBy {
 //	client.HPBlob.Query().
 //		Select(hpblob.FieldCreatedAt).
 //		Scan(ctx, &v)
-//
 func (hbq *HPBlobQuery) Select(fields ...string) *HPBlobSelect {
 	hbq.ctx.Fields = append(hbq.ctx.Fields, fields...)
 	sbuild := &HPBlobSelect{HPBlobQuery: hbq}

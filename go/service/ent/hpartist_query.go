@@ -604,7 +604,6 @@ func (haq *HPArtistQuery) WithTaggedElineupMallItems(opts ...func(*HPElineupMall
 //		GroupBy(hpartist.FieldCrawledAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (haq *HPArtistQuery) GroupBy(field string, fields ...string) *HPArtistGroupBy {
 	haq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &HPArtistGroupBy{build: haq}
@@ -626,7 +625,6 @@ func (haq *HPArtistQuery) GroupBy(field string, fields ...string) *HPArtistGroup
 //	client.HPArtist.Query().
 //		Select(hpartist.FieldCrawledAt).
 //		Scan(ctx, &v)
-//
 func (haq *HPArtistQuery) Select(fields ...string) *HPArtistSelect {
 	haq.ctx.Fields = append(haq.ctx.Fields, fields...)
 	sbuild := &HPArtistSelect{HPArtistQuery: haq}

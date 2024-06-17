@@ -308,7 +308,6 @@ func (aq *AuthQuery) WithUser(opts ...func(*UserQuery)) *AuthQuery {
 //		GroupBy(auth.FieldCreatedAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (aq *AuthQuery) GroupBy(field string, fields ...string) *AuthGroupBy {
 	aq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &AuthGroupBy{build: aq}
@@ -330,7 +329,6 @@ func (aq *AuthQuery) GroupBy(field string, fields ...string) *AuthGroupBy {
 //	client.Auth.Query().
 //		Select(auth.FieldCreatedAt).
 //		Scan(ctx, &v)
-//
 func (aq *AuthQuery) Select(fields ...string) *AuthSelect {
 	aq.ctx.Fields = append(aq.ctx.Fields, fields...)
 	sbuild := &AuthSelect{AuthQuery: aq}

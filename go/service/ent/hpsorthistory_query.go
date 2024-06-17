@@ -308,7 +308,6 @@ func (hshq *HPSortHistoryQuery) WithOwner(opts ...func(*UserQuery)) *HPSortHisto
 //		GroupBy(hpsorthistory.FieldCreatedAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (hshq *HPSortHistoryQuery) GroupBy(field string, fields ...string) *HPSortHistoryGroupBy {
 	hshq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &HPSortHistoryGroupBy{build: hshq}
@@ -330,7 +329,6 @@ func (hshq *HPSortHistoryQuery) GroupBy(field string, fields ...string) *HPSortH
 //	client.HPSortHistory.Query().
 //		Select(hpsorthistory.FieldCreatedAt).
 //		Scan(ctx, &v)
-//
 func (hshq *HPSortHistoryQuery) Select(fields ...string) *HPSortHistorySelect {
 	hshq.ctx.Fields = append(hshq.ctx.Fields, fields...)
 	sbuild := &HPSortHistorySelect{HPSortHistoryQuery: hshq}

@@ -383,7 +383,6 @@ func (heq *HPEventQuery) WithHpfcEventTickets(opts ...func(*HPFCEventTicketQuery
 //		GroupBy(hpevent.FieldCreatedAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (heq *HPEventQuery) GroupBy(field string, fields ...string) *HPEventGroupBy {
 	heq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &HPEventGroupBy{build: heq}
@@ -405,7 +404,6 @@ func (heq *HPEventQuery) GroupBy(field string, fields ...string) *HPEventGroupBy
 //	client.HPEvent.Query().
 //		Select(hpevent.FieldCreatedAt).
 //		Scan(ctx, &v)
-//
 func (heq *HPEventQuery) Select(fields ...string) *HPEventSelect {
 	heq.ctx.Fields = append(heq.ctx.Fields, fields...)
 	sbuild := &HPEventSelect{HPEventQuery: heq}

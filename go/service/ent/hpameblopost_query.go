@@ -490,7 +490,6 @@ func (hapq *HPAmebloPostQuery) WithBlobs(opts ...func(*HPBlobQuery)) *HPAmebloPo
 //		GroupBy(hpameblopost.FieldCrawledAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (hapq *HPAmebloPostQuery) GroupBy(field string, fields ...string) *HPAmebloPostGroupBy {
 	hapq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &HPAmebloPostGroupBy{build: hapq}
@@ -512,7 +511,6 @@ func (hapq *HPAmebloPostQuery) GroupBy(field string, fields ...string) *HPAmeblo
 //	client.HPAmebloPost.Query().
 //		Select(hpameblopost.FieldCrawledAt).
 //		Scan(ctx, &v)
-//
 func (hapq *HPAmebloPostQuery) Select(fields ...string) *HPAmebloPostSelect {
 	hapq.ctx.Fields = append(hapq.ctx.Fields, fields...)
 	sbuild := &HPAmebloPostSelect{HPAmebloPostQuery: hapq}

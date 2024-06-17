@@ -274,7 +274,6 @@ func (ac *AuthCreate) createSpec() (*Auth, *sqlgraph.CreateSpec) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (ac *AuthCreate) OnConflict(opts ...sql.ConflictOption) *AuthUpsertOne {
 	ac.conflict = opts
 	return &AuthUpsertOne{
@@ -288,7 +287,6 @@ func (ac *AuthCreate) OnConflict(opts ...sql.ConflictOption) *AuthUpsertOne {
 //	client.Auth.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (ac *AuthCreate) OnConflictColumns(columns ...string) *AuthUpsertOne {
 	ac.conflict = append(ac.conflict, sql.ConflictColumns(columns...))
 	return &AuthUpsertOne{
@@ -443,7 +441,6 @@ func (u *AuthUpsert) ClearOwnerUserID() *AuthUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *AuthUpsertOne) UpdateNewValues() *AuthUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -457,10 +454,9 @@ func (u *AuthUpsertOne) UpdateNewValues() *AuthUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.Auth.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.Auth.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *AuthUpsertOne) Ignore() *AuthUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -762,7 +758,6 @@ func (acb *AuthCreateBulk) ExecX(ctx context.Context) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (acb *AuthCreateBulk) OnConflict(opts ...sql.ConflictOption) *AuthUpsertBulk {
 	acb.conflict = opts
 	return &AuthUpsertBulk{
@@ -776,7 +771,6 @@ func (acb *AuthCreateBulk) OnConflict(opts ...sql.ConflictOption) *AuthUpsertBul
 //	client.Auth.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (acb *AuthCreateBulk) OnConflictColumns(columns ...string) *AuthUpsertBulk {
 	acb.conflict = append(acb.conflict, sql.ConflictColumns(columns...))
 	return &AuthUpsertBulk{
@@ -798,7 +792,6 @@ type AuthUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *AuthUpsertBulk) UpdateNewValues() *AuthUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -817,7 +810,6 @@ func (u *AuthUpsertBulk) UpdateNewValues() *AuthUpsertBulk {
 //	client.Auth.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *AuthUpsertBulk) Ignore() *AuthUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

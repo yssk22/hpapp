@@ -318,7 +318,6 @@ func (tec *TestEntCreate) createSpec() (*TestEnt, *sqlgraph.CreateSpec) {
 //			SetStringField(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (tec *TestEntCreate) OnConflict(opts ...sql.ConflictOption) *TestEntUpsertOne {
 	tec.conflict = opts
 	return &TestEntUpsertOne{
@@ -332,7 +331,6 @@ func (tec *TestEntCreate) OnConflict(opts ...sql.ConflictOption) *TestEntUpsertO
 //	client.TestEnt.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (tec *TestEntCreate) OnConflictColumns(columns ...string) *TestEntUpsertOne {
 	tec.conflict = append(tec.conflict, sql.ConflictColumns(columns...))
 	return &TestEntUpsertOne{
@@ -559,7 +557,6 @@ func (u *TestEntUpsert) ClearEnumField() *TestEntUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *TestEntUpsertOne) UpdateNewValues() *TestEntUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	return u
@@ -568,10 +565,9 @@ func (u *TestEntUpsertOne) UpdateNewValues() *TestEntUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.TestEnt.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.TestEnt.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *TestEntUpsertOne) Ignore() *TestEntUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -958,7 +954,6 @@ func (tecb *TestEntCreateBulk) ExecX(ctx context.Context) {
 //			SetStringField(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (tecb *TestEntCreateBulk) OnConflict(opts ...sql.ConflictOption) *TestEntUpsertBulk {
 	tecb.conflict = opts
 	return &TestEntUpsertBulk{
@@ -972,7 +967,6 @@ func (tecb *TestEntCreateBulk) OnConflict(opts ...sql.ConflictOption) *TestEntUp
 //	client.TestEnt.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (tecb *TestEntCreateBulk) OnConflictColumns(columns ...string) *TestEntUpsertBulk {
 	tecb.conflict = append(tecb.conflict, sql.ConflictColumns(columns...))
 	return &TestEntUpsertBulk{
@@ -994,7 +988,6 @@ type TestEntUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *TestEntUpsertBulk) UpdateNewValues() *TestEntUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	return u
@@ -1006,7 +999,6 @@ func (u *TestEntUpsertBulk) UpdateNewValues() *TestEntUpsertBulk {
 //	client.TestEnt.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *TestEntUpsertBulk) Ignore() *TestEntUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

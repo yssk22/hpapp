@@ -420,7 +420,6 @@ func (haq *HPAssetQuery) WithIgPosts(opts ...func(*HPIgPostQuery)) *HPAssetQuery
 //		GroupBy(hpasset.FieldKey).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (haq *HPAssetQuery) GroupBy(field string, fields ...string) *HPAssetGroupBy {
 	haq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &HPAssetGroupBy{build: haq}
@@ -442,7 +441,6 @@ func (haq *HPAssetQuery) GroupBy(field string, fields ...string) *HPAssetGroupBy
 //	client.HPAsset.Query().
 //		Select(hpasset.FieldKey).
 //		Scan(ctx, &v)
-//
 func (haq *HPAssetQuery) Select(fields ...string) *HPAssetSelect {
 	haq.ctx.Fields = append(haq.ctx.Fields, fields...)
 	sbuild := &HPAssetSelect{HPAssetQuery: haq}

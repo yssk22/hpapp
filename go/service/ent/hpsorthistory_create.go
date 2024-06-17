@@ -203,7 +203,6 @@ func (hshc *HPSortHistoryCreate) createSpec() (*HPSortHistory, *sqlgraph.CreateS
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hshc *HPSortHistoryCreate) OnConflict(opts ...sql.ConflictOption) *HPSortHistoryUpsertOne {
 	hshc.conflict = opts
 	return &HPSortHistoryUpsertOne{
@@ -217,7 +216,6 @@ func (hshc *HPSortHistoryCreate) OnConflict(opts ...sql.ConflictOption) *HPSortH
 //	client.HPSortHistory.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hshc *HPSortHistoryCreate) OnConflictColumns(columns ...string) *HPSortHistoryUpsertOne {
 	hshc.conflict = append(hshc.conflict, sql.ConflictColumns(columns...))
 	return &HPSortHistoryUpsertOne{
@@ -282,7 +280,6 @@ func (u *HPSortHistoryUpsert) ClearOwnerUserID() *HPSortHistoryUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPSortHistoryUpsertOne) UpdateNewValues() *HPSortHistoryUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -299,10 +296,9 @@ func (u *HPSortHistoryUpsertOne) UpdateNewValues() *HPSortHistoryUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.HPSortHistory.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.HPSortHistory.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *HPSortHistoryUpsertOne) Ignore() *HPSortHistoryUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -499,7 +495,6 @@ func (hshcb *HPSortHistoryCreateBulk) ExecX(ctx context.Context) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hshcb *HPSortHistoryCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPSortHistoryUpsertBulk {
 	hshcb.conflict = opts
 	return &HPSortHistoryUpsertBulk{
@@ -513,7 +508,6 @@ func (hshcb *HPSortHistoryCreateBulk) OnConflict(opts ...sql.ConflictOption) *HP
 //	client.HPSortHistory.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hshcb *HPSortHistoryCreateBulk) OnConflictColumns(columns ...string) *HPSortHistoryUpsertBulk {
 	hshcb.conflict = append(hshcb.conflict, sql.ConflictColumns(columns...))
 	return &HPSortHistoryUpsertBulk{
@@ -535,7 +529,6 @@ type HPSortHistoryUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPSortHistoryUpsertBulk) UpdateNewValues() *HPSortHistoryUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -557,7 +550,6 @@ func (u *HPSortHistoryUpsertBulk) UpdateNewValues() *HPSortHistoryUpsertBulk {
 //	client.HPSortHistory.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *HPSortHistoryUpsertBulk) Ignore() *HPSortHistoryUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
