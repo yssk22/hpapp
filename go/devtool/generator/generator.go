@@ -1,3 +1,6 @@
+/*
+Package generate provides the code generation tools for various purposes.
+*/
 package generator
 
 import (

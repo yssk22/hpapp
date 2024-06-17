@@ -93,7 +93,53 @@
 			</div>
 			<div class="expanded">
 				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
-				
+				<p>Package schema provides a feature to generate GraphQL schema and resolver.go for gqlgen.
+<p>if there is a Query struct defined at the top level in a package like the following, then the struct definition is analyzed and all exported dependencies are output as a GraphQL schema.
+<pre>type Query struct {
+	MethodA(context.Context) Node1, error
+	MethodB(context.Context, param Param) Node2, error
+}
+
+type Query goModel(model: &quot;path/to/package.Query&quot;) {
+	methodA: Node1!
+	methodB(param: Param!): Node2!
+}
+
+type Node1 goModel(model: &quot;path/to/package.Node1&quot;) {
+	...
+}
+
+input ParamInput goModel(model: &quot;path/to/package.Node1&quot;) {
+	...
+}
+
+type Node2 goModel(model: &quot;path/to/package.Node1&quot;) {
+	...
+}
+</pre>
+<p>And there are some rules to analyze dependencies.
+<ul>
+<li>use GraphQL ID type if there is a string field with the name ID.
+<li>use GraphQL ID type if there is a function named ID() that returns string.
+<li>skip context.Context at the first argument in a function.
+<li>use &quot;F: T!&quot; if there is a `function F() (T, error)`.
+<li>if a struct T has `MarshalGQL(io.Writer)` と `UnmarshalGQL(interface{})`, then use `scalar T` in GraphQL.
+<li>if a struct T has a private `implements(InterfaceA)` function, then use `type T implements InterfaceA` and `interface InterfaceA` in GraphQL.
+</ul>
+<h3 id="hdr-How_to_write_resolver_go">How to write resolver.go</h3>
+<p>The generated GraphQL schema is mapped to the Go struct definition by the @goModel directive, so the resolver.go is very simple.
+<pre>type Resolver struct{}
+
+var query = &amp;models.Query{}
+
+func (r *Resolver) Query() QueryResolver { return query }
+
+var mutation = &amp;models.Mutation{}
+
+func (r *Resolver) Mutation() MutationResolver { return mutation }
+</pre>
+<p>Note that the resolver.go must be in a different directory from the package that contains the struct definition to avoid cyclic imports.
+
 				
 			</div>
 		</div>
@@ -524,7 +570,7 @@
 		
 			
 			
-			<h2 id="Schema">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/schema.go?s=78:120#L1">Schema</a>
+			<h2 id="Schema">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/schema.go?s=1877:1919#L48">Schema</a>
 				<a class="permalink" href="index.html#Schema">&#xb6;</a>
 				
 				

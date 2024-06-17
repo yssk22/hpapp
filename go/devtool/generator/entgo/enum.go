@@ -1,3 +1,6 @@
+/*
+Package entgo provides a helper function to generate code for entgo
+*/
 package entgo
 
 import (
@@ -10,6 +13,7 @@ import (
 	"github.com/yssk22/hpapp/go/devtool/generator/enum"
 )
 
+// NewEnumGenerator creates a new EnumGenerator to generate `func(EnumType) Values() string` code for entgo in a file named `entgo_enum.go`.
 func NewEnumGenerator(dir string, options ...EnumGeneratorOption) generator.Generator {
 	r := &enumGenerator{
 		dir:      dir,

@@ -93,7 +93,33 @@
 			</div>
 			<div class="expanded">
 				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
-				
+				<p>Packate test provides a test framework and runner for the service package.
+<h3 id="hdr-Using_external_resources_in_service_test_implementation">Using external resources in service test implementation</h3>
+<p>In the test implementation under the service directory, you can implement integration tests using external resources (databases, log output streams, configuration KVS, etc.)
+<pre>import (
+	&quot;testing&quot;
+	&quot;github.com/yssk22/hpapp/goservice/test&quot;
+)
+
+func TestServiceIntegration(t *testing.T) {
+    test.New(&quot;my test&quot;).Run(t, func(ctx context.Context, t *testing.T) {
+        // ....
+	})
+}
+</pre>
+<p>In the above example, the `test.New(&quot;my test&quot;)` function creates a test environment with external resources and the `Run` method executes the test code with those resources.
+Each of test.New(&quot;my test&quot;) instances has its own unique external resources, so the database records created in one test case do not affect other test cases.
+<p>In addition, the `HPArtist`, `HPAsset`, and `HPMember` entities can be automatically set up in the database on a test case basis by adding `WithHPMaster` to the test case.
+The data is created based on the `go/data/\*.csv` in the repository.
+<pre>func TestServiceIntegration(t *testing.T) {
+    test.New(&quot;my test&quot;, test.WithMaster()).Run(t, func(ctx context.Context, t *testing.T) {
+        // ....
+        // entclient := entutil.NewClient(ctx)
+        // entclient.HPArtist.Query().All(ctx) --&gt; returns record imported from go/data/hp_artists.csv
+	})
+}
+</pre>
+
 				
 			</div>
 		</div>
@@ -183,7 +209,7 @@
 		
 			
 			
-			<h2 id="MakeTestUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=5665:5716#L204">MakeTestUser</a>
+			<h2 id="MakeTestUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=7085:7136#L236">MakeTestUser</a>
 				<a class="permalink" href="index.html#MakeTestUser">&#xb6;</a>
 				
 				
@@ -198,7 +224,7 @@
 		
 			
 			
-			<h2 id="Option">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=864:893#L24">Option</a>
+			<h2 id="Option">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=2284:2313#L56">Option</a>
 				<a class="permalink" href="index.html#Option">&#xb6;</a>
 				
 				
@@ -216,7 +242,7 @@
 
 			
 				
-				<h3 id="WithAdmin">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=984:1007#L32">WithAdmin</a>
+				<h3 id="WithAdmin">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=2404:2427#L64">WithAdmin</a>
 					<a class="permalink" href="index.html#WithAdmin">&#xb6;</a>
 					
 					
@@ -227,7 +253,7 @@
 				
 			
 				
-				<h3 id="WithContextTime">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=1338:1378#L51">WithContextTime</a>
+				<h3 id="WithContextTime">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=2758:2798#L83">WithContextTime</a>
 					<a class="permalink" href="index.html#WithContextTime">&#xb6;</a>
 					
 					
@@ -239,7 +265,7 @@
 				
 			
 				
-				<h3 id="WithFixedTimestamp">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=1699:1731#L65">WithFixedTimestamp</a>
+				<h3 id="WithFixedTimestamp">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=3119:3151#L97">WithFixedTimestamp</a>
 					<a class="permalink" href="index.html#WithFixedTimestamp">&#xb6;</a>
 					
 					
@@ -251,7 +277,7 @@
 				
 			
 				
-				<h3 id="WithHPMaster">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=895:921#L26">WithHPMaster</a>
+				<h3 id="WithHPMaster">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=2315:2341#L58">WithHPMaster</a>
 					<a class="permalink" href="index.html#WithHPMaster">&#xb6;</a>
 					
 					
@@ -262,7 +288,7 @@
 				
 			
 				
-				<h3 id="WithNow">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=1502:1534#L58">WithNow</a>
+				<h3 id="WithNow">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=2922:2954#L90">WithNow</a>
 					<a class="permalink" href="index.html#WithNow">&#xb6;</a>
 					
 					
@@ -274,7 +300,7 @@
 				
 			
 				
-				<h3 id="WithUnverifiedClient">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=1148:1182#L44">WithUnverifiedClient</a>
+				<h3 id="WithUnverifiedClient">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=2568:2602#L76">WithUnverifiedClient</a>
 					<a class="permalink" href="index.html#WithUnverifiedClient">&#xb6;</a>
 					
 					
@@ -285,7 +311,7 @@
 				
 			
 				
-				<h3 id="WithUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=1067:1089#L38">WithUser</a>
+				<h3 id="WithUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=2487:2509#L70">WithUser</a>
 					<a class="permalink" href="index.html#WithUser">&#xb6;</a>
 					
 					
@@ -300,7 +326,7 @@
 		
 			
 			
-			<h2 id="Runner">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=779:862#L20">Runner</a>
+			<h2 id="Runner">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=2199:2282#L52">Runner</a>
 				<a class="permalink" href="index.html#Runner">&#xb6;</a>
 				
 				
@@ -320,7 +346,7 @@
 
 			
 				
-				<h3 id="New">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=5316:5363#L190">New</a>
+				<h3 id="New">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/test/test.go?s=6736:6783#L222">New</a>
 					<a class="permalink" href="index.html#New">&#xb6;</a>
 					
 					

@@ -93,7 +93,30 @@
 			</div>
 			<div class="expanded">
 				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
-				<p>slog package provides a structured logging facility for Go programs.
+				<p>Package slog provides a structured logging facility for Go programs.
+<p>In hpapp, slog package is used to output structured logs. Structured logs must have a message field, and other structured data can be added as needed.
+The slog package should only be used when implementing system and service, and should not be used when implementing foundation.
+<h3 id="hdr-Structured_data_that_is_automatically_collected">Structured data that is automatically collected</h3>
+<p>The following data is automatically collected.
+<ul>
+<li>Timestamp
+<li>The path and the line of source code where the log code is located.
+<li>Stack trace at the time of logging
+<li>Context data (e.g. ID to identify the execution context)
+</ul>
+<h3 id="hdr-Log_output">Log output</h3>
+<p>The log output destination must be implemented as a `slog.Sink` interface.
+<ul>
+<li>`NewNullSink()`: Don&apos;t log anything.
+<li>`NewMemorySink([]Record)`: Log to memory. This is useful for testing.
+<li>`NewIOSink(io.Writer, Formtter)`: Log to the specified io.Writer and the specified formatter.
+</ul>
+<p>For log formatter, the following are provided.
+<ul>
+<li>`JSONLFormatter`: JSONL format. Each log entry is output as a JSON object.
+<li>`JSONFormatter`: &quot;%s [{Timestsamp}] [{Severity}] {Message} (at {SourcePath}:{SourceLine}) {Attribute}&quot;
+<li>`SimpleFormatter`: &quot;%s [{Timestsamp}] [{Severity}] {Message} (at {SourcePath}:{SourceLine})&quot;
+</ul>
 
 				
 			</div>
@@ -314,7 +337,7 @@
 		
 			
 			
-			<h2 id="Critical">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2455:2527#L82">Critical</a>
+			<h2 id="Critical">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=4119:4191#L117">Critical</a>
 				<a class="permalink" href="index.html#Critical">&#xb6;</a>
 				
 				
@@ -327,7 +350,7 @@
 		
 			
 			
-			<h2 id="Debug">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1957:2026#L66">Debug</a>
+			<h2 id="Debug">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3621:3690#L101">Debug</a>
 				<a class="permalink" href="index.html#Debug">&#xb6;</a>
 				
 				
@@ -340,7 +363,7 @@
 		
 			
 			
-			<h2 id="Error">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2331:2400#L78">Error</a>
+			<h2 id="Error">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3995:4064#L113">Error</a>
 				<a class="permalink" href="index.html#Error">&#xb6;</a>
 				
 				
@@ -353,7 +376,7 @@
 		
 			
 			
-			<h2 id="Info">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2209:2277#L74">Info</a>
+			<h2 id="Info">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3873:3941#L109">Info</a>
 				<a class="permalink" href="index.html#Info">&#xb6;</a>
 				
 				
@@ -366,7 +389,7 @@
 		
 			
 			
-			<h2 id="LogIfError">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3118:3184#L105">LogIfError</a>
+			<h2 id="LogIfError">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=4782:4848#L140">LogIfError</a>
 				<a class="permalink" href="index.html#LogIfError">&#xb6;</a>
 				
 				
@@ -379,7 +402,7 @@
 		
 			
 			
-			<h2 id="PanicIfError">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3392:3454#L116">PanicIfError</a>
+			<h2 id="PanicIfError">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=5056:5118#L151">PanicIfError</a>
 				<a class="permalink" href="index.html#PanicIfError">&#xb6;</a>
 				
 				
@@ -405,7 +428,7 @@
 		
 			
 			
-			<h2 id="Track">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3718:3841#L130">Track</a>
+			<h2 id="Track">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=5382:5505#L165">Track</a>
 				<a class="permalink" href="index.html#Track">&#xb6;</a>
 				
 				
@@ -418,7 +441,7 @@
 		
 			
 			
-			<h2 id="Warning">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2081:2152#L70">Warning</a>
+			<h2 id="Warning">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3745:3816#L105">Warning</a>
 				<a class="permalink" href="index.html#Warning">&#xb6;</a>
 				
 				
@@ -431,7 +454,7 @@
 		
 			
 			
-			<h2 id="X">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2796:2847#L88">X</a>
+			<h2 id="X">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=4460:4511#L123">X</a>
 				<a class="permalink" href="index.html#X">&#xb6;</a>
 				
 				
@@ -447,7 +470,7 @@ unlike assert.X, it has to be used with context so the syntax should be slog.X(c
 		
 			
 			
-			<h2 id="Attributes">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3602:3640#L124">Attributes</a>
+			<h2 id="Attributes">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=5266:5304#L159">Attributes</a>
 				<a class="permalink" href="index.html#Attributes">&#xb6;</a>
 				
 				
@@ -467,7 +490,7 @@ unlike assert.X, it has to be used with context so the syntax should be slog.X(c
 
 			
 				
-				<h3 id="Attributes.Set">func (Attributes) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3642:3696#L126">Set</a>
+				<h3 id="Attributes.Set">func (Attributes) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=5306:5360#L161">Set</a>
 					<a class="permalink" href="index.html#Attributes.Set">&#xb6;</a>
 					
 					
@@ -541,7 +564,7 @@ unlike assert.X, it has to be used with context so the syntax should be slog.X(c
 		
 			
 			
-			<h2 id="Record">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=295:938#L8">Record</a>
+			<h2 id="Record">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1500:2143#L36">Record</a>
 				<a class="permalink" href="index.html#Record">&#xb6;</a>
 				
 				
@@ -575,7 +598,7 @@ unlike assert.X, it has to be used with context so the syntax should be slog.X(c
 		
 			
 			
-			<h2 id="RecordOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1279:1312#L32">RecordOption</a>
+			<h2 id="RecordOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2484:2517#L60">RecordOption</a>
 				<a class="permalink" href="index.html#RecordOption">&#xb6;</a>
 				
 				
@@ -594,7 +617,7 @@ unlike assert.X, it has to be used with context so the syntax should be slog.X(c
 
 			
 				
-				<h3 id="A">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1557:1608#L47">A</a>
+				<h3 id="A">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3221:3272#L82">A</a>
 					<a class="permalink" href="index.html#A">&#xb6;</a>
 					
 					
@@ -606,18 +629,19 @@ unlike assert.X, it has to be used with context so the syntax should be slog.X(c
 				
 			
 				
-				<h3 id="Attribute">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1400:1459#L40">Attribute</a>
+				<h3 id="Attribute">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3064:3123#L75">Attribute</a>
 					<a class="permalink" href="index.html#Attribute">&#xb6;</a>
 					
 					
 				</h3>
 				<pre>func Attribute(name <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, value interface{}) <a href="index.html#RecordOption">RecordOption</a></pre>
-				
+				<p>Attribute adds the structured attributed field to the log entry in key-value format.
+
 				
 				
 			
 				
-				<h3 id="Err">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1730:1762#L54">Err</a>
+				<h3 id="Err">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3394:3426#L89">Err</a>
 					<a class="permalink" href="index.html#Err">&#xb6;</a>
 					
 					
@@ -629,7 +653,7 @@ unlike assert.X, it has to be used with context so the syntax should be slog.X(c
 				
 			
 				
-				<h3 id="IncludeStack">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1835:1867#L60">IncludeStack</a>
+				<h3 id="IncludeStack">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3499:3531#L95">IncludeStack</a>
 					<a class="permalink" href="index.html#IncludeStack">&#xb6;</a>
 					
 					
@@ -640,13 +664,19 @@ unlike assert.X, it has to be used with context so the syntax should be slog.X(c
 				
 			
 				
-				<h3 id="Name">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1314:1349#L34">Name</a>
+				<h3 id="Name">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2890:2925#L68">Name</a>
 					<a class="permalink" href="index.html#Name">&#xb6;</a>
 					
 					
 				</h3>
 				<pre>func Name(name <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#RecordOption">RecordOption</a></pre>
-				
+				<p>Name sets the key used to identify the log entry. Although the following naming rule is recommended, it is not limited to this.
+<ul>
+<li>`system.{system_name}.{feature_name}.{function_name}`
+<li>`service.{service_name}.{feature_name}.{function_name}`
+</ul>
+<p>In the production environment, metrics are aggregated based on logs, so be careful when changing the name.
+
 				
 				
 			
@@ -655,7 +685,7 @@ unlike assert.X, it has to be used with context so the syntax should be slog.X(c
 		
 			
 			
-			<h2 id="Severity">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=997:1017#L21">Severity</a>
+			<h2 id="Severity">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2202:2222#L49">Severity</a>
 				<a class="permalink" href="index.html#Severity">&#xb6;</a>
 				
 				

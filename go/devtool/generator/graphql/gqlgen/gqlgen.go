@@ -1,3 +1,6 @@
+/*
+Package gqlgen provides a helper function to generate code for gqlgen
+*/
 package gqlgen
 
 import (
