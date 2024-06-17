@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>hpviewhistory - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package hpviewhistory
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/ent/hpviewhistory"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#And">func And(predicates ...predicate.HPViewHistory) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeEQ">func AssetTypeEQ(v enums.HPAssetType) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeIn">func AssetTypeIn(vs ...enums.HPAssetType) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeNEQ">func AssetTypeNEQ(v enums.HPAssetType) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeNotIn">func AssetTypeNotIn(vs ...enums.HPAssetType) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeValidator">func AssetTypeValidator(at enums.HPAssetType) error</a></dd>
+			
+				
+				<dd><a href="index.html#ContentID">func ContentID(v int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentIDEQ">func ContentIDEQ(v int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentIDGT">func ContentIDGT(v int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentIDGTE">func ContentIDGTE(v int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentIDIn">func ContentIDIn(vs ...int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentIDLT">func ContentIDLT(v int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentIDLTE">func ContentIDLTE(v int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentIDNEQ">func ContentIDNEQ(v int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentIDNotIn">func ContentIDNotIn(vs ...int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentPostAt">func ContentPostAt(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentPostAtEQ">func ContentPostAtEQ(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentPostAtGT">func ContentPostAtGT(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentPostAtGTE">func ContentPostAtGTE(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentPostAtIn">func ContentPostAtIn(vs ...time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentPostAtLT">func ContentPostAtLT(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentPostAtLTE">func ContentPostAtLTE(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentPostAtNEQ">func ContentPostAtNEQ(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ContentPostAtNotIn">func ContentPostAtNotIn(vs ...time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAt">func CreatedAt(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtEQ">func CreatedAtEQ(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtGT">func CreatedAtGT(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtGTE">func CreatedAtGTE(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtIn">func CreatedAtIn(vs ...time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtIsNil">func CreatedAtIsNil() predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtLT">func CreatedAtLT(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtLTE">func CreatedAtLTE(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtNEQ">func CreatedAtNEQ(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtNotIn">func CreatedAtNotIn(vs ...time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtNotNil">func CreatedAtNotNil() predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#HasFeed">func HasFeed() predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#HasFeedWith">func HasFeedWith(preds ...predicate.HPFeedItem) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#HasUser">func HasUser() predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#HasUserWith">func HasUserWith(preds ...predicate.User) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ID">func ID(id int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#IDEQ">func IDEQ(id int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#IDGT">func IDGT(id int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#IDGTE">func IDGTE(id int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#IDIn">func IDIn(ids ...int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#IDLT">func IDLT(id int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#IDLTE">func IDLTE(id int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#IDNEQ">func IDNEQ(id int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#IDNotIn">func IDNotIn(ids ...int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#IsFavorite">func IsFavorite(v bool) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#IsFavoriteEQ">func IsFavoriteEQ(v bool) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#IsFavoriteNEQ">func IsFavoriteNEQ(v bool) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#Not">func Not(p predicate.HPViewHistory) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#Or">func Or(predicates ...predicate.HPViewHistory) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerUserID">func OwnerUserID(v int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerUserIDEQ">func OwnerUserIDEQ(v int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerUserIDIn">func OwnerUserIDIn(vs ...int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerUserIDNEQ">func OwnerUserIDNEQ(v int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerUserIDNotIn">func OwnerUserIDNotIn(vs ...int) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAt">func UpdatedAt(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtEQ">func UpdatedAtEQ(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtGT">func UpdatedAtGT(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtGTE">func UpdatedAtGTE(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtIn">func UpdatedAtIn(vs ...time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtIsNil">func UpdatedAtIsNil() predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtLT">func UpdatedAtLT(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtLTE">func UpdatedAtLTE(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtNEQ">func UpdatedAtNEQ(v time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtNotIn">func UpdatedAtNotIn(vs ...time.Time) predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtNotNil">func UpdatedAtNotNil() predicate.HPViewHistory</a></dd>
+			
+				
+				<dd><a href="index.html#ValidColumn">func ValidColumn(column string) bool</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Order">type Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByAssetType">func ByAssetType(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByContentID">func ByContentID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByContentPostAt">func ByContentPostAt(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByCreatedAt">func ByCreatedAt(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByFeedField">func ByFeedField(field string, opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByID">func ByID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByIsFavorite">func ByIsFavorite(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByOwnerUserID">func ByOwnerUserID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByUpdatedAt">func ByUpdatedAt(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByUserField">func ByUserField(field string, opts ...sql.OrderTermOption) Order</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go">hpviewhistory.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go">where.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span class="comment">// Label holds the string label denoting the hpviewhistory type in the database.</span>
+    <span id="Label">Label</span> = &#34;hp_view_history&#34;
+    <span class="comment">// FieldID holds the string denoting the id field in the database.</span>
+    <span id="FieldID">FieldID</span> = &#34;id&#34;
+    <span class="comment">// FieldCreatedAt holds the string denoting the created_at field in the database.</span>
+    <span id="FieldCreatedAt">FieldCreatedAt</span> = &#34;created_at&#34;
+    <span class="comment">// FieldUpdatedAt holds the string denoting the updated_at field in the database.</span>
+    <span id="FieldUpdatedAt">FieldUpdatedAt</span> = &#34;updated_at&#34;
+    <span class="comment">// FieldContentID holds the string denoting the content_id field in the database.</span>
+    <span id="FieldContentID">FieldContentID</span> = &#34;content_id&#34;
+    <span class="comment">// FieldContentPostAt holds the string denoting the content_post_at field in the database.</span>
+    <span id="FieldContentPostAt">FieldContentPostAt</span> = &#34;content_post_at&#34;
+    <span class="comment">// FieldAssetType holds the string denoting the asset_type field in the database.</span>
+    <span id="FieldAssetType">FieldAssetType</span> = &#34;asset_type&#34;
+    <span class="comment">// FieldIsFavorite holds the string denoting the is_favorite field in the database.</span>
+    <span id="FieldIsFavorite">FieldIsFavorite</span> = &#34;is_favorite&#34;
+    <span class="comment">// FieldOwnerUserID holds the string denoting the owner_user_id field in the database.</span>
+    <span id="FieldOwnerUserID">FieldOwnerUserID</span> = &#34;user_hpview_history&#34;
+    <span class="comment">// EdgeFeed holds the string denoting the feed edge name in mutations.</span>
+    <span id="EdgeFeed">EdgeFeed</span> = &#34;feed&#34;
+    <span class="comment">// EdgeUser holds the string denoting the user edge name in mutations.</span>
+    <span id="EdgeUser">EdgeUser</span> = &#34;user&#34;
+    <span class="comment">// Table holds the table name of the hpviewhistory in the database.</span>
+    <span id="Table">Table</span> = &#34;hp_view_histories&#34;
+    <span class="comment">// FeedTable is the table that holds the feed relation/edge.</span>
+    <span id="FeedTable">FeedTable</span> = &#34;hp_view_histories&#34;
+    <span class="comment">// FeedInverseTable is the table name for the HPFeedItem entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpfeeditem&#34; package.</span>
+    <span id="FeedInverseTable">FeedInverseTable</span> = &#34;hp_feed_items&#34;
+    <span class="comment">// FeedColumn is the table column denoting the feed relation/edge.</span>
+    <span id="FeedColumn">FeedColumn</span> = &#34;hp_feed_item_view_histories&#34;
+    <span class="comment">// UserTable is the table that holds the user relation/edge.</span>
+    <span id="UserTable">UserTable</span> = &#34;hp_view_histories&#34;
+    <span class="comment">// UserInverseTable is the table name for the User entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;user&#34; package.</span>
+    <span id="UserInverseTable">UserInverseTable</span> = &#34;users&#34;
+    <span class="comment">// UserColumn is the table column denoting the user relation/edge.</span>
+    <span id="UserColumn">UserColumn</span> = &#34;user_hpview_history&#34;
+)</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				<p>Note that the variables below are initialized by the runtime
+package on the initialization of the application. Therefore,
+it should be imported in the main as follows:
+<pre>import _ &quot;github.com/yssk22/hpapp/go/service/ent/runtime&quot;
+</pre>
+
+				<pre>var (
+    <span id="Hooks">Hooks</span>  [2]<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Hook">Hook</a>
+    <span id="Policy">Policy</span> <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Policy">Policy</a>
+    <span class="comment">// DefaultIsFavorite holds the default value on creation for the &#34;is_favorite&#34; field.</span>
+    <span id="DefaultIsFavorite">DefaultIsFavorite</span> <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+)</pre>
+			
+				<p>Columns holds all SQL columns for hpviewhistory fields.
+
+				<pre>var <span id="Columns">Columns</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{
+    <a href="index.html#FieldID">FieldID</a>,
+    <a href="index.html#FieldCreatedAt">FieldCreatedAt</a>,
+    <a href="index.html#FieldUpdatedAt">FieldUpdatedAt</a>,
+    <a href="index.html#FieldContentID">FieldContentID</a>,
+    <a href="index.html#FieldContentPostAt">FieldContentPostAt</a>,
+    <a href="index.html#FieldAssetType">FieldAssetType</a>,
+    <a href="index.html#FieldIsFavorite">FieldIsFavorite</a>,
+    <a href="index.html#FieldOwnerUserID">FieldOwnerUserID</a>,
+}</pre>
+			
+				<p>ForeignKeys holds the SQL foreign-keys that are owned by the &quot;hp_view_histories&quot;
+table and are not defined as standalone fields in the schema.
+
+				<pre>var <span id="ForeignKeys">ForeignKeys</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{
+    &#34;hp_feed_item_view_histories&#34;,
+}</pre>
+			
+		
+		
+			
+			
+			<h2 id="And">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=13764:13835#L366">And</a>
+				<a class="permalink" href="index.html#And">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func And(predicates ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>And groups predicates with the AND operator between them.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=10212:10273#L260">AssetTypeEQ</a>
+				<a class="permalink" href="index.html#AssetTypeEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>AssetTypeEQ applies the EQ predicate on the &quot;asset_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=10632:10697#L272">AssetTypeIn</a>
+				<a class="permalink" href="index.html#AssetTypeIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>AssetTypeIn applies the In predicate on the &quot;asset_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=10422:10484#L266">AssetTypeNEQ</a>
+				<a class="permalink" href="index.html#AssetTypeNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeNEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>AssetTypeNEQ applies the NEQ predicate on the &quot;asset_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=10908:10976#L281">AssetTypeNotIn</a>
+				<a class="permalink" href="index.html#AssetTypeNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeNotIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>AssetTypeNotIn applies the NotIn predicate on the &quot;asset_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeValidator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=3611:3662#L92">AssetTypeValidator</a>
+				<a class="permalink" href="index.html#AssetTypeValidator">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeValidator(at <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			<p>AssetTypeValidator is a validator for the &quot;asset_type&quot; field enum values. It is called by the builders before save.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=2237:2282#L60">ContentID</a>
+				<a class="permalink" href="index.html#ContentID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentID(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentID applies equality check predicate on the &quot;content_id&quot; field. It&apos;s identical to ContentIDEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentIDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=7004:7051#L180">ContentIDEQ</a>
+				<a class="permalink" href="index.html#ContentIDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentIDEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentIDEQ applies the EQ predicate on the &quot;content_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentIDGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=7772:7819#L200">ContentIDGT</a>
+				<a class="permalink" href="index.html#ContentIDGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentIDGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentIDGT applies the GT predicate on the &quot;content_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentIDGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=7958:8006#L205">ContentIDGTE</a>
+				<a class="permalink" href="index.html#ContentIDGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentIDGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentIDGTE applies the GTE predicate on the &quot;content_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentIDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=7376:7427#L190">ContentIDIn</a>
+				<a class="permalink" href="index.html#ContentIDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentIDIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentIDIn applies the In predicate on the &quot;content_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentIDLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=8144:8191#L210">ContentIDLT</a>
+				<a class="permalink" href="index.html#ContentIDLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentIDLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentIDLT applies the LT predicate on the &quot;content_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentIDLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=8330:8378#L215">ContentIDLTE</a>
+				<a class="permalink" href="index.html#ContentIDLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentIDLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentIDLTE applies the LTE predicate on the &quot;content_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentIDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=7190:7238#L185">ContentIDNEQ</a>
+				<a class="permalink" href="index.html#ContentIDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentIDNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentIDNEQ applies the NEQ predicate on the &quot;content_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentIDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=7574:7628#L195">ContentIDNotIn</a>
+				<a class="permalink" href="index.html#ContentIDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentIDNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentIDNotIn applies the NotIn predicate on the &quot;content_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentPostAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=2469:2524#L65">ContentPostAt</a>
+				<a class="permalink" href="index.html#ContentPostAt">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentPostAt(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentPostAt applies equality check predicate on the &quot;content_post_at&quot; field. It&apos;s identical to ContentPostAtEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentPostAtEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=8525:8582#L220">ContentPostAtEQ</a>
+				<a class="permalink" href="index.html#ContentPostAtEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentPostAtEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentPostAtEQ applies the EQ predicate on the &quot;content_post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentPostAtGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=9385:9442#L240">ContentPostAtGT</a>
+				<a class="permalink" href="index.html#ContentPostAtGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentPostAtGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentPostAtGT applies the GT predicate on the &quot;content_post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentPostAtGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=9594:9652#L245">ContentPostAtGTE</a>
+				<a class="permalink" href="index.html#ContentPostAtGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentPostAtGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentPostAtGTE applies the GTE predicate on the &quot;content_post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentPostAtIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=8943:9004#L230">ContentPostAtIn</a>
+				<a class="permalink" href="index.html#ContentPostAtIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentPostAtIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentPostAtIn applies the In predicate on the &quot;content_post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentPostAtLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=9803:9860#L250">ContentPostAtLT</a>
+				<a class="permalink" href="index.html#ContentPostAtLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentPostAtLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentPostAtLT applies the LT predicate on the &quot;content_post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentPostAtLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=10012:10070#L255">ContentPostAtLTE</a>
+				<a class="permalink" href="index.html#ContentPostAtLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentPostAtLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentPostAtLTE applies the LTE predicate on the &quot;content_post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentPostAtNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=8734:8792#L225">ContentPostAtNEQ</a>
+				<a class="permalink" href="index.html#ContentPostAtNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentPostAtNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentPostAtNEQ applies the NEQ predicate on the &quot;content_post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ContentPostAtNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=9164:9228#L235">ContentPostAtNotIn</a>
+				<a class="permalink" href="index.html#ContentPostAtNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ContentPostAtNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ContentPostAtNotIn applies the NotIn predicate on the &quot;content_post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=1787:1838#L50">CreatedAt</a>
+				<a class="permalink" href="index.html#CreatedAt">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAt(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>CreatedAt applies equality check predicate on the &quot;created_at&quot; field. It&apos;s identical to CreatedAtEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=3120:3173#L80">CreatedAtEQ</a>
+				<a class="permalink" href="index.html#CreatedAtEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>CreatedAtEQ applies the EQ predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=3912:3965#L100">CreatedAtGT</a>
+				<a class="permalink" href="index.html#CreatedAtGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>CreatedAtGT applies the GT predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=4104:4158#L105">CreatedAtGTE</a>
+				<a class="permalink" href="index.html#CreatedAtGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>CreatedAtGTE applies the GTE predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=3504:3561#L90">CreatedAtIn</a>
+				<a class="permalink" href="index.html#CreatedAtIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>CreatedAtIn applies the In predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=4686:4731#L120">CreatedAtIsNil</a>
+				<a class="permalink" href="index.html#CreatedAtIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>CreatedAtIsNil applies the IsNil predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=4296:4349#L110">CreatedAtLT</a>
+				<a class="permalink" href="index.html#CreatedAtLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>CreatedAtLT applies the LT predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=4488:4542#L115">CreatedAtLTE</a>
+				<a class="permalink" href="index.html#CreatedAtLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>CreatedAtLTE applies the LTE predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=3312:3366#L85">CreatedAtNEQ</a>
+				<a class="permalink" href="index.html#CreatedAtNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>CreatedAtNEQ applies the NEQ predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=3708:3768#L95">CreatedAtNotIn</a>
+				<a class="permalink" href="index.html#CreatedAtNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>CreatedAtNotIn applies the NotIn predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=4877:4923#L125">CreatedAtNotNil</a>
+				<a class="permalink" href="index.html#CreatedAtNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>CreatedAtNotNil applies the NotNil predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasFeed">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=12364:12402#L320">HasFeed</a>
+				<a class="permalink" href="index.html#HasFeed">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasFeed() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>HasFeed applies the HasEdge predicate on the &quot;feed&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasFeedWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=12736:12807#L331">HasFeedWith</a>
+				<a class="permalink" href="index.html#HasFeedWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasFeedWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>HasFeedWith applies the HasEdge predicate on the &quot;feed&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=13067:13105#L343">HasUser</a>
+				<a class="permalink" href="index.html#HasUser">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasUser() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>HasUser applies the HasEdge predicate on the &quot;user&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasUserWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=13439:13504#L354">HasUserWith</a>
+				<a class="permalink" href="index.html#HasUserWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasUserWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#User">User</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>HasUserWith applies the HasEdge predicate on the &quot;user&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="ID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=300:339#L5">ID</a>
+				<a class="permalink" href="index.html#ID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ID(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>ID filters vertices based on their ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=453:494#L10">IDEQ</a>
+				<a class="permalink" href="index.html#IDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDEQ(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>IDEQ applies the EQ predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=1105:1146#L30">IDGT</a>
+				<a class="permalink" href="index.html#IDGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDGT(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>IDGT applies the GT predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=1262:1304#L35">IDGTE</a>
+				<a class="permalink" href="index.html#IDGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDGTE(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>IDGTE applies the GTE predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=767:812#L20">IDIn</a>
+				<a class="permalink" href="index.html#IDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDIn(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>IDIn applies the In predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=1419:1460#L40">IDLT</a>
+				<a class="permalink" href="index.html#IDLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDLT(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>IDLT applies the LT predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=1576:1618#L45">IDLTE</a>
+				<a class="permalink" href="index.html#IDLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDLTE(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>IDLTE applies the LTE predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=610:652#L15">IDNEQ</a>
+				<a class="permalink" href="index.html#IDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDNEQ(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>IDNEQ applies the NEQ predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=936:984#L25">IDNotIn</a>
+				<a class="permalink" href="index.html#IDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDNotIn(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>IDNotIn applies the NotIn predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IsFavorite">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=2705:2752#L70">IsFavorite</a>
+				<a class="permalink" href="index.html#IsFavorite">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IsFavorite(v <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>IsFavorite applies equality check predicate on the &quot;is_favorite&quot; field. It&apos;s identical to IsFavoriteEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IsFavoriteEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=11186:11235#L290">IsFavoriteEQ</a>
+				<a class="permalink" href="index.html#IsFavoriteEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IsFavoriteEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>IsFavoriteEQ applies the EQ predicate on the &quot;is_favorite&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IsFavoriteNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=11377:11427#L295">IsFavoriteNEQ</a>
+				<a class="permalink" href="index.html#IsFavoriteNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IsFavoriteNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>IsFavoriteNEQ applies the NEQ predicate on the &quot;is_favorite&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Not">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=14367:14426#L391">Not</a>
+				<a class="permalink" href="index.html#Not">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Not(p <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>Not applies the not operator on the given predicate.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Or">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=14052:14122#L377">Or</a>
+				<a class="permalink" href="index.html#Or">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Or(predicates ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>Or groups predicates with the OR operator between them.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerUserID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=2934:2981#L75">OwnerUserID</a>
+				<a class="permalink" href="index.html#OwnerUserID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerUserID(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>OwnerUserID applies equality check predicate on the &quot;owner_user_id&quot; field. It&apos;s identical to OwnerUserIDEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerUserIDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=11571:11620#L300">OwnerUserIDEQ</a>
+				<a class="permalink" href="index.html#OwnerUserIDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerUserIDEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>OwnerUserIDEQ applies the EQ predicate on the &quot;owner_user_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerUserIDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=11961:12014#L310">OwnerUserIDIn</a>
+				<a class="permalink" href="index.html#OwnerUserIDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerUserIDIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>OwnerUserIDIn applies the In predicate on the &quot;owner_user_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerUserIDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=11766:11816#L305">OwnerUserIDNEQ</a>
+				<a class="permalink" href="index.html#OwnerUserIDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerUserIDNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>OwnerUserIDNEQ applies the NEQ predicate on the &quot;owner_user_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerUserIDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=12168:12224#L315">OwnerUserIDNotIn</a>
+				<a class="permalink" href="index.html#OwnerUserIDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerUserIDNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>OwnerUserIDNotIn applies the NotIn predicate on the &quot;owner_user_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=2012:2063#L55">UpdatedAt</a>
+				<a class="permalink" href="index.html#UpdatedAt">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAt(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>UpdatedAt applies equality check predicate on the &quot;updated_at&quot; field. It&apos;s identical to UpdatedAtEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=5062:5115#L130">UpdatedAtEQ</a>
+				<a class="permalink" href="index.html#UpdatedAtEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>UpdatedAtEQ applies the EQ predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=5854:5907#L150">UpdatedAtGT</a>
+				<a class="permalink" href="index.html#UpdatedAtGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>UpdatedAtGT applies the GT predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=6046:6100#L155">UpdatedAtGTE</a>
+				<a class="permalink" href="index.html#UpdatedAtGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>UpdatedAtGTE applies the GTE predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=5446:5503#L140">UpdatedAtIn</a>
+				<a class="permalink" href="index.html#UpdatedAtIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>UpdatedAtIn applies the In predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=6628:6673#L170">UpdatedAtIsNil</a>
+				<a class="permalink" href="index.html#UpdatedAtIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>UpdatedAtIsNil applies the IsNil predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=6238:6291#L160">UpdatedAtLT</a>
+				<a class="permalink" href="index.html#UpdatedAtLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>UpdatedAtLT applies the LT predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=6430:6484#L165">UpdatedAtLTE</a>
+				<a class="permalink" href="index.html#UpdatedAtLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>UpdatedAtLTE applies the LTE predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=5254:5308#L135">UpdatedAtNEQ</a>
+				<a class="permalink" href="index.html#UpdatedAtNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>UpdatedAtNEQ applies the NEQ predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=5650:5710#L145">UpdatedAtNotIn</a>
+				<a class="permalink" href="index.html#UpdatedAtNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>UpdatedAtNotIn applies the NotIn predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/where.go?s=6819:6865#L175">UpdatedAtNotNil</a>
+				<a class="permalink" href="index.html#UpdatedAtNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a></pre>
+			<p>UpdatedAtNotNil applies the NotNil predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ValidColumn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=2876:2912#L65">ValidColumn</a>
+				<a class="permalink" href="index.html#ValidColumn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ValidColumn(column <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a></pre>
+			<p>ValidColumn reports if the column name is valid (part of the table columns).
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Order">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=3937:3967#L102">Order</a>
+				<a class="permalink" href="index.html#Order">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Order defines the ordering method for the HPViewHistory queries.
+
+			<pre>type Order func(*<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#Selector">Selector</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="ByAssetType">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=4891:4942#L130">ByAssetType</a>
+					<a class="permalink" href="index.html#ByAssetType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByAssetType(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByAssetType orders the results by the asset_type field.
+
+				
+				
+			
+				
+				<h3 id="ByContentID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=4524:4575#L120">ByContentID</a>
+					<a class="permalink" href="index.html#ByContentID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByContentID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByContentID orders the results by the content_id field.
+
+				
+				
+			
+				
+				<h3 id="ByContentPostAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=4708:4763#L125">ByContentPostAt</a>
+					<a class="permalink" href="index.html#ByContentPostAt">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByContentPostAt(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByContentPostAt orders the results by the content_post_at field.
+
+				
+				
+			
+				
+				<h3 id="ByCreatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=4174:4225#L110">ByCreatedAt</a>
+					<a class="permalink" href="index.html#ByCreatedAt">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByCreatedAt(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByCreatedAt orders the results by the created_at field.
+
+				
+				
+			
+				
+				<h3 id="ByFeedField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=5419:5484#L145">ByFeedField</a>
+					<a class="permalink" href="index.html#ByFeedField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByFeedField(field <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByFeedField orders the results by feed field.
+
+				
+				
+			
+				
+				<h3 id="ByID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=4013:4057#L105">ByID</a>
+					<a class="permalink" href="index.html#ByID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByID orders the results by the id field.
+
+				
+				
+			
+				
+				<h3 id="ByIsFavorite">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=5068:5120#L135">ByIsFavorite</a>
+					<a class="permalink" href="index.html#ByIsFavorite">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByIsFavorite(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByIsFavorite orders the results by the is_favorite field.
+
+				
+				
+			
+				
+				<h3 id="ByOwnerUserID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=5250:5303#L140">ByOwnerUserID</a>
+					<a class="permalink" href="index.html#ByOwnerUserID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByOwnerUserID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByOwnerUserID orders the results by the owner_user_id field.
+
+				
+				
+			
+				
+				<h3 id="ByUpdatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=4349:4400#L115">ByUpdatedAt</a>
+					<a class="permalink" href="index.html#ByUpdatedAt">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByUpdatedAt(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByUpdatedAt orders the results by the updated_at field.
+
+				
+				
+			
+				
+				<h3 id="ByUserField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpviewhistory/hpviewhistory.go?s=5658:5723#L152">ByUserField</a>
+					<a class="permalink" href="index.html#ByUserField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByUserField(field <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByUserField orders the results by user field.
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

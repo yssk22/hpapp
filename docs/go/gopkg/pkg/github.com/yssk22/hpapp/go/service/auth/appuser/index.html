@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>appuser - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package appuser
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/auth/appuser"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-subdirectories">Subdirectories</a></dd>
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#AddAuthentication">func AddAuthentication(ctx context.Context) (*ent.Auth, error)</a></dd>
+			
+				
+				<dd><a href="index.html#AlloIfAdmin">func AlloIfAdmin() privacy.QueryMutationRule</a></dd>
+			
+				
+				<dd><a href="index.html#AlwaysAllow">func AlwaysAllow() privacy.QueryMutationRule</a></dd>
+			
+				
+				<dd><a href="index.html#AlwaysDeny">func AlwaysDeny() privacy.QueryMutationRule</a></dd>
+			
+				
+				<dd><a href="index.html#Authenticate">func Authenticate(ctx context.Context) (*ent.User, error)</a></dd>
+			
+				
+				<dd><a href="index.html#CanMutateOnlyMine">func CanMutateOnlyMine(userIdField string) privacy.MutationRule</a></dd>
+			
+				
+				<dd><a href="index.html#CanSeeOnlyMine">func CanSeeOnlyMine() privacy.QueryRule</a></dd>
+			
+				
+				<dd><a href="index.html#CurrentEntUser">func CurrentEntUser(ctx context.Context) (*ent.User, error)</a></dd>
+			
+				
+				<dd><a href="index.html#CurrentEntUserID">func CurrentEntUserID(ctx context.Context) int</a></dd>
+			
+				
+				<dd><a href="index.html#DeleteUser">func DeleteUser(ctx context.Context, id string) error</a></dd>
+			
+				
+				<dd><a href="index.html#DenyIfGuest">func DenyIfGuest() privacy.QueryMutationRule</a></dd>
+			
+				
+				<dd><a href="index.html#EntID">func EntID(user User) int</a></dd>
+			
+				
+				<dd><a href="index.html#GetSuperAdminToken">func GetSuperAdminToken(ctx context.Context) (string, error)</a></dd>
+			
+				
+				<dd><a href="index.html#IssueToken">func IssueToken(ctx context.Context, u User) (string, error)</a></dd>
+			
+				
+				<dd><a href="index.html#ListAuthentication">func ListAuthentication(ctx context.Context, userid int) ([]*ent.Auth, error)</a></dd>
+			
+				
+				<dd><a href="index.html#MigrateAuthentication">func MigrateAuthentication(ctx context.Context) (*ent.Auth, error)</a></dd>
+			
+				
+				<dd><a href="index.html#NewHttpMiddleware">func NewHttpMiddleware() middleware.HttpMiddleware</a></dd>
+			
+				
+				<dd><a href="index.html#RemoveAuthentication">func RemoveAuthentication(ctx context.Context) (*ent.Auth, error)</a></dd>
+			
+				
+				<dd><a href="index.html#ToEnt">func ToEnt(user User) (*ent.User, error)</a></dd>
+			
+				
+				<dd><a href="index.html#WithAdmin">func WithAdmin(ctx context.Context) context.Context</a></dd>
+			
+				
+				<dd><a href="index.html#WithUser">func WithUser(ctx context.Context, user User) context.Context</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Authenticator">type Authenticator</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#JWTClaims">type JWTClaims</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JWTClaims.ID">func (c JWTClaims) ID() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JWTClaims.IsAdmin">func (c JWTClaims) IsAdmin(context.Context) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JWTClaims.IsGuest">func (c JWTClaims) IsGuest(context.Context) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JWTClaims.ProviderName">func (c JWTClaims) ProviderName() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JWTClaims.Username">func (c JWTClaims) Username() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#User">type User</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CurrentUser">func CurrentUser(ctx context.Context) User</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EntUser">func EntUser(user *ent.User) User</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Guest">func Guest() User</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ParseToken">func ParseToken(ctx context.Context, token string) (User, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SuperAdmin">func SuperAdmin() User</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Validate">func Validate(ctx context.Context, options ...ValidatorOption) (User, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#VerifyToken">func VerifyToken(ctx context.Context, token string) User</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ValidatorOption">type ValidatorOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AdminRequired">func AdminRequired() ValidatorOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MatchIDs">func MatchIDs(ids ...string) ValidatorOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Or">func Or(options ...ValidatorOption) ValidatorOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Required">func Required() ValidatorOption</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/auth.go">auth.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/ent.go">ent.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/entpolicy.go">entpolicy.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/jwt.go">jwt.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/settings.go">settings.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/user.go">user.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/vaildator.go">vaildator.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var (
+    <span id="ErrNoAuthRecordFound">ErrNoAuthRecordFound</span> = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;no auth record found&#34;)
+    <span id="ErrOrphanAuthRecord">ErrOrphanAuthRecord</span>  = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;orphan auth record&#34;)
+)</pre>
+			
+				
+				<pre>var (
+    <span id="ErrUsernameIsTooShort">ErrUsernameIsTooShort</span>      = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;username must be at least 3 characters long&#34;)
+    <span id="ErrUsernameIsTooLong">ErrUsernameIsTooLong</span>       = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;username must not be longer than 32 characters&#34;)
+    <span id="ErrUsernameIsInvalid">ErrUsernameIsInvalid</span>       = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;username must start with a-z or A-Z and contains only alphabet, digist, -, _, or .&#34;)
+    <span id="ErrUsernameIsTaken">ErrUsernameIsTaken</span>         = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;username is already taken&#34;)
+    <span id="ErrProviderIsAuthenticated">ErrProviderIsAuthenticated</span> = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;another user already authenticated with the provider&#34;)
+)</pre>
+			
+				
+				<pre>var (
+    <span id="JWTSignKey">JWTSignKey</span> = <a href="../../../system/settings/index.html">settings</a>.<a href="../../../system/settings/index.html#NewString">NewString</a>(&#34;service.auth.appuser.jwt_sign_key&#34;, &#34;mizuki.fukumura.19961030&#34;)
+    <span id="JWTExpiry">JWTExpiry</span>  = <a href="../../../system/settings/index.html">settings</a>.<a href="../../../system/settings/index.html#NewDuration">NewDuration</a>(&#34;service.auth.appuser.jwt_expiry&#34;, <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Duration">Duration</a>(30*24*<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Hour">Hour</a>))
+
+    <span id="SuperAdminIds">SuperAdminIds</span> = <a href="../../../system/settings/index.html">settings</a>.<a href="../../../system/settings/index.html#NewIntArray">NewIntArray</a>(&#34;service.auth.appuser.super_admin_ids&#34;, []<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>{})
+)</pre>
+			
+				
+				<pre>var (
+    <span id="ErrExtUserNotAuthenticated">ErrExtUserNotAuthenticated</span>     = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;extuser authentication is required&#34;)
+    <span id="ErrAuthenticationRequired">ErrAuthenticationRequired</span>      = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;user authentication is required&#34;)
+    <span id="ErrAdminAuthenticationRequired">ErrAdminAuthenticationRequired</span> = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;admin authentication is required&#34;)
+    <span id="ErrNotAuthorized">ErrNotAuthorized</span>               = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;not authorized&#34;)
+    <span id="ErrNotNormalUser">ErrNotNormalUser</span>               = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;not a normal user&#34;)
+)</pre>
+			
+				
+				<pre>var <span id="ErrInvalidToken">ErrInvalidToken</span> = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;invalid token&#34;)</pre>
+			
+				
+				<pre>var (
+    <span id="ErrNoAuthMigrationRequired">ErrNoAuthMigrationRequired</span> = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;no auth migration required&#34;)
+)</pre>
+			
+		
+		
+			
+			
+			<h2 id="AddAuthentication">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/auth.go?s=1093:1155#L34">AddAuthentication</a>
+				<a class="permalink" href="index.html#AddAuthentication">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AddAuthentication(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#Auth">Auth</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="AlloIfAdmin">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/entpolicy.go?s=520:564#L16">AlloIfAdmin</a>
+				<a class="permalink" href="index.html#AlloIfAdmin">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AlloIfAdmin() <a href="../../ent/privacy/index.html">privacy</a>.<a href="../../ent/privacy/index.html#QueryMutationRule">QueryMutationRule</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="AlwaysAllow">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/entpolicy.go?s=218:262#L4">AlwaysAllow</a>
+				<a class="permalink" href="index.html#AlwaysAllow">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AlwaysAllow() <a href="../../ent/privacy/index.html">privacy</a>.<a href="../../ent/privacy/index.html#QueryMutationRule">QueryMutationRule</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="AlwaysDeny">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/entpolicy.go?s=370:413#L10">AlwaysDeny</a>
+				<a class="permalink" href="index.html#AlwaysDeny">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AlwaysDeny() <a href="../../ent/privacy/index.html">privacy</a>.<a href="../../ent/privacy/index.html#QueryMutationRule">QueryMutationRule</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="Authenticate">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/auth.go?s=5588:5645#L179">Authenticate</a>
+				<a class="permalink" href="index.html#Authenticate">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Authenticate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#User">User</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			<p>Authenticate authenticate the user with the external provider and refresh the user&apos;s access token
+if it&apos;s a first authentication access, then this will create a user account with the random username
+
+			
+			
+
+		
+			
+			
+			<h2 id="CanMutateOnlyMine">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/entpolicy.go?s=1798:1861#L57">CanMutateOnlyMine</a>
+				<a class="permalink" href="index.html#CanMutateOnlyMine">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CanMutateOnlyMine(userIdField <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../../ent/privacy/index.html">privacy</a>.<a href="../../ent/privacy/index.html#MutationRule">MutationRule</a></pre>
+			<p>CanMutateOnlyMine is a mutation rule that checks `userIdField“ value is equals to the current user id.
+`userIdField` has to be a storage key, not a virtual edge field name.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CanSeeOnlyMine">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/entpolicy.go?s=1168:1207#L38">CanSeeOnlyMine</a>
+				<a class="permalink" href="index.html#CanSeeOnlyMine">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CanSeeOnlyMine() <a href="../../ent/privacy/index.html">privacy</a>.<a href="../../ent/privacy/index.html#QueryRule">QueryRule</a></pre>
+			<p>CanSeeOnlyMine is a privacy filter rule that ensure the current user access the records that belongs to them.
+This rule requires &quot;owner_user_id&quot; filed in the schema
+
+			
+			
+
+		
+			
+			
+			<h2 id="CurrentEntUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/user.go?s=1422:1481#L64">CurrentEntUser</a>
+				<a class="permalink" href="index.html#CurrentEntUser">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CurrentEntUser(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#User">User</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="CurrentEntUserID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/user.go?s=1857:1903#L78">CurrentEntUserID</a>
+				<a class="permalink" href="index.html#CurrentEntUserID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CurrentEntUserID(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a></pre>
+			<p>CurrentEntUserID returns the int version of user id in the current context.
+if the current user is not set nor entuser, it returns 0 (as an invalid id)
+
+			
+			
+
+		
+			
+			
+			<h2 id="DeleteUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/auth.go?s=447:500#L8">DeleteUser</a>
+				<a class="permalink" href="index.html#DeleteUser">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DeleteUser(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, id <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="DenyIfGuest">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/entpolicy.go?s=757:801#L26">DenyIfGuest</a>
+				<a class="permalink" href="index.html#DenyIfGuest">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DenyIfGuest() <a href="../../ent/privacy/index.html">privacy</a>.<a href="../../ent/privacy/index.html#QueryMutationRule">QueryMutationRule</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="EntID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/user.go?s=2101:2126#L88">EntID</a>
+				<a class="permalink" href="index.html#EntID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func EntID(user <a href="index.html#User">User</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a></pre>
+			<p>EntID returns the int version of User.ID.
+If the user is not an entuser, it returns 0 (as an invalid id)
+
+			
+			
+
+		
+			
+			
+			<h2 id="GetSuperAdminToken">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/settings.go?s=687:747#L13">GetSuperAdminToken</a>
+				<a class="permalink" href="index.html#GetSuperAdminToken">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func GetSuperAdminToken(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			<p>GetSuperAdmnToken returns an access token of one of super admin users. This is used for internal API calls.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IssueToken">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/jwt.go?s=857:917#L37">IssueToken</a>
+				<a class="permalink" href="index.html#IssueToken">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IssueToken(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, u <a href="index.html#User">User</a>) (<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			<p>IssueToken issue the JWT token string
+
+			
+			
+
+		
+			
+			
+			<h2 id="ListAuthentication">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/auth.go?s=2008:2085#L67">ListAuthentication</a>
+				<a class="permalink" href="index.html#ListAuthentication">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ListAuthentication(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, userid <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) ([]*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#Auth">Auth</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="MigrateAuthentication">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/auth.go?s=3456:3522#L118">MigrateAuthentication</a>
+				<a class="permalink" href="index.html#MigrateAuthentication">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func MigrateAuthentication(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#Auth">Auth</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="NewHttpMiddleware">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/user.go?s=3221:3271#L135">NewHttpMiddleware</a>
+				<a class="permalink" href="index.html#NewHttpMiddleware">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewHttpMiddleware() <a href="../../bootstrap/http/middleware/index.html">middleware</a>.<a href="../../bootstrap/http/middleware/index.html#HttpMiddleware">HttpMiddleware</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="RemoveAuthentication">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/auth.go?s=2522:2587#L84">RemoveAuthentication</a>
+				<a class="permalink" href="index.html#RemoveAuthentication">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func RemoveAuthentication(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#Auth">Auth</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="ToEnt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/ent.go?s=366:406#L11">ToEnt</a>
+				<a class="permalink" href="index.html#ToEnt">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToEnt(user <a href="index.html#User">User</a>) (*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#User">User</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="WithAdmin">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/user.go?s=2581:2632#L107">WithAdmin</a>
+				<a class="permalink" href="index.html#WithAdmin">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WithAdmin(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a></pre>
+			<p>WithAdmin attach the admin user with the context
+
+			
+			
+
+		
+			
+			
+			<h2 id="WithUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/user.go?s=2259:2320#L97">WithUser</a>
+				<a class="permalink" href="index.html#WithUser">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WithUser(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, user <a href="index.html#User">User</a>) <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a></pre>
+			<p>WithUser attach the user with the context
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Authenticator">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/user.go?s=2702:2787#L111">Authenticator</a>
+				<a class="permalink" href="index.html#Authenticator">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Authenticator interface {
+    VerifyToken(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, token <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#User">User</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="JWTClaims">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/jwt.go?s=360:436#L9">JWTClaims</a>
+				<a class="permalink" href="index.html#JWTClaims">&#xb6;</a>
+				
+				
+			</h2>
+			<p>JWTClaims is a custom Claims for JWT
+
+			<pre>type JWTClaims struct {
+<span id="JWTClaims.Name"></span>    Name <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;username&#34;`
+    <a href="http://127.0.0.1:8888/pkg/github.com/dgrijalva/jwt-go/">jwt</a>.<a href="http://127.0.0.1:8888/pkg/github.com/dgrijalva/jwt-go/#StandardClaims">StandardClaims</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="JWTClaims.ID">func (JWTClaims) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/jwt.go?s=438:468#L14">ID</a>
+					<a class="permalink" href="index.html#JWTClaims.ID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c <a href="index.html#JWTClaims">JWTClaims</a>) ID() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JWTClaims.IsAdmin">func (JWTClaims) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/jwt.go?s=629:677#L26">IsAdmin</a>
+					<a class="permalink" href="index.html#JWTClaims.IsAdmin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c <a href="index.html#JWTClaims">JWTClaims</a>) IsAdmin(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JWTClaims.IsGuest">func (JWTClaims) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/jwt.go?s=697:745#L30">IsGuest</a>
+					<a class="permalink" href="index.html#JWTClaims.IsGuest">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c <a href="index.html#JWTClaims">JWTClaims</a>) IsGuest(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JWTClaims.ProviderName">func (JWTClaims) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/jwt.go?s=502:542#L18">ProviderName</a>
+					<a class="permalink" href="index.html#JWTClaims.ProviderName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c <a href="index.html#JWTClaims">JWTClaims</a>) ProviderName() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JWTClaims.Username">func (JWTClaims) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/jwt.go?s=572:608#L22">Username</a>
+					<a class="permalink" href="index.html#JWTClaims.Username">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c <a href="index.html#JWTClaims">JWTClaims</a>) Username() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="User">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/user.go?s=299:447#L4">User</a>
+				<a class="permalink" href="index.html#User">&#xb6;</a>
+				
+				
+			</h2>
+			<p>ProviderAuthResult is a result of authentication by the given provider.
+
+			<pre>type User interface {
+    ID() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+    Username() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+    ProviderName() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+    IsAdmin(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+    IsGuest(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="CurrentUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/user.go?s=1287:1329#L57">CurrentUser</a>
+					<a class="permalink" href="index.html#CurrentUser">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func CurrentUser(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="index.html#User">User</a></pre>
+				<p>CurrentUser returns the current user attached with the context
+
+				
+				
+			
+				
+				<h3 id="EntUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/ent.go?s=290:323#L5">EntUser</a>
+					<a class="permalink" href="index.html#EntUser">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func EntUser(user *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#User">User</a>) <a href="index.html#User">User</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="Guest">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/user.go?s=496:513#L16">Guest</a>
+					<a class="permalink" href="index.html#Guest">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Guest() <a href="index.html#User">User</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="ParseToken">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/jwt.go?s=1521:1585#L62">ParseToken</a>
+					<a class="permalink" href="index.html#ParseToken">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ParseToken(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, token <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) (<a href="index.html#User">User</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+			
+				
+				<h3 id="SuperAdmin">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/user.go?s=449:471#L12">SuperAdmin</a>
+					<a class="permalink" href="index.html#SuperAdmin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func SuperAdmin() <a href="index.html#User">User</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="Validate">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/vaildator.go?s=1824:1900#L77">Validate</a>
+					<a class="permalink" href="index.html#Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Validate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, options ...<a href="index.html#ValidatorOption">ValidatorOption</a>) (<a href="index.html#User">User</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+			
+				
+				<h3 id="VerifyToken">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/ent.go?s=1026:1082#L48">VerifyToken</a>
+					<a class="permalink" href="index.html#VerifyToken">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func VerifyToken(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, token <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#User">User</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="ValidatorOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/vaildator.go?s=208:249#L6">ValidatorOption</a>
+				<a class="permalink" href="index.html#ValidatorOption">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ValidatorOption func(*authValidator)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="AdminRequired">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/vaildator.go?s=344:380#L14">AdminRequired</a>
+					<a class="permalink" href="index.html#AdminRequired">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func AdminRequired() <a href="index.html#ValidatorOption">ValidatorOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="MatchIDs">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/vaildator.go?s=447:491#L20">MatchIDs</a>
+					<a class="permalink" href="index.html#MatchIDs">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func MatchIDs(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#ValidatorOption">ValidatorOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="Or">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/vaildator.go?s=552:603#L26">Or</a>
+					<a class="permalink" href="index.html#Or">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Or(options ...<a href="index.html#ValidatorOption">ValidatorOption</a>) <a href="index.html#ValidatorOption">ValidatorOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="Required">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/appuser/vaildator.go?s=251:282#L8">Required</a>
+					<a class="permalink" href="index.html#Required">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Required() <a href="index.html#ValidatorOption">ValidatorOption</a></pre>
+				
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+	
+	
+		<h2 id="pkg-subdirectories">Subdirectories</h2>
+	
+	<div class="pkg-dir">
+		<table>
+			<tr>
+				<th class="pkg-name">Name</th>
+				<th class="pkg-synopsis">Synopsis</th>
+			</tr>
+
+			
+			<tr>
+				<td colspan="2"><a href="../index.html">..</a></td>
+			</tr>
+			
+
+			
+				<tr>
+				
+					<td class="pkg-name" style="padding-left: 0px;">
+						<a href="oauth1/index.html">oauth1</a>
+					</td>
+				
+					<td class="pkg-synopsis">
+						* oauth1 provides a service to authenticate users using OAuth 1.0a.
+					</td>
+				</tr>
+			
+		</table>
+	</div>
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

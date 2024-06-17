@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>task - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package task
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/bootstrap/http/task"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#WithRequestHeader">func WithRequestHeader(ctx context.Context, header http.Header) context.Context</a></dd>
+			
+			
+				
+				<dd><a href="index.html#JSONParameter">type JSONParameter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JSONParameter.FromByte">func (spec *JSONParameter[T]) FromByte(payload []byte) (*T, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JSONParameter.ToByte">func (spec *JSONParameter[T]) ToByte(v *T) ([]byte, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Parameters">type Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NoParameter">func NoParameter() Parameters[any]</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Task">type Task</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TaskOption">type TaskOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AlwaysAllow">func AlwaysAllow[T any]() TaskOption[T]</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AlwaysDeny">func AlwaysDeny[T any]() TaskOption[T]</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithPolicy">func WithPolicy[T any](p func(context.Context, T) TaskPolicy) TaskOption[T]</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TaskPolicy">type TaskPolicy</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TaskSpec">type TaskSpec</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewTask">func NewTask[T any](path string, p Parameters[T], fn func(context.Context, T) error, options ...TaskOption[T]) *TaskSpec[T]</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TaskSpec.Path">func (s *TaskSpec[T]) Path() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TaskSpec.Request">func (s *TaskSpec[T]) Request(ctx context.Context, params *T, options map[string]string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TaskSpec.ServeHTTP">func (s *TaskSpec[T]) ServeHTTP(w http.ResponseWriter, req *http.Request)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go">task.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="WithRequestHeader">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=4053:4132#L158">WithRequestHeader</a>
+				<a class="permalink" href="index.html#WithRequestHeader">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WithRequestHeader(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, header <a href="http://127.0.0.1:8888/pkg/net/http/">http</a>.<a href="http://127.0.0.1:8888/pkg/net/http/#Header">Header</a>) <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a></pre>
+			
+			
+			
+
+		
+		
+			
+			
+			<h2 id="JSONParameter">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=1183:1217#L45">JSONParameter</a>
+				<a class="permalink" href="index.html#JSONParameter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>JSONParameter is an example implemenation of parameter handler.
+The parameter is encoded/decoded by JSON.
+
+			<pre>type JSONParameter[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>] struct{}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="JSONParameter.FromByte">func (*JSONParameter[T]) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=1307:1373#L51">FromByte</a>
+					<a class="permalink" href="index.html#JSONParameter.FromByte">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (spec *<a href="index.html#JSONParameter">JSONParameter</a>[T]) FromByte(payload []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>) (*T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JSONParameter.ToByte">func (*JSONParameter[T]) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=1219:1277#L47">ToByte</a>
+					<a class="permalink" href="index.html#JSONParameter.ToByte">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (spec *<a href="index.html#JSONParameter">JSONParameter</a>[T]) ToByte(v *T) ([]<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Parameters">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=608:702#L21">Parameters</a>
+				<a class="permalink" href="index.html#Parameters">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Parameters is an interface to serialize/deserialize payload for task parameters.
+
+			<pre>type Parameters[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>] interface {
+    ToByte(*T) ([]<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+    FromByte([]<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>) (*T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NoParameter">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=1010:1044#L39">NoParameter</a>
+					<a class="permalink" href="index.html#NoParameter">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NoParameter() <a href="index.html#Parameters">Parameters</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>]</pre>
+				<p>NoPayload is a payload when the task doesn&apos;t require any parameters.
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Task">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=431:522#L15">Task</a>
+				<a class="permalink" href="index.html#Task">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Task is an interface to serve an http based task.
+
+			<pre>type Task interface {
+    Path() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+    ServeHTTP(w <a href="http://127.0.0.1:8888/pkg/net/http/">http</a>.<a href="http://127.0.0.1:8888/pkg/net/http/#ResponseWriter">ResponseWriter</a>, req *<a href="http://127.0.0.1:8888/pkg/net/http/">http</a>.<a href="http://127.0.0.1:8888/pkg/net/http/#Request">Request</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TaskOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=1507:1550#L61">TaskOption</a>
+				<a class="permalink" href="index.html#TaskOption">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type TaskOption[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>] func(t *<a href="index.html#TaskSpec">TaskSpec</a>[T])</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="AlwaysAllow">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=1706:1745#L69">AlwaysAllow</a>
+					<a class="permalink" href="index.html#AlwaysAllow">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func AlwaysAllow[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>]() <a href="index.html#TaskOption">TaskOption</a>[T]</pre>
+				
+				
+				
+			
+				
+				<h3 id="AlwaysDeny">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=1837:1875#L75">AlwaysDeny</a>
+					<a class="permalink" href="index.html#AlwaysDeny">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func AlwaysDeny[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>]() <a href="index.html#TaskOption">TaskOption</a>[T]</pre>
+				
+				
+				
+			
+				
+				<h3 id="WithPolicy">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=1552:1627#L63">WithPolicy</a>
+					<a class="permalink" href="index.html#WithPolicy">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithPolicy[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>](p func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, T) <a href="index.html#TaskPolicy">TaskPolicy</a>) <a href="index.html#TaskOption">TaskOption</a>[T]</pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="TaskPolicy">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=231:253#L6">TaskPolicy</a>
+				<a class="permalink" href="index.html#TaskPolicy">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type TaskPolicy <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="TaskPolicyAllow">TaskPolicyAllow</span> <a href="index.html#TaskPolicy">TaskPolicy</a> = &#34;allow&#34;
+    <span id="TaskPolicyDeny">TaskPolicyDeny</span>  <a href="index.html#TaskPolicy">TaskPolicy</a> = &#34;deny&#34;
+    <span id="TaskPolicySkip">TaskPolicySkip</span>  <a href="index.html#TaskPolicy">TaskPolicy</a> = &#34;skip&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TaskSpec">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=2409:2578#L96">TaskSpec</a>
+				<a class="permalink" href="index.html#TaskSpec">&#xb6;</a>
+				
+				
+			</h2>
+			<p>TaskSpec is a struct to define an implementation of Task.
+
+			<pre>type TaskSpec[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>] struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewTask">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=2079:2202#L83">NewTask</a>
+					<a class="permalink" href="index.html#NewTask">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewTask[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>](path <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, p <a href="index.html#Parameters">Parameters</a>[T], fn func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, T) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>, options ...<a href="index.html#TaskOption">TaskOption</a>[T]) *<a href="index.html#TaskSpec">TaskSpec</a>[T]</pre>
+				<p>NewTask returns a new *TaskSpec[T] object.
+You can call the task via spec.Request(context.Context, params)
+
+				
+				
+			
+
+			
+				
+				<h3 id="TaskSpec.Path">func (*TaskSpec[T]) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=2580:2615#L103">Path</a>
+					<a class="permalink" href="index.html#TaskSpec.Path">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (s *<a href="index.html#TaskSpec">TaskSpec</a>[T]) Path() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="TaskSpec.Request">func (*TaskSpec[T]) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=4195:4289#L162">Request</a>
+					<a class="permalink" href="index.html#TaskSpec.Request">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (s *<a href="index.html#TaskSpec">TaskSpec</a>[T]) Request(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, params *T, options map[<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>]<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="TaskSpec.ServeHTTP">func (*TaskSpec[T]) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/bootstrap/http/task/task.go?s=2716:2789#L108">ServeHTTP</a>
+					<a class="permalink" href="index.html#TaskSpec.ServeHTTP">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (s *<a href="index.html#TaskSpec">TaskSpec</a>[T]) ServeHTTP(w <a href="http://127.0.0.1:8888/pkg/net/http/">http</a>.<a href="http://127.0.0.1:8888/pkg/net/http/#ResponseWriter">ResponseWriter</a>, req *<a href="http://127.0.0.1:8888/pkg/net/http/">http</a>.<a href="http://127.0.0.1:8888/pkg/net/http/#Request">Request</a>)</pre>
+				<p>ServeOn registers a http hanlder on the given mux to serve the task request.
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

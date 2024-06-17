@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>extuser - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package extuser
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/auth/extuser"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>extuser package provides authentications with external provider.
+<p>firebase based authentication and file based authentication is now supported.
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+			
+				
+				<dd><a href="index.html#Command">func Command() *cobra.Command</a></dd>
+			
+				
+				<dd><a href="index.html#NewHttpMiddleware">func NewHttpMiddleware(a Authenticator) middleware.HttpMiddleware</a></dd>
+			
+				
+				<dd><a href="index.html#WithUser">func WithUser(ctx context.Context, user *ExternalUser) context.Context</a></dd>
+			
+			
+				
+				<dd><a href="index.html#AuthFile">type AuthFile</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#LoadAuthFile">func LoadAuthFile(path string) (*AuthFile, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AuthFile.AddUser">func (f *AuthFile) AddUser() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AuthFile.RemoveUser">func (f *AuthFile) RemoveUser(token string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AuthFile.Reset">func (f *AuthFile) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AuthFile.Save">func (f *AuthFile) Save(path string) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Authenticator">type Authenticator</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewFileAuthenticator">func NewFileAuthenticator(path string) Authenticator</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewFirebaseAuthenticator">func NewFirebaseAuthenticator(projectID string) Authenticator</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewMockAuthenticator">func NewMockAuthenticator(users ...MockUser) Authenticator</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ExternalUser">type ExternalUser</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CurrentUser">func CurrentUser(ctx context.Context) *ExternalUser</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MockUser">type MockUser</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/cmd.go">cmd.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/extuser.go">extuser.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/file.go">file.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/firebase.go">firebase.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/mock.go">mock.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const <span id="AuthFilePath">AuthFilePath</span> = &#34;./data/localauth.json&#34;</pre>
+			
+		
+		
+		
+			
+			
+			<h2 id="Command">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/cmd.go?s=210:239#L4">Command</a>
+				<a class="permalink" href="index.html#Command">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Command() *<a href="http://127.0.0.1:8888/pkg/github.com/spf13/cobra/">cobra</a>.<a href="http://127.0.0.1:8888/pkg/github.com/spf13/cobra/#Command">Command</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="NewHttpMiddleware">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/extuser.go?s=1648:1713#L62">NewHttpMiddleware</a>
+				<a class="permalink" href="index.html#NewHttpMiddleware">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewHttpMiddleware(a <a href="index.html#Authenticator">Authenticator</a>) <a href="../../bootstrap/http/middleware/index.html">middleware</a>.<a href="../../bootstrap/http/middleware/index.html#HttpMiddleware">HttpMiddleware</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="WithUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/extuser.go?s=553:623#L19">WithUser</a>
+				<a class="permalink" href="index.html#WithUser">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WithUser(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, user *<a href="index.html#ExternalUser">ExternalUser</a>) <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a></pre>
+			
+			
+			
+
+		
+		
+			
+			
+			<h2 id="AuthFile">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/file.go?s=707:796#L27">AuthFile</a>
+				<a class="permalink" href="index.html#AuthFile">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type AuthFile struct {
+    <span class="comment">// token =&gt; uid mapping</span>
+<span id="AuthFile.Users"></span>    Users map[<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>]<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;users&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="LoadAuthFile">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/file.go?s=1305:1354#L56">LoadAuthFile</a>
+					<a class="permalink" href="index.html#LoadAuthFile">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func LoadAuthFile(path <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) (*<a href="index.html#AuthFile">AuthFile</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+			
+
+			
+				
+				<h3 id="AuthFile.AddUser">func (*AuthFile) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/file.go?s=798:833#L32">AddUser</a>
+					<a class="permalink" href="index.html#AuthFile.AddUser">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f *<a href="index.html#AuthFile">AuthFile</a>) AddUser() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="AuthFile.RemoveUser">func (*AuthFile) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/file.go?s=947:990#L39">RemoveUser</a>
+					<a class="permalink" href="index.html#AuthFile.RemoveUser">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f *<a href="index.html#AuthFile">AuthFile</a>) RemoveUser(token <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="AuthFile.Reset">func (*AuthFile) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/file.go?s=1020:1046#L43">Reset</a>
+					<a class="permalink" href="index.html#AuthFile.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f *<a href="index.html#AuthFile">AuthFile</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="AuthFile.Save">func (*AuthFile) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/file.go?s=1087:1129#L47">Save</a>
+					<a class="permalink" href="index.html#AuthFile.Save">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f *<a href="index.html#AuthFile">AuthFile</a>) Save(path <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Authenticator">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/extuser.go?s=1142:1226#L40">Authenticator</a>
+				<a class="permalink" href="index.html#Authenticator">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Authenticator interface {
+    VerifyToken(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) *<a href="index.html#ExternalUser">ExternalUser</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewFileAuthenticator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/file.go?s=1643:1695#L74">NewFileAuthenticator</a>
+					<a class="permalink" href="index.html#NewFileAuthenticator">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewFileAuthenticator(path <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#Authenticator">Authenticator</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="NewFirebaseAuthenticator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/firebase.go?s=1449:1510#L43">NewFirebaseAuthenticator</a>
+					<a class="permalink" href="index.html#NewFirebaseAuthenticator">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewFirebaseAuthenticator(projectID <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#Authenticator">Authenticator</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="NewMockAuthenticator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/mock.go?s=127:185#L1">NewMockAuthenticator</a>
+					<a class="permalink" href="index.html#NewMockAuthenticator">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewMockAuthenticator(users ...<a href="index.html#MockUser">MockUser</a>) <a href="index.html#Authenticator">Authenticator</a></pre>
+				<p>NewMockAuthenticator provides a mock authenticator, which can be used in test cases
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="ExternalUser">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/extuser.go?s=345:486#L7">ExternalUser</a>
+				<a class="permalink" href="index.html#ExternalUser">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ExternalUser struct {
+<span id="ExternalUser.ProviderName"></span>    ProviderName  <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="ExternalUser.UserID"></span>    UserID        <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="ExternalUser.AccessToken"></span>    AccessToken   <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="ExternalUser.RefreshToken"></span>    RefreshToken  <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="ExternalUser.TokenExpireAt"></span>    TokenExpireAt <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="CurrentUser">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/extuser.go?s=992:1043#L32">CurrentUser</a>
+					<a class="permalink" href="index.html#CurrentUser">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func CurrentUser(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) *<a href="index.html#ExternalUser">ExternalUser</a></pre>
+				<p>CurrentUser returns the external user authenticated by X-HPAPP-EXTERNAL-TOKEN header
+It could be nil if not sent.
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="MockUser">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/extuser/mock.go?s=238:331#L4">MockUser</a>
+				<a class="permalink" href="index.html#MockUser">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MockUser struct {
+<span id="MockUser.ProviderName"></span>    ProviderName   <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="MockUser.ProviderUserID"></span>    ProviderUserID <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="MockUser.ValidToken"></span>    ValidToken     <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>blob - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package blob
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/helloproject/blob"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Get">func Get(ctx context.Context, sourceUrl string) (*ent.HPBlob, error)</a></dd>
+			
+				
+				<dd><a href="index.html#GetFaceStoragePath">func GetFaceStoragePath(storagePath string, i int) string</a></dd>
+			
+				
+				<dd><a href="index.html#GetJsonMediaList">func GetJsonMediaList(ctx context.Context, blobs []*ent.HPBlob, options ...JsonMediaOption) []jsonfields.Media</a></dd>
+			
+				
+				<dd><a href="index.html#GetStoragePathFromUrl">func GetStoragePathFromUrl(ctx context.Context, sourceUrl string) string</a></dd>
+			
+				
+				<dd><a href="index.html#ScrapeFromBlob">func ScrapeFromBlob[T any](ctx context.Context, entblob *ent.HPBlob, scaper scraping.Scraper[T]) (*T, error)</a></dd>
+			
+			
+				
+				<dd><a href="index.html#CrawlOption">type CrawlOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ForceRecrawl">func ForceRecrawl(value bool) CrawlOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OwnerArtistID">func OwnerArtistID(id int) CrawlOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OwnerMemberID">func OwnerMemberID(id int) CrawlOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SourceHTMLURL">func SourceHTMLURL(url string) CrawlOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#StoragePath">func StoragePath(path string) CrawlOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ThumbnailSourceImageURL">func ThumbnailSourceImageURL(url string) CrawlOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ThumbnailStoragePath">func ThumbnailStoragePath(path string) CrawlOption</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Crawler">type Crawler</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewCrawler">func NewCrawler(options ...CrawlerOption) Crawler</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#CrawlerOption">type CrawlerOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithProcessor">func WithProcessor(p Processor) CrawlerOption</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ImageProcessor">type ImageProcessor</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ImageProcessor.GetType">func (p ImageProcessor) GetType() enums.HPBlobType</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ImageProcessor.Process">func (p ImageProcessor) Process(ctx context.Context, update *ent.HPBlobUpdateOne, b *ent.HPBlob, reader io.Reader, log slog.Attributes) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#JsonMediaOption">type JsonMediaOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JsonMediaSkipIfNotReady">func JsonMediaSkipIfNotReady(v bool) JsonMediaOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JsonMediaUseStorage">func JsonMediaUseStorage(v bool) JsonMediaOption</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Processor">type Processor</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#VideoProcessor">type VideoProcessor</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#VideoProcessor.GetType">func (p VideoProcessor) GetType() enums.HPBlobType</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#VideoProcessor.Process">func (p VideoProcessor) Process(ctx context.Context, update *ent.HPBlobUpdateOne, b *ent.HPBlob, reader io.Reader, log slog.Attributes) error</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/blob.go">blob.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go">crawler.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/image.go">image.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/video.go">video.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var (
+    <span id="BucketName">BucketName</span> = <a href="../../../system/settings/index.html">settings</a>.<a href="../../../system/settings/index.html#NewString">NewString</a>(&#34;service.helloproject.blob.bucket_name&#34;, &#34;hpblob.hpapp.yssk22.dev&#34;)
+)</pre>
+			
+				
+				<pre>var (
+    <span id="ErrMaxRetriesExceeded">ErrMaxRetriesExceeded</span> = <a href="../../errors/index.html">errors</a>.<a href="../../errors/index.html#New">New</a>(&#34;max retries exceeded&#34;)
+)</pre>
+			
+		
+		
+			
+			
+			<h2 id="Get">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/blob.go?s=1160:1228#L28">Get</a>
+				<a class="permalink" href="index.html#Get">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Get(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, sourceUrl <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) (*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlob">HPBlob</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="GetFaceStoragePath">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/blob.go?s=971:1028#L23">GetFaceStoragePath</a>
+				<a class="permalink" href="index.html#GetFaceStoragePath">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func GetFaceStoragePath(storagePath <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, i <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="GetJsonMediaList">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/blob.go?s=1754:1864#L52">GetJsonMediaList</a>
+				<a class="permalink" href="index.html#GetJsonMediaList">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func GetJsonMediaList(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, blobs []*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlob">HPBlob</a>, options ...<a href="index.html#JsonMediaOption">JsonMediaOption</a>) []<a href="../../schema/jsonfields/index.html">jsonfields</a>.<a href="../../schema/jsonfields/index.html#Media">Media</a></pre>
+			<p>GetJsonMediaList returns a list of jsonfields.Media from a list of blobs
+
+			
+			
+
+		
+			
+			
+			<h2 id="GetStoragePathFromUrl">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/blob.go?s=743:815#L17">GetStoragePathFromUrl</a>
+				<a class="permalink" href="index.html#GetStoragePathFromUrl">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func GetStoragePathFromUrl(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, sourceUrl <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+			<p>GetStoragePathFromUrl returns a storage path from a blob source URL.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ScrapeFromBlob">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/blob.go?s=3044:3152#L96">ScrapeFromBlob</a>
+				<a class="permalink" href="index.html#ScrapeFromBlob">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ScrapeFromBlob[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>](ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, entblob *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlob">HPBlob</a>, scaper <a href="../../scraping/index.html">scraping</a>.<a href="../../scraping/index.html#Scraper">Scraper</a>[T]) (*T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+		
+			
+			
+			<h2 id="CrawlOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=1555:1612#L52">CrawlOption</a>
+				<a class="permalink" href="index.html#CrawlOption">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type CrawlOption func(*crawlOption) (*crawlOption, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="ForceRecrawl">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=2055:2096#L64">ForceRecrawl</a>
+					<a class="permalink" href="index.html#ForceRecrawl">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ForceRecrawl(value <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>) <a href="index.html#CrawlOption">CrawlOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="OwnerArtistID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=2356:2394#L78">OwnerArtistID</a>
+					<a class="permalink" href="index.html#OwnerArtistID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func OwnerArtistID(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="index.html#CrawlOption">CrawlOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="OwnerMemberID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=2208:2246#L71">OwnerMemberID</a>
+					<a class="permalink" href="index.html#OwnerMemberID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func OwnerMemberID(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="index.html#CrawlOption">CrawlOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="SourceHTMLURL">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=2504:2546#L85">SourceHTMLURL</a>
+					<a class="permalink" href="index.html#SourceHTMLURL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func SourceHTMLURL(url <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#CrawlOption">CrawlOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="StoragePath">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=2657:2698#L92">StoragePath</a>
+					<a class="permalink" href="index.html#StoragePath">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func StoragePath(path <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#CrawlOption">CrawlOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="ThumbnailSourceImageURL">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=2808:2860#L99">ThumbnailSourceImageURL</a>
+					<a class="permalink" href="index.html#ThumbnailSourceImageURL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ThumbnailSourceImageURL(url <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#CrawlOption">CrawlOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="ThumbnailStoragePath">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=2981:3031#L106">ThumbnailStoragePath</a>
+					<a class="permalink" href="index.html#ThumbnailStoragePath">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ThumbnailStoragePath(path <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#CrawlOption">CrawlOption</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Crawler">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=731:898#L15">Crawler</a>
+				<a class="permalink" href="index.html#Crawler">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Crawler is an interface to crawl a blob from a source URL and store it&apos;s binary on the storage and metadata on the database (ent.HPBlob).
+
+			<pre>type Crawler interface {
+    Crawl(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, t <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobType">HPBlobType</a>, subt <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobSubType">HPBlobSubType</a>, sourceBlobURL <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, options ...<a href="index.html#CrawlOption">CrawlOption</a>) (*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlob">HPBlob</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewCrawler">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=1138:1187#L32">NewCrawler</a>
+					<a class="permalink" href="index.html#NewCrawler">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewCrawler(options ...<a href="index.html#CrawlerOption">CrawlerOption</a>) <a href="index.html#Crawler">Crawler</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="CrawlerOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=981:1014#L24">CrawlerOption</a>
+				<a class="permalink" href="index.html#CrawlerOption">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type CrawlerOption func(*crawler)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="WithProcessor">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=1016:1061#L26">WithProcessor</a>
+					<a class="permalink" href="index.html#WithProcessor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithProcessor(p <a href="index.html#Processor">Processor</a>) <a href="index.html#CrawlerOption">CrawlerOption</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="ImageProcessor">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/image.go?s=257:367#L9">ImageProcessor</a>
+				<a class="permalink" href="index.html#ImageProcessor">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ImageProcessor func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlobUpdateOne">HPBlobUpdateOne</a>, *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlob">HPBlob</a>, <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Reader">Reader</a>, <a href="../../../system/slog/index.html">slog</a>.<a href="../../../system/slog/index.html#Attributes">Attributes</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ImageProcessor.GetType">func (ImageProcessor) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/image.go?s=369:419#L11">GetType</a>
+					<a class="permalink" href="index.html#ImageProcessor.GetType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (p <a href="index.html#ImageProcessor">ImageProcessor</a>) GetType() <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobType">HPBlobType</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ImageProcessor.Process">func (ImageProcessor) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/image.go?s=455:596#L15">Process</a>
+					<a class="permalink" href="index.html#ImageProcessor.Process">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (p <a href="index.html#ImageProcessor">ImageProcessor</a>) Process(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, update *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlobUpdateOne">HPBlobUpdateOne</a>, b *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlob">HPBlob</a>, reader <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Reader">Reader</a>, log <a href="../../../system/slog/index.html">slog</a>.<a href="../../../system/slog/index.html#Attributes">Attributes</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="JsonMediaOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/blob.go?s=1403:1446#L37">JsonMediaOption</a>
+				<a class="permalink" href="index.html#JsonMediaOption">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type JsonMediaOption func(*jsonMediaOption)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="JsonMediaSkipIfNotReady">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/blob.go?s=1559:1611#L45">JsonMediaSkipIfNotReady</a>
+					<a class="permalink" href="index.html#JsonMediaSkipIfNotReady">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func JsonMediaSkipIfNotReady(v <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>) <a href="index.html#JsonMediaOption">JsonMediaOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="JsonMediaUseStorage">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/blob.go?s=1448:1496#L39">JsonMediaUseStorage</a>
+					<a class="permalink" href="index.html#JsonMediaUseStorage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func JsonMediaUseStorage(v <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>) <a href="index.html#JsonMediaOption">JsonMediaOption</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Processor">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/crawler.go?s=1402:1553#L47">Processor</a>
+				<a class="permalink" href="index.html#Processor">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Processor interface {
+    GetType() <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobType">HPBlobType</a>
+    Process(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlobUpdateOne">HPBlobUpdateOne</a>, *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlob">HPBlob</a>, <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Reader">Reader</a>, <a href="../../../system/slog/index.html">slog</a>.<a href="../../../system/slog/index.html#Attributes">Attributes</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="VideoProcessor">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/video.go?s=440:550#L12">VideoProcessor</a>
+				<a class="permalink" href="index.html#VideoProcessor">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type VideoProcessor func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlobUpdateOne">HPBlobUpdateOne</a>, *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlob">HPBlob</a>, <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Reader">Reader</a>, <a href="../../../system/slog/index.html">slog</a>.<a href="../../../system/slog/index.html#Attributes">Attributes</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="VideoProcessor.GetType">func (VideoProcessor) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/video.go?s=552:602#L14">GetType</a>
+					<a class="permalink" href="index.html#VideoProcessor.GetType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (p <a href="index.html#VideoProcessor">VideoProcessor</a>) GetType() <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPBlobType">HPBlobType</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="VideoProcessor.Process">func (VideoProcessor) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/blob/video.go?s=638:779#L18">Process</a>
+					<a class="permalink" href="index.html#VideoProcessor.Process">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (p <a href="index.html#VideoProcessor">VideoProcessor</a>) Process(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, update *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlobUpdateOne">HPBlobUpdateOne</a>, b *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPBlob">HPBlob</a>, reader <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Reader">Reader</a>, log <a href="../../../system/slog/index.html">slog</a>.<a href="../../../system/slog/index.html#Attributes">Attributes</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

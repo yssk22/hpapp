@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>slog - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package slog
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/system/slog"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>slog package provides a structured logging facility for Go programs.
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Critical">func Critical(ctx context.Context, message string, opts ...RecordOption)</a></dd>
+			
+				
+				<dd><a href="index.html#Debug">func Debug(ctx context.Context, message string, opts ...RecordOption)</a></dd>
+			
+				
+				<dd><a href="index.html#Error">func Error(ctx context.Context, message string, opts ...RecordOption)</a></dd>
+			
+				
+				<dd><a href="index.html#Info">func Info(ctx context.Context, message string, opts ...RecordOption)</a></dd>
+			
+				
+				<dd><a href="index.html#LogIfError">func LogIfError(ctx context.Context, name string, err error) error</a></dd>
+			
+				
+				<dd><a href="index.html#PanicIfError">func PanicIfError(ctx context.Context, name string, err error)</a></dd>
+			
+				
+				<dd><a href="index.html#SetSink">func SetSink(ctx context.Context, s Sink) context.Context</a></dd>
+			
+				
+				<dd><a href="index.html#Track">func Track[T any](ctx context.Context, name string, f func(Attributes) (T, error), opts ...RecordOption) (val T, err error)</a></dd>
+			
+				
+				<dd><a href="index.html#Warning">func Warning(ctx context.Context, message string, opts ...RecordOption)</a></dd>
+			
+				
+				<dd><a href="index.html#X">func X[T any](ctx context.Context) func(T, error) T</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Attributes">type Attributes</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Attributes.Set">func (a Attributes) Set(key string, value interface{})</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Formatter">type Formatter</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#FormatterFunc">type FormatterFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FormatterFunc.Format">func (f FormatterFunc) Format(r *Record) ([]byte, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Record">type Record</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#RecordOption">type RecordOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#A">func A(name string, value interface{}) RecordOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Attribute">func Attribute(name string, value interface{}) RecordOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Err">func Err(err error) RecordOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#IncludeStack">func IncludeStack() RecordOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Name">func Name(name string) RecordOption</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Severity">type Severity</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Sink">type Sink</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewEventFilter">func NewEventFilter(events []string, s Sink) Sink</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewGCPSink">func NewGCPSink(ctx context.Context, projectID string, logID string) (Sink, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewIOSink">func NewIOSink(w io.Writer, f Formatter) Sink</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewMemorySink">func NewMemorySink() Sink</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewNullSink">func NewNullSink() Sink</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/context.go">context.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/formatter.go">formatter.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/sink.go">sink.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go">slog.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span id="SeverityDebug">SeverityDebug</span>    = <a href="index.html#Severity">Severity</a>(&#34;DEBUG&#34;)
+    <span id="SeverityWarning">SeverityWarning</span>  = <a href="index.html#Severity">Severity</a>(&#34;WARNING&#34;)
+    <span id="SeverityInfo">SeverityInfo</span>     = <a href="index.html#Severity">Severity</a>(&#34;INFO&#34;)
+    <span id="SeverityError">SeverityError</span>    = <a href="index.html#Severity">Severity</a>(&#34;ERROR&#34;)
+    <span id="SeverityCritical">SeverityCritical</span> = <a href="index.html#Severity">Severity</a>(&#34;CRITICAL&#34;)
+)</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				<p>JSONFomatter is a Formatter that formats a Record as a simple message text with JSON.
+
+				<pre>var <span id="JSONFormatter">JSONFormatter</span> = <a href="index.html#FormatterFunc">FormatterFunc</a>(func(r *<a href="index.html#Record">Record</a>) ([]<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>) {
+    obj, err := <a href="http://127.0.0.1:8888/pkg/encoding/json/">json</a>.<a href="http://127.0.0.1:8888/pkg/encoding/json/#MarshalIndent">MarshalIndent</a>(r.<a href="index.html#Attributes">Attributes</a>, &#34;&#34;, &#34;  &#34;)
+    if err != <a href="http://127.0.0.1:8888/pkg/builtin/#nil">nil</a> {
+        return <a href="http://127.0.0.1:8888/pkg/builtin/#nil">nil</a>, err
+    }
+    s := []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{<a href="http://127.0.0.1:8888/pkg/fmt/">fmt</a>.<a href="http://127.0.0.1:8888/pkg/fmt/#Sprintf">Sprintf</a>(
+        &#34;%s [%s] [%s] %s (at %s:%d) %s\n&#34;,
+        r.<a href="index.html#Timestamp">Timestamp</a>.<a href="index.html#Format">Format</a>(&#34;2006-01-02T15:04:05.999999&#34;),
+        r.<a href="index.html#Severity">Severity</a>,
+        r.<a href="index.html#Name">Name</a>,
+        r.<a href="index.html#Message">Message</a>,
+        r.<a href="index.html#SourcePath">SourcePath</a>,
+        r.<a href="index.html#SourceLine">SourceLine</a>,
+        obj,
+    )}
+    if <a href="http://127.0.0.1:8888/pkg/builtin/#len">len</a>(r.<a href="index.html#Stack">Stack</a>) &gt; 0 {
+        s = <a href="http://127.0.0.1:8888/pkg/builtin/#append">append</a>(s, r.<a href="index.html#Stack">Stack</a>...)
+    }
+
+    return []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>(<a href="http://127.0.0.1:8888/pkg/strings/">strings</a>.<a href="http://127.0.0.1:8888/pkg/strings/#Join">Join</a>(s, &#34;\n&#34;)), <a href="http://127.0.0.1:8888/pkg/builtin/#nil">nil</a>
+})</pre>
+			
+				<p>JSONLFomatter is a Formatter that formats a Record as a JSON line.
+
+				<pre>var <span id="JSONLFormatter">JSONLFormatter</span> = <a href="index.html#FormatterFunc">FormatterFunc</a>(func(r *<a href="index.html#Record">Record</a>) ([]<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>) {
+    buff, err := <a href="http://127.0.0.1:8888/pkg/encoding/json/">json</a>.<a href="http://127.0.0.1:8888/pkg/encoding/json/#Marshal">Marshal</a>(r)
+    if err != <a href="http://127.0.0.1:8888/pkg/builtin/#nil">nil</a> {
+        return <a href="http://127.0.0.1:8888/pkg/builtin/#nil">nil</a>, err
+    }
+    buff = <a href="http://127.0.0.1:8888/pkg/builtin/#append">append</a>(buff, &#39;\n&#39;)
+    return buff, <a href="http://127.0.0.1:8888/pkg/builtin/#nil">nil</a>
+})</pre>
+			
+				<p>SimpleFormatter is a Formatter that formats a Record with message and timestasmp
+
+				<pre>var <span id="SimpleFormatter">SimpleFormatter</span> = <a href="index.html#FormatterFunc">FormatterFunc</a>(func(r *<a href="index.html#Record">Record</a>) ([]<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>) {
+    return []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>(<a href="http://127.0.0.1:8888/pkg/fmt/">fmt</a>.<a href="http://127.0.0.1:8888/pkg/fmt/#Sprintf">Sprintf</a>(
+        &#34;%s [%s] [%s] %s (at %s:%d)&#34;,
+        r.<a href="index.html#Timestamp">Timestamp</a>.<a href="index.html#Format">Format</a>(&#34;2006-01-02T15:04:05.999999&#34;),
+        r.<a href="index.html#Severity">Severity</a>,
+        r.<a href="index.html#Name">Name</a>,
+        r.<a href="index.html#Message">Message</a>,
+        r.<a href="index.html#SourcePath">SourcePath</a>,
+        r.<a href="index.html#SourceLine">SourceLine</a>,
+    )), <a href="http://127.0.0.1:8888/pkg/builtin/#nil">nil</a>
+})</pre>
+			
+		
+		
+			
+			
+			<h2 id="Critical">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2455:2527#L82">Critical</a>
+				<a class="permalink" href="index.html#Critical">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Critical(ctx <a href="../context/index.html">context</a>.<a href="../context/index.html#Context">Context</a>, message <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="index.html#RecordOption">RecordOption</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="Debug">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1957:2026#L66">Debug</a>
+				<a class="permalink" href="index.html#Debug">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Debug(ctx <a href="../context/index.html">context</a>.<a href="../context/index.html#Context">Context</a>, message <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="index.html#RecordOption">RecordOption</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="Error">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2331:2400#L78">Error</a>
+				<a class="permalink" href="index.html#Error">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Error(ctx <a href="../context/index.html">context</a>.<a href="../context/index.html#Context">Context</a>, message <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="index.html#RecordOption">RecordOption</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="Info">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2209:2277#L74">Info</a>
+				<a class="permalink" href="index.html#Info">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Info(ctx <a href="../context/index.html">context</a>.<a href="../context/index.html#Context">Context</a>, message <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="index.html#RecordOption">RecordOption</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="LogIfError">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3118:3184#L105">LogIfError</a>
+				<a class="permalink" href="index.html#LogIfError">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func LogIfError(ctx <a href="../context/index.html">context</a>.<a href="../context/index.html#Context">Context</a>, name <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, err <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="PanicIfError">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3392:3454#L116">PanicIfError</a>
+				<a class="permalink" href="index.html#PanicIfError">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PanicIfError(ctx <a href="../context/index.html">context</a>.<a href="../context/index.html#Context">Context</a>, name <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, err <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="SetSink">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/context.go?s=97:154#L1">SetSink</a>
+				<a class="permalink" href="index.html#SetSink">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SetSink(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, s <a href="index.html#Sink">Sink</a>) <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="Track">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3718:3841#L130">Track</a>
+				<a class="permalink" href="index.html#Track">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Track[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>](ctx <a href="../context/index.html">context</a>.<a href="../context/index.html#Context">Context</a>, name <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, f func(<a href="index.html#Attributes">Attributes</a>) (T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>), opts ...<a href="index.html#RecordOption">RecordOption</a>) (val T, err <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="Warning">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2081:2152#L70">Warning</a>
+				<a class="permalink" href="index.html#Warning">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Warning(ctx <a href="../context/index.html">context</a>.<a href="../context/index.html#Context">Context</a>, message <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="index.html#RecordOption">RecordOption</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="X">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=2796:2847#L88">X</a>
+				<a class="permalink" href="index.html#X">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func X[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>](ctx <a href="../context/index.html">context</a>.<a href="../context/index.html#Context">Context</a>) func(T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>) T</pre>
+			<p>X checks if the error is nil or not and returns the value. if error is not nil, it generate a log record.
+unlike assert.X, it has to be used with context so the syntax should be slog.X(ctx)(doSomething())
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Attributes">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3602:3640#L124">Attributes</a>
+				<a class="permalink" href="index.html#Attributes">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Attributes map[<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>]interface{}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Attributes.Set">func (Attributes) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=3642:3696#L126">Set</a>
+					<a class="permalink" href="index.html#Attributes.Set">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (a <a href="index.html#Attributes">Attributes</a>) Set(key <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, value interface{})</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Formatter">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/formatter.go?s=113:176#L1">Formatter</a>
+				<a class="permalink" href="index.html#Formatter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Formatter is an interface that formats a Record.
+
+			<pre>type Formatter interface {
+    Format(r *<a href="index.html#Record">Record</a>) ([]<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="FormatterFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/formatter.go?s=254:304#L5">FormatterFunc</a>
+				<a class="permalink" href="index.html#FormatterFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>FormatterFunc is a function that creates a new Formatter from a function
+
+			<pre>type FormatterFunc func(r *<a href="index.html#Record">Record</a>) ([]<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="FormatterFunc.Format">func (FormatterFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/formatter.go?s=306:362#L7">Format</a>
+					<a class="permalink" href="index.html#FormatterFunc.Format">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#FormatterFunc">FormatterFunc</a>) Format(r *<a href="index.html#Record">Record</a>) ([]<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Record">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=295:938#L8">Record</a>
+				<a class="permalink" href="index.html#Record">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Record is a structured logging record
+
+			<pre>type Record struct {
+<span id="Record.Name"></span>    Name            <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>                 `json:&#34;name,omitempty&#34;`
+<span id="Record.SourcePath"></span>    SourcePath      <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>                 `json:&#34;source_path,omitempty&#34;`
+<span id="Record.SourceLine"></span>    SourceLine      <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>                    `json:&#34;source_line,omitempty&#34;`
+<span id="Record.Stack"></span>    Stack           []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>               `json:&#34;stack,omitempty&#34;`
+<span id="Record.Severity"></span>    Severity        <a href="index.html#Severity">Severity</a>               `json:&#34;severity,omitempty&#34;`
+<span id="Record.Timestamp"></span>    Timestamp       <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>              `json:&#34;timestamp,omitempty&#34;`
+<span id="Record.Message"></span>    Message         <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>                 `json:&#34;message,omitempty&#34;`
+<span id="Record.ContextInstance"></span>    ContextInstance *<a href="../context/index.html">context</a>.<a href="../context/index.html#Instance">Instance</a>      `json:&#34;context_instance,omitempty&#34;`
+<span id="Record.Attributes"></span>    Attributes      map[<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>]interface{} `json:&#34;attributes,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="RecordOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1279:1312#L32">RecordOption</a>
+				<a class="permalink" href="index.html#RecordOption">&#xb6;</a>
+				
+				
+			</h2>
+			<p>RecordOption is a function that configures a Record
+
+			<pre>type RecordOption func(r *<a href="index.html#Record">Record</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="A">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1557:1608#L47">A</a>
+					<a class="permalink" href="index.html#A">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func A(name <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, value interface{}) <a href="index.html#RecordOption">RecordOption</a></pre>
+				<p>A is a shorthand for Attribute
+
+				
+				
+			
+				
+				<h3 id="Attribute">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1400:1459#L40">Attribute</a>
+					<a class="permalink" href="index.html#Attribute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Attribute(name <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, value interface{}) <a href="index.html#RecordOption">RecordOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="Err">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1730:1762#L54">Err</a>
+					<a class="permalink" href="index.html#Err">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Err(err <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>) <a href="index.html#RecordOption">RecordOption</a></pre>
+				<p>Err is a shorthand for Attribute(&quot;error&quot;, err.Error())
+
+				
+				
+			
+				
+				<h3 id="IncludeStack">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1835:1867#L60">IncludeStack</a>
+					<a class="permalink" href="index.html#IncludeStack">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func IncludeStack() <a href="index.html#RecordOption">RecordOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="Name">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=1314:1349#L34">Name</a>
+					<a class="permalink" href="index.html#Name">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Name(name <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#RecordOption">RecordOption</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Severity">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/slog.go?s=997:1017#L21">Severity</a>
+				<a class="permalink" href="index.html#Severity">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Severity defines the importance of the logging record
+
+			<pre>type Severity <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Sink">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/sink.go?s=180:255#L3">Sink</a>
+				<a class="permalink" href="index.html#Sink">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Sink is an interface to implement logging sink
+
+			<pre>type Sink interface {
+    Write(*<a href="index.html#Record">Record</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>
+    Flush() <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>
+    Close() <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEventFilter">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/sink.go?s=3106:3155#L152">NewEventFilter</a>
+					<a class="permalink" href="index.html#NewEventFilter">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewEventFilter(events []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, s <a href="index.html#Sink">Sink</a>) <a href="index.html#Sink">Sink</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="NewGCPSink">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/sink.go?s=1700:1782#L93">NewGCPSink</a>
+					<a class="permalink" href="index.html#NewGCPSink">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewGCPSink(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, projectID <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, logID <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) (<a href="index.html#Sink">Sink</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>NewGCPSink retrns a Sink for GCP environment. It uses Cloud Logging API to output structured log records.
+
+				
+				
+			
+				
+				<h3 id="NewIOSink">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/sink.go?s=1445:1490#L83">NewIOSink</a>
+					<a class="permalink" href="index.html#NewIOSink">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewIOSink(w <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Writer">Writer</a>, f <a href="index.html#Formatter">Formatter</a>) <a href="index.html#Sink">Sink</a></pre>
+				<p>NewIOSink returns a Sink that writes log records to an io.Writer using a Formatter
+
+				
+				
+			
+				
+				<h3 id="NewMemorySink">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/sink.go?s=849:874#L46">NewMemorySink</a>
+					<a class="permalink" href="index.html#NewMemorySink">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewMemorySink() <a href="index.html#Sink">Sink</a></pre>
+				<p>NewMemorySink returns a Sink that does keep log records in memory
+
+				
+				
+			
+				
+				<h3 id="NewNullSink">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/slog/sink.go?s=484:507#L24">NewNullSink</a>
+					<a class="permalink" href="index.html#NewNullSink">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewNullSink() <a href="index.html#Sink">Sink</a></pre>
+				<p>NewNullSink returns a Sink that does nothing
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>elineupmall - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package elineupmall
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/helloproject/elineupmall"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#NewService">func NewService(blobCrawler blob.Crawler, tagger member.Tagger, salesPeriodExtractor SalesPeriodExtractor, categoryResolver CategoryResolver) config.Service</a></dd>
+			
+			
+				
+				<dd><a href="index.html#CategoryResolver">type CategoryResolver</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#CategoryResolverFunc">type CategoryResolverFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CategoryResolverFunc.Resolve">func (f CategoryResolverFunc) Resolve(ctx context.Context, p *ItemPage) enums.HPElineupMallItemCategory</a></dd>
+				
+			
+				
+				<dd><a href="index.html#CrawlArtistPageArgs">type CrawlArtistPageArgs</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#CrawlItemPagesArgs">type CrawlItemPagesArgs</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ItemPage">type ItemPage</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SalesPeriod">type SalesPeriod</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SalesPeriodExtractor">type SalesPeriodExtractor</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SalesPeriodExtractorFunc">type SalesPeriodExtractorFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SalesPeriodExtractorFunc.ExtractSalesPeriod">func (f SalesPeriodExtractorFunc) ExtractSalesPeriod(ctx context.Context, p *ItemPage) *SalesPeriod</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/elineupmall.go">elineupmall.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/helper.go">helper.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var (
+    <span id="CrawlArtistPageArgsListItemsPerPage">CrawlArtistPageArgsListItemsPerPage</span> = <a href="../../../system/settings/index.html">settings</a>.<a href="../../../system/settings/index.html#NewInt">NewInt</a>(&#34;service.helloproject.elineupmall.list_items_per_page&#34;, 1000)
+    <span id="CrawlArtistPageArgsMaxItemsPerCrawl">CrawlArtistPageArgsMaxItemsPerCrawl</span> = <a href="../../../system/settings/index.html">settings</a>.<a href="../../../system/settings/index.html#NewInt">NewInt</a>(&#34;service.helloproject.elineupmall.max_items_per_crawl&#34;, 200)
+)</pre>
+			
+				<p>DefaltCategoryResolver is the default implementation of CategoryResolver based on keyword matching and price range validations
+
+				<pre>var <span id="DefaultCategoryResolver">DefaultCategoryResolver</span> = <a href="index.html#CategoryResolverFunc">CategoryResolverFunc</a>(func(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, p *<a href="index.html#ItemPage">ItemPage</a>) <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a> {
+    for _, rule := range categoryRuleList {
+        if rule.<a href="index.html#Match">Match</a>(p) {
+            return rule.<a href="index.html#Category">Category</a>
+        }
+    }
+    return <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPElineupMallItemCategoryOther">HPElineupMallItemCategoryOther</a>
+})</pre>
+			
+				<p>DefaultSalesTermExtractor is the default implementation of SalesTermExtractor using regexp.
+This supports the following formats:
+<pre>  a) explicit date range
+		【期間限定受注】2021年10月24日(日)13:30～2021年11月6日(土)23:59
+		通信販売受付期間：2021年10月16日(土)14:00～2022年1月13日(木)23:59
+		【第2回受注期間】2021年10月16日(土)14:00～2021年11月1日(月)23:59
+		［WebStore販売期間］2021年10月24日（日）18：00～2021年10月30日（土）23：59
+  b) no start date but only end date
+		受付締切日：2021年11月12日（金）23：59
+</pre>
+
+				<pre>var <span id="DefaultSalesPeriodExtractor">DefaultSalesPeriodExtractor</span> = <a href="index.html#SalesPeriodExtractorFunc">SalesPeriodExtractorFunc</a>(func(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, p *<a href="index.html#ItemPage">ItemPage</a>) *<a href="index.html#SalesPeriod">SalesPeriod</a> {
+    found := itemSaleTermRegExp1.<a href="index.html#FindStringSubmatch">FindStringSubmatch</a>(p.<a href="index.html#Description">Description</a>)
+    if <a href="http://127.0.0.1:8888/pkg/builtin/#len">len</a>(found) &gt; 0 {
+        fyy, _ := <a href="http://127.0.0.1:8888/pkg/strconv/">strconv</a>.<a href="http://127.0.0.1:8888/pkg/strconv/#Atoi">Atoi</a>(found[1])
+        fmm, _ := <a href="http://127.0.0.1:8888/pkg/strconv/">strconv</a>.<a href="http://127.0.0.1:8888/pkg/strconv/#Atoi">Atoi</a>(found[2])
+        fdd, _ := <a href="http://127.0.0.1:8888/pkg/strconv/">strconv</a>.<a href="http://127.0.0.1:8888/pkg/strconv/#Atoi">Atoi</a>(found[3])
+        tyy, _ := <a href="http://127.0.0.1:8888/pkg/strconv/">strconv</a>.<a href="http://127.0.0.1:8888/pkg/strconv/#Atoi">Atoi</a>(found[4])
+        tmm, _ := <a href="http://127.0.0.1:8888/pkg/strconv/">strconv</a>.<a href="http://127.0.0.1:8888/pkg/strconv/#Atoi">Atoi</a>(found[5])
+        tdd, _ := <a href="http://127.0.0.1:8888/pkg/strconv/">strconv</a>.<a href="http://127.0.0.1:8888/pkg/strconv/#Atoi">Atoi</a>(found[6])
+        f := <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Date">Date</a>(fyy, <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Month">Month</a>(fmm), fdd, 0, 0, 0, 0, <a href="../../../foundation/timeutil/index.html">timeutil</a>.<a href="../../../foundation/timeutil/index.html#JST">JST</a>)
+        t := <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Date">Date</a>(tyy, <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Month">Month</a>(tmm), tdd, 0, 0, 0, 0, <a href="../../../foundation/timeutil/index.html">timeutil</a>.<a href="../../../foundation/timeutil/index.html#JST">JST</a>)
+        return &amp;<a href="index.html#SalesPeriod">SalesPeriod</a>{
+            <a href="index.html#SalesPeriod.From">From</a>: &amp;f,
+            <a href="index.html#SalesPeriod.To">To</a>:   &amp;t,
+        }
+    }
+    found = itemSaleTermRegExp2.<a href="index.html#FindStringSubmatch">FindStringSubmatch</a>(p.<a href="index.html#Description">Description</a>)
+    if <a href="http://127.0.0.1:8888/pkg/builtin/#len">len</a>(found) &gt; 0 {
+        tyy, _ := <a href="http://127.0.0.1:8888/pkg/strconv/">strconv</a>.<a href="http://127.0.0.1:8888/pkg/strconv/#Atoi">Atoi</a>(found[1])
+        tmm, _ := <a href="http://127.0.0.1:8888/pkg/strconv/">strconv</a>.<a href="http://127.0.0.1:8888/pkg/strconv/#Atoi">Atoi</a>(found[2])
+        tdd, _ := <a href="http://127.0.0.1:8888/pkg/strconv/">strconv</a>.<a href="http://127.0.0.1:8888/pkg/strconv/#Atoi">Atoi</a>(found[3])
+        e := <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Date">Date</a>(tyy, <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Month">Month</a>(tmm), tdd, 0, 0, 0, 0, <a href="../../../foundation/timeutil/index.html">timeutil</a>.<a href="../../../foundation/timeutil/index.html#JST">JST</a>)
+        return &amp;<a href="index.html#SalesPeriod">SalesPeriod</a>{
+            <a href="index.html#SalesPeriod.From">From</a>: <a href="http://127.0.0.1:8888/pkg/builtin/#nil">nil</a>,
+            <a href="index.html#SalesPeriod.To">To</a>:   &amp;e,
+        }
+    }
+    return <a href="http://127.0.0.1:8888/pkg/builtin/#nil">nil</a>
+})</pre>
+			
+				
+				<pre>var (
+    <span class="comment">// ErrArtistPageWithoutItemLinks is an error when the artist page has the next page without any item links.</span>
+    <span class="comment">// If this error happens, it means that the artist page is no longer a valid artist page or need to update the scraper.</span>
+    <span id="ErrArtistPageWithoutItemLinks">ErrArtistPageWithoutItemLinks</span> = <a href="http://127.0.0.1:8888/pkg/fmt/">fmt</a>.<a href="http://127.0.0.1:8888/pkg/fmt/#Errorf">Errorf</a>(&#34;artist page has the next page without any item links&#34;)
+)</pre>
+			
+		
+		
+			
+			
+			<h2 id="NewService">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/elineupmall.go?s=1527:1683#L34">NewService</a>
+				<a class="permalink" href="index.html#NewService">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewService(blobCrawler <a href="../blob/index.html">blob</a>.<a href="../blob/index.html#Crawler">Crawler</a>, tagger <a href="../member/index.html">member</a>.<a href="../member/index.html#Tagger">Tagger</a>, salesPeriodExtractor <a href="index.html#SalesPeriodExtractor">SalesPeriodExtractor</a>, categoryResolver <a href="index.html#CategoryResolver">CategoryResolver</a>) <a href="../../bootstrap/config/index.html">config</a>.<a href="../../bootstrap/config/index.html#Service">Service</a></pre>
+			
+			
+			
+
+		
+		
+			
+			
+			<h2 id="CategoryResolver">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/helper.go?s=2890:2994#L70">CategoryResolver</a>
+				<a class="permalink" href="index.html#CategoryResolver">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type CategoryResolver interface {
+    Resolve(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="index.html#ItemPage">ItemPage</a>) <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="CategoryResolverFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/helper.go?s=2996:3086#L74">CategoryResolverFunc</a>
+				<a class="permalink" href="index.html#CategoryResolverFunc">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type CategoryResolverFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="index.html#ItemPage">ItemPage</a>) <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="CategoryResolverFunc.Resolve">func (CategoryResolverFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/helper.go?s=3088:3191#L76">Resolve</a>
+					<a class="permalink" href="index.html#CategoryResolverFunc.Resolve">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#CategoryResolverFunc">CategoryResolverFunc</a>) Resolve(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, p *<a href="index.html#ItemPage">ItemPage</a>) <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPElineupMallItemCategory">HPElineupMallItemCategory</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="CrawlArtistPageArgs">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/elineupmall.go?s=4682:4948#L118">CrawlArtistPageArgs</a>
+				<a class="permalink" href="index.html#CrawlArtistPageArgs">&#xb6;</a>
+				
+				
+			</h2>
+			<p>CrawlArtistPageArgs is an argument for CrawlArtistPageTask.
+This controls the batch execution of the elineupmall crawler.
+The crawl always crawl the item list page of &quot;ハロー！プロジェクト&quot; (<a href="https://www.elineupmall.com/c671/c181/c197/">https://www.elineupmall.com/c671/c181/c197/</a>),
+which would have 4000+ items and the page is actually split into multiple pages.
+`ListItemsPerPage` parameter is used to crawl all pages of the artist, which shows the links of item pages. If you set the lower number,
+<pre>you will have more http tasks to crawl all item list pages. And if you set the higher number, you may likely to have a timeout or 5xx error.
+</pre>
+<p>we recommend not to set the number too high and should keep the lower than 1000.
+Then once the crawler gets the item links, it will crawl these links up to MaxItemsPerList **per each item list page**, not all links since
+most of items shouldn&apos;t have any changes - the change would be only in `IsOutOfStock` (or rarely in name and description).
+So you don&apos;t have to crawl all items in every batch but can crall all items in a few batches.
+<p>for example,
+<ul>
+<li>if you set PerPage=1000 and ListItemsPerPage=200, then you need 5 batches to crawl all items to keep them updated.
+<li>if you set PerPage=1 and MaxItemsPerCrawl=1, then you need only 1 batch to crawl all items but you will have `4000+ * 2` (one list page and one item page)
+http async task requets.
+</ul>
+<p>Default values can be controlled by settings.
+
+			<pre>type CrawlArtistPageArgs struct {
+<span id="CrawlArtistPageArgs.Index"></span>    Index            <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a> `json:&#34;index&#34;`
+<span id="CrawlArtistPageArgs.ListItemsPerPage"></span>    ListItemsPerPage <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a> `json:&#34;list_items_per_page&#34;` <span class="comment">// elineupmall can show up to 1000 items per a page.</span>
+<span id="CrawlArtistPageArgs.MaxItemsPerList"></span>    MaxItemsPerList  <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a> `json:&#34;max_items_per_list&#34;`  <span class="comment">// how many items to crawl per a batch</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="CrawlItemPagesArgs">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/elineupmall.go?s=10120:10183#L258">CrawlItemPagesArgs</a>
+				<a class="permalink" href="index.html#CrawlItemPagesArgs">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type CrawlItemPagesArgs struct {
+<span id="CrawlItemPagesArgs.Urls"></span>    Urls []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;urls&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ItemPage">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/elineupmall.go?s=13858:14062#L355">ItemPage</a>
+				<a class="permalink" href="index.html#ItemPage">&#xb6;</a>
+				
+				
+			</h2>
+			<p>ItemPage contains the structured data scraped from the item page html.
+
+			<pre>type ItemPage struct {
+<span id="ItemPage.Name"></span>    Name          <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="ItemPage.Supplier"></span>    Supplier      <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="ItemPage.Price"></span>    Price         <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+<span id="ItemPage.IsLimitedToFC"></span>    IsLimitedToFC <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+<span id="ItemPage.IsOutOfStock"></span>    IsOutOfStock  <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+<span id="ItemPage.Images"></span>    Images        []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="ItemPage.Description"></span>    Description   <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="ItemPage.Options"></span>    Options       map[<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>]<a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SalesPeriod">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/helper.go?s=186:247#L4">SalesPeriod</a>
+				<a class="permalink" href="index.html#SalesPeriod">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type SalesPeriod struct {
+<span id="SalesPeriod.From"></span>    From *<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>
+<span id="SalesPeriod.To"></span>    To   *<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SalesPeriodExtractor">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/helper.go?s=249:349#L9">SalesPeriodExtractor</a>
+				<a class="permalink" href="index.html#SalesPeriodExtractor">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type SalesPeriodExtractor interface {
+    ExtractSalesPeriod(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="index.html#ItemPage">ItemPage</a>) *<a href="index.html#SalesPeriod">SalesPeriod</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SalesPeriodExtractorFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/helper.go?s=351:426#L13">SalesPeriodExtractorFunc</a>
+				<a class="permalink" href="index.html#SalesPeriodExtractorFunc">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type SalesPeriodExtractorFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="index.html#ItemPage">ItemPage</a>) *<a href="index.html#SalesPeriod">SalesPeriod</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="SalesPeriodExtractorFunc.ExtractSalesPeriod">func (SalesPeriodExtractorFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/elineupmall/helper.go?s=428:527#L15">ExtractSalesPeriod</a>
+					<a class="permalink" href="index.html#SalesPeriodExtractorFunc.ExtractSalesPeriod">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#SalesPeriodExtractorFunc">SalesPeriodExtractorFunc</a>) ExtractSalesPeriod(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, p *<a href="index.html#ItemPage">ItemPage</a>) *<a href="index.html#SalesPeriod">SalesPeriod</a></pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

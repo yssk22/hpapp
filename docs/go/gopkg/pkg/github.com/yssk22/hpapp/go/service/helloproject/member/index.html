@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>member - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package member
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/helloproject/member"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#CrawlArtistProfile">func CrawlArtistProfile(ctx context.Context, a *ent.HPArtist) error</a></dd>
+			
+				
+				<dd><a href="index.html#CrawlArtists">func CrawlArtists(ctx context.Context, _ any) error</a></dd>
+			
+				
+				<dd><a href="index.html#GetAllArtists">func GetAllArtists(ctx context.Context, includeOGs bool) []*ent.HPArtist</a></dd>
+			
+				
+				<dd><a href="index.html#GetAllMembers">func GetAllMembers(ctx context.Context, includeOGs bool) []*ent.HPMember</a></dd>
+			
+				
+				<dd><a href="index.html#GetFollowerNotificationSettings">func GetFollowerNotificationSettings(ctx context.Context, memberId int, preds ...predicate.UserNotificationSetting) ([]*ent.UserNotificationSetting, error)</a></dd>
+			
+				
+				<dd><a href="index.html#GetFollowers">func GetFollowers(ctx context.Context, memberId int, followType enums.HPFollowType) ([]*ent.User, error)</a></dd>
+			
+				
+				<dd><a href="index.html#NewMemberService">func NewMemberService() config.Service</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Tagger">type Tagger</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewSimpleTextMatchingTagger">func NewSimpleTextMatchingTagger() Tagger</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/follower.go">follower.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/member.go">member.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/officialsite.go">officialsite.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/tagging.go">tagging.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var (
+    <span class="comment">// NumNotFoundToGraduate is a threshold to set GraduateAt date. If the scraping doesn&#39;t find a member page for N times (= 5 by default),</span>
+    <span class="comment">// then scraper will set GraduateAt date accordingly.</span>
+    <span id="NumNotFoundToGraduate">NumNotFoundToGraduate</span> = <a href="../../../system/settings/index.html">settings</a>.<a href="../../../system/settings/index.html#NewInt">NewInt</a>(&#34;service.helloproject.member.num_not_found_to_graduate&#34;, 5)
+)</pre>
+			
+		
+		
+			
+			
+			<h2 id="CrawlArtistProfile">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/officialsite.go?s=2140:2207#L58">CrawlArtistProfile</a>
+				<a class="permalink" href="index.html#CrawlArtistProfile">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CrawlArtistProfile(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, a *<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPArtist">HPArtist</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="CrawlArtists">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/officialsite.go?s=1134:1185#L25">CrawlArtists</a>
+				<a class="permalink" href="index.html#CrawlArtists">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CrawlArtists(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, _ <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="GetAllArtists">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/member.go?s=1144:1216#L31">GetAllArtists</a>
+				<a class="permalink" href="index.html#GetAllArtists">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func GetAllArtists(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, includeOGs <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>) []*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPArtist">HPArtist</a></pre>
+			<p>GetAllArtists returns the list of artists with members. If includeOGs is false, OGs are not included and artists without members are removed.
+
+			
+			
+
+		
+			
+			
+			<h2 id="GetAllMembers">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/member.go?s=1950:2022#L59">GetAllMembers</a>
+				<a class="permalink" href="index.html#GetAllMembers">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func GetAllMembers(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, includeOGs <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>) []*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPMember">HPMember</a></pre>
+			<p>GetAllMembers returns the list of members. If includeOGs is false, OGs are not included.
+
+			
+			
+
+		
+			
+			
+			<h2 id="GetFollowerNotificationSettings">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/follower.go?s=1170:1325#L23">GetFollowerNotificationSettings</a>
+				<a class="permalink" href="index.html#GetFollowerNotificationSettings">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func GetFollowerNotificationSettings(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, memberId <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, preds ...<a href="../../ent/predicate/index.html">predicate</a>.<a href="../../ent/predicate/index.html#UserNotificationSetting">UserNotificationSetting</a>) ([]*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#UserNotificationSetting">UserNotificationSetting</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			<p>GetFollowerNotificationSettings returns the all notification settings for the given user and the matched predicates.
+This function is intended to be utilzied for admins/systems to sent notification to their followers so you need to do `auth.WithAdmin(ctx)`
+before calling this function.
+
+			
+			
+
+		
+			
+			
+			<h2 id="GetFollowers">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/follower.go?s=478:582#L7">GetFollowers</a>
+				<a class="permalink" href="index.html#GetFollowers">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func GetFollowers(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, memberId <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, followType <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPFollowType">HPFollowType</a>) ([]*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#User">User</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			<p>GetFollowers returns users who follows the member
+
+			
+			
+
+		
+			
+			
+			<h2 id="NewMemberService">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/member.go?s=602:640#L12">NewMemberService</a>
+				<a class="permalink" href="index.html#NewMemberService">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewMemberService() <a href="../../bootstrap/config/index.html">config</a>.<a href="../../bootstrap/config/index.html#Service">Service</a></pre>
+			
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Tagger">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/tagging.go?s=559:708#L8">Tagger</a>
+				<a class="permalink" href="index.html#Tagger">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Tagger is an interface to tag artists and/or members from content.
+Tagging is a process to find the potential candidates of content ownerships so implementation can return nil or emptly list.
+if there is an error, the implentation should log by themselves rather than expecting the caller to handle it.
+
+			<pre>type Tagger interface {
+    GetTaggedArtists(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Reader">Reader</a>) []*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPArtist">HPArtist</a>
+    GetTaggedMembers(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, <a href="http://127.0.0.1:8888/pkg/io/">io</a>.<a href="http://127.0.0.1:8888/pkg/io/#Reader">Reader</a>) []*<a href="../../ent/index.html">ent</a>.<a href="../../ent/index.html#HPMember">HPMember</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewSimpleTextMatchingTagger">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/helloproject/member/tagging.go?s=922:963#L15">NewSimpleTextMatchingTagger</a>
+					<a class="permalink" href="index.html#NewSimpleTextMatchingTagger">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewSimpleTextMatchingTagger() <a href="index.html#Tagger">Tagger</a></pre>
+				<p>NewSimpleTextMatchingTagger returns a new Tagger that tags members by simple text matching.
+This tagger just uses text maching so it may not be accurate. We can have another version of tagger that uses ML.
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

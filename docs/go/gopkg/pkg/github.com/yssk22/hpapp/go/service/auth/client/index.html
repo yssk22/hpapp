@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>client - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package client
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/auth/client"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>client package implements the client authentication.
+It&apos;s to identify the verified clients.
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#DenyIfNonVerifiedClient">func DenyIfNonVerifiedClient() privacy.QueryMutationRule</a></dd>
+			
+				
+				<dd><a href="index.html#NewHttpMiddleware">func NewHttpMiddleware(authenticators ...Authenticator) middleware.HttpMiddleware</a></dd>
+			
+				
+				<dd><a href="index.html#WithClient">func WithClient(ctx context.Context, c Client) context.Context</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Authenticator">type Authenticator</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewFirebaseAppCheck">func NewFirebaseAppCheck(projectID string) Authenticator</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewGCPServiceToServiceAuth">func NewGCPServiceToServiceAuth(audience string) Authenticator</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Client">type Client</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Anonymous">func Anonymous() Client</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CurrentClient">func CurrentClient(ctx context.Context) Client</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SuperAdmin">func SuperAdmin() Client</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/appcheck.go">appcheck.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/client.go">client.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/entpolicy.go">entpolicy.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/gcptoken.go">gcptoken.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/settings.go">settings.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var (
+    <span id="ErrNotAuthorized">ErrNotAuthorized</span> = <a href="http://127.0.0.1:8888/pkg/errors/">errors</a>.<a href="http://127.0.0.1:8888/pkg/errors/#New">New</a>(&#34;not authorized&#34;)
+)</pre>
+			
+				
+				<pre>var (
+    <span id="SuperAdminIds">SuperAdminIds</span> = <a href="../../../system/settings/index.html">settings</a>.<a href="../../../system/settings/index.html#NewStringArray">NewStringArray</a>(&#34;service.auth.client.super_admin_ids&#34;, []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{})
+)</pre>
+			
+		
+		
+			
+			
+			<h2 id="DenyIfNonVerifiedClient">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/entpolicy.go?s=158:214#L4">DenyIfNonVerifiedClient</a>
+				<a class="permalink" href="index.html#DenyIfNonVerifiedClient">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DenyIfNonVerifiedClient() <a href="../../ent/privacy/index.html">privacy</a>.<a href="../../ent/privacy/index.html#QueryMutationRule">QueryMutationRule</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="NewHttpMiddleware">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/client.go?s=2273:2354#L106">NewHttpMiddleware</a>
+				<a class="permalink" href="index.html#NewHttpMiddleware">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewHttpMiddleware(authenticators ...<a href="index.html#Authenticator">Authenticator</a>) <a href="../../bootstrap/http/middleware/index.html">middleware</a>.<a href="../../bootstrap/http/middleware/index.html#HttpMiddleware">HttpMiddleware</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="WithClient">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/client.go?s=1580:1642#L77">WithClient</a>
+				<a class="permalink" href="index.html#WithClient">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WithClient(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, c <a href="index.html#Client">Client</a>) <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a></pre>
+			
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Authenticator">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/client.go?s=1147:1259#L56">Authenticator</a>
+				<a class="permalink" href="index.html#Authenticator">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Authenticator interface {
+    TokenHeaderKey() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+    VerifyToken(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, token <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#Client">Client</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewFirebaseAppCheck">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/appcheck.go?s=1735:1791#L64">NewFirebaseAppCheck</a>
+					<a class="permalink" href="index.html#NewFirebaseAppCheck">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewFirebaseAppCheck(projectID <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#Authenticator">Authenticator</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="NewGCPServiceToServiceAuth">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/gcptoken.go?s=1303:1365#L51">NewGCPServiceToServiceAuth</a>
+					<a class="permalink" href="index.html#NewGCPServiceToServiceAuth">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewGCPServiceToServiceAuth(audience <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#Authenticator">Authenticator</a></pre>
+				<p>NewGCPServiceToServiceAuth returns an Authenticator implementation that validate an OIDC token passed via &quot;Authorization&quot; header.
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Client">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/client.go?s=278:404#L4">Client</a>
+				<a class="permalink" href="index.html#Client">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Client interface {
+    ID() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+    Name() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+    IsVerified(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+    IsAdmin(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="Anonymous">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/client.go?s=1039:1062#L48">Anonymous</a>
+					<a class="permalink" href="index.html#Anonymous">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Anonymous() <a href="index.html#Client">Client</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="CurrentClient">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/client.go?s=1384:1430#L69">CurrentClient</a>
+					<a class="permalink" href="index.html#CurrentClient">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func CurrentClient(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="index.html#Client">Client</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="SuperAdmin">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/auth/client/client.go?s=1092:1116#L52">SuperAdmin</a>
+					<a class="permalink" href="index.html#SuperAdmin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func SuperAdmin() <a href="index.html#Client">Client</a></pre>
+				
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

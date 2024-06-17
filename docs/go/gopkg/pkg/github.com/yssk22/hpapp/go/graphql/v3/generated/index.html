@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>generated - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package generated
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/graphql/v3/generated"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#NewExecutableSchema">func NewExecutableSchema(cfg Config) graphql.ExecutableSchema</a></dd>
+			
+			
+				
+				<dd><a href="index.html#ComplexityRoot">type ComplexityRoot</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Config">type Config</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#DirectiveRoot">type DirectiveRoot</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HPEventResolver">type HPEventResolver</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HPFeedItemResolver">type HPFeedItemResolver</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MutationResolver">type MutationResolver</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#QueryResolver">type QueryResolver</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ResolverRoot">type ResolverRoot</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/generated/exec_generated.go">exec_generated.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="NewExecutableSchema">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/generated/exec_generated.go?s=1107:1168#L27">NewExecutableSchema</a>
+				<a class="permalink" href="index.html#NewExecutableSchema">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewExecutableSchema(cfg <a href="index.html#Config">Config</a>) <a href="http://127.0.0.1:8888/pkg/github.com/99designs/gqlgen/graphql/">graphql</a>.<a href="http://127.0.0.1:8888/pkg/github.com/99designs/gqlgen/graphql/#ExecutableSchema">ExecutableSchema</a></pre>
+			<p>NewExecutableSchema creates an ExecutableSchema from the ResolverRoot interface.
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="ComplexityRoot">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/generated/exec_generated.go?s=1571:18789#L51">ComplexityRoot</a>
+				<a class="permalink" href="index.html#ComplexityRoot">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ComplexityRoot struct {
+<span id="ComplexityRoot.Auth"></span>    Auth struct {
+        CreatedAt    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ProviderName func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.ExpoPushMessage"></span>    ExpoPushMessage struct {
+        Badge      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Body       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ImageUrl   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Priority   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Sound      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TTLSeconds func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Title      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPAmebloPost"></span>    HPAmebloPost struct {
+        ArtistKey        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Blobs            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Comments         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CrawledAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CreatedAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Description      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ErrorCount       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID               func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Images           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        LastErrorMessage func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Likes            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        MemberKey        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        NextPath         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerArtist      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerArtistID    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerMember      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerMemberID    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Path             func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        PostAt           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        PrevPath         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Reblogs          func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        RecrawlRequired  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Source           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TaggedArtists    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TaggedMembers    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Theme            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Title            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPArtist"></span>    HPArtist struct {
+        CrawledAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CreatedAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ErrorCount       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID               func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Index            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Key              func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        LastErrorMessage func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Members          func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Name             func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        RecrawlRequired  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ThumbnailURL     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPBlob"></span>    HPBlob struct {
+        AmebloPosts           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CreatedAt             func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        DurationSeconds       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        FaceRecognitionStatus func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Height                func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID                    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        IgPosts               func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        NumFaces              func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerArtist           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerArtistID         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerMember           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerMemberID         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Size                  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        SourceHTMLURL         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        SourceURL             func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Status                func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        StatusErrorCount      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        StatusMessage         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        StoragePath           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        SubType               func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Thumbnail             func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Type                  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt             func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Width                 func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPBlobThumbnail"></span>    HPBlobThumbnail struct {
+        Height         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        SourceImageURL func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        StoragePath    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Width          func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPElineupMallItem"></span>    HPElineupMallItem struct {
+        Category         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CrawledAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CreatedAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Description      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ErrorCount       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID               func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Images           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        IsLimitedToFc    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        IsOutOfStock     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        LastErrorMessage func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Name             func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OrderEndAt       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OrderStartAt     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Permalink        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Price            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        RecrawlRequired  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Supplier         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TaggedArtists    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TaggedMembers    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPEvent"></span>    HPEvent struct {
+        CreatedAt     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        DisplayTitles func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Key           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OpenAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Prefecture    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Source        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        StartAt       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Tickets       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Venue         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPEventConnection"></span>    HPEventConnection struct {
+        Edges      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+<span id="ComplexityRoot.PageInfo"></span>        PageInfo   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TotalCount func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPEventEdge"></span>    HPEventEdge struct {
+        Cursor func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Node   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPFCEventTicket"></span>    HPFCEventTicket struct {
+        ApplicationDueDate   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ApplicationID        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ApplicationStartDate func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ApplicationTitle     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CreatedAt            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        FcMemberSha256       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID                   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Num                  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        PaymentDueDate       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        PaymentStartDate     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Status               func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPFeedItem"></span>    HPFeedItem struct {
+        AssetType     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CreatedAt     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ImageURL      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+<span id="ComplexityRoot.Media"></span>        Media         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        MyViewHistory func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerArtist   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerArtistID func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerMember   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerMemberID func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        PostAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        SourceID      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        SourceURL     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TaggedArtists func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TaggedMembers func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Title         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPFeedItemConnection"></span>    HPFeedItemConnection struct {
+        Edges      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        PageInfo   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TotalCount func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPFeedItemEdge"></span>    HPFeedItemEdge struct {
+        Cursor func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Node   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPFollow"></span>    HPFollow struct {
+        CreatedAt func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Member    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Type      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+<span id="ComplexityRoot.User"></span>        User      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPIgCrawlArgs"></span>    HPIgCrawlArgs struct {
+        Caption        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ChildPosts     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CommentsCount  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        DisplayURL     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Hashtags       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID             func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        LikesCount     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerID        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerUsername  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Shortcode      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Timestamp      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        VideoURL       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        VideoViewCount func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPIgCrawlArgsChildPost"></span>    HPIgCrawlArgsChildPost struct {
+        DisplayURL     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID             func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        LikesCount     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Type           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        VideoURL       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        VideoViewCount func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPIgPost"></span>    HPIgPost struct {
+        Blobs            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Comments         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CrawledAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CreatedAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Description      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ErrorCount       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID               func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        LastErrorMessage func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Likes            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Media            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerArtist      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerArtistID    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerMember      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        OwnerMemberID    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        PostAt           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        RecrawlArgs      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        RecrawlRequired  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Shortcode        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TaggedArtists    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TaggedMembers    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPIgPostConnection"></span>    HPIgPostConnection struct {
+        Edges      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        PageInfo   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TotalCount func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPIgPostEdge"></span>    HPIgPostEdge struct {
+        Cursor func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Node   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPMember"></span>    HPMember struct {
+        Artist           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ArtistID         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ArtistKey        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        BloodType        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CrawledAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CreatedAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        DateOfBirth      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ErrorCount       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        GraduateAt       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Hometown         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID               func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        JoinAt           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Key              func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        LastErrorMessage func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Name             func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        NameKana         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        RecrawlRequired  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ThumbnailURL     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPMemberConnection"></span>    HPMemberConnection struct {
+        Edges      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        PageInfo   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TotalCount func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPMemberEdge"></span>    HPMemberEdge struct {
+        Cursor func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Node   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPSortHistory"></span>    HPSortHistory struct {
+        CreatedAt  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Owner      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        SortResult func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPSortHistoryConnection"></span>    HPSortHistoryConnection struct {
+        Edges      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        PageInfo   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TotalCount func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPSortHistoryEdge"></span>    HPSortHistoryEdge struct {
+        Cursor func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Node   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPSortResult"></span>    HPSortResult struct {
+        Records func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPSortResultRecord"></span>    HPSortResultRecord struct {
+        ArtistID  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ArtistKey func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        MemberID  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        MemberKey func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPViewHistory"></span>    HPViewHistory struct {
+        AssetType     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ContentID     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ContentPostAt func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CreatedAt     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Feed          func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        IsFavorite    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPViewHistoryConnection"></span>    HPViewHistoryConnection struct {
+        Edges      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        PageInfo   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TotalCount func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HPViewHistoryEdge"></span>    HPViewHistoryEdge struct {
+        Cursor func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Node   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.HelloProjectQuery"></span>    HelloProjectQuery struct {
+        Artists func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, after *<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/">entgql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/#Cursor">Cursor</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>], first *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, before *<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/">entgql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/#Cursor">Cursor</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>], last *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Feed    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, params <a href="../helloproject/index.html">helloproject</a>.<a href="../helloproject/index.html#HPFeedQueryParams">HPFeedQueryParams</a>, after *<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/">entgql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/#Cursor">Cursor</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>], first *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, before *<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/">entgql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/#Cursor">Cursor</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>], last *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.MeMutation"></span>    MeMutation struct {
+        Authenticate         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        RemoveAuthentication func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpsertEvents         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, params <a href="../../../service/helloproject/upfc/index.html">upfc</a>.<a href="../../../service/helloproject/upfc/index.html#UpsertEventsParams">UpsertEventsParams</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpsertFollow         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, params <a href="../../../service/helloproject/user/index.html">user</a>.<a href="../../../service/helloproject/user/index.html#HPFollowUpsertParams">HPFollowUpsertParams</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpsertViewHistory    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, params <a href="../../../service/helloproject/feed/index.html">feed</a>.<a href="../../../service/helloproject/feed/index.html#HPViewHistoryUpsertParams">HPViewHistoryUpsertParams</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.MeQuery"></span>    MeQuery struct {
+        Authentications  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ClientID         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ClientIsVerified func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ClientName       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Events           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, after *<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/">entgql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/#Cursor">Cursor</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>], first *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, before *<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/">entgql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/#Cursor">Cursor</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>], last *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Favorites        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, params <a href="../me/index.html">me</a>.<a href="../me/index.html#MeFavoriteQueryParams">MeFavoriteQueryParams</a>, after *<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/">entgql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/#Cursor">Cursor</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>], first *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, before *<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/">entgql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/#Cursor">Cursor</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>], last *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Followings       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID               func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        SortHistories    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, after *<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/">entgql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/#Cursor">Cursor</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>], first *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, before *<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/">entgql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/contrib/entgql/#Cursor">Cursor</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>], last *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Username         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+    Media struct {
+        BlobID          func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Height          func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ThumbnailHeight func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ThumbnailUrl    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ThumbnailWidth  func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Type            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Url             func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Width           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.Message"></span>    Message struct {
+        Badge      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Body       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Data       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ImageUrl   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Priority   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Sound      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        TTLSeconds func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Title      func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        To         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.Misc"></span>    Misc struct {
+        Version func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.Mutation"></span>    Mutation struct {
+        Authenticate func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Me           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+    PageInfo struct {
+        EndCursor       func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        HasNextPage     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        HasPreviousPage func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        StartCursor     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.Query"></span>    Query struct {
+        Helloproject func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Me           func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Node         func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, id <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Nodes        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, ids []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.ReactNavigationPush"></span>    ReactNavigationPush struct {
+        Params        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Path          func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        PushMessage   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ToPushMessage func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>, tokens []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+    User struct {
+        AccessToken          func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Auth                 func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        CreatedAt            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        HpfcEventTickets     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        HpmemberFollowing    func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        HpsortHistory        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        HpviewHistory        func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID                   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        NotificationSettings func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt            func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Username             func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+
+<span id="ComplexityRoot.UserNotificationSetting"></span>    UserNotificationSetting struct {
+        CreatedAt          func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        EnableNewPosts     func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        EnablePaymentDue   func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        EnablePaymentStart func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        ID                 func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Name               func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Slug               func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        Token              func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        UpdatedAt          func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+        User               func(childComplexity <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+    }
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Config">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/generated/exec_generated.go?s=1293:1393#L35">Config</a>
+				<a class="permalink" href="index.html#Config">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Config struct {
+<span id="Config.Resolvers"></span>    Resolvers  <a href="index.html#ResolverRoot">ResolverRoot</a>
+<span id="Config.Directives"></span>    Directives <a href="index.html#DirectiveRoot">DirectiveRoot</a>
+<span id="Config.Complexity"></span>    Complexity <a href="index.html#ComplexityRoot">ComplexityRoot</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="DirectiveRoot">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/generated/exec_generated.go?s=1540:1569#L48">DirectiveRoot</a>
+				<a class="permalink" href="index.html#DirectiveRoot">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type DirectiveRoot struct {
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="HPEventResolver">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/generated/exec_generated.go?s=18791:18905#L505">HPEventResolver</a>
+				<a class="permalink" href="index.html#HPEventResolver">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPEventResolver interface {
+    Tickets(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, obj *<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#HPEvent">HPEvent</a>) ([]*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#HPFCEventTicket">HPFCEventTicket</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="HPFeedItemResolver">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/generated/exec_generated.go?s=18906:19028#L508">HPFeedItemResolver</a>
+				<a class="permalink" href="index.html#HPFeedItemResolver">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPFeedItemResolver interface {
+    MyViewHistory(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, obj *<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#HPFeedItem">HPFeedItem</a>) (*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#HPViewHistory">HPViewHistory</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MutationResolver">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/generated/exec_generated.go?s=19029:19167#L511">MutationResolver</a>
+				<a class="permalink" href="index.html#MutationResolver">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MutationResolver interface {
+    Authenticate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (*<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#User">User</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+    Me(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (*<a href="../me/index.html">me</a>.<a href="../me/index.html#MeMutation">MeMutation</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="QueryResolver">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/generated/exec_generated.go?s=19168:19442#L515">QueryResolver</a>
+				<a class="permalink" href="index.html#QueryResolver">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type QueryResolver interface {
+    Node(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, id <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) (<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#Noder">Noder</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+    Nodes(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, ids []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) ([]<a href="../../../service/ent/index.html">ent</a>.<a href="../../../service/ent/index.html#Noder">Noder</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+    Helloproject(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (*<a href="../helloproject/index.html">helloproject</a>.<a href="../helloproject/index.html#HelloProjectQuery">HelloProjectQuery</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+    Me(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (*<a href="../me/index.html">me</a>.<a href="../me/index.html#MeQuery">MeQuery</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ResolverRoot">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/graphql/v3/generated/exec_generated.go?s=1395:1538#L41">ResolverRoot</a>
+				<a class="permalink" href="index.html#ResolverRoot">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ResolverRoot interface {
+    HPEvent() <a href="index.html#HPEventResolver">HPEventResolver</a>
+    HPFeedItem() <a href="index.html#HPFeedItemResolver">HPFeedItemResolver</a>
+    Mutation() <a href="index.html#MutationResolver">MutationResolver</a>
+    Query() <a href="index.html#QueryResolver">QueryResolver</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

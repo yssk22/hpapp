@@ -1,0 +1,2158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>schema - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package schema
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/schema"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-subdirectories">Subdirectories</a></dd>
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#Auth">type Auth</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Auth.Annotations">func (Auth) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Auth.Edges">func (Auth) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Auth.Fields">func (Auth) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Auth.Indexes">func (Auth) Indexes() []ent.Index</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Auth.Mixin">func (Auth) Mixin() []ent.Mixin</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Auth.Policy">func (Auth) Policy() ent.Policy</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPAmebloPost">type HPAmebloPost</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAmebloPost.Edges">func (HPAmebloPost) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAmebloPost.Fields">func (HPAmebloPost) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAmebloPost.Hooks">func (HPAmebloPost) Hooks() []ent.Hook</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAmebloPost.Mixin">func (HPAmebloPost) Mixin() []ent.Mixin</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPArtist">type HPArtist</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPArtist.Annotations">func (HPArtist) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPArtist.Edges">func (HPArtist) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPArtist.Fields">func (HPArtist) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPArtist.Mixin">func (HPArtist) Mixin() []ent.Mixin</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPArtist.Policy">func (HPArtist) Policy() ent.Policy</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPAsset">type HPAsset</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAsset.Annotations">func (HPAsset) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAsset.Edges">func (HPAsset) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAsset.Fields">func (HPAsset) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAsset.Indexes">func (HPAsset) Indexes() []ent.Index</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPBlob">type HPBlob</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlob.Edges">func (HPBlob) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlob.Fields">func (HPBlob) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlob.Indexes">func (HPBlob) Indexes() []ent.Index</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlob.Mixin">func (HPBlob) Mixin() []ent.Mixin</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPElineupMallItem">type HPElineupMallItem</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPElineupMallItem.Edges">func (HPElineupMallItem) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPElineupMallItem.Fields">func (HPElineupMallItem) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPElineupMallItem.Indexes">func (HPElineupMallItem) Indexes() []ent.Index</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPElineupMallItem.Mixin">func (HPElineupMallItem) Mixin() []ent.Mixin</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPEvent">type HPEvent</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEvent.Annotations">func (HPEvent) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEvent.Edges">func (HPEvent) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEvent.Fields">func (HPEvent) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEvent.Indexes">func (HPEvent) Indexes() []ent.Index</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEvent.Mixin">func (HPEvent) Mixin() []ent.Mixin</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFCEventTicket">type HPFCEventTicket</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFCEventTicket.Edges">func (HPFCEventTicket) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFCEventTicket.Fields">func (HPFCEventTicket) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFCEventTicket.Indexes">func (HPFCEventTicket) Indexes() []ent.Index</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFCEventTicket.Mixin">func (HPFCEventTicket) Mixin() []ent.Mixin</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFCEventTicket.Policy">func (HPFCEventTicket) Policy() ent.Policy</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFeedItem">type HPFeedItem</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFeedItem.Annotations">func (HPFeedItem) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFeedItem.Edges">func (HPFeedItem) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFeedItem.Fields">func (HPFeedItem) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFeedItem.Hooks">func (HPFeedItem) Hooks() []ent.Hook</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFeedItem.Indexes">func (HPFeedItem) Indexes() []ent.Index</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFeedItem.Mixin">func (HPFeedItem) Mixin() []ent.Mixin</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFollow">type HPFollow</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFollow.Edges">func (HPFollow) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFollow.Fields">func (HPFollow) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFollow.Indexes">func (HPFollow) Indexes() []ent.Index</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFollow.Mixin">func (HPFollow) Mixin() []ent.Mixin</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPIgPost">type HPIgPost</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPIgPost.Annotations">func (HPIgPost) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPIgPost.Edges">func (HPIgPost) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPIgPost.Fields">func (HPIgPost) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPIgPost.Hooks">func (HPIgPost) Hooks() []ent.Hook</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPIgPost.Mixin">func (HPIgPost) Mixin() []ent.Mixin</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPMember">type HPMember</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMember.Annotations">func (HPMember) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMember.Edges">func (HPMember) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMember.Fields">func (HPMember) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMember.Mixin">func (HPMember) Mixin() []ent.Mixin</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMember.Policy">func (HPMember) Policy() ent.Policy</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPSortHistory">type HPSortHistory</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPSortHistory.Annotations">func (HPSortHistory) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPSortHistory.Edges">func (HPSortHistory) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPSortHistory.Fields">func (HPSortHistory) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPSortHistory.Mixin">func (HPSortHistory) Mixin() []ent.Mixin</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPSortHistory.Policy">func (HPSortHistory) Policy() ent.Policy</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPViewHistory">type HPViewHistory</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPViewHistory.Annotations">func (HPViewHistory) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPViewHistory.Edges">func (HPViewHistory) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPViewHistory.Fields">func (HPViewHistory) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPViewHistory.Indexes">func (HPViewHistory) Indexes() []ent.Index</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPViewHistory.Mixin">func (HPViewHistory) Mixin() []ent.Mixin</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPViewHistory.Policy">func (HPViewHistory) Policy() ent.Policy</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TestEnt">type TestEnt</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TestEnt.Annotations">func (TestEnt) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TestEnt.Edges">func (TestEnt) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TestEnt.Fields">func (TestEnt) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TestEnt.Mixin">func (TestEnt) Mixin() []ent.Mixin</a></dd>
+				
+			
+				
+				<dd><a href="index.html#User">type User</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#User.Annotations">func (User) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#User.Edges">func (User) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#User.Fields">func (User) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#User.Mixin">func (User) Mixin() []ent.Mixin</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#User.Policy">func (User) Policy() ent.Policy</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UserNotificationLog">type UserNotificationLog</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationLog.Annotations">func (UserNotificationLog) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationLog.Edges">func (UserNotificationLog) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationLog.Fields">func (UserNotificationLog) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationLog.Indexes">func (UserNotificationLog) Indexes() []ent.Index</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationLog.Mixin">func (UserNotificationLog) Mixin() []ent.Mixin</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UserNotificationSetting">type UserNotificationSetting</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationSetting.Annotations">func (UserNotificationSetting) Annotations() []schema.Annotation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationSetting.Edges">func (UserNotificationSetting) Edges() []ent.Edge</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationSetting.Fields">func (UserNotificationSetting) Fields() []ent.Field</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationSetting.Indexes">func (UserNotificationSetting) Indexes() []ent.Index</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationSetting.Mixin">func (UserNotificationSetting) Mixin() []ent.Mixin</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationSetting.Policy">func (UserNotificationSetting) Policy() ent.Policy</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/auth.go">auth.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpameblopost.go">hpameblopost.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpartist.go">hpartist.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpasset.go">hpasset.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpblob.go">hpblob.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpelineupmallitem.go">hpelineupmallitem.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpevent.go">hpevent.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfceventticket.go">hpfceventticket.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfeeditem.go">hpfeeditem.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfollow.go">hpfollow.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpigpost.go">hpigpost.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpmember.go">hpmember.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpsorthistory.go">hpsorthistory.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpviewhistory.go">hpviewhistory.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/testent.go">testent.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/user.go">user.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationlog.go">usernotificationlog.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationsetting.go">usernotificationsetting.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="Auth">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/auth.go?s=389:421#L6">Auth</a>
+				<a class="permalink" href="index.html#Auth">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Auth holds the schema definition for the Auth entity.
+
+			<pre>type Auth struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Auth.Annotations">func (Auth) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/auth.go?s=1607:1652#L51">Annotations</a>
+					<a class="permalink" href="index.html#Auth.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Auth">Auth</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Auth.Edges">func (Auth) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/auth.go?s=1419:1449#L42">Edges</a>
+					<a class="permalink" href="index.html#Auth.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Auth">Auth</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Auth.Fields">func (Auth) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/auth.go?s=630:662#L22">Fields</a>
+					<a class="permalink" href="index.html#Auth.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Auth">Auth</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Auth.Indexes">func (Auth) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/auth.go?s=423:456#L10">Indexes</a>
+					<a class="permalink" href="index.html#Auth.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Auth">Auth</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Auth.Mixin">func (Auth) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/auth.go?s=548:579#L16">Mixin</a>
+					<a class="permalink" href="index.html#Auth.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Auth">Auth</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Auth.Policy">func (Auth) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/auth.go?s=1688:1719#L55">Policy</a>
+					<a class="permalink" href="index.html#Auth.Policy">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#Auth">Auth</a>) Policy() <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Policy">Policy</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPAmebloPost">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpameblopost.go?s=312:352#L3">HPAmebloPost</a>
+				<a class="permalink" href="index.html#HPAmebloPost">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPAmebloPost holds the schema definition for the HPAmebloPost entity.
+
+			<pre>type HPAmebloPost struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPAmebloPost.Edges">func (HPAmebloPost) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpameblopost.go?s=1409:1447#L40">Edges</a>
+					<a class="permalink" href="index.html#HPAmebloPost.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPAmebloPost">HPAmebloPost</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				<p>Edges of the HPAmebloPost.
+
+				
+				
+				
+			
+				
+				<h3 id="HPAmebloPost.Fields">func (HPAmebloPost) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpameblopost.go?s=494:534#L15">Fields</a>
+					<a class="permalink" href="index.html#HPAmebloPost.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPAmebloPost">HPAmebloPost</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the HPAmebloPost.
+
+				
+				
+				
+			
+				
+				<h3 id="HPAmebloPost.Hooks">func (HPAmebloPost) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpameblopost.go?s=2029:2067#L63">Hooks</a>
+					<a class="permalink" href="index.html#HPAmebloPost.Hooks">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPAmebloPost">HPAmebloPost</a>) Hooks() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Hook">Hook</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPAmebloPost.Mixin">func (HPAmebloPost) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpameblopost.go?s=354:393#L7">Mixin</a>
+					<a class="permalink" href="index.html#HPAmebloPost.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPAmebloPost">HPAmebloPost</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPArtist">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpartist.go?s=317:353#L4">HPArtist</a>
+				<a class="permalink" href="index.html#HPArtist">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPArtist holds the schema definition for the HPArtist entity.
+
+			<pre>type HPArtist struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPArtist.Annotations">func (HPArtist) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpartist.go?s=2058:2107#L67">Annotations</a>
+					<a class="permalink" href="index.html#HPArtist.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPArtist">HPArtist</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPArtist.Edges">func (HPArtist) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpartist.go?s=699:733#L26">Edges</a>
+					<a class="permalink" href="index.html#HPArtist.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPArtist">HPArtist</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				<p>Edges of the HPArtist.
+
+				
+				
+				
+			
+				
+				<h3 id="HPArtist.Fields">func (HPArtist) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpartist.go?s=487:523#L16">Fields</a>
+					<a class="permalink" href="index.html#HPArtist.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPArtist">HPArtist</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the HPArtist.
+
+				
+				
+				
+			
+				
+				<h3 id="HPArtist.Mixin">func (HPArtist) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpartist.go?s=355:390#L8">Mixin</a>
+					<a class="permalink" href="index.html#HPArtist.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPArtist">HPArtist</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPArtist.Policy">func (HPArtist) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpartist.go?s=2143:2178#L71">Policy</a>
+					<a class="permalink" href="index.html#HPArtist.Policy">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPArtist">HPArtist</a>) Policy() <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Policy">Policy</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPAsset">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpasset.go?s=294:329#L4">HPAsset</a>
+				<a class="permalink" href="index.html#HPAsset">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPAsset holds the schema definition for the HPAsset entity.
+
+			<pre>type HPAsset struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPAsset.Annotations">func (HPAsset) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpasset.go?s=1013:1061#L40">Annotations</a>
+					<a class="permalink" href="index.html#HPAsset.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPAsset">HPAsset</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPAsset.Edges">func (HPAsset) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpasset.go?s=642:675#L23">Edges</a>
+					<a class="permalink" href="index.html#HPAsset.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPAsset">HPAsset</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				<p>Edges of the HPAsset.
+
+				
+				
+				
+			
+				
+				<h3 id="HPAsset.Fields">func (HPAsset) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpasset.go?s=469:504#L15">Fields</a>
+					<a class="permalink" href="index.html#HPAsset.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPAsset">HPAsset</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the HPAsset.
+
+				
+				
+				
+			
+				
+				<h3 id="HPAsset.Indexes">func (HPAsset) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpasset.go?s=331:367#L8">Indexes</a>
+					<a class="permalink" href="index.html#HPAsset.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPAsset">HPAsset</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPBlob">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpblob.go?s=376:410#L5">HPBlob</a>
+				<a class="permalink" href="index.html#HPBlob">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPBlob holds the schema definition for the HPBlob entity.
+
+			<pre>type HPBlob struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPBlob.Edges">func (HPBlob) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpblob.go?s=1791:1823#L54">Edges</a>
+					<a class="permalink" href="index.html#HPBlob.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPBlob">HPBlob</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				<p>Edges of the HPBlob.
+
+				
+				
+				
+			
+				
+				<h3 id="HPBlob.Fields">func (HPBlob) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpblob.go?s=618:652#L22">Fields</a>
+					<a class="permalink" href="index.html#HPBlob.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPBlob">HPBlob</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the HPBlob.
+
+				
+				
+				
+			
+				
+				<h3 id="HPBlob.Indexes">func (HPBlob) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpblob.go?s=496:531#L15">Indexes</a>
+					<a class="permalink" href="index.html#HPBlob.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPBlob">HPBlob</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPBlob.Mixin">func (HPBlob) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpblob.go?s=412:445#L9">Mixin</a>
+					<a class="permalink" href="index.html#HPBlob.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPBlob">HPBlob</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPElineupMallItem">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpelineupmallitem.go?s=371:416#L4">HPElineupMallItem</a>
+				<a class="permalink" href="index.html#HPElineupMallItem">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPElineupMallItem holds the schema definition for the HPElineupMallItem entity.
+
+			<pre>type HPElineupMallItem struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPElineupMallItem.Edges">func (HPElineupMallItem) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpelineupmallitem.go?s=1334:1377#L44">Edges</a>
+					<a class="permalink" href="index.html#HPElineupMallItem.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPElineupMallItem">HPElineupMallItem</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				<p>Edges of the HPElineupMallItem.
+
+				
+				
+				
+			
+				
+				<h3 id="HPElineupMallItem.Fields">func (HPElineupMallItem) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpelineupmallitem.go?s=718:763#L24">Fields</a>
+					<a class="permalink" href="index.html#HPElineupMallItem.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPElineupMallItem">HPElineupMallItem</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the HPElineupMallItem.
+
+				
+				
+				
+			
+				
+				<h3 id="HPElineupMallItem.Indexes">func (HPElineupMallItem) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpelineupmallitem.go?s=532:578#L15">Indexes</a>
+					<a class="permalink" href="index.html#HPElineupMallItem.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPElineupMallItem">HPElineupMallItem</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPElineupMallItem.Mixin">func (HPElineupMallItem) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpelineupmallitem.go?s=418:462#L8">Mixin</a>
+					<a class="permalink" href="index.html#HPElineupMallItem.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPElineupMallItem">HPElineupMallItem</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPEvent">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpevent.go?s=345:380#L5">HPEvent</a>
+				<a class="permalink" href="index.html#HPEvent">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPEvent holds the schema definition for the HPEvent entity.
+
+			<pre>type HPEvent struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPEvent.Annotations">func (HPEvent) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpevent.go?s=1611:1659#L56">Annotations</a>
+					<a class="permalink" href="index.html#HPEvent.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPEvent">HPEvent</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPEvent.Edges">func (HPEvent) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpevent.go?s=1242:1275#L41">Edges</a>
+					<a class="permalink" href="index.html#HPEvent.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPEvent">HPEvent</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				<p>Edges of the HPEvent.
+
+				
+				
+				
+			
+				
+				<h3 id="HPEvent.Fields">func (HPEvent) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpevent.go?s=595:630#L23">Fields</a>
+					<a class="permalink" href="index.html#HPEvent.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPEvent">HPEvent</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the HPEvent.
+
+				
+				
+				
+			
+				
+				<h3 id="HPEvent.Indexes">func (HPEvent) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpevent.go?s=467:503#L15">Indexes</a>
+					<a class="permalink" href="index.html#HPEvent.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPEvent">HPEvent</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPEvent.Mixin">func (HPEvent) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpevent.go?s=382:416#L9">Mixin</a>
+					<a class="permalink" href="index.html#HPEvent.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPEvent">HPEvent</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFCEventTicket">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfceventticket.go?s=566:609#L8">HPFCEventTicket</a>
+				<a class="permalink" href="index.html#HPFCEventTicket">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPFCEventTicket schema defines the FC event ticket submission status.
+Each record row holds the status of event application of each user / occurrence
+
+			<pre>type HPFCEventTicket struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFCEventTicket.Edges">func (HPFCEventTicket) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfceventticket.go?s=2039:2080#L52">Edges</a>
+					<a class="permalink" href="index.html#HPFCEventTicket.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFCEventTicket">HPFCEventTicket</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				<p>Edges of the HPFCEventTicket.
+
+				
+				
+				
+			
+				
+				<h3 id="HPFCEventTicket.Fields">func (HPFCEventTicket) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfceventticket.go?s=844:887#L25">Fields</a>
+					<a class="permalink" href="index.html#HPFCEventTicket.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFCEventTicket">HPFCEventTicket</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the HPFCEventTicket.
+
+				
+				
+				
+			
+				
+				<h3 id="HPFCEventTicket.Indexes">func (HPFCEventTicket) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfceventticket.go?s=704:748#L18">Indexes</a>
+					<a class="permalink" href="index.html#HPFCEventTicket.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFCEventTicket">HPFCEventTicket</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPFCEventTicket.Mixin">func (HPFCEventTicket) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfceventticket.go?s=611:653#L12">Mixin</a>
+					<a class="permalink" href="index.html#HPFCEventTicket.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFCEventTicket">HPFCEventTicket</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPFCEventTicket.Policy">func (HPFCEventTicket) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfceventticket.go?s=2485:2527#L69">Policy</a>
+					<a class="permalink" href="index.html#HPFCEventTicket.Policy">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFCEventTicket">HPFCEventTicket</a>) Policy() <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Policy">Policy</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFeedItem">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfeeditem.go?s=338:376#L5">HPFeedItem</a>
+				<a class="permalink" href="index.html#HPFeedItem">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPFeedItem struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFeedItem.Annotations">func (HPFeedItem) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfeeditem.go?s=1819:1870#L62">Annotations</a>
+					<a class="permalink" href="index.html#HPFeedItem.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFeedItem">HPFeedItem</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPFeedItem.Edges">func (HPFeedItem) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfeeditem.go?s=1227:1263#L40">Edges</a>
+					<a class="permalink" href="index.html#HPFeedItem.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFeedItem">HPFeedItem</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPFeedItem.Fields">func (HPFeedItem) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfeeditem.go?s=689:727#L23">Fields</a>
+					<a class="permalink" href="index.html#HPFeedItem.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFeedItem">HPFeedItem</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the HPFeedItem.
+
+				
+				
+				
+			
+				
+				<h3 id="HPFeedItem.Hooks">func (HPFeedItem) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfeeditem.go?s=1936:1972#L68">Hooks</a>
+					<a class="permalink" href="index.html#HPFeedItem.Hooks">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFeedItem">HPFeedItem</a>) Hooks() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Hook">Hook</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPFeedItem.Indexes">func (HPFeedItem) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfeeditem.go?s=465:504#L14">Indexes</a>
+					<a class="permalink" href="index.html#HPFeedItem.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFeedItem">HPFeedItem</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPFeedItem.Mixin">func (HPFeedItem) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfeeditem.go?s=378:415#L9">Mixin</a>
+					<a class="permalink" href="index.html#HPFeedItem.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFeedItem">HPFeedItem</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFollow">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfollow.go?s=338:374#L4">HPFollow</a>
+				<a class="permalink" href="index.html#HPFollow">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPFollow holds follower-followee relationship between User and HPMember
+
+			<pre>type HPFollow struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFollow.Edges">func (HPFollow) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfollow.go?s=799:833#L29">Edges</a>
+					<a class="permalink" href="index.html#HPFollow.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFollow">HPFollow</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPFollow.Fields">func (HPFollow) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfollow.go?s=596:632#L21">Fields</a>
+					<a class="permalink" href="index.html#HPFollow.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFollow">HPFollow</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPFollow.Indexes">func (HPFollow) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfollow.go?s=376:413#L8">Indexes</a>
+					<a class="permalink" href="index.html#HPFollow.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFollow">HPFollow</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPFollow.Mixin">func (HPFollow) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpfollow.go?s=510:545#L15">Mixin</a>
+					<a class="permalink" href="index.html#HPFollow.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPFollow">HPFollow</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPIgPost">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpigpost.go?s=289:325#L4">HPIgPost</a>
+				<a class="permalink" href="index.html#HPIgPost">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPIgPost struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPIgPost.Annotations">func (HPIgPost) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpigpost.go?s=1611:1660#L58">Annotations</a>
+					<a class="permalink" href="index.html#HPIgPost.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPIgPost">HPIgPost</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPIgPost.Edges">func (HPIgPost) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpigpost.go?s=955:989#L32">Edges</a>
+					<a class="permalink" href="index.html#HPIgPost.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPIgPost">HPIgPost</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPIgPost.Fields">func (HPIgPost) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpigpost.go?s=459:495#L16">Fields</a>
+					<a class="permalink" href="index.html#HPIgPost.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPIgPost">HPIgPost</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the HPIgPost.
+
+				
+				
+				
+			
+				
+				<h3 id="HPIgPost.Hooks">func (HPIgPost) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpigpost.go?s=1550:1584#L54">Hooks</a>
+					<a class="permalink" href="index.html#HPIgPost.Hooks">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPIgPost">HPIgPost</a>) Hooks() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Hook">Hook</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPIgPost.Mixin">func (HPIgPost) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpigpost.go?s=327:362#L8">Mixin</a>
+					<a class="permalink" href="index.html#HPIgPost.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPIgPost">HPIgPost</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPMember">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpmember.go?s=317:353#L4">HPMember</a>
+				<a class="permalink" href="index.html#HPMember">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPMember holds the schema definition for the HPMember entity.
+
+			<pre>type HPMember struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPMember.Annotations">func (HPMember) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpmember.go?s=2322:2371#L78">Annotations</a>
+					<a class="permalink" href="index.html#HPMember.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPMember">HPMember</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPMember.Edges">func (HPMember) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpmember.go?s=995:1029#L34">Edges</a>
+					<a class="permalink" href="index.html#HPMember.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPMember">HPMember</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				<p>Edges of the HPMember.
+
+				
+				
+				
+			
+				
+				<h3 id="HPMember.Fields">func (HPMember) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpmember.go?s=487:523#L16">Fields</a>
+					<a class="permalink" href="index.html#HPMember.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPMember">HPMember</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the HPMember.
+
+				
+				
+				
+			
+				
+				<h3 id="HPMember.Mixin">func (HPMember) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpmember.go?s=355:390#L8">Mixin</a>
+					<a class="permalink" href="index.html#HPMember.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPMember">HPMember</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPMember.Policy">func (HPMember) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpmember.go?s=2437:2472#L84">Policy</a>
+					<a class="permalink" href="index.html#HPMember.Policy">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPMember">HPMember</a>) Policy() <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Policy">Policy</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPSortHistory">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpsorthistory.go?s=492:533#L7">HPSortHistory</a>
+				<a class="permalink" href="index.html#HPSortHistory">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPSortHistory holds the schema definition for the historical records for HPSort
+
+			<pre>type HPSortHistory struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPSortHistory.Annotations">func (HPSortHistory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpsorthistory.go?s=1240:1294#L40">Annotations</a>
+					<a class="permalink" href="index.html#HPSortHistory.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPSortHistory">HPSortHistory</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPSortHistory.Edges">func (HPSortHistory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpsorthistory.go?s=1073:1112#L31">Edges</a>
+					<a class="permalink" href="index.html#HPSortHistory.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPSortHistory">HPSortHistory</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				<p>Edges of the HPSortHistory.
+
+				
+				
+				
+			
+				
+				<h3 id="HPSortHistory.Fields">func (HPSortHistory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpsorthistory.go?s=658:699#L18">Fields</a>
+					<a class="permalink" href="index.html#HPSortHistory.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPSortHistory">HPSortHistory</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the HPSortHistory.
+
+				
+				
+				
+			
+				
+				<h3 id="HPSortHistory.Mixin">func (HPSortHistory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpsorthistory.go?s=535:575#L11">Mixin</a>
+					<a class="permalink" href="index.html#HPSortHistory.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPSortHistory">HPSortHistory</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPSortHistory.Policy">func (HPSortHistory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpsorthistory.go?s=1360:1400#L46">Policy</a>
+					<a class="permalink" href="index.html#HPSortHistory.Policy">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPSortHistory">HPSortHistory</a>) Policy() <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Policy">Policy</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPViewHistory">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpviewhistory.go?s=523:564#L8">HPViewHistory</a>
+				<a class="permalink" href="index.html#HPViewHistory">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPViewHistory holds the schema definition for the historical records for contents read
+
+			<pre>type HPViewHistory struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPViewHistory.Annotations">func (HPViewHistory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpviewhistory.go?s=1742:1796#L58">Annotations</a>
+					<a class="permalink" href="index.html#HPViewHistory.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPViewHistory">HPViewHistory</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPViewHistory.Edges">func (HPViewHistory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpviewhistory.go?s=1401:1440#L44">Edges</a>
+					<a class="permalink" href="index.html#HPViewHistory.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPViewHistory">HPViewHistory</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				<p>Edges of the HPViewHistory.
+
+				
+				
+				
+			
+				
+				<h3 id="HPViewHistory.Fields">func (HPViewHistory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpviewhistory.go?s=875:916#L29">Fields</a>
+					<a class="permalink" href="index.html#HPViewHistory.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPViewHistory">HPViewHistory</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the HPViewHistory.
+
+				
+				
+				
+			
+				
+				<h3 id="HPViewHistory.Indexes">func (HPViewHistory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpviewhistory.go?s=566:608#L12">Indexes</a>
+					<a class="permalink" href="index.html#HPViewHistory.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPViewHistory">HPViewHistory</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPViewHistory.Mixin">func (HPViewHistory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpviewhistory.go?s=752:792#L22">Mixin</a>
+					<a class="permalink" href="index.html#HPViewHistory.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPViewHistory">HPViewHistory</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="HPViewHistory.Policy">func (HPViewHistory) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/hpviewhistory.go?s=1862:1902#L64">Policy</a>
+					<a class="permalink" href="index.html#HPViewHistory.Policy">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#HPViewHistory">HPViewHistory</a>) Policy() <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Policy">Policy</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TestEnt">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/testent.go?s=307:342#L5">TestEnt</a>
+				<a class="permalink" href="index.html#TestEnt">&#xb6;</a>
+				
+				
+			</h2>
+			<p>TestEnt is a test table to implement tests for ent related stuff
+
+			<pre>type TestEnt struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TestEnt.Annotations">func (TestEnt) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/testent.go?s=1497:1545#L40">Annotations</a>
+					<a class="permalink" href="index.html#TestEnt.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#TestEnt">TestEnt</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="TestEnt.Edges">func (TestEnt) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/testent.go?s=1437:1470#L36">Edges</a>
+					<a class="permalink" href="index.html#TestEnt.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#TestEnt">TestEnt</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				<p>Edges of the TestEnt.
+
+				
+				
+				
+			
+				
+				<h3 id="TestEnt.Fields">func (TestEnt) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/testent.go?s=456:491#L15">Fields</a>
+					<a class="permalink" href="index.html#TestEnt.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#TestEnt">TestEnt</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the TestEnt.
+
+				
+				
+				
+			
+				
+				<h3 id="TestEnt.Mixin">func (TestEnt) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/testent.go?s=368:402#L10">Mixin</a>
+					<a class="permalink" href="index.html#TestEnt.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#TestEnt">TestEnt</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				<p>Mixin of the TestEnt
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="User">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/user.go?s=509:541#L12">User</a>
+				<a class="permalink" href="index.html#User">&#xb6;</a>
+				
+				
+			</h2>
+			<p>User holds the schema definition for the User entity.
+
+			<pre>type User struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="User.Annotations">func (User) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/user.go?s=1950:1995#L61">Annotations</a>
+					<a class="permalink" href="index.html#User.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#User">User</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="User.Edges">func (User) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/user.go?s=947:977#L32">Edges</a>
+					<a class="permalink" href="index.html#User.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#User">User</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				<p>Edges of the User.
+
+				
+				
+				
+			
+				
+				<h3 id="User.Fields">func (User) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/user.go?s=669:701#L24">Fields</a>
+					<a class="permalink" href="index.html#User.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#User">User</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				<p>Fields of the User.
+
+				
+				
+				
+			
+				
+				<h3 id="User.Mixin">func (User) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/user.go?s=564:595#L17">Mixin</a>
+					<a class="permalink" href="index.html#User.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#User">User</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				<p>Mixin of the User
+
+				
+				
+				
+			
+				
+				<h3 id="User.Policy">func (User) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/user.go?s=2031:2062#L65">Policy</a>
+					<a class="permalink" href="index.html#User.Policy">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#User">User</a>) Policy() <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Policy">Policy</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UserNotificationLog">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationlog.go?s=425:472#L6">UserNotificationLog</a>
+				<a class="permalink" href="index.html#UserNotificationLog">&#xb6;</a>
+				
+				
+			</h2>
+			<p>UserNotificationLog holds the schema definition for the UserNotificationLog entity.
+
+			<pre>type UserNotificationLog struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserNotificationLog.Annotations">func (UserNotificationLog) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationlog.go?s=1773:1833#L40">Annotations</a>
+					<a class="permalink" href="index.html#UserNotificationLog.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UserNotificationLog">UserNotificationLog</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserNotificationLog.Edges">func (UserNotificationLog) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationlog.go?s=1645:1690#L34">Edges</a>
+					<a class="permalink" href="index.html#UserNotificationLog.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UserNotificationLog">UserNotificationLog</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserNotificationLog.Fields">func (UserNotificationLog) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationlog.go?s=571:618#L16">Fields</a>
+					<a class="permalink" href="index.html#UserNotificationLog.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UserNotificationLog">UserNotificationLog</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserNotificationLog.Indexes">func (UserNotificationLog) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationlog.go?s=1524:1572#L28">Indexes</a>
+					<a class="permalink" href="index.html#UserNotificationLog.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UserNotificationLog">UserNotificationLog</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserNotificationLog.Mixin">func (UserNotificationLog) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationlog.go?s=474:520#L10">Mixin</a>
+					<a class="permalink" href="index.html#UserNotificationLog.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UserNotificationLog">UserNotificationLog</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UserNotificationSetting">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationsetting.go?s=427:478#L6">UserNotificationSetting</a>
+				<a class="permalink" href="index.html#UserNotificationSetting">&#xb6;</a>
+				
+				
+			</h2>
+			<p>UserNotificationSetting holds the schema definition for the UserNotificationSetting entity.
+
+			<pre>type UserNotificationSetting struct {
+    <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Schema">Schema</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserNotificationSetting.Annotations">func (UserNotificationSetting) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationsetting.go?s=2017:2081#L63">Annotations</a>
+					<a class="permalink" href="index.html#UserNotificationSetting.Annotations">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UserNotificationSetting">UserNotificationSetting</a>) Annotations() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/">schema</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/schema/#Annotation">Annotation</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserNotificationSetting.Edges">func (UserNotificationSetting) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationsetting.go?s=1579:1628#L42">Edges</a>
+					<a class="permalink" href="index.html#UserNotificationSetting.Edges">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UserNotificationSetting">UserNotificationSetting</a>) Edges() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Edge">Edge</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserNotificationSetting.Fields">func (UserNotificationSetting) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationsetting.go?s=581:632#L16">Fields</a>
+					<a class="permalink" href="index.html#UserNotificationSetting.Fields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UserNotificationSetting">UserNotificationSetting</a>) Fields() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Field">Field</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserNotificationSetting.Indexes">func (UserNotificationSetting) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationsetting.go?s=1458:1510#L36">Indexes</a>
+					<a class="permalink" href="index.html#UserNotificationSetting.Indexes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UserNotificationSetting">UserNotificationSetting</a>) Indexes() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Index">Index</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserNotificationSetting.Mixin">func (UserNotificationSetting) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationsetting.go?s=480:530#L10">Mixin</a>
+					<a class="permalink" href="index.html#UserNotificationSetting.Mixin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UserNotificationSetting">UserNotificationSetting</a>) Mixin() []<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Mixin">Mixin</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserNotificationSetting.Policy">func (UserNotificationSetting) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/usernotificationsetting.go?s=1844:1894#L54">Policy</a>
+					<a class="permalink" href="index.html#UserNotificationSetting.Policy">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UserNotificationSetting">UserNotificationSetting</a>) Policy() <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Policy">Policy</a></pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+	
+	
+		<h2 id="pkg-subdirectories">Subdirectories</h2>
+	
+	<div class="pkg-dir">
+		<table>
+			<tr>
+				<th class="pkg-name">Name</th>
+				<th class="pkg-synopsis">Synopsis</th>
+			</tr>
+
+			
+			<tr>
+				<td colspan="2"><a href="../index.html">..</a></td>
+			</tr>
+			
+
+			
+				<tr>
+				
+					<td class="pkg-name" style="padding-left: 0px;">
+						<a href="enums/index.html">enums</a>
+					</td>
+				
+					<td class="pkg-synopsis">
+						
+					</td>
+				</tr>
+			
+				<tr>
+				
+					<td class="pkg-name" style="padding-left: 0px;">
+						<a href="jsonfields/index.html">jsonfields</a>
+					</td>
+				
+					<td class="pkg-synopsis">
+						
+					</td>
+				</tr>
+			
+				<tr>
+				
+					<td class="pkg-name" style="padding-left: 0px;">
+						<a href="mixin/index.html">mixin</a>
+					</td>
+				
+					<td class="pkg-synopsis">
+						
+					</td>
+				</tr>
+			
+		</table>
+	</div>
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

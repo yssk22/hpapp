@@ -1,0 +1,2743 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>hpfeeditem - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package hpfeeditem
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/ent/hpfeeditem"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#And">func And(predicates ...predicate.HPFeedItem) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeEQ">func AssetTypeEQ(v enums.HPAssetType) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeIn">func AssetTypeIn(vs ...enums.HPAssetType) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeNEQ">func AssetTypeNEQ(v enums.HPAssetType) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeNotIn">func AssetTypeNotIn(vs ...enums.HPAssetType) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#AssetTypeValidator">func AssetTypeValidator(at enums.HPAssetType) error</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAt">func CreatedAt(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtEQ">func CreatedAtEQ(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtGT">func CreatedAtGT(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtGTE">func CreatedAtGTE(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtIn">func CreatedAtIn(vs ...time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtIsNil">func CreatedAtIsNil() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtLT">func CreatedAtLT(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtLTE">func CreatedAtLTE(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtNEQ">func CreatedAtNEQ(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtNotIn">func CreatedAtNotIn(vs ...time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#CreatedAtNotNil">func CreatedAtNotNil() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#HasOwnerArtist">func HasOwnerArtist() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#HasOwnerArtistWith">func HasOwnerArtistWith(preds ...predicate.HPArtist) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#HasOwnerMember">func HasOwnerMember() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#HasOwnerMemberWith">func HasOwnerMemberWith(preds ...predicate.HPMember) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#HasTaggedArtists">func HasTaggedArtists() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#HasTaggedArtistsWith">func HasTaggedArtistsWith(preds ...predicate.HPArtist) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#HasTaggedMembers">func HasTaggedMembers() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#HasTaggedMembersWith">func HasTaggedMembersWith(preds ...predicate.HPMember) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#HasViewHistories">func HasViewHistories() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#HasViewHistoriesWith">func HasViewHistoriesWith(preds ...predicate.HPViewHistory) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ID">func ID(id int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#IDEQ">func IDEQ(id int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#IDGT">func IDGT(id int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#IDGTE">func IDGTE(id int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#IDIn">func IDIn(ids ...int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#IDLT">func IDLT(id int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#IDLTE">func IDLTE(id int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#IDNEQ">func IDNEQ(id int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#IDNotIn">func IDNotIn(ids ...int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURL">func ImageURL(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLContains">func ImageURLContains(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLContainsFold">func ImageURLContainsFold(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLEQ">func ImageURLEQ(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLEqualFold">func ImageURLEqualFold(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLGT">func ImageURLGT(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLGTE">func ImageURLGTE(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLHasPrefix">func ImageURLHasPrefix(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLHasSuffix">func ImageURLHasSuffix(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLIn">func ImageURLIn(vs ...string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLIsNil">func ImageURLIsNil() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLLT">func ImageURLLT(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLLTE">func ImageURLLTE(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLNEQ">func ImageURLNEQ(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLNotIn">func ImageURLNotIn(vs ...string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ImageURLNotNil">func ImageURLNotNil() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#Not">func Not(p predicate.HPFeedItem) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#Or">func Or(predicates ...predicate.HPFeedItem) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistID">func OwnerArtistID(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistIDEQ">func OwnerArtistIDEQ(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistIDIn">func OwnerArtistIDIn(vs ...int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistIDIsNil">func OwnerArtistIDIsNil() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistIDNEQ">func OwnerArtistIDNEQ(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistIDNotIn">func OwnerArtistIDNotIn(vs ...int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerArtistIDNotNil">func OwnerArtistIDNotNil() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberID">func OwnerMemberID(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberIDEQ">func OwnerMemberIDEQ(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberIDIn">func OwnerMemberIDIn(vs ...int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberIDIsNil">func OwnerMemberIDIsNil() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberIDNEQ">func OwnerMemberIDNEQ(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberIDNotIn">func OwnerMemberIDNotIn(vs ...int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#OwnerMemberIDNotNil">func OwnerMemberIDNotNil() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#PostAt">func PostAt(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#PostAtEQ">func PostAtEQ(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#PostAtGT">func PostAtGT(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#PostAtGTE">func PostAtGTE(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#PostAtIn">func PostAtIn(vs ...time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#PostAtLT">func PostAtLT(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#PostAtLTE">func PostAtLTE(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#PostAtNEQ">func PostAtNEQ(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#PostAtNotIn">func PostAtNotIn(vs ...time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceID">func SourceID(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceIDEQ">func SourceIDEQ(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceIDGT">func SourceIDGT(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceIDGTE">func SourceIDGTE(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceIDIn">func SourceIDIn(vs ...int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceIDLT">func SourceIDLT(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceIDLTE">func SourceIDLTE(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceIDNEQ">func SourceIDNEQ(v int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceIDNotIn">func SourceIDNotIn(vs ...int) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURL">func SourceURL(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLContains">func SourceURLContains(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLContainsFold">func SourceURLContainsFold(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLEQ">func SourceURLEQ(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLEqualFold">func SourceURLEqualFold(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLGT">func SourceURLGT(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLGTE">func SourceURLGTE(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLHasPrefix">func SourceURLHasPrefix(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLHasSuffix">func SourceURLHasSuffix(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLIn">func SourceURLIn(vs ...string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLLT">func SourceURLLT(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLLTE">func SourceURLLTE(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLNEQ">func SourceURLNEQ(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#SourceURLNotIn">func SourceURLNotIn(vs ...string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#Title">func Title(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleContains">func TitleContains(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleContainsFold">func TitleContainsFold(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleEQ">func TitleEQ(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleEqualFold">func TitleEqualFold(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleGT">func TitleGT(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleGTE">func TitleGTE(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleHasPrefix">func TitleHasPrefix(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleHasSuffix">func TitleHasSuffix(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleIn">func TitleIn(vs ...string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleLT">func TitleLT(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleLTE">func TitleLTE(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleNEQ">func TitleNEQ(v string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#TitleNotIn">func TitleNotIn(vs ...string) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAt">func UpdatedAt(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtEQ">func UpdatedAtEQ(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtGT">func UpdatedAtGT(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtGTE">func UpdatedAtGTE(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtIn">func UpdatedAtIn(vs ...time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtIsNil">func UpdatedAtIsNil() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtLT">func UpdatedAtLT(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtLTE">func UpdatedAtLTE(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtNEQ">func UpdatedAtNEQ(v time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtNotIn">func UpdatedAtNotIn(vs ...time.Time) predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#UpdatedAtNotNil">func UpdatedAtNotNil() predicate.HPFeedItem</a></dd>
+			
+				
+				<dd><a href="index.html#ValidColumn">func ValidColumn(column string) bool</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Order">type Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByAssetType">func ByAssetType(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByCreatedAt">func ByCreatedAt(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByID">func ByID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByImageURL">func ByImageURL(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByOwnerArtistField">func ByOwnerArtistField(field string, opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByOwnerArtistID">func ByOwnerArtistID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByOwnerMemberField">func ByOwnerMemberField(field string, opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByOwnerMemberID">func ByOwnerMemberID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByPostAt">func ByPostAt(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#BySourceID">func BySourceID(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#BySourceURL">func BySourceURL(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByTaggedArtists">func ByTaggedArtists(term sql.OrderTerm, terms ...sql.OrderTerm) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByTaggedArtistsCount">func ByTaggedArtistsCount(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByTaggedMembers">func ByTaggedMembers(term sql.OrderTerm, terms ...sql.OrderTerm) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByTaggedMembersCount">func ByTaggedMembersCount(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByTitle">func ByTitle(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByUpdatedAt">func ByUpdatedAt(opts ...sql.OrderTermOption) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByViewHistories">func ByViewHistories(term sql.OrderTerm, terms ...sql.OrderTerm) Order</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ByViewHistoriesCount">func ByViewHistoriesCount(opts ...sql.OrderTermOption) Order</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go">hpfeeditem.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go">where.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span class="comment">// Label holds the string label denoting the hpfeeditem type in the database.</span>
+    <span id="Label">Label</span> = &#34;hp_feed_item&#34;
+    <span class="comment">// FieldID holds the string denoting the id field in the database.</span>
+    <span id="FieldID">FieldID</span> = &#34;id&#34;
+    <span class="comment">// FieldCreatedAt holds the string denoting the created_at field in the database.</span>
+    <span id="FieldCreatedAt">FieldCreatedAt</span> = &#34;created_at&#34;
+    <span class="comment">// FieldUpdatedAt holds the string denoting the updated_at field in the database.</span>
+    <span id="FieldUpdatedAt">FieldUpdatedAt</span> = &#34;updated_at&#34;
+    <span class="comment">// FieldSourceID holds the string denoting the source_id field in the database.</span>
+    <span id="FieldSourceID">FieldSourceID</span> = &#34;source_id&#34;
+    <span class="comment">// FieldAssetType holds the string denoting the asset_type field in the database.</span>
+    <span id="FieldAssetType">FieldAssetType</span> = &#34;asset_type&#34;
+    <span class="comment">// FieldTitle holds the string denoting the title field in the database.</span>
+    <span id="FieldTitle">FieldTitle</span> = &#34;title&#34;
+    <span class="comment">// FieldPostAt holds the string denoting the post_at field in the database.</span>
+    <span id="FieldPostAt">FieldPostAt</span> = &#34;post_at&#34;
+    <span class="comment">// FieldSourceURL holds the string denoting the source_url field in the database.</span>
+    <span id="FieldSourceURL">FieldSourceURL</span> = &#34;source_url&#34;
+    <span class="comment">// FieldImageURL holds the string denoting the image_url field in the database.</span>
+    <span id="FieldImageURL">FieldImageURL</span> = &#34;image_url&#34;
+    <span class="comment">// FieldMedia holds the string denoting the media field in the database.</span>
+    <span id="FieldMedia">FieldMedia</span> = &#34;media&#34;
+    <span class="comment">// FieldOwnerArtistID holds the string denoting the owner_artist_id field in the database.</span>
+    <span id="FieldOwnerArtistID">FieldOwnerArtistID</span> = &#34;owner_artist_id&#34;
+    <span class="comment">// FieldOwnerMemberID holds the string denoting the owner_member_id field in the database.</span>
+    <span id="FieldOwnerMemberID">FieldOwnerMemberID</span> = &#34;owner_member_id&#34;
+    <span class="comment">// EdgeViewHistories holds the string denoting the view_histories edge name in mutations.</span>
+    <span id="EdgeViewHistories">EdgeViewHistories</span> = &#34;view_histories&#34;
+    <span class="comment">// EdgeOwnerArtist holds the string denoting the owner_artist edge name in mutations.</span>
+    <span id="EdgeOwnerArtist">EdgeOwnerArtist</span> = &#34;owner_artist&#34;
+    <span class="comment">// EdgeOwnerMember holds the string denoting the owner_member edge name in mutations.</span>
+    <span id="EdgeOwnerMember">EdgeOwnerMember</span> = &#34;owner_member&#34;
+    <span class="comment">// EdgeTaggedArtists holds the string denoting the tagged_artists edge name in mutations.</span>
+    <span id="EdgeTaggedArtists">EdgeTaggedArtists</span> = &#34;tagged_artists&#34;
+    <span class="comment">// EdgeTaggedMembers holds the string denoting the tagged_members edge name in mutations.</span>
+    <span id="EdgeTaggedMembers">EdgeTaggedMembers</span> = &#34;tagged_members&#34;
+    <span class="comment">// Table holds the table name of the hpfeeditem in the database.</span>
+    <span id="Table">Table</span> = &#34;hp_feed_items&#34;
+    <span class="comment">// ViewHistoriesTable is the table that holds the view_histories relation/edge.</span>
+    <span id="ViewHistoriesTable">ViewHistoriesTable</span> = &#34;hp_view_histories&#34;
+    <span class="comment">// ViewHistoriesInverseTable is the table name for the HPViewHistory entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpviewhistory&#34; package.</span>
+    <span id="ViewHistoriesInverseTable">ViewHistoriesInverseTable</span> = &#34;hp_view_histories&#34;
+    <span class="comment">// ViewHistoriesColumn is the table column denoting the view_histories relation/edge.</span>
+    <span id="ViewHistoriesColumn">ViewHistoriesColumn</span> = &#34;hp_feed_item_view_histories&#34;
+    <span class="comment">// OwnerArtistTable is the table that holds the owner_artist relation/edge.</span>
+    <span id="OwnerArtistTable">OwnerArtistTable</span> = &#34;hp_feed_items&#34;
+    <span class="comment">// OwnerArtistInverseTable is the table name for the HPArtist entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpartist&#34; package.</span>
+    <span id="OwnerArtistInverseTable">OwnerArtistInverseTable</span> = &#34;hp_artists&#34;
+    <span class="comment">// OwnerArtistColumn is the table column denoting the owner_artist relation/edge.</span>
+    <span id="OwnerArtistColumn">OwnerArtistColumn</span> = &#34;owner_artist_id&#34;
+    <span class="comment">// OwnerMemberTable is the table that holds the owner_member relation/edge.</span>
+    <span id="OwnerMemberTable">OwnerMemberTable</span> = &#34;hp_feed_items&#34;
+    <span class="comment">// OwnerMemberInverseTable is the table name for the HPMember entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpmember&#34; package.</span>
+    <span id="OwnerMemberInverseTable">OwnerMemberInverseTable</span> = &#34;hp_members&#34;
+    <span class="comment">// OwnerMemberColumn is the table column denoting the owner_member relation/edge.</span>
+    <span id="OwnerMemberColumn">OwnerMemberColumn</span> = &#34;owner_member_id&#34;
+    <span class="comment">// TaggedArtistsTable is the table that holds the tagged_artists relation/edge. The primary key declared below.</span>
+    <span id="TaggedArtistsTable">TaggedArtistsTable</span> = &#34;hp_artist_feed&#34;
+    <span class="comment">// TaggedArtistsInverseTable is the table name for the HPArtist entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpartist&#34; package.</span>
+    <span id="TaggedArtistsInverseTable">TaggedArtistsInverseTable</span> = &#34;hp_artists&#34;
+    <span class="comment">// TaggedMembersTable is the table that holds the tagged_members relation/edge. The primary key declared below.</span>
+    <span id="TaggedMembersTable">TaggedMembersTable</span> = &#34;hp_member_feed&#34;
+    <span class="comment">// TaggedMembersInverseTable is the table name for the HPMember entity.</span>
+    <span class="comment">// It exists in this package in order to avoid circular dependency with the &#34;hpmember&#34; package.</span>
+    <span id="TaggedMembersInverseTable">TaggedMembersInverseTable</span> = &#34;hp_members&#34;
+)</pre>
+			
+				
+				<pre>const <span id="DefaultAssetType">DefaultAssetType</span> <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a> = &#34;ameblo&#34;</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var (
+    <span class="comment">// TaggedArtistsPrimaryKey and TaggedArtistsColumn2 are the table columns denoting the</span>
+    <span class="comment">// primary key for the tagged_artists relation (M2M).</span>
+    <span id="TaggedArtistsPrimaryKey">TaggedArtistsPrimaryKey</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{&#34;hp_artist_id&#34;, &#34;hp_feed_item_id&#34;}
+    <span class="comment">// TaggedMembersPrimaryKey and TaggedMembersColumn2 are the table columns denoting the</span>
+    <span class="comment">// primary key for the tagged_members relation (M2M).</span>
+    <span id="TaggedMembersPrimaryKey">TaggedMembersPrimaryKey</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{&#34;hp_member_id&#34;, &#34;hp_feed_item_id&#34;}
+)</pre>
+			
+				<p>Columns holds all SQL columns for hpfeeditem fields.
+
+				<pre>var <span id="Columns">Columns</span> = []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>{
+    <a href="index.html#FieldID">FieldID</a>,
+    <a href="index.html#FieldCreatedAt">FieldCreatedAt</a>,
+    <a href="index.html#FieldUpdatedAt">FieldUpdatedAt</a>,
+    <a href="index.html#FieldSourceID">FieldSourceID</a>,
+    <a href="index.html#FieldAssetType">FieldAssetType</a>,
+    <a href="index.html#FieldTitle">FieldTitle</a>,
+    <a href="index.html#FieldPostAt">FieldPostAt</a>,
+    <a href="index.html#FieldSourceURL">FieldSourceURL</a>,
+    <a href="index.html#FieldImageURL">FieldImageURL</a>,
+    <a href="index.html#FieldMedia">FieldMedia</a>,
+    <a href="index.html#FieldOwnerArtistID">FieldOwnerArtistID</a>,
+    <a href="index.html#FieldOwnerMemberID">FieldOwnerMemberID</a>,
+}</pre>
+			
+				<p>Note that the variables below are initialized by the runtime
+package on the initialization of the application. Therefore,
+it should be imported in the main as follows:
+<pre>import _ &quot;github.com/yssk22/hpapp/go/service/ent/runtime&quot;
+</pre>
+
+				<pre>var (
+    <span id="Hooks">Hooks</span> [1]<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/">ent</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/#Hook">Hook</a>
+)</pre>
+			
+		
+		
+			
+			
+			<h2 id="And">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=25175:25240#L685">And</a>
+				<a class="permalink" href="index.html#And">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func And(predicates ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>And groups predicates with the AND operator between them.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=8829:8887#L235">AssetTypeEQ</a>
+				<a class="permalink" href="index.html#AssetTypeEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>AssetTypeEQ applies the EQ predicate on the &quot;asset_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=9237:9299#L247">AssetTypeIn</a>
+				<a class="permalink" href="index.html#AssetTypeIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>AssetTypeIn applies the In predicate on the &quot;asset_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=9033:9092#L241">AssetTypeNEQ</a>
+				<a class="permalink" href="index.html#AssetTypeNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeNEQ(v <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>AssetTypeNEQ applies the NEQ predicate on the &quot;asset_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=9507:9572#L256">AssetTypeNotIn</a>
+				<a class="permalink" href="index.html#AssetTypeNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeNotIn(vs ...<a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>AssetTypeNotIn applies the NotIn predicate on the &quot;asset_type&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="AssetTypeValidator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=5874:5925#L124">AssetTypeValidator</a>
+				<a class="permalink" href="index.html#AssetTypeValidator">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func AssetTypeValidator(at <a href="../../schema/enums/index.html">enums</a>.<a href="../../schema/enums/index.html#HPAssetType">HPAssetType</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			<p>AssetTypeValidator is a validator for the &quot;asset_type&quot; field enum values. It is called by the builders before save.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=1730:1778#L50">CreatedAt</a>
+				<a class="permalink" href="index.html#CreatedAt">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAt(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>CreatedAt applies equality check predicate on the &quot;created_at&quot; field. It&apos;s identical to CreatedAtEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=3633:3683#L95">CreatedAtEQ</a>
+				<a class="permalink" href="index.html#CreatedAtEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>CreatedAtEQ applies the EQ predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=4401:4451#L115">CreatedAtGT</a>
+				<a class="permalink" href="index.html#CreatedAtGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>CreatedAtGT applies the GT predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=4587:4638#L120">CreatedAtGTE</a>
+				<a class="permalink" href="index.html#CreatedAtGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>CreatedAtGTE applies the GTE predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=4005:4059#L105">CreatedAtIn</a>
+				<a class="permalink" href="index.html#CreatedAtIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>CreatedAtIn applies the In predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=5151:5193#L135">CreatedAtIsNil</a>
+				<a class="permalink" href="index.html#CreatedAtIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>CreatedAtIsNil applies the IsNil predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=4773:4823#L125">CreatedAtLT</a>
+				<a class="permalink" href="index.html#CreatedAtLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>CreatedAtLT applies the LT predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=4959:5010#L130">CreatedAtLTE</a>
+				<a class="permalink" href="index.html#CreatedAtLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>CreatedAtLTE applies the LTE predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=3819:3870#L100">CreatedAtNEQ</a>
+				<a class="permalink" href="index.html#CreatedAtNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>CreatedAtNEQ applies the NEQ predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=4203:4260#L110">CreatedAtNotIn</a>
+				<a class="permalink" href="index.html#CreatedAtNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>CreatedAtNotIn applies the NotIn predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="CreatedAtNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=5336:5379#L140">CreatedAtNotNil</a>
+				<a class="permalink" href="index.html#CreatedAtNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CreatedAtNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>CreatedAtNotNil applies the NotNil predicate on the &quot;created_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasOwnerArtist">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=22124:22166#L593">HasOwnerArtist</a>
+				<a class="permalink" href="index.html#HasOwnerArtist">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasOwnerArtist() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>HasOwnerArtist applies the HasEdge predicate on the &quot;owner_artist&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasOwnerArtistWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=22526:22599#L604">HasOwnerArtistWith</a>
+				<a class="permalink" href="index.html#HasOwnerArtistWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasOwnerArtistWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPArtist">HPArtist</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>HasOwnerArtistWith applies the HasEdge predicate on the &quot;owner_artist&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasOwnerMember">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=22878:22920#L616">HasOwnerMember</a>
+				<a class="permalink" href="index.html#HasOwnerMember">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasOwnerMember() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>HasOwnerMember applies the HasEdge predicate on the &quot;owner_member&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasOwnerMemberWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=23280:23353#L627">HasOwnerMemberWith</a>
+				<a class="permalink" href="index.html#HasOwnerMemberWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasOwnerMemberWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPMember">HPMember</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>HasOwnerMemberWith applies the HasEdge predicate on the &quot;owner_member&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasTaggedArtists">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=23636:23680#L639">HasTaggedArtists</a>
+				<a class="permalink" href="index.html#HasTaggedArtists">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasTaggedArtists() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>HasTaggedArtists applies the HasEdge predicate on the &quot;tagged_artists&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasTaggedArtistsWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=24055:24130#L650">HasTaggedArtistsWith</a>
+				<a class="permalink" href="index.html#HasTaggedArtistsWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasTaggedArtistsWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPArtist">HPArtist</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>HasTaggedArtistsWith applies the HasEdge predicate on the &quot;tagged_artists&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasTaggedMembers">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=24415:24459#L662">HasTaggedMembers</a>
+				<a class="permalink" href="index.html#HasTaggedMembers">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasTaggedMembers() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>HasTaggedMembers applies the HasEdge predicate on the &quot;tagged_members&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasTaggedMembersWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=24834:24909#L673">HasTaggedMembersWith</a>
+				<a class="permalink" href="index.html#HasTaggedMembersWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasTaggedMembersWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPMember">HPMember</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>HasTaggedMembersWith applies the HasEdge predicate on the &quot;tagged_members&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasViewHistories">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=21350:21394#L570">HasViewHistories</a>
+				<a class="permalink" href="index.html#HasViewHistories">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasViewHistories() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>HasViewHistories applies the HasEdge predicate on the &quot;view_histories&quot; edge.
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasViewHistoriesWith">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=21763:21843#L581">HasViewHistoriesWith</a>
+				<a class="permalink" href="index.html#HasViewHistoriesWith">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HasViewHistoriesWith(preds ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPViewHistory">HPViewHistory</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>HasViewHistoriesWith applies the HasEdge predicate on the &quot;view_histories&quot; edge with a given conditions (other predicates).
+
+			
+			
+
+		
+			
+			
+			<h2 id="ID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=297:333#L5">ID</a>
+				<a class="permalink" href="index.html#ID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ID(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ID filters vertices based on their ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=444:482#L10">IDEQ</a>
+				<a class="permalink" href="index.html#IDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDEQ(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>IDEQ applies the EQ predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=1072:1110#L30">IDGT</a>
+				<a class="permalink" href="index.html#IDGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDGT(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>IDGT applies the GT predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=1223:1262#L35">IDGTE</a>
+				<a class="permalink" href="index.html#IDGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDGTE(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>IDGTE applies the GTE predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=746:788#L20">IDIn</a>
+				<a class="permalink" href="index.html#IDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDIn(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>IDIn applies the In predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=1374:1412#L40">IDLT</a>
+				<a class="permalink" href="index.html#IDLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDLT(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>IDLT applies the LT predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=1525:1564#L45">IDLTE</a>
+				<a class="permalink" href="index.html#IDLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDLTE(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>IDLTE applies the LTE predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=595:634#L15">IDNEQ</a>
+				<a class="permalink" href="index.html#IDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDNEQ(id <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>IDNEQ applies the NEQ predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="IDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=909:954#L25">IDNotIn</a>
+				<a class="permalink" href="index.html#IDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IDNotIn(ids ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>IDNotIn applies the NotIn predicate on the ID field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURL">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=2988:3032#L80">ImageURL</a>
+				<a class="permalink" href="index.html#ImageURL">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURL(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURL applies equality check predicate on the &quot;image_url&quot; field. It&apos;s identical to ImageURLEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLContains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=17520:17572#L475">ImageURLContains</a>
+				<a class="permalink" href="index.html#ImageURLContains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLContains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLContains applies the Contains predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=18706:18762#L505">ImageURLContainsFold</a>
+				<a class="permalink" href="index.html#ImageURLContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLContainsFold applies the ContainsFold predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=16052:16098#L435">ImageURLEQ</a>
+				<a class="permalink" href="index.html#ImageURLEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLEQ applies the EQ predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLEqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=18495:18548#L500">ImageURLEqualFold</a>
+				<a class="permalink" href="index.html#ImageURLEqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLEqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLEqualFold applies the EqualFold predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=16792:16838#L455">ImageURLGT</a>
+				<a class="permalink" href="index.html#ImageURLGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLGT applies the GT predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=16971:17018#L460">ImageURLGTE</a>
+				<a class="permalink" href="index.html#ImageURLGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLGTE applies the GTE predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLHasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=17723:17776#L480">ImageURLHasPrefix</a>
+				<a class="permalink" href="index.html#ImageURLHasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLHasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLHasPrefix applies the HasPrefix predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLHasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=17928:17981#L485">ImageURLHasSuffix</a>
+				<a class="permalink" href="index.html#ImageURLHasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLHasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLHasSuffix applies the HasSuffix predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=16410:16460#L445">ImageURLIn</a>
+				<a class="permalink" href="index.html#ImageURLIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLIn applies the In predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=18125:18166#L490">ImageURLIsNil</a>
+				<a class="permalink" href="index.html#ImageURLIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLIsNil applies the IsNil predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=17150:17196#L465">ImageURLLT</a>
+				<a class="permalink" href="index.html#ImageURLLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLLT applies the LT predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=17329:17376#L470">ImageURLLTE</a>
+				<a class="permalink" href="index.html#ImageURLLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLLTE applies the LTE predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=16231:16278#L440">ImageURLNEQ</a>
+				<a class="permalink" href="index.html#ImageURLNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLNEQ applies the NEQ predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=16601:16654#L450">ImageURLNotIn</a>
+				<a class="permalink" href="index.html#ImageURLNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLNotIn applies the NotIn predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ImageURLNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=18306:18348#L495">ImageURLNotNil</a>
+				<a class="permalink" href="index.html#ImageURLNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ImageURLNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>ImageURLNotNil applies the NotNil predicate on the &quot;image_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Not">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=25760:25813#L710">Not</a>
+				<a class="permalink" href="index.html#Not">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Not(p <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>Not applies the not operator on the given predicate.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Or">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=25454:25518#L696">Or</a>
+				<a class="permalink" href="index.html#Or">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Or(predicates ...<a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>Or groups predicates with the OR operator between them.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=3215:3261#L85">OwnerArtistID</a>
+				<a class="permalink" href="index.html#OwnerArtistID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistID(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerArtistID applies equality check predicate on the &quot;owner_artist_id&quot; field. It&apos;s identical to OwnerArtistIDEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistIDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=18914:18962#L510">OwnerArtistIDEQ</a>
+				<a class="permalink" href="index.html#OwnerArtistIDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistIDEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerArtistIDEQ applies the EQ predicate on the &quot;owner_artist_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistIDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=19308:19360#L520">OwnerArtistIDIn</a>
+				<a class="permalink" href="index.html#OwnerArtistIDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistIDIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerArtistIDIn applies the In predicate on the &quot;owner_artist_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistIDIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=19732:19778#L530">OwnerArtistIDIsNil</a>
+				<a class="permalink" href="index.html#OwnerArtistIDIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistIDIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerArtistIDIsNil applies the IsNil predicate on the &quot;owner_artist_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistIDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=19111:19160#L515">OwnerArtistIDNEQ</a>
+				<a class="permalink" href="index.html#OwnerArtistIDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistIDNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerArtistIDNEQ applies the NEQ predicate on the &quot;owner_artist_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistIDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=19517:19572#L525">OwnerArtistIDNotIn</a>
+				<a class="permalink" href="index.html#OwnerArtistIDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistIDNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerArtistIDNotIn applies the NotIn predicate on the &quot;owner_artist_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerArtistIDNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=19934:19981#L535">OwnerArtistIDNotNil</a>
+				<a class="permalink" href="index.html#OwnerArtistIDNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerArtistIDNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerArtistIDNotNil applies the NotNil predicate on the &quot;owner_artist_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=3449:3495#L90">OwnerMemberID</a>
+				<a class="permalink" href="index.html#OwnerMemberID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberID(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerMemberID applies equality check predicate on the &quot;owner_member_id&quot; field. It&apos;s identical to OwnerMemberIDEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberIDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=20130:20178#L540">OwnerMemberIDEQ</a>
+				<a class="permalink" href="index.html#OwnerMemberIDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberIDEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerMemberIDEQ applies the EQ predicate on the &quot;owner_member_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberIDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=20524:20576#L550">OwnerMemberIDIn</a>
+				<a class="permalink" href="index.html#OwnerMemberIDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberIDIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerMemberIDIn applies the In predicate on the &quot;owner_member_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberIDIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=20948:20994#L560">OwnerMemberIDIsNil</a>
+				<a class="permalink" href="index.html#OwnerMemberIDIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberIDIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerMemberIDIsNil applies the IsNil predicate on the &quot;owner_member_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberIDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=20327:20376#L545">OwnerMemberIDNEQ</a>
+				<a class="permalink" href="index.html#OwnerMemberIDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberIDNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerMemberIDNEQ applies the NEQ predicate on the &quot;owner_member_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberIDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=20733:20788#L555">OwnerMemberIDNotIn</a>
+				<a class="permalink" href="index.html#OwnerMemberIDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberIDNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerMemberIDNotIn applies the NotIn predicate on the &quot;owner_member_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="OwnerMemberIDNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=21150:21197#L565">OwnerMemberIDNotNil</a>
+				<a class="permalink" href="index.html#OwnerMemberIDNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func OwnerMemberIDNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>OwnerMemberIDNotNil applies the NotNil predicate on the &quot;owner_member_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PostAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=2562:2607#L70">PostAt</a>
+				<a class="permalink" href="index.html#PostAt">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PostAt(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>PostAt applies equality check predicate on the &quot;post_at&quot; field. It&apos;s identical to PostAtEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PostAtEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=12091:12138#L330">PostAtEQ</a>
+				<a class="permalink" href="index.html#PostAtEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PostAtEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>PostAtEQ applies the EQ predicate on the &quot;post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PostAtGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=12811:12858#L350">PostAtGT</a>
+				<a class="permalink" href="index.html#PostAtGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PostAtGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>PostAtGT applies the GT predicate on the &quot;post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PostAtGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=12985:13033#L355">PostAtGTE</a>
+				<a class="permalink" href="index.html#PostAtGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PostAtGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>PostAtGTE applies the GTE predicate on the &quot;post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PostAtIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=12439:12490#L340">PostAtIn</a>
+				<a class="permalink" href="index.html#PostAtIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PostAtIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>PostAtIn applies the In predicate on the &quot;post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PostAtLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=13159:13206#L360">PostAtLT</a>
+				<a class="permalink" href="index.html#PostAtLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PostAtLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>PostAtLT applies the LT predicate on the &quot;post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PostAtLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=13333:13381#L365">PostAtLTE</a>
+				<a class="permalink" href="index.html#PostAtLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PostAtLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>PostAtLTE applies the LTE predicate on the &quot;post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PostAtNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=12265:12313#L335">PostAtNEQ</a>
+				<a class="permalink" href="index.html#PostAtNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PostAtNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>PostAtNEQ applies the NEQ predicate on the &quot;post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="PostAtNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=12625:12679#L345">PostAtNotIn</a>
+				<a class="permalink" href="index.html#PostAtNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func PostAtNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>PostAtNotIn applies the NotIn predicate on the &quot;post_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=2165:2206#L60">SourceID</a>
+				<a class="permalink" href="index.html#SourceID">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceID(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceID applies equality check predicate on the &quot;source_id&quot; field. It&apos;s identical to SourceIDEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceIDEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=7395:7438#L195">SourceIDEQ</a>
+				<a class="permalink" href="index.html#SourceIDEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceIDEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceIDEQ applies the EQ predicate on the &quot;source_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceIDGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=8123:8166#L215">SourceIDGT</a>
+				<a class="permalink" href="index.html#SourceIDGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceIDGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceIDGT applies the GT predicate on the &quot;source_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceIDGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=8299:8343#L220">SourceIDGTE</a>
+				<a class="permalink" href="index.html#SourceIDGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceIDGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceIDGTE applies the GTE predicate on the &quot;source_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceIDIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=7747:7794#L205">SourceIDIn</a>
+				<a class="permalink" href="index.html#SourceIDIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceIDIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceIDIn applies the In predicate on the &quot;source_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceIDLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=8475:8518#L225">SourceIDLT</a>
+				<a class="permalink" href="index.html#SourceIDLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceIDLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceIDLT applies the LT predicate on the &quot;source_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceIDLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=8651:8695#L230">SourceIDLTE</a>
+				<a class="permalink" href="index.html#SourceIDLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceIDLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceIDLTE applies the LTE predicate on the &quot;source_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceIDNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=7571:7615#L200">SourceIDNEQ</a>
+				<a class="permalink" href="index.html#SourceIDNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceIDNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceIDNEQ applies the NEQ predicate on the &quot;source_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceIDNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=7935:7985#L210">SourceIDNotIn</a>
+				<a class="permalink" href="index.html#SourceIDNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceIDNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceIDNotIn applies the NotIn predicate on the &quot;source_id&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURL">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=2775:2820#L75">SourceURL</a>
+				<a class="permalink" href="index.html#SourceURL">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURL(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURL applies equality check predicate on the &quot;source_url&quot; field. It&apos;s identical to SourceURLEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLContains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=15013:15066#L410">SourceURLContains</a>
+				<a class="permalink" href="index.html#SourceURLContains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLContains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLContains applies the Contains predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=15853:15910#L430">SourceURLContainsFold</a>
+				<a class="permalink" href="index.html#SourceURLContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLContainsFold applies the ContainsFold predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=13513:13560#L370">SourceURLEQ</a>
+				<a class="permalink" href="index.html#SourceURLEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLEQ applies the EQ predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLEqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=15638:15692#L425">SourceURLEqualFold</a>
+				<a class="permalink" href="index.html#SourceURLEqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLEqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLEqualFold applies the EqualFold predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=14269:14316#L390">SourceURLGT</a>
+				<a class="permalink" href="index.html#SourceURLGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLGT applies the GT predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=14452:14500#L395">SourceURLGTE</a>
+				<a class="permalink" href="index.html#SourceURLGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLGTE applies the GTE predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLHasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=15220:15274#L415">SourceURLHasPrefix</a>
+				<a class="permalink" href="index.html#SourceURLHasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLHasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLHasPrefix applies the HasPrefix predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLHasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=15429:15483#L420">SourceURLHasSuffix</a>
+				<a class="permalink" href="index.html#SourceURLHasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLHasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLHasSuffix applies the HasSuffix predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=13879:13930#L380">SourceURLIn</a>
+				<a class="permalink" href="index.html#SourceURLIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLIn applies the In predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=14635:14682#L400">SourceURLLT</a>
+				<a class="permalink" href="index.html#SourceURLLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLLT applies the LT predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=14818:14866#L405">SourceURLLTE</a>
+				<a class="permalink" href="index.html#SourceURLLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLLTE applies the LTE predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=13696:13744#L375">SourceURLNEQ</a>
+				<a class="permalink" href="index.html#SourceURLNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLNEQ applies the NEQ predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="SourceURLNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=14074:14128#L385">SourceURLNotIn</a>
+				<a class="permalink" href="index.html#SourceURLNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SourceURLNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>SourceURLNotIn applies the NotIn predicate on the &quot;source_url&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Title">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=2363:2404#L65">Title</a>
+				<a class="permalink" href="index.html#Title">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Title(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>Title applies equality check predicate on the &quot;title&quot; field. It&apos;s identical to TitleEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleContains">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=11132:11181#L305">TitleContains</a>
+				<a class="permalink" href="index.html#TitleContains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleContains(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleContains applies the Contains predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleContainsFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=11904:11957#L325">TitleContainsFold</a>
+				<a class="permalink" href="index.html#TitleContainsFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleContainsFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleContainsFold applies the ContainsFold predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=9768:9811#L265">TitleEQ</a>
+				<a class="permalink" href="index.html#TitleEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleEQ applies the EQ predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleEqualFold">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=11706:11756#L320">TitleEqualFold</a>
+				<a class="permalink" href="index.html#TitleEqualFold">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleEqualFold(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleEqualFold applies the EqualFold predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=10456:10499#L285">TitleGT</a>
+				<a class="permalink" href="index.html#TitleGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleGT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleGT applies the GT predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=10622:10666#L290">TitleGTE</a>
+				<a class="permalink" href="index.html#TitleGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleGTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleGTE applies the GTE predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleHasPrefix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=11322:11372#L310">TitleHasPrefix</a>
+				<a class="permalink" href="index.html#TitleHasPrefix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleHasPrefix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleHasPrefix applies the HasPrefix predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleHasSuffix">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=11514:11564#L315">TitleHasSuffix</a>
+				<a class="permalink" href="index.html#TitleHasSuffix">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleHasSuffix(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleHasSuffix applies the HasSuffix predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=10100:10147#L275">TitleIn</a>
+				<a class="permalink" href="index.html#TitleIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleIn applies the In predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=10788:10831#L295">TitleLT</a>
+				<a class="permalink" href="index.html#TitleLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleLT(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleLT applies the LT predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=10954:10998#L300">TitleLTE</a>
+				<a class="permalink" href="index.html#TitleLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleLTE(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleLTE applies the LTE predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=9934:9978#L270">TitleNEQ</a>
+				<a class="permalink" href="index.html#TitleNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleNEQ(v <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleNEQ applies the NEQ predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="TitleNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=10278:10328#L280">TitleNotIn</a>
+				<a class="permalink" href="index.html#TitleNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TitleNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>TitleNotIn applies the NotIn predicate on the &quot;title&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=1949:1997#L55">UpdatedAt</a>
+				<a class="permalink" href="index.html#UpdatedAt">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAt(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>UpdatedAt applies equality check predicate on the &quot;updated_at&quot; field. It&apos;s identical to UpdatedAtEQ.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=5515:5565#L145">UpdatedAtEQ</a>
+				<a class="permalink" href="index.html#UpdatedAtEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>UpdatedAtEQ applies the EQ predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtGT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=6283:6333#L165">UpdatedAtGT</a>
+				<a class="permalink" href="index.html#UpdatedAtGT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtGT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>UpdatedAtGT applies the GT predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtGTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=6469:6520#L170">UpdatedAtGTE</a>
+				<a class="permalink" href="index.html#UpdatedAtGTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtGTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>UpdatedAtGTE applies the GTE predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=5887:5941#L155">UpdatedAtIn</a>
+				<a class="permalink" href="index.html#UpdatedAtIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>UpdatedAtIn applies the In predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtIsNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=7033:7075#L185">UpdatedAtIsNil</a>
+				<a class="permalink" href="index.html#UpdatedAtIsNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtIsNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>UpdatedAtIsNil applies the IsNil predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtLT">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=6655:6705#L175">UpdatedAtLT</a>
+				<a class="permalink" href="index.html#UpdatedAtLT">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtLT(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>UpdatedAtLT applies the LT predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtLTE">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=6841:6892#L180">UpdatedAtLTE</a>
+				<a class="permalink" href="index.html#UpdatedAtLTE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtLTE(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>UpdatedAtLTE applies the LTE predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtNEQ">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=5701:5752#L150">UpdatedAtNEQ</a>
+				<a class="permalink" href="index.html#UpdatedAtNEQ">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtNEQ(v <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>UpdatedAtNEQ applies the NEQ predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtNotIn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=6085:6142#L160">UpdatedAtNotIn</a>
+				<a class="permalink" href="index.html#UpdatedAtNotIn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtNotIn(vs ...<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>) <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>UpdatedAtNotIn applies the NotIn predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdatedAtNotNil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/where.go?s=7218:7261#L190">UpdatedAtNotNil</a>
+				<a class="permalink" href="index.html#UpdatedAtNotNil">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdatedAtNotNil() <a href="../predicate/index.html">predicate</a>.<a href="../predicate/index.html#HPFeedItem">HPFeedItem</a></pre>
+			<p>UpdatedAtNotNil applies the NotNil predicate on the &quot;updated_at&quot; field.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ValidColumn">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=5301:5337#L103">ValidColumn</a>
+				<a class="permalink" href="index.html#ValidColumn">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ValidColumn(column <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a></pre>
+			<p>ValidColumn reports if the column name is valid (part of the table columns).
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Order">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=6194:6224#L134">Order</a>
+				<a class="permalink" href="index.html#Order">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Order defines the ordering method for the HPFeedItem queries.
+
+			<pre>type Order func(*<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#Selector">Selector</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="ByAssetType">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=6952:7003#L157">ByAssetType</a>
+					<a class="permalink" href="index.html#ByAssetType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByAssetType(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByAssetType orders the results by the asset_type field.
+
+				
+				
+			
+				
+				<h3 id="ByCreatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=6431:6482#L142">ByCreatedAt</a>
+					<a class="permalink" href="index.html#ByCreatedAt">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByCreatedAt(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByCreatedAt orders the results by the created_at field.
+
+				
+				
+			
+				
+				<h3 id="ByID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=6270:6314#L137">ByID</a>
+					<a class="permalink" href="index.html#ByID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByID orders the results by the id field.
+
+				
+				
+			
+				
+				<h3 id="ByImageURL">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=7621:7671#L177">ByImageURL</a>
+					<a class="permalink" href="index.html#ByImageURL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByImageURL(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByImageURL orders the results by the image_url field.
+
+				
+				
+			
+				
+				<h3 id="ByOwnerArtistField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=8698:8770#L206">ByOwnerArtistField</a>
+					<a class="permalink" href="index.html#ByOwnerArtistField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByOwnerArtistField(field <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByOwnerArtistField orders the results by owner_artist field.
+
+				
+				
+			
+				
+				<h3 id="ByOwnerArtistID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=7803:7858#L182">ByOwnerArtistID</a>
+					<a class="permalink" href="index.html#ByOwnerArtistID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByOwnerArtistID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByOwnerArtistID orders the results by the owner_artist_id field.
+
+				
+				
+			
+				
+				<h3 id="ByOwnerMemberField">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=8966:9038#L213">ByOwnerMemberField</a>
+					<a class="permalink" href="index.html#ByOwnerMemberField">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByOwnerMemberField(field <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByOwnerMemberField orders the results by owner_member field.
+
+				
+				
+			
+				
+				<h3 id="ByOwnerMemberID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=7995:8050#L187">ByOwnerMemberID</a>
+					<a class="permalink" href="index.html#ByOwnerMemberID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByOwnerMemberID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByOwnerMemberID orders the results by the owner_member_id field.
+
+				
+				
+			
+				
+				<h3 id="ByPostAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=7279:7327#L167">ByPostAt</a>
+					<a class="permalink" href="index.html#ByPostAt">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByPostAt(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByPostAt orders the results by the post_at field.
+
+				
+				
+			
+				
+				<h3 id="BySourceID">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=6779:6829#L152">BySourceID</a>
+					<a class="permalink" href="index.html#BySourceID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func BySourceID(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>BySourceID orders the results by the source_id field.
+
+				
+				
+			
+				
+				<h3 id="BySourceURL">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=7448:7499#L172">BySourceURL</a>
+					<a class="permalink" href="index.html#BySourceURL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func BySourceURL(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>BySourceURL orders the results by the source_url field.
+
+				
+				
+			
+				
+				<h3 id="ByTaggedArtists">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=9471:9541#L227">ByTaggedArtists</a>
+					<a class="permalink" href="index.html#ByTaggedArtists">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByTaggedArtists(term <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>, terms ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByTaggedArtists orders the results by tagged_artists terms.
+
+				
+				
+			
+				
+				<h3 id="ByTaggedArtistsCount">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=9238:9298#L220">ByTaggedArtistsCount</a>
+					<a class="permalink" href="index.html#ByTaggedArtistsCount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByTaggedArtistsCount(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByTaggedArtistsCount orders the results by tagged_artists count.
+
+				
+				
+			
+				
+				<h3 id="ByTaggedMembers">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=9986:10056#L241">ByTaggedMembers</a>
+					<a class="permalink" href="index.html#ByTaggedMembers">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByTaggedMembers(term <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>, terms ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByTaggedMembers orders the results by tagged_members terms.
+
+				
+				
+			
+				
+				<h3 id="ByTaggedMembersCount">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=9753:9813#L234">ByTaggedMembersCount</a>
+					<a class="permalink" href="index.html#ByTaggedMembersCount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByTaggedMembersCount(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByTaggedMembersCount orders the results by tagged_members count.
+
+				
+				
+			
+				
+				<h3 id="ByTitle">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=7118:7165#L162">ByTitle</a>
+					<a class="permalink" href="index.html#ByTitle">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByTitle(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByTitle orders the results by the title field.
+
+				
+				
+			
+				
+				<h3 id="ByUpdatedAt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=6606:6657#L147">ByUpdatedAt</a>
+					<a class="permalink" href="index.html#ByUpdatedAt">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByUpdatedAt(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByUpdatedAt orders the results by the updated_at field.
+
+				
+				
+			
+				
+				<h3 id="ByViewHistories">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=8420:8490#L199">ByViewHistories</a>
+					<a class="permalink" href="index.html#ByViewHistories">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByViewHistories(term <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>, terms ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTerm">OrderTerm</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByViewHistories orders the results by view_histories terms.
+
+				
+				
+			
+				
+				<h3 id="ByViewHistoriesCount">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hpfeeditem/hpfeeditem.go?s=8187:8247#L192">ByViewHistoriesCount</a>
+					<a class="permalink" href="index.html#ByViewHistoriesCount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ByViewHistoriesCount(opts ...<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/">sql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/dialect/sql/#OrderTermOption">OrderTermOption</a>) <a href="index.html#Order">Order</a></pre>
+				<p>ByViewHistoriesCount orders the results by view_histories count.
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

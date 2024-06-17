@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>schema - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package schema
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/devtool/generator/graphql/schema"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#NewGenerator">func NewGenerator(options ...GeneratorOption) generator.Generator</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Dependency">type Dependency</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#GeneratorOption">type GeneratorOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithConfig">func WithConfig(path string) GeneratorOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithExcludePackage">func WithExcludePackage(pkgs ...string) GeneratorOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithExcludeType">func WithExcludeType(types ...string) GeneratorOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithOutputFile">func WithOutputFile(path string) GeneratorOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithRoot">func WithRoot(roots ...string) GeneratorOption</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#GraphQLType">type GraphQLType</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#InputDependency">type InputDependency</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InputDependency.FullyQualifiedName">func (d *InputDependency) FullyQualifiedName() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InputDependency.GraphQLType">func (d *InputDependency) GraphQLType() GraphQLType</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InputDependency.IsComplexType">func (d *InputDependency) IsComplexType() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InputDependency.ToSchema">func (d *InputDependency) ToSchema() (Schema, []Dependency, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Method">type Method</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Method.String">func (m *Method) String() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Schema">type Schema</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Variable">type Variable</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Variable.String">func (v *Variable) String() string</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/basic.go">basic.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/exclude.go">exclude.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/generator.go">generator.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/input.go">input.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/interface.go">interface.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/method.go">method.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/schema.go">schema.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/struct.go">struct.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/variable.go">variable.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span id="BasicTypeID">BasicTypeID</span>      = &#34;ID&#34;
+    <span id="BasicTypeString">BasicTypeString</span>  = &#34;String&#34;
+    <span id="BasicTypeInteger">BasicTypeInteger</span> = &#34;Int&#34;
+    <span id="BasicTypeFloat">BasicTypeFloat</span>   = &#34;Float&#34;
+    <span id="BasicTypeBoolean">BasicTypeBoolean</span> = &#34;Boolean&#34;
+    <span id="BasicTypeMap">BasicTypeMap</span>     = &#34;Map&#34;
+)</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var (
+    <span id="ErrIncompleteMarshaler">ErrIncompleteMarshaler</span>    = <a href="http://127.0.0.1:8888/pkg/fmt/">fmt</a>.<a href="http://127.0.0.1:8888/pkg/fmt/#Errorf">Errorf</a>(&#34;the graphql.(Unm|M)arshler like interface is implemented but incomplete&#34;)
+    <span id="ErrInvalidDependencyBuild">ErrInvalidDependencyBuild</span> = <a href="http://127.0.0.1:8888/pkg/fmt/">fmt</a>.<a href="http://127.0.0.1:8888/pkg/fmt/#Errorf">Errorf</a>(&#34;cannot build the dependency on the type other than *types.Named&#34;)
+    <span id="ErrUnsupportedType">ErrUnsupportedType</span>        = <a href="http://127.0.0.1:8888/pkg/fmt/">fmt</a>.<a href="http://127.0.0.1:8888/pkg/fmt/#Errorf">Errorf</a>(&#34;cannot build the dependency on the type&#34;)
+    <span id="ErrNameNotFound">ErrNameNotFound</span>           = <a href="http://127.0.0.1:8888/pkg/fmt/">fmt</a>.<a href="http://127.0.0.1:8888/pkg/fmt/#Errorf">Errorf</a>(&#34;root object not found&#34;)
+)</pre>
+			
+				
+				<pre>var (
+    <span id="ErrInvalidIDLikeMethodSignature">ErrInvalidIDLikeMethodSignature</span> = <a href="http://127.0.0.1:8888/pkg/fmt/">fmt</a>.<a href="http://127.0.0.1:8888/pkg/fmt/#Errorf">Errorf</a>(&#34;The method ID() should have no parameter or only one context.Context parameter&#34;)
+    <span id="ErrSecondReturnMustBeError">ErrSecondReturnMustBeError</span>      = <a href="http://127.0.0.1:8888/pkg/fmt/">fmt</a>.<a href="http://127.0.0.1:8888/pkg/fmt/#Errorf">Errorf</a>(&#34;The second return value must be error&#34;)
+)</pre>
+			
+				
+				<pre>var (
+    <span id="ErrMarshalerIsNotImplemented">ErrMarshalerIsNotImplemented</span> = <a href="http://127.0.0.1:8888/pkg/fmt/">fmt</a>.<a href="http://127.0.0.1:8888/pkg/fmt/#Errorf">Errorf</a>(&#34;named basic type must implement Marshaler/Unmarshaler&#34;)
+)</pre>
+			
+		
+		
+			
+			
+			<h2 id="NewGenerator">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/generator.go?s=2642:2707#L93">NewGenerator</a>
+				<a class="permalink" href="index.html#NewGenerator">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewGenerator(options ...<a href="index.html#GeneratorOption">GeneratorOption</a>) <a href="../../index.html">generator</a>.<a href="../../index.html#Generator">Generator</a></pre>
+			
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Dependency">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/generator.go?s=716:1054#L17">Dependency</a>
+				<a class="permalink" href="index.html#Dependency">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Dependency is a GoType that converted to Schema
+
+			<pre>type Dependency interface {
+    <span class="comment">// String returns the fully qualified name of dependency</span>
+    FullyQualifiedName() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+    <span class="comment">// GraphQLName returns the type name used in the GraphQL schema</span>
+    GraphQLType() <a href="index.html#GraphQLType">GraphQLType</a>
+    <span class="comment">// IsComplexType returns true if the dependency is complex type</span>
+    IsComplexType() <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+
+    ToSchema() (<a href="index.html#Schema">Schema</a>, []<a href="index.html#Dependency">Dependency</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="GeneratorOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/generator.go?s=1438:1485#L43">GeneratorOption</a>
+				<a class="permalink" href="index.html#GeneratorOption">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type GeneratorOption func(*dependencyGenerator)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="WithConfig">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/generator.go?s=2167:2211#L75">WithConfig</a>
+					<a class="permalink" href="index.html#WithConfig">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithConfig(path <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#GeneratorOption">GeneratorOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="WithExcludePackage">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/generator.go?s=1854:1909#L63">WithExcludePackage</a>
+					<a class="permalink" href="index.html#WithExcludePackage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithExcludePackage(pkgs ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#GeneratorOption">GeneratorOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="WithExcludeType">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/generator.go?s=2014:2067#L69">WithExcludeType</a>
+					<a class="permalink" href="index.html#WithExcludeType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithExcludeType(types ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#GeneratorOption">GeneratorOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="WithOutputFile">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/generator.go?s=1487:1535#L45">WithOutputFile</a>
+					<a class="permalink" href="index.html#WithOutputFile">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithOutputFile(path <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#GeneratorOption">GeneratorOption</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="WithRoot">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/generator.go?s=1722:1768#L57">WithRoot</a>
+					<a class="permalink" href="index.html#WithRoot">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithRoot(roots ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#GeneratorOption">GeneratorOption</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="GraphQLType">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/generator.go?s=640:663#L14">GraphQLType</a>
+				<a class="permalink" href="index.html#GraphQLType">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type GraphQLType <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="InputDependency">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/input.go?s=83:132#L1">InputDependency</a>
+				<a class="permalink" href="index.html#InputDependency">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type InputDependency struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="InputDependency.FullyQualifiedName">func (*InputDependency) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/input.go?s=191:244#L4">FullyQualifiedName</a>
+					<a class="permalink" href="index.html#InputDependency.FullyQualifiedName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#InputDependency">InputDependency</a>) FullyQualifiedName() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+				<p>String returns the fully qualified name of dependency
+
+				
+				
+				
+			
+				
+				<h3 id="InputDependency.GraphQLType">func (*InputDependency) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/input.go?s=351:402#L9">GraphQLType</a>
+					<a class="permalink" href="index.html#InputDependency.GraphQLType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#InputDependency">InputDependency</a>) GraphQLType() <a href="index.html#GraphQLType">GraphQLType</a></pre>
+				<p>GraphQLName returns the type name used in the GraphQL schema
+
+				
+				
+				
+			
+				
+				<h3 id="InputDependency.IsComplexType">func (*InputDependency) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/input.go?s=552:598#L16">IsComplexType</a>
+					<a class="permalink" href="index.html#InputDependency.IsComplexType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#InputDependency">InputDependency</a>) IsComplexType() <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="InputDependency.ToSchema">func (*InputDependency) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/input.go?s=636:702#L20">ToSchema</a>
+					<a class="permalink" href="index.html#InputDependency.ToSchema">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#InputDependency">InputDependency</a>) ToSchema() (<a href="index.html#Schema">Schema</a>, []<a href="index.html#Dependency">Dependency</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Method">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/method.go?s=383:471#L7">Method</a>
+				<a class="permalink" href="index.html#Method">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Method is a method under Struct or Interface
+
+			<pre>type Method struct {
+<span id="Method.Name"></span>    Name        <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="Method.Parameters"></span>    Parameters  []<a href="index.html#Variable">Variable</a>
+<span id="Method.ReturnValue"></span>    ReturnValue <a href="index.html#Variable">Variable</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Method.String">func (*Method) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/method.go?s=473:505#L13">String</a>
+					<a class="permalink" href="index.html#Method.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#Method">Method</a>) String() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Schema">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/schema.go?s=78:120#L1">Schema</a>
+				<a class="permalink" href="index.html#Schema">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Schema represents GraphQL Schema definition.
+
+			<pre>type Schema interface {
+    Source() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Variable">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/variable.go?s=162:392#L2">Variable</a>
+				<a class="permalink" href="index.html#Variable">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Variable is a variable in GraphQL Type or Input
+
+			<pre>type Variable struct {
+<span id="Variable.Name"></span>    Name          <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="Variable.Type"></span>    Type          <a href="index.html#GraphQLType">GraphQLType</a>
+<span id="Variable.Nullable"></span>    Nullable      <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+<span id="Variable.IsArray"></span>    IsArray       <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+<span id="Variable.NestDepth"></span>    NestDepth     <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+<span id="Variable.IsComplexType"></span>    IsComplexType <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+<span id="Variable.IsInput"></span>    IsInput       <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>
+<span id="Variable.Tags"></span>    Tags          []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Variable.String">func (*Variable) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/devtool/generator/graphql/schema/variable.go?s=394:428#L15">String</a>
+					<a class="permalink" href="index.html#Variable.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (v *<a href="index.html#Variable">Variable</a>) String() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

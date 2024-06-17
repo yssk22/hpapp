@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>settings - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package settings
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/system/settings"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#Get">func Get[T any](ctx context.Context, item Item[T]) (T, error)</a></dd>
+			
+				
+				<dd><a href="index.html#GetX">func GetX[T any](ctx context.Context, item Item[T]) T</a></dd>
+			
+				
+				<dd><a href="index.html#NewDatastore">func NewDatastore(ctx context.Context, projectID string, opts ...DatastoreOption) (kvs.KVS, error)</a></dd>
+			
+				
+				<dd><a href="index.html#NewJSONFile">func NewJSONFile(ctx context.Context, opts ...JSONFileOption) (kvs.KVS, error)</a></dd>
+			
+				
+				<dd><a href="index.html#Set">func Set[T any](ctx context.Context, item Item[T], value T) error</a></dd>
+			
+				
+				<dd><a href="index.html#SetSettingsStore">func SetSettingsStore(ctx context.Context, store kvs.KVS) context.Context</a></dd>
+			
+				
+				<dd><a href="index.html#SettingsCommand">func SettingsCommand() *cobra.Command</a></dd>
+			
+			
+				
+				<dd><a href="index.html#DatastoreOption">type DatastoreOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithKind">func WithKind(kind string) DatastoreOption</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Item">type Item</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewBool">func NewBool(key string, defaultValue bool) Item[bool]</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewDuration">func NewDuration(key string, defaultValue time.Duration) Item[time.Duration]</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewInt">func NewInt(key string, defaultValue int) Item[int]</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewIntArray">func NewIntArray(key string, defaultValue []int) Item[[]int]</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewString">func NewString(key, defaultValue string) Item[string]</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewStringArray">func NewStringArray(key string, defaultValue []string) Item[[]string]</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ItemInfo">type ItemInfo</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CaptureSettings">func CaptureSettings(packageName string) ([]*ItemInfo, error)</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#JSONFileOption">type JSONFileOption</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WithPath">func WithPath(path string) JSONFileOption</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/cmd.go">cmd.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/context.go">context.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/datastore.go">datastore.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/devtool.go">devtool.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/jsonfile.go">jsonfile.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go">settings.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="Get">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/context.go?s=390:451#L11">Get</a>
+				<a class="permalink" href="index.html#Get">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Get[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>](ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, item <a href="index.html#Item">Item</a>[T]) (T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="GetX">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/context.go?s=277:330#L7">GetX</a>
+				<a class="permalink" href="index.html#GetX">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func GetX[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>](ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, item <a href="index.html#Item">Item</a>[T]) T</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="NewDatastore">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/datastore.go?s=572:670#L21">NewDatastore</a>
+				<a class="permalink" href="index.html#NewDatastore">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewDatastore(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, projectID <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, opts ...<a href="index.html#DatastoreOption">DatastoreOption</a>) (<a href="../../foundation/kvs/index.html">kvs</a>.<a href="../../foundation/kvs/index.html#KVS">KVS</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			<p>NewDatastore utilizes a Google Cloud Datastore as a KVS for settings
+
+			
+			
+
+		
+			
+			
+			<h2 id="NewJSONFile">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/jsonfile.go?s=428:506#L18">NewJSONFile</a>
+				<a class="permalink" href="index.html#NewJSONFile">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewJSONFile(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, opts ...<a href="index.html#JSONFileOption">JSONFileOption</a>) (<a href="../../foundation/kvs/index.html">kvs</a>.<a href="../../foundation/kvs/index.html#KVS">KVS</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+			<p>NewJsonFile utilizes a local json file as a KVS for settings
+
+			
+			
+
+		
+			
+			
+			<h2 id="Set">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/context.go?s=510:575#L15">Set</a>
+				<a class="permalink" href="index.html#Set">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Set[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>](ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, item <a href="index.html#Item">Item</a>[T], value T) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="SetSettingsStore">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/context.go?s=149:222#L3">SetSettingsStore</a>
+				<a class="permalink" href="index.html#SetSettingsStore">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SetSettingsStore(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, store <a href="../../foundation/kvs/index.html">kvs</a>.<a href="../../foundation/kvs/index.html#KVS">KVS</a>) <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="SettingsCommand">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/cmd.go?s=467:504#L9">SettingsCommand</a>
+				<a class="permalink" href="index.html#SettingsCommand">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SettingsCommand() *<a href="http://127.0.0.1:8888/pkg/github.com/spf13/cobra/">cobra</a>.<a href="http://127.0.0.1:8888/pkg/github.com/spf13/cobra/#Command">Command</a></pre>
+			<p>SettingsCommand provides the followng commands
+<pre>settings list - list all settings
+settings get [key] - get the current value of settings
+settings set [key] [value] - set the value of settings
+</pre>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="DatastoreOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/datastore.go?s=306:343#L8">DatastoreOption</a>
+				<a class="permalink" href="index.html#DatastoreOption">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type DatastoreOption func(*datastore)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="WithKind">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/datastore.go?s=345:387#L10">WithKind</a>
+					<a class="permalink" href="index.html#WithKind">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithKind(kind <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#DatastoreOption">DatastoreOption</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Item">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=166:272#L3">Item</a>
+				<a class="permalink" href="index.html#Item">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Item is an interface to define a settings item.
+
+			<pre>type Item[T <a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>] interface {
+    Key() <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+    Default() T
+    ToBytes(T) []<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>
+    FromBytes([]<a href="http://127.0.0.1:8888/pkg/builtin/#byte">byte</a>) (T, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewBool">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=3662:3716#L176">NewBool</a>
+					<a class="permalink" href="index.html#NewBool">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewBool(key <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, defaultValue <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>) <a href="index.html#Item">Item</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>]</pre>
+				<p>NewBool returns a new bool item.
+
+				
+				
+			
+				
+				<h3 id="NewDuration">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=1727:1803#L84">NewDuration</a>
+					<a class="permalink" href="index.html#NewDuration">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewDuration(key <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, defaultValue <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Duration">Duration</a>) <a href="index.html#Item">Item</a>[<a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Duration">Duration</a>]</pre>
+				<p>NewDuration returns a new int item.
+
+				
+				
+			
+				
+				<h3 id="NewInt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=1172:1223#L58">NewInt</a>
+					<a class="permalink" href="index.html#NewInt">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewInt(key <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, defaultValue <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="index.html#Item">Item</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>]</pre>
+				<p>NewStirng returns a new int item.
+
+				
+				
+			
+				
+				<h3 id="NewIntArray">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=3091:3151#L144">NewIntArray</a>
+					<a class="permalink" href="index.html#NewIntArray">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewIntArray(key <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, defaultValue []<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>) <a href="index.html#Item">Item</a>[[]<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>]</pre>
+				<p>NewIntArray returns a new []string item.
+
+				
+				
+			
+				
+				<h3 id="NewString">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=675:728#L32">NewString</a>
+					<a class="permalink" href="index.html#NewString">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewString(key, defaultValue <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#Item">Item</a>[<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>]</pre>
+				<p>NewStirng returns a new string item.
+
+				
+				
+			
+				
+				<h3 id="NewStringArray">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=2333:2402#L110">NewStringArray</a>
+					<a class="permalink" href="index.html#NewStringArray">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewStringArray(key <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, defaultValue []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#Item">Item</a>[[]<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>]</pre>
+				<p>NewStringArray returns a new []string item.
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="ItemInfo">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/devtool.go?s=154:258#L4">ItemInfo</a>
+				<a class="permalink" href="index.html#ItemInfo">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ItemInfo struct {
+<span id="ItemInfo.KeyName"></span>    KeyName     <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="ItemInfo.PackageName"></span>    PackageName <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="ItemInfo.VarName"></span>    VarName     <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="ItemInfo.TypeName"></span>    TypeName    <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="CaptureSettings">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/devtool.go?s=260:321#L11">CaptureSettings</a>
+					<a class="permalink" href="index.html#CaptureSettings">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func CaptureSettings(packageName <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) ([]*<a href="index.html#ItemInfo">ItemInfo</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="JSONFileOption">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/jsonfile.go?s=233:268#L9">JSONFileOption</a>
+				<a class="permalink" href="index.html#JSONFileOption">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type JSONFileOption func(*jsonfile)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="WithPath">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/jsonfile.go?s=270:311#L11">WithPath</a>
+					<a class="permalink" href="index.html#WithPath">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func WithPath(path <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#JSONFileOption">JSONFileOption</a></pre>
+				
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

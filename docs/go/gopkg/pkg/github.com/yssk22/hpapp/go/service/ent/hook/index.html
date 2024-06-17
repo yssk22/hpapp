@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>hook - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package hook
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/ent/hook"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#FixedError">func FixedError(err error) ent.Hook</a></dd>
+			
+				
+				<dd><a href="index.html#If">func If(hk ent.Hook, cond Condition) ent.Hook</a></dd>
+			
+				
+				<dd><a href="index.html#On">func On(hk ent.Hook, op ent.Op) ent.Hook</a></dd>
+			
+				
+				<dd><a href="index.html#Reject">func Reject(op ent.Op) ent.Hook</a></dd>
+			
+				
+				<dd><a href="index.html#Unless">func Unless(hk ent.Hook, op ent.Op) ent.Hook</a></dd>
+			
+			
+				
+				<dd><a href="index.html#AuthFunc">type AuthFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AuthFunc.Mutate">func (f AuthFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Chain">type Chain</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewChain">func NewChain(hooks ...ent.Hook) Chain</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Chain.Append">func (c Chain) Append(hooks ...ent.Hook) Chain</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Chain.Extend">func (c Chain) Extend(chain Chain) Chain</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Chain.Hook">func (c Chain) Hook() ent.Hook</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Condition">type Condition</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#And">func And(first, second Condition, rest ...Condition) Condition</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HasAddedFields">func HasAddedFields(field string, fields ...string) Condition</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HasClearedFields">func HasClearedFields(field string, fields ...string) Condition</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HasFields">func HasFields(field string, fields ...string) Condition</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HasOp">func HasOp(op ent.Op) Condition</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Not">func Not(cond Condition) Condition</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Or">func Or(first, second Condition, rest ...Condition) Condition</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HPAmebloPostFunc">type HPAmebloPostFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAmebloPostFunc.Mutate">func (f HPAmebloPostFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPArtistFunc">type HPArtistFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPArtistFunc.Mutate">func (f HPArtistFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPAssetFunc">type HPAssetFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAssetFunc.Mutate">func (f HPAssetFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPBlobFunc">type HPBlobFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobFunc.Mutate">func (f HPBlobFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPElineupMallItemFunc">type HPElineupMallItemFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPElineupMallItemFunc.Mutate">func (f HPElineupMallItemFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPEventFunc">type HPEventFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEventFunc.Mutate">func (f HPEventFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFCEventTicketFunc">type HPFCEventTicketFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFCEventTicketFunc.Mutate">func (f HPFCEventTicketFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFeedItemFunc">type HPFeedItemFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFeedItemFunc.Mutate">func (f HPFeedItemFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFollowFunc">type HPFollowFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFollowFunc.Mutate">func (f HPFollowFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPIgPostFunc">type HPIgPostFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPIgPostFunc.Mutate">func (f HPIgPostFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPMemberFunc">type HPMemberFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMemberFunc.Mutate">func (f HPMemberFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPSortHistoryFunc">type HPSortHistoryFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPSortHistoryFunc.Mutate">func (f HPSortHistoryFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPViewHistoryFunc">type HPViewHistoryFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPViewHistoryFunc.Mutate">func (f HPViewHistoryFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TestEntFunc">type TestEntFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TestEntFunc.Mutate">func (f TestEntFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UserFunc">type UserFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserFunc.Mutate">func (f UserFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UserNotificationLogFunc">type UserNotificationLogFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationLogFunc.Mutate">func (f UserNotificationLogFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UserNotificationSettingFunc">type UserNotificationSettingFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationSettingFunc.Mutate">func (f UserNotificationSettingFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go">hook.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="FixedError">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=11716:11751#L339">FixedError</a>
+				<a class="permalink" href="index.html#FixedError">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FixedError(err <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>) <a href="../index.html">ent</a>.<a href="../index.html#Hook">Hook</a></pre>
+			<p>FixedError is a hook returning a fixed error.
+
+			
+			
+
+		
+			
+			
+			<h2 id="If">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=11020:11065#L313">If</a>
+				<a class="permalink" href="index.html#If">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func If(hk <a href="../index.html">ent</a>.<a href="../index.html#Hook">Hook</a>, cond <a href="index.html#Condition">Condition</a>) <a href="../index.html">ent</a>.<a href="../index.html#Hook">Hook</a></pre>
+			<p>If executes the given hook under condition.
+<pre>hook.If(ComputeAverage, And(HasFields(...), HasAddedFields(...)))
+</pre>
+
+			
+			
+
+		
+			
+			
+			<h2 id="On">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=11404:11444#L327">On</a>
+				<a class="permalink" href="index.html#On">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func On(hk <a href="../index.html">ent</a>.<a href="../index.html#Hook">Hook</a>, op <a href="../index.html">ent</a>.<a href="../index.html#Op">Op</a>) <a href="../index.html">ent</a>.<a href="../index.html#Hook">Hook</a></pre>
+			<p>On executes the given hook only for the given operation.
+<pre>hook.On(Log, ent.Delete|ent.Create)
+</pre>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Reject">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=12079:12110#L354">Reject</a>
+				<a class="permalink" href="index.html#Reject">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Reject(op <a href="../index.html">ent</a>.<a href="../index.html#Op">Op</a>) <a href="../index.html">ent</a>.<a href="../index.html#Hook">Hook</a></pre>
+			<p>Reject returns a hook that rejects all operations that match op.
+<pre>func (T) Hooks() []ent.Hook {
+	return []ent.Hook{
+		Reject(ent.Delete|ent.Update),
+	}
+}
+</pre>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Unless">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=11586:11630#L334">Unless</a>
+				<a class="permalink" href="index.html#Unless">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Unless(hk <a href="../index.html">ent</a>.<a href="../index.html#Hook">Hook</a>, op <a href="../index.html">ent</a>.<a href="../index.html#Op">Op</a>) <a href="../index.html">ent</a>.<a href="../index.html#Hook">Hook</a></pre>
+			<p>Unless skips the given hook only for the given operation.
+<pre>hook.Unless(Log, ent.Update|ent.UpdateOne)
+</pre>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="AuthFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=220:293#L4">AuthFunc</a>
+				<a class="permalink" href="index.html#AuthFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The AuthFunc type is an adapter to allow the use of ordinary
+function as Auth mutator.
+
+			<pre>type AuthFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#AuthMutation">AuthMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="AuthFunc.Mutate">func (AuthFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=322:402#L7">Mutate</a>
+					<a class="permalink" href="index.html#AuthFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#AuthFunc">AuthFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Chain">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=12341:12380#L361">Chain</a>
+				<a class="permalink" href="index.html#Chain">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Chain acts as a list of hooks and is effectively immutable.
+Once created, it will always hold the same set of hooks in the same order.
+
+			<pre>type Chain struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewChain">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=12424:12462#L366">NewChain</a>
+					<a class="permalink" href="index.html#NewChain">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewChain(hooks ...<a href="../index.html">ent</a>.<a href="../index.html#Hook">Hook</a>) <a href="index.html#Chain">Chain</a></pre>
+				<p>NewChain creates a new chain of hooks.
+
+				
+				
+			
+
+			
+				
+				<h3 id="Chain.Append">func (Chain) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=12857:12903#L382">Append</a>
+					<a class="permalink" href="index.html#Chain.Append">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c <a href="index.html#Chain">Chain</a>) Append(hooks ...<a href="../index.html">ent</a>.<a href="../index.html#Hook">Hook</a>) <a href="index.html#Chain">Chain</a></pre>
+				<p>Append extends a chain, adding the specified hook
+as the last ones in the mutation flow.
+
+				
+				
+				
+			
+				
+				<h3 id="Chain.Extend">func (Chain) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=13167:13207#L391">Extend</a>
+					<a class="permalink" href="index.html#Chain.Extend">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c <a href="index.html#Chain">Chain</a>) Extend(chain <a href="index.html#Chain">Chain</a>) <a href="index.html#Chain">Chain</a></pre>
+				<p>Extend extends a chain, adding the specified chain
+as the last ones in the mutation flow.
+
+				
+				
+				
+			
+				
+				<h3 id="Chain.Hook">func (Chain) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=12578:12608#L371">Hook</a>
+					<a class="permalink" href="index.html#Chain.Hook">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c <a href="index.html#Chain">Chain</a>) Hook() <a href="../index.html">ent</a>.<a href="../index.html#Hook">Hook</a></pre>
+				<p>Hook chains the list of hooks and returns the final hook.
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Condition">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=8729:8784#L219">Condition</a>
+				<a class="permalink" href="index.html#Condition">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Condition is a hook condition function.
+
+			<pre>type Condition func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="And">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=8834:8896#L222">And</a>
+					<a class="permalink" href="index.html#And">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func And(first, second <a href="index.html#Condition">Condition</a>, rest ...<a href="index.html#Condition">Condition</a>) <a href="index.html#Condition">Condition</a></pre>
+				<p>And groups conditions with the AND operator.
+
+				
+				
+			
+				
+				<h3 id="HasAddedFields">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=9833:9894#L266">HasAddedFields</a>
+					<a class="permalink" href="index.html#HasAddedFields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func HasAddedFields(field <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, fields ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#Condition">Condition</a></pre>
+				<p>HasAddedFields is a condition validating `.AddedField` on fields.
+
+				
+				
+			
+				
+				<h3 id="HasClearedFields">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=10223:10286#L281">HasClearedFields</a>
+					<a class="permalink" href="index.html#HasClearedFields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func HasClearedFields(field <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, fields ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#Condition">Condition</a></pre>
+				<p>HasClearedFields is a condition validating `.FieldCleared` on fields.
+
+				
+				
+			
+				
+				<h3 id="HasFields">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=10599:10655#L296">HasFields</a>
+					<a class="permalink" href="index.html#HasFields">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func HasFields(field <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, fields ...<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) <a href="index.html#Condition">Condition</a></pre>
+				<p>HasFields is a condition validating `.Field` on fields.
+
+				
+				
+			
+				
+				<h3 id="HasOp">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=9646:9677#L259">HasOp</a>
+					<a class="permalink" href="index.html#HasOp">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func HasOp(op <a href="../index.html">ent</a>.<a href="../index.html#Op">Op</a>) <a href="index.html#Condition">Condition</a></pre>
+				<p>HasOp is a condition testing mutation operation.
+
+				
+				
+			
+				
+				<h3 id="Not">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=9471:9505#L252">Not</a>
+					<a class="permalink" href="index.html#Not">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Not(cond <a href="index.html#Condition">Condition</a>) <a href="index.html#Condition">Condition</a></pre>
+				<p>Not negates a given condition.
+
+				
+				
+			
+				
+				<h3 id="Or">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=9161:9222#L237">Or</a>
+					<a class="permalink" href="index.html#Or">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Or(first, second <a href="index.html#Condition">Condition</a>, rest ...<a href="index.html#Condition">Condition</a>) <a href="index.html#Condition">Condition</a></pre>
+				<p>Or groups conditions with the OR operator.
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="HPAmebloPostFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=666:755#L16">HPAmebloPostFunc</a>
+				<a class="permalink" href="index.html#HPAmebloPostFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPAmebloPostFunc type is an adapter to allow the use of ordinary
+function as HPAmebloPost mutator.
+
+			<pre>type HPAmebloPostFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPAmebloPostMutation">HPAmebloPostMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPAmebloPostFunc.Mutate">func (HPAmebloPostFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=784:872#L19">Mutate</a>
+					<a class="permalink" href="index.html#HPAmebloPostFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPAmebloPostFunc">HPAmebloPostFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPArtistFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=1144:1225#L28">HPArtistFunc</a>
+				<a class="permalink" href="index.html#HPArtistFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPArtistFunc type is an adapter to allow the use of ordinary
+function as HPArtist mutator.
+
+			<pre>type HPArtistFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPArtistMutation">HPArtistMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPArtistFunc.Mutate">func (HPArtistFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=1254:1338#L31">Mutate</a>
+					<a class="permalink" href="index.html#HPArtistFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPArtistFunc">HPArtistFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPAssetFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=1600:1679#L40">HPAssetFunc</a>
+				<a class="permalink" href="index.html#HPAssetFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPAssetFunc type is an adapter to allow the use of ordinary
+function as HPAsset mutator.
+
+			<pre>type HPAssetFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPAssetMutation">HPAssetMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPAssetFunc.Mutate">func (HPAssetFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=1708:1791#L43">Mutate</a>
+					<a class="permalink" href="index.html#HPAssetFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPAssetFunc">HPAssetFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPBlobFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=2049:2126#L52">HPBlobFunc</a>
+				<a class="permalink" href="index.html#HPBlobFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPBlobFunc type is an adapter to allow the use of ordinary
+function as HPBlob mutator.
+
+			<pre>type HPBlobFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPBlobMutation">HPBlobMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPBlobFunc.Mutate">func (HPBlobFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=2155:2237#L55">Mutate</a>
+					<a class="permalink" href="index.html#HPBlobFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPBlobFunc">HPBlobFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPElineupMallItemFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=2515:2614#L64">HPElineupMallItemFunc</a>
+				<a class="permalink" href="index.html#HPElineupMallItemFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPElineupMallItemFunc type is an adapter to allow the use of ordinary
+function as HPElineupMallItem mutator.
+
+			<pre>type HPElineupMallItemFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPElineupMallItemMutation">HPElineupMallItemMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPElineupMallItemFunc.Mutate">func (HPElineupMallItemFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=2643:2736#L67">Mutate</a>
+					<a class="permalink" href="index.html#HPElineupMallItemFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPElineupMallItemFunc">HPElineupMallItemFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPEventFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=3016:3095#L76">HPEventFunc</a>
+				<a class="permalink" href="index.html#HPEventFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPEventFunc type is an adapter to allow the use of ordinary
+function as HPEvent mutator.
+
+			<pre>type HPEventFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPEventMutation">HPEventMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPEventFunc.Mutate">func (HPEventFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=3124:3207#L79">Mutate</a>
+					<a class="permalink" href="index.html#HPEventFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPEventFunc">HPEventFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFCEventTicketFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=3483:3578#L88">HPFCEventTicketFunc</a>
+				<a class="permalink" href="index.html#HPFCEventTicketFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPFCEventTicketFunc type is an adapter to allow the use of ordinary
+function as HPFCEventTicket mutator.
+
+			<pre>type HPFCEventTicketFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPFCEventTicketMutation">HPFCEventTicketMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFCEventTicketFunc.Mutate">func (HPFCEventTicketFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=3607:3698#L91">Mutate</a>
+					<a class="permalink" href="index.html#HPFCEventTicketFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPFCEventTicketFunc">HPFCEventTicketFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFeedItemFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=3980:4065#L100">HPFeedItemFunc</a>
+				<a class="permalink" href="index.html#HPFeedItemFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPFeedItemFunc type is an adapter to allow the use of ordinary
+function as HPFeedItem mutator.
+
+			<pre>type HPFeedItemFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPFeedItemMutation">HPFeedItemMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFeedItemFunc.Mutate">func (HPFeedItemFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=4094:4180#L103">Mutate</a>
+					<a class="permalink" href="index.html#HPFeedItemFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPFeedItemFunc">HPFeedItemFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFollowFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=4448:4529#L112">HPFollowFunc</a>
+				<a class="permalink" href="index.html#HPFollowFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPFollowFunc type is an adapter to allow the use of ordinary
+function as HPFollow mutator.
+
+			<pre>type HPFollowFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPFollowMutation">HPFollowMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFollowFunc.Mutate">func (HPFollowFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=4558:4642#L115">Mutate</a>
+					<a class="permalink" href="index.html#HPFollowFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPFollowFunc">HPFollowFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPIgPostFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=4906:4987#L124">HPIgPostFunc</a>
+				<a class="permalink" href="index.html#HPIgPostFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPIgPostFunc type is an adapter to allow the use of ordinary
+function as HPIgPost mutator.
+
+			<pre>type HPIgPostFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPIgPostMutation">HPIgPostMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPIgPostFunc.Mutate">func (HPIgPostFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=5016:5100#L127">Mutate</a>
+					<a class="permalink" href="index.html#HPIgPostFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPIgPostFunc">HPIgPostFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPMemberFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=5364:5445#L136">HPMemberFunc</a>
+				<a class="permalink" href="index.html#HPMemberFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPMemberFunc type is an adapter to allow the use of ordinary
+function as HPMember mutator.
+
+			<pre>type HPMemberFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPMemberMutation">HPMemberMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPMemberFunc.Mutate">func (HPMemberFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=5474:5558#L139">Mutate</a>
+					<a class="permalink" href="index.html#HPMemberFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPMemberFunc">HPMemberFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPSortHistoryFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=5832:5923#L148">HPSortHistoryFunc</a>
+				<a class="permalink" href="index.html#HPSortHistoryFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPSortHistoryFunc type is an adapter to allow the use of ordinary
+function as HPSortHistory mutator.
+
+			<pre>type HPSortHistoryFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPSortHistoryMutation">HPSortHistoryMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPSortHistoryFunc.Mutate">func (HPSortHistoryFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=5952:6041#L151">Mutate</a>
+					<a class="permalink" href="index.html#HPSortHistoryFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPSortHistoryFunc">HPSortHistoryFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPViewHistoryFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=6325:6416#L160">HPViewHistoryFunc</a>
+				<a class="permalink" href="index.html#HPViewHistoryFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPViewHistoryFunc type is an adapter to allow the use of ordinary
+function as HPViewHistory mutator.
+
+			<pre>type HPViewHistoryFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPViewHistoryMutation">HPViewHistoryMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPViewHistoryFunc.Mutate">func (HPViewHistoryFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=6445:6534#L163">Mutate</a>
+					<a class="permalink" href="index.html#HPViewHistoryFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPViewHistoryFunc">HPViewHistoryFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TestEntFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=6806:6885#L172">TestEntFunc</a>
+				<a class="permalink" href="index.html#TestEntFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The TestEntFunc type is an adapter to allow the use of ordinary
+function as TestEnt mutator.
+
+			<pre>type TestEntFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#TestEntMutation">TestEntMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TestEntFunc.Mutate">func (TestEntFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=6914:6997#L175">Mutate</a>
+					<a class="permalink" href="index.html#TestEntFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#TestEntFunc">TestEntFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UserFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=7251:7324#L184">UserFunc</a>
+				<a class="permalink" href="index.html#UserFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The UserFunc type is an adapter to allow the use of ordinary
+function as User mutator.
+
+			<pre>type UserFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#UserMutation">UserMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserFunc.Mutate">func (UserFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=7353:7433#L187">Mutate</a>
+					<a class="permalink" href="index.html#UserFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#UserFunc">UserFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UserNotificationLogFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=7711:7814#L196">UserNotificationLogFunc</a>
+				<a class="permalink" href="index.html#UserNotificationLogFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The UserNotificationLogFunc type is an adapter to allow the use of ordinary
+function as UserNotificationLog mutator.
+
+			<pre>type UserNotificationLogFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#UserNotificationLogMutation">UserNotificationLogMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserNotificationLogFunc.Mutate">func (UserNotificationLogFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=7843:7938#L199">Mutate</a>
+					<a class="permalink" href="index.html#UserNotificationLogFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#UserNotificationLogFunc">UserNotificationLogFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UserNotificationSettingFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=8254:8365#L208">UserNotificationSettingFunc</a>
+				<a class="permalink" href="index.html#UserNotificationSettingFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The UserNotificationSettingFunc type is an adapter to allow the use of ordinary
+function as UserNotificationSetting mutator.
+
+			<pre>type UserNotificationSettingFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#UserNotificationSettingMutation">UserNotificationSettingMutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserNotificationSettingFunc.Mutate">func (UserNotificationSettingFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/hook/hook.go?s=8394:8493#L211">Mutate</a>
+					<a class="permalink" href="index.html#UserNotificationSettingFunc.Mutate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#UserNotificationSettingFunc">UserNotificationSettingFunc</a>) Mutate(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) (<a href="../index.html">ent</a>.<a href="../index.html#Value">Value</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>)</pre>
+				<p>Mutate calls f(ctx, m).
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

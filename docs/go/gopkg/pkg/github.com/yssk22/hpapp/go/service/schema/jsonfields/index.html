@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>jsonfields - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package jsonfields
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/schema/jsonfields"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#ExpoPushMessage">type ExpoPushMessage</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HPBlobImageFace">type HPBlobImageFace</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HPBlobThumbnail">type HPBlobThumbnail</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HPIgCrawlArgs">type HPIgCrawlArgs</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HPIgCrawlArgsChildPost">type HPIgCrawlArgsChildPost</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HPSortResult">type HPSortResult</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HPSortResultRecord">type HPSortResultRecord</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ManuallyModified">type ManuallyModified</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Media">type Media</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ReactNavigationPush">type ReactNavigationPush</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ReactNavigationPush.ToPushMessage">func (r *ReactNavigationPush) ToPushMessage(tokens []string) *push.Message</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TestJSON">type TestJSON</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/hpblob.go">hpblob.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/hpigpost.go">hpigpost.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/hpsorthistory.go">hpsorthistory.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/manuallymodified.go">manuallymodified.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/media.go">media.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/testjson.go">testjson.go</a>
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/usernotification.go">usernotification.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="ExpoPushMessage">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/usernotification.go?s=337:768#L6">ExpoPushMessage</a>
+				<a class="permalink" href="index.html#ExpoPushMessage">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ExpoPushMessage struct {
+<span id="ExpoPushMessage.Title"></span>    Title      <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>               `json:&#34;title,omitempty&#34;`
+<span id="ExpoPushMessage.Body"></span>    Body       <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>               `json:&#34;body&#34;`
+<span id="ExpoPushMessage.TTLSeconds"></span>    TTLSeconds <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>                  `json:&#34;ttl,omitempty&#34;`
+<span id="ExpoPushMessage.Priority"></span>    Priority   <a href="../../../system/push/index.html">push</a>.<a href="../../../system/push/index.html#MessagePriority">MessagePriority</a> `json:&#34;priority,omitempty&#34;`
+<span id="ExpoPushMessage.Sound"></span>    Sound      <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>               `json:&#34;sound,omitempty&#34;`
+<span id="ExpoPushMessage.Badge"></span>    Badge      <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>                  `json:&#34;badge,omitempty&#34;`
+<span id="ExpoPushMessage.ImageUrl"></span>    ImageUrl   <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>               `json:&#34;image_url,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="HPBlobImageFace">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/hpblob.go?s=223:619#L1">HPBlobImageFace</a>
+				<a class="permalink" href="index.html#HPBlobImageFace">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPBlobImageFace struct {
+<span id="HPBlobImageFace.Left"></span>    Left        <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>      `json:&#34;left&#34;`
+<span id="HPBlobImageFace.Top"></span>    Top         <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>      `json:&#34;top&#34;`
+<span id="HPBlobImageFace.Bottom"></span>    Bottom      <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>      `json:&#34;bottom&#34;`
+<span id="HPBlobImageFace.Right"></span>    Right       <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>      `json:&#34;right&#34;`
+<span id="HPBlobImageFace.ImageURL"></span>    ImageURL    <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>   `json:&#34;image_url,omitempty&#34;` <span class="comment">// deprecated</span>
+<span id="HPBlobImageFace.StoragePath"></span>    StoragePath <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>   `json:&#34;storage_path,omitempty&#34;`
+<span id="HPBlobImageFace.Label"></span>    Label       *<a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>     `json:&#34;label,omitempty&#34;`
+<span id="HPBlobImageFace.LabelScore"></span>    LabelScore  *<a href="http://127.0.0.1:8888/pkg/builtin/#float64">float64</a> `json:&#34;label_score,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="HPBlobThumbnail">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/hpblob.go?s=20:221#L1">HPBlobThumbnail</a>
+				<a class="permalink" href="index.html#HPBlobThumbnail">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPBlobThumbnail struct {
+<span id="HPBlobThumbnail.StoragePath"></span>    StoragePath    <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;storagePath&#34;`
+<span id="HPBlobThumbnail.SourceImageURL"></span>    SourceImageURL <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;source_image_url&#34;`
+<span id="HPBlobThumbnail.Width"></span>    Width          <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>    `json:&#34;width&#34;`
+<span id="HPBlobThumbnail.Height"></span>    Height         <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>    `json:&#34;height&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="HPIgCrawlArgs">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/hpigpost.go?s=181:921#L1">HPIgCrawlArgs</a>
+				<a class="permalink" href="index.html#HPIgCrawlArgs">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPIgCrawlArgs is a struct to store crawling args for HPIgPost.
+It is used to store the crawling args in the database to retry the crawling.
+
+			<pre>type HPIgCrawlArgs struct {
+<span id="HPIgCrawlArgs.ID"></span>    ID            <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>                   `json:&#34;id&#34;`
+<span id="HPIgCrawlArgs.Shortcode"></span>    Shortcode     <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>                   `json:&#34;shortcode&#34;`
+<span id="HPIgCrawlArgs.Caption"></span>    Caption       <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>                   `json:&#34;caption&#34;`
+<span id="HPIgCrawlArgs.DisplayURL"></span>    DisplayURL    <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>                   `json:&#34;displayUrl&#34;`
+<span id="HPIgCrawlArgs.VideoURL"></span>    VideoURL      <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>                   `json:&#34;videoUrl&#34;`
+<span id="HPIgCrawlArgs.OwnerUsername"></span>    OwnerUsername <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>                   `json:&#34;ownerUsername&#34;`
+<span id="HPIgCrawlArgs.OwnerID"></span>    OwnerID       <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>                   `json:&#34;ownerId&#34;`
+<span id="HPIgCrawlArgs.Hashtags"></span>    Hashtags      []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>                 `json:&#34;hashtags&#34;`
+<span id="HPIgCrawlArgs.ChildPosts"></span>    ChildPosts    []<a href="index.html#HPIgCrawlArgsChildPost">HPIgCrawlArgsChildPost</a> `json:&#34;childPosts&#34;`
+<span id="HPIgCrawlArgs.Timestamp"></span>    Timestamp     <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a>                `json:&#34;timestamp&#34;`
+
+<span id="HPIgCrawlArgs.CommentsCount"></span>    CommentsCount  <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a> `json:&#34;commentsCount&#34;`
+<span id="HPIgCrawlArgs.LikesCount"></span>    LikesCount     <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a> `json:&#34;likesCount&#34;`
+<span id="HPIgCrawlArgs.VideoViewCount"></span>    VideoViewCount <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a> `json:&#34;videoViewCount&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="HPIgCrawlArgsChildPost">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/hpigpost.go?s=923:1207#L14">HPIgCrawlArgsChildPost</a>
+				<a class="permalink" href="index.html#HPIgCrawlArgsChildPost">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HPIgCrawlArgsChildPost struct {
+<span id="HPIgCrawlArgsChildPost.ID"></span>    ID             <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;id&#34;`
+<span id="HPIgCrawlArgsChildPost.Type"></span>    Type           <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;type&#34;`
+<span id="HPIgCrawlArgsChildPost.DisplayURL"></span>    DisplayURL     <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;displayUrl&#34;`
+<span id="HPIgCrawlArgsChildPost.VideoURL"></span>    VideoURL       <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;videoUrl&#34;`
+<span id="HPIgCrawlArgsChildPost.LikesCount"></span>    LikesCount     <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>    `json:&#34;likesCount&#34;`
+<span id="HPIgCrawlArgsChildPost.VideoViewCount"></span>    VideoViewCount <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>    `json:&#34;videoViewCount&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="HPSortResult">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/hpsorthistory.go?s=66:141#L1">HPSortResult</a>
+				<a class="permalink" href="index.html#HPSortResult">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPSortResult is a set of results by HPSort
+
+			<pre>type HPSortResult struct {
+<span id="HPSortResult.Records"></span>    Records []<a href="index.html#HPSortResultRecord">HPSortResultRecord</a> `json:&#34;records&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="HPSortResultRecord">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/hpsorthistory.go?s=210:310#L1">HPSortResultRecord</a>
+				<a class="permalink" href="index.html#HPSortResultRecord">&#xb6;</a>
+				
+				
+			</h2>
+			<p>HPSortResultRecord is a record to hold a member and it&apos;s point.
+
+			<pre>type HPSortResultRecord struct {
+<span id="HPSortResultRecord.ArtistID"></span>    ArtistID  <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+<span id="HPSortResultRecord.ArtistKey"></span>    ArtistKey <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="HPSortResultRecord.MemberID"></span>    MemberID  <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>
+<span id="HPSortResultRecord.MemberKey"></span>    MemberKey <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ManuallyModified">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/manuallymodified.go?s=20:140#L1">ManuallyModified</a>
+				<a class="permalink" href="index.html#ManuallyModified">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ManuallyModified struct {
+<span id="ManuallyModified.FieldName"></span>    FieldName     <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>
+<span id="ManuallyModified.AllowOverride"></span>    AllowOverride <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a> <span class="comment">// if true, crawler can override field values</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Media">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/media.go?s=78:726#L1">Media</a>
+				<a class="permalink" href="index.html#Media">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Media struct {
+<span id="Media.Url"></span>    Url    <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>           `json:&#34;url,omitempty&#34;`     <span class="comment">// original url</span>
+<span id="Media.BlobID"></span>    BlobID <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>              `json:&#34;blob_id,omitempty&#34;` <span class="comment">// id on HPBlob</span>
+<span id="Media.Type"></span>    Type   <a href="../enums/index.html">enums</a>.<a href="../enums/index.html#HPBlobType">HPBlobType</a> `json:&#34;type,omitempty&#34;`    <span class="comment">// &#34;video&#34;, &#34;image&#34;, ...</span>
+<span id="Media.Width"></span>    Width  <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>              `json:&#34;width,omitempty&#34;`   <span class="comment">// width of the media</span>
+<span id="Media.Height"></span>    Height <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>              `json:&#34;height,omitempty&#34;`  <span class="comment">// height of the media</span>
+
+<span id="Media.ThumbnailUrl"></span>    ThumbnailUrl    <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a> `json:&#34;thumbnail_url,omitempty&#34;`    <span class="comment">// thumbnail url to display</span>
+<span id="Media.ThumbnailWidth"></span>    ThumbnailWidth  <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>    `json:&#34;thumbnail_width,omitempty&#34;`  <span class="comment">// thumbnail url to display</span>
+<span id="Media.ThumbnailHeight"></span>    ThumbnailHeight <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>    `json:&#34;thumbnail_height,omitempty&#34;` <span class="comment">// thumbnail url to display</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ReactNavigationPush">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/usernotification.go?s=140:335#L1">ReactNavigationPush</a>
+				<a class="permalink" href="index.html#ReactNavigationPush">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ReactNavigationPush struct {
+<span id="ReactNavigationPush.Path"></span>    Path        <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>                 `json:&#34;path&#34;`
+<span id="ReactNavigationPush.Params"></span>    Params      map[<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>]interface{} `json:&#34;params&#34;`
+<span id="ReactNavigationPush.PushMessage"></span>    PushMessage <a href="index.html#ExpoPushMessage">ExpoPushMessage</a>        `json:&#34;push_message&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ReactNavigationPush.ToPushMessage">func (*ReactNavigationPush) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/usernotification.go?s=770:844#L16">ToPushMessage</a>
+					<a class="permalink" href="index.html#ReactNavigationPush.ToPushMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (r *<a href="index.html#ReactNavigationPush">ReactNavigationPush</a>) ToPushMessage(tokens []<a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>) *<a href="../../../system/push/index.html">push</a>.<a href="../../../system/push/index.html#Message">Message</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TestJSON">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/schema/jsonfields/testjson.go?s=35:196#L1">TestJSON</a>
+				<a class="permalink" href="index.html#TestJSON">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type TestJSON struct {
+<span id="TestJSON.String"></span>    String   <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>    `json:&#34;string,omitempty&#34;`
+<span id="TestJSON.Int"></span>    Int      <a href="http://127.0.0.1:8888/pkg/builtin/#int">int</a>       `json:&#34;int,omitempty&#34;`
+<span id="TestJSON.DateTime"></span>    DateTime <a href="http://127.0.0.1:8888/pkg/time/">time</a>.<a href="http://127.0.0.1:8888/pkg/time/#Time">Time</a> `json:&#34;datetime,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

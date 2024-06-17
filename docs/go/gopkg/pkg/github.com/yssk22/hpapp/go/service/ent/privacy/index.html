@@ -1,0 +1,2320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>privacy - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.4";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://127.0.0.1:8888/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://127.0.0.1:8888/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://127.0.0.1:8888/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package privacy
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/yssk22/hpapp/go/service/ent/privacy"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Allowf">func Allowf(format string, a ...any) error</a></dd>
+			
+				
+				<dd><a href="index.html#DecisionContext">func DecisionContext(parent context.Context, decision error) context.Context</a></dd>
+			
+				
+				<dd><a href="index.html#DecisionFromContext">func DecisionFromContext(ctx context.Context) (error, bool)</a></dd>
+			
+				
+				<dd><a href="index.html#Denyf">func Denyf(format string, a ...any) error</a></dd>
+			
+				
+				<dd><a href="index.html#Skipf">func Skipf(format string, a ...any) error</a></dd>
+			
+			
+				
+				<dd><a href="index.html#AuthMutationRuleFunc">type AuthMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AuthMutationRuleFunc.EvalMutation">func (f AuthMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#AuthQueryRuleFunc">type AuthQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AuthQueryRuleFunc.EvalQuery">func (f AuthQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Filter">type Filter</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#FilterFunc">type FilterFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FilterFunc.EvalMutation">func (f FilterFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FilterFunc.EvalQuery">func (f FilterFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPAmebloPostMutationRuleFunc">type HPAmebloPostMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAmebloPostMutationRuleFunc.EvalMutation">func (f HPAmebloPostMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPAmebloPostQueryRuleFunc">type HPAmebloPostQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAmebloPostQueryRuleFunc.EvalQuery">func (f HPAmebloPostQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPArtistMutationRuleFunc">type HPArtistMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPArtistMutationRuleFunc.EvalMutation">func (f HPArtistMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPArtistQueryRuleFunc">type HPArtistQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPArtistQueryRuleFunc.EvalQuery">func (f HPArtistQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPAssetMutationRuleFunc">type HPAssetMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAssetMutationRuleFunc.EvalMutation">func (f HPAssetMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPAssetQueryRuleFunc">type HPAssetQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPAssetQueryRuleFunc.EvalQuery">func (f HPAssetQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPBlobMutationRuleFunc">type HPBlobMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobMutationRuleFunc.EvalMutation">func (f HPBlobMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPBlobQueryRuleFunc">type HPBlobQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPBlobQueryRuleFunc.EvalQuery">func (f HPBlobQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPElineupMallItemMutationRuleFunc">type HPElineupMallItemMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPElineupMallItemMutationRuleFunc.EvalMutation">func (f HPElineupMallItemMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPElineupMallItemQueryRuleFunc">type HPElineupMallItemQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPElineupMallItemQueryRuleFunc.EvalQuery">func (f HPElineupMallItemQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPEventMutationRuleFunc">type HPEventMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEventMutationRuleFunc.EvalMutation">func (f HPEventMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPEventQueryRuleFunc">type HPEventQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPEventQueryRuleFunc.EvalQuery">func (f HPEventQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFCEventTicketMutationRuleFunc">type HPFCEventTicketMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFCEventTicketMutationRuleFunc.EvalMutation">func (f HPFCEventTicketMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFCEventTicketQueryRuleFunc">type HPFCEventTicketQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFCEventTicketQueryRuleFunc.EvalQuery">func (f HPFCEventTicketQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFeedItemMutationRuleFunc">type HPFeedItemMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFeedItemMutationRuleFunc.EvalMutation">func (f HPFeedItemMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFeedItemQueryRuleFunc">type HPFeedItemQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFeedItemQueryRuleFunc.EvalQuery">func (f HPFeedItemQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFollowMutationRuleFunc">type HPFollowMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFollowMutationRuleFunc.EvalMutation">func (f HPFollowMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPFollowQueryRuleFunc">type HPFollowQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPFollowQueryRuleFunc.EvalQuery">func (f HPFollowQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPIgPostMutationRuleFunc">type HPIgPostMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPIgPostMutationRuleFunc.EvalMutation">func (f HPIgPostMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPIgPostQueryRuleFunc">type HPIgPostQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPIgPostQueryRuleFunc.EvalQuery">func (f HPIgPostQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPMemberMutationRuleFunc">type HPMemberMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMemberMutationRuleFunc.EvalMutation">func (f HPMemberMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPMemberQueryRuleFunc">type HPMemberQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPMemberQueryRuleFunc.EvalQuery">func (f HPMemberQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPSortHistoryMutationRuleFunc">type HPSortHistoryMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPSortHistoryMutationRuleFunc.EvalMutation">func (f HPSortHistoryMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPSortHistoryQueryRuleFunc">type HPSortHistoryQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPSortHistoryQueryRuleFunc.EvalQuery">func (f HPSortHistoryQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPViewHistoryMutationRuleFunc">type HPViewHistoryMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPViewHistoryMutationRuleFunc.EvalMutation">func (f HPViewHistoryMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HPViewHistoryQueryRuleFunc">type HPViewHistoryQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#HPViewHistoryQueryRuleFunc.EvalQuery">func (f HPViewHistoryQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#MutationPolicy">type MutationPolicy</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MutationRule">type MutationRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DenyMutationOperationRule">func DenyMutationOperationRule(op ent.Op) MutationRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OnMutationOperation">func OnMutationOperation(rule MutationRule, op ent.Op) MutationRule</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MutationRuleFunc">type MutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MutationRuleFunc.EvalMutation">func (f MutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Policy">type Policy</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#QueryMutationRule">type QueryMutationRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AlwaysAllowRule">func AlwaysAllowRule() QueryMutationRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AlwaysDenyRule">func AlwaysDenyRule() QueryMutationRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ContextQueryMutationRule">func ContextQueryMutationRule(eval func(context.Context) error) QueryMutationRule</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#QueryPolicy">type QueryPolicy</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#QueryRule">type QueryRule</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#QueryRuleFunc">type QueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#QueryRuleFunc.EvalQuery">func (f QueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TestEntMutationRuleFunc">type TestEntMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TestEntMutationRuleFunc.EvalMutation">func (f TestEntMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TestEntQueryRuleFunc">type TestEntQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TestEntQueryRuleFunc.EvalQuery">func (f TestEntQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UserMutationRuleFunc">type UserMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserMutationRuleFunc.EvalMutation">func (f UserMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UserNotificationLogMutationRuleFunc">type UserNotificationLogMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationLogMutationRuleFunc.EvalMutation">func (f UserNotificationLogMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UserNotificationLogQueryRuleFunc">type UserNotificationLogQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationLogQueryRuleFunc.EvalQuery">func (f UserNotificationLogQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UserNotificationSettingMutationRuleFunc">type UserNotificationSettingMutationRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationSettingMutationRuleFunc.EvalMutation">func (f UserNotificationSettingMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UserNotificationSettingQueryRuleFunc">type UserNotificationSettingQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserNotificationSettingQueryRuleFunc.EvalQuery">func (f UserNotificationSettingQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UserQueryRuleFunc">type UserQueryRuleFunc</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UserQueryRuleFunc.EvalQuery">func (f UserQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go">privacy.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var (
+    <span class="comment">// Allow may be returned by rules to indicate that the policy</span>
+    <span class="comment">// evaluation should terminate with allow decision.</span>
+    <span id="Allow">Allow</span> = <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/">privacy</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/#Allow">Allow</a>
+
+    <span class="comment">// Deny may be returned by rules to indicate that the policy</span>
+    <span class="comment">// evaluation should terminate with deny decision.</span>
+    <span id="Deny">Deny</span> = <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/">privacy</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/#Deny">Deny</a>
+
+    <span class="comment">// Skip may be returned by rules to indicate that the policy</span>
+    <span class="comment">// evaluation should continue to the next rule.</span>
+    <span id="Skip">Skip</span> = <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/">privacy</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/#Skip">Skip</a>
+)</pre>
+			
+		
+		
+			
+			
+			<h2 id="Allowf">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=649:691#L20">Allowf</a>
+				<a class="permalink" href="index.html#Allowf">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Allowf(format <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, a ...<a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			<p>Allowf returns an formatted wrapped Allow decision.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DecisionContext">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=1171:1247#L36">DecisionContext</a>
+				<a class="permalink" href="index.html#DecisionContext">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DecisionContext(parent <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, decision <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>) <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a></pre>
+			<p>DecisionContext creates a new context from the given parent context with
+a policy decision attach to it.
+
+			
+			
+
+		
+			
+			
+			<h2 id="DecisionFromContext">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=1374:1433#L41">DecisionFromContext</a>
+				<a class="permalink" href="index.html#DecisionFromContext">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DecisionFromContext(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) (<a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>, <a href="http://127.0.0.1:8888/pkg/builtin/#bool">bool</a>)</pre>
+			<p>DecisionFromContext retrieves the policy decision from the context.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Denyf">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=805:846#L25">Denyf</a>
+				<a class="permalink" href="index.html#Denyf">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Denyf(format <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, a ...<a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			<p>Denyf returns an formatted wrapped Deny decision.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Skipf">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=959:1000#L30">Skipf</a>
+				<a class="permalink" href="index.html#Skipf">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Skipf(format <a href="http://127.0.0.1:8888/pkg/builtin/#string">string</a>, a ...<a href="http://127.0.0.1:8888/pkg/builtin/#any">any</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+			<p>Skipf returns an formatted wrapped Skip decision.
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="AuthMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=4947:5019#L157">AuthMutationRuleFunc</a>
+				<a class="permalink" href="index.html#AuthMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The AuthMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type AuthMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#AuthMutation">AuthMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="AuthMutationRuleFunc.EvalMutation">func (AuthMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=5054:5139#L160">EvalMutation</a>
+					<a class="permalink" href="index.html#AuthMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#AuthMutationRuleFunc">AuthMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="AuthQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=4516:4582#L145">AuthQueryRuleFunc</a>
+				<a class="permalink" href="index.html#AuthQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The AuthQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type AuthQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#AuthQuery">AuthQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="AuthQueryRuleFunc.EvalQuery">func (AuthQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=4615:4691#L148">EvalQuery</a>
+					<a class="permalink" href="index.html#AuthQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#AuthQueryRuleFunc">AuthQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Filter">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=21809:21907#L578">Filter</a>
+				<a class="permalink" href="index.html#Filter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Filter is the interface that wraps the Where function
+for filtering nodes in queries and mutations.
+
+			<pre>type Filter interface {
+    <span class="comment">// Where applies a filter on the executed query/mutation.</span>
+    Where(<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/entql/">entql</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/entql/#P">P</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="FilterFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=22035:22081#L585">FilterFunc</a>
+				<a class="permalink" href="index.html#FilterFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The FilterFunc type is an adapter that allows the use of ordinary
+functions as filters for query and mutation types.
+
+			<pre>type FilterFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, <a href="index.html#Filter">Filter</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="FilterFunc.EvalMutation">func (FilterFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=22443:22518#L598">EvalMutation</a>
+					<a class="permalink" href="index.html#FilterFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#FilterFunc">FilterFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, q) if the mutation implements the Filter interface, otherwise it is denied.
+
+				
+				
+				
+			
+				
+				<h3 id="FilterFunc.EvalQuery">func (FilterFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=22184:22253#L589">EvalQuery</a>
+					<a class="permalink" href="index.html#FilterFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#FilterFunc">FilterFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery calls f(ctx, q) if the query implements the Filter interface, otherwise it is denied.
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPAmebloPostMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=5885:5973#L181">HPAmebloPostMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPAmebloPostMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPAmebloPostMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPAmebloPostMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPAmebloPostMutation">HPAmebloPostMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPAmebloPostMutationRuleFunc.EvalMutation">func (HPAmebloPostMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=6008:6101#L184">EvalMutation</a>
+					<a class="permalink" href="index.html#HPAmebloPostMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPAmebloPostMutationRuleFunc">HPAmebloPostMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPAmebloPostQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=5406:5488#L169">HPAmebloPostQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPAmebloPostQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPAmebloPostQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPAmebloPostQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPAmebloPostQuery">HPAmebloPostQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPAmebloPostQueryRuleFunc.EvalQuery">func (HPAmebloPostQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=5521:5605#L172">EvalQuery</a>
+					<a class="permalink" href="index.html#HPAmebloPostQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPAmebloPostQueryRuleFunc">HPAmebloPostQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPArtistMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=6835:6915#L205">HPArtistMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPArtistMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPArtistMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPArtistMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPArtistMutation">HPArtistMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPArtistMutationRuleFunc.EvalMutation">func (HPArtistMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=6950:7039#L208">EvalMutation</a>
+					<a class="permalink" href="index.html#HPArtistMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPArtistMutationRuleFunc">HPArtistMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPArtistQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=6380:6454#L193">HPArtistQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPArtistQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPArtistQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPArtistQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPArtistQuery">HPArtistQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPArtistQueryRuleFunc.EvalQuery">func (HPArtistQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=6487:6567#L196">EvalQuery</a>
+					<a class="permalink" href="index.html#HPArtistQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPArtistQueryRuleFunc">HPArtistQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPAssetMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=7758:7836#L229">HPAssetMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPAssetMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPAssetMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPAssetMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPAssetMutation">HPAssetMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPAssetMutationRuleFunc.EvalMutation">func (HPAssetMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=7871:7959#L232">EvalMutation</a>
+					<a class="permalink" href="index.html#HPAssetMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPAssetMutationRuleFunc">HPAssetMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPAssetQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=7309:7381#L217">HPAssetQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPAssetQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPAssetQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPAssetQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPAssetQuery">HPAssetQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPAssetQueryRuleFunc.EvalQuery">func (HPAssetQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=7414:7493#L220">EvalQuery</a>
+					<a class="permalink" href="index.html#HPAssetQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPAssetQueryRuleFunc">HPAssetQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPBlobMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=8669:8745#L253">HPBlobMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPBlobMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPBlobMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPBlobMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPBlobMutation">HPBlobMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPBlobMutationRuleFunc.EvalMutation">func (HPBlobMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=8780:8867#L256">EvalMutation</a>
+					<a class="permalink" href="index.html#HPBlobMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPBlobMutationRuleFunc">HPBlobMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPBlobQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=8226:8296#L241">HPBlobQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPBlobQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPBlobQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPBlobQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPBlobQuery">HPBlobQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPBlobQueryRuleFunc.EvalQuery">func (HPBlobQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=8329:8407#L244">EvalQuery</a>
+					<a class="permalink" href="index.html#HPBlobQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPBlobQueryRuleFunc">HPBlobQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPElineupMallItemMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=9652:9750#L277">HPElineupMallItemMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPElineupMallItemMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPElineupMallItemMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPElineupMallItemMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPElineupMallItemMutation">HPElineupMallItemMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPElineupMallItemMutationRuleFunc.EvalMutation">func (HPElineupMallItemMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=9785:9883#L280">EvalMutation</a>
+					<a class="permalink" href="index.html#HPElineupMallItemMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPElineupMallItemMutationRuleFunc">HPElineupMallItemMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPElineupMallItemQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=9143:9235#L265">HPElineupMallItemQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPElineupMallItemQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPElineupMallItemQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPElineupMallItemQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPElineupMallItemQuery">HPElineupMallItemQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPElineupMallItemQueryRuleFunc.EvalQuery">func (HPElineupMallItemQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=9268:9357#L268">EvalQuery</a>
+					<a class="permalink" href="index.html#HPElineupMallItemQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPElineupMallItemQueryRuleFunc">HPElineupMallItemQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPEventMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=10620:10698#L301">HPEventMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPEventMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPEventMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPEventMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPEventMutation">HPEventMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPEventMutationRuleFunc.EvalMutation">func (HPEventMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=10733:10821#L304">EvalMutation</a>
+					<a class="permalink" href="index.html#HPEventMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPEventMutationRuleFunc">HPEventMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPEventQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=10171:10243#L289">HPEventQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPEventQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPEventQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPEventQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPEventQuery">HPEventQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPEventQueryRuleFunc.EvalQuery">func (HPEventQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=10276:10355#L292">EvalQuery</a>
+					<a class="permalink" href="index.html#HPEventQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPEventQueryRuleFunc">HPEventQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFCEventTicketMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=11594:11688#L325">HPFCEventTicketMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPFCEventTicketMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPFCEventTicketMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPFCEventTicketMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPFCEventTicketMutation">HPFCEventTicketMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFCEventTicketMutationRuleFunc.EvalMutation">func (HPFCEventTicketMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=11723:11819#L328">EvalMutation</a>
+					<a class="permalink" href="index.html#HPFCEventTicketMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPFCEventTicketMutationRuleFunc">HPFCEventTicketMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFCEventTicketQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=11097:11185#L313">HPFCEventTicketQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPFCEventTicketQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPFCEventTicketQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPFCEventTicketQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPFCEventTicketQuery">HPFCEventTicketQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFCEventTicketQueryRuleFunc.EvalQuery">func (HPFCEventTicketQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=11218:11305#L316">EvalQuery</a>
+					<a class="permalink" href="index.html#HPFCEventTicketQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPFCEventTicketQueryRuleFunc">HPFCEventTicketQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFeedItemMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=12573:12657#L349">HPFeedItemMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPFeedItemMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPFeedItemMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPFeedItemMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPFeedItemMutation">HPFeedItemMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFeedItemMutationRuleFunc.EvalMutation">func (HPFeedItemMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=12692:12783#L352">EvalMutation</a>
+					<a class="permalink" href="index.html#HPFeedItemMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPFeedItemMutationRuleFunc">HPFeedItemMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFeedItemQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=12106:12184#L337">HPFeedItemQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPFeedItemQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPFeedItemQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPFeedItemQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPFeedItemQuery">HPFeedItemQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFeedItemQueryRuleFunc.EvalQuery">func (HPFeedItemQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=12217:12299#L340">EvalQuery</a>
+					<a class="permalink" href="index.html#HPFeedItemQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPFeedItemQueryRuleFunc">HPFeedItemQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFollowMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=13513:13593#L373">HPFollowMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPFollowMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPFollowMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPFollowMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPFollowMutation">HPFollowMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFollowMutationRuleFunc.EvalMutation">func (HPFollowMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=13628:13717#L376">EvalMutation</a>
+					<a class="permalink" href="index.html#HPFollowMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPFollowMutationRuleFunc">HPFollowMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPFollowQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=13058:13132#L361">HPFollowQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPFollowQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPFollowQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPFollowQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPFollowQuery">HPFollowQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPFollowQueryRuleFunc.EvalQuery">func (HPFollowQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=13165:13245#L364">EvalQuery</a>
+					<a class="permalink" href="index.html#HPFollowQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPFollowQueryRuleFunc">HPFollowQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPIgPostMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=14443:14523#L397">HPIgPostMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPIgPostMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPIgPostMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPIgPostMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPIgPostMutation">HPIgPostMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPIgPostMutationRuleFunc.EvalMutation">func (HPIgPostMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=14558:14647#L400">EvalMutation</a>
+					<a class="permalink" href="index.html#HPIgPostMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPIgPostMutationRuleFunc">HPIgPostMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPIgPostQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=13988:14062#L385">HPIgPostQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPIgPostQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPIgPostQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPIgPostQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPIgPostQuery">HPIgPostQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPIgPostQueryRuleFunc.EvalQuery">func (HPIgPostQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=14095:14175#L388">EvalQuery</a>
+					<a class="permalink" href="index.html#HPIgPostQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPIgPostQueryRuleFunc">HPIgPostQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPMemberMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=15373:15453#L421">HPMemberMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPMemberMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPMemberMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPMemberMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPMemberMutation">HPMemberMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPMemberMutationRuleFunc.EvalMutation">func (HPMemberMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=15488:15577#L424">EvalMutation</a>
+					<a class="permalink" href="index.html#HPMemberMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPMemberMutationRuleFunc">HPMemberMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPMemberQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=14918:14992#L409">HPMemberQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPMemberQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPMemberQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPMemberQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPMemberQuery">HPMemberQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPMemberQueryRuleFunc.EvalQuery">func (HPMemberQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=15025:15105#L412">EvalQuery</a>
+					<a class="permalink" href="index.html#HPMemberQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPMemberQueryRuleFunc">HPMemberQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPSortHistoryMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=16338:16428#L445">HPSortHistoryMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPSortHistoryMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPSortHistoryMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPSortHistoryMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPSortHistoryMutation">HPSortHistoryMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPSortHistoryMutationRuleFunc.EvalMutation">func (HPSortHistoryMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=16463:16557#L448">EvalMutation</a>
+					<a class="permalink" href="index.html#HPSortHistoryMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPSortHistoryMutationRuleFunc">HPSortHistoryMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPSortHistoryQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=15853:15937#L433">HPSortHistoryQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPSortHistoryQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPSortHistoryQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPSortHistoryQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPSortHistoryQuery">HPSortHistoryQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPSortHistoryQueryRuleFunc.EvalQuery">func (HPSortHistoryQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=15970:16055#L436">EvalQuery</a>
+					<a class="permalink" href="index.html#HPSortHistoryQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPSortHistoryQueryRuleFunc">HPSortHistoryQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPViewHistoryMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=17328:17418#L469">HPViewHistoryMutationRuleFunc</a>
+				<a class="permalink" href="index.html#HPViewHistoryMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPViewHistoryMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type HPViewHistoryMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPViewHistoryMutation">HPViewHistoryMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPViewHistoryMutationRuleFunc.EvalMutation">func (HPViewHistoryMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=17453:17547#L472">EvalMutation</a>
+					<a class="permalink" href="index.html#HPViewHistoryMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPViewHistoryMutationRuleFunc">HPViewHistoryMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HPViewHistoryQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=16843:16927#L457">HPViewHistoryQueryRuleFunc</a>
+				<a class="permalink" href="index.html#HPViewHistoryQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The HPViewHistoryQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type HPViewHistoryQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#HPViewHistoryQuery">HPViewHistoryQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="HPViewHistoryQueryRuleFunc.EvalQuery">func (HPViewHistoryQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=16960:17045#L460">EvalQuery</a>
+					<a class="permalink" href="index.html#HPViewHistoryQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#HPViewHistoryQueryRuleFunc">HPViewHistoryQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MutationPolicy">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=2024:2063#L59">MutationPolicy</a>
+				<a class="permalink" href="index.html#MutationPolicy">&#xb6;</a>
+				
+				
+			</h2>
+			<p>MutationPolicy combines multiple mutation rules into a single policy.
+
+			<pre>type MutationPolicy = <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/">privacy</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/#MutationPolicy">MutationPolicy</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MutationRule">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=1913:1948#L57">MutationRule</a>
+				<a class="permalink" href="index.html#MutationRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>MutationRule defines the interface which decides whether a
+mutation is allowed and optionally modifies it.
+
+			<pre>type MutationRule = <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/">privacy</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/#MutationRule">MutationRule</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="DenyMutationOperationRule">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=4170:4224#L136">DenyMutationOperationRule</a>
+					<a class="permalink" href="index.html#DenyMutationOperationRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func DenyMutationOperationRule(op <a href="../index.html">ent</a>.<a href="../index.html#Op">Op</a>) <a href="index.html#MutationRule">MutationRule</a></pre>
+				<p>DenyMutationOperationRule returns a rule denying specified mutation operation.
+
+				
+				
+			
+				
+				<h3 id="OnMutationOperation">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=3861:3928#L126">OnMutationOperation</a>
+					<a class="permalink" href="index.html#OnMutationOperation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func OnMutationOperation(rule <a href="index.html#MutationRule">MutationRule</a>, op <a href="../index.html">ent</a>.<a href="../index.html#Op">Op</a>) <a href="index.html#MutationRule">MutationRule</a></pre>
+				<p>OnMutationOperation evaluates the given rule only on a given mutation operation.
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="MutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=2447:2510#L73">MutationRuleFunc</a>
+				<a class="permalink" href="index.html#MutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>MutationRuleFunc type is an adapter which allows the use of
+ordinary functions as mutation rules.
+
+			<pre>type MutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="MutationRuleFunc.EvalMutation">func (MutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=2547:2628#L76">EvalMutation</a>
+					<a class="permalink" href="index.html#MutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#MutationRuleFunc">MutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation returns f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Policy">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=1535:1558#L47">Policy</a>
+				<a class="permalink" href="index.html#Policy">&#xb6;</a>
+				
+				
+			</h2>
+			<p>Policy groups query and mutation policies.
+
+			<pre>type Policy = <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/">privacy</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/#Policy">Policy</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="QueryMutationRule">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=2728:2789#L81">QueryMutationRule</a>
+				<a class="permalink" href="index.html#QueryMutationRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>QueryMutationRule is an interface which groups query and mutation rules.
+
+			<pre>type QueryMutationRule interface {
+    <a href="index.html#QueryRule">QueryRule</a>
+    <a href="index.html#MutationRule">MutationRule</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="AlwaysAllowRule">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=2857:2897#L87">AlwaysAllowRule</a>
+					<a class="permalink" href="index.html#AlwaysAllowRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func AlwaysAllowRule() <a href="index.html#QueryMutationRule">QueryMutationRule</a></pre>
+				<p>AlwaysAllowRule returns a rule that returns an allow decision.
+
+				
+				
+			
+				
+				<h3 id="AlwaysDenyRule">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=2995:3034#L92">AlwaysDenyRule</a>
+					<a class="permalink" href="index.html#AlwaysDenyRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func AlwaysDenyRule() <a href="index.html#QueryMutationRule">QueryMutationRule</a></pre>
+				<p>AlwaysDenyRule returns a rule that returns a deny decision.
+
+				
+				
+			
+				
+				<h3 id="ContextQueryMutationRule">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=3454:3535#L113">ContextQueryMutationRule</a>
+					<a class="permalink" href="index.html#ContextQueryMutationRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ContextQueryMutationRule(eval func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a>) <a href="index.html#QueryMutationRule">QueryMutationRule</a></pre>
+				<p>ContextQueryMutationRule creates a query/mutation rule from a context eval func.
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="QueryPolicy">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=1762:1795#L53">QueryPolicy</a>
+				<a class="permalink" href="index.html#QueryPolicy">&#xb6;</a>
+				
+				
+			</h2>
+			<p>QueryPolicy combines multiple query rules into a single policy.
+
+			<pre>type QueryPolicy = <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/">privacy</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/#QueryPolicy">QueryPolicy</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="QueryRule">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=1663:1692#L51">QueryRule</a>
+				<a class="permalink" href="index.html#QueryRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>QueryRule defines the interface deciding whether a
+query is allowed and optionally modify it.
+
+			<pre>type QueryRule = <a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/">privacy</a>.<a href="http://127.0.0.1:8888/pkg/entgo.io/ent/privacy/#QueryRule">QueryRule</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="QueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=2161:2218#L64">QueryRuleFunc</a>
+				<a class="permalink" href="index.html#QueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>QueryRuleFunc type is an adapter to allow the use of
+ordinary functions as query rules.
+
+			<pre>type QueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="QueryRuleFunc.EvalQuery">func (QueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=2247:2319#L67">EvalQuery</a>
+					<a class="permalink" href="index.html#QueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#QueryRuleFunc">QueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>Eval returns f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TestEntMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=18276:18354#L493">TestEntMutationRuleFunc</a>
+				<a class="permalink" href="index.html#TestEntMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The TestEntMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type TestEntMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#TestEntMutation">TestEntMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TestEntMutationRuleFunc.EvalMutation">func (TestEntMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=18389:18477#L496">EvalMutation</a>
+					<a class="permalink" href="index.html#TestEntMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#TestEntMutationRuleFunc">TestEntMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TestEntQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=17827:17899#L481">TestEntQueryRuleFunc</a>
+				<a class="permalink" href="index.html#TestEntQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The TestEntQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type TestEntQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#TestEntQuery">TestEntQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TestEntQueryRuleFunc.EvalQuery">func (TestEntQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=17932:18011#L484">EvalQuery</a>
+					<a class="permalink" href="index.html#TestEntQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#TestEntQueryRuleFunc">TestEntQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UserMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=19173:19245#L517">UserMutationRuleFunc</a>
+				<a class="permalink" href="index.html#UserMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The UserMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type UserMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#UserMutation">UserMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserMutationRuleFunc.EvalMutation">func (UserMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=19280:19365#L520">EvalMutation</a>
+					<a class="permalink" href="index.html#UserMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#UserMutationRuleFunc">UserMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UserNotificationLogMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=20160:20262#L541">UserNotificationLogMutationRuleFunc</a>
+				<a class="permalink" href="index.html#UserNotificationLogMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The UserNotificationLogMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type UserNotificationLogMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#UserNotificationLogMutation">UserNotificationLogMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserNotificationLogMutationRuleFunc.EvalMutation">func (UserNotificationLogMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=20297:20397#L544">EvalMutation</a>
+					<a class="permalink" href="index.html#UserNotificationLogMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#UserNotificationLogMutationRuleFunc">UserNotificationLogMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UserNotificationLogQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=19639:19735#L529">UserNotificationLogQueryRuleFunc</a>
+				<a class="permalink" href="index.html#UserNotificationLogQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The UserNotificationLogQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type UserNotificationLogQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#UserNotificationLogQuery">UserNotificationLogQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserNotificationLogQueryRuleFunc.EvalQuery">func (UserNotificationLogQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=19768:19859#L532">EvalQuery</a>
+					<a class="permalink" href="index.html#UserNotificationLogQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#UserNotificationLogQueryRuleFunc">UserNotificationLogQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UserNotificationSettingMutationRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=21250:21360#L565">UserNotificationSettingMutationRuleFunc</a>
+				<a class="permalink" href="index.html#UserNotificationSettingMutationRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The UserNotificationSettingMutationRuleFunc type is an adapter to allow the use of ordinary
+functions as a mutation rule.
+
+			<pre>type UserNotificationSettingMutationRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#UserNotificationSettingMutation">UserNotificationSettingMutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserNotificationSettingMutationRuleFunc.EvalMutation">func (UserNotificationSettingMutationRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=21395:21499#L568">EvalMutation</a>
+					<a class="permalink" href="index.html#UserNotificationSettingMutationRuleFunc.EvalMutation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#UserNotificationSettingMutationRuleFunc">UserNotificationSettingMutationRuleFunc</a>) EvalMutation(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, m <a href="../index.html">ent</a>.<a href="../index.html#Mutation">Mutation</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalMutation calls f(ctx, m).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UserNotificationSettingQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=20705:20809#L553">UserNotificationSettingQueryRuleFunc</a>
+				<a class="permalink" href="index.html#UserNotificationSettingQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The UserNotificationSettingQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type UserNotificationSettingQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#UserNotificationSettingQuery">UserNotificationSettingQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserNotificationSettingQueryRuleFunc.EvalQuery">func (UserNotificationSettingQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=20842:20937#L556">EvalQuery</a>
+					<a class="permalink" href="index.html#UserNotificationSettingQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#UserNotificationSettingQueryRuleFunc">UserNotificationSettingQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UserQueryRuleFunc">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=18742:18808#L505">UserQueryRuleFunc</a>
+				<a class="permalink" href="index.html#UserQueryRuleFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>The UserQueryRuleFunc type is an adapter to allow the use of ordinary
+functions as a query rule.
+
+			<pre>type UserQueryRuleFunc func(<a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, *<a href="../index.html">ent</a>.<a href="../index.html#UserQuery">UserQuery</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserQueryRuleFunc.EvalQuery">func (UserQueryRuleFunc) <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/service/ent/privacy/privacy.go?s=18841:18917#L508">EvalQuery</a>
+					<a class="permalink" href="index.html#UserQueryRuleFunc.EvalQuery">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (f <a href="index.html#UserQueryRuleFunc">UserQueryRuleFunc</a>) EvalQuery(ctx <a href="http://127.0.0.1:8888/pkg/context/">context</a>.<a href="http://127.0.0.1:8888/pkg/context/#Context">Context</a>, q <a href="../index.html">ent</a>.<a href="../index.html#Query">Query</a>) <a href="http://127.0.0.1:8888/pkg/builtin/#error">error</a></pre>
+				<p>EvalQuery return f(ctx, q).
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://127.0.0.1:8888/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>
