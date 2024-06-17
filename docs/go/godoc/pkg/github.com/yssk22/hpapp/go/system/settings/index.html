@@ -93,7 +93,39 @@
 			</div>
 			<div class="expanded">
 				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
-				
+				<p>Package settings privides the service settings management feature.
+<h3 id="hdr-Define_settings">Define settings</h3>
+<p>To define settings, use `settings.New()` functions. This function loads an object with the settings.Item interface into the program.
+The following example defines a string setting with the key `foo`. If the setting is not saved anywhere, the definition returns `&quot;default_value&quot;` when `foo` is referenced.
+<pre>var MySettings = settings.NewString(&quot;foo&quot;, &quot;default_value&quot;)
+</pre>
+<p>We recommend that the key naming convention for settings is `service.{service_name}.{feature_name}.{function_name}`, but this is not always enforced.
+<h3 id="hdr-Refer_to_settings">Refer to settings</h3>
+<p>To refer to the defined settings, simply call `settings.Get(context.Context, settings.Item)`. The settings are stored in the settings store in the context.Context
+<pre>fooValue, err := settings.Get(ctx, MySettings)
+</pre>
+<p>If there is no value in the settigs store, the code also refer to the environment variable, named as the key in uppercase.
+In the above example, it refers to the value of the environment variable `FOO`. If both fails, it returns the default value.
+<p>You can also confirm the setting value from the command line.
+<pre>$ go run ./cmd/admin/ settings get foo
+</pre>
+<h3 id="hdr-Update_settings">Update settings</h3>
+<p>To update settings, use command.
+<pre>$ go run ./cmd/admin/ settings set foo newValue
+</pre>
+<p>By default, the settings are saved in the `./data/settings.json` file. Therefore, the file is updated as follows.
+<pre>{
+	&quot;foo&quot;: &quot;newValue&quot;
+}
+</pre>
+<h3 id="hdr-List_all_settings">List all settings</h3>
+<p>`list` command returns all settings in your application.
+<pre>$ go run ./cmd/admin/ settings list
+</pre>
+<p>This list come from the package scoped variable defined using `settings.New` function in all packages under `helloproject.ap/go/`.
+So you should define the settings variable at the package that is most used.
+<p>If you want to get a list of settings in the program, use `settings.CaptureSettings(&quot;pacakge_name&quot;)`. This returns a list of `settings.ItemInfo` for the settings declared in `package_name`.
+
 				
 			</div>
 		</div>
@@ -348,7 +380,7 @@ settings set [key] [value] - set the value of settings
 		
 			
 			
-			<h2 id="Item">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=166:272#L3">Item</a>
+			<h2 id="Item">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=2126:2232#L51">Item</a>
 				<a class="permalink" href="index.html#Item">&#xb6;</a>
 				
 				
@@ -372,7 +404,7 @@ settings set [key] [value] - set the value of settings
 
 			
 				
-				<h3 id="NewBool">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=3662:3716#L176">NewBool</a>
+				<h3 id="NewBool">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=5622:5676#L224">NewBool</a>
 					<a class="permalink" href="index.html#NewBool">&#xb6;</a>
 					
 					
@@ -384,7 +416,7 @@ settings set [key] [value] - set the value of settings
 				
 			
 				
-				<h3 id="NewDuration">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=1727:1803#L84">NewDuration</a>
+				<h3 id="NewDuration">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=3687:3763#L132">NewDuration</a>
 					<a class="permalink" href="index.html#NewDuration">&#xb6;</a>
 					
 					
@@ -396,7 +428,7 @@ settings set [key] [value] - set the value of settings
 				
 			
 				
-				<h3 id="NewInt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=1172:1223#L58">NewInt</a>
+				<h3 id="NewInt">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=3132:3183#L106">NewInt</a>
 					<a class="permalink" href="index.html#NewInt">&#xb6;</a>
 					
 					
@@ -408,7 +440,7 @@ settings set [key] [value] - set the value of settings
 				
 			
 				
-				<h3 id="NewIntArray">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=3091:3151#L144">NewIntArray</a>
+				<h3 id="NewIntArray">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=5051:5111#L192">NewIntArray</a>
 					<a class="permalink" href="index.html#NewIntArray">&#xb6;</a>
 					
 					
@@ -420,7 +452,7 @@ settings set [key] [value] - set the value of settings
 				
 			
 				
-				<h3 id="NewString">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=675:728#L32">NewString</a>
+				<h3 id="NewString">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=2635:2688#L80">NewString</a>
 					<a class="permalink" href="index.html#NewString">&#xb6;</a>
 					
 					
@@ -432,7 +464,7 @@ settings set [key] [value] - set the value of settings
 				
 			
 				
-				<h3 id="NewStringArray">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=2333:2402#L110">NewStringArray</a>
+				<h3 id="NewStringArray">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/system/settings/settings.go?s=4293:4362#L158">NewStringArray</a>
 					<a class="permalink" href="index.html#NewStringArray">&#xb6;</a>
 					
 					

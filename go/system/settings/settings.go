@@ -1,3 +1,51 @@
+/*
+Package settings privides the service settings management feature.
+
+# Define settings
+
+To define settings, use `settings.New()` functions. This function loads an object with the settings.Item interface into the program.
+The following example defines a string setting with the key `foo`. If the setting is not saved anywhere, the definition returns `"default_value"` when `foo` is referenced.
+
+	var MySettings = settings.NewString("foo", "default_value")
+
+We recommend that the key naming convention for settings is `service.{service_name}.{feature_name}.{function_name}`, but this is not always enforced.
+
+# Refer to settings
+
+To refer to the defined settings, simply call `settings.Get(context.Context, settings.Item)`. The settings are stored in the settings store in the context.Context
+
+	fooValue, err := settings.Get(ctx, MySettings)
+
+If there is no value in the settigs store, the code also refer to the environment variable, named as the key in uppercase.
+In the above example, it refers to the value of the environment variable `FOO`. If both fails, it returns the default value.
+
+You can also confirm the setting value from the command line.
+
+	$ go run ./cmd/admin/ settings get foo
+
+# Update settings
+
+To update settings, use command.
+
+	$ go run ./cmd/admin/ settings set foo newValue
+
+By default, the settings are saved in the `./data/settings.json` file. Therefore, the file is updated as follows.
+
+	{
+		"foo": "newValue"
+	}
+
+# List all settings
+
+`list` command returns all settings in your application.
+
+	$ go run ./cmd/admin/ settings list
+
+This list come from the package scoped variable defined using `settings.New` function in all packages under `helloproject.ap/go/`.
+So you should define the settings variable at the package that is most used.
+
+If you want to get a list of settings in the program, use `settings.CaptureSettings("pacakge_name")`. This returns a list of `settings.ItemInfo` for the settings declared in `package_name`.
+*/
 package settings
 
 import (

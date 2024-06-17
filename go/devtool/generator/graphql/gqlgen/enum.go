@@ -11,6 +11,7 @@ import (
 	"github.com/yssk22/hpapp/go/foundation/stringutil"
 )
 
+// NewEnumGenerator creates a new EnumGenerator to generate  `MarshalGQL(io.Writer)` and `UnmarshalGQL(interface{})` for gqlgen in a file named `gqlgen_enum.go`.
 func NewEnumGenerator(dir string, options ...EnumGeneratorOption) generator.Generator {
 	r := &enumGenerator{
 		dir:      dir,

@@ -1,3 +1,35 @@
+/*
+Packate test provides a test framework and runner for the service package.
+
+# Using external resources in service test implementation
+
+In the test implementation under the service directory, you can implement integration tests using external resources (databases, log output streams, configuration KVS, etc.)
+
+	import (
+		"testing"
+		"github.com/yssk22/hpapp/goservice/test"
+	)
+
+	func TestServiceIntegration(t *testing.T) {
+	    test.New("my test").Run(t, func(ctx context.Context, t *testing.T) {
+	        // ....
+		})
+	}
+
+In the above example, the `test.New("my test")` function creates a test environment with external resources and the `Run` method executes the test code with those resources.
+Each of test.New("my test") instances has its own unique external resources, so the database records created in one test case do not affect other test cases.
+
+In addition, the `HPArtist`, `HPAsset`, and `HPMember` entities can be automatically set up in the database on a test case basis by adding `WithHPMaster` to the test case.
+The data is created based on the `go/data/\*.csv` in the repository.
+
+	func TestServiceIntegration(t *testing.T) {
+	    test.New("my test", test.WithMaster()).Run(t, func(ctx context.Context, t *testing.T) {
+	        // ....
+	        // entclient := entutil.NewClient(ctx)
+	        // entclient.HPArtist.Query().All(ctx) --> returns record imported from go/data/hp_artists.csv
+		})
+	}
+*/
 package test
 
 import (

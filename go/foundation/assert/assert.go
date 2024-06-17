@@ -1,3 +1,45 @@
+/*
+Package assert provides a simple assertion mechanism for testing.
+
+# Snapshot Assertion
+
+In addition to common Boolean assertions, Nil assertions, and equivalence assertions, you can use snapshot assertions.
+
+Object snapshot testing is a mechanism that simplifies test code by saving the expected data structure as an external file
+when testing complex objects (such as ent records).
+
+To use snapshot assersion, write a code as following:
+
+	import (
+		"testing"
+		"hellproject.app/go/foundation/assert"
+	)
+
+	func TestSomething(t *testing.T){
+		a := assert.NewTestAssert(t)
+		obj := createSomethingComplex()
+		a.Snapshot("something", obj)
+	}
+
+When executing this test code at first time, it saves the snapshot file `testdata/snapshot.something.json` that is converted `obj` to JSON format.
+At the first time of test execution, you should check whether the content of this file matches the expected data.
+
+For the next time after, when `a.Snapshot("something", obj)` is executed, it reads the file `testdata/snapshot.something.json` first, and checks whether it matches `obj`.
+If it does not match, the assertion fails. The fail message contains the JSON diff.
+
+# Tips
+
+If the assertion failure message becomes too large, you can delete `testdata/snapshot.something.json` once, run the test to regenerate the snapshot file, and then check the detailed changes in the vscode git diff viewer.
+
+In some cases such as using snapshot test alog with ent records, snapshot file may change every time. In this case, you can avoid assertion failure by specifying fields
+that should not be included in the snapshot file for the `assert.Snapshot` function.
+
+	a.Snapshot(
+		"obj", obj,
+		assert.SnapshotExclude("dynamic_field1"),
+		assert.SnapshotExclude("dynamic_field2"),
+	)
+*/
 package assert
 
 import (

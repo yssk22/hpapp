@@ -1,3 +1,24 @@
+/*
+Package enum provides a Enum generator interface to find the enum types in a Go source directory.
+
+Go does not have a standard Enum definition syntax. On the other hand, entgo and gqlgen treat Enum as a set of constants.
+To define enum that can be available for entgo and gqlgen, define a type of Enum for basic types such as string and define constants in the format `{Enum type name}{"Value"} = Value`.
+
+The following example defines an Enum named EnumType with values A, B, and C.
+
+	type EnumType string
+
+	const (
+		EnumTypeA EnumType = "A"
+		EnumTypeB EnumType = "B"
+		EnumTypeC EnumType = "C"
+	)
+
+Enum generator searches for types like above and generates functions required for entgo and gqlgen:
+
+  - `func(EnumType) Values() string` for entgo.
+  - `MarshalGQL(io.Writer)` and `UnmarshalGQL(interface{})` for gqlgen.
+*/
 package enum
 
 import (
@@ -15,23 +36,7 @@ type Generator interface {
 	GenerateEnums([]EnumType) error
 }
 
-/**
-  GenEnum generates MarshalGraphQL and UnmarshalGraphQL for enum types
-
-  ````
-  type MyEnum string
-  const (
-	  MyEnumValueA = MyEnum("value_a")
-	  MyEnumValueB = MyEnum("value_b")
-  )
-  ````
-
-  This generates GraphQL enum MyEnum { ValueA ValueB } by go-gen-graphql-schema and
-  and MyEnum is supposed to implement `MarshalGraphQL` and `UnmarshalGraphQL` to convert
-  ValueA/ValueB to go constants MyEnumValueA/MyEnumValueB and vice versa.
-
-  gqlgen-enum can be used to generate these methods so you don't have to write marshaler/unmarshaler by yourselve.
-*/
+// Generate invoke GenerateEnums with the enum types found in a directory
 func Generate(dir string, generators ...Generator) error {
 	importPath, err := helper.ResolveGoImportPath(dir)
 	if err != nil {

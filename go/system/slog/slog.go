@@ -1,4 +1,32 @@
-// slog package provides a structured logging facility for Go programs.
+/*
+Package slog provides a structured logging facility for Go programs.
+
+In hpapp, slog package is used to output structured logs. Structured logs must have a message field, and other structured data can be added as needed.
+The slog package should only be used when implementing system and service, and should not be used when implementing foundation.
+
+# Structured data that is automatically collected
+
+The following data is automatically collected.
+
+  - Timestamp
+  - The path and the line of source code where the log code is located.
+  - Stack trace at the time of logging
+  - Context data (e.g. ID to identify the execution context)
+
+# Log output
+
+The log output destination must be implemented as a `slog.Sink` interface.
+
+  - `NewNullSink()`: Don't log anything.
+  - `NewMemorySink([]Record)`: Log to memory. This is useful for testing.
+  - `NewIOSink(io.Writer, Formtter)`: Log to the specified io.Writer and the specified formatter.
+
+For log formatter, the following are provided.
+
+  - `JSONLFormatter`: JSONL format. Each log entry is output as a JSON object.
+  - `JSONFormatter`: "%s [{Timestsamp}] [{Severity}] {Message} (at {SourcePath}:{SourceLine}) {Attribute}"
+  - `SimpleFormatter`: "%s [{Timestsamp}] [{Severity}] {Message} (at {SourcePath}:{SourceLine})"
+*/
 package slog
 
 import (
@@ -41,12 +69,19 @@ const (
 // RecordOption is a function that configures a Record
 type RecordOption func(r *Record)
 
+// Name sets the key used to identify the log entry. Although the following naming rule is recommended, it is not limited to this.
+//
+//   - `system.{system_name}.{feature_name}.{function_name}`
+//   - `service.{service_name}.{feature_name}.{function_name}`
+//
+// In the production environment, metrics are aggregated based on logs, so be careful when changing the name.
 func Name(name string) RecordOption {
 	return func(r *Record) {
 		r.Name = name
 	}
 }
 
+// Attribute adds the structured attributed field to the log entry in key-value format.
 func Attribute(name string, value interface{}) RecordOption {
 	return func(r *Record) {
 		r.Attributes[name] = value

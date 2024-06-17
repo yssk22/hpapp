@@ -93,7 +93,38 @@
 			</div>
 			<div class="expanded">
 				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
-				
+				<p>Package assert provides a simple assertion mechanism for testing.
+<h3 id="hdr-Snapshot_Assertion">Snapshot Assertion</h3>
+<p>In addition to common Boolean assertions, Nil assertions, and equivalence assertions, you can use snapshot assertions.
+<p>Object snapshot testing is a mechanism that simplifies test code by saving the expected data structure as an external file
+when testing complex objects (such as ent records).
+<p>To use snapshot assersion, write a code as following:
+<pre>import (
+	&quot;testing&quot;
+	&quot;hellproject.app/go/foundation/assert&quot;
+)
+
+func TestSomething(t *testing.T){
+	a := assert.NewTestAssert(t)
+	obj := createSomethingComplex()
+	a.Snapshot(&quot;something&quot;, obj)
+}
+</pre>
+<p>When executing this test code at first time, it saves the snapshot file `testdata/snapshot.something.json` that is converted `obj` to JSON format.
+At the first time of test execution, you should check whether the content of this file matches the expected data.
+<p>For the next time after, when `a.Snapshot(&quot;something&quot;, obj)` is executed, it reads the file `testdata/snapshot.something.json` first, and checks whether it matches `obj`.
+If it does not match, the assertion fails. The fail message contains the JSON diff.
+<h3 id="hdr-Tips">Tips</h3>
+<p>If the assertion failure message becomes too large, you can delete `testdata/snapshot.something.json` once, run the test to regenerate the snapshot file, and then check the detailed changes in the vscode git diff viewer.
+<p>In some cases such as using snapshot test alog with ent records, snapshot file may change every time. In this case, you can avoid assertion failure by specifying fields
+that should not be included in the snapshot file for the `assert.Snapshot` function.
+<pre>a.Snapshot(
+	&quot;obj&quot;, obj,
+	assert.SnapshotExclude(&quot;dynamic_field1&quot;),
+	assert.SnapshotExclude(&quot;dynamic_field2&quot;),
+)
+</pre>
+
 				
 			</div>
 		</div>
@@ -177,7 +208,7 @@
 		
 			
 			
-			<h2 id="Nil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/foundation/assert/assert.go?s=3291:3310#L136">Nil</a>
+			<h2 id="Nil">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/foundation/assert/assert.go?s=5060:5079#L178">Nil</a>
 				<a class="permalink" href="index.html#Nil">&#xb6;</a>
 				
 				
@@ -191,7 +222,7 @@
 		
 			
 			
-			<h2 id="X">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/foundation/assert/assert.go?s=3178:3209#L128">X</a>
+			<h2 id="X">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/foundation/assert/assert.go?s=4947:4978#L170">X</a>
 				<a class="permalink" href="index.html#X">&#xb6;</a>
 				
 				
@@ -206,7 +237,7 @@
 		
 			
 			
-			<h2 id="Assert">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/foundation/assert/assert.go?s=82:807#L1">Assert</a>
+			<h2 id="Assert">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/foundation/assert/assert.go?s=1851:2576#L43">Assert</a>
 				<a class="permalink" href="index.html#Assert">&#xb6;</a>
 				
 				
@@ -239,7 +270,7 @@
 
 			
 				
-				<h3 id="New">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/foundation/assert/assert.go?s=1019:1046#L29">New</a>
+				<h3 id="New">func <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/foundation/assert/assert.go?s=2788:2815#L71">New</a>
 					<a class="permalink" href="index.html#New">&#xb6;</a>
 					
 					
@@ -267,7 +298,7 @@
 		
 			
 			
-			<h2 id="Caller">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/foundation/assert/assert.go?s=924:981#L23">Caller</a>
+			<h2 id="Caller">type <a href="http://127.0.0.1:8888/src/github.com/yssk22/hpapp/go/foundation/assert/assert.go?s=2693:2750#L65">Caller</a>
 				<a class="permalink" href="index.html#Caller">&#xb6;</a>
 				
 				
