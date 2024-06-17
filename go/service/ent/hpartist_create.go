@@ -577,7 +577,6 @@ func (hac *HPArtistCreate) createSpec() (*HPArtist, *sqlgraph.CreateSpec) {
 //			SetCrawledAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hac *HPArtistCreate) OnConflict(opts ...sql.ConflictOption) *HPArtistUpsertOne {
 	hac.conflict = opts
 	return &HPArtistUpsertOne{
@@ -591,7 +590,6 @@ func (hac *HPArtistCreate) OnConflict(opts ...sql.ConflictOption) *HPArtistUpser
 //	client.HPArtist.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hac *HPArtistCreate) OnConflictColumns(columns ...string) *HPArtistUpsertOne {
 	hac.conflict = append(hac.conflict, sql.ConflictColumns(columns...))
 	return &HPArtistUpsertOne{
@@ -782,7 +780,6 @@ func (u *HPArtistUpsert) AddIndex(v int) *HPArtistUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPArtistUpsertOne) UpdateNewValues() *HPArtistUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -796,10 +793,9 @@ func (u *HPArtistUpsertOne) UpdateNewValues() *HPArtistUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.HPArtist.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.HPArtist.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *HPArtistUpsertOne) Ignore() *HPArtistUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -1144,7 +1140,6 @@ func (hacb *HPArtistCreateBulk) ExecX(ctx context.Context) {
 //			SetCrawledAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hacb *HPArtistCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPArtistUpsertBulk {
 	hacb.conflict = opts
 	return &HPArtistUpsertBulk{
@@ -1158,7 +1153,6 @@ func (hacb *HPArtistCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPArtist
 //	client.HPArtist.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hacb *HPArtistCreateBulk) OnConflictColumns(columns ...string) *HPArtistUpsertBulk {
 	hacb.conflict = append(hacb.conflict, sql.ConflictColumns(columns...))
 	return &HPArtistUpsertBulk{
@@ -1180,7 +1174,6 @@ type HPArtistUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPArtistUpsertBulk) UpdateNewValues() *HPArtistUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -1199,7 +1192,6 @@ func (u *HPArtistUpsertBulk) UpdateNewValues() *HPArtistUpsertBulk {
 //	client.HPArtist.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *HPArtistUpsertBulk) Ignore() *HPArtistUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

@@ -344,7 +344,6 @@ func (hfq *HPFollowQuery) WithMember(opts ...func(*HPMemberQuery)) *HPFollowQuer
 //		GroupBy(hpfollow.FieldCreatedAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (hfq *HPFollowQuery) GroupBy(field string, fields ...string) *HPFollowGroupBy {
 	hfq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &HPFollowGroupBy{build: hfq}
@@ -366,7 +365,6 @@ func (hfq *HPFollowQuery) GroupBy(field string, fields ...string) *HPFollowGroup
 //	client.HPFollow.Query().
 //		Select(hpfollow.FieldCreatedAt).
 //		Scan(ctx, &v)
-//
 func (hfq *HPFollowQuery) Select(fields ...string) *HPFollowSelect {
 	hfq.ctx.Fields = append(hfq.ctx.Fields, fields...)
 	sbuild := &HPFollowSelect{HPFollowQuery: hfq}

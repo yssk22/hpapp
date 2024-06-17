@@ -346,7 +346,6 @@ func (hemiq *HPElineupMallItemQuery) WithTaggedMembers(opts ...func(*HPMemberQue
 //		GroupBy(hpelineupmallitem.FieldCrawledAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (hemiq *HPElineupMallItemQuery) GroupBy(field string, fields ...string) *HPElineupMallItemGroupBy {
 	hemiq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &HPElineupMallItemGroupBy{build: hemiq}
@@ -368,7 +367,6 @@ func (hemiq *HPElineupMallItemQuery) GroupBy(field string, fields ...string) *HP
 //	client.HPElineupMallItem.Query().
 //		Select(hpelineupmallitem.FieldCrawledAt).
 //		Scan(ctx, &v)
-//
 func (hemiq *HPElineupMallItemQuery) Select(fields ...string) *HPElineupMallItemSelect {
 	hemiq.ctx.Fields = append(hemiq.ctx.Fields, fields...)
 	sbuild := &HPElineupMallItemSelect{HPElineupMallItemQuery: hemiq}

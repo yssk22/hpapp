@@ -575,7 +575,6 @@ func (hbc *HPBlobCreate) createSpec() (*HPBlob, *sqlgraph.CreateSpec) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hbc *HPBlobCreate) OnConflict(opts ...sql.ConflictOption) *HPBlobUpsertOne {
 	hbc.conflict = opts
 	return &HPBlobUpsertOne{
@@ -589,7 +588,6 @@ func (hbc *HPBlobCreate) OnConflict(opts ...sql.ConflictOption) *HPBlobUpsertOne
 //	client.HPBlob.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hbc *HPBlobCreate) OnConflictColumns(columns ...string) *HPBlobUpsertOne {
 	hbc.conflict = append(hbc.conflict, sql.ConflictColumns(columns...))
 	return &HPBlobUpsertOne{
@@ -960,7 +958,6 @@ func (u *HPBlobUpsert) ClearDurationSeconds() *HPBlobUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPBlobUpsertOne) UpdateNewValues() *HPBlobUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -974,10 +971,9 @@ func (u *HPBlobUpsertOne) UpdateNewValues() *HPBlobUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.HPBlob.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.HPBlob.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *HPBlobUpsertOne) Ignore() *HPBlobUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -1532,7 +1528,6 @@ func (hbcb *HPBlobCreateBulk) ExecX(ctx context.Context) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hbcb *HPBlobCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPBlobUpsertBulk {
 	hbcb.conflict = opts
 	return &HPBlobUpsertBulk{
@@ -1546,7 +1541,6 @@ func (hbcb *HPBlobCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPBlobUpse
 //	client.HPBlob.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hbcb *HPBlobCreateBulk) OnConflictColumns(columns ...string) *HPBlobUpsertBulk {
 	hbcb.conflict = append(hbcb.conflict, sql.ConflictColumns(columns...))
 	return &HPBlobUpsertBulk{
@@ -1568,7 +1562,6 @@ type HPBlobUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPBlobUpsertBulk) UpdateNewValues() *HPBlobUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -1587,7 +1580,6 @@ func (u *HPBlobUpsertBulk) UpdateNewValues() *HPBlobUpsertBulk {
 //	client.HPBlob.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *HPBlobUpsertBulk) Ignore() *HPBlobUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

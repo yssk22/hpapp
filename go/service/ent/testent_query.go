@@ -271,7 +271,6 @@ func (teq *TestEntQuery) Clone() *TestEntQuery {
 //		GroupBy(testent.FieldStringField).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (teq *TestEntQuery) GroupBy(field string, fields ...string) *TestEntGroupBy {
 	teq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &TestEntGroupBy{build: teq}
@@ -293,7 +292,6 @@ func (teq *TestEntQuery) GroupBy(field string, fields ...string) *TestEntGroupBy
 //	client.TestEnt.Query().
 //		Select(testent.FieldStringField).
 //		Scan(ctx, &v)
-//
 func (teq *TestEntQuery) Select(fields ...string) *TestEntSelect {
 	teq.ctx.Fields = append(teq.ctx.Fields, fields...)
 	sbuild := &TestEntSelect{TestEntQuery: teq}

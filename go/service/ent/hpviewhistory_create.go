@@ -294,7 +294,6 @@ func (hvhc *HPViewHistoryCreate) createSpec() (*HPViewHistory, *sqlgraph.CreateS
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hvhc *HPViewHistoryCreate) OnConflict(opts ...sql.ConflictOption) *HPViewHistoryUpsertOne {
 	hvhc.conflict = opts
 	return &HPViewHistoryUpsertOne{
@@ -308,7 +307,6 @@ func (hvhc *HPViewHistoryCreate) OnConflict(opts ...sql.ConflictOption) *HPViewH
 //	client.HPViewHistory.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hvhc *HPViewHistoryCreate) OnConflictColumns(columns ...string) *HPViewHistoryUpsertOne {
 	hvhc.conflict = append(hvhc.conflict, sql.ConflictColumns(columns...))
 	return &HPViewHistoryUpsertOne{
@@ -421,7 +419,6 @@ func (u *HPViewHistoryUpsert) UpdateOwnerUserID() *HPViewHistoryUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPViewHistoryUpsertOne) UpdateNewValues() *HPViewHistoryUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -435,10 +432,9 @@ func (u *HPViewHistoryUpsertOne) UpdateNewValues() *HPViewHistoryUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.HPViewHistory.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.HPViewHistory.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *HPViewHistoryUpsertOne) Ignore() *HPViewHistoryUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -692,7 +688,6 @@ func (hvhcb *HPViewHistoryCreateBulk) ExecX(ctx context.Context) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hvhcb *HPViewHistoryCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPViewHistoryUpsertBulk {
 	hvhcb.conflict = opts
 	return &HPViewHistoryUpsertBulk{
@@ -706,7 +701,6 @@ func (hvhcb *HPViewHistoryCreateBulk) OnConflict(opts ...sql.ConflictOption) *HP
 //	client.HPViewHistory.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hvhcb *HPViewHistoryCreateBulk) OnConflictColumns(columns ...string) *HPViewHistoryUpsertBulk {
 	hvhcb.conflict = append(hvhcb.conflict, sql.ConflictColumns(columns...))
 	return &HPViewHistoryUpsertBulk{
@@ -728,7 +722,6 @@ type HPViewHistoryUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPViewHistoryUpsertBulk) UpdateNewValues() *HPViewHistoryUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -747,7 +740,6 @@ func (u *HPViewHistoryUpsertBulk) UpdateNewValues() *HPViewHistoryUpsertBulk {
 //	client.HPViewHistory.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *HPViewHistoryUpsertBulk) Ignore() *HPViewHistoryUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

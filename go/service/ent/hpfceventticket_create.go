@@ -384,7 +384,6 @@ func (hetc *HPFCEventTicketCreate) createSpec() (*HPFCEventTicket, *sqlgraph.Cre
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hetc *HPFCEventTicketCreate) OnConflict(opts ...sql.ConflictOption) *HPFCEventTicketUpsertOne {
 	hetc.conflict = opts
 	return &HPFCEventTicketUpsertOne{
@@ -398,7 +397,6 @@ func (hetc *HPFCEventTicketCreate) OnConflict(opts ...sql.ConflictOption) *HPFCE
 //	client.HPFCEventTicket.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hetc *HPFCEventTicketCreate) OnConflictColumns(columns ...string) *HPFCEventTicketUpsertOne {
 	hetc.conflict = append(hetc.conflict, sql.ConflictColumns(columns...))
 	return &HPFCEventTicketUpsertOne{
@@ -601,7 +599,6 @@ func (u *HPFCEventTicketUpsert) UpdateOwnerUserID() *HPFCEventTicketUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPFCEventTicketUpsertOne) UpdateNewValues() *HPFCEventTicketUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -615,10 +612,9 @@ func (u *HPFCEventTicketUpsertOne) UpdateNewValues() *HPFCEventTicketUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.HPFCEventTicket.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.HPFCEventTicket.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *HPFCEventTicketUpsertOne) Ignore() *HPFCEventTicketUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -977,7 +973,6 @@ func (hetcb *HPFCEventTicketCreateBulk) ExecX(ctx context.Context) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hetcb *HPFCEventTicketCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPFCEventTicketUpsertBulk {
 	hetcb.conflict = opts
 	return &HPFCEventTicketUpsertBulk{
@@ -991,7 +986,6 @@ func (hetcb *HPFCEventTicketCreateBulk) OnConflict(opts ...sql.ConflictOption) *
 //	client.HPFCEventTicket.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hetcb *HPFCEventTicketCreateBulk) OnConflictColumns(columns ...string) *HPFCEventTicketUpsertBulk {
 	hetcb.conflict = append(hetcb.conflict, sql.ConflictColumns(columns...))
 	return &HPFCEventTicketUpsertBulk{
@@ -1013,7 +1007,6 @@ type HPFCEventTicketUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPFCEventTicketUpsertBulk) UpdateNewValues() *HPFCEventTicketUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -1032,7 +1025,6 @@ func (u *HPFCEventTicketUpsertBulk) UpdateNewValues() *HPFCEventTicketUpsertBulk
 //	client.HPFCEventTicket.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *HPFCEventTicketUpsertBulk) Ignore() *HPFCEventTicketUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

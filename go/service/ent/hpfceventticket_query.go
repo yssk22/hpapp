@@ -345,7 +345,6 @@ func (hetq *HPFCEventTicketQuery) WithUser(opts ...func(*UserQuery)) *HPFCEventT
 //		GroupBy(hpfceventticket.FieldCreatedAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (hetq *HPFCEventTicketQuery) GroupBy(field string, fields ...string) *HPFCEventTicketGroupBy {
 	hetq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &HPFCEventTicketGroupBy{build: hetq}
@@ -367,7 +366,6 @@ func (hetq *HPFCEventTicketQuery) GroupBy(field string, fields ...string) *HPFCE
 //	client.HPFCEventTicket.Query().
 //		Select(hpfceventticket.FieldCreatedAt).
 //		Scan(ctx, &v)
-//
 func (hetq *HPFCEventTicketQuery) Select(fields ...string) *HPFCEventTicketSelect {
 	hetq.ctx.Fields = append(hetq.ctx.Fields, fields...)
 	sbuild := &HPFCEventTicketSelect{HPFCEventTicketQuery: hetq}

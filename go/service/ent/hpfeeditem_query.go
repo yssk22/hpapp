@@ -453,7 +453,6 @@ func (hfiq *HPFeedItemQuery) WithTaggedMembers(opts ...func(*HPMemberQuery)) *HP
 //		GroupBy(hpfeeditem.FieldCreatedAt).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (hfiq *HPFeedItemQuery) GroupBy(field string, fields ...string) *HPFeedItemGroupBy {
 	hfiq.ctx.Fields = append([]string{field}, fields...)
 	grbuild := &HPFeedItemGroupBy{build: hfiq}
@@ -475,7 +474,6 @@ func (hfiq *HPFeedItemQuery) GroupBy(field string, fields ...string) *HPFeedItem
 //	client.HPFeedItem.Query().
 //		Select(hpfeeditem.FieldCreatedAt).
 //		Scan(ctx, &v)
-//
 func (hfiq *HPFeedItemQuery) Select(fields ...string) *HPFeedItemSelect {
 	hfiq.ctx.Fields = append(hfiq.ctx.Fields, fields...)
 	sbuild := &HPFeedItemSelect{HPFeedItemQuery: hfiq}

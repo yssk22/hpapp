@@ -241,7 +241,6 @@ func (hfc *HPFollowCreate) createSpec() (*HPFollow, *sqlgraph.CreateSpec) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hfc *HPFollowCreate) OnConflict(opts ...sql.ConflictOption) *HPFollowUpsertOne {
 	hfc.conflict = opts
 	return &HPFollowUpsertOne{
@@ -255,7 +254,6 @@ func (hfc *HPFollowCreate) OnConflict(opts ...sql.ConflictOption) *HPFollowUpser
 //	client.HPFollow.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hfc *HPFollowCreate) OnConflictColumns(columns ...string) *HPFollowUpsertOne {
 	hfc.conflict = append(hfc.conflict, sql.ConflictColumns(columns...))
 	return &HPFollowUpsertOne{
@@ -314,7 +312,6 @@ func (u *HPFollowUpsert) UpdateType() *HPFollowUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPFollowUpsertOne) UpdateNewValues() *HPFollowUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -328,10 +325,9 @@ func (u *HPFollowUpsertOne) UpdateNewValues() *HPFollowUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.HPFollow.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.HPFollow.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *HPFollowUpsertOne) Ignore() *HPFollowUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -522,7 +518,6 @@ func (hfcb *HPFollowCreateBulk) ExecX(ctx context.Context) {
 //			SetCreatedAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hfcb *HPFollowCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPFollowUpsertBulk {
 	hfcb.conflict = opts
 	return &HPFollowUpsertBulk{
@@ -536,7 +531,6 @@ func (hfcb *HPFollowCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPFollow
 //	client.HPFollow.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hfcb *HPFollowCreateBulk) OnConflictColumns(columns ...string) *HPFollowUpsertBulk {
 	hfcb.conflict = append(hfcb.conflict, sql.ConflictColumns(columns...))
 	return &HPFollowUpsertBulk{
@@ -558,7 +552,6 @@ type HPFollowUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPFollowUpsertBulk) UpdateNewValues() *HPFollowUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -577,7 +570,6 @@ func (u *HPFollowUpsertBulk) UpdateNewValues() *HPFollowUpsertBulk {
 //	client.HPFollow.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *HPFollowUpsertBulk) Ignore() *HPFollowUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

@@ -533,7 +533,6 @@ func (hipc *HPIgPostCreate) createSpec() (*HPIgPost, *sqlgraph.CreateSpec) {
 //			SetCrawledAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hipc *HPIgPostCreate) OnConflict(opts ...sql.ConflictOption) *HPIgPostUpsertOne {
 	hipc.conflict = opts
 	return &HPIgPostUpsertOne{
@@ -547,7 +546,6 @@ func (hipc *HPIgPostCreate) OnConflict(opts ...sql.ConflictOption) *HPIgPostUpse
 //	client.HPIgPost.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hipc *HPIgPostCreate) OnConflictColumns(columns ...string) *HPIgPostUpsertOne {
 	hipc.conflict = append(hipc.conflict, sql.ConflictColumns(columns...))
 	return &HPIgPostUpsertOne{
@@ -822,7 +820,6 @@ func (u *HPIgPostUpsert) ClearOwnerMemberID() *HPIgPostUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPIgPostUpsertOne) UpdateNewValues() *HPIgPostUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -836,10 +833,9 @@ func (u *HPIgPostUpsertOne) UpdateNewValues() *HPIgPostUpsertOne {
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.HPIgPost.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.HPIgPost.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *HPIgPostUpsertOne) Ignore() *HPIgPostUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -1282,7 +1278,6 @@ func (hipcb *HPIgPostCreateBulk) ExecX(ctx context.Context) {
 //			SetCrawledAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hipcb *HPIgPostCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPIgPostUpsertBulk {
 	hipcb.conflict = opts
 	return &HPIgPostUpsertBulk{
@@ -1296,7 +1291,6 @@ func (hipcb *HPIgPostCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPIgPos
 //	client.HPIgPost.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hipcb *HPIgPostCreateBulk) OnConflictColumns(columns ...string) *HPIgPostUpsertBulk {
 	hipcb.conflict = append(hipcb.conflict, sql.ConflictColumns(columns...))
 	return &HPIgPostUpsertBulk{
@@ -1318,7 +1312,6 @@ type HPIgPostUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPIgPostUpsertBulk) UpdateNewValues() *HPIgPostUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -1337,7 +1330,6 @@ func (u *HPIgPostUpsertBulk) UpdateNewValues() *HPIgPostUpsertBulk {
 //	client.HPIgPost.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *HPIgPostUpsertBulk) Ignore() *HPIgPostUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u

@@ -487,7 +487,6 @@ func (hemic *HPElineupMallItemCreate) createSpec() (*HPElineupMallItem, *sqlgrap
 //			SetCrawledAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hemic *HPElineupMallItemCreate) OnConflict(opts ...sql.ConflictOption) *HPElineupMallItemUpsertOne {
 	hemic.conflict = opts
 	return &HPElineupMallItemUpsertOne{
@@ -501,7 +500,6 @@ func (hemic *HPElineupMallItemCreate) OnConflict(opts ...sql.ConflictOption) *HP
 //	client.HPElineupMallItem.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hemic *HPElineupMallItemCreate) OnConflictColumns(columns ...string) *HPElineupMallItemUpsertOne {
 	hemic.conflict = append(hemic.conflict, sql.ConflictColumns(columns...))
 	return &HPElineupMallItemUpsertOne{
@@ -788,7 +786,6 @@ func (u *HPElineupMallItemUpsert) ClearOrderEndAt() *HPElineupMallItemUpsert {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPElineupMallItemUpsertOne) UpdateNewValues() *HPElineupMallItemUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -802,10 +799,9 @@ func (u *HPElineupMallItemUpsertOne) UpdateNewValues() *HPElineupMallItemUpsertO
 // Ignore sets each column to itself in case of conflict.
 // Using this option is equivalent to using:
 //
-//  client.HPElineupMallItem.Create().
-//      OnConflict(sql.ResolveWithIgnore()).
-//      Exec(ctx)
-//
+//	client.HPElineupMallItem.Create().
+//	    OnConflict(sql.ResolveWithIgnore()).
+//	    Exec(ctx)
 func (u *HPElineupMallItemUpsertOne) Ignore() *HPElineupMallItemUpsertOne {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
@@ -1262,7 +1258,6 @@ func (hemicb *HPElineupMallItemCreateBulk) ExecX(ctx context.Context) {
 //			SetCrawledAt(v+v).
 //		}).
 //		Exec(ctx)
-//
 func (hemicb *HPElineupMallItemCreateBulk) OnConflict(opts ...sql.ConflictOption) *HPElineupMallItemUpsertBulk {
 	hemicb.conflict = opts
 	return &HPElineupMallItemUpsertBulk{
@@ -1276,7 +1271,6 @@ func (hemicb *HPElineupMallItemCreateBulk) OnConflict(opts ...sql.ConflictOption
 //	client.HPElineupMallItem.Create().
 //		OnConflict(sql.ConflictColumns(columns...)).
 //		Exec(ctx)
-//
 func (hemicb *HPElineupMallItemCreateBulk) OnConflictColumns(columns ...string) *HPElineupMallItemUpsertBulk {
 	hemicb.conflict = append(hemicb.conflict, sql.ConflictColumns(columns...))
 	return &HPElineupMallItemUpsertBulk{
@@ -1298,7 +1292,6 @@ type HPElineupMallItemUpsertBulk struct {
 //			sql.ResolveWithNewValues(),
 //		).
 //		Exec(ctx)
-//
 func (u *HPElineupMallItemUpsertBulk) UpdateNewValues() *HPElineupMallItemUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithNewValues())
 	u.create.conflict = append(u.create.conflict, sql.ResolveWith(func(s *sql.UpdateSet) {
@@ -1317,7 +1310,6 @@ func (u *HPElineupMallItemUpsertBulk) UpdateNewValues() *HPElineupMallItemUpsert
 //	client.HPElineupMallItem.Create().
 //		OnConflict(sql.ResolveWithIgnore()).
 //		Exec(ctx)
-//
 func (u *HPElineupMallItemUpsertBulk) Ignore() *HPElineupMallItemUpsertBulk {
 	u.create.conflict = append(u.create.conflict, sql.ResolveWithIgnore())
 	return u
