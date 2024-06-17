@@ -4,27 +4,13 @@
 
 - [Architecture](./archtecture.md)
 - [Production Environment](./production.md)
-
-## Go HTTP Server
-
-### Libraries
-
-- [foundation](./go/foundation.md)
-- [system](./go/system.md)
-- [service](./go/service.md)
-
-### Tools
-
-### Commands
-
-### Misc
-
-- [envvars](./go/envvars.md)
-
-## iOS/Android Native Application
-
+- [How To Contribute](./how-to-contribute.md)
 - [ios/Android Development](./expo/development.md)
 
-## Contribute
+## Go Server
 
-- [How To Contribute](./how-to-contribute.md)
+- [auth](./go/auth.md)
+- [ameblo](./go/ameblo.md)
+- [envvars](./go/envvars.md)
+- [godoc](./go/godoc/pkg/github.com/yssk22/hpapp/go/index.html)
+

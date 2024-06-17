@@ -138,9 +138,10 @@ type CrawlRssFeedsTaskArgs struct {
 func (s *amebloService) crawlRssFeedsFunc(ctx context.Context, args CrawlRssFeedsTaskArgs) error {
 	excludes := settings.GetX(ctx, ExcludedAssetKeys)
 	rss := targetRssFromAsset{
-		assetKeys:                   args.AssetKeys,
-		excludeAssetKeys:            excludes,
-		excludeUrlsIfAlreadyCrawled: false,
+		assetKeys:        args.AssetKeys,
+		excludeAssetKeys: excludes,
+		// set false only you need to crawl all URLs in Ameblo RSS, which usually cause memory issue.
+		excludeUrlsIfAlreadyCrawled: true,
 	}
 	_, err := s.crawlTarget(ctx, &rss, true)
 	return err
