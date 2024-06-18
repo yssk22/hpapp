@@ -9,8 +9,16 @@
 
 ## Go Server
 
-- [auth](./go/auth.md)
-- [ameblo](./go/ameblo.md)
+- [GraphQL](./go/graphql.md)
 - [envvars](./go/envvars.md)
+
+### Service
+
+- [auth](./go/service/auth.md)
+- [ameblo](./go/service/ameblo.md)
+- [instagram](./go/service/instagram.md)
+
+## Godoc
+
 - [godoc](./go/godoc/pkg/github.com/yssk22/hpapp/go/index.html)
 

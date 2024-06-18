@@ -37,6 +37,7 @@ func RunCLI(e environment.Environment, services ...config.Service) {
 	taskCmd := &cobra.Command{
 		Use:   "tasks",
 		Short: "Run a task",
+		Long:  "Issue a task request to the local http server. If you run httpserver with --prod, then you should add --prod flag to this command.",
 	}
 	for _, s := range services {
 		for _, t := range s.Tasks() {

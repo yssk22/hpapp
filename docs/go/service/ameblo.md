@@ -1,4 +1,4 @@
-# ameblo Service
+# Ameblo Service
 
 ## Commands
 
@@ -27,4 +27,4 @@ you can flip `recrawl_required` flag to `TRUE` in ents, and then call this task 
 
 ## See also
 
-- [github.com/yssk22/hpapp/service/helloproject/ameblo](./godoc/pkg/github.com/yssk22/hpapp/go/service/helloproject/ameblo/index.html)
+- [github.com/yssk22/hpapp/service/helloproject/ameblo](../godoc/pkg/github.com/yssk22/hpapp/go/service/helloproject/ameblo/index.html)
