@@ -11,7 +11,6 @@ const ExternalImage: React.FC<
     cache?: boolean;
   }
 > = ({ uri, cache = false, ...rest }) => {
-  // const [assets] = useAssets([require("assets/noimage.png")]);
   const [fallbackFlag, setFallbackFlag] = useState<boolean>(false);
   const localUri = useCachedURI(uri);
   if (fallbackFlag) {

@@ -1,6 +1,6 @@
-import FirebaseAuth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
-import * as AuthSession from 'expo-auth-session';
-import { useCallback } from 'react';
+import { FirebaseAuthTypes } from '@react-native-firebase/auth';
+// import * as AuthSession from 'expo-auth-session';
+// import { useCallback } from 'react';
 
 import Firebase from './Firebase';
 
@@ -34,43 +34,44 @@ export default class Twitter extends Firebase {
   }
 
   public useFirebaseCredential(): () => Promise<FirebaseAuthTypes.AuthCredential | null> {
+    throw new Error('Twitter Authentication needs rework');
     // FIXME:
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const fn = useCallback(async () => {
-      const redirectUri = AuthSession.makeRedirectUri({
-        projectNameForProxy: this.projectNameForProxy,
-        useProxy: true
-      });
-      const p0 = new URLSearchParams();
-      p0.append('callback_url', redirectUri);
-      const requestTokenResp = await fetch(`${this.requestTokenUri}?${p0.toString()}`);
-      const requestToken = await requestTokenResp.json();
-      if (requestTokenResp.status !== 200) {
-        throw new Error(requestToken['error'] || 'unknown error');
-      }
-      const p1 = new URLSearchParams();
-      Object.keys(requestToken).forEach((key) => {
-        p1.append(key, requestToken[key]);
-      });
-      const authResponse = await AuthSession.startAsync({
-        authUrl: `https://api.twitter.com/oauth/authenticate?${p1.toString()}`,
-        projectNameForProxy: this.projectNameForProxy
-      });
-      if (authResponse.type !== 'success') {
-        return null;
-      }
-      const p2 = new URLSearchParams();
-      p2.append('oauth_token', requestToken.oauth_token);
-      p2.append('oauth_token_secret', requestToken.oauth_token_secret);
-      p2.append('oauth_verifier', authResponse.params.oauth_verifier);
-      const accessTokenResp = await fetch(`${this.accessTokenUri}?${p2.toString()}`);
-      const accessToken = await accessTokenResp.json();
-      if (!accessToken.access_token) {
-        return null;
-      }
-      // now we have both access_token and access_token secret to get ID token from Firebase
-      return FirebaseAuth.TwitterAuthProvider.credential(accessToken.access_token, accessToken.access_token_secret);
-    }, [this]);
-    return fn;
+    // const fn = useCallback(async () => {
+    //   const redirectUri = AuthSession.makeRedirectUri({
+    //     projectNameForProxy: this.projectNameForProxy,
+    //     useProxy: true
+    //   });
+    //   const p0 = new URLSearchParams();
+    //   p0.append('callback_url', redirectUri);
+    //   const requestTokenResp = await fetch(`${this.requestTokenUri}?${p0.toString()}`);
+    //   const requestToken = await requestTokenResp.json();
+    //   if (requestTokenResp.status !== 200) {
+    //     throw new Error(requestToken['error'] || 'unknown error');
+    //   }
+    //   const p1 = new URLSearchParams();
+    //   Object.keys(requestToken).forEach((key) => {
+    //     p1.append(key, requestToken[key]);
+    //   });
+    //   const authResponse = await AuthSession.startAsync({
+    //     authUrl: `https://api.twitter.com/oauth/authenticate?${p1.toString()}`,
+    //     projectNameForProxy: this.projectNameForProxy
+    //   });
+    //   if (authResponse.type !== 'success') {
+    //     return null;
+    //   }
+    //   const p2 = new URLSearchParams();
+    //   p2.append('oauth_token', requestToken.oauth_token);
+    //   p2.append('oauth_token_secret', requestToken.oauth_token_secret);
+    //   p2.append('oauth_verifier', authResponse.params.oauth_verifier);
+    //   const accessTokenResp = await fetch(`${this.accessTokenUri}?${p2.toString()}`);
+    //   const accessToken = await accessTokenResp.json();
+    //   if (!accessToken.access_token) {
+    //     return null;
+    //   }
+    //   // now we have both access_token and access_token secret to get ID token from Firebase
+    //   return FirebaseAuth.TwitterAuthProvider.credential(accessToken.access_token, accessToken.access_token_secret);
+    // }, [this]);
+    // return fn;
   }
 }

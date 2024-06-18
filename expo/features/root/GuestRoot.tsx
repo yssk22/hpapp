@@ -11,7 +11,7 @@ export default function GuestRoot({
   LoginContainer: LoginContainer;
   onAuthenticated: (user: User) => void;
 }) {
-  const [loaded] = useAssets([require('assets/icon.png'), require('assets/splash.png')]);
+  const [loaded] = useAssets([require('@hpapp/assets/icon.png'), require('@hpapp/assets/splash.png')]);
   if (!loaded) {
     return <></>;
   }
