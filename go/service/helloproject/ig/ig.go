@@ -4,9 +4,12 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"regexp"
+	"strings"
 
 	"github.com/spf13/cobra"
 	"github.com/yssk22/hpapp/go/foundation/assert"
+	"github.com/yssk22/hpapp/go/foundation/cli"
 	"github.com/yssk22/hpapp/go/foundation/slice"
 	"github.com/yssk22/hpapp/go/service/auth"
 	"github.com/yssk22/hpapp/go/service/bootstrap/config"
@@ -15,6 +18,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent"
 	"github.com/yssk22/hpapp/go/service/ent/hpasset"
 	"github.com/yssk22/hpapp/go/service/ent/hpigpost"
+	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/entutil"
 	"github.com/yssk22/hpapp/go/service/helloproject/blob"
 	"github.com/yssk22/hpapp/go/service/helloproject/member"
@@ -72,7 +76,85 @@ func (ig *igService) Tasks() []task.Task {
 }
 
 func (*igService) Command() *cobra.Command {
-	return nil
+	cmd := &cobra.Command{
+		Use:   "ig",
+		Short: "manage ig accounts",
+	}
+	cmd.AddCommand(&cobra.Command{
+		Use:   "list-assets",
+		Short: "list Instagram assets",
+		Args:  cobra.NoArgs,
+		RunE: func(cmd *cobra.Command, args []string) error {
+			ctx := cmd.Context()
+			entclient := entutil.NewClient(ctx)
+			assets := entclient.HPAsset.Query().Where(hpasset.AssetTypeEQ(enums.HPAssetTypeInstagram)).WithMembers().WithArtist().AllX(ctx)
+			w := cli.NewTableWriter([]string{"IG Account", "HPMember", "HPArtist"})
+			for _, a := range assets {
+				memberId := "N/A"
+				artistId := "N/A"
+				if a.Edges.Artist != nil {
+					artistId = fmt.Sprintf("%d", a.Edges.Artist.ID)
+				}
+				if len(a.Edges.Members) > 0 {
+					memberId = fmt.Sprintf("%d", a.Edges.Members[0].ID)
+				}
+				w.WriteRow([]string{
+					a.Key,
+					memberId,
+					artistId,
+				})
+			}
+			w.Flush()
+			return nil
+		},
+	})
+	cmd.AddCommand(&cobra.Command{
+		Use:   "resolve-assets",
+		Short: "resolve Instagram asset connections",
+		Args:  cobra.NoArgs,
+		RunE: func(cmd *cobra.Command, args []string) error {
+			ctx := cmd.Context()
+			entclient := entutil.NewClient(ctx)
+			assets := entclient.HPAsset.Query().Where(hpasset.AssetTypeEQ(enums.HPAssetTypeInstagram)).WithMembers().WithArtist().Where(
+				hpasset.HasArtist(),
+				hpasset.Not(hpasset.HasMembers()),
+			).AllX(ctx)
+			var updates []*ent.HPAssetUpdateOne
+			w := cli.NewTableWriter([]string{"IG Account", "HPMember"})
+			re := regexp.MustCompile("_+")
+			for _, a := range assets {
+				// {firstname}_{lastname}.official is a common practice for instagram account key, but some members have multiple underscores in their name.
+				// we normalize them to {firstname}_{lastname} and check if there is a member with the same key in HPArtist
+				possibleMemberKey := re.ReplaceAllString(strings.TrimSuffix(a.Key, ".official"), "_")
+				member, _ := entclient.HPMember.Query().Where(
+					hpmember.ArtistKey(a.Edges.Artist.Key),
+					hpmember.KeyEQ(possibleMemberKey),
+				).First(ctx)
+				if member != nil {
+					updates = append(updates, a.Update().AddMembers(member))
+					w.WriteRow([]string{
+						a.Key,
+						fmt.Sprintf("%d", member.ID),
+					})
+				}
+			}
+			if len(updates) == 0 {
+				fmt.Println("No connections to be created")
+				return nil
+			}
+			fmt.Println("Following connections will be created:")
+			fmt.Println(">>")
+			w.Flush()
+			fmt.Println("<<")
+			if cli.Confirm("Commit connections") {
+				for _, u := range updates {
+					u.SaveX(ctx)
+				}
+			}
+			return nil
+		},
+	})
+	return cmd
 }
 
 func (ig *igService) CrawlLatestTask(ctx context.Context, _ any) error {
