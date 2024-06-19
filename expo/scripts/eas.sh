@@ -8,10 +8,6 @@ if [ -z $HPAPP_CONFIG_NAME ]; then
     exit 1
 fi
 
-if [ -z $HPAPP_CONFIG_PLATFORM ]; then
-    HPAPP_CONFIG_PLATFORM=ios
-fi
-
 EAS_JSON=$BASEDIR/config/$HPAPP_CONFIG_NAME/eas.json
 
 cp $EAS_JSON $BASEDIR/eas.json

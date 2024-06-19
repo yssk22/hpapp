@@ -1,0 +1,10 @@
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "entryPoints": ["./features", "./foundation", "./system"],
+    "entryPointStrategy": "expand",
+    "exclude": ["**/*.test.ts", "**/node_modules/**"],
+    "name": "hpapp",
+    "readme": "none",
+    "out": "../docs/expo/typedoc",
+    "plugin": ["typedoc-plugin-rename-defaults"]
+}

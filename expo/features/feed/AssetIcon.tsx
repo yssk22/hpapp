@@ -1,4 +1,4 @@
-import { HPFeedItemHPAssetType } from '@hpapp/features/feed/__generated__/FeedItemFragment.graphql';
+import { HPFeedItemHPAssetType } from '@hpapp/features/feed/__generated__/FeedListItemFragment.graphql';
 import AmebloIcon from '@hpapp/features/feed/ameblo/AmebloIcon';
 import { Icon } from '@rneui/themed';
 
