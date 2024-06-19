@@ -14,7 +14,7 @@ import { fetchQuery, graphql, usePaginationFragment, useRelayEnvironment } from 
 import { usePaginationFragmentHookType } from 'react-relay/relay-hooks/usePaginationFragment';
 
 const NUM_FEED_ITEMS_PER_LOAD = 20;
-const DAYS_TO_CALCULATE_MIN_POST_AT_FOR_TAGGEING = 3 * date.N_DAYS;
+const DAYS_TO_CALCULATE_MIN_POST_AT_FOR_TAGGEING = 3;
 
 const FeedContextQueryGraphQL = graphql`
   query FeedContextQuery($params: HPFeedQueryParamsInput!, $first: Int, $after: Cursor) {
@@ -74,7 +74,7 @@ function createFeedContext(): [(props: FeedContextProviderProps) => JSX.Element,
     // We use 30 days window when fetching tagged feed to get the items without timeout.
     // but this prevents users from loading items older than 30 days.
     const minPostAt = useMemberTaggings
-      ? new Date(date.getToday().getTime() - DAYS_TO_CALCULATE_MIN_POST_AT_FOR_TAGGEING).toISOString()
+      ? date.addDate(date.getToday().getTime(), DAYS_TO_CALCULATE_MIN_POST_AT_FOR_TAGGEING, 'day').toISOString()
       : null;
     // TODO: #52 Revisit the use of Relay and Suspense
     // We currently don't use usePreloadedQuery or useLazyLoadQuery since it causes suspense fallback,

@@ -29,18 +29,26 @@ export default class FileFetcher {
     if (username !== this.username || password !== this.password) {
       return '';
     }
-    return await readFile(this.paths.redirectPageHtmlPath);
+    return await this.readFile(this.paths.redirectPageHtmlPath);
   }
 
   async fetchEventApplicationsHtml(): Promise<string> {
-    return await readFile(this.paths.openEventApplicationsHtmlPath);
+    return await this.readFile(this.paths.openEventApplicationsHtmlPath);
   }
 
   async fetchExecEventApplicationsHtml(): Promise<string> {
-    return await readFile(this.paths.openExecEventApplicationsHtmlPath);
+    return await this.readFile(this.paths.openExecEventApplicationsHtmlPath);
   }
 
   async fetchTicketsHtml(): Promise<string> {
-    return await readFile(this.paths.ticketsHtmlPath);
+    return await this.readFile(this.paths.ticketsHtmlPath);
+  }
+
+  async readFile(path: string): Promise<string> {
+    try {
+      return await readFile(path);
+    } catch {
+      return '';
+    }
   }
 }
