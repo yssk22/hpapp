@@ -1,3 +1,9 @@
+/**
+ * provide internationalization functions.
+ *
+ * @module
+ * @see https://yssk22.github.io/hpapp/expo/i18n.html
+ */
 import * as Localization from 'expo-localization';
 import { I18n, TranslateOptions } from 'i18n-js';
 
@@ -40,6 +46,14 @@ const locale = Localization.getLocales()[0].languageCode ?? 'ja';
 i18n.locale = ['ja', 'en'].indexOf(locale) >= 0 ? locale : 'en';
 i18n.enableFallback = true;
 
+/**
+ * translate a string. It's a wrapper of `i18n.t` in i18n-js.
+ * @param msg English message
+ * @param options
+ * @returns translated message
+ *
+ * @see https://github.com/fnando/i18n
+ */
 const t = (msg: string, options?: TranslateOptions) => {
   return i18n.t(msg, options);
 };

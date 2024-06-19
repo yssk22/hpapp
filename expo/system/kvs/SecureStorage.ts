@@ -2,6 +2,9 @@ import * as SecureStore from 'expo-secure-store';
 
 import { KeyValueStorage } from './types';
 
+/**
+ * SecureStorage is a wrapper for `expo-secure-store` as KeyValueStorage
+ */
 export default class SecureStorage implements KeyValueStorage {
   private options: SecureStore.SecureStoreOptions | undefined;
 

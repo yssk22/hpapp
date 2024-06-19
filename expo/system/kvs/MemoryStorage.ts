@@ -1,5 +1,8 @@
 import { KeyValueStorage } from './types';
 
+/**
+ * MemoryStorage is a KeyValueStorage implementation for memory (`Map`)
+ */
 export default class MemoryStorage implements KeyValueStorage {
   private storage: Map<string, string>;
 

@@ -10,6 +10,9 @@ const consoleEvents: RegExp[] = (Constants.expoConfig?.extra?.hpapp?.consoleEven
   }
 );
 
+/**
+ * Console is an LogSink implemenation that uses console.log() and console.error()
+ */
 class Console implements LogSink {
   Log(level: LogLevel, event: string, message: string, data?: Record<string, any> | undefined): void {
     // isFocus event
