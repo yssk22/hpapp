@@ -1,0 +1,6 @@
+{
+    "markdownlint.config": {
+        "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.34.0/schema/markdownlint-config-schema.json",
+        "commands-show-output": false
+    }
+}

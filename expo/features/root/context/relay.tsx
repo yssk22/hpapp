@@ -15,7 +15,7 @@ export interface HttpClientConfig {
 
 function getDefaultGraphQLEndpoint() {
   const endpoint = Constants.expoConfig?.extra?.hpapp?.graphQLEndpoint;
-  const hostUri = Constants.manifest?.hostUri; // ip:port if app is running with Metro
+  const hostUri = Constants.platform?.hostUri; // ip:port if app is running with Metro
   if (typeof endpoint === 'string') {
     return endpoint;
   }

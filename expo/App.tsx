@@ -3,8 +3,8 @@ import useFirebaseTokensInHttpHeader from '@hpapp/features/auth/firebase/useFire
 import LocalLoginContainer from '@hpapp/features/auth/local/LocalLoginContainer';
 import Constants from 'expo-constants';
 
-import screens from './Screens';
 import Root from './features/root';
+import screens from './generated/Screens';
 
 export default function App() {
   const headerFn = useFirebaseTokensInHttpHeader();

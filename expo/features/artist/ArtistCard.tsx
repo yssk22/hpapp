@@ -1,7 +1,7 @@
-import { HPArtist } from '@hpapp/contexts/helloproject';
 import MemberIcon from '@hpapp/features/artist/MemberIcon';
 import Text from '@hpapp/features/common/components/Text';
 import { Spacing } from '@hpapp/features/common/constants';
+import { HPArtist } from '@hpapp/features/root/protected/context/helloproject';
 import { Card } from '@rneui/themed';
 import { useCallback, useMemo, useState } from 'react';
 import { View, StyleSheet, LayoutChangeEvent } from 'react-native';
@@ -18,7 +18,7 @@ export default function ArtistCard({ artist }: { artist: HPArtist }) {
     }
   }, []);
   const members = useMemo(() => {
-    return (artist.members || []).filter((m) => m.graduateAt === null);
+    return (artist.members ?? []).filter((m) => m.graduateAt === null);
   }, [artist]);
   const paddings = useMemo(() => {
     const membersPerRow = Math.floor(componentWidth / (MemberIconSize + MemberIconMargin * 2));
