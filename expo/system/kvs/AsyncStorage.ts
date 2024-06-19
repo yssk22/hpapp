@@ -2,6 +2,10 @@ import RNAsyncStorage from '@react-native-async-storage/async-storage';
 
 import { KeyValueStorage } from './types';
 
+/**
+ * AsyncStorage is a wrapper for @react-native-async-storage/async-storage as KeyValueStorage
+ *
+ */
 export default class AsyncStorage implements KeyValueStorage {
   async get(key: string): Promise<string | null> {
     return await RNAsyncStorage.getItem(key);

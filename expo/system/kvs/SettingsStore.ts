@@ -15,6 +15,10 @@ type SettingsObject<T> = {
   value: T;
 };
 
+/**
+ * SettingsStore is a implementation to store any local user settigs that helps save and load.
+ * With this implementation, you don't have to worry about the storage and serialization and you'll get the proper type hint for your settings.
+ */
 export default class SettingsStore<T> {
   private static settingsList: Map<string, SettingsStore<unknown>> = new Map();
 
