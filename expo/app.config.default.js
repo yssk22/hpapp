@@ -67,6 +67,12 @@ module.exports = {
             useFrameworks: 'static'
           }
         }
+      ],
+      [
+        'expo-asset',
+        {
+          assets: ['./assets']
+        }
       ]
     ],
     updates: {
