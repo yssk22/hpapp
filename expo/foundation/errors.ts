@@ -1,12 +1,45 @@
+/**
+ * provide a helper functions to handle errors
+ *
+ * @example
+ * If you don't know what to show to the users when an error occurs, you can just use wrapRenderable to rethrow the error to the upper strean,
+ * ```ts
+ * try{
+ *   // do something
+ * }catch(e: unknown) {
+ *   throw wrapRenderable(e);
+ * }
+ * ```
+ * but if you know what to show, you can use RenderableError to customize the error message.
+ * ```ts
+ * try{
+ *   // do something
+ * }catch(e: unknown) {
+ *   throw new RenderableError("your message", e);
+ * }
+ * ```
+ * @module
+ */
+
+/**
+ * an interface for objects that the string reurned by render() method is a human-readable error message.
+ */
 interface Renderable {
   render: () => string;
 }
 
-class RenderaleError {
+/**
+ * an error class that implements Renderable interface.
+ */
+class RenderableError {
   name: string;
   message: string;
   inner: unknown;
 
+  /**
+   * @param msg - a message to be rendered to the users
+   * @param e - internal error
+   */
   constructor(msg: string, e: unknown) {
     this.message = msg;
     this.inner = e;
@@ -18,6 +51,11 @@ class RenderaleError {
   }
 }
 
+/**
+ * check if the exception is renderable
+ * @param value - unknown object caught in try-catch block
+ * @returns true if the value is Renderable object.
+ */
 function isRenderable(value: unknown): value is Renderable {
   if (typeof value !== 'object' || value === null) {
     return false;
@@ -29,7 +67,13 @@ function isRenderable(value: unknown): value is Renderable {
   return true;
 }
 
-function renderError(e: unknown) {
+/**
+ * render an human-readable error message from an exception.
+ * If e is not renderable, it returns 'something went wrong' and we log the error to the console.
+ * @param e - unknown object caught in try-catch block
+ * @returns a message that can be rendered to the users.
+ */
+const renderError = (e: unknown) => {
   if (isRenderable(e)) {
     return e.render();
   }
@@ -49,16 +93,21 @@ function renderError(e: unknown) {
     }
   }
   return 'something went wrong';
-}
+};
 
-function wrapRenderable(e: unknown) {
+/**
+ * wrap an exception to a RenderableError object if it is not renderable.
+ * @param e - unknown object caught in try-catch block
+ * @returns a Renderable object
+ */
+const wrapRenderable = (e: unknown) => {
   if (isRenderable(e)) {
     return e;
   }
   if (e === null || e === undefined) {
     return null;
   }
-  return new RenderaleError('something went wrong', e);
-}
+  return new RenderableError('something went wrong', e);
+};
 
-export { renderError, Renderable, wrapRenderable, RenderaleError };
+export { renderError, Renderable, wrapRenderable, RenderableError };

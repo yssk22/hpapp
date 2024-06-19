@@ -1,4 +1,4 @@
-import { RenderaleError } from '@hpapp/foundation/errors';
+import { RenderableError } from '@hpapp/foundation/errors';
 import { useMemo } from 'react';
 import { useMutation } from 'react-relay';
 import { MutationParameters, GraphQLTaggedNode, VariablesOf, PayloadError } from 'relay-runtime';
@@ -7,7 +7,7 @@ function getFirstMessageFromPayloadError(err: PayloadError[] | null): Error | nu
   if (err === null) {
     return null;
   }
-  return new RenderaleError(err[0].message, null);
+  return new RenderableError(err[0].message, null);
 }
 
 // usePromisify converts the GraphQL mutation call v to async/promise function call.

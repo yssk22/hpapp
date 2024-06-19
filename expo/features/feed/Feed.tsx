@@ -43,15 +43,11 @@ export default function Feed(props: FeedProps) {
   );
 }
 
-const minPostAtForTaggedFeed = 3 * date.N_DAYS;
-
 function FeedLoader({ numFetch, memberIds, assetTypes, useMemberTaggings }: FeedProps) {
   // TODO: #28 Revisit Tagged Feed Feature
   // We use 30 days window when fetching tagged feed to get the items without timeout.
   // but this prevents users from loading items older than 30 days.
-  const minPostAt = useMemberTaggings
-    ? new Date(date.getToday().getTime() - minPostAtForTaggedFeed).toISOString()
-    : null;
+  const minPostAt = useMemberTaggings ? date.addDate(date.getToday().getTime(), 30, 'day').toISOString() : null;
   const data = useLazyLoadQuery<FeedQuery>(FeedQueryGraphQL, {
     first: numFetch,
     params: {

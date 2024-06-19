@@ -1,4 +1,4 @@
-import { getToday, N_DAYS, N_HOURS } from '@hpapp/foundation/date';
+import { getToday, addDate } from '@hpapp/foundation/date';
 
 import { EventApplicationTickets, Scraper } from './types';
 
@@ -86,9 +86,9 @@ const DemoData: EventApplicationTickets[] = [
   // 1. Event Payment Due Date is Today
   {
     name: '山﨑愛生30thバースデーイベント',
-    applicationStartDate: new Date(TODAY - 14 * N_DAYS),
-    applicationDueDate: new Date(TODAY - 7 * N_DAYS),
-    paymentOpenDate: new Date(TODAY - 3 * N_DAYS),
+    applicationStartDate: addDate(TODAY, -14, 'day'),
+    applicationDueDate: addDate(TODAY, -7, 'day'),
+    paymentOpenDate: addDate(TODAY, -3, 'day'),
     paymentDueDate: new Date(TODAY),
     tickets: [
       {
@@ -110,10 +110,10 @@ const DemoData: EventApplicationTickets[] = [
   // 2. Event Payment Due Date is past
   {
     name: '山﨑夢羽30thバースデーイベント',
-    applicationStartDate: new Date(TODAY - 14 * N_DAYS),
-    applicationDueDate: new Date(TODAY - 7 * N_DAYS),
-    paymentOpenDate: new Date(TODAY - 5 * N_DAYS),
-    paymentDueDate: new Date(TODAY - 2 * N_DAYS),
+    applicationStartDate: addDate(TODAY, -14, 'day'),
+    applicationDueDate: addDate(TODAY, -7, 'day'),
+    paymentOpenDate: addDate(TODAY, -5, 'day'),
+    paymentDueDate: addDate(TODAY, -2, 'day'),
     tickets: [
       {
         venue: '日本武道館',
@@ -134,10 +134,10 @@ const DemoData: EventApplicationTickets[] = [
   // 3. PaymentOpenDate is future
   {
     name: '小田さくら30thバースデーイベント',
-    applicationStartDate: new Date(TODAY - 14 * N_DAYS),
-    applicationDueDate: new Date(TODAY - 7 * N_DAYS),
-    paymentOpenDate: new Date(TODAY + 2 * N_DAYS),
-    paymentDueDate: new Date(TODAY + 6 * N_DAYS),
+    applicationStartDate: addDate(TODAY, -14, 'day'),
+    applicationDueDate: addDate(TODAY, -7, 'day'),
+    paymentOpenDate: addDate(TODAY, +2, 'day'),
+    paymentDueDate: addDate(TODAY, +6, 'day'),
     tickets: [
       {
         venue: '日本武道館',
@@ -158,22 +158,22 @@ const DemoData: EventApplicationTickets[] = [
   // for display only, comming soon events
   {
     name: '今週のイベントサンプル',
-    applicationStartDate: new Date(TODAY - 14 * N_DAYS),
-    applicationDueDate: new Date(TODAY - 7 * N_DAYS),
-    paymentOpenDate: new Date(TODAY - 2 * N_DAYS),
-    paymentDueDate: new Date(TODAY - 1 * N_DAYS),
+    applicationStartDate: addDate(TODAY, 14, 'day'),
+    applicationDueDate: addDate(TODAY, 7, 'day'),
+    paymentOpenDate: addDate(TODAY, 2, 'day'),
+    paymentDueDate: addDate(TODAY, 1, 'day'),
     tickets: [
       {
         venue: '埼玉県川口総合文化センター・リリア メインホール',
-        openAt: new Date(TODAY + 1 * N_DAYS + 14 * N_HOURS),
-        startAt: new Date(TODAY + 1 * N_DAYS + 15 * N_HOURS),
+        openAt: addDate(addDate(TODAY, 1, 'day'), 14, 'hour'),
+        startAt: addDate(addDate(TODAY, 1, 'day'), 15, 'hour'),
         status: '入金済',
         num: 1
       },
       {
         venue: '埼玉県川口総合文化センター・リリア メインホール',
-        openAt: new Date(TODAY + 2 * N_DAYS + 14 * N_HOURS),
-        startAt: new Date(TODAY + 2 * N_DAYS + 15 * N_HOURS),
+        openAt: addDate(addDate(TODAY, 2, 'day'), 14, 'hour'),
+        startAt: addDate(addDate(TODAY, 2, 'day'), 15, 'hour'),
         status: '入金済',
         num: 1
       }
@@ -183,22 +183,22 @@ const DemoData: EventApplicationTickets[] = [
     // looooong name
     // eslint-disable-next-line quotes
     name: "モーニング娘。'21 10期メンバー 石田亜佑美＆佐藤優樹FCイベント～ひよこが10年経ったら、さぁ何になる？～『まーバースデーやってないよ。せめて衣装だけ着させて！』『いや、タイトル長いよ！』 ",
-    applicationStartDate: new Date(TODAY - 14 * N_DAYS),
-    applicationDueDate: new Date(TODAY - 7 * N_DAYS),
-    paymentOpenDate: new Date(TODAY - 1 * N_DAYS),
-    paymentDueDate: new Date(TODAY + 7 * N_DAYS),
+    applicationStartDate: addDate(TODAY, -1, 'day'),
+    applicationDueDate: addDate(TODAY, -7, 'day'),
+    paymentOpenDate: addDate(TODAY, -1, 'day'),
+    paymentDueDate: addDate(TODAY, 7, 'day'),
     tickets: [
       {
         venue: '東京駅',
-        openAt: new Date(TODAY + 30 * N_DAYS + 18 * N_HOURS),
-        startAt: new Date(TODAY + 30 * N_DAYS + 19 * N_HOURS),
+        openAt: addDate(addDate(TODAY, 30, 'day'), 18, 'hour'),
+        startAt: addDate(addDate(TODAY, 30, 'day'), 19, 'hour'),
         status: '入金待',
         num: 1
       },
       {
         venue: '日本武道館',
-        openAt: new Date(TODAY + 30 * N_DAYS + 15 * N_HOURS),
-        startAt: new Date(TODAY + 30 * N_DAYS + 16 * N_HOURS),
+        openAt: addDate(addDate(TODAY, 30, 'day'), 15, 'hour'),
+        startAt: addDate(addDate(TODAY, 30, 'day'), 16, 'hour'),
         status: '入金待',
         num: 1
       }
@@ -207,10 +207,10 @@ const DemoData: EventApplicationTickets[] = [
   // Open Event with due date
   {
     name: '入江里咲30thバースデーイベント',
-    applicationStartDate: new Date(TODAY - 14 * N_DAYS),
-    applicationDueDate: new Date(TODAY - 7 * N_DAYS),
-    paymentOpenDate: new Date(TODAY - 5 * N_DAYS),
-    paymentDueDate: new Date(TODAY - 2 * N_DAYS),
+    applicationStartDate: addDate(TODAY, -14, 'day'),
+    applicationDueDate: addDate(TODAY, -7, 'day'),
+    paymentOpenDate: addDate(TODAY, -5, 'day'),
+    paymentDueDate: addDate(TODAY, -2, 'day'),
     tickets: []
   },
   // Open Event without due date

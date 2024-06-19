@@ -6,5 +6,6 @@
     "name": "hpapp",
     "readme": "none",
     "out": "../docs/expo/typedoc",
+    "gitRevision": "main",
     "plugin": ["typedoc-plugin-rename-defaults"]
 }
