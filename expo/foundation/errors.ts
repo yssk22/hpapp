@@ -92,7 +92,7 @@ const renderError = (e: unknown) => {
       console.error(e);
     }
   }
-  return 'something went wrong';
+  return 'something went wrong.';
 };
 
 /**
@@ -107,7 +107,7 @@ const wrapRenderable = (e: unknown) => {
   if (e === null || e === undefined) {
     return null;
   }
-  return new RenderableError('something went wrong', e);
+  return new RenderableError('something went wrong.', e);
 };
 
 export { renderError, Renderable, wrapRenderable, RenderableError };

@@ -3,7 +3,7 @@ import React, { useCallback, useState } from 'react';
 import { Text } from 'react-native';
 
 export default function useErrorMessage(): [
-  ({ testID = 'errorMessage' }: { testID?: string }) => React.ReactElement,
+  ({ testID }: { testID?: string }) => React.ReactElement,
   (e: unknown) => void
 ] {
   const [error, setError] = useState<string | null>(null);

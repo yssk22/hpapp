@@ -1,4 +1,7 @@
 {
+  "something went wrong.": {
+    "ja": "エラーが発生しました"
+  },
   "Update is available. Tap to install.": {
     "ja": "アップデートが利用可能です。タップしてインストール。"
   },

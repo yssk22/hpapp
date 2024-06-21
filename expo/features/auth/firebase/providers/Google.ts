@@ -1,3 +1,4 @@
+import { isEmpty } from '@hpapp/foundation/string';
 import FirebaseAuth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import { AccessTokenRequest } from 'expo-auth-session';
 import * as GoogleAuth from 'expo-auth-session/providers/google';
@@ -34,6 +35,10 @@ export default class Google extends Firebase {
       ios: this.iosClientId,
       android: this.androidClientId
     });
+    if (isEmpty(clientId)) {
+      throw new Error('Google client ID is not set, check your environment config and rebuild the app');
+    }
+
     // FIXME:
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [request, , promptAsync] = GoogleAuth.useAuthRequest({

@@ -22,11 +22,7 @@ class Console implements LogSink {
       }).length > 0;
 
     if (level === 'error') {
-      if (isFocus) {
-        console.error(event, message, JSON.stringify(data, null, '  '));
-      } else {
-        console.error(event, message);
-      }
+      console.error(event, message, JSON.stringify(data, null, '  '));
     } else {
       if (isFocus) {
         console.log(event, message, JSON.stringify(data, null, '  '));
