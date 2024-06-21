@@ -1,6 +1,6 @@
 FROM gcr.io/cloudsql-docker/gce-proxy:1.09 AS gce-proxy
 FROM golang:1.22.4 AS go
-FROM node:18.16.0 AS node
+FROM node:22.3.0 AS node
 FROM google/cloud-sdk:latest AS cloud-sdk
 
 ENV ANDROID_HOME /opt/android-sdk
