@@ -7,9 +7,22 @@ import { useMemo } from 'react';
 import { RelayEnvironmentProvider, useRelayEnvironment } from 'react-relay';
 import { Network, RequestParameters, Variables, Environment, Store, RecordSource } from 'relay-runtime';
 
+/**
+ * An interface to configure the HTTP client for GraphQL.
+ */
 export interface HttpClientConfig {
+  /**
+   * GraphQL Endpoint. If undefined, it will use the default endpoint configured in `extra.hpapp.graphQLEndpoint` in appc.config.
+   */
   Endpoint?: string;
+  /**
+   * Network timeout in seconds.
+   */
   NetworkTimeoutSecond: number;
+  /**
+   * A hook to add extra headers to the request.
+   * @returns A promise that resolves to a record of headers.
+   */
   ExtraHeaderFn?: () => Promise<Record<string, string>>;
 }
 
@@ -72,6 +85,7 @@ function createEnvironment(config: HttpClientConfig, userToken?: string) {
       const benchmark = new Date().getTime() - start.getTime();
       logging.Error(eventName, `GraphQL error: ${(err as Error).message}`, {
         request: {
+          endpoint,
           body: {
             query: operation.text,
             variables // TODO: get rid of potentially sensitive information

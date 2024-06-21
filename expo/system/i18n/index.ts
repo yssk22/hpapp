@@ -27,8 +27,12 @@ const convertTranslations = (src: TranslationCotentOriginalFormat): TranslationC
   const content: TranslationContent = {
     en: {}
   };
-  for (const key in src) {
+  for (let key in src) {
     const trans = src[key];
+    // dot at the end of the key is not allowed in i18n-js.
+    if (key.endsWith('.')) {
+      key = key.slice(0, -1);
+    }
     content['en'][key] = key;
     for (const lang in trans) {
       if (content[lang] === undefined) {
@@ -55,6 +59,9 @@ i18n.enableFallback = true;
  * @see https://github.com/fnando/i18n
  */
 const t = (msg: string, options?: TranslateOptions) => {
+  if (msg.endsWith('.')) {
+    msg = msg.slice(0, -1);
+  }
   return i18n.t(msg, options);
 };
 

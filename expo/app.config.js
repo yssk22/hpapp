@@ -40,5 +40,7 @@ module.exports = (_) => {
   // finally load the environment specific app.config.js
   const configure = require('./' + path.join('config', cfgName, 'app.config.js'));
 
+  // reserverd extra configurations
+  config.extra.hpapp.isEAS = isEAS;
   return configure(config);
 };
