@@ -1238,11 +1238,6 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.52.0.tgz#78fe5f117840f69dc4a353adf9b9cd926353378c"
   integrity sha512-mjZVbpaeMZludF2fsWLD0Z9gCref1Tk4i9+wddjRvpUNqqcndPkBD09N/Mapey0b3jaXbLm2kICwFv2E64QinA==
 
-"@expo-google-fonts/biz-udgothic@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@expo-google-fonts/biz-udgothic/-/biz-udgothic-0.2.3.tgz#84b4ce716e28f6bfc61c735616684abbf57d0a5a"
-  integrity sha512-4m9rgzj635Y2AjpYiCxiTq5sWkc1rePAIY9d7isaiAC4gifW2s03rYhQgBXkRj/bvpbfpC+4cx7419IkzjCCmg==
-
 "@expo/apple-utils@1.3.2":
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/@expo/apple-utils/-/apple-utils-1.3.2.tgz#c2c80e03bb4c310e183b109ea37bbc88cef59313"
@@ -5587,7 +5582,7 @@ expo-dev-menu-interface@1.8.3:
   resolved "https://registry.yarnpkg.com/expo-dev-menu-interface/-/expo-dev-menu-interface-1.8.3.tgz#8c1262e29e0124fc5932a129c95b36de56656b20"
   integrity sha512-QM0LRozeFT5Ek0N7XpV93M+HMdEKRLEOXn0aW5M3uoUlnqC1+PLtF3HMy3k3hMKTTE/kJ1y1Z7akH07T0lunCQ==
 
-expo-dev-menu@5.0.15:
+expo-dev-menu@5.0.15, expo-dev-menu@^5.0.15:
   version "5.0.15"
   resolved "https://registry.yarnpkg.com/expo-dev-menu/-/expo-dev-menu-5.0.15.tgz#7d155f37a53ff8fb0d247c113fd62e4e75aa4fb3"
   integrity sha512-a5aADQXOH/uw2NDy4fbgVl9wkAcZIfkrz8yzwQz0X6Yvf0a68zafqxSvvYkq+MmUTrFsuiST49s+mk4uRqHJMw==

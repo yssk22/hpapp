@@ -12,7 +12,7 @@
     "lint": "yarn eslint ./",
     "genscreen": "node ./scripts/genscreen.js",
     "start-dev": "HPAPP_CONFIG_NAME=dev expo start --dev-client --lan",
-    "build-dev": "HPAPP_CONFIG_NAME=dev ./scripts/eas.sh build --profile dev --non-interactive",
+    "build-dev": "HPAPP_CONFIG_NAME=dev ./scripts/eas.sh build --profile dev --platform ios --non-interactive",
     "build-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh build --profile beta --non-interactive",
     "build-prod": "HPAPP_CONFIG_NAME=prod ./scripts/eas.sh build --profile prod --non-interactive",
     "update-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh update --channel beta --non-interactive --auto"
@@ -36,7 +36,6 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
-    "@expo-google-fonts/biz-udgothic": "^0.2.3",
     "@react-native-async-storage/async-storage": "1.23.1",
     "@react-native-firebase/app": "^17.4.3",
     "@react-native-firebase/app-check": "^17.4.3",
@@ -55,6 +54,7 @@
     "expo-calendar": "~13.0.5",
     "expo-constants": "~16.0.2",
     "expo-dev-client": "~4.0.18",
+    "expo-dev-menu": "^5.0.15",
     "expo-device": "~6.0.2",
     "expo-linking": "~6.3.1",
     "expo-localization": "~15.0.3",
