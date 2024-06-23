@@ -73,6 +73,12 @@ module.exports = {
         {
           assets: ['./assets']
         }
+      ],
+      [
+        'expo-font',
+        {
+          fonts: ['./assets/BIZUDGothic_400Regular.ttf', './assets/BIZUDGothic_700Bold.ttf']
+        }
       ]
     ],
     updates: {

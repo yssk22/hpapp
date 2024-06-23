@@ -1,4 +1,3 @@
-import { useFonts, BIZUDGothic_400Regular, BIZUDGothic_700Bold } from '@expo-google-fonts/biz-udgothic';
 import { CurrentUserSettings, LoginContainer, useCurrentUser } from '@hpapp/features/auth';
 import GuestRoot from '@hpapp/features/root/GuestRoot';
 import { Analytics, AnalyticsProvider } from '@hpapp/features/root/context/analytics';
@@ -9,7 +8,6 @@ import { SettingsProvider } from '@hpapp/features/settings/context';
 import { AppThemeProvider } from '@hpapp/features/settings/context/theme';
 import { LocalUserConfigurationSettings } from '@hpapp/features/settings/context/useLocalUserConfig';
 import { UPFCSettings } from '@hpapp/features/upfc/settings/useUPFCSettings';
-import React from 'react';
 
 const settings = [CurrentUserSettings, LocalUserConfigurationSettings, UPFCSettings];
 
@@ -34,13 +32,6 @@ export default function Root({
   httpClientConfig?: HttpClientConfig;
   screens: ScreenList;
 }) {
-  const [fontsLoaded] = useFonts({
-    BIZUDGothic_400Regular,
-    BIZUDGothic_700Bold
-  });
-  if (!fontsLoaded) {
-    return <></>;
-  }
   return (
     <SettingsProvider settings={settings}>
       <AppThemeProvider>
