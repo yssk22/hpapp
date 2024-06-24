@@ -1,4 +1,6 @@
+import useAppConfig from '@hpapp/features/appconfig/useAppConfig';
 import { useCurrentUser } from '@hpapp/features/auth';
+import useFirebaseTokensInHttpHeader from '@hpapp/features/auth/firebase/useFirebaseTokensInHttpHeader';
 import { wrapRenderable } from '@hpapp/foundation/errors';
 import { WithTimeout } from '@hpapp/foundation/function';
 import * as logging from '@hpapp/system/logging';
@@ -107,12 +109,19 @@ function createEnvironment(config: HttpClientConfig, userToken?: string) {
   });
 }
 
-function RelayProvider({ children, config }: { children: React.ReactNode; config: HttpClientConfig }) {
+function RelayProvider({ children }: { children: React.ReactNode }) {
   const [user] = useCurrentUser();
+  const appConfig = useAppConfig();
+  const firebaseHeaderFn = useFirebaseTokensInHttpHeader();
   const environment = useMemo(() => {
-    return createEnvironment(config, user?.accessToken);
-  }, [config, user?.accessToken]);
-  return <RelayEnvironmentProvider environment={environment}>{children}</RelayEnvironmentProvider>;
+    const httpConfig = {
+      Endpoint: appConfig.graphQLEndpoint,
+      NetworkTimeoutSecond: 60,
+      ExtraHeaderFn: appConfig.useLocalAuth ? undefined : firebaseHeaderFn
+    };
+    return createEnvironment(httpConfig, user?.accessToken);
+  }, [appConfig, user?.accessToken]);
+  return <RelayEnvironmentProvider environment={environment} children={children} />;
 }
 
 const useRelay = useRelayEnvironment;
