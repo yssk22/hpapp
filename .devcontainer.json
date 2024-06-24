@@ -13,18 +13,20 @@
     "customizations": {
         "vscode": {
             "extensions": [
-				"GitHub.copilot",
-				"GitHub.vscode-pull-request-github",
+                "dbaeumer.vscode-eslint",
 				"eamodio.gitlens",
-				"golang.go",
 				"esbenp.prettier-vscode",
 				"expo.vscode-expo-tools",
+				"github.copilot",
+                "github.copilot-chat",
+				"github.vscode-pull-request-github",
+				"golang.go",
+                "graphql.vscode-graphql-syntax",
+				"gruntfuggly.todo-tree",
+				"meta.relay",
 				"mhutchie.git-graph",
 				"oderwat.indent-rainbow",
-				"Orta.vscode-jest",
-				"bierner.markdown-mermaid",
-				"meta.relay",
-				"Gruntfuggly.todo-tree"
+				"orta.vscode-jest"
 			]
         }
     },
