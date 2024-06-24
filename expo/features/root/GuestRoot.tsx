@@ -1,16 +1,15 @@
-import { LoginContainer, User } from '@hpapp/features/auth';
+import useAppConfig from '@hpapp/features/appconfig/useAppConfig';
+import { User } from '@hpapp/features/auth';
+import FirebaseLoginContainer from '@hpapp/features/auth/firebase/FirebaseLoginContainer';
+import LocalLoginContainer from '@hpapp/features/auth/local/LocalLoginContainer';
 import Text from '@hpapp/features/common/components/Text';
 import AppUpdateBanner from '@hpapp/features/root/banner/AppUpdateBanner';
 import { useAssets } from 'expo-asset';
 import { View, StyleSheet, Image } from 'react-native';
 
-export default function GuestRoot({
-  LoginContainer,
-  onAuthenticated
-}: {
-  LoginContainer: LoginContainer;
-  onAuthenticated: (user: User) => void;
-}) {
+export default function GuestRoot({ onAuthenticated }: { onAuthenticated: (user: User) => void }) {
+  const appConfig = useAppConfig();
+  const LoginContainer = appConfig.useLocalAuth ? LocalLoginContainer : FirebaseLoginContainer;
   const [loaded] = useAssets([require('@hpapp/assets/icon.png'), require('@hpapp/assets/splash.png')]);
   if (!loaded) {
     return <></>;
