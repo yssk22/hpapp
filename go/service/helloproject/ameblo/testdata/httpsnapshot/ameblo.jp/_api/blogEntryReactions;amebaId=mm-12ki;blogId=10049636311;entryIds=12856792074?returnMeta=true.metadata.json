@@ -1,0 +1,71 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Accept-Ch": [
+			"Sec-CH-UA-Full"
+		],
+		"Accept-Ranges": [
+			"bytes"
+		],
+		"Age": [
+			"0"
+		],
+		"Cache-Control": [
+			"max-age=20, stale-while-revalidate=60"
+		],
+		"Content-Security-Policy": [
+			"upgrade-insecure-requests"
+		],
+		"Content-Type": [
+			"application/json; charset=utf-8"
+		],
+		"Date": [
+			"Mon, 24 Jun 2024 03:34:01 GMT"
+		],
+		"Etag": [
+			"W/\"50-S9x5KMnST61kHXiBf8N8NqoEbAI\""
+		],
+		"Origin-Trial": [
+			"AgkzE0SdPqccfaG9xo/nbroJVd9BqLU0uZCCQbV46yVUMHh4r8RDCAWLKP8BgMPiXpQLpE/b2F9w+bJKwTj9Zg8AAAB1eyJvcmlnaW4iOiJodHRwczovL2FtZWJsby5qcDo0NDMiLCJmZWF0dXJlIjoiU2VuZEZ1bGxVc2VyQWdlbnRBZnRlclJlZHVjdGlvbiIsImV4cGlyeSI6MTY4NDg4NjM5OSwiaXNTdWJkb21haW4iOnRydWV9"
+		],
+		"Permissions-Policy": [
+			"ch-ua-full=*"
+		],
+		"Server-Timing": [
+			"total; dur=8.956336; desc=\"Total Response Time\"",
+			"MISS-CLUSTER, fastly;desc=\"Edge time\";dur=17"
+		],
+		"Timing-Allow-Origin": [
+			"*"
+		],
+		"Vary": [
+			"Origin,Accept-Encoding,X-Loading"
+		],
+		"X-Cdn-Ttl": [
+			"86400.000"
+		],
+		"X-Content-Type-Options": [
+			"nosniff"
+		],
+		"X-Envoy-Decorator-Operation": [
+			"public-web.blog.svc.cluster.local:8080/*"
+		],
+		"X-Envoy-Upstream-Service-Time": [
+			"9"
+		],
+		"X-Is-Default-Ttl": [
+			"false"
+		],
+		"X-Loading": [
+			"?0"
+		],
+		"X-Timer": [
+			"S1719200041.151928,VS0,VE17"
+		],
+		"X-User-Agent": [
+			"desktop"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/ameblo.jp/_api/blogEntryReactions;amebaId=mm-12ki;blogId=10049636311;entryIds=12856792074?returnMeta=true"
+}

@@ -5,6 +5,7 @@ import (
 	"context"
 	"fmt"
 	"net/url"
+	"strings"
 
 	"github.com/spf13/cobra"
 	"github.com/yssk22/hpapp/go/foundation/assert"
@@ -328,11 +329,22 @@ func (s *amebloService) getTaggedMembersFromText(ctx context.Context, post *post
 	members := s.tagger.GetTaggedMembers(ctx, bytes.NewBufferString(post.EntryTitle))
 	if len(members) > 0 {
 		taggedMembers = append(taggedMembers, members...)
-		owner = members[len(members)-1]
+		// note that members slice doesn't assure the order so we need to find the owner who appears last
+		// by checking the position of the name in the title.
+		ownerPresentAt := -1
+		for _, m := range members {
+			at := strings.Index(post.EntryTitle, m.Name)
+			if at >= ownerPresentAt {
+				ownerPresentAt = at
+				owner = m
+			}
+		}
 	}
 	members = s.tagger.GetTaggedMembers(ctx, bytes.NewBufferString(post.ThemeName))
 	if len(members) > 0 {
 		taggedMembers = append(taggedMembers, members...)
+		// we cannot override since there is a case that name in title is the correct while the name in theme is not.
+		// example: https://ameblo.jp/juicejuice-official/entry-11599064407.html
 		if owner == nil {
 			owner = members[0]
 		}
@@ -340,6 +352,8 @@ func (s *amebloService) getTaggedMembersFromText(ctx context.Context, post *post
 	members = s.tagger.GetTaggedMembers(ctx, bytes.NewBufferString(post.EntryText))
 	if len(members) > 0 {
 		taggedMembers = append(taggedMembers, members...)
+		// we are not sure if this doesn't create an issue but at least there is a post without name in Title and Theme.
+		// example: https://ameblo.jp/morningm-13ki/entry-12340773412.html
 		if owner == nil {
 			owner = members[0]
 		}
