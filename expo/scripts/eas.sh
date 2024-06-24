@@ -13,4 +13,4 @@ EAS_JSON=$BASEDIR/config/$HPAPP_CONFIG_NAME/eas.json
 cp $EAS_JSON $BASEDIR/eas.json
 
 # echo $@
-yarn eas $@
+bun eas $@

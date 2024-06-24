@@ -26,16 +26,12 @@ jobs:
       name: eas
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-          cache: "yarn"
-          cache-dependency-path: "expo/package.json"
+      - uses: oven-sh/setup-bun@v1
       - uses: expo/expo-github-action@v8
         with:
           eas-version: 5.4.0
           token: ${{ secrets.EXPO_TOKEN }}
-      - run: cd expo && yarn install
+      - run: cd expo && bun install --frozen-lockfile
       - run: cd expo && ./scripts/eas.sh build --profile ${{inputs.config}} --platform ${{inputs.platform}} --non-interactive
         env:
           HPAPP_CONFIG_NAME: ${{inputs.config}}

@@ -4,6 +4,7 @@
   },
   "build": {
     "dev": {
+      "bun": "1.1.16",
       "env": {
         "HPAPP_CONFIG_NAME":"dev"
       },

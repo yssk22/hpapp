@@ -18,17 +18,13 @@ jobs:
       name: eas-build-local-${{inputs.config}}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-          cache: "yarn"
-          cache-dependency-path: "expo/package.json"
+      - uses: oven-sh/setup-bun@v1
       - uses: expo/expo-github-action@v8
         with:
           eas-version: 5.4.0
           token: ${{ secrets.EXPO_TOKEN }}
-      - run: yarn global add eas-cli-local-build-plugin
-      - run: cd expo && yarn install
+      - run: bun add -g prettier expo-cli eas-cli
+      - run: cd expo && bun install --frozen-lockfile
       - run: rm expo/config/${{inputs.config}}/.gitignore
       - run: echo -n "${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}" |  base64 --decode > expo/config/${{inputs.config}}/GoogleService-Info.plist
       - run: echo -n "${{ secrets.SECRETS_JSON }}" |  base64 --decode > expo/config/${{inputs.config}}/secrets.json
