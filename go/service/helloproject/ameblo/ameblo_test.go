@@ -197,6 +197,18 @@ func TestAmeblo(t *testing.T) {
 				post, err := s.crawl(ctx, "https://ameblo.jp/morningmusume-10ki/entry-12540780771.html", true)
 				a.Nil(err)
 				a.Equals(post.QueryOwnerMember().FirstIDX(ctx), member.ID)
+
+				// Issue #71
+				post, err = s.crawl(ctx, "https://ameblo.jp/mm-12ki/entry-12857225326.html", true)
+				a.Nil(err)
+				member = post.QueryOwnerMember().OnlyX(ctx)
+				a.Equals("野中美希", member.Name)
+
+				post, err = s.crawl(ctx, "https://ameblo.jp/mm-12ki/entry-12856792074.html", true)
+				a.Nil(err)
+				member = post.QueryOwnerMember().OnlyX(ctx)
+				a.Equals("牧野真莉愛", member.Name)
+
 			})
 
 			test.New("Conflict between Theme and EntryTitle", test.WithHPMaster(), test.WithFixedTimestamp()).Run(t, func(ctx context.Context, tt *testing.T) {

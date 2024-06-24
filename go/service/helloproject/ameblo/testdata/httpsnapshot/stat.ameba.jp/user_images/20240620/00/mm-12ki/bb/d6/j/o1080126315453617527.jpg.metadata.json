@@ -1,0 +1,43 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Accept-Ranges": [
+			"bytes"
+		],
+		"Access-Control-Allow-Origin": [
+			"*"
+		],
+		"Age": [
+			"389721"
+		],
+		"Cache-Control": [
+			"max-age=17280000, immutable"
+		],
+		"Content-Length": [
+			"265487"
+		],
+		"Content-Type": [
+			"image/jpeg"
+		],
+		"Date": [
+			"Mon, 24 Jun 2024 03:34:01 GMT"
+		],
+		"Etag": [
+			"\"p8oOv+IwyHdsaotpT9Ddf8VK9nzmhxTXOWzcY5LkloE\""
+		],
+		"Fastly-Io-Info": [
+			"ifsz=466819 idim=1080x1263 ifmt=jpeg ofsz=265487 odim=1080x1263 ofmt=jpeg"
+		],
+		"Fastly-Io-Served-By": [
+			"img05-asia-northeast1"
+		],
+		"Fastly-Stats": [
+			"io=1"
+		],
+		"X-Timer": [
+			"S1719200041.224576,VS0,VE2"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/stat.ameba.jp/user_images/20240620/00/mm-12ki/bb/d6/j/o1080126315453617527.jpg"
+}
