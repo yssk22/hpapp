@@ -2,7 +2,6 @@ import useAppConfig from '@hpapp/features/appconfig/useAppConfig';
 import { User } from '@hpapp/features/auth';
 import FirebaseLoginContainer from '@hpapp/features/auth/firebase/FirebaseLoginContainer';
 import LocalLoginContainer from '@hpapp/features/auth/local/LocalLoginContainer';
-import Text from '@hpapp/features/common/components/Text';
 import AppUpdateBanner from '@hpapp/features/root/banner/AppUpdateBanner';
 import { useAssets } from 'expo-asset';
 import { View, StyleSheet, Image } from 'react-native';
@@ -28,9 +27,6 @@ export default function GuestRoot({ onAuthenticated }: { onAuthenticated: (user:
           resizeMode="contain"
         />
         <AppUpdateBanner />
-        <View style={{ height: 20 }}>
-          <Text>FOO</Text>
-        </View>
         <LoginContainer onAuthenticated={onAuthenticated} />
       </View>
     </View>

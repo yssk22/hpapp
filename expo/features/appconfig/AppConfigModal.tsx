@@ -2,7 +2,7 @@ import { useAppConfigForEdit } from '@hpapp/features/appconfig/useAppConfig';
 import Text from '@hpapp/features/common/components/Text';
 import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { Button, Dialog, Input, Switch } from '@rneui/themed';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { StyleSheet, View, Dimensions } from 'react-native';
 
 const deviceHeight = Dimensions.get('window').height;
@@ -20,14 +20,14 @@ export default function AppConfigMoal({ isVisible, onClose }: AppConfigModalProp
   const [useLocalAppConfig, setUseLocalAppConfig] = useState(appConfig?.useLocalAppConfig ?? false);
   const [graphQLEndpoint, setGraphQLEndpoint] = useState(appConfig?.graphQLEndpoint ?? '');
   const [useLocalAuth, setUseLocalAuth] = useState(appConfig?.useLocalAuth ?? false);
-  const onSave = useCallback(() => {
+  const onSave = () => {
     setAppConfig({
       useLocalAppConfig,
       graphQLEndpoint,
       useLocalAuth
     });
     onClose();
-  }, [appConfig, setAppConfig]);
+  };
   return (
     <Dialog isVisible={isVisible} overlayStyle={styles.dialog}>
       <Dialog.Title>App Configuration</Dialog.Title>

@@ -37,7 +37,7 @@ const Tabs: TabSpec[] = [
   {
     name: 'Events',
     component: EventsTab,
-    icon: 'md-calendar'
+    icon: 'calendar'
   },
   {
     name: 'Goods',
@@ -70,7 +70,7 @@ function getTabBarIconFn(iconName: string) {
   };
 }
 
-export default defineScreen('/', function () {
+export default defineScreen('/', function HomeScreen() {
   useNavigationOption({ headerShown: false });
   const [primary, contrast] = useColor('primary');
   return (

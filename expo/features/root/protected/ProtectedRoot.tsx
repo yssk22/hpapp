@@ -5,6 +5,7 @@ import LoadError from '@hpapp/features/root/protected/LoadError';
 import RootWrapper from '@hpapp/features/root/protected/RootWrapper';
 import { ServiceRootProvider } from '@hpapp/features/root/protected/context';
 import { Screen, ScreenParams, createStackNavigator } from '@hpapp/features/root/protected/stack';
+import * as logging from '@hpapp/system/logging';
 import { useNavigationContainerRef } from '@react-navigation/native';
 
 const Stack = createStackNavigator({
@@ -18,7 +19,18 @@ export default function ProtectedRoot({ screens }: { screens: Screen<ScreenParam
   return (
     <Initialize initializers={initializers}>
       <ServiceRootProvider errorFallback={<LoadError />} loadingFallback={<Loading />}>
-        <Stack ref={navigation} screens={screens} initialRouteName="/" />
+        <Stack
+          ref={navigation}
+          screens={screens}
+          initialRouteName="/"
+          onStateChange={(state) => {
+            logging.Info('features.root.protected.ProtectedRoot.onStateChagne', `to ${state.screen.name}`, {
+              name: state.screen.name,
+              path: state.screen.path,
+              params: state.params
+            });
+          }}
+        />
       </ServiceRootProvider>
     </Initialize>
   );
