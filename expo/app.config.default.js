@@ -42,7 +42,15 @@ module.exports = {
         usesNonExemptEncryption: false
       },
       infoPlist: {
-        CFBundleAllowMixedLocalizations: true
+        CFBundleAllowMixedLocalizations: true,
+        NSAppTransportSecurity: {
+          NSExceptionDomains: {
+            'helloproject.com': {
+              NSIncludesSubdomains: true,
+              NSExceptionAllowsInsecureHTTPLoads: true
+            }
+          }
+        }
       }
     },
     android: {

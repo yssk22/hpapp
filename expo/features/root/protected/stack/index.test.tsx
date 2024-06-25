@@ -12,7 +12,7 @@ test('stack', async () => {
 
   const Stack = createStackNavigator({ rootComponent: Root });
 
-  const ScreenWithParams = defineScreen('/with/params', function ({ param1 }: { param1: number }) {
+  const ScreenWithParams = defineScreen('/with/params', function ScreenWithParams({ param1 }: { param1: number }) {
     return (
       <View>
         <Text>ScreenWithParams</Text>
@@ -21,7 +21,7 @@ test('stack', async () => {
     );
   });
 
-  const ScreenWithoutParams = defineScreen('/without/params', function () {
+  const ScreenWithoutParams = defineScreen('/without/params', function ScreenWitoutParams() {
     const navigation = useNavigation();
     return (
       <View>
@@ -38,7 +38,7 @@ test('stack', async () => {
     );
   });
 
-  const HomeScreen = defineScreen('/', function () {
+  const HomeScreen = defineScreen('/', function HomeScreen() {
     const navigation = useNavigation();
     return (
       <View>

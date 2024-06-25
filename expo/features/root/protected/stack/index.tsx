@@ -1,4 +1,5 @@
 import { useColor } from '@hpapp/features/settings/context/theme';
+import { isEmpty } from '@hpapp/foundation/string';
 import {
   DefaultTheme,
   NavigationContainer,
@@ -16,6 +17,7 @@ import React, { forwardRef, useCallback, useEffect, useMemo } from 'react';
 
 export type ScreenParams = { [key: string]: unknown };
 export type Screen<P extends ScreenParams> = {
+  name: string;
   path: string;
   component: React.ElementType<P>;
   options?: NativeStackNavigationOptions;
@@ -187,7 +189,13 @@ const useNavigation = () => {
 type Navigation = ReturnType<typeof useNavigation>;
 
 function defineScreen<P extends ScreenParams>(path: string, component: React.ElementType<P>): Screen<P> {
+  const name = (component as { name?: string }).name;
+  if (isEmpty(name)) {
+    // eslint-disable-next-line no-console
+    console.warn(`Component (path: "${path}") should have a name, use path as a fallback`);
+  }
   return {
+    name: name ?? path,
     path,
     component,
     options: {}

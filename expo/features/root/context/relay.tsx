@@ -4,8 +4,7 @@ import useFirebaseTokensInHttpHeader from '@hpapp/features/auth/firebase/useFire
 import { wrapRenderable } from '@hpapp/foundation/errors';
 import { WithTimeout } from '@hpapp/foundation/function';
 import * as logging from '@hpapp/system/logging';
-import Constants from 'expo-constants';
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { RelayEnvironmentProvider, useRelayEnvironment } from 'react-relay';
 import { Network, RequestParameters, Variables, Environment, Store, RecordSource } from 'relay-runtime';
 
@@ -16,7 +15,7 @@ export interface HttpClientConfig {
   /**
    * GraphQL Endpoint. If undefined, it will use the default endpoint configured in `extra.hpapp.graphQLEndpoint` in appc.config.
    */
-  Endpoint?: string;
+  Endpoint: string;
   /**
    * Network timeout in seconds.
    */
@@ -28,23 +27,10 @@ export interface HttpClientConfig {
   ExtraHeaderFn?: () => Promise<Record<string, string>>;
 }
 
-function getDefaultGraphQLEndpoint() {
-  const endpoint = Constants.expoConfig?.extra?.hpapp?.graphQLEndpoint;
-  const hostUri = Constants.platform?.hostUri; // ip:port if app is running with Metro
-  if (typeof endpoint === 'string') {
-    return endpoint;
-  }
-  if (typeof hostUri === 'string') {
-    const ip = hostUri.split(':')[0];
-    return 'http://' + ip + ':8080/graphql/v3';
-  }
-  throw new Error("Couldn't get GraphQL endpoint. Did you set expo.extra.hpapp.graphqlEndpoint properly?");
-}
-
 function createEnvironment(config: HttpClientConfig, userToken?: string) {
-  const endpoint = config.Endpoint ?? getDefaultGraphQLEndpoint();
+  const endpoint = config.Endpoint;
   const network = Network.create(async (operation: RequestParameters, variables: Variables) => {
-    const eventName = `contexts.relay.graphql.${operation.name}`;
+    const eventName = `features.root.context.relay.graphql.${operation.name}`;
     const start = new Date();
     try {
       const resp = await WithTimeout<Response>(
@@ -120,8 +106,26 @@ function RelayProvider({ children }: { children: React.ReactNode }) {
       ExtraHeaderFn: appConfig.useLocalAuth ? undefined : firebaseHeaderFn
     };
     return createEnvironment(httpConfig, user?.accessToken);
-  }, [appConfig, user?.accessToken]);
-  return <RelayEnvironmentProvider environment={environment} children={children} />;
+  }, [appConfig.graphQLEndpoint, appConfig.useLocalAppConfig, user?.accessToken]);
+
+  // NOTE:
+  // RelayEnvironmentProvider SOMEHOW does not rerender even environment is updated
+  // so we explicitly update key to force rerender.
+  // The increment of the key happens only when environment is updated.
+  const isFirstRender = useRef(true);
+  const [key, setKey] = useState(0);
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    setKey((prevKey) => prevKey + 1);
+  }, [environment]);
+  return (
+    <RelayEnvironmentProvider key={key} environment={environment}>
+      {children}
+    </RelayEnvironmentProvider>
+  );
 }
 
 const useRelay = useRelayEnvironment;
