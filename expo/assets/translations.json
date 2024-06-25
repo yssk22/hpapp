@@ -38,8 +38,11 @@
   "Artists": {
     "ja": "アーティスト"
   },
-  "Events": {
-    "ja": "イベント"
+  "Fan Club": {
+    "ja": "ファンクラブ"
+  },
+  "Configure fan club settings": {
+    "ja": "ファンクラブ設定を行う"
   },
   "Goods": {
     "ja": "グッズ"

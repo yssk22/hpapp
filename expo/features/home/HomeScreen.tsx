@@ -1,12 +1,12 @@
 import ArtistsTab from '@hpapp/features/artist/ArtistsTab';
 import Loading from '@hpapp/features/common/components/Loading';
-import EventsTab from '@hpapp/features/home/Events';
 import GoodsTab from '@hpapp/features/home/GoodsTab';
 import HomeTab from '@hpapp/features/home/HomeTab';
 import AppUpdateBanner from '@hpapp/features/root/banner/AppUpdateBanner';
 import { defineScreen, useNavigationOption } from '@hpapp/features/root/protected/stack';
 import SettingsTab from '@hpapp/features/settings/SettingsTab';
 import { useColor } from '@hpapp/features/settings/context/theme';
+import UPFCTab from '@hpapp/features/upfc/UPFCTab';
 import { UPFCProvider } from '@hpapp/features/upfc/context';
 import { t } from '@hpapp/system/i18n';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -35,8 +35,8 @@ const Tabs: TabSpec[] = [
     icon: 'people'
   },
   {
-    name: 'Events',
-    component: EventsTab,
+    name: 'Fan Club',
+    component: UPFCTab,
     icon: 'calendar'
   },
   {

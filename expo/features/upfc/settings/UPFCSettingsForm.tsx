@@ -19,8 +19,11 @@ import Toast from 'react-native-root-toast';
 //   }
 //   return t('SomethingWrongWithUPFC');
 // };
+type UPFCSettingsFormProps = {
+  onSave?: () => void;
+};
 
-export default function UPFCSettingsForm() {
+export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
   //   const upfc = useHomeUPFCModel();
   const [successColor, succsesContrast] = useColor('success');
   const scraper = useScraper(false);
@@ -66,8 +69,11 @@ export default function UPFCSettingsForm() {
         // upfc.reload();
       } catch (e) {
         setLastError(e);
+        return;
+      } finally {
+        setIsSaving(false);
       }
-      setIsSaving(false);
+      onSave && onSave();
     })();
   }, [setConfig, username, password, calendarId, eventPrefix]);
   return (
