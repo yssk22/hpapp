@@ -1,5 +1,5 @@
 import ConsentGate from '@hpapp/features/policy/ConsentGate';
-import { defineScreen, useScreenTitle } from '@hpapp/features/root/protected/stack';
+import { defineScreen, useNavigation, useScreenTitle } from '@hpapp/features/root/protected/stack';
 import { useSettings } from '@hpapp/features/settings/context';
 import { LocalUserConfigurationSettings } from '@hpapp/features/settings/context/useLocalUserConfig';
 import UPFCSettingsForm from '@hpapp/features/upfc/settings/UPFCSettingsForm';
@@ -8,6 +8,7 @@ import { t } from '@hpapp/system/i18n';
 export default defineScreen('/upfc/settings/', function UPFCSettingScreen() {
   useScreenTitle(t('FC Settings'));
   const [userConfig, setUserConfig] = useSettings(LocalUserConfigurationSettings);
+  const navigation = useNavigation();
   return (
     <>
       <ConsentGate
@@ -21,7 +22,11 @@ export default defineScreen('/upfc/settings/', function UPFCSettingScreen() {
         }}
         pass={userConfig!.consentOnUPFCDataPolicy ?? false}
       >
-        <UPFCSettingsForm />
+        <UPFCSettingsForm
+          onSave={() => {
+            navigation.goBack();
+          }}
+        />
       </ConsentGate>
     </>
   );

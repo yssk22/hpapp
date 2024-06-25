@@ -212,16 +212,22 @@ const useColor = (scheme: ColorScheme) => {
   return [color, yiq > yiqThreshod ? theme.colors.white : theme.colors.black];
 };
 
+const useSkeltonColor = (scheme: ColorScheme, percent = 0.8) => {
+  const { theme } = useTheme();
+  const color = theme.colors[scheme];
+  const [r, g, b] = colorToRGB(color);
+  const r1 = Math.min(255, Math.floor(r + (255 - r) * percent));
+  const g1 = Math.min(255, Math.floor(g + (255 - g) * percent));
+  const b1 = Math.min(255, Math.floor(b + (255 - b) * percent));
+  // convert r1, g1, b1 to hex
+  return `#${r1.toString(16).padStart(2, '0')}${g1.toString(16).padStart(2, '0')}${b1.toString(16).padStart(2, '0')}`;
+};
+
 const yiqThreshod = 64;
 // https://en.wikipedia.org/wiki/YIQ
 const calcYIQ = (color: string) => {
   // #aabbcc => [R, G, B] as numbers
-  const [r, g, b] = color
-    .toUpperCase()
-    .split('')
-    .slice(1, 7)
-    .reduce((acc: string[], curr, n, arr) => (n % 2 ? [...acc, `${arr[n - 1]}${curr}`] : acc), [])
-    .map((h) => parseInt(h, 16));
+  const [r, g, b] = colorToRGB(color);
   return (r * 299 + g * 587 + b * 114) / 1000;
 };
 
@@ -249,4 +255,13 @@ const rgbToColor = (rgb: string): ColorDef | undefined => {
   return AvailableColorsRGBToColor[rgb];
 };
 
-export { AppThemeProvider, useAppTheme, useColor, ColorScheme, ColorKey, AvailableColors };
+function colorToRGB(color: string) {
+  return color
+    .toUpperCase()
+    .split('')
+    .slice(1, 7)
+    .reduce((acc: string[], curr, n, arr) => (n % 2 ? [...acc, `${arr[n - 1]}${curr}`] : acc), [])
+    .map((h) => parseInt(h, 16));
+}
+
+export { AppThemeProvider, useAppTheme, useColor, useSkeltonColor, ColorScheme, ColorKey, AvailableColors };
