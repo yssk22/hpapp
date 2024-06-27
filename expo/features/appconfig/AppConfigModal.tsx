@@ -15,16 +15,18 @@ type AppConfigModalProps = { isVisible: boolean; onClose: () => void };
  * @param {boolean} visible - Indicates whether the modal is visible.
  * @param {() => void} onClose - Callback function to close the modal.
  */
-export default function AppConfigMoal({ isVisible, onClose }: AppConfigModalProps) {
+export default function AppConfigModal({ isVisible, onClose }: AppConfigModalProps) {
   const [appConfig, setAppConfig] = useAppConfigForEdit();
   const [useLocalAppConfig, setUseLocalAppConfig] = useState(appConfig?.useLocalAppConfig ?? false);
   const [graphQLEndpoint, setGraphQLEndpoint] = useState(appConfig?.graphQLEndpoint ?? '');
   const [useLocalAuth, setUseLocalAuth] = useState(appConfig?.useLocalAuth ?? false);
+  const [useUPFCDemoScraper, setUseUPFCDemoScraper] = useState(appConfig?.useUPFCDemoScraper ?? false);
   const onSave = () => {
     setAppConfig({
       useLocalAppConfig,
       graphQLEndpoint,
-      useLocalAuth
+      useLocalAuth,
+      useUPFCDemoScraper
     });
     onClose();
   };
@@ -62,6 +64,15 @@ export default function AppConfigMoal({ isVisible, onClose }: AppConfigModalProp
               value={graphQLEndpoint}
               onChangeText={(text) => {
                 setGraphQLEndpoint(text);
+              }}
+            />
+          </View>
+          <View style={[styles.inputGroup, styles.switchContainer]}>
+            <Text style={styles.label}>Use UPFC Demo Scraper</Text>
+            <Switch
+              value={useUPFCDemoScraper}
+              onValueChange={() => {
+                setUseUPFCDemoScraper(!useUPFCDemoScraper);
               }}
             />
           </View>

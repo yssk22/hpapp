@@ -24,10 +24,27 @@ Note that you should not include any sensitive information (such as API keys) in
 ```text
 features/
   {featurename}/
+    context/
     components/
     hooks/
-    tests/
+    internals/
 ```
+
+### file structure
+
+- Context provider and consumer hook that can be reusable in other features have to be located in context/{ContextName}.tsx
+- Components that can be reusable in other features have to be located in components/{ComponentName}.tsx and encouraged to have components/{ComponentName}.test.tsx
+- Hooks that can be reusable in other features have to be located in hooks/{hookName}.tsx and encouraged to have components/{hookName}.test.tsx
+- internal components and hooks used in the same features can be located in `internals/`
+
+### nameing convenstions
+
+- A class name or component name should have `{FeatureName}{ComponentName}` format.
+- An Error class should be exported as `Err{FeatureName}{ErrorName}` and defined in `errors.ts`.
+- if a non component type is used in multiple files within the same feature, it should be defined in `types.ts` file.
+- if a constant is used in multiple files, it should be defined in `constants.ts` file.
+
+Note that `features/common` is a common feature that contains components, hooks, and contexts that can be used in multiple features so `{FeatureName}` prefix should be omitted.
 
 ### `foundation`
 
@@ -49,6 +66,6 @@ features/
 
 - Do not use `../` or `./` in module imports. Use `@hpapp/` instead.
 
-## See also 
+## See also
 
 - [typedoc](./typedoc/index.html)

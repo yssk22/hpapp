@@ -6,12 +6,14 @@ type AppConfig = {
   readonly useLocalAppConfig: boolean;
   readonly graphQLEndpoint: string;
   readonly useLocalAuth: boolean;
+  readonly useUPFCDemoScraper: boolean;
 };
 
 const DefaultAppConfig: AppConfig = {
   useLocalAppConfig: false,
   graphQLEndpoint: Constants.expoConfig?.extra!.hpapp!.graphQLEndpoint!,
-  useLocalAuth: Constants.expoConfig?.extra!.hpapp!.useLocalAuth!
+  useLocalAuth: Constants.expoConfig?.extra!.hpapp!.useLocalAuth!,
+  useUPFCDemoScraper: true
 };
 
 const AppConfigSettings = SettingsStore.register<AppConfig>('hpapp.appconfig', new AsyncStorage(), {

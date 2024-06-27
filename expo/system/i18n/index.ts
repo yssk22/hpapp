@@ -45,7 +45,8 @@ const convertTranslations = (src: TranslationCotentOriginalFormat): TranslationC
 };
 
 const i18n = new I18n(convertTranslations(original));
-const locale = Localization.getLocales()[0].languageCode ?? 'ja';
+const locales = Localization.getLocales();
+const locale = locales.length === 0 ? 'ja' : locales[0]?.languageCode ?? 'ja';
 
 i18n.locale = ['ja', 'en'].indexOf(locale) >= 0 ? locale : 'en';
 i18n.enableFallback = true;

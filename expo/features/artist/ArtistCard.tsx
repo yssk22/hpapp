@@ -1,7 +1,7 @@
 import MemberIcon from '@hpapp/features/artist/MemberIcon';
 import Text from '@hpapp/features/common/components/Text';
 import { Spacing } from '@hpapp/features/common/constants';
-import { HPArtist } from '@hpapp/features/root/protected/context/helloproject';
+import { HPArtist } from '@hpapp/features/root/internals/protected/context/helloproject';
 import { Card } from '@rneui/themed';
 import { useCallback, useMemo, useState } from 'react';
 import { View, StyleSheet, LayoutChangeEvent } from 'react-native';

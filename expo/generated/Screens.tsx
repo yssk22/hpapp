@@ -10,8 +10,8 @@ import S2 from '@hpapp/features/home/HomeScreen';
 import S3 from '@hpapp/features/settings/devonly/DevOnlySettingsScreen';
 import S4 from '@hpapp/features/settings/theme/ThemeColorSelectorScreen';
 import S5 from '@hpapp/features/settings/theme/ThemeSettingsScreen';
-import S6 from '@hpapp/features/upfc/settings/UPFCSettingsScreen';
-import S7 from '@hpapp/features/upfc/UPFCWebViewScreen';
+import S6 from '@hpapp/features/upfc/components/UPFCSettingsScreen';
+import S7 from '@hpapp/features/upfc/components/UPFCWebViewScreen';
 
 const Screens = [
   S0,

@@ -65,7 +65,7 @@ export default class SettingsStore<T> {
         const oldStore = this.options?.migrationFrom;
         const migration = await oldStore.load();
         if (migration !== undefined) {
-          this.save(migration);
+          await this.save(migration);
           this.data = migration;
           await oldStore.clear();
         }

@@ -3,7 +3,7 @@ import MemberIcon from '@hpapp/features/artist/MemberIcon';
 import HPSortResultRankDiffIcon from '@hpapp/features/artist/sort/HPSortResultRankDiffIcon';
 import Text from '@hpapp/features/common/components/Text';
 import { FontSize, IconSize, MemberIconSize, Spacing } from '@hpapp/features/common/constants';
-import { useHelloProject } from '@hpapp/features/root/protected/context';
+import { useHelloProject } from '@hpapp/features/root/internals/protected/context';
 import { Icon } from '@rneui/themed';
 import { View, StyleSheet } from 'react-native';
 

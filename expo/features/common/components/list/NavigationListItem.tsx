@@ -1,6 +1,6 @@
 import Text from '@hpapp/features/common/components/Text';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
-import { Screen, ScreenParams, useNavigation } from '@hpapp/features/root/protected/stack';
+import { Screen, ScreenParams, useNavigation } from '@hpapp/features/root/internals/protected/stack';
 import { ListItem } from '@rneui/base';
 import { Icon } from '@rneui/themed';
 import React, { useCallback } from 'react';

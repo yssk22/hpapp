@@ -1,3 +1,8 @@
+jest.mock('expo-asset', () => ({
+  useAssets: jest.fn()
+}));
+jest.mock('expo-font', () => ({}));
+
 jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
 jest.mock('@react-native-async-storage/async-storage', () => {
   return require('@react-native-async-storage/async-storage/jest/async-storage-mock');
@@ -29,4 +34,20 @@ jest.mock('expo-constants', () => {
   };
 });
 
-jest.useFakeTimers();
+jest.mock('@hpapp/foundation/globals', () => {
+  const OriginalModule = jest.requireActual('@hpapp/foundation/globals');
+  return {
+    __esModule: true,
+    ...OriginalModule,
+    sleep: jest.fn()
+  };
+});
+
+// React Native Elements Mock
+jest.mock('@rneui/themed', () => {
+  const OriginalModule = jest.requireActual('@rneui/themed');
+  const Mock = { ...OriginalModule };
+  // enforce to put <Icon ... /> in snapshots
+  Mock.Icon = 'Icon';
+  return Mock;
+});

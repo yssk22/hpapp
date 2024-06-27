@@ -1,5 +1,5 @@
 import ArtistCard from '@hpapp/features/artist/ArtistCard';
-import { useHelloProject } from '@hpapp/features/root/protected/context';
+import { useHelloProject } from '@hpapp/features/root/internals/protected/context';
 import { FlatList } from 'react-native';
 
 export default function ByGroupView() {
