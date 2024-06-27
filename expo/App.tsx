@@ -1,7 +1,5 @@
-import Root from './features/root';
-import screens from './generated/Screens';
+import RootApp from './features/root/components/RootApp';
 
 export default function App() {
-  // for production build
-  return <Root screens={screens} />;
+  return <RootApp />;
 }

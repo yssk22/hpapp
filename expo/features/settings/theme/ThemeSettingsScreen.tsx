@@ -1,7 +1,7 @@
 import Text from '@hpapp/features/common/components/Text';
 import NavigationListItem from '@hpapp/features/common/components/list/NavigationListItem';
 import { Spacing } from '@hpapp/features/common/constants';
-import { defineScreen, useScreenTitle } from '@hpapp/features/root/protected/stack';
+import { defineScreen, useScreenTitle } from '@hpapp/features/root/internals/protected/stack';
 import { ColorScheme, useColor } from '@hpapp/features/settings/context/theme';
 import ThemeColorSelectorScreen from '@hpapp/features/settings/theme/ThemeColorSelectorScreen';
 import { t } from '@hpapp/system/i18n';

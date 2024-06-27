@@ -1,6 +1,6 @@
 import { HomeTabFeedProvider } from '@hpapp/features/home/HomeTabFeed';
 import HomeTabSectionList from '@hpapp/features/home/HomeTabSectionList';
-import { useMe } from '@hpapp/features/root/protected/context';
+import { useMe } from '@hpapp/features/root/internals/protected/context';
 import useLocalUserConfig from '@hpapp/features/settings/context/useLocalUserConfig';
 
 export default function HomeTab() {

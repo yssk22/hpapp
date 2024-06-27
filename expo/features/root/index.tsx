@@ -1,48 +1,31 @@
-import AppConfigMoal from '@hpapp/features/appconfig/AppConfigModal';
-import { AppConfigSettings } from '@hpapp/features/appconfig/useAppConfig';
-import { CurrentUserSettings, useCurrentUser } from '@hpapp/features/auth';
-import GuestRoot from '@hpapp/features/root/GuestRoot';
-import { Analytics, AnalyticsProvider } from '@hpapp/features/root/context/analytics';
-import { RelayProvider } from '@hpapp/features/root/context/relay';
-import ProtectedRoot from '@hpapp/features/root/protected/ProtectedRoot';
-import { ScreenList } from '@hpapp/features/root/protected/stack';
-import { SettingsProvider } from '@hpapp/features/settings/context';
-import { AppThemeProvider } from '@hpapp/features/settings/context/theme';
-import { LocalUserConfigurationSettings } from '@hpapp/features/settings/context/useLocalUserConfig';
-import { UPFCSettings } from '@hpapp/features/upfc/settings/useUPFCSettings';
-import { registerDevMenuItems } from 'expo-dev-menu';
-import { useEffect, useState } from 'react';
+import RootContainer, { RootContainerProps } from '@hpapp/features/root/internals/RootContainer';
+import { createStackNavigator, defineScreen } from '@hpapp/features/root/internals/protected/stack';
+import { act, render } from '@testing-library/react-native';
 
-const settings = [CurrentUserSettings, LocalUserConfigurationSettings, UPFCSettings, AppConfigSettings];
-
-function UserRoot({ screens }: { screens: ScreenList }) {
-  const [user, setUser] = useCurrentUser();
-  if (user) {
-    return <ProtectedRoot screens={screens} />;
-  }
-  return <GuestRoot onAuthenticated={setUser} />;
+/**
+ * help rendering the component tree with the necessary context for feature components to work.
+ * @param options options to configure the initial values of configurations
+ * @param children the component to test
+ * @returns the rendered component
+ */
+export async function renderWithRoot(children: React.ReactElement, options?: RootContainerProps) {
+  const rendered = render(<RootContainer {...options}>{children}</RootContainer>);
+  await act(async () => {});
+  return rendered;
 }
 
-export default function Root({ analytics, screens }: { analytics?: Analytics; screens: ScreenList }) {
-  const [showAppConfigModal, setShowAppConfigModal] = useState(false);
-  useEffect(() => {
-    registerDevMenuItems([
-      {
-        name: 'App Config',
-        callback: () => setShowAppConfigModal(!showAppConfigModal)
-      }
-    ]);
-  }, [showAppConfigModal, setShowAppConfigModal]);
-  return (
-    <SettingsProvider settings={settings}>
-      <AppThemeProvider>
-        <AnalyticsProvider analytics={analytics}>
-          <RelayProvider>
-            <AppConfigMoal isVisible={showAppConfigModal} onClose={() => setShowAppConfigModal(false)} />
-            <UserRoot screens={screens} />
-          </RelayProvider>
-        </AnalyticsProvider>
-      </AppThemeProvider>
-    </SettingsProvider>
-  );
+/**
+ * help rendering the component tree with the necessary context for feature components to work.
+ * if your comopnent rely on the navigation context, use this function instead of renderWithRoot.
+ * @param options options to configure the initial values of configurations
+ * @param children the component to test
+ * @returns the rendered component
+ */
+export async function renderWithTestScreen(children: React.ReactElement, options?: RootContainerProps) {
+  const Stack = createStackNavigator();
+  const TestScreen = defineScreen('/__test__/', function HomeScreen() {
+    return children;
+  });
+
+  return await renderWithRoot(<Stack screens={[TestScreen]} initialRouteName="/__test__/" />, options);
 }

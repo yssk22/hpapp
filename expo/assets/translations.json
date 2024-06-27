@@ -1,6 +1,6 @@
 {
   "something went wrong.": {
-    "ja": "エラーが発生しました"
+    "ja": "エラーが発生しました。"
   },
   "Update is available. Tap to install.": {
     "ja": "アップデートが利用可能です。タップしてインストール。"
@@ -110,5 +110,11 @@
   },
   "Logout": {
     "ja": "ログアウト"
+  },
+  "Saved Successfully!": {
+    "ja": "保存しました！"
+  },
+  "authenticatoin failed.": {
+    "ja": "認証に失敗しました。"
   }
 }

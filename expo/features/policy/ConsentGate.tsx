@@ -1,4 +1,4 @@
-import useAssetContent from '@hpapp/features/common/hooks/asset';
+import useAssetContent from '@hpapp/features/common/hooks/useAssetContent';
 import { useColor } from '@hpapp/features/settings/context/theme';
 import { t } from '@hpapp/system/i18n';
 import { Header } from '@rneui/base';

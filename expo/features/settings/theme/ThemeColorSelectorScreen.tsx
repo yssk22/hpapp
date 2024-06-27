@@ -1,6 +1,6 @@
 import Text from '@hpapp/features/common/components/Text';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
-import { defineScreen, useScreenTitle } from '@hpapp/features/root/protected/stack';
+import { defineScreen, useScreenTitle } from '@hpapp/features/root/internals/protected/stack';
 import { AvailableColors, ColorScheme, useAppTheme, useColor } from '@hpapp/features/settings/context/theme';
 import useLocalUserConfig from '@hpapp/features/settings/context/useLocalUserConfig';
 import { useNavigation } from '@react-navigation/native';

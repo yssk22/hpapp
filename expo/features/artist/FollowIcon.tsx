@@ -1,5 +1,5 @@
-import { HPMember, useHelloProject, useMe } from '@hpapp/features/root/protected/context';
-import { HPFollowType } from '@hpapp/features/root/protected/context/me';
+import { HPMember, useHelloProject, useMe } from '@hpapp/features/root/internals/protected/context';
+import { HPFollowType } from '@hpapp/features/root/internals/protected/context/me';
 import { ColorScheme, useColor } from '@hpapp/features/settings/context/theme';
 import { Icon } from '@rneui/themed';
 

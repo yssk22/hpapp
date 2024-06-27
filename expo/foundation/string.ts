@@ -18,4 +18,23 @@ const isEmpty = (t: string | null | undefined): boolean => {
   return false;
 };
 
-export { isEmpty };
+function maskString(
+  str: string,
+  options: {
+    mask: string;
+    showFirstNChars: number;
+    numMasks: number;
+  } = { mask: '*', showFirstNChars: 0, numMasks: 4 }
+): string {
+  if (isEmpty(str)) {
+    return str;
+  }
+  if (options.showFirstNChars === 0) {
+    return options.mask.repeat(options.numMasks);
+  }
+  const len = Math.min(options.showFirstNChars, str.length);
+  const firstNChars = str.substring(0, len);
+  return `${firstNChars}${options.mask.repeat(options.numMasks)}`;
+}
+
+export { isEmpty, maskString };

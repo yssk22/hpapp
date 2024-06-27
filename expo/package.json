@@ -85,7 +85,7 @@
     "@graphql-tools/load-files": "^7.0.0",
     "@graphql-tools/merge": "^9.0.0",
     "@graphql-tools/schema": "^10.0.0",
-    "@testing-library/react-native": "^12.0.1",
+    "@testing-library/react-native": "^12.5.1",
     "@types/jest": "^29.5.1",
     "@types/react": "~18.2.79",
     "@types/react-relay": "^16.0.6",

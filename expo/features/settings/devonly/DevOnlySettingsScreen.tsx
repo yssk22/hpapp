@@ -1,5 +1,5 @@
 import { useCurrentUser } from '@hpapp/features/auth';
-import { defineScreen } from '@hpapp/features/root/protected/stack';
+import { defineScreen } from '@hpapp/features/root/internals/protected/stack';
 import useLocalUserConfig from '@hpapp/features/settings/context/useLocalUserConfig';
 import DevOnlySettingsListItem from '@hpapp/features/settings/devonly/DevOnlySettingsListItem';
 import { Divider } from '@rneui/themed';
