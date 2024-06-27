@@ -10,6 +10,7 @@ import {
 } from '@hpapp/features/settings/context/useLocalUserConfig';
 import { UPFCConfig, UPFCSettings } from '@hpapp/features/upfc/internals/settings/useUPFCSettings';
 import { useEffect, useState } from 'react';
+import { View } from 'react-native';
 
 const settings = [CurrentUserSettings, LocalUserConfigurationSettings, UPFCSettings, AppConfigSettings];
 
@@ -44,7 +45,11 @@ export default function RootContainer({
     <SettingsProvider settings={settings}>
       <AppThemeProvider>
         <AnalyticsProvider>
-          <RelayProvider>{children}</RelayProvider>
+          <RelayProvider>
+            <View style={{ flex: 1 }} testID="RootContainer">
+              {children}
+            </View>
+          </RelayProvider>
         </AnalyticsProvider>
       </AppThemeProvider>
     </SettingsProvider>
