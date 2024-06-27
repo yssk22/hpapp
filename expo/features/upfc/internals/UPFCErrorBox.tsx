@@ -10,8 +10,9 @@ export default function UPFCErrorBox({ error }: { error: Error }) {
   const navigation = useNavigation();
   if (error instanceof ErrUPFCAuthentication || error instanceof ErrUPFCNoCredential) {
     return (
-      <View style={styles.container} testID="UPFCErrorBox">
+      <View style={styles.container}>
         <Button
+          testID="UPFCErrorBox.ConfigureButton"
           onPress={() => {
             navigation.push(UPFCSettingsScreen);
           }}

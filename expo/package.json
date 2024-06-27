@@ -8,7 +8,7 @@
     "start-go": "yarn expo start",
     "eas-build-pre-install": "./scripts/eas-build-pre-install.sh",
     "relay": "node ./scripts/genschema.js && yarn relay-compiler",
-    "test": "yarn jest ./",
+    "test": "yarn jest ./ --silent",
     "lint": "yarn eslint ./",
     "genscreen": "node ./scripts/genscreen.js",
     "start-dev": "HPAPP_CONFIG_NAME=dev expo start --dev-client --lan",

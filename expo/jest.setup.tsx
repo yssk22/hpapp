@@ -1,3 +1,5 @@
+jest.useFakeTimers();
+
 jest.mock('expo-asset', () => ({
   useAssets: jest.fn()
 }));
@@ -31,15 +33,6 @@ jest.mock('expo-constants', () => {
         }
       }
     }
-  };
-});
-
-jest.mock('@hpapp/foundation/globals', () => {
-  const OriginalModule = jest.requireActual('@hpapp/foundation/globals');
-  return {
-    __esModule: true,
-    ...OriginalModule,
-    sleep: jest.fn()
   };
 });
 

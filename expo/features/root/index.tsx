@@ -1,6 +1,6 @@
 import RootContainer, { RootContainerProps } from '@hpapp/features/root/internals/RootContainer';
-import { createStackNavigator, defineScreen } from '@hpapp/features/root/internals/protected/stack';
-import { act, render } from '@testing-library/react-native';
+import * as Stack from '@hpapp/features/root/internals/protected/stack';
+import { act, render, waitFor } from '@testing-library/react-native';
 
 /**
  * help rendering the component tree with the necessary context for feature components to work.
@@ -10,7 +10,12 @@ import { act, render } from '@testing-library/react-native';
  */
 export async function renderWithRoot(children: React.ReactElement, options?: RootContainerProps) {
   const rendered = render(<RootContainer {...options}>{children}</RootContainer>);
-  await act(async () => {});
+  await act(async () => {}); // TODO: remove this line when we have a better solution for the async rendering
+
+  // make sure RootContainer is properly rendered before start testing the main component
+  await waitFor(async () => {
+    expect(rendered.getByTestId('RootContainer')).toBeTruthy();
+  });
   return rendered;
 }
 
@@ -22,10 +27,28 @@ export async function renderWithRoot(children: React.ReactElement, options?: Roo
  * @returns the rendered component
  */
 export async function renderWithTestScreen(children: React.ReactElement, options?: RootContainerProps) {
-  const Stack = createStackNavigator();
-  const TestScreen = defineScreen('/__test__/', function HomeScreen() {
+  const S = Stack.createStackNavigator();
+  const TestScreen = Stack.defineScreen('/__test__/', function HomeScreen() {
     return children;
   });
 
-  return await renderWithRoot(<Stack screens={[TestScreen]} initialRouteName="/__test__/" />, options);
+  return await renderWithRoot(<S screens={[TestScreen]} initialRouteName="/__test__/" />, options);
+}
+export function mockNavigation() {
+  const mock = {
+    navigate: jest.fn(),
+    push: jest.fn(),
+    goBack: jest.fn(),
+    reset: jest.fn(),
+    replace: jest.fn()
+  };
+  const useNavigationOrig = Stack.useNavigation;
+  jest.spyOn(Stack, 'useNavigation').mockImplementation(() => {
+    const original = useNavigationOrig();
+    return {
+      ...original,
+      ...mock
+    };
+  });
+  return mock;
 }
