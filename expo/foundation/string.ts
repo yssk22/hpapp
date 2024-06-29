@@ -11,21 +11,21 @@
  * @param t a string to be checked
  * @returns true if a string is "", null or undefined
  */
-const isEmpty = (t: string | null | undefined): boolean => {
+export function isEmpty(t: string | null | undefined) {
   if (t === undefined || t === null || t === '') {
     return true;
   }
   return false;
-};
+}
 
-function maskString(
+export function maskString(
   str: string,
   options: {
     mask: string;
     showFirstNChars: number;
     numMasks: number;
   } = { mask: '*', showFirstNChars: 0, numMasks: 4 }
-): string {
+) {
   if (isEmpty(str)) {
     return str;
   }
@@ -36,5 +36,3 @@ function maskString(
   const firstNChars = str.substring(0, len);
   return `${firstNChars}${options.mask.repeat(options.numMasks)}`;
 }
-
-export { isEmpty, maskString };

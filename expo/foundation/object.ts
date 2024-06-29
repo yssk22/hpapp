@@ -9,7 +9,7 @@
  * @param list a list of objects
  * @returns true if v is in the list
  */
-function In<T>(v: T, ...list: T[]) {
+export function isIn<T>(v: T, ...list: T[]) {
   return list.filter((vv) => v === vv).length > 0;
 }
 
@@ -18,7 +18,7 @@ function In<T>(v: T, ...list: T[]) {
  * @param v - an array or an object
  * @returns - an arary
  */
-function NormalizeA<T>(v: T | T[]) {
+export function normalizeA<T>(v: T | T[]) {
   if (Array.isArray(v)) {
     return v;
   }
@@ -30,10 +30,8 @@ function NormalizeA<T>(v: T | T[]) {
  * @param v - an array of objects
  * @returns - an array of objects without null and undefined
  */
-function filterNulls<T>(v: (T | null | undefined)[]): T[] {
+export function filterNulls<T>(v: (T | null | undefined)[]): T[] {
   return v.filter((vv): vv is T => {
     return vv !== null && vv !== undefined;
   });
 }
-
-export { In, NormalizeA, filterNulls };

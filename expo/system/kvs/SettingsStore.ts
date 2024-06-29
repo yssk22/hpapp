@@ -90,6 +90,7 @@ export default class SettingsStore<T> {
 
   async clear(): Promise<void> {
     this.storage.delete(this.storageKey);
+    this.data = undefined;
     this.loaded = true;
   }
 }

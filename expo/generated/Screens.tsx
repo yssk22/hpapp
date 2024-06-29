@@ -4,14 +4,13 @@
 /* eslint-disable import/order */
 /* eslint-disable prettier/prettier */
 
-import S0 from '@hpapp/features/auth/OAuthSettingsScreen';
-import S1 from '@hpapp/features/feed/FeedItemScreen';
-import S2 from '@hpapp/features/home/HomeScreen';
-import S3 from '@hpapp/features/settings/devonly/DevOnlySettingsScreen';
-import S4 from '@hpapp/features/settings/theme/ThemeColorSelectorScreen';
-import S5 from '@hpapp/features/settings/theme/ThemeSettingsScreen';
-import S6 from '@hpapp/features/upfc/components/UPFCSettingsScreen';
-import S7 from '@hpapp/features/upfc/components/UPFCWebViewScreen';
+import S0 from '@hpapp/features/feed/FeedItemScreen';
+import S1 from '@hpapp/features/home/HomeScreen';
+import S2 from '@hpapp/features/settings/SettingsDevOnlyScreen';
+import S3 from '@hpapp/features/settings/SettingsThemeColorSelectorScreen';
+import S4 from '@hpapp/features/settings/SettingsThemeScreen';
+import S5 from '@hpapp/features/upfc/UPFCSettingsScreen';
+import S6 from '@hpapp/features/upfc/UPFCWebViewScreen';
 
 const Screens = [
   S0,
@@ -21,6 +20,5 @@ const Screens = [
   S4,
   S5,
   S6,
-  S7,
 ];
 export default Screens;

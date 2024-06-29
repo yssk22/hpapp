@@ -1,8 +1,8 @@
-import Text from '@hpapp/features/common/components/Text';
-import CalendarDropdown from '@hpapp/features/common/components/form/CalendarDropdown';
+import { useThemeColor } from '@hpapp/features/app/theme';
+import { Text } from '@hpapp/features/common';
 import { Spacing } from '@hpapp/features/common/constants';
-import { useColor } from '@hpapp/features/settings/context/theme';
-import { ErrUPFCAuthentication } from '@hpapp/features/upfc/internals/scraper/errors';
+import { CalendarDropdown } from '@hpapp/features/common/form';
+import { ErrUPFCAuthentication } from '@hpapp/features/upfc/scraper';
 import { t } from '@hpapp/system/i18n';
 import { Input } from '@rneui/themed';
 import { View, StyleSheet } from 'react-native';
@@ -32,7 +32,7 @@ export default function UPFCSettingsFormInputs({
   eventPrefix,
   onChangeEventPrefix
 }: UPFCSettingsFormInputsProps) {
-  const [errorColor] = useColor('error');
+  const [errorColor] = useThemeColor('error');
   return (
     <>
       <View style={styles.inputGroup}>
@@ -68,7 +68,7 @@ export default function UPFCSettingsFormInputs({
           onSelect={(calender) => {
             onChangeCalendarId(calender?.id ?? '');
           }}
-          renderIfPermissionDenied={<Text>{t('Permission is denied. Open Settings to allow access')}</Text>}
+          renderIfPermissionDenied={<Text>{t('Calendar access is rejected. Open Settings to allow access.')}</Text>}
           nullText={t('Do not sync')}
         />
       </View>

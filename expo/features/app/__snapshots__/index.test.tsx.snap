@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app AppUpdateBanner show banner 1`] = `
+[
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "opacity": 1,
+      }
+    }
+    testID="AppUpdateBanner"
+  >
+    <View
+      style={
+        [
+          {
+            "alignItems": "center",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "marginBottom": 2,
+            "padding": 12,
+          },
+          {
+            "backgroundColor": "#faad14",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "black",
+            },
+            {
+              "fontSize": 14,
+            },
+            [
+              {
+                "fontSize": 14,
+                "textAlign": "center",
+              },
+              {
+                "color": "#ffffff",
+              },
+            ],
+          ]
+        }
+      >
+        Update is available. Tap to install.
+      </Text>
+    </View>
+  </View>,
+  <RNCSafeAreaProvider
+    onInsetsChange={[Function]}
+    style={
+      [
+        {
+          "flex": 1,
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSScreenStack
+      style={
+        {
+          "flex": 1,
+        }
+      }
+    >
+      <RNSScreen
+        collapsable={false}
+        gestureResponseDistance={
+          {
+            "bottom": -1,
+            "end": -1,
+            "start": -1,
+            "top": -1,
+          }
+        }
+        nativeBackButtonDismissalEnabled={false}
+        onAppear={[Function]}
+        onDisappear={[Function]}
+        onDismissed={[Function]}
+        onGestureCancel={[Function]}
+        onHeaderBackButtonClicked={[Function]}
+        onNativeDismissCancelled={[Function]}
+        onTransitionProgress={[Function]}
+        onWillDisappear={[Function]}
+        replaceAnimation="push"
+        sheetAllowedDetents="large"
+        sheetCornerRadius={-1}
+        sheetExpandsWhenScrolledToEdge={true}
+        sheetGrabberVisible={false}
+        sheetLargestUndimmedDetent="all"
+        stackPresentation="push"
+        style={
+          {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        swipeDirection="horizontal"
+      >
+        <View
+          accessibilityElementsHidden={false}
+          importantForAccessibility="auto"
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "column-reverse",
+            }
+          }
+        >
+          <View
+            collapsable={false}
+            style={
+              [
+                {
+                  "flex": 1,
+                },
+                {
+                  "backgroundColor": "white",
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "#ffffff",
+                  "flex": 1,
+                }
+              }
+            >
+              <Text
+                testID="app.test"
+              >
+                Hello, Guest!
+              </Text>
+            </View>
+          </View>
+        </View>
+        <RNSScreenStackHeaderConfig
+          backButtonInCustomView={false}
+          backTitle=""
+          backTitleVisible={false}
+          backgroundColor="#0075c2"
+          color="white"
+          direction="ltr"
+          disableBackButtonMenu={false}
+          hidden={false}
+          hideBackButton={false}
+          largeTitleHideShadow={false}
+          title="/"
+          titleColor="white"
+          topInsetEnabled={false}
+          translucent={false}
+        />
+      </RNSScreen>
+    </RNSScreenStack>
+  </RNCSafeAreaProvider>,
+]
+`;

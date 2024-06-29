@@ -11,14 +11,14 @@
  * @example
  * The following code will throw an error if the promise does not resolve within 1000 milliseconds.
  * ```ts
- * const p = WithTimeout(
+ * const p = withTimeout(
  *   1000,
  *   new Promise((resolve, reject) => {
  *     // long running task
  *   }
  * }
  */
-function WithTimeout<T>(timeout: number, p: Promise<T>) {
+export function withTimeout<T>(timeout: number, p: Promise<T>) {
   return Promise.race([
     new Promise<T>((_, reject) => {
       setTimeout(() => {
@@ -28,5 +28,3 @@ function WithTimeout<T>(timeout: number, p: Promise<T>) {
     p
   ]);
 }
-
-export { WithTimeout };
