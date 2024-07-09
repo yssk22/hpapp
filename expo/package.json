@@ -15,7 +15,8 @@
     "build-dev": "HPAPP_CONFIG_NAME=dev ./scripts/eas.sh build --profile dev --platform ios --non-interactive",
     "build-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh build --profile beta --non-interactive",
     "build-prod": "HPAPP_CONFIG_NAME=prod ./scripts/eas.sh build --profile prod --non-interactive",
-    "update-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh update --channel beta --non-interactive --auto"
+    "update-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh update --channel beta --non-interactive --auto",
+    "storybook-generate": "sb-rn-get-stories"
   },
   "relay": {
     "src": "./",
@@ -78,6 +79,7 @@
     "react-native-webview": "13.8.6",
     "react-relay": "^17.0.0",
     "react-test-renderer": "^18.2.0",
+    "storybook": "^8.1.11",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {
@@ -85,10 +87,16 @@
     "@graphql-tools/load-files": "^7.0.0",
     "@graphql-tools/merge": "^9.0.0",
     "@graphql-tools/schema": "^10.0.0",
+    "@react-native-community/datetimepicker": "^8.1.1",
+    "@react-native-community/slider": "^4.5.2",
+    "@storybook/addon-ondevice-actions": "^7.6.20",
+    "@storybook/addon-ondevice-controls": "^7.6.20",
+    "@storybook/react-native": "^7.6.20",
     "@testing-library/react-native": "^12.5.1",
     "@types/jest": "^29.5.1",
     "@types/react": "~18.2.79",
     "@types/react-relay": "^16.0.6",
+    "babel-loader": "^8.3.0",
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-relay": "^15.0.0",
     "eas-cli": "5.4.0",

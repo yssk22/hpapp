@@ -143,3 +143,12 @@ jest.mock('@react-native-firebase/auth', () => {
 jest.mock('@hpapp/system/graphql/relay');
 
 jest.setTimeout(5000);
+
+jest.mock('./.storybook', () => {
+  return {
+    __esModule: true,
+    default: () => {
+      return <></>;
+    }
+  };
+});

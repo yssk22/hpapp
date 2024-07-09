@@ -13,7 +13,6 @@ export type CardProps = {
   colorScheme?: ThemeColorScheme;
   headerText?: string;
   subHeaderText?: string;
-  footerContent?: JSX.Element;
   containerStyle?: StyleProps;
   headerStyle?: StyleProps;
   children: React.ReactElement<typeof CardBody>;
@@ -53,7 +52,8 @@ export default function Card({
 const styles = StyleSheet.create({
   container: {
     borderRadius: 3,
-    borderWidth: 1
+    borderWidth: 1,
+    margin: Spacing.Small
   },
   header: {
     padding: Spacing.Small
@@ -63,6 +63,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   subHeaderText: {
-    fontSize: FontSize.XXSmall
+    fontSize: FontSize.Small
   }
 });

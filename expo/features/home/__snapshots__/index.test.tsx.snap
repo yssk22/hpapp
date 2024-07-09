@@ -9023,27 +9023,38 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   }
                                 >
                                   <View
+                                    onLayout={[Function]}
                                     style={
                                       [
+                                        undefined,
                                         {
-                                          "height": 80,
-                                          "width": 80,
-                                        },
-                                        {
-                                          "alignContent": "center",
-                                          "bottom": 0,
-                                          "justifyContent": "center",
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 0,
+                                          "flex": 1,
+                                          "height": undefined,
+                                          "width": undefined,
                                         },
                                       ]
                                     }
                                   >
-                                    <ActivityIndicator
-                                      color="#ff0000"
-                                    />
+                                    <View
+                                      style={
+                                        [
+                                          undefined,
+                                          {
+                                            "alignContent": "center",
+                                            "bottom": 0,
+                                            "justifyContent": "center",
+                                            "left": 0,
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <ActivityIndicator
+                                        color="#ff0000"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                               </View>
@@ -9131,27 +9142,38 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   }
                                 >
                                   <View
+                                    onLayout={[Function]}
                                     style={
                                       [
+                                        undefined,
                                         {
-                                          "height": 80,
-                                          "width": 80,
-                                        },
-                                        {
-                                          "alignContent": "center",
-                                          "bottom": 0,
-                                          "justifyContent": "center",
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 0,
+                                          "flex": 1,
+                                          "height": undefined,
+                                          "width": undefined,
                                         },
                                       ]
                                     }
                                   >
-                                    <ActivityIndicator
-                                      color="#ff0000"
-                                    />
+                                    <View
+                                      style={
+                                        [
+                                          undefined,
+                                          {
+                                            "alignContent": "center",
+                                            "bottom": 0,
+                                            "justifyContent": "center",
+                                            "left": 0,
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <ActivityIndicator
+                                        color="#ff0000"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                               </View>
@@ -9239,27 +9261,38 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   }
                                 >
                                   <View
+                                    onLayout={[Function]}
                                     style={
                                       [
+                                        undefined,
                                         {
-                                          "height": 80,
-                                          "width": 80,
-                                        },
-                                        {
-                                          "alignContent": "center",
-                                          "bottom": 0,
-                                          "justifyContent": "center",
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 0,
+                                          "flex": 1,
+                                          "height": undefined,
+                                          "width": undefined,
                                         },
                                       ]
                                     }
                                   >
-                                    <ActivityIndicator
-                                      color="#ff0000"
-                                    />
+                                    <View
+                                      style={
+                                        [
+                                          undefined,
+                                          {
+                                            "alignContent": "center",
+                                            "bottom": 0,
+                                            "justifyContent": "center",
+                                            "left": 0,
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <ActivityIndicator
+                                        color="#ff0000"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                               </View>
@@ -9347,27 +9380,38 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   }
                                 >
                                   <View
+                                    onLayout={[Function]}
                                     style={
                                       [
+                                        undefined,
                                         {
-                                          "height": 80,
-                                          "width": 80,
-                                        },
-                                        {
-                                          "alignContent": "center",
-                                          "bottom": 0,
-                                          "justifyContent": "center",
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 0,
+                                          "flex": 1,
+                                          "height": undefined,
+                                          "width": undefined,
                                         },
                                       ]
                                     }
                                   >
-                                    <ActivityIndicator
-                                      color="#ff0000"
-                                    />
+                                    <View
+                                      style={
+                                        [
+                                          undefined,
+                                          {
+                                            "alignContent": "center",
+                                            "bottom": 0,
+                                            "justifyContent": "center",
+                                            "left": 0,
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <ActivityIndicator
+                                        color="#ff0000"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                               </View>
@@ -9455,27 +9499,38 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   }
                                 >
                                   <View
+                                    onLayout={[Function]}
                                     style={
                                       [
+                                        undefined,
                                         {
-                                          "height": 80,
-                                          "width": 80,
-                                        },
-                                        {
-                                          "alignContent": "center",
-                                          "bottom": 0,
-                                          "justifyContent": "center",
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 0,
+                                          "flex": 1,
+                                          "height": undefined,
+                                          "width": undefined,
                                         },
                                       ]
                                     }
                                   >
-                                    <ActivityIndicator
-                                      color="#ff0000"
-                                    />
+                                    <View
+                                      style={
+                                        [
+                                          undefined,
+                                          {
+                                            "alignContent": "center",
+                                            "bottom": 0,
+                                            "justifyContent": "center",
+                                            "left": 0,
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <ActivityIndicator
+                                        color="#ff0000"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                               </View>
@@ -9563,27 +9618,38 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   }
                                 >
                                   <View
+                                    onLayout={[Function]}
                                     style={
                                       [
+                                        undefined,
                                         {
-                                          "height": 80,
-                                          "width": 80,
-                                        },
-                                        {
-                                          "alignContent": "center",
-                                          "bottom": 0,
-                                          "justifyContent": "center",
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 0,
+                                          "flex": 1,
+                                          "height": undefined,
+                                          "width": undefined,
                                         },
                                       ]
                                     }
                                   >
-                                    <ActivityIndicator
-                                      color="#ff0000"
-                                    />
+                                    <View
+                                      style={
+                                        [
+                                          undefined,
+                                          {
+                                            "alignContent": "center",
+                                            "bottom": 0,
+                                            "justifyContent": "center",
+                                            "left": 0,
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <ActivityIndicator
+                                        color="#ff0000"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                               </View>
@@ -9671,27 +9737,38 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   }
                                 >
                                   <View
+                                    onLayout={[Function]}
                                     style={
                                       [
+                                        undefined,
                                         {
-                                          "height": 80,
-                                          "width": 80,
-                                        },
-                                        {
-                                          "alignContent": "center",
-                                          "bottom": 0,
-                                          "justifyContent": "center",
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 0,
+                                          "flex": 1,
+                                          "height": undefined,
+                                          "width": undefined,
                                         },
                                       ]
                                     }
                                   >
-                                    <ActivityIndicator
-                                      color="#ff0000"
-                                    />
+                                    <View
+                                      style={
+                                        [
+                                          undefined,
+                                          {
+                                            "alignContent": "center",
+                                            "bottom": 0,
+                                            "justifyContent": "center",
+                                            "left": 0,
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <ActivityIndicator
+                                        color="#ff0000"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                               </View>
@@ -9779,27 +9856,38 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   }
                                 >
                                   <View
+                                    onLayout={[Function]}
                                     style={
                                       [
+                                        undefined,
                                         {
-                                          "height": 80,
-                                          "width": 80,
-                                        },
-                                        {
-                                          "alignContent": "center",
-                                          "bottom": 0,
-                                          "justifyContent": "center",
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 0,
+                                          "flex": 1,
+                                          "height": undefined,
+                                          "width": undefined,
                                         },
                                       ]
                                     }
                                   >
-                                    <ActivityIndicator
-                                      color="#ff0000"
-                                    />
+                                    <View
+                                      style={
+                                        [
+                                          undefined,
+                                          {
+                                            "alignContent": "center",
+                                            "bottom": 0,
+                                            "justifyContent": "center",
+                                            "left": 0,
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <ActivityIndicator
+                                        color="#ff0000"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                               </View>
@@ -9887,27 +9975,38 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   }
                                 >
                                   <View
+                                    onLayout={[Function]}
                                     style={
                                       [
+                                        undefined,
                                         {
-                                          "height": 80,
-                                          "width": 80,
-                                        },
-                                        {
-                                          "alignContent": "center",
-                                          "bottom": 0,
-                                          "justifyContent": "center",
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 0,
+                                          "flex": 1,
+                                          "height": undefined,
+                                          "width": undefined,
                                         },
                                       ]
                                     }
                                   >
-                                    <ActivityIndicator
-                                      color="#ff0000"
-                                    />
+                                    <View
+                                      style={
+                                        [
+                                          undefined,
+                                          {
+                                            "alignContent": "center",
+                                            "bottom": 0,
+                                            "justifyContent": "center",
+                                            "left": 0,
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <ActivityIndicator
+                                        color="#ff0000"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                               </View>

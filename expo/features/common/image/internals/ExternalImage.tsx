@@ -1,13 +1,31 @@
 import { useURICache } from '@hpapp/features/common';
-import { ComponentProps, useState } from 'react';
-import { View, Image, ActivityIndicator, StyleSheet } from 'react-native';
+import { ComponentProps, useCallback, useState } from 'react';
+import { View, Image, ActivityIndicator, StyleSheet, LayoutChangeEvent } from 'react-native';
 
 export type ExternalImageProps = Omit<ComponentProps<typeof Image>, 'source'> & {
+  containerStyle?: React.ComponentProps<typeof View>['style'];
+  spinnerStyle?: React.ComponentProps<typeof View>['style'];
   uri: string;
   cache?: boolean;
 };
 
-export default function ExternalImage({ uri, cache = false, style, ...rest }: ExternalImageProps) {
+export default function ExternalImage({ containerStyle, width, height, ...rest }: ExternalImageProps) {
+  const [dimentions, setDimensions] = useState({ width: 0, height: 0 });
+  const onLayout = useCallback((event: LayoutChangeEvent) => {
+    const { width, height } = event.nativeEvent.layout;
+    setDimensions({ width, height });
+  }, []);
+  if (width === 0 || height === 0) {
+    return <></>;
+  }
+  return (
+    <View style={[containerStyle, { flex: 1, width, height }]} onLayout={onLayout}>
+      <ExternalImageInternal {...rest} width={dimentions.width} height={dimentions.height} />
+    </View>
+  );
+}
+
+function ExternalImageInternal({ uri, cache = false, spinnerStyle, ...rest }: ExternalImageProps) {
   const [fallbackFlag, setFallbackFlag] = useState<boolean>(false);
   const localUri = useURICache(uri);
   if (fallbackFlag) {
@@ -26,7 +44,7 @@ export default function ExternalImage({ uri, cache = false, style, ...rest }: Ex
     );
   }
   return (
-    <View style={[style, styles.spinner]}>
+    <View style={[spinnerStyle, styles.spinner]}>
       <ActivityIndicator color="#ff0000" />
     </View>
   );

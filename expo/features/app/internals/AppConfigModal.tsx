@@ -18,12 +18,14 @@ type AppConfigModalProps = { isVisible: boolean; onClose: () => void };
 export default function AppConfigModal({ isVisible, onClose }: AppConfigModalProps) {
   const appConfig = useAppConfig();
   const appConfigUpdate = useAppConfigUpdator();
+  const [useStorybook, setUseStorybook] = useState(appConfig.useStorybook ?? false);
   const [useLocalAppConfig, setUseLocalAppConfig] = useState(appConfig.useLocalAppConfig ?? false);
   const [graphQLEndpoint, setGraphQLEndpoint] = useState(appConfig.graphQLEndpoint ?? '');
   const [useLocalAuth, setUseLocalAuth] = useState(appConfig.useLocalAuth ?? false);
   const [useUPFCDemoScraper, setUseUPFCDemoScraper] = useState(appConfig.useUPFCDemoScraper ?? false);
   const onSave = () => {
     appConfigUpdate({
+      useStorybook,
       useLocalAppConfig,
       graphQLEndpoint,
       useLocalAuth,
@@ -36,6 +38,16 @@ export default function AppConfigModal({ isVisible, onClose }: AppConfigModalPro
       <Dialog.Title>App Configuration</Dialog.Title>
       <View style={styles.content} testID="AppConfigModal.content">
         <View style={styles.form}>
+          <View style={[styles.inputGroup, styles.switchContainer]}>
+            <Text style={styles.label}>Use Storybook</Text>
+            <Switch
+              value={useStorybook}
+              onValueChange={() => {
+                setUseStorybook(!useStorybook);
+              }}
+            />
+          </View>
+
           <View style={[styles.inputGroup, styles.switchContainer]}>
             <Text style={styles.label}>Use Local AppConfig</Text>
             <Switch
