@@ -34,7 +34,6 @@ module.exports = (_) => {
   if (fs.existsSync(secretsJsonPath)) {
     const secretsJson = JSON.parse(fs.readFileSync(secretsJsonPath).toString());
     config.extra.hpapp.graphQLEndpoint = secretsJson.extra.hpapp.graphQLEndpoint;
-    config.extra.hpapp.auth.google = secretsJson.extra.hpapp.auth.google;
   }
 
   // finally load the environment specific app.config.js

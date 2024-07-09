@@ -1,23 +1,30 @@
-import { Icon } from '@rneui/themed';
+import Ionicon from '@expo/vector-icons/Ionicons';
 
 import AmebloIcon from './AmebloIcon';
+import ExternalImage from './ExternalImage';
 
-export type AssetIconType = 'ameblo' | 'instagram' | 'twitter';
-
-const AssetIcon: React.FC<{
-  type: AssetIconType | undefined;
+export type AssetIconProps = {
   size: number;
-}> = ({ type, size }) => {
+  type: 'ameblo' | 'elineupmall' | 'instagram' | 'tiktok' | 'twitter' | 'youtube' | '%future added value';
+};
+
+export default function AssetIcon({ type, size }: AssetIconProps) {
   switch (type) {
     case 'ameblo':
       return <AmebloIcon size={size} />;
     case 'instagram':
-      return <Icon type="ionicon" name="logo-instagram" size={size} />;
+      return <Ionicon name="logo-instagram" size={size} />;
     case 'twitter':
-      return <Icon type="ionicon" name="logo-twitter" size={size} color="#1da1f2" />;
+      return <Ionicon name="logo-twitter" size={size} color="#1da1f2" />;
+    case 'elineupmall':
+      return (
+        <ExternalImage
+          uri="https://cdn.elineupmall.com/images/logos/2/favicon_3h0z-m5.ico"
+          width={size}
+          height={size}
+        />
+      );
     default:
       return null;
   }
-};
-
-export default AssetIcon;
+}

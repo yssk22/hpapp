@@ -1,6 +1,7 @@
-import { Initializer, initURICache, Loading } from '@hpapp/features/common';
+import { Initializer, Loading } from '@hpapp/features/common';
 import { Screen, ScreenParams, createStackNavigator } from '@hpapp/features/common/stack';
 import * as logging from '@hpapp/system/logging';
+import { init as initURICache } from '@hpapp/system/uricache';
 import { useNavigationContainerRef } from '@react-navigation/native';
 
 import UserError from './UserError';

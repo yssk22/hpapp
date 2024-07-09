@@ -98,14 +98,10 @@ module.exports = {
     extra: {
       eas: {},
       hpapp: {
-        useLocalLogin: true,
+        useLocalAuth: false,
         graphQLEndpoint: 'http://localhost:8080/graphql/v3',
-        auth: {
-          google: {
-            iosClientId: null,
-            androidClientId: null
-          }
-        }
+        firebaseIOSClientID: null,
+        firebaseAndroidClientID: null
       }
     }
   }

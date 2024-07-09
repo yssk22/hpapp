@@ -104,7 +104,9 @@ describe('auth', () => {
       const content = await renderGuestComponent(<AuthFirebaseLoginContainer />, {
         appConfig: {
           ...SettingsAppConfigDefault,
-          useLocalAuth: false
+          useLocalAuth: false,
+          firebaseAndroidClientID: 'something',
+          firebaseIOSClientID: 'something'
         }
       });
       expect(content.getByTestId('AuthFirebaseLoginContainer')).toBeTruthy();

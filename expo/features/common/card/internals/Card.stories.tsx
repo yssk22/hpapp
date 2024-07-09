@@ -6,7 +6,7 @@ import Card from './Card';
 import CardBody from './CardBody';
 
 const CardMeta: Meta<typeof Card> = {
-  title: 'components/card/Card',
+  title: 'common/card/Card',
   component: Card,
   argTypes: {
     colorScheme: {
@@ -17,11 +17,11 @@ const CardMeta: Meta<typeof Card> = {
     }
   },
   args: {
-    headerText: 'カードのヘッダーテキスト',
+    headerText: 'Card Header Text',
     colorScheme: 'primary',
     children: (
       <CardBody>
-        <Text>これはカードの本文です。</Text>
+        <Text>CardBody component to show the content on the card body</Text>
       </CardBody>
     )
   },
@@ -41,6 +41,6 @@ export const Basic: StoryObj<typeof Card> = {};
 
 export const SubHeader: StoryObj<typeof Card> = {
   args: {
-    subHeaderText: 'サブヘッダーテキスト'
+    subHeaderText: 'subheader text can be added in the header container'
   }
 };

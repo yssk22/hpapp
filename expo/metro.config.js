@@ -3,7 +3,7 @@ const { getDefaultConfig } = require('expo/metro-config');
 const path = require('path');
 
 generate({
-  configPath: path.resolve(__dirname, './.storybook')
+  configPath: path.resolve(__dirname, './features/app/storybook')
 });
 
 const config = getDefaultConfig(__dirname);

@@ -1,18 +1,22 @@
 import { useThemeSkeltonColor } from '@hpapp/features/app/theme';
 import { Spacing } from '@hpapp/features/common/constants';
 import { ThemeColorScheme } from '@hpapp/system/theme';
+import { ComponentProps } from 'react';
 import ContentLoader, { Rect } from 'react-content-loader/native';
 
 export type CardSkeltonProps = {
   colorScheme?: ThemeColorScheme;
-};
+} & ComponentProps<typeof ContentLoader>;
 
-export default function CardSkelton({ colorScheme = 'primary' }: CardSkeltonProps) {
-  const primary = useThemeSkeltonColor(colorScheme);
+/**
+ * CardSkelton is a skelton container adjusted for Card component.
+ */
+export default function CardSkelton({ colorScheme = 'primary', ...props }: CardSkeltonProps) {
+  const color = useThemeSkeltonColor(colorScheme);
   const innerBarX = Spacing.Small + 3 + Spacing.Medium + 50 + Spacing.Medium;
   const innerBarWidth = 400 - (Spacing.Small + 3 + Spacing.Medium + 50 + Spacing.Medium * 3);
   return (
-    <ContentLoader speed={2} width="100%" height="225" viewBox="0 0 400 225" backgroundColor={primary}>
+    <ContentLoader {...props} speed={2} width="100%" height="225" viewBox="0 0 400 225" backgroundColor={color}>
       <Rect x={Spacing.Small} y="0" rx="0" ry="0" width={400 - 2 * Spacing.Small} height="45" />
       <Rect x={Spacing.Small} y="225" rx="0" ry="0" width={400 - 2 * Spacing.Small} height="3" />
 

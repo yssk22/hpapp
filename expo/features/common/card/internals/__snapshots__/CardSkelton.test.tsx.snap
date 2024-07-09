@@ -1,0 +1,349 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardSkelton Basic 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <RNSScreenStack
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <RNSScreen
+      collapsable={false}
+      gestureResponseDistance={
+        {
+          "bottom": -1,
+          "end": -1,
+          "start": -1,
+          "top": -1,
+        }
+      }
+      nativeBackButtonDismissalEnabled={false}
+      onAppear={[Function]}
+      onDisappear={[Function]}
+      onDismissed={[Function]}
+      onGestureCancel={[Function]}
+      onHeaderBackButtonClicked={[Function]}
+      onNativeDismissCancelled={[Function]}
+      onTransitionProgress={[Function]}
+      onWillDisappear={[Function]}
+      replaceAnimation="push"
+      sheetAllowedDetents="large"
+      sheetCornerRadius={-1}
+      sheetExpandsWhenScrolledToEdge={true}
+      sheetGrabberVisible={false}
+      sheetLargestUndimmedDetent="all"
+      stackPresentation="push"
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      swipeDirection="horizontal"
+    >
+      <View
+        accessibilityElementsHidden={false}
+        importantForAccessibility="auto"
+        style={
+          {
+            "flex": 1,
+            "flexDirection": "column-reverse",
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            [
+              {
+                "flex": 1,
+              },
+              {
+                "backgroundColor": "white",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              {
+                "backgroundColor": "#ffffff",
+                "flex": 1,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight="225"
+                bbWidth="100%"
+                focusable={false}
+                height="225"
+                interval={0.25}
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  [
+                    {
+                      "backgroundColor": "transparent",
+                      "borderWidth": 0,
+                    },
+                    {},
+                    {
+                      "flex": 0,
+                      "height": 225,
+                      "width": "100%",
+                    },
+                  ]
+                }
+                vbHeight={225}
+                vbWidth={400}
+                width="100%"
+              >
+                <RNSVGGroup
+                  fill={
+                    {
+                      "payload": 4278190080,
+                      "type": 0,
+                    }
+                  }
+                >
+                  <RNSVGRect
+                    clipPath="snapshots-animated-diff"
+                    fill={
+                      {
+                        "brushRef": "snapshots-diff",
+                        "type": 1,
+                      }
+                    }
+                    height="100%"
+                    propList={
+                      [
+                        "fill",
+                      ]
+                    }
+                    width="100%"
+                    x="0"
+                    y="0"
+                  />
+                  <RNSVGDefs>
+                    <RNSVGClipPath
+                      fill={
+                        {
+                          "payload": 4278190080,
+                          "type": 0,
+                        }
+                      }
+                      name="snapshots-animated-diff"
+                    >
+                      <RNSVGRect
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
+                        height="45"
+                        rx="0"
+                        ry="0"
+                        width={376}
+                        x={12}
+                        y="0"
+                      />
+                      <RNSVGRect
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
+                        height="3"
+                        rx="0"
+                        ry="0"
+                        width={376}
+                        x={12}
+                        y="225"
+                      />
+                      <RNSVGRect
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
+                        height="180"
+                        rx="0"
+                        ry="0"
+                        width="3"
+                        x={12}
+                        y="45"
+                      />
+                      <RNSVGRect
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
+                        height="180"
+                        rx="0"
+                        ry="0"
+                        width="3"
+                        x={385}
+                        y="45"
+                      />
+                      <RNSVGRect
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
+                        height="50"
+                        rx="0"
+                        ry="0"
+                        width="50"
+                        x={31}
+                        y="65"
+                      />
+                      <RNSVGRect
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
+                        height="50"
+                        rx="0"
+                        ry="0"
+                        width="50"
+                        x={31}
+                        y="145"
+                      />
+                      <RNSVGRect
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
+                        height="5"
+                        rx="0"
+                        ry="0"
+                        width={271}
+                        x={97}
+                        y="75"
+                      />
+                      <RNSVGRect
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
+                        height="5"
+                        rx="0"
+                        ry="0"
+                        width={271}
+                        x={97}
+                        y="100"
+                      />
+                      <RNSVGRect
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
+                        height="5"
+                        rx="0"
+                        ry="0"
+                        width={271}
+                        x={97}
+                        y="155"
+                      />
+                      <RNSVGRect
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
+                        height="5"
+                        rx="0"
+                        ry="0"
+                        width={271}
+                        x={97}
+                        y="180"
+                      />
+                    </RNSVGClipPath>
+                    <RNSVGLinearGradient
+                      gradient={
+                        [
+                          0,
+                          -3349518,
+                          0.5,
+                          -1118482,
+                          1,
+                          -3349518,
+                        ]
+                      }
+                      gradientTransform={null}
+                      gradientUnits={0}
+                      name="snapshots-diff"
+                      x1="-100%"
+                      x2="0%"
+                      y1={0}
+                      y2={0}
+                    />
+                  </RNSVGDefs>
+                </RNSVGGroup>
+              </RNSVGSvgView>
+            </View>
+          </View>
+        </View>
+      </View>
+      <RNSScreenStackHeaderConfig
+        backButtonInCustomView={false}
+        backTitle=""
+        backTitleVisible={false}
+        backgroundColor="#0075c2"
+        color="white"
+        direction="ltr"
+        disableBackButtonMenu={false}
+        hidden={false}
+        hideBackButton={false}
+        largeTitleHideShadow={false}
+        title="/"
+        titleColor="white"
+        topInsetEnabled={false}
+        translucent={false}
+      />
+    </RNSScreen>
+  </RNSScreenStack>
+</RNCSafeAreaProvider>
+`;

@@ -1,9 +1,9 @@
 import { useAppConfig, useAppConfigUpdator } from '@hpapp/features/app/settings';
-import { Text } from '@hpapp/features/common';
+// import { Text } from '@hpapp/features/common';
 import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { Button, Dialog, Input, Switch } from '@rneui/themed';
 import { useState } from 'react';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { StyleSheet, View, Dimensions, Text } from 'react-native';
 
 const deviceHeight = Dimensions.get('window').height;
 

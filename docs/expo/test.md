@@ -1,8 +1,8 @@
 # Test
 
-We use [`jest`](https://jestjs.io/) as a primary testing framework for Expo projects.
+We use [`jest`](https://jestjs.io/) as a primary testing framework for Expo projects and also use [`storybook`](https://storybook.js.org/) for UX/UI testing.
 
-## Component Test
+## Component Test by Jest
 
 ### When to Write a test?
 
@@ -67,3 +67,25 @@ When the jest execute the test first time (or the response snapshot file is not 
 ### Testing with GraphQL Mutation
 
 Mutation is a bit tricky because it changes the server state and response is usually simple so that you can create a response data file manually.
+
+## UX/UI Test by storybook
+
+Our storybook implementation is on top of both `react-native` and `react-native-web` while stories are shared across platforms. So when you write a story, your component has to support both platforms.
+
+### Storybook Configuration
+
+We reuse the environment variables for the jest test as mentioned above.
+
+### Native vs Web
+
+#### Storybook for native applications
+
+AppConfig has a filed to control for the development build to show the storybook or the app. You can switch the mode by opening the development menu (shake your device), open AppConfig dialog, then switch `Use Storybook` so that you can see the storybook or go back to app.
+
+The storybook configuration is in the `features/app/storybook` directory.
+
+#### Storybook for web
+
+You can also launch the storybook web by running `yarn storybook-web` and access to `http://localhost:6006` on your browser. For components that uses GraphQL, it will access to `http://localhost:8080/graphql/v3` regardless of `HPAPP_GRAPHQL_ENDPOINT_FOR_JEST` settings since we still don't have a secured way for GraphQL endpoint to serve for browsers. so you need to run the GraphQL server on your local machine as well.
+
+The storybook configuration is in the `.storybook` directory.

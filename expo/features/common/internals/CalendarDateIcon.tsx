@@ -1,11 +1,15 @@
+import { isInvalidDate } from '@hpapp/foundation/date';
 import { View, StyleSheet } from 'react-native';
 
 import Text from './Text';
 
-export default function CalendarDateIcon({ date }: { date: Date | undefined | null }) {
+/**
+ * CalendarDateIcon is an icon that displays the date of the calendar.
+ */
+export default function CalendarDateIcon({ date }: { date: Date }) {
   return (
     <View style={styles.column}>
-      {date ? (
+      {!isInvalidDate(date) ? (
         <>
           <Text style={styles.textMonth}>{date?.getMonth() + 1}月</Text>
           <Text style={styles.textDate}>{date.getDate()}</Text>

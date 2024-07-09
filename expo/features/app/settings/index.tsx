@@ -1,5 +1,6 @@
 import * as logging from '@hpapp/system/logging';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Platform } from 'react-native';
 
 import SettingsAppConfig, { AppConfig, SettingsAppConfigDefault } from './internals/SettingsAppConfig';
 import SettingsCurrentUser, { CurrentUser } from './internals/SettingsCurrentUser';
@@ -30,10 +31,23 @@ export function SettingsProvider({
   const [ready, setReady] = useState(false);
   useEffect(() => {
     (async () => {
-      currentUser && (await SettingsCurrentUser.save(currentUser));
-      userConfig && (await SettingsUserConfig.save(userConfig));
-      appConfig && (await SettingsAppConfig.save(appConfig));
-      upfcConfig && (await SettingsUPFCConfig.save(upfcConfig));
+      if (Platform.OS === 'web') {
+        // we expect web is used only for storybook so we set the user token here from the environment variable and enforce the logged in user
+        const accessToken = process.env['HPAPP_USER_TOKEN_FOR_JEST'];
+        if (accessToken === undefined) {
+          throw new Error('HPAPP_USER_TOKEN_FOR_JEST is not set for web');
+        }
+        await SettingsCurrentUser.save({
+          id: '1234',
+          username: 'yssk22',
+          accessToken
+        });
+      } else {
+        currentUser && (await SettingsCurrentUser.save(currentUser));
+        userConfig && (await SettingsUserConfig.save(userConfig));
+        appConfig && (await SettingsAppConfig.save(appConfig));
+        upfcConfig && (await SettingsUPFCConfig.save(upfcConfig));
+      }
       setReady(true);
     })();
   }, []);

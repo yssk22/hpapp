@@ -28,6 +28,7 @@ type httpConfig struct {
 	GraphQLSchemas        map[string]graphql.ExecutableSchema
 	GraphQLPlaygroundPath string
 	OAuth1Config          *oauth1.Config
+	EnableCORS            bool
 	services              []config.Service
 }
 
@@ -64,15 +65,21 @@ func (cfg *httpConfig) GenHandler(e environment.Environment) http.Handler {
 			}
 			ctx = result.Context
 		}
+		// CORS
+		if cfg.EnableCORS {
+			w.Header().Set("Access-Control-Allow-Origin", "*")
+			w.Header().Set("Access-Control-Allow-Headers", "Authorization, Content-Type, X-Hpapp-Device-Info, X-Hpapp-Version, X-Hpapp-Expo-Version")
+		}
 		mux.ServeHTTP(w, r.WithContext(ctx))
 	})
 }
 
 func Command(e environment.Environment, services ...config.Service) *cobra.Command {
-	return &cobra.Command{
+	cmd := &cobra.Command{
 		Use:   "httpserver",
 		Short: "Run HTTP Server",
 		RunE: func(cmd *cobra.Command, args []string) error {
+			enableCORS, _ := cmd.Flags().GetBool("enable-cors")
 			quit := make(chan os.Signal, 1)
 			signal.Notify(quit, syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
 			go func() {
@@ -86,6 +93,7 @@ func Command(e environment.Environment, services ...config.Service) *cobra.Comma
 					},
 					GraphQLPlaygroundPath: "playground",
 					OAuth1Config:          oauth1.NewConfig("oauth1", oauth1.NewTwitterOAuth()),
+					EnableCORS:            enableCORS,
 					services:              services,
 				}
 				handler := cfg.GenHandler(e)
@@ -106,5 +114,6 @@ func Command(e environment.Environment, services ...config.Service) *cobra.Comma
 			return nil
 		},
 	}
-
+	cmd.Flags().Bool("enable-cors", false, "enable CORS")
+	return cmd
 }

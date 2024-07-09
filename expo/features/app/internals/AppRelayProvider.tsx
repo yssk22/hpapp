@@ -3,6 +3,7 @@ import { getAppCheckToken, getIdToken } from '@hpapp/system/firebase';
 import { createEnvironment } from '@hpapp/system/graphql/relay';
 import { RequestTokenSet } from '@hpapp/system/graphql/types';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { Platform } from 'react-native';
 import { RelayEnvironmentProvider } from 'react-relay';
 
 export default function AppRelayProvider({ children }: { children: React.ReactNode }) {
@@ -17,7 +18,7 @@ export default function AppRelayProvider({ children }: { children: React.ReactNo
       const token: RequestTokenSet = {
         userToken: user?.accessToken
       };
-      if (!appConfig.useLocalAuth) {
+      if (Platform.OS !== 'web' && !appConfig.useLocalAuth) {
         token.clientToken = (await getAppCheckToken()).token;
         token.idToken = await getIdToken();
       }

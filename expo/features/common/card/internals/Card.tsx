@@ -18,6 +18,9 @@ export type CardProps = {
   children: React.ReactElement<typeof CardBody>;
 };
 
+/**
+ * Card is a component that displays a card with a header and body.
+ */
 export default function Card({
   colorScheme = 'primary',
   headerText,

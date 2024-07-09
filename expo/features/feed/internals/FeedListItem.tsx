@@ -1,7 +1,8 @@
-import { Spacing } from '@hpapp/features/common/constants';
-import { ExternalImage } from '@hpapp/features/common/image';
+import { AssetIcon, ExternalImage } from '@hpapp/features/common';
+import { IconSize, Spacing } from '@hpapp/features/common/constants';
 import { ListItem } from '@hpapp/features/common/list';
 import * as date from '@hpapp/foundation/date';
+import { Divider } from '@rneui/base';
 import { View, Text, StyleSheet } from 'react-native';
 import { graphql, useFragment } from 'react-relay';
 
@@ -35,20 +36,26 @@ export default function FeedListItem({ data }: { data: FeedListItemFragment$key 
   const imageUrl = item.imageURL ?? '';
   const dateString = date.toDateTimeString(item.postAt);
   return (
-    <ListItem
-      containerStyle={styles.container}
-      rightContent={<ExternalImage uri={getOptimizedImageUrl(imageUrl)} style={styles.image} />}
-    >
-      <View style={styles.titleAndMetadata}>
-        <Text style={styles.title}>{item.title}</Text>
-        <View style={styles.metadata}>
-          {/* FIXME: #42 react-native-svg doesn't work with Expo 48.0
-            <AssetIcon type={item.assetType} size={IconSize.Small} /> */}
-          <Text style={styles.dateString}>{dateString}</Text>
-          <FeedListItemViewHistoryIcon data={item} />
+    <>
+      <Divider />
+      <ListItem
+        containerStyle={styles.container}
+        rightContent={
+          <ExternalImage uri={getOptimizedImageUrl(imageUrl)} style={styles.image} width={80} height={80} />
+        }
+      >
+        <View style={styles.titleAndMetadata}>
+          <Text style={styles.title}>{item.title}</Text>
+          <View style={styles.metadata}>
+            <AssetIcon type={item.assetType} size={IconSize.Small} />
+            <Text style={styles.dateString} numberOfLines={1} ellipsizeMode="tail">
+              {dateString}
+            </Text>
+            <FeedListItemViewHistoryIcon data={item} />
+          </View>
         </View>
-      </View>
-    </ListItem>
+      </ListItem>
+    </>
   );
 }
 
@@ -71,14 +78,12 @@ const styles = StyleSheet.create({
     flexGrow: 1
   },
   metadata: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   dateString: {
-    marginLeft: Spacing.XSmall,
-    marginRight: Spacing.Small
-  },
-  icon: {
-    marginRight: Spacing.Small
+    paddingLeft: Spacing.XSmall,
+    paddingRight: Spacing.XSmall
   }
 });
 

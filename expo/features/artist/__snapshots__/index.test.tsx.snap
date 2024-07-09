@@ -326,40 +326,26 @@ exports[`artist ArtistMemberIcon icon 1`] = `
               }
               testID="ArtistMemberIcon"
             >
-              <View
-                onLayout={[Function]}
+              <Image
+                source={
+                  {
+                    "uri": "http://cdn.helloproject.com/img/artist/m/8bf17e09fa5cb3e62ad57617c81e1b6c8f9958f6.jpg",
+                  }
+                }
                 style={
                   [
-                    undefined,
                     {
-                      "flex": 1,
-                      "height": undefined,
-                      "width": undefined,
+                      "height": 64,
+                      "width": 64,
+                    },
+                    {
+                      "height": 64,
+                      "width": 64,
                     },
                   ]
                 }
-              >
-                <View
-                  style={
-                    [
-                      undefined,
-                      {
-                        "alignContent": "center",
-                        "bottom": 0,
-                        "justifyContent": "center",
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                    ]
-                  }
-                >
-                  <ActivityIndicator
-                    color="#ff0000"
-                  />
-                </View>
-              </View>
+                testID="ExternalImage.Image"
+              />
             </View>
           </View>
         </View>

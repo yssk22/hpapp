@@ -1,7 +1,6 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
 import { t } from '@hpapp/system/i18n';
-import { Header } from '@rneui/base';
-import { Button } from '@rneui/themed';
+import { Header, Button } from '@rneui/themed';
 import React from 'react';
 import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

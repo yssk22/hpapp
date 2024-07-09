@@ -122,6 +122,14 @@ jest.mock('react-native-vector-icons/Ionicons', () => {
   return 'Ionicons';
 });
 
+// import Ionicons from 'react-native-vector-icons/Ionicons';
+jest.mock('@expo/vector-icons/Ionicons', () => {
+  return 'Ionicons';
+});
+jest.mock('@expo/vector-icons/Entypo', () => {
+  return 'Entypo';
+});
+
 // Firebase Mock
 jest.mock('@react-native-firebase/auth', () => {
   const module = () => ({
@@ -140,11 +148,12 @@ jest.mock('@react-native-firebase/auth', () => {
   };
   return module;
 });
+
 jest.mock('@hpapp/system/graphql/relay');
 
 jest.setTimeout(5000);
 
-jest.mock('./.storybook', () => {
+jest.mock('@hpapp/features/app/storybook', () => {
   return {
     __esModule: true,
     default: () => {
