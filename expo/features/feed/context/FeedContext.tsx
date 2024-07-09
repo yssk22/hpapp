@@ -71,7 +71,7 @@ function createFeedContext(): [(props: FeedContextProviderProps) => JSX.Element,
     // We use 30 days window when fetching tagged feed to get the items without timeout.
     // but this prevents users from loading items older than 30 days.
     const minPostAt = useMemberTaggings
-      ? date.addDate(date.getToday().getTime(), DAYS_TO_CALCULATE_MIN_POST_AT_FOR_TAGGEING, 'day').toISOString()
+      ? date.addDate(date.getToday().getTime(), -1 * DAYS_TO_CALCULATE_MIN_POST_AT_FOR_TAGGEING, 'day').toISOString()
       : null;
     // TODO: #52 Revisit the use of Relay and Suspense
     // We currently don't use usePreloadedQuery or useLazyLoadQuery since it causes suspense fallback,

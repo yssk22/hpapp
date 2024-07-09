@@ -101,7 +101,8 @@ export default function UPFCApplicationCard({ event }: UPFCApplicationCardProps)
   return (
     <Card containerStyle={styles.card} headerText={event.name}>
       <CardBody>
-        {items} {footer}
+        <>{items}</>
+        <>{footer}</>
       </CardBody>
     </Card>
   );

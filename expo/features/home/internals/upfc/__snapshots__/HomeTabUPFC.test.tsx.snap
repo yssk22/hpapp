@@ -991,7 +991,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                               </View>
                             </View>
                           </View>
-                           
                         </View>
                       </View>
                     </View>
@@ -1448,7 +1447,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                               </View>
                             </View>
                           </View>
-                           
                         </View>
                       </View>
                     </View>
@@ -1905,7 +1903,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                               </View>
                             </View>
                           </View>
-                           
                         </View>
                       </View>
                     </View>
@@ -2362,7 +2359,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                               </View>
                             </View>
                           </View>
-                           
                         </View>
                       </View>
                     </View>
@@ -2819,7 +2815,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                               </View>
                             </View>
                           </View>
-                           
                           <View
                             style={
                               {
@@ -3380,7 +3375,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                               </View>
                             </View>
                           </View>
-                           
                           <View
                             style={
                               {
@@ -3941,7 +3935,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                               </View>
                             </View>
                           </View>
-                           
                           <View
                             style={
                               {
@@ -4502,7 +4495,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                               </View>
                             </View>
                           </View>
-                           
                           <View
                             style={
                               {
@@ -5063,7 +5055,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                               </View>
                             </View>
                           </View>
-                           
                           <View
                             style={
                               {
