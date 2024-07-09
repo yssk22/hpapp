@@ -1,11 +1,14 @@
 import { wrapRenderable } from '@hpapp/foundation/errors';
 import { withTimeout } from '@hpapp/foundation/function';
+import { isIn } from '@hpapp/foundation/object';
 import * as logging from '@hpapp/system/logging';
 import Constants from 'expo-constants';
 import * as Device from 'expo-device';
 import { Network, RequestParameters, Variables, Environment, Store, RecordSource } from 'relay-runtime';
 
 import { HttpClientConfig, RequestTokenFactory } from './types';
+
+const QueryToSuppressDebugLogs: string[] = ['UserServiceProviderQuery', 'FeedContextQuery'];
 
 export function createEnvironment(config: HttpClientConfig, tokenFactory: RequestTokenFactory) {
   const endpoint = config.Endpoint;
@@ -60,6 +63,18 @@ export function createEnvironment(config: HttpClientConfig, tokenFactory: Reques
         response: json,
         benchmark
       });
+      if (!isIn(operation.name, ...QueryToSuppressDebugLogs)) {
+        logging.Debug(eventName, 'GraphQL success', {
+          request: {
+            body: {
+              query: operation.text,
+              variables // TODO: get rid of potentially sensitive information
+            }
+          },
+          response: json,
+          benchmark
+        });
+      }
       return json;
     } catch (err) {
       const benchmark = new Date().getTime() - start.getTime();

@@ -1,8 +1,9 @@
+import { useThemeColor } from '@hpapp/features/app/theme';
 import { IconSize } from '@hpapp/features/common/constants';
-import { FeedListItemViewHistoryIconFragment$key } from '@hpapp/features/feed/__generated__/FeedListItemViewHistoryIconFragment.graphql';
-import { useColor } from '@hpapp/features/settings/context/theme';
 import { Icon } from '@rneui/themed';
 import { graphql, useFragment } from 'react-relay';
+
+import { FeedListItemViewHistoryIconFragment$key } from './__generated__/FeedListItemViewHistoryIconFragment.graphql';
 
 const FeedListItemViewHistoryIconFragmentGraphQL = graphql`
   fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
@@ -17,8 +18,8 @@ const FeedListItemViewHistoryIcon: React.FC<{
   data: FeedListItemViewHistoryIconFragment$key;
 }> = ({ data }) => {
   const item = useFragment<FeedListItemViewHistoryIconFragment$key>(FeedListItemViewHistoryIconFragmentGraphQL, data);
-  const [primary] = useColor('primary');
-  const [secondary] = useColor('secondary');
+  const [primary] = useThemeColor('primary');
+  const [secondary] = useThemeColor('secondary');
   return (
     <>
       {item.myViewHistory === null && <Icon type="entypo" name="new" size={IconSize.Small} color={secondary} />}

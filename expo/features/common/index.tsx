@@ -6,7 +6,6 @@ import ErrorBoundary, { FallbackComponent } from './internals/ErrorBoundary';
 import Initializer from './internals/Initializer';
 import Link from './internals/Link';
 import Loading from './internals/Loading';
-import SectionListSectionHeader from './internals/SectionListSectionHeader';
 import Text from './internals/Text';
 import useAssetContent from './internals/useAssetContent';
 import useErrorMessage from './internals/useErrorMessage';
@@ -24,7 +23,6 @@ export {
   Initializer,
   Link,
   Loading,
-  SectionListSectionHeader,
   Text
 };
 

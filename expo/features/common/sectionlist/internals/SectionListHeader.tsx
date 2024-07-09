@@ -1,10 +1,9 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
+import { Text } from '@hpapp/features/common';
 import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { View, StyleSheet } from 'react-native';
 
-import Text from './Text';
-
-export default function SectionListSectionHeader({ children }: { children: string }) {
+export default function SectionListHeader({ children }: { children: string }) {
   const [color, constrastColor] = useThemeColor('secondary');
   return (
     <View

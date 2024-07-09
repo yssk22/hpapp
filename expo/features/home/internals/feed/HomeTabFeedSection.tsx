@@ -1,10 +1,9 @@
-import { SectionListSectionHeader } from '@hpapp/features/common';
+import { SectionListHeader, SectionListRenderer } from '@hpapp/features/common/sectionlist';
 import { FeedListItem } from '@hpapp/features/feed';
 import { HPFeedItem } from '@hpapp/features/feed/context/FeedContext';
-import { HomeTabSection } from '@hpapp/features/home';
 import { t } from '@hpapp/system/i18n';
 
-export default class HomeFeedSection implements HomeTabSection<HPFeedItem> {
+export default class HomeFeedSection implements SectionListRenderer<HPFeedItem> {
   public readonly data: HPFeedItem[];
 
   constructor(data: HPFeedItem[]) {
@@ -12,7 +11,7 @@ export default class HomeFeedSection implements HomeTabSection<HPFeedItem> {
   }
 
   renderSectionHeader() {
-    return <SectionListSectionHeader>{t('Latest Posts')}</SectionListSectionHeader>;
+    return <SectionListHeader>{t('Latest Posts')}</SectionListHeader>;
   }
 
   renderListItem({ item, index }: { item: HPFeedItem; index: number }) {
