@@ -1,7 +1,8 @@
-import { useCurrentUser } from '@hpapp/features/app/settings';
+import Storybook from '@hpapp/.storybook';
+import { useAppConfig, useCurrentUser } from '@hpapp/features/app/settings';
 import { UserRoot, UserRootProps } from '@hpapp/features/app/user';
 import { registerDevMenuItems } from 'expo-dev-menu';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import AppConfigMoal from './AppConfigModal';
 import AppRootGuest from './AppRootGuest';
@@ -9,6 +10,7 @@ import AppRootGuest from './AppRootGuest';
 export type AppRootProps = UserRootProps;
 
 export default function AppRoot(props?: UserRootProps) {
+  const appConfig = useAppConfig();
   const currentUser = useCurrentUser();
   const [showAppConfigModal, setShowAppConfigModal] = useState(false);
   useEffect(() => {
@@ -19,10 +21,11 @@ export default function AppRoot(props?: UserRootProps) {
       }
     ]);
   }, [showAppConfigModal, setShowAppConfigModal]);
+  const component = appConfig.useStorybook ? <Storybook /> : currentUser ? <UserRoot {...props} /> : <AppRootGuest />;
   return (
     <>
       <AppConfigMoal isVisible={showAppConfigModal} onClose={() => setShowAppConfigModal(false)} />
-      {currentUser ? <UserRoot {...props} /> : <AppRootGuest />}
+      {component}
     </>
   );
 }

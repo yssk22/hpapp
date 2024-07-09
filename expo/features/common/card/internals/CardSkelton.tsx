@@ -4,11 +4,11 @@ import { ThemeColorScheme } from '@hpapp/system/theme';
 import ContentLoader, { Rect } from 'react-content-loader/native';
 
 export type CardSkeltonProps = {
-  color?: ThemeColorScheme;
+  colorScheme?: ThemeColorScheme;
 };
 
-export default function CardSkelton({ color = 'primary' }: CardSkeltonProps) {
-  const primary = useThemeSkeltonColor(color);
+export default function CardSkelton({ colorScheme = 'primary' }: CardSkeltonProps) {
+  const primary = useThemeSkeltonColor(colorScheme);
   const innerBarX = Spacing.Small + 3 + Spacing.Medium + 50 + Spacing.Medium;
   const innerBarWidth = 400 - (Spacing.Small + 3 + Spacing.Medium + 50 + Spacing.Medium * 3);
   return (

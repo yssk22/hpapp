@@ -2,6 +2,7 @@ import { SettingsStore, AsyncStorage } from '@hpapp/system/kvs';
 import Constants from 'expo-constants';
 
 export type AppConfig = {
+  readonly useStorybook: boolean;
   readonly useLocalAppConfig: boolean;
   readonly graphQLEndpoint: string;
   readonly useLocalAuth: boolean;
@@ -12,6 +13,7 @@ export type AppConfig = {
 };
 
 export const SettingsAppConfigDefault: AppConfig = {
+  useStorybook: false,
   useLocalAppConfig: false,
   graphQLEndpoint: Constants.expoConfig?.extra!.hpapp!.graphQLEndpoint!,
   useLocalAuth: Constants.expoConfig?.extra!.hpapp!.useLocalAuth!,
