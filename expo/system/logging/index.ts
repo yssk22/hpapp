@@ -1,8 +1,8 @@
 /**
  * provides a logging framework
  */
-import Console from '@hpapp/system/logging/Console';
-import { LogSink } from '@hpapp/system/logging/types';
+import Console from './Console';
+import { LogSink } from './types';
 
 // TODO: provide a way to customize the sink
 const sink: LogSink = Console;
@@ -19,4 +19,11 @@ export function Info(event: string, message: string, data?: Record<string, any>)
  */
 export function Error(event: string, message: string, data?: Record<string, any>) {
   sink.Log('error', event, message, data);
+}
+
+/**
+ * log a record at DEBUG level. only write it to the sing when __DEV__ is true
+ */
+export function Debug(event: string, message: string, data?: Record<string, any>) {
+  sink.Log('debug', event, message, data);
 }

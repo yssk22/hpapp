@@ -1,0 +1,44 @@
+{
+  "operation": "FeedContextQuery",
+  "response": {
+    "data": {
+      "helloproject": {
+        "feed": {
+          "edges": [],
+          "pageInfo": {
+            "endCursor": null,
+            "hasNextPage": false
+          }
+        },
+        "id": "helloproject"
+      }
+    }
+  },
+  "variables": {
+    "params": {
+      "assetTypes": ["ameblo", "instagram", "tiktok", "twitter"],
+      "memberIDs": [
+        "8589934592",
+        "8589934596",
+        "8589934601",
+        "8589934605",
+        "8589934621",
+        "8589934623",
+        "8589934624",
+        "8589934644",
+        "8589934672",
+        "8589934673",
+        "8589934674",
+        "8590222529",
+        "8590222530",
+        "8590783732",
+        "8590783744",
+        "8590786239"
+      ],
+      "useMemberTaggings": true,
+      "minPostAt": "2024-07-12T00:00:00.000Z"
+    },
+    "first": 20,
+    "after": null
+  }
+}

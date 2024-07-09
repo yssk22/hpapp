@@ -1,13 +1,51 @@
-jest.useFakeTimers();
-
 jest.mock('expo-asset', () => ({
-  useAssets: jest.fn()
+  useAssets: jest.fn((moduleIds: number | number[]) => {
+    if (typeof moduleIds === 'number') {
+      return [
+        {
+          uri: `asset-${moduleIds}`,
+          height: 100,
+          width: 100
+        }
+      ];
+    }
+    return [
+      moduleIds.map((id, index) => {
+        return {
+          uri: `asset-${id}`,
+          height: 100,
+          width: 100
+        };
+      })
+    ];
+  })
 }));
 jest.mock('expo-font', () => ({}));
+jest.mock('expo-dev-menu', () => {
+  return {
+    registerDevMenuItems: jest.fn()
+  };
+});
 
 jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
 jest.mock('@react-native-async-storage/async-storage', () => {
   return require('@react-native-async-storage/async-storage/jest/async-storage-mock');
+});
+
+jest.mock('expo-secure-store', () => {
+  // mock by async storage mock
+  const mock = require('@react-native-async-storage/async-storage/jest/async-storage-mock');
+  return {
+    getItemAsync: jest.fn((key) => {
+      return mock.getItem(key);
+    }),
+    setItemAsync: jest.fn((key, value) => {
+      return mock.setItem(key, value);
+    }),
+    deleteItemAsync: jest.fn((key) => {
+      return mock.removeItem(key);
+    })
+  };
 });
 
 jest.mock('@react-native-firebase/app-check', () => {
@@ -29,12 +67,46 @@ jest.mock('expo-constants', () => {
         hpapp: {
           useLocalAppConfig: false,
           useLocalAuth: true,
-          graphQLEndpoint: 'http://localhost:8080/graphql/v3'
+          graphQLEndpoint: 'http://localhost:8080/graphql/v3',
+          auth: {
+            google: {
+              iosClientId: 'iosClientId',
+              androidClientId: 'androidClientId'
+            }
+          }
         }
       }
     }
   };
 });
+
+jest.mock('expo-updates', () => ({
+  ...jest.requireActual('expo-updates'),
+  fetchUpdateAsync: jest.fn(),
+  reloadAsync: jest.fn(),
+  checkForUpdateAsync: jest.fn(() => {
+    return {
+      isAvailable: false,
+      manifest: {
+        id: 'test',
+        commitTime: 100,
+        assets: []
+      },
+      isRollBackToEmbedded: false,
+      reason: undefined
+    };
+  })
+}));
+
+jest.mock('expo-crypto/build/ExpoCrypto', () => ({
+  digestStringAsync: jest.fn((algorithm: string, data: string, options = { encoding: 'hex' }) => {
+    const crypto = require('crypto');
+    const hash = crypto.createHash(algorithm.toLowerCase().replace('-', ''));
+
+    hash.update(data);
+    return Promise.resolve(hash.digest(options.encoding ?? 'hex'));
+  })
+}));
 
 // React Native Elements Mock
 jest.mock('@rneui/themed', () => {
@@ -44,3 +116,30 @@ jest.mock('@rneui/themed', () => {
   Mock.Icon = 'Icon';
   return Mock;
 });
+
+// import Ionicons from 'react-native-vector-icons/Ionicons';
+jest.mock('react-native-vector-icons/Ionicons', () => {
+  return 'Ionicons';
+});
+
+// Firebase Mock
+jest.mock('@react-native-firebase/auth', () => {
+  const module = () => ({
+    signInWithCredential: jest.fn(() => {
+      return {
+        user: {
+          getIdToken: jest.fn(() => Promise.resolve('testtoken'))
+        }
+      };
+    }),
+    signOut: jest.fn(),
+    onAuthStateChanged: jest.fn()
+  });
+  module.GoogleAuthProvider = {
+    credential: jest.fn()
+  };
+  return module;
+});
+jest.mock('@hpapp/system/graphql/relay');
+
+jest.setTimeout(5000);

@@ -1,7 +1,7 @@
-import Text from '@hpapp/features/common/components/Text';
-import { useNavigation } from '@hpapp/features/root/internals/protected/stack';
-import UPFCSettingsScreen from '@hpapp/features/upfc/components/UPFCSettingsScreen';
-import { ErrUPFCAuthentication, ErrUPFCNoCredential } from '@hpapp/features/upfc/internals/scraper/errors';
+import { Text } from '@hpapp/features/common';
+import { useNavigation } from '@hpapp/features/common/stack';
+import UPFCSettingsScreen from '@hpapp/features/upfc/UPFCSettingsScreen';
+import { ErrUPFCAuthentication, ErrUPFCNoCredential } from '@hpapp/features/upfc/scraper';
 import { t } from '@hpapp/system/i18n';
 import { Button } from '@rneui/themed';
 import { View, StyleSheet } from 'react-native';

@@ -1,4 +1,8 @@
-import { sleep } from '@hpapp/foundation/globals';
+import { sleep, isJest } from './globals';
+
+beforeEach(() => {
+  jest.useFakeTimers();
+});
 
 describe('globals', () => {
   test('sleep', async () => {
@@ -9,5 +13,9 @@ describe('globals', () => {
     await p;
     const end = Date.now();
     expect(end - start).toBeGreaterThanOrEqual(1000);
+  });
+
+  test('isJest', () => {
+    expect(isJest()).toBe(true);
   });
 });

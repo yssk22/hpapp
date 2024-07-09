@@ -1,0 +1,318 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user should return Me object 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <RNSScreenStack
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <RNSScreen
+      collapsable={false}
+      gestureResponseDistance={
+        {
+          "bottom": -1,
+          "end": -1,
+          "start": -1,
+          "top": -1,
+        }
+      }
+      nativeBackButtonDismissalEnabled={false}
+      onAppear={[Function]}
+      onDisappear={[Function]}
+      onDismissed={[Function]}
+      onGestureCancel={[Function]}
+      onHeaderBackButtonClicked={[Function]}
+      onNativeDismissCancelled={[Function]}
+      onTransitionProgress={[Function]}
+      onWillDisappear={[Function]}
+      replaceAnimation="push"
+      sheetAllowedDetents="large"
+      sheetCornerRadius={-1}
+      sheetExpandsWhenScrolledToEdge={true}
+      sheetGrabberVisible={false}
+      sheetLargestUndimmedDetent="all"
+      stackPresentation="push"
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      swipeDirection="horizontal"
+    >
+      <View
+        accessibilityElementsHidden={false}
+        importantForAccessibility="auto"
+        style={
+          {
+            "flex": 1,
+            "flexDirection": "column-reverse",
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            [
+              {
+                "flex": 1,
+              },
+              {
+                "backgroundColor": "white",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              {
+                "backgroundColor": "#ffffff",
+                "flex": 1,
+              }
+            }
+          >
+            <Text
+              testID="user.test.username"
+            >
+              yssk22
+            </Text>
+          </View>
+        </View>
+      </View>
+      <RNSScreenStackHeaderConfig
+        backButtonInCustomView={false}
+        backTitle=""
+        backTitleVisible={false}
+        backgroundColor="#0075c2"
+        color="white"
+        direction="ltr"
+        disableBackButtonMenu={false}
+        hidden={false}
+        hideBackButton={false}
+        largeTitleHideShadow={false}
+        title="/"
+        titleColor="white"
+        topInsetEnabled={false}
+        translucent={false}
+      />
+    </RNSScreen>
+  </RNSScreenStack>
+</RNCSafeAreaProvider>
+`;
+
+exports[`user useHelloProject 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <RNSScreenStack
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <RNSScreen
+      collapsable={false}
+      gestureResponseDistance={
+        {
+          "bottom": -1,
+          "end": -1,
+          "start": -1,
+          "top": -1,
+        }
+      }
+      nativeBackButtonDismissalEnabled={false}
+      onAppear={[Function]}
+      onDisappear={[Function]}
+      onDismissed={[Function]}
+      onGestureCancel={[Function]}
+      onHeaderBackButtonClicked={[Function]}
+      onNativeDismissCancelled={[Function]}
+      onTransitionProgress={[Function]}
+      onWillDisappear={[Function]}
+      replaceAnimation="push"
+      sheetAllowedDetents="large"
+      sheetCornerRadius={-1}
+      sheetExpandsWhenScrolledToEdge={true}
+      sheetGrabberVisible={false}
+      sheetLargestUndimmedDetent="all"
+      stackPresentation="push"
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      swipeDirection="horizontal"
+    >
+      <View
+        accessibilityElementsHidden={false}
+        importantForAccessibility="auto"
+        style={
+          {
+            "flex": 1,
+            "flexDirection": "column-reverse",
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            [
+              {
+                "flex": 1,
+              },
+              {
+                "backgroundColor": "white",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              {
+                "backgroundColor": "#ffffff",
+                "flex": 1,
+              }
+            }
+          >
+            <Text
+              testID="user.test.useArtist"
+            >
+              morningmusume
+            </Text>
+            <Text
+              testID="user.test.useMember"
+            >
+              mizuki_fukumura
+            </Text>
+            <Text
+              testID="user.test.useArtists"
+            >
+              morningmusume
+angerme
+juicejuice
+tsubakifactory
+beyooooonds
+ochanorma
+            </Text>
+            <Text
+              testID="user.test.useMembers"
+            >
+              erina_ikuta
+ayumi_ishida
+sakura_oda
+miki_nonaka
+maria_makino
+akane_haga
+reina_yokoyama
+rio_kitagawa
+homare_okamura
+mei_yamazaki
+rio_sakurai
+haruka_inoue
+ako_yumigeta
+ayano_kawamura
+moe_kamikokuryo
+layla_ise
+rin_hashisako
+rin_kawana
+shion_tamenaga
+wakana_matsumoto
+yuki_hirayama
+yukiho_shimoitani
+hana_goto
+ruru_dambara
+yume_kudou
+riai_matsunaga
+rei_inoue
+ichika_arisawa
+risa_irie
+kisaki_ebata
+sakura_ishiyama
+akari_endo
+mifu_kawashima
+ami_tanimoto
+mizuho_ono
+saori_onoda
+mao_akiyama
+yuumi_kasai
+shiori_yagi
+marine_fukuda
+runo_yofu
+mihane_ishii
+yuu_murata
+fuka_doi
+rika_shimakura
+shiori_nishida
+saya_eguchi
+kurumi_takase
+kokoro_maeda
+minami_okamura
+momohime_kiyono
+miyo_hirai
+honoka_kobayashi
+utano_satoyoshi
+madoka_saito
+ruli_hiromoto
+kanami_ishiguri
+kirara_yonemura
+nanami_kubota
+sumire_tashiro
+natsume_nakayama
+miku_nishizaki
+momo_kitahara
+roko_tsutsui
+            </Text>
+          </View>
+        </View>
+      </View>
+      <RNSScreenStackHeaderConfig
+        backButtonInCustomView={false}
+        backTitle=""
+        backTitleVisible={false}
+        backgroundColor="#0075c2"
+        color="white"
+        direction="ltr"
+        disableBackButtonMenu={false}
+        hidden={false}
+        hideBackButton={false}
+        largeTitleHideShadow={false}
+        title="/"
+        titleColor="white"
+        topInsetEnabled={false}
+        translucent={false}
+      />
+    </RNSScreen>
+  </RNSScreenStack>
+</RNCSafeAreaProvider>
+`;

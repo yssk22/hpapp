@@ -1,17 +1,14 @@
-import {
-  FeedContextQuery,
-  FeedContextQuery$data,
-  HPAssetType
-} from '@hpapp/features/feed/context/__generated__/FeedContextQuery.graphql';
-import { FeedContextQueryFragmentQuery } from '@hpapp/features/feed/context/__generated__/FeedContextQueryFragmentQuery.graphql';
-import {
-  FeedContextQuery_helloproject_query_feed$data,
-  FeedContextQuery_helloproject_query_feed$key
-} from '@hpapp/features/feed/context/__generated__/FeedContextQuery_helloproject_query_feed.graphql';
 import * as date from '@hpapp/foundation/date';
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { fetchQuery, graphql, usePaginationFragment, useRelayEnvironment } from 'react-relay';
 import { usePaginationFragmentHookType } from 'react-relay/relay-hooks/usePaginationFragment';
+
+import { FeedContextQuery, FeedContextQuery$data, HPAssetType } from './__generated__/FeedContextQuery.graphql';
+import { FeedContextQueryFragmentQuery } from './__generated__/FeedContextQueryFragmentQuery.graphql';
+import {
+  FeedContextQuery_helloproject_query_feed$data,
+  FeedContextQuery_helloproject_query_feed$key
+} from './__generated__/FeedContextQuery_helloproject_query_feed.graphql';
 
 const NUM_FEED_ITEMS_PER_LOAD = 20;
 const DAYS_TO_CALCULATE_MIN_POST_AT_FOR_TAGGEING = 3;
@@ -88,15 +85,22 @@ function createFeedContext(): [(props: FeedContextProviderProps) => JSX.Element,
     useEffect(() => {
       (async () => {
         setIsLoading(true);
-        const result = await fetchQuery<FeedContextQuery>(env, FeedContextQueryGraphQL, {
-          first: NUM_FEED_ITEMS_PER_LOAD,
-          params: {
-            assetTypes,
-            memberIDs,
-            useMemberTaggings,
-            minPostAt
+        const result = await fetchQuery<FeedContextQuery>(
+          env,
+          FeedContextQueryGraphQL,
+          {
+            first: NUM_FEED_ITEMS_PER_LOAD,
+            params: {
+              assetTypes,
+              memberIDs,
+              useMemberTaggings,
+              minPostAt
+            }
+          },
+          {
+            fetchPolicy: 'store-or-network'
           }
-        }).toPromise();
+        ).toPromise();
         setData(result!);
         setIsLoading(false);
       })();

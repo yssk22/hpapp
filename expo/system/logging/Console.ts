@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
-import { LogLevel, LogSink } from '@hpapp/system/logging/types';
 import Constants from 'expo-constants';
+
+import { LogLevel, LogSink } from './types';
 
 const defaultEvents: string[] = ['^$']; //'.*'; // '.*';
 
@@ -23,6 +24,10 @@ class Console implements LogSink {
 
     if (level === 'error') {
       console.error(event, message, JSON.stringify(data, null, '  '));
+    } else if (level === 'debug') {
+      if (__DEV__) {
+        console.log(event, message, JSON.stringify(data, null, '  '));
+      }
     } else {
       if (isFocus) {
         console.log(event, message, JSON.stringify(data, null, '  '));

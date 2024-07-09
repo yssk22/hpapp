@@ -1,17 +1,14 @@
-import useAppConfig from '@hpapp/features/appconfig/useAppConfig';
+import { useAppConfig, useUPFCConfigUpdator, useUPFCConfig } from '@hpapp/features/app/settings';
+import { useThemeColor } from '@hpapp/features/app/theme';
 import { Spacing } from '@hpapp/features/common/constants';
-import { useColor } from '@hpapp/features/settings/context/theme';
-import UPFCDemoScraper from '@hpapp/features/upfc/internals/scraper/UPFCDemoScraper';
-import UPFCHttpFetcher from '@hpapp/features/upfc/internals/scraper/UPFCHttpFetcher';
-import UPFCSiteScraper from '@hpapp/features/upfc/internals/scraper/UPFCSiteScraper';
-import { ErrUPFCAuthentication } from '@hpapp/features/upfc/internals/scraper/errors';
-import UPFCSettingsFormInputs from '@hpapp/features/upfc/internals/settings/UPFCSettingsFormInputs';
-import useUPFCSettings from '@hpapp/features/upfc/internals/settings/useUPFCSettings';
+import { UPFCDemoScraper, UPFCHttpFetcher, UPFCSiteScraper, ErrUPFCAuthentication } from '@hpapp/features/upfc/scraper';
 import { t } from '@hpapp/system/i18n';
 import { Button } from '@rneui/themed';
 import { useCallback, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Toast from 'react-native-root-toast';
+
+import UPFCSettingsFormInputs from './UPFCSettingsFormInputs';
 
 type UPFCSettingsFormProps = {
   onSave?: () => void;
@@ -20,25 +17,27 @@ type UPFCSettingsFormProps = {
 export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
   //   const upfc = useHomeUPFCModel();
   const appConfig = useAppConfig();
-  const [successColor, succsesContrast] = useColor('success');
+  const [successColor, succsesContrast] = useThemeColor('success');
   const [isSaving, setIsSaving] = useState(false);
   const [lastError, setLastError] = useState<Error | null>(null);
-  const [config, setConfig] = useUPFCSettings();
-  const [username, setUsername] = useState(config?.username ?? '');
-  const [password, setPassword] = useState(config?.password ?? '');
-  const [calendarId, setCalendarId] = useState(config?.calendarId ?? '');
-  const [eventPrefix, setEventPrefix] = useState(config?.eventPrefix ?? '');
+  const upfcConfig = useUPFCConfig();
+  const updateConfig = useUPFCConfigUpdator();
+
+  const [username, setUsername] = useState(upfcConfig?.username ?? '');
+  const [password, setPassword] = useState(upfcConfig?.password ?? '');
+  const [calendarId, setCalendarId] = useState(upfcConfig?.calendarId ?? '');
+  const [eventPrefix, setEventPrefix] = useState(upfcConfig?.eventPrefix ?? '');
   const handleOnClear = useCallback(async () => {
     setUsername('');
     setPassword('');
     setCalendarId('');
     setEventPrefix('');
-    setConfig(null);
+    updateConfig(null);
     setLastError(null);
     // clear the cache
     // await upfc.clearCache();
     // await upfc.reload();
-  }, [setConfig, setUsername, setPassword, setCalendarId, setEventPrefix]);
+  }, [updateConfig, setUsername, setPassword, setCalendarId, setEventPrefix]);
   const handleOnSave = useCallback(() => {
     setLastError(null);
     setIsSaving(true);
@@ -57,7 +56,7 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
           textColor: succsesContrast,
           backgroundColor: successColor
         });
-        setConfig({
+        updateConfig({
           username,
           password,
           calendarId,
@@ -72,7 +71,7 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
       }
       onSave && onSave();
     })();
-  }, [setConfig, username, password, calendarId, eventPrefix]);
+  }, [updateConfig, username, password, calendarId, eventPrefix]);
   return (
     <View style={styles.container}>
       <UPFCSettingsFormInputs

@@ -1,11 +1,11 @@
-import Text from '@hpapp/features/common/components/Text';
+import { useThemeColor } from '@hpapp/features/app/theme';
+import { Text } from '@hpapp/features/common';
 import { FontSize, Spacing } from '@hpapp/features/common/constants';
-import { ColorScheme, useColor } from '@hpapp/features/settings/context/theme';
-import { UPFCEventTicket } from '@hpapp/features/upfc/internals/scraper/types';
-import React from 'react';
+import { UPFCEventTicket } from '@hpapp/features/upfc/scraper';
+import { ThemeColorScheme } from '@hpapp/system/theme';
 import { View, StyleSheet } from 'react-native';
 
-const StatusColorScheme: Record<string, ColorScheme> = {
+const StatusColorScheme: Record<string, ThemeColorScheme> = {
   申込済: 'success',
   入金待: 'error',
   入金済: 'primary',
@@ -19,7 +19,7 @@ export type UPFCApplicationStatusLabelProps = {
 };
 
 export default function UPFCApplicationStatusLabel({ ticket }: UPFCApplicationStatusLabelProps) {
-  const [color, contrast] = useColor(StatusColorScheme[ticket.status]);
+  const [color, contrast] = useThemeColor(StatusColorScheme[ticket.status]);
   return (
     <View style={[styles.container, { backgroundColor: color }]}>
       <Text style={[styles.text, { color: contrast }]}>{ticket.status}</Text>

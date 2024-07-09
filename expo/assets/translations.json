@@ -84,6 +84,9 @@
   "FC Settings": {
     "ja": "ファンクラブ設定"
   },
+  "FC Data Policy": {
+    "ja": "ファンクラブデータ設定"
+  },
   "FC Member Number": {
     "ja": "FC会員番号"
   },
@@ -98,6 +101,9 @@
   },
   "Event Prefix": {
     "ja": "イベントのプレフィックス"
+  },
+  "Calendar access is rejected. Open Settings to allow access.": {
+    "ja": "カレンダーアクセスが拒否されました。設定を開いてアクセスを許可してください。"
   },
   "Save": {
     "ja": "保存"

@@ -1,4 +1,4 @@
-import { defineScreen } from '@hpapp/features/root/internals/protected/stack';
+import { defineScreen } from '@hpapp/features/common/stack';
 import { View, StyleSheet, Text } from 'react-native';
 
 export default defineScreen('/feed/', function FeedItemScreen() {
