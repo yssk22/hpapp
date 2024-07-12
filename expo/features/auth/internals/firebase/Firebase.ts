@@ -1,20 +1,16 @@
-import FirebaseAuth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
+import { getCurrentUser, signInWithCredential } from '@hpapp/system/firebase';
+import { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import { useCallback, useState } from 'react';
 
 import { Provider } from './types';
 
-const auth = FirebaseAuth();
-
 export default abstract class Firebase extends Provider {
   static async getAccessToken(): Promise<string | null> {
-    const user = auth.currentUser;
+    const user = getCurrentUser();
     if (user === null) {
       return null;
     }
     return await user.getIdToken();
-  }
-  static getAuth() {
-    return auth;
   }
 
   protected abstract useFirebaseCredential(): () => Promise<FirebaseAuthTypes.AuthCredential | null>;
@@ -33,7 +29,7 @@ export default abstract class Firebase extends Provider {
         if (credentials === null) {
           return false;
         }
-        const user = await auth.signInWithCredential(credentials);
+        const user = await signInWithCredential(credentials);
         const token = await user.user?.getIdToken();
         return token !== null;
       } finally {

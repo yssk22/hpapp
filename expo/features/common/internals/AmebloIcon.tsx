@@ -1,6 +1,9 @@
 import { IconSize } from '@hpapp/features/common/constants';
 import * as Svg from 'react-native-svg';
 
+/**
+ * AmebloIcon is an SVG icon component for the Ameblo.
+ */
 export default function AmebloIcon({ size = IconSize.Small }: { size: number }) {
   return (
     <Svg.Svg style={{ width: size, height: size }} x="0px" y="0px" viewBox="0 0 34.7 34.7">

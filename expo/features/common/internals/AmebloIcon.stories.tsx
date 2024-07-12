@@ -5,7 +5,7 @@ import { View } from 'react-native';
 import AmebloIcon from './AmebloIcon';
 
 const AmebloIconMeta: Meta<typeof AmebloIcon> = {
-  title: 'components/AmebloIcon',
+  title: 'common/AmebloIcon',
   component: AmebloIcon,
   argTypes: {},
   args: {

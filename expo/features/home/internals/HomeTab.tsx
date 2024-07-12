@@ -1,11 +1,11 @@
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { useThemeColor } from '@hpapp/features/app/theme';
 import { Loading } from '@hpapp/features/common/';
 import { useNavigationOption } from '@hpapp/features/common/stack';
 import { t } from '@hpapp/system/i18n';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React, { Suspense } from 'react';
+import React, { ComponentProps, Suspense } from 'react';
 import { View, StyleSheet } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomeTabArtist from './artist/HomeTabArtist';
 import HomeTabFeed from './feed/HomeTabFeed';
@@ -55,11 +55,12 @@ const styles = StyleSheet.create({
 
 const Tab = createBottomTabNavigator();
 type TabComponent = NonNullable<React.ComponentProps<typeof Tab.Screen>['component']>;
+type IconName = ComponentProps<typeof Ionicons>['name'];
 
 type TabSpec = {
   name: string;
   component: TabComponent;
-  icon: string;
+  icon: IconName;
 };
 
 const Tabs: TabSpec[] = [
@@ -100,8 +101,8 @@ function tabComponent(c: React.ElementType<any>) {
   };
 }
 
-function getTabBarIconFn(iconName: string) {
+function getTabBarIconFn(iconName: IconName) {
   return function ({ focused, color, size }: { focused: boolean; color: string; size: number }) {
-    return <Ionicons name={focused ? iconName : `${iconName}-outline`} size={size} color={color} />;
+    return <Ionicons name={(focused ? iconName : `${iconName}-outline`) as IconName} size={size} color={color} />;
   };
 }

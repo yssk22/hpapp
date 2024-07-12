@@ -1,5 +1,5 @@
 import { HPMember, useHelloProject } from '@hpapp/features/app/user';
-import { ExternalImage } from '@hpapp/features/common/image';
+import { ExternalImage } from '@hpapp/features/common';
 import { View } from 'react-native';
 
 export enum ArtistMemberIconSize {
@@ -32,7 +32,7 @@ export default function ArtistMemberIcon({
         height: size
       }}
     >
-      <ExternalImage uri={m!.thumbnailURL} style={{ width: size, height: size }} />
+      <ExternalImage uri={m!.thumbnailURL} style={{ width: size, height: size }} width={size} height={size} />
     </View>
   );
 }

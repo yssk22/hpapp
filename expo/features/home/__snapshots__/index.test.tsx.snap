@@ -177,7 +177,7 @@ exports[`home HomeScreen 1`] = `
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -594,7 +594,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -602,16 +602,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499239",
+                                    "__id": "94489499470",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499239",
+                                    "id": "94489499470",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -1028,7 +1028,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -1036,16 +1036,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499238",
+                                    "__id": "94489499465",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499238",
+                                    "id": "94489499465",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -1462,7 +1462,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -1470,16 +1470,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499236",
+                                    "__id": "94489499444",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499236",
+                                    "id": "94489499444",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -1896,7 +1896,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -1904,16 +1904,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499237",
+                                    "__id": "94489499435",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499237",
+                                    "id": "94489499435",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -2330,7 +2330,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -2338,16 +2338,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499225",
+                                    "__id": "94489499467",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499225",
+                                    "id": "94489499467",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -2764,7 +2764,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -2772,16 +2772,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499223",
+                                    "__id": "94489499437",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499223",
+                                    "id": "94489499437",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -3198,7 +3198,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -3206,16 +3206,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499214",
+                                    "__id": "94489499436",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499214",
+                                    "id": "94489499436",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -3632,7 +3632,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -3640,16 +3640,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499204",
+                                    "__id": "94489499434",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499204",
+                                    "id": "94489499434",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -4066,7 +4066,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -4074,16 +4074,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499203",
+                                    "__id": "94489499423",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499203",
+                                    "id": "94489499423",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -4500,7 +4500,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -4508,16 +4508,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499200",
+                                    "__id": "94489499421",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499200",
+                                    "id": "94489499421",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -4934,7 +4934,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -4942,16 +4942,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499190",
+                                    "__id": "94489499429",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499190",
+                                    "id": "94489499429",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -5368,7 +5368,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -5376,16 +5376,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499175",
+                                    "__id": "94489499420",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499175",
+                                    "id": "94489499420",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -5802,7 +5802,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -5810,16 +5810,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499165",
+                                    "__id": "94489499417",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499165",
+                                    "id": "94489499417",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -6236,7 +6236,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -6244,16 +6244,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499166",
+                                    "__id": "94489499415",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499166",
+                                    "id": "94489499415",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -6670,7 +6670,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -6678,16 +6678,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499171",
+                                    "__id": "94489499462",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499171",
+                                    "id": "94489499462",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -7104,7 +7104,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -7112,16 +7112,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499182",
+                                    "__id": "94489499413",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499182",
+                                    "id": "94489499413",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -7538,7 +7538,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -7546,16 +7546,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499178",
+                                    "__id": "94489499411",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499178",
+                                    "id": "94489499411",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -7972,7 +7972,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -7980,16 +7980,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499164",
+                                    "__id": "94489499399",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499164",
+                                    "id": "94489499399",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -8406,7 +8406,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -8414,16 +8414,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499160",
+                                    "__id": "94489499394",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499160",
+                                    "id": "94489499394",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-06T00:00:00.000Z","useMemberTaggings":true}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"],"minPostAt":"2024-07-09T00:00:00.000Z","useMemberTaggings":true}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -8840,7 +8840,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783744",
                                             "8590786239",
                                           ],
-                                          "minPostAt": "2024-07-06T00:00:00.000Z",
+                                          "minPostAt": "2024-07-09T00:00:00.000Z",
                                           "useMemberTaggings": true,
                                         },
                                       },
@@ -8848,9 +8848,9 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499162",
+                                    "__id": "94489499364",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499162",
+                                    "id": "94489499364",
                                   },
                                 ],
                               },
@@ -8947,123 +8947,13 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                             >
                               <View
                                 style={
-                                  [
-                                    {
-                                      "height": 100,
-                                      "padding": 12,
-                                    },
-                                    {
-                                      "flexDirection": "row",
-                                      "justifyContent": "space-between",
-                                    },
-                                  ]
+                                  {
+                                    "borderBottomColor": "#bcbbc1",
+                                    "borderBottomWidth": 0.5,
+                                  }
                                 }
-                              >
-                                <View
-                                  style={
-                                    {
-                                      "flex": 1,
-                                      "flexGrow": 1,
-                                      "minWidth": 0,
-                                    }
-                                  }
-                                >
-                                  <View
-                                    style={
-                                      {
-                                        "flexDirection": "column",
-                                        "flexGrow": 1,
-                                        "justifyContent": "center",
-                                        "marginRight": 16,
-                                      }
-                                    }
-                                  >
-                                    <Text
-                                      style={
-                                        {
-                                          "flexGrow": 1,
-                                        }
-                                      }
-                                    >
-                                      リハリハ  工藤由愛
-                                    </Text>
-                                    <View
-                                      style={
-                                        {
-                                          "flexDirection": "row",
-                                        }
-                                      }
-                                    >
-                                      <Text
-                                        style={
-                                          {
-                                            "marginLeft": 8,
-                                            "marginRight": 12,
-                                          }
-                                        }
-                                      >
-                                        2024/07/09 21:43
-                                      </Text>
-                                      <Icon
-                                        color="#e5007f"
-                                        name="new"
-                                        size={16}
-                                        type="entypo"
-                                      />
-                                    </View>
-                                  </View>
-                                </View>
-                                <View
-                                  style={
-                                    {
-                                      "alignItems": "flex-end",
-                                      "justifyContent": "center",
-                                      "minWidth": 0,
-                                    }
-                                  }
-                                >
-                                  <View
-                                    onLayout={[Function]}
-                                    style={
-                                      [
-                                        undefined,
-                                        {
-                                          "flex": 1,
-                                          "height": undefined,
-                                          "width": undefined,
-                                        },
-                                      ]
-                                    }
-                                  >
-                                    <View
-                                      style={
-                                        [
-                                          undefined,
-                                          {
-                                            "alignContent": "center",
-                                            "bottom": 0,
-                                            "justifyContent": "center",
-                                            "left": 0,
-                                            "position": "absolute",
-                                            "right": 0,
-                                            "top": 0,
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <ActivityIndicator
-                                        color="#ff0000"
-                                      />
-                                    </View>
-                                  </View>
-                                </View>
-                              </View>
-                            </View>
-                            <View
-                              onFocusCapture={[Function]}
-                              onLayout={[Function]}
-                              style={null}
-                            >
+                                testID="RNE__Divider"
+                              />
                               <View
                                 style={
                                   [
@@ -9104,30 +8994,157 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                         }
                                       }
                                     >
-                                      グッズ 島倉りか
+                                      ハロコン！ 岡村ほまれ
                                     </Text>
                                     <View
                                       style={
                                         {
+                                          "alignItems": "center",
                                           "flexDirection": "row",
                                         }
                                       }
                                     >
+                                      <RNSVGSvgView
+                                        align="xMidYMid"
+                                        bbHeight={16}
+                                        bbWidth={16}
+                                        focusable={false}
+                                        meetOrSlice={0}
+                                        minX={0}
+                                        minY={0}
+                                        style={
+                                          [
+                                            {
+                                              "backgroundColor": "transparent",
+                                              "borderWidth": 0,
+                                            },
+                                            {
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                            {
+                                              "flex": 0,
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                          ]
+                                        }
+                                        vbHeight={34.7}
+                                        vbWidth={34.7}
+                                        x="0px"
+                                        y="0px"
+                                      >
+                                        <RNSVGGroup
+                                          fill={
+                                            {
+                                              "payload": 4278190080,
+                                              "type": 0,
+                                            }
+                                          }
+                                        >
+                                          <RNSVGGroup
+                                            fill={
+                                              {
+                                                "payload": 4278190080,
+                                                "type": 0,
+                                              }
+                                            }
+                                          >
+                                            <RNSVGPath
+                                              d="M28.7,24.5c-2-1-1.9-3.5-1.7-5.9c0.3-2.4,0.3-3.7-0.3-5.8C26.1,11,25.1,10,25.1,8c0-1.5,0-3.5,0-4.7c0-1.8-0.8-2.4-1.6-2.4 c-2.3,0-3.1,4-6.2,4h0c-3.1,0-3.9-4-6.2-4c-0.7,0-1.6,0.6-1.6,2.4c0,1.3,0,3.3,0,4.7c0,2-1,3-1.6,4.8c-0.6,2.1-0.6,3.4-0.4,5.8 C7.9,21.1,8,23.5,6,24.5c-1.6,0.8-2.6,2.1-1.8,3.2c0.9,1.4,2.6-0.2,3.4,0c0.9,0.2-0.1,1.5,1.3,1.5c0.7,0,0.9-2.2,1.6-2 c0.5,0.1,0.6,1.5,0.1,2.5c-0.2,0.5-2,1.6-1.8,2.8c0.2,1.2,1.2,1.4,2.6,1.4c1,0,2.7,0,3.7,0c0.9,0,1.8-0.9,1.8-1.5 c0-0.6-0.8-1.9,0.5-1.9h0c1.3,0,0.5,1.3,0.5,1.9c0,0.6,0.9,1.5,1.8,1.5c0.9,0,2.6,0,3.7,0c1.4,0,2.4-0.2,2.6-1.4 c0.2-1.2-1.6-2.3-1.8-2.8c-0.5-1.1-0.3-2.4,0.1-2.5c0.7-0.2,0.9,2,1.6,2c1.4,0,0.4-1.3,1.3-1.5c0.8-0.2,2.5,1.4,3.4,0 C31.3,26.6,30.3,25.3,28.7,24.5z"
+                                              fill={
+                                                {
+                                                  "payload": 4278222848,
+                                                  "type": 0,
+                                                }
+                                              }
+                                              propList={
+                                                [
+                                                  "fill",
+                                                ]
+                                              }
+                                            />
+                                          </RNSVGGroup>
+                                          <RNSVGCircle
+                                            cx="22.4"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="12.3"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="17.4"
+                                            cy="25.1"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="4.2"
+                                          />
+                                          <RNSVGPath
+                                            d="M17.4,12.2c-2.6,0-6.2,1.6-6.2,4.1c0,2,1.3,2.7,2.9,2.7s2.1-1.8,3.4-1.8c1.3,0,1.8,1.8,3.4,1.8 c1.6,0,2.9-0.7,2.9-2.7C23.6,13.8,20,12.2,17.4,12.2z M17.4,15.9c-1.1,0-2.1-0.7-2.1-1.5c0-0.9,0.9-1.5,2.1-1.5 c1.1,0,2.1,0.7,2.1,1.5C19.4,15.2,18.5,15.9,17.4,15.9z"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                          />
+                                        </RNSVGGroup>
+                                      </RNSVGSvgView>
                                       <Text
+                                        ellipsizeMode="tail"
+                                        numberOfLines={1}
                                         style={
                                           {
-                                            "marginLeft": 8,
-                                            "marginRight": 12,
+                                            "paddingLeft": 8,
+                                            "paddingRight": 8,
                                           }
                                         }
                                       >
-                                        2024/07/09 21:40
+                                        2024/07/12 22:12
                                       </Text>
-                                      <Icon
+                                      <Entypo
                                         color="#e5007f"
                                         name="new"
                                         size={16}
-                                        type="entypo"
                                       />
                                     </View>
                                   </View>
@@ -9141,40 +9158,26 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     }
                                   }
                                 >
-                                  <View
-                                    onLayout={[Function]}
+                                  <Image
+                                    source={
+                                      {
+                                        "uri": "https://stat.ameba.jp/user_images/20240712/22/morningmusume15ki/f4/00/j/o1080144015462374442.jpg?cpd=300",
+                                      }
+                                    }
                                     style={
                                       [
-                                        undefined,
                                         {
-                                          "flex": 1,
-                                          "height": undefined,
-                                          "width": undefined,
+                                          "height": 80,
+                                          "width": 80,
+                                        },
+                                        {
+                                          "height": 80,
+                                          "width": 80,
                                         },
                                       ]
                                     }
-                                  >
-                                    <View
-                                      style={
-                                        [
-                                          undefined,
-                                          {
-                                            "alignContent": "center",
-                                            "bottom": 0,
-                                            "justifyContent": "center",
-                                            "left": 0,
-                                            "position": "absolute",
-                                            "right": 0,
-                                            "top": 0,
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <ActivityIndicator
-                                        color="#ff0000"
-                                      />
-                                    </View>
-                                  </View>
+                                    testID="ExternalImage.Image"
+                                  />
                                 </View>
                               </View>
                             </View>
@@ -9183,6 +9186,15 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                               onLayout={[Function]}
                               style={null}
                             >
+                              <View
+                                style={
+                                  {
+                                    "borderBottomColor": "#bcbbc1",
+                                    "borderBottomWidth": 0.5,
+                                  }
+                                }
+                                testID="RNE__Divider"
+                              />
                               <View
                                 style={
                                   [
@@ -9223,31 +9235,153 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                         }
                                       }
                                     >
-                                      ネイル　Riai
+                                      明日から！ 下井谷幸穂
                                     </Text>
                                     <View
                                       style={
                                         {
+                                          "alignItems": "center",
                                           "flexDirection": "row",
                                         }
                                       }
                                     >
+                                      <RNSVGSvgView
+                                        align="xMidYMid"
+                                        bbHeight={16}
+                                        bbWidth={16}
+                                        focusable={false}
+                                        meetOrSlice={0}
+                                        minX={0}
+                                        minY={0}
+                                        style={
+                                          [
+                                            {
+                                              "backgroundColor": "transparent",
+                                              "borderWidth": 0,
+                                            },
+                                            {
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                            {
+                                              "flex": 0,
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                          ]
+                                        }
+                                        vbHeight={34.7}
+                                        vbWidth={34.7}
+                                        x="0px"
+                                        y="0px"
+                                      >
+                                        <RNSVGGroup
+                                          fill={
+                                            {
+                                              "payload": 4278190080,
+                                              "type": 0,
+                                            }
+                                          }
+                                        >
+                                          <RNSVGGroup
+                                            fill={
+                                              {
+                                                "payload": 4278190080,
+                                                "type": 0,
+                                              }
+                                            }
+                                          >
+                                            <RNSVGPath
+                                              d="M28.7,24.5c-2-1-1.9-3.5-1.7-5.9c0.3-2.4,0.3-3.7-0.3-5.8C26.1,11,25.1,10,25.1,8c0-1.5,0-3.5,0-4.7c0-1.8-0.8-2.4-1.6-2.4 c-2.3,0-3.1,4-6.2,4h0c-3.1,0-3.9-4-6.2-4c-0.7,0-1.6,0.6-1.6,2.4c0,1.3,0,3.3,0,4.7c0,2-1,3-1.6,4.8c-0.6,2.1-0.6,3.4-0.4,5.8 C7.9,21.1,8,23.5,6,24.5c-1.6,0.8-2.6,2.1-1.8,3.2c0.9,1.4,2.6-0.2,3.4,0c0.9,0.2-0.1,1.5,1.3,1.5c0.7,0,0.9-2.2,1.6-2 c0.5,0.1,0.6,1.5,0.1,2.5c-0.2,0.5-2,1.6-1.8,2.8c0.2,1.2,1.2,1.4,2.6,1.4c1,0,2.7,0,3.7,0c0.9,0,1.8-0.9,1.8-1.5 c0-0.6-0.8-1.9,0.5-1.9h0c1.3,0,0.5,1.3,0.5,1.9c0,0.6,0.9,1.5,1.8,1.5c0.9,0,2.6,0,3.7,0c1.4,0,2.4-0.2,2.6-1.4 c0.2-1.2-1.6-2.3-1.8-2.8c-0.5-1.1-0.3-2.4,0.1-2.5c0.7-0.2,0.9,2,1.6,2c1.4,0,0.4-1.3,1.3-1.5c0.8-0.2,2.5,1.4,3.4,0 C31.3,26.6,30.3,25.3,28.7,24.5z"
+                                              fill={
+                                                {
+                                                  "payload": 4278222848,
+                                                  "type": 0,
+                                                }
+                                              }
+                                              propList={
+                                                [
+                                                  "fill",
+                                                ]
+                                              }
+                                            />
+                                          </RNSVGGroup>
+                                          <RNSVGCircle
+                                            cx="22.4"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="12.3"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="17.4"
+                                            cy="25.1"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="4.2"
+                                          />
+                                          <RNSVGPath
+                                            d="M17.4,12.2c-2.6,0-6.2,1.6-6.2,4.1c0,2,1.3,2.7,2.9,2.7s2.1-1.8,3.4-1.8c1.3,0,1.8,1.8,3.4,1.8 c1.6,0,2.9-0.7,2.9-2.7C23.6,13.8,20,12.2,17.4,12.2z M17.4,15.9c-1.1,0-2.1-0.7-2.1-1.5c0-0.9,0.9-1.5,2.1-1.5 c1.1,0,2.1,0.7,2.1,1.5C19.4,15.2,18.5,15.9,17.4,15.9z"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                          />
+                                        </RNSVGGroup>
+                                      </RNSVGSvgView>
                                       <Text
+                                        ellipsizeMode="tail"
+                                        numberOfLines={1}
                                         style={
                                           {
-                                            "marginLeft": 8,
-                                            "marginRight": 12,
+                                            "paddingLeft": 8,
+                                            "paddingRight": 8,
                                           }
                                         }
                                       >
-                                        2024/07/09 21:40
+                                        2024/07/12 22:10
                                       </Text>
-                                      <Icon
-                                        color="#e5007f"
-                                        name="new"
-                                        size={16}
-                                        type="entypo"
-                                      />
                                     </View>
                                   </View>
                                 </View>
@@ -9260,40 +9394,26 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     }
                                   }
                                 >
-                                  <View
-                                    onLayout={[Function]}
+                                  <Image
+                                    source={
+                                      {
+                                        "uri": "https://stat.ameba.jp/user_images/20240712/22/angerme-new/31/78/j/o0960140015462373452.jpg?cpd=300",
+                                      }
+                                    }
                                     style={
                                       [
-                                        undefined,
                                         {
-                                          "flex": 1,
-                                          "height": undefined,
-                                          "width": undefined,
+                                          "height": 80,
+                                          "width": 80,
+                                        },
+                                        {
+                                          "height": 80,
+                                          "width": 80,
                                         },
                                       ]
                                     }
-                                  >
-                                    <View
-                                      style={
-                                        [
-                                          undefined,
-                                          {
-                                            "alignContent": "center",
-                                            "bottom": 0,
-                                            "justifyContent": "center",
-                                            "left": 0,
-                                            "position": "absolute",
-                                            "right": 0,
-                                            "top": 0,
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <ActivityIndicator
-                                        color="#ff0000"
-                                      />
-                                    </View>
-                                  </View>
+                                    testID="ExternalImage.Image"
+                                  />
                                 </View>
                               </View>
                             </View>
@@ -9302,6 +9422,15 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                               onLayout={[Function]}
                               style={null}
                             >
+                              <View
+                                style={
+                                  {
+                                    "borderBottomColor": "#bcbbc1",
+                                    "borderBottomWidth": 0.5,
+                                  }
+                                }
+                                testID="RNE__Divider"
+                              />
                               <View
                                 style={
                                   [
@@ -9342,31 +9471,153 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                         }
                                       }
                                     >
-                                      衝動 段原瑠々
+                                      あした！   石山咲良
                                     </Text>
                                     <View
                                       style={
                                         {
+                                          "alignItems": "center",
                                           "flexDirection": "row",
                                         }
                                       }
                                     >
+                                      <RNSVGSvgView
+                                        align="xMidYMid"
+                                        bbHeight={16}
+                                        bbWidth={16}
+                                        focusable={false}
+                                        meetOrSlice={0}
+                                        minX={0}
+                                        minY={0}
+                                        style={
+                                          [
+                                            {
+                                              "backgroundColor": "transparent",
+                                              "borderWidth": 0,
+                                            },
+                                            {
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                            {
+                                              "flex": 0,
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                          ]
+                                        }
+                                        vbHeight={34.7}
+                                        vbWidth={34.7}
+                                        x="0px"
+                                        y="0px"
+                                      >
+                                        <RNSVGGroup
+                                          fill={
+                                            {
+                                              "payload": 4278190080,
+                                              "type": 0,
+                                            }
+                                          }
+                                        >
+                                          <RNSVGGroup
+                                            fill={
+                                              {
+                                                "payload": 4278190080,
+                                                "type": 0,
+                                              }
+                                            }
+                                          >
+                                            <RNSVGPath
+                                              d="M28.7,24.5c-2-1-1.9-3.5-1.7-5.9c0.3-2.4,0.3-3.7-0.3-5.8C26.1,11,25.1,10,25.1,8c0-1.5,0-3.5,0-4.7c0-1.8-0.8-2.4-1.6-2.4 c-2.3,0-3.1,4-6.2,4h0c-3.1,0-3.9-4-6.2-4c-0.7,0-1.6,0.6-1.6,2.4c0,1.3,0,3.3,0,4.7c0,2-1,3-1.6,4.8c-0.6,2.1-0.6,3.4-0.4,5.8 C7.9,21.1,8,23.5,6,24.5c-1.6,0.8-2.6,2.1-1.8,3.2c0.9,1.4,2.6-0.2,3.4,0c0.9,0.2-0.1,1.5,1.3,1.5c0.7,0,0.9-2.2,1.6-2 c0.5,0.1,0.6,1.5,0.1,2.5c-0.2,0.5-2,1.6-1.8,2.8c0.2,1.2,1.2,1.4,2.6,1.4c1,0,2.7,0,3.7,0c0.9,0,1.8-0.9,1.8-1.5 c0-0.6-0.8-1.9,0.5-1.9h0c1.3,0,0.5,1.3,0.5,1.9c0,0.6,0.9,1.5,1.8,1.5c0.9,0,2.6,0,3.7,0c1.4,0,2.4-0.2,2.6-1.4 c0.2-1.2-1.6-2.3-1.8-2.8c-0.5-1.1-0.3-2.4,0.1-2.5c0.7-0.2,0.9,2,1.6,2c1.4,0,0.4-1.3,1.3-1.5c0.8-0.2,2.5,1.4,3.4,0 C31.3,26.6,30.3,25.3,28.7,24.5z"
+                                              fill={
+                                                {
+                                                  "payload": 4278222848,
+                                                  "type": 0,
+                                                }
+                                              }
+                                              propList={
+                                                [
+                                                  "fill",
+                                                ]
+                                              }
+                                            />
+                                          </RNSVGGroup>
+                                          <RNSVGCircle
+                                            cx="22.4"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="12.3"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="17.4"
+                                            cy="25.1"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="4.2"
+                                          />
+                                          <RNSVGPath
+                                            d="M17.4,12.2c-2.6,0-6.2,1.6-6.2,4.1c0,2,1.3,2.7,2.9,2.7s2.1-1.8,3.4-1.8c1.3,0,1.8,1.8,3.4,1.8 c1.6,0,2.9-0.7,2.9-2.7C23.6,13.8,20,12.2,17.4,12.2z M17.4,15.9c-1.1,0-2.1-0.7-2.1-1.5c0-0.9,0.9-1.5,2.1-1.5 c1.1,0,2.1,0.7,2.1,1.5C19.4,15.2,18.5,15.9,17.4,15.9z"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                          />
+                                        </RNSVGGroup>
+                                      </RNSVGSvgView>
                                       <Text
+                                        ellipsizeMode="tail"
+                                        numberOfLines={1}
                                         style={
                                           {
-                                            "marginLeft": 8,
-                                            "marginRight": 12,
+                                            "paddingLeft": 8,
+                                            "paddingRight": 8,
                                           }
                                         }
                                       >
-                                        2024/07/09 21:38
+                                        2024/07/12 22:03
                                       </Text>
-                                      <Icon
-                                        color="#e5007f"
-                                        name="new"
-                                        size={16}
-                                        type="entypo"
-                                      />
                                     </View>
                                   </View>
                                 </View>
@@ -9379,40 +9630,26 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     }
                                   }
                                 >
-                                  <View
-                                    onLayout={[Function]}
+                                  <Image
+                                    source={
+                                      {
+                                        "uri": "https://stat.ameba.jp/user_images/20240712/21/juicejuice-official/2b/65/j/o1080144015462369194.jpg?cpd=300",
+                                      }
+                                    }
                                     style={
                                       [
-                                        undefined,
                                         {
-                                          "flex": 1,
-                                          "height": undefined,
-                                          "width": undefined,
+                                          "height": 80,
+                                          "width": 80,
+                                        },
+                                        {
+                                          "height": 80,
+                                          "width": 80,
                                         },
                                       ]
                                     }
-                                  >
-                                    <View
-                                      style={
-                                        [
-                                          undefined,
-                                          {
-                                            "alignContent": "center",
-                                            "bottom": 0,
-                                            "justifyContent": "center",
-                                            "left": 0,
-                                            "position": "absolute",
-                                            "right": 0,
-                                            "top": 0,
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <ActivityIndicator
-                                        color="#ff0000"
-                                      />
-                                    </View>
-                                  </View>
+                                    testID="ExternalImage.Image"
+                                  />
                                 </View>
                               </View>
                             </View>
@@ -9421,6 +9658,15 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                               onLayout={[Function]}
                               style={null}
                             >
+                              <View
+                                style={
+                                  {
+                                    "borderBottomColor": "#bcbbc1",
+                                    "borderBottomWidth": 0.5,
+                                  }
+                                }
+                                testID="RNE__Divider"
+                              />
                               <View
                                 style={
                                   [
@@ -9461,30 +9707,157 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                         }
                                       }
                                     >
-                                      おはスタ16日。生田衣梨奈
+                                      寝るぞ 段原瑠々
                                     </Text>
                                     <View
                                       style={
                                         {
+                                          "alignItems": "center",
                                           "flexDirection": "row",
                                         }
                                       }
                                     >
+                                      <RNSVGSvgView
+                                        align="xMidYMid"
+                                        bbHeight={16}
+                                        bbWidth={16}
+                                        focusable={false}
+                                        meetOrSlice={0}
+                                        minX={0}
+                                        minY={0}
+                                        style={
+                                          [
+                                            {
+                                              "backgroundColor": "transparent",
+                                              "borderWidth": 0,
+                                            },
+                                            {
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                            {
+                                              "flex": 0,
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                          ]
+                                        }
+                                        vbHeight={34.7}
+                                        vbWidth={34.7}
+                                        x="0px"
+                                        y="0px"
+                                      >
+                                        <RNSVGGroup
+                                          fill={
+                                            {
+                                              "payload": 4278190080,
+                                              "type": 0,
+                                            }
+                                          }
+                                        >
+                                          <RNSVGGroup
+                                            fill={
+                                              {
+                                                "payload": 4278190080,
+                                                "type": 0,
+                                              }
+                                            }
+                                          >
+                                            <RNSVGPath
+                                              d="M28.7,24.5c-2-1-1.9-3.5-1.7-5.9c0.3-2.4,0.3-3.7-0.3-5.8C26.1,11,25.1,10,25.1,8c0-1.5,0-3.5,0-4.7c0-1.8-0.8-2.4-1.6-2.4 c-2.3,0-3.1,4-6.2,4h0c-3.1,0-3.9-4-6.2-4c-0.7,0-1.6,0.6-1.6,2.4c0,1.3,0,3.3,0,4.7c0,2-1,3-1.6,4.8c-0.6,2.1-0.6,3.4-0.4,5.8 C7.9,21.1,8,23.5,6,24.5c-1.6,0.8-2.6,2.1-1.8,3.2c0.9,1.4,2.6-0.2,3.4,0c0.9,0.2-0.1,1.5,1.3,1.5c0.7,0,0.9-2.2,1.6-2 c0.5,0.1,0.6,1.5,0.1,2.5c-0.2,0.5-2,1.6-1.8,2.8c0.2,1.2,1.2,1.4,2.6,1.4c1,0,2.7,0,3.7,0c0.9,0,1.8-0.9,1.8-1.5 c0-0.6-0.8-1.9,0.5-1.9h0c1.3,0,0.5,1.3,0.5,1.9c0,0.6,0.9,1.5,1.8,1.5c0.9,0,2.6,0,3.7,0c1.4,0,2.4-0.2,2.6-1.4 c0.2-1.2-1.6-2.3-1.8-2.8c-0.5-1.1-0.3-2.4,0.1-2.5c0.7-0.2,0.9,2,1.6,2c1.4,0,0.4-1.3,1.3-1.5c0.8-0.2,2.5,1.4,3.4,0 C31.3,26.6,30.3,25.3,28.7,24.5z"
+                                              fill={
+                                                {
+                                                  "payload": 4278222848,
+                                                  "type": 0,
+                                                }
+                                              }
+                                              propList={
+                                                [
+                                                  "fill",
+                                                ]
+                                              }
+                                            />
+                                          </RNSVGGroup>
+                                          <RNSVGCircle
+                                            cx="22.4"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="12.3"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="17.4"
+                                            cy="25.1"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="4.2"
+                                          />
+                                          <RNSVGPath
+                                            d="M17.4,12.2c-2.6,0-6.2,1.6-6.2,4.1c0,2,1.3,2.7,2.9,2.7s2.1-1.8,3.4-1.8c1.3,0,1.8,1.8,3.4,1.8 c1.6,0,2.9-0.7,2.9-2.7C23.6,13.8,20,12.2,17.4,12.2z M17.4,15.9c-1.1,0-2.1-0.7-2.1-1.5c0-0.9,0.9-1.5,2.1-1.5 c1.1,0,2.1,0.7,2.1,1.5C19.4,15.2,18.5,15.9,17.4,15.9z"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                          />
+                                        </RNSVGGroup>
+                                      </RNSVGSvgView>
                                       <Text
+                                        ellipsizeMode="tail"
+                                        numberOfLines={1}
                                         style={
                                           {
-                                            "marginLeft": 8,
-                                            "marginRight": 12,
+                                            "paddingLeft": 8,
+                                            "paddingRight": 8,
                                           }
                                         }
                                       >
-                                        2024/07/09 21:18
+                                        2024/07/12 21:59
                                       </Text>
-                                      <Icon
+                                      <Entypo
                                         color="#e5007f"
                                         name="new"
                                         size={16}
-                                        type="entypo"
                                       />
                                     </View>
                                   </View>
@@ -9498,40 +9871,26 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     }
                                   }
                                 >
-                                  <View
-                                    onLayout={[Function]}
+                                  <Image
+                                    source={
+                                      {
+                                        "uri": "https://stat.ameba.jp/user_images/20240712/21/juicejuice-official/65/3e/j/o0960072015462368396.jpg?cpd=300",
+                                      }
+                                    }
                                     style={
                                       [
-                                        undefined,
                                         {
-                                          "flex": 1,
-                                          "height": undefined,
-                                          "width": undefined,
+                                          "height": 80,
+                                          "width": 80,
+                                        },
+                                        {
+                                          "height": 80,
+                                          "width": 80,
                                         },
                                       ]
                                     }
-                                  >
-                                    <View
-                                      style={
-                                        [
-                                          undefined,
-                                          {
-                                            "alignContent": "center",
-                                            "bottom": 0,
-                                            "justifyContent": "center",
-                                            "left": 0,
-                                            "position": "absolute",
-                                            "right": 0,
-                                            "top": 0,
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <ActivityIndicator
-                                        color="#ff0000"
-                                      />
-                                    </View>
-                                  </View>
+                                    testID="ExternalImage.Image"
+                                  />
                                 </View>
                               </View>
                             </View>
@@ -9540,6 +9899,15 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                               onLayout={[Function]}
                               style={null}
                             >
+                              <View
+                                style={
+                                  {
+                                    "borderBottomColor": "#bcbbc1",
+                                    "borderBottomWidth": 0.5,
+                                  }
+                                }
+                                testID="RNE__Divider"
+                              />
                               <View
                                 style={
                                   [
@@ -9580,30 +9948,157 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                         }
                                       }
                                     >
-                                      動物 ♡ 下井谷幸穂
+                                      バーイベ合唱曲大募集〜！！！弓桁朱琴
                                     </Text>
                                     <View
                                       style={
                                         {
+                                          "alignItems": "center",
                                           "flexDirection": "row",
                                         }
                                       }
                                     >
+                                      <RNSVGSvgView
+                                        align="xMidYMid"
+                                        bbHeight={16}
+                                        bbWidth={16}
+                                        focusable={false}
+                                        meetOrSlice={0}
+                                        minX={0}
+                                        minY={0}
+                                        style={
+                                          [
+                                            {
+                                              "backgroundColor": "transparent",
+                                              "borderWidth": 0,
+                                            },
+                                            {
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                            {
+                                              "flex": 0,
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                          ]
+                                        }
+                                        vbHeight={34.7}
+                                        vbWidth={34.7}
+                                        x="0px"
+                                        y="0px"
+                                      >
+                                        <RNSVGGroup
+                                          fill={
+                                            {
+                                              "payload": 4278190080,
+                                              "type": 0,
+                                            }
+                                          }
+                                        >
+                                          <RNSVGGroup
+                                            fill={
+                                              {
+                                                "payload": 4278190080,
+                                                "type": 0,
+                                              }
+                                            }
+                                          >
+                                            <RNSVGPath
+                                              d="M28.7,24.5c-2-1-1.9-3.5-1.7-5.9c0.3-2.4,0.3-3.7-0.3-5.8C26.1,11,25.1,10,25.1,8c0-1.5,0-3.5,0-4.7c0-1.8-0.8-2.4-1.6-2.4 c-2.3,0-3.1,4-6.2,4h0c-3.1,0-3.9-4-6.2-4c-0.7,0-1.6,0.6-1.6,2.4c0,1.3,0,3.3,0,4.7c0,2-1,3-1.6,4.8c-0.6,2.1-0.6,3.4-0.4,5.8 C7.9,21.1,8,23.5,6,24.5c-1.6,0.8-2.6,2.1-1.8,3.2c0.9,1.4,2.6-0.2,3.4,0c0.9,0.2-0.1,1.5,1.3,1.5c0.7,0,0.9-2.2,1.6-2 c0.5,0.1,0.6,1.5,0.1,2.5c-0.2,0.5-2,1.6-1.8,2.8c0.2,1.2,1.2,1.4,2.6,1.4c1,0,2.7,0,3.7,0c0.9,0,1.8-0.9,1.8-1.5 c0-0.6-0.8-1.9,0.5-1.9h0c1.3,0,0.5,1.3,0.5,1.9c0,0.6,0.9,1.5,1.8,1.5c0.9,0,2.6,0,3.7,0c1.4,0,2.4-0.2,2.6-1.4 c0.2-1.2-1.6-2.3-1.8-2.8c-0.5-1.1-0.3-2.4,0.1-2.5c0.7-0.2,0.9,2,1.6,2c1.4,0,0.4-1.3,1.3-1.5c0.8-0.2,2.5,1.4,3.4,0 C31.3,26.6,30.3,25.3,28.7,24.5z"
+                                              fill={
+                                                {
+                                                  "payload": 4278222848,
+                                                  "type": 0,
+                                                }
+                                              }
+                                              propList={
+                                                [
+                                                  "fill",
+                                                ]
+                                              }
+                                            />
+                                          </RNSVGGroup>
+                                          <RNSVGCircle
+                                            cx="22.4"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="12.3"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="17.4"
+                                            cy="25.1"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="4.2"
+                                          />
+                                          <RNSVGPath
+                                            d="M17.4,12.2c-2.6,0-6.2,1.6-6.2,4.1c0,2,1.3,2.7,2.9,2.7s2.1-1.8,3.4-1.8c1.3,0,1.8,1.8,3.4,1.8 c1.6,0,2.9-0.7,2.9-2.7C23.6,13.8,20,12.2,17.4,12.2z M17.4,15.9c-1.1,0-2.1-0.7-2.1-1.5c0-0.9,0.9-1.5,2.1-1.5 c1.1,0,2.1,0.7,2.1,1.5C19.4,15.2,18.5,15.9,17.4,15.9z"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                          />
+                                        </RNSVGGroup>
+                                      </RNSVGSvgView>
                                       <Text
+                                        ellipsizeMode="tail"
+                                        numberOfLines={1}
                                         style={
                                           {
-                                            "marginLeft": 8,
-                                            "marginRight": 12,
+                                            "paddingLeft": 8,
+                                            "paddingRight": 8,
                                           }
                                         }
                                       >
-                                        2024/07/09 20:53
+                                        2024/07/12 21:58
                                       </Text>
-                                      <Icon
+                                      <Entypo
                                         color="#e5007f"
                                         name="new"
                                         size={16}
-                                        type="entypo"
                                       />
                                     </View>
                                   </View>
@@ -9617,40 +10112,26 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     }
                                   }
                                 >
-                                  <View
-                                    onLayout={[Function]}
+                                  <Image
+                                    source={
+                                      {
+                                        "uri": "https://stat.ameba.jp/user_images/20240712/21/morningmusume16ki/b1/d4/j/o0876147615462369704.jpg?cpd=300",
+                                      }
+                                    }
                                     style={
                                       [
-                                        undefined,
                                         {
-                                          "flex": 1,
-                                          "height": undefined,
-                                          "width": undefined,
+                                          "height": 80,
+                                          "width": 80,
+                                        },
+                                        {
+                                          "height": 80,
+                                          "width": 80,
                                         },
                                       ]
                                     }
-                                  >
-                                    <View
-                                      style={
-                                        [
-                                          undefined,
-                                          {
-                                            "alignContent": "center",
-                                            "bottom": 0,
-                                            "justifyContent": "center",
-                                            "left": 0,
-                                            "position": "absolute",
-                                            "right": 0,
-                                            "top": 0,
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <ActivityIndicator
-                                        color="#ff0000"
-                                      />
-                                    </View>
-                                  </View>
+                                    testID="ExternalImage.Image"
+                                  />
                                 </View>
                               </View>
                             </View>
@@ -9659,6 +10140,15 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                               onLayout={[Function]}
                               style={null}
                             >
+                              <View
+                                style={
+                                  {
+                                    "borderBottomColor": "#bcbbc1",
+                                    "borderBottomWidth": 0.5,
+                                  }
+                                }
+                                testID="RNE__Divider"
+                              />
                               <View
                                 style={
                                   [
@@ -9699,30 +10189,157 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                         }
                                       }
                                     >
-                                      No.1800  祝☆1800回  山﨑愛生
+                                      non-no表紙解禁。生田衣梨奈
                                     </Text>
                                     <View
                                       style={
                                         {
+                                          "alignItems": "center",
                                           "flexDirection": "row",
                                         }
                                       }
                                     >
+                                      <RNSVGSvgView
+                                        align="xMidYMid"
+                                        bbHeight={16}
+                                        bbWidth={16}
+                                        focusable={false}
+                                        meetOrSlice={0}
+                                        minX={0}
+                                        minY={0}
+                                        style={
+                                          [
+                                            {
+                                              "backgroundColor": "transparent",
+                                              "borderWidth": 0,
+                                            },
+                                            {
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                            {
+                                              "flex": 0,
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                          ]
+                                        }
+                                        vbHeight={34.7}
+                                        vbWidth={34.7}
+                                        x="0px"
+                                        y="0px"
+                                      >
+                                        <RNSVGGroup
+                                          fill={
+                                            {
+                                              "payload": 4278190080,
+                                              "type": 0,
+                                            }
+                                          }
+                                        >
+                                          <RNSVGGroup
+                                            fill={
+                                              {
+                                                "payload": 4278190080,
+                                                "type": 0,
+                                              }
+                                            }
+                                          >
+                                            <RNSVGPath
+                                              d="M28.7,24.5c-2-1-1.9-3.5-1.7-5.9c0.3-2.4,0.3-3.7-0.3-5.8C26.1,11,25.1,10,25.1,8c0-1.5,0-3.5,0-4.7c0-1.8-0.8-2.4-1.6-2.4 c-2.3,0-3.1,4-6.2,4h0c-3.1,0-3.9-4-6.2-4c-0.7,0-1.6,0.6-1.6,2.4c0,1.3,0,3.3,0,4.7c0,2-1,3-1.6,4.8c-0.6,2.1-0.6,3.4-0.4,5.8 C7.9,21.1,8,23.5,6,24.5c-1.6,0.8-2.6,2.1-1.8,3.2c0.9,1.4,2.6-0.2,3.4,0c0.9,0.2-0.1,1.5,1.3,1.5c0.7,0,0.9-2.2,1.6-2 c0.5,0.1,0.6,1.5,0.1,2.5c-0.2,0.5-2,1.6-1.8,2.8c0.2,1.2,1.2,1.4,2.6,1.4c1,0,2.7,0,3.7,0c0.9,0,1.8-0.9,1.8-1.5 c0-0.6-0.8-1.9,0.5-1.9h0c1.3,0,0.5,1.3,0.5,1.9c0,0.6,0.9,1.5,1.8,1.5c0.9,0,2.6,0,3.7,0c1.4,0,2.4-0.2,2.6-1.4 c0.2-1.2-1.6-2.3-1.8-2.8c-0.5-1.1-0.3-2.4,0.1-2.5c0.7-0.2,0.9,2,1.6,2c1.4,0,0.4-1.3,1.3-1.5c0.8-0.2,2.5,1.4,3.4,0 C31.3,26.6,30.3,25.3,28.7,24.5z"
+                                              fill={
+                                                {
+                                                  "payload": 4278222848,
+                                                  "type": 0,
+                                                }
+                                              }
+                                              propList={
+                                                [
+                                                  "fill",
+                                                ]
+                                              }
+                                            />
+                                          </RNSVGGroup>
+                                          <RNSVGCircle
+                                            cx="22.4"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="12.3"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="17.4"
+                                            cy="25.1"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="4.2"
+                                          />
+                                          <RNSVGPath
+                                            d="M17.4,12.2c-2.6,0-6.2,1.6-6.2,4.1c0,2,1.3,2.7,2.9,2.7s2.1-1.8,3.4-1.8c1.3,0,1.8,1.8,3.4,1.8 c1.6,0,2.9-0.7,2.9-2.7C23.6,13.8,20,12.2,17.4,12.2z M17.4,15.9c-1.1,0-2.1-0.7-2.1-1.5c0-0.9,0.9-1.5,2.1-1.5 c1.1,0,2.1,0.7,2.1,1.5C19.4,15.2,18.5,15.9,17.4,15.9z"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                          />
+                                        </RNSVGGroup>
+                                      </RNSVGSvgView>
                                       <Text
+                                        ellipsizeMode="tail"
+                                        numberOfLines={1}
                                         style={
                                           {
-                                            "marginLeft": 8,
-                                            "marginRight": 12,
+                                            "paddingLeft": 8,
+                                            "paddingRight": 8,
                                           }
                                         }
                                       >
-                                        2024/07/09 18:16
+                                        2024/07/12 21:57
                                       </Text>
-                                      <Icon
+                                      <Entypo
                                         color="#e5007f"
                                         name="new"
                                         size={16}
-                                        type="entypo"
                                       />
                                     </View>
                                   </View>
@@ -9736,40 +10353,26 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     }
                                   }
                                 >
-                                  <View
-                                    onLayout={[Function]}
+                                  <Image
+                                    source={
+                                      {
+                                        "uri": "https://stat.ameba.jp/user_images/20240712/21/morningmusume-9ki/a1/69/j/o1080138315462369222.jpg?cpd=300",
+                                      }
+                                    }
                                     style={
                                       [
-                                        undefined,
                                         {
-                                          "flex": 1,
-                                          "height": undefined,
-                                          "width": undefined,
+                                          "height": 80,
+                                          "width": 80,
+                                        },
+                                        {
+                                          "height": 80,
+                                          "width": 80,
                                         },
                                       ]
                                     }
-                                  >
-                                    <View
-                                      style={
-                                        [
-                                          undefined,
-                                          {
-                                            "alignContent": "center",
-                                            "bottom": 0,
-                                            "justifyContent": "center",
-                                            "left": 0,
-                                            "position": "absolute",
-                                            "right": 0,
-                                            "top": 0,
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <ActivityIndicator
-                                        color="#ff0000"
-                                      />
-                                    </View>
-                                  </View>
+                                    testID="ExternalImage.Image"
+                                  />
                                 </View>
                               </View>
                             </View>
@@ -9778,6 +10381,15 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                               onLayout={[Function]}
                               style={null}
                             >
+                              <View
+                                style={
+                                  {
+                                    "borderBottomColor": "#bcbbc1",
+                                    "borderBottomWidth": 0.5,
+                                  }
+                                }
+                                testID="RNE__Divider"
+                              />
                               <View
                                 style={
                                   [
@@ -9818,30 +10430,157 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                         }
                                       }
                                     >
-                                      ココ2日間の話をするぞ☘️ 北原もも
+                                      睡眠ーー睡眠　Riai
                                     </Text>
                                     <View
                                       style={
                                         {
+                                          "alignItems": "center",
                                           "flexDirection": "row",
                                         }
                                       }
                                     >
+                                      <RNSVGSvgView
+                                        align="xMidYMid"
+                                        bbHeight={16}
+                                        bbWidth={16}
+                                        focusable={false}
+                                        meetOrSlice={0}
+                                        minX={0}
+                                        minY={0}
+                                        style={
+                                          [
+                                            {
+                                              "backgroundColor": "transparent",
+                                              "borderWidth": 0,
+                                            },
+                                            {
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                            {
+                                              "flex": 0,
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                          ]
+                                        }
+                                        vbHeight={34.7}
+                                        vbWidth={34.7}
+                                        x="0px"
+                                        y="0px"
+                                      >
+                                        <RNSVGGroup
+                                          fill={
+                                            {
+                                              "payload": 4278190080,
+                                              "type": 0,
+                                            }
+                                          }
+                                        >
+                                          <RNSVGGroup
+                                            fill={
+                                              {
+                                                "payload": 4278190080,
+                                                "type": 0,
+                                              }
+                                            }
+                                          >
+                                            <RNSVGPath
+                                              d="M28.7,24.5c-2-1-1.9-3.5-1.7-5.9c0.3-2.4,0.3-3.7-0.3-5.8C26.1,11,25.1,10,25.1,8c0-1.5,0-3.5,0-4.7c0-1.8-0.8-2.4-1.6-2.4 c-2.3,0-3.1,4-6.2,4h0c-3.1,0-3.9-4-6.2-4c-0.7,0-1.6,0.6-1.6,2.4c0,1.3,0,3.3,0,4.7c0,2-1,3-1.6,4.8c-0.6,2.1-0.6,3.4-0.4,5.8 C7.9,21.1,8,23.5,6,24.5c-1.6,0.8-2.6,2.1-1.8,3.2c0.9,1.4,2.6-0.2,3.4,0c0.9,0.2-0.1,1.5,1.3,1.5c0.7,0,0.9-2.2,1.6-2 c0.5,0.1,0.6,1.5,0.1,2.5c-0.2,0.5-2,1.6-1.8,2.8c0.2,1.2,1.2,1.4,2.6,1.4c1,0,2.7,0,3.7,0c0.9,0,1.8-0.9,1.8-1.5 c0-0.6-0.8-1.9,0.5-1.9h0c1.3,0,0.5,1.3,0.5,1.9c0,0.6,0.9,1.5,1.8,1.5c0.9,0,2.6,0,3.7,0c1.4,0,2.4-0.2,2.6-1.4 c0.2-1.2-1.6-2.3-1.8-2.8c-0.5-1.1-0.3-2.4,0.1-2.5c0.7-0.2,0.9,2,1.6,2c1.4,0,0.4-1.3,1.3-1.5c0.8-0.2,2.5,1.4,3.4,0 C31.3,26.6,30.3,25.3,28.7,24.5z"
+                                              fill={
+                                                {
+                                                  "payload": 4278222848,
+                                                  "type": 0,
+                                                }
+                                              }
+                                              propList={
+                                                [
+                                                  "fill",
+                                                ]
+                                              }
+                                            />
+                                          </RNSVGGroup>
+                                          <RNSVGCircle
+                                            cx="22.4"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="12.3"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="17.4"
+                                            cy="25.1"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="4.2"
+                                          />
+                                          <RNSVGPath
+                                            d="M17.4,12.2c-2.6,0-6.2,1.6-6.2,4.1c0,2,1.3,2.7,2.9,2.7s2.1-1.8,3.4-1.8c1.3,0,1.8,1.8,3.4,1.8 c1.6,0,2.9-0.7,2.9-2.7C23.6,13.8,20,12.2,17.4,12.2z M17.4,15.9c-1.1,0-2.1-0.7-2.1-1.5c0-0.9,0.9-1.5,2.1-1.5 c1.1,0,2.1,0.7,2.1,1.5C19.4,15.2,18.5,15.9,17.4,15.9z"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                          />
+                                        </RNSVGGroup>
+                                      </RNSVGSvgView>
                                       <Text
+                                        ellipsizeMode="tail"
+                                        numberOfLines={1}
                                         style={
                                           {
-                                            "marginLeft": 8,
-                                            "marginRight": 12,
+                                            "paddingLeft": 8,
+                                            "paddingRight": 8,
                                           }
                                         }
                                       >
-                                        2024/07/08 22:39
+                                        2024/07/12 21:57
                                       </Text>
-                                      <Icon
+                                      <Entypo
                                         color="#e5007f"
                                         name="new"
                                         size={16}
-                                        type="entypo"
                                       />
                                     </View>
                                   </View>
@@ -9855,40 +10594,26 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     }
                                   }
                                 >
-                                  <View
-                                    onLayout={[Function]}
+                                  <Image
+                                    source={
+                                      {
+                                        "uri": "https://stat.ameba.jp/user_images/20240712/21/juicejuice-official/51/b4/j/o1080144015462367642.jpg?cpd=300",
+                                      }
+                                    }
                                     style={
                                       [
-                                        undefined,
                                         {
-                                          "flex": 1,
-                                          "height": undefined,
-                                          "width": undefined,
+                                          "height": 80,
+                                          "width": 80,
+                                        },
+                                        {
+                                          "height": 80,
+                                          "width": 80,
                                         },
                                       ]
                                     }
-                                  >
-                                    <View
-                                      style={
-                                        [
-                                          undefined,
-                                          {
-                                            "alignContent": "center",
-                                            "bottom": 0,
-                                            "justifyContent": "center",
-                                            "left": 0,
-                                            "position": "absolute",
-                                            "right": 0,
-                                            "top": 0,
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <ActivityIndicator
-                                        color="#ff0000"
-                                      />
-                                    </View>
-                                  </View>
+                                    testID="ExternalImage.Image"
+                                  />
                                 </View>
                               </View>
                             </View>
@@ -9897,6 +10622,15 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                               onLayout={[Function]}
                               style={null}
                             >
+                              <View
+                                style={
+                                  {
+                                    "borderBottomColor": "#bcbbc1",
+                                    "borderBottomWidth": 0.5,
+                                  }
+                                }
+                                testID="RNE__Divider"
+                              />
                               <View
                                 style={
                                   [
@@ -9937,30 +10671,157 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                         }
                                       }
                                     >
-                                      お誕生日なげったーとめいと石田亜佑美
+                                      明日から〜 島倉りか
                                     </Text>
                                     <View
                                       style={
                                         {
+                                          "alignItems": "center",
                                           "flexDirection": "row",
                                         }
                                       }
                                     >
+                                      <RNSVGSvgView
+                                        align="xMidYMid"
+                                        bbHeight={16}
+                                        bbWidth={16}
+                                        focusable={false}
+                                        meetOrSlice={0}
+                                        minX={0}
+                                        minY={0}
+                                        style={
+                                          [
+                                            {
+                                              "backgroundColor": "transparent",
+                                              "borderWidth": 0,
+                                            },
+                                            {
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                            {
+                                              "flex": 0,
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                          ]
+                                        }
+                                        vbHeight={34.7}
+                                        vbWidth={34.7}
+                                        x="0px"
+                                        y="0px"
+                                      >
+                                        <RNSVGGroup
+                                          fill={
+                                            {
+                                              "payload": 4278190080,
+                                              "type": 0,
+                                            }
+                                          }
+                                        >
+                                          <RNSVGGroup
+                                            fill={
+                                              {
+                                                "payload": 4278190080,
+                                                "type": 0,
+                                              }
+                                            }
+                                          >
+                                            <RNSVGPath
+                                              d="M28.7,24.5c-2-1-1.9-3.5-1.7-5.9c0.3-2.4,0.3-3.7-0.3-5.8C26.1,11,25.1,10,25.1,8c0-1.5,0-3.5,0-4.7c0-1.8-0.8-2.4-1.6-2.4 c-2.3,0-3.1,4-6.2,4h0c-3.1,0-3.9-4-6.2-4c-0.7,0-1.6,0.6-1.6,2.4c0,1.3,0,3.3,0,4.7c0,2-1,3-1.6,4.8c-0.6,2.1-0.6,3.4-0.4,5.8 C7.9,21.1,8,23.5,6,24.5c-1.6,0.8-2.6,2.1-1.8,3.2c0.9,1.4,2.6-0.2,3.4,0c0.9,0.2-0.1,1.5,1.3,1.5c0.7,0,0.9-2.2,1.6-2 c0.5,0.1,0.6,1.5,0.1,2.5c-0.2,0.5-2,1.6-1.8,2.8c0.2,1.2,1.2,1.4,2.6,1.4c1,0,2.7,0,3.7,0c0.9,0,1.8-0.9,1.8-1.5 c0-0.6-0.8-1.9,0.5-1.9h0c1.3,0,0.5,1.3,0.5,1.9c0,0.6,0.9,1.5,1.8,1.5c0.9,0,2.6,0,3.7,0c1.4,0,2.4-0.2,2.6-1.4 c0.2-1.2-1.6-2.3-1.8-2.8c-0.5-1.1-0.3-2.4,0.1-2.5c0.7-0.2,0.9,2,1.6,2c1.4,0,0.4-1.3,1.3-1.5c0.8-0.2,2.5,1.4,3.4,0 C31.3,26.6,30.3,25.3,28.7,24.5z"
+                                              fill={
+                                                {
+                                                  "payload": 4278222848,
+                                                  "type": 0,
+                                                }
+                                              }
+                                              propList={
+                                                [
+                                                  "fill",
+                                                ]
+                                              }
+                                            />
+                                          </RNSVGGroup>
+                                          <RNSVGCircle
+                                            cx="22.4"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="12.3"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="17.4"
+                                            cy="25.1"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="4.2"
+                                          />
+                                          <RNSVGPath
+                                            d="M17.4,12.2c-2.6,0-6.2,1.6-6.2,4.1c0,2,1.3,2.7,2.9,2.7s2.1-1.8,3.4-1.8c1.3,0,1.8,1.8,3.4,1.8 c1.6,0,2.9-0.7,2.9-2.7C23.6,13.8,20,12.2,17.4,12.2z M17.4,15.9c-1.1,0-2.1-0.7-2.1-1.5c0-0.9,0.9-1.5,2.1-1.5 c1.1,0,2.1,0.7,2.1,1.5C19.4,15.2,18.5,15.9,17.4,15.9z"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                          />
+                                        </RNSVGGroup>
+                                      </RNSVGSvgView>
                                       <Text
+                                        ellipsizeMode="tail"
+                                        numberOfLines={1}
                                         style={
                                           {
-                                            "marginLeft": 8,
-                                            "marginRight": 12,
+                                            "paddingLeft": 8,
+                                            "paddingRight": 8,
                                           }
                                         }
                                       >
-                                        2024/07/08 22:15
+                                        2024/07/12 21:57
                                       </Text>
-                                      <Icon
+                                      <Entypo
                                         color="#e5007f"
                                         name="new"
                                         size={16}
-                                        type="entypo"
                                       />
                                     </View>
                                   </View>
@@ -9974,40 +10835,267 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     }
                                   }
                                 >
-                                  <View
-                                    onLayout={[Function]}
+                                  <Image
+                                    source={
+                                      {
+                                        "uri": "https://stat.ameba.jp/user_images/20240712/21/beyooooonds-chicatetsu/f8/63/j/o1080144015462368980.jpg?cpd=300",
+                                      }
+                                    }
                                     style={
                                       [
-                                        undefined,
                                         {
-                                          "flex": 1,
-                                          "height": undefined,
-                                          "width": undefined,
+                                          "height": 80,
+                                          "width": 80,
+                                        },
+                                        {
+                                          "height": 80,
+                                          "width": 80,
                                         },
                                       ]
                                     }
+                                    testID="ExternalImage.Image"
+                                  />
+                                </View>
+                              </View>
+                            </View>
+                            <View
+                              onFocusCapture={[Function]}
+                              onLayout={[Function]}
+                              style={null}
+                            >
+                              <View
+                                style={
+                                  {
+                                    "borderBottomColor": "#bcbbc1",
+                                    "borderBottomWidth": 0.5,
+                                  }
+                                }
+                                testID="RNE__Divider"
+                              />
+                              <View
+                                style={
+                                  [
+                                    {
+                                      "height": 100,
+                                      "padding": 12,
+                                    },
+                                    {
+                                      "flexDirection": "row",
+                                      "justifyContent": "space-between",
+                                    },
+                                  ]
+                                }
+                              >
+                                <View
+                                  style={
+                                    {
+                                      "flex": 1,
+                                      "flexGrow": 1,
+                                      "minWidth": 0,
+                                    }
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      {
+                                        "flexDirection": "column",
+                                        "flexGrow": 1,
+                                        "justifyContent": "center",
+                                        "marginRight": 16,
+                                      }
+                                    }
                                   >
-                                    <View
+                                    <Text
                                       style={
-                                        [
-                                          undefined,
-                                          {
-                                            "alignContent": "center",
-                                            "bottom": 0,
-                                            "justifyContent": "center",
-                                            "left": 0,
-                                            "position": "absolute",
-                                            "right": 0,
-                                            "top": 0,
-                                          },
-                                        ]
+                                        {
+                                          "flexGrow": 1,
+                                        }
                                       }
                                     >
-                                      <ActivityIndicator
-                                        color="#ff0000"
+                                      明日じゃーん？　平井美葉
+                                    </Text>
+                                    <View
+                                      style={
+                                        {
+                                          "alignItems": "center",
+                                          "flexDirection": "row",
+                                        }
+                                      }
+                                    >
+                                      <RNSVGSvgView
+                                        align="xMidYMid"
+                                        bbHeight={16}
+                                        bbWidth={16}
+                                        focusable={false}
+                                        meetOrSlice={0}
+                                        minX={0}
+                                        minY={0}
+                                        style={
+                                          [
+                                            {
+                                              "backgroundColor": "transparent",
+                                              "borderWidth": 0,
+                                            },
+                                            {
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                            {
+                                              "flex": 0,
+                                              "height": 16,
+                                              "width": 16,
+                                            },
+                                          ]
+                                        }
+                                        vbHeight={34.7}
+                                        vbWidth={34.7}
+                                        x="0px"
+                                        y="0px"
+                                      >
+                                        <RNSVGGroup
+                                          fill={
+                                            {
+                                              "payload": 4278190080,
+                                              "type": 0,
+                                            }
+                                          }
+                                        >
+                                          <RNSVGGroup
+                                            fill={
+                                              {
+                                                "payload": 4278190080,
+                                                "type": 0,
+                                              }
+                                            }
+                                          >
+                                            <RNSVGPath
+                                              d="M28.7,24.5c-2-1-1.9-3.5-1.7-5.9c0.3-2.4,0.3-3.7-0.3-5.8C26.1,11,25.1,10,25.1,8c0-1.5,0-3.5,0-4.7c0-1.8-0.8-2.4-1.6-2.4 c-2.3,0-3.1,4-6.2,4h0c-3.1,0-3.9-4-6.2-4c-0.7,0-1.6,0.6-1.6,2.4c0,1.3,0,3.3,0,4.7c0,2-1,3-1.6,4.8c-0.6,2.1-0.6,3.4-0.4,5.8 C7.9,21.1,8,23.5,6,24.5c-1.6,0.8-2.6,2.1-1.8,3.2c0.9,1.4,2.6-0.2,3.4,0c0.9,0.2-0.1,1.5,1.3,1.5c0.7,0,0.9-2.2,1.6-2 c0.5,0.1,0.6,1.5,0.1,2.5c-0.2,0.5-2,1.6-1.8,2.8c0.2,1.2,1.2,1.4,2.6,1.4c1,0,2.7,0,3.7,0c0.9,0,1.8-0.9,1.8-1.5 c0-0.6-0.8-1.9,0.5-1.9h0c1.3,0,0.5,1.3,0.5,1.9c0,0.6,0.9,1.5,1.8,1.5c0.9,0,2.6,0,3.7,0c1.4,0,2.4-0.2,2.6-1.4 c0.2-1.2-1.6-2.3-1.8-2.8c-0.5-1.1-0.3-2.4,0.1-2.5c0.7-0.2,0.9,2,1.6,2c1.4,0,0.4-1.3,1.3-1.5c0.8-0.2,2.5,1.4,3.4,0 C31.3,26.6,30.3,25.3,28.7,24.5z"
+                                              fill={
+                                                {
+                                                  "payload": 4278222848,
+                                                  "type": 0,
+                                                }
+                                              }
+                                              propList={
+                                                [
+                                                  "fill",
+                                                ]
+                                              }
+                                            />
+                                          </RNSVGGroup>
+                                          <RNSVGCircle
+                                            cx="22.4"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="12.3"
+                                            cy="11.5"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="0.9"
+                                          />
+                                          <RNSVGCircle
+                                            cx="17.4"
+                                            cy="25.1"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                            r="4.2"
+                                          />
+                                          <RNSVGPath
+                                            d="M17.4,12.2c-2.6,0-6.2,1.6-6.2,4.1c0,2,1.3,2.7,2.9,2.7s2.1-1.8,3.4-1.8c1.3,0,1.8,1.8,3.4,1.8 c1.6,0,2.9-0.7,2.9-2.7C23.6,13.8,20,12.2,17.4,12.2z M17.4,15.9c-1.1,0-2.1-0.7-2.1-1.5c0-0.9,0.9-1.5,2.1-1.5 c1.1,0,2.1,0.7,2.1,1.5C19.4,15.2,18.5,15.9,17.4,15.9z"
+                                            fill={
+                                              {
+                                                "payload": 4294967295,
+                                                "type": 0,
+                                              }
+                                            }
+                                            propList={
+                                              [
+                                                "fill",
+                                              ]
+                                            }
+                                          />
+                                        </RNSVGGroup>
+                                      </RNSVGSvgView>
+                                      <Text
+                                        ellipsizeMode="tail"
+                                        numberOfLines={1}
+                                        style={
+                                          {
+                                            "paddingLeft": 8,
+                                            "paddingRight": 8,
+                                          }
+                                        }
+                                      >
+                                        2024/07/12 21:26
+                                      </Text>
+                                      <Entypo
+                                        color="#e5007f"
+                                        name="new"
+                                        size={16}
                                       />
                                     </View>
                                   </View>
+                                </View>
+                                <View
+                                  style={
+                                    {
+                                      "alignItems": "flex-end",
+                                      "justifyContent": "center",
+                                      "minWidth": 0,
+                                    }
+                                  }
+                                >
+                                  <Image
+                                    source={
+                                      {
+                                        "uri": "https://stat.ameba.jp/user_images/20240712/21/beyooooonds/9f/6f/j/o1080144015462357721.jpg?cpd=300",
+                                      }
+                                    }
+                                    style={
+                                      [
+                                        {
+                                          "height": 80,
+                                          "width": 80,
+                                        },
+                                        {
+                                          "height": 80,
+                                          "width": 80,
+                                        },
+                                      ]
+                                    }
+                                    testID="ExternalImage.Image"
+                                  />
                                 </View>
                               </View>
                             </View>

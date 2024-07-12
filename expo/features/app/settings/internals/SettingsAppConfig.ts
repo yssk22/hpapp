@@ -1,6 +1,13 @@
 import { SettingsStore, AsyncStorage } from '@hpapp/system/kvs';
 import Constants from 'expo-constants';
 
+const config = Constants.expoConfig?.extra?.hpapp ?? {
+  graphQLEndpoint: 'http://localhost:8080/graphql/v3',
+  useLocalAuth: false,
+  firebaseIOSClientID: '',
+  firebaseAndroidClientID: ''
+};
+
 export type AppConfig = {
   readonly useStorybook: boolean;
   readonly useLocalAppConfig: boolean;
@@ -15,13 +22,11 @@ export type AppConfig = {
 export const SettingsAppConfigDefault: AppConfig = {
   useStorybook: false,
   useLocalAppConfig: false,
-  graphQLEndpoint: Constants.expoConfig?.extra!.hpapp!.graphQLEndpoint!,
-  useLocalAuth: Constants.expoConfig?.extra!.hpapp!.useLocalAuth!,
+  graphQLEndpoint: config.graphQLEndpoint!,
+  useLocalAuth: config.useLocalAuth!,
   useUPFCDemoScraper: true,
-
-  // TODO: should refer to Constants.expoConfig?.extra?.hpapp.firebase[IOS|Android]ClientID
-  firebaseIOSClientID: Constants.expoConfig?.extra?.hpapp?.auth?.google?.iosClientId,
-  firebaseAndroidClientID: Constants.expoConfig?.extra?.hpapp?.auth?.google?.androidClientId
+  firebaseIOSClientID: config.firebaseIOSClientID,
+  firebaseAndroidClientID: config.firebaseAndroidClientID
 };
 
 export default SettingsStore.register<AppConfig>('hpapp.settings.appconfig', new AsyncStorage(), {

@@ -3,8 +3,8 @@ import { View } from 'react-native';
 
 import ExternalImage from './ExternalImage';
 
-const CardMeta: Meta<typeof ExternalImage> = {
-  title: 'components/image/ExternalImage',
+const ExternalImageMeta: Meta<typeof ExternalImage> = {
+  title: 'common/image/ExternalImage',
   component: ExternalImage,
   argTypes: {
     resizeMethod: {
@@ -23,7 +23,9 @@ const CardMeta: Meta<typeof ExternalImage> = {
   args: {
     uri: 'http://cdn.helloproject.com/img/rotation/ff25b71d00ea5ff0b44e18c31c0e1e3c4a7230c9.jpg',
     resizeMethod: 'resize',
-    resizeMode: 'contain'
+    resizeMode: 'contain',
+    width: 150,
+    height: 150
   },
   decorators: [
     (Story) => (
@@ -34,21 +36,12 @@ const CardMeta: Meta<typeof ExternalImage> = {
           flex: 1
         }}
       >
-        <View
-          style={{
-            borderColor: '#ffff00',
-            borderWidth: 2,
-            width: 150,
-            height: 150
-          }}
-        >
-          <Story />
-        </View>
+        <Story />
       </View>
     )
   ]
 };
 
-export default CardMeta;
+export default ExternalImageMeta;
 
 export const Basic: StoryObj<typeof ExternalImage> = {};

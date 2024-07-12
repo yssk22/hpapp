@@ -1,6 +1,8 @@
 import * as logging from '@hpapp/system/logging';
 import { useCallback, useEffect, useState } from 'react';
 
+import useIsMounted from './useIsMounted';
+
 export type ReloadableAysncOptions = {
   logEventName?: string;
   onError?: (e: Error) => void;
@@ -24,7 +26,7 @@ export default function useReloadableAsync<T, V>(
     logEventName: ''
   }
 ): ReloadableAysncResult<T, V> {
-  let mounted = true;
+  const mounted = useIsMounted();
   const [data, setData] = useState<null | V>(null);
   const [error, setError] = useState<null | Error>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -57,9 +59,6 @@ export default function useReloadableAsync<T, V>(
   );
   useEffect(() => {
     reload(initialParams);
-    return () => {
-      mounted = false;
-    };
   }, [initialParams, setData, setIsLoading]);
   return {
     data,

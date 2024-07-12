@@ -3,6 +3,38 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 
 type StyleProps = React.ComponentProps<typeof View>['style'];
 
+export type ListItemProps = {
+  leftContent?: JSX.Element;
+  rightContent?: JSX.Element;
+  containerStyle?: StyleProps;
+  children: React.ReactNode;
+  onPress?: () => void;
+};
+
+/**
+ * ListItem is a standard 1 ~ 3 column layout of an list item to display items with a left, center, and right content.
+ */
+export default function ListItem({
+  leftContent,
+  rightContent,
+  onPress,
+  children,
+  containerStyle,
+  ...rest
+}: ListItemProps) {
+  const content = (
+    <View style={[containerStyle, styles.container]}>
+      {leftContent && <View style={styles.left}>{leftContent}</View>}
+      <View style={styles.center}>{children}</View>
+      {rightContent && <View style={styles.right}>{rightContent}</View>}
+    </View>
+  );
+  if (onPress) {
+    return <TouchableOpacity onPress={onPress}>{content}</TouchableOpacity>;
+  }
+  return content;
+}
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -24,32 +56,3 @@ const styles = StyleSheet.create({
     minWidth: 0
   }
 });
-
-export type ListItemProps = {
-  leftContent?: JSX.Element;
-  rightContent?: JSX.Element;
-  containerStyle?: StyleProps;
-  children: React.ReactNode;
-  onPress?: () => void;
-};
-
-export default function ListItem({
-  leftContent,
-  rightContent,
-  onPress,
-  children,
-  containerStyle,
-  ...rest
-}: ListItemProps) {
-  const content = (
-    <View style={[containerStyle, styles.container]}>
-      {leftContent && <View style={styles.left}>{leftContent}</View>}
-      <View style={styles.center}>{children}</View>
-      {rightContent && <View style={styles.right}>{rightContent}</View>}
-    </View>
-  );
-  if (onPress) {
-    return <TouchableOpacity onPress={onPress}>{content}</TouchableOpacity>;
-  }
-  return content;
-}

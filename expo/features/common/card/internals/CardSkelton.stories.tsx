@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import CardSkelton from './CardSkelton';
 
 const CardMeta: Meta<typeof CardSkelton> = {
-  title: 'components/card/CardSkelton',
+  title: 'common/card/CardSkelton',
   component: CardSkelton,
   argTypes: {
     colorScheme: {

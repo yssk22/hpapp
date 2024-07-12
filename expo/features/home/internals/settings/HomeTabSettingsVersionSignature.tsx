@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
 });
 
 export default function HomeTabSettingsVersionSignature() {
+  const roles = useUserRoles();
   const user = useCurrentUser();
-  const roles = useUserRoles(user);
   return (
     <View style={styles.container}>
       <Link href="https://x.com/hellofanapp">

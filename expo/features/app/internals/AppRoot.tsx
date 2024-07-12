@@ -1,5 +1,5 @@
-import Storybook from '@hpapp/.storybook';
 import { useAppConfig, useCurrentUser } from '@hpapp/features/app/settings';
+import Storybook from '@hpapp/features/app/storybook';
 import { UserRoot, UserRootProps } from '@hpapp/features/app/user';
 import { registerDevMenuItems } from 'expo-dev-menu';
 import { useEffect, useState } from 'react';

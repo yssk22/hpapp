@@ -1,4 +1,7 @@
+import { Platform } from 'react-native';
+
 import JSONStore from './JSONStore';
+import LocalStorage from './LocalStorage';
 import { KeyValueStorage } from './types';
 
 type SettingsStoreOptions<T> = {
@@ -44,7 +47,12 @@ export default class SettingsStore<T> {
 
   private constructor(storageKey: string, storage: KeyValueStorage, options?: SettingsStoreOptions<T>) {
     this.storageKey = storageKey;
-    this.storage = new JSONStore(storage);
+    if (Platform.OS === 'web') {
+      // web is storybook only so we always use localStorage
+      this.storage = new JSONStore(new LocalStorage());
+    } else {
+      this.storage = new JSONStore(storage);
+    }
     this.data = undefined;
     this.options = options;
     this.loaded = false;
