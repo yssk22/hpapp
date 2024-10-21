@@ -6,13 +6,13 @@ import Text from './Text';
 /**
  * CalendarDateIcon is an icon that displays the date of the calendar.
  */
-export default function CalendarDateIcon({ date }: { date: Date }) {
+export default function CalendarDateIcon({ date }: { date: Date | null | undefined }) {
   return (
     <View style={styles.column}>
       {!isInvalidDate(date) ? (
         <>
-          <Text style={styles.textMonth}>{date?.getMonth() + 1}月</Text>
-          <Text style={styles.textDate}>{date.getDate()}</Text>
+          <Text style={styles.textMonth}>{date!.getMonth() + 1}月</Text>
+          <Text style={styles.textDate}>{date!.getDate()}</Text>
         </>
       ) : (
         <Text style={styles.textDateUndefined}>-</Text>

@@ -8,10 +8,7 @@ type AsyncState<T> = {
   loading: boolean;
 };
 
-export default function useAsync<T, F extends (...args: any[]) => Promise<T>>(
-  fn: F,
-  ...args: Parameters<F>
-): AsyncState<T> {
+export default function useAsync<T>(fn: (...args: any[]) => Promise<T>, ...args: Parameters<typeof fn>): AsyncState<T> {
   const isMounted = useIsMounted();
   const [state, setState] = useState<AsyncState<T>>({
     loading: true

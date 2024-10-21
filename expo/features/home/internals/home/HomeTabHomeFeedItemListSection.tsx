@@ -1,9 +1,8 @@
 import { SectionListHeader, SectionListRenderer } from '@hpapp/features/common/sectionlist';
-import { FeedListItem } from '@hpapp/features/feed';
-import { HPFeedItem } from '@hpapp/features/feed/context/FeedContext';
+import { FeedListItem, HPFeedItem } from '@hpapp/features/feed';
 import { t } from '@hpapp/system/i18n';
 
-export default class HomeFeedSection implements SectionListRenderer<HPFeedItem> {
+export default class HomeTabHomeFeedItemListSection implements SectionListRenderer<HPFeedItem> {
   public readonly data: HPFeedItem[];
 
   constructor(data: HPFeedItem[]) {

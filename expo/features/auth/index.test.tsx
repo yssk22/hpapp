@@ -1,5 +1,5 @@
 import { User, SettingsAppConfigDefault } from '@hpapp/features/app/settings';
-import { renderGuestComponent, renderUserComponent } from '@hpapp/features/app/testhelper';
+import { renderGuestComponent, renderUserComponent } from '@hpapp/features/testhelper';
 import FirebaseAuth from '@react-native-firebase/auth';
 import { act, fireEvent, waitFor, waitForElementToBeRemoved } from '@testing-library/react-native';
 import { AccessTokenRequest, TokenResponse } from 'expo-auth-session';

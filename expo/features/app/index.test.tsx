@@ -1,4 +1,5 @@
 import { defineScreen } from '@hpapp/features/common/stack';
+import { renderUserComponent, renderUserScreen, waitForUserRootRerendered } from '@hpapp/features/testhelper';
 import { sleep } from '@hpapp/foundation/globals';
 import { act, fireEvent, render, waitFor, waitForElementToBeRemoved } from '@testing-library/react-native';
 import * as Updates from 'expo-updates';
@@ -8,7 +9,6 @@ import { AppRoot } from './';
 import AppConfigModal from './internals/AppConfigModal';
 import { useAppConfig } from './settings';
 import { clearSettings } from './settings/testhelper';
-import { renderUserComponent, renderUserScreen, waitForUserRootRerendered } from './testhelper';
 
 beforeEach(async () => {
   await clearSettings();

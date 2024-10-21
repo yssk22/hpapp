@@ -1,5 +1,5 @@
 import { SettingsAppConfigDefault } from '@hpapp/features/app/settings';
-import { mockUseNavigation, renderUserComponent } from '@hpapp/features/app/testhelper';
+import { mockUseNavigation, renderUserComponent } from '@hpapp/features/testhelper';
 import UPFCSettingsScreen from '@hpapp/features/upfc/UPFCSettingsScreen';
 import { act, fireEvent } from '@testing-library/react-native';
 

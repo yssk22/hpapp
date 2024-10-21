@@ -5,7 +5,9 @@ const config = Constants.expoConfig?.extra?.hpapp ?? {
   graphQLEndpoint: 'http://localhost:8080/graphql/v3',
   useLocalAuth: false,
   firebaseIOSClientID: '',
-  firebaseAndroidClientID: ''
+  firebaseAndroidClientID: '',
+  cloudStoragePublicUrl: '',
+  cloudStorageAuthUrl: ''
 };
 
 export type AppConfig = {

@@ -28,7 +28,10 @@ export const TimezoneOffset: { [key: string]: Timezone } = {
  * @param t - an object that can be converted to a Date object
  * @returns true if t is an invalid Date object
  */
-export function isInvalidDate(t: Date) {
+export function isInvalidDate(t: Date | undefined | null) {
+  if (t === undefined || t === null) {
+    return true;
+  }
   return t.toString() === 'Invalid Date';
 }
 

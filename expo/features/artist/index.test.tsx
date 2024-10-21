@@ -1,4 +1,4 @@
-import { renderUserComponent } from '@hpapp/features/app/testhelper';
+import { renderUserComponent } from '@hpapp/features/testhelper';
 
 import ArtistMemberFollowIcon from './internals/ArtistMemberFollowIcon';
 import ArtistMemberIcon from './internals/ArtistMemberIcon';

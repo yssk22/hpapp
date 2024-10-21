@@ -1,11 +1,10 @@
+import { SettingsProviderProps } from '@hpapp/features/app/settings';
+import { renderThemeProvider } from '@hpapp/features/app/theme/testhelper';
 import * as Stack from '@hpapp/features/common/stack';
 import { screen, act, waitForElementToBeRemoved } from '@testing-library/react-native';
+import { AppRoot } from 'features/app';
 import React from 'react';
 import { Text } from 'react-native';
-
-import { AppRoot } from './';
-import { SettingsProviderProps } from './settings';
-import { renderThemeProvider } from './theme/testhelper';
 
 export async function renderUserScreen(screen: Stack.Screen<Stack.ScreenParams>, props: SettingsProviderProps = {}) {
   const content = await renderThemeProvider(<AppRoot screens={[screen]} />, {

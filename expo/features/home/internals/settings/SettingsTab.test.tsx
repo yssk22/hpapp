@@ -1,6 +1,6 @@
 // import UPFCSettingsScreen from '@hpapp/features/upfc/UPFCSettingsScreen';
 
-import { renderUserComponent } from '@hpapp/features/app/testhelper';
+import { renderUserComponent } from '@hpapp/features/testhelper';
 
 import HomeTabSettings from './HomeTabSettings';
 
