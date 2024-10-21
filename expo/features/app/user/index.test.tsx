@@ -1,4 +1,4 @@
-import { renderUserComponent } from '@hpapp/features/app/testhelper';
+import { renderUserComponent } from '@hpapp/features/testhelper';
 import { Text } from 'react-native';
 
 import { useHelloProject, useMe } from './';

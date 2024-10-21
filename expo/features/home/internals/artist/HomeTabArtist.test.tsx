@@ -1,8 +1,27 @@
-import { renderUserComponent } from '@hpapp/features/app/testhelper';
+import { renderUserComponent } from '@hpapp/features/testhelper';
 
 import HomeTabArtist from './HomeTabArtist';
 
 describe('HomeTabArtist', () => {
+  beforeAll(() => {
+    jest.useFakeTimers({
+      doNotFake: [
+        'nextTick',
+        'setImmediate',
+        'clearImmediate',
+        'setInterval',
+        'clearInterval',
+        'setTimeout',
+        'clearTimeout'
+      ]
+    });
+    jest.setSystemTime(new Date(2024, 10, 18));
+  });
+
+  afterAll(() => {
+    jest.useRealTimers();
+  });
+
   test('tab', async () => {
     const content = await renderUserComponent(<HomeTabArtist />);
     const sortView = await content.findByTestId('HomeTabArtistBySortView.ScrollView');

@@ -1,7 +1,7 @@
-import { SectionListSectionHeader, Text, CalendarDateIcon } from '@hpapp/features/common';
+import { CalendarDateIcon, Text } from '@hpapp/features/common';
 import { FontSize, IconSize, Spacing } from '@hpapp/features/common/constants';
 import { ListItem } from '@hpapp/features/common/list';
-import { HomeTabSection } from '@hpapp/features/home';
+import { SectionListHeader, SectionListRenderer } from '@hpapp/features/common/sectionlist';
 import { UPFCEventApplicationTickets, UPFCEventTicket } from '@hpapp/features/upfc/scraper';
 import * as date from '@hpapp/foundation/date';
 import { t } from '@hpapp/system/i18n';
@@ -12,7 +12,7 @@ type ApplicationEventTicket = UPFCEventTicket & {
   name: string;
 };
 
-export default class HomeTabUPFCNextEventsSection implements HomeTabSection<ApplicationEventTicket> {
+export default class HomeTabHomeUPFCNextEventsSection implements SectionListRenderer<ApplicationEventTicket> {
   private primaryColor: string;
   public readonly data: ApplicationEventTicket[];
 
@@ -44,7 +44,7 @@ export default class HomeTabUPFCNextEventsSection implements HomeTabSection<Appl
 
   renderSectionHeader() {
     if (this.data.length > 0) {
-      return <SectionListSectionHeader>{t('Next Events')}</SectionListSectionHeader>;
+      return <SectionListHeader>{t('Next Events')}</SectionListHeader>;
     }
     return <></>;
   }

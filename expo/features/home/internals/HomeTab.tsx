@@ -7,9 +7,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React, { ComponentProps, Suspense } from 'react';
 import { View, StyleSheet } from 'react-native';
 
+import HomeTabProvider from './HomeTabProvider';
 import HomeTabArtist from './artist/HomeTabArtist';
-import HomeTabFeed from './feed/HomeTabFeed';
 import HomeTabGoods from './goods/HomeTabGoods';
+import HomeTabHome from './home/HomeTabHome';
 import HomeTabSettings from './settings/HomeTabSettings';
 import HomeTabUPFC from './upfc/HomeTabUPFC';
 
@@ -17,33 +18,35 @@ export default function HomeTab() {
   useNavigationOption({ headerShown: false });
   const [primary, contrast] = useThemeColor('primary');
   return (
-    <Tab.Navigator
-      screenOptions={({ route }) => {
-        return {
-          headerStyle: {
-            backgroundColor: primary
-          },
-          headerTintColor: contrast,
-          headerTitleStyle: {
-            fontWeight: 'bold'
-          }
-        };
-      }}
-    >
-      {Tabs.map((tab) => {
-        return (
-          <Tab.Screen
-            key={tab.name}
-            // eslint-disable-next-line local-rules/no-translation-entry
-            name={t(tab.name)}
-            component={tabComponent(tab.component)}
-            options={{
-              tabBarIcon: getTabBarIconFn(tab.icon)
-            }}
-          />
-        );
-      })}
-    </Tab.Navigator>
+    <HomeTabProvider>
+      <Tab.Navigator
+        screenOptions={({ route }) => {
+          return {
+            headerStyle: {
+              backgroundColor: primary
+            },
+            headerTintColor: contrast,
+            headerTitleStyle: {
+              fontWeight: 'bold'
+            }
+          };
+        }}
+      >
+        {Tabs.map((tab) => {
+          return (
+            <Tab.Screen
+              key={tab.name}
+              // eslint-disable-next-line local-rules/no-translation-entry
+              name={t(tab.name)}
+              component={tabComponent(tab.component)}
+              options={{
+                tabBarIcon: getTabBarIconFn(tab.icon)
+              }}
+            />
+          );
+        })}
+      </Tab.Navigator>
+    </HomeTabProvider>
   );
 }
 
@@ -66,7 +69,7 @@ type TabSpec = {
 const Tabs: TabSpec[] = [
   {
     name: 'Home',
-    component: HomeTabFeed,
+    component: HomeTabHome,
     icon: 'home'
   },
   {

@@ -1,14 +1,14 @@
-import { SectionListSectionHeader, CalendarDateIcon, Text } from '@hpapp/features/common';
+import { CalendarDateIcon, Text } from '@hpapp/features/common';
 import { FontSize, IconSize, Spacing } from '@hpapp/features/common/constants';
 import { ListItem } from '@hpapp/features/common/list';
-import { HomeTabSection } from '@hpapp/features/home';
+import { SectionListHeader, SectionListRenderer } from '@hpapp/features/common/sectionlist';
 import { UPFCEventApplicationTickets } from '@hpapp/features/upfc/scraper';
 import * as date from '@hpapp/foundation/date';
 import { t } from '@hpapp/system/i18n';
 import { Icon } from '@rneui/base';
 import { View, StyleSheet } from 'react-native';
 
-export default class HomeTabUPFCNextEventsSection implements HomeTabSection<UPFCEventApplicationTickets> {
+export default class HomeTabHomeUPFCPendingPaymentsSection implements SectionListRenderer<UPFCEventApplicationTickets> {
   private primaryColor: string;
   public readonly data: UPFCEventApplicationTickets[];
 
@@ -38,7 +38,7 @@ export default class HomeTabUPFCNextEventsSection implements HomeTabSection<UPFC
 
   renderSectionHeader() {
     if (this.data.length > 0) {
-      return <SectionListSectionHeader>{t('Pending Payments')}</SectionListSectionHeader>;
+      return <SectionListHeader>{t('Pending Payments')}</SectionListHeader>;
     }
     return <></>;
   }

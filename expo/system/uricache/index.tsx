@@ -20,6 +20,10 @@ export async function getOrCreateCacheURI(uri: string) {
 }
 
 export async function init() {
+  // TODO: web support
+  if (Platform.OS === 'web') {
+    return;
+  }
   const dirInfo = await FileSystem.getInfoAsync(cacheDir);
   if (!dirInfo.exists) {
     await FileSystem.makeDirectoryAsync(cacheDir, { intermediates: true });

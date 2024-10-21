@@ -4,22 +4,24 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 import type { Preview } from '@storybook/react';
 import React from 'react';
-import { View } from 'react-native';
+import { Dimensions, View } from 'react-native';
 
 function Root(Story, context) {
+  const dimensions = Dimensions.get('window');
   return (
-    <ThemeProvider>
-      <AppRelayProvider>
-        <View>
+    <View style={{ height: dimensions.height, width: dimensions.width, overflow: 'hidden' }}>
+      <ThemeProvider>
+        <AppRelayProvider>
           <Story {...context} />
-        </View>
-      </AppRelayProvider>
-    </ThemeProvider>
+        </AppRelayProvider>
+      </ThemeProvider>
+    </View>
   );
 }
 
 const preview: Preview = {
   parameters: {
+    layout: 'fullscreen',
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {

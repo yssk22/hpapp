@@ -1,4 +1,4 @@
-import { renderUserComponent } from '@hpapp/features/app/testhelper';
+import { renderUserComponent } from '@hpapp/features/testhelper';
 import {} from '@hpapp/foundation/globals';
 import { composeStories } from '@storybook/react';
 import { waitFor } from '@testing-library/react-native';

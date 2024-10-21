@@ -1,4 +1,4 @@
-import { renderUserScreen } from '@hpapp/features/app/testhelper';
+import { renderUserScreen } from '@hpapp/features/testhelper';
 import { sleep } from '@hpapp/foundation/globals';
 import { act, waitFor } from '@testing-library/react-native';
 

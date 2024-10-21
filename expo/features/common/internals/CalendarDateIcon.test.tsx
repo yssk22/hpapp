@@ -1,4 +1,4 @@
-import { renderUserComponent } from '@hpapp/features/app/testhelper';
+import { renderUserComponent } from '@hpapp/features/testhelper';
 import { composeStories } from '@storybook/react';
 
 import * as stories from './CalendarDateIcon.stories';
