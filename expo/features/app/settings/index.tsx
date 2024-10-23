@@ -101,7 +101,21 @@ export function useUserConfigUpdator() {
  */
 export function useUPFCConfig() {
   const [upfcConfig] = useSettings(SettingsUPFCConfig);
-  return upfcConfig;
+  // migrate from legacy helloproject credentials to new one to support mline
+  return useMemo(() => {
+    if (upfcConfig) {
+      return {
+        ...upfcConfig,
+        username: undefined,
+        password: undefined,
+        // eslint-disable-next-line deprecation/deprecation
+        hpUsername: upfcConfig?.username ?? upfcConfig?.hpUsername,
+        // eslint-disable-next-line deprecation/deprecation
+        hpPassword: upfcConfig?.password ?? upfcConfig?.hpPassword
+      };
+    }
+    return undefined;
+  }, [upfcConfig]);
 }
 
 /**

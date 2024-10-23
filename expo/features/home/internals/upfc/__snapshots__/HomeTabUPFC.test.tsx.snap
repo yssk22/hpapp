@@ -313,26 +313,8 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                 data={
                   [
                     {
-                      "name": "譜久村聖30thバースデーイベント",
-                      "tickets": [
-                        {
-                          "num": 1,
-                          "openAt": 2026-10-30T17:00:00.000Z,
-                          "startAt": 2026-10-30T18:00:00.000Z,
-                          "status": "申込済",
-                          "venue": "日本武道館",
-                        },
-                        {
-                          "num": 1,
-                          "openAt": 2026-10-30T20:00:00.000Z,
-                          "startAt": 2026-10-30T19:00:00.000Z,
-                          "status": "申込済",
-                          "venue": "日本武道館",
-                        },
-                      ],
-                    },
-                    {
                       "name": "横山玲奈30thバースデーイベント",
+                      "site": "helloproject",
                       "tickets": [
                         {
                           "num": 1,
@@ -352,6 +334,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                     },
                     {
                       "name": "野中美希30thバースデーイベント",
+                      "site": "helloproject",
                       "tickets": [
                         {
                           "num": 1,
@@ -371,6 +354,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                     },
                     {
                       "name": "譜久村聖20thバースデーイベント",
+                      "site": "helloproject",
                       "tickets": [
                         {
                           "num": 1,
@@ -394,6 +378,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                       "name": "山﨑愛生30thバースデーイベント",
                       "paymentDueDate": 2023-10-18T00:00:00.000Z,
                       "paymentOpenDate": 2023-10-15T00:00:00.000Z,
+                      "site": "helloproject",
                       "tickets": [
                         {
                           "num": 1,
@@ -417,6 +402,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                       "name": "山﨑夢羽30thバースデーイベント",
                       "paymentDueDate": 2023-10-16T00:00:00.000Z,
                       "paymentOpenDate": 2023-10-13T00:00:00.000Z,
+                      "site": "helloproject",
                       "tickets": [
                         {
                           "num": 1,
@@ -440,6 +426,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                       "name": "小田さくら30thバースデーイベント",
                       "paymentDueDate": 2023-10-24T00:00:00.000Z,
                       "paymentOpenDate": 2023-10-20T00:00:00.000Z,
+                      "site": "helloproject",
                       "tickets": [
                         {
                           "num": 1,
@@ -463,6 +450,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                       "name": "今週のイベントサンプル",
                       "paymentDueDate": 2023-10-19T00:00:00.000Z,
                       "paymentOpenDate": 2023-10-20T00:00:00.000Z,
+                      "site": "helloproject",
                       "tickets": [
                         {
                           "num": 1,
@@ -486,6 +474,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                       "name": "モーニング娘。'21 10期メンバー 石田亜佑美＆佐藤優樹FCイベント～ひよこが10年経ったら、さぁ何になる？～『まーバースデーやってないよ。せめて衣装だけ着させて！』『いや、タイトル長いよ！』 ",
                       "paymentDueDate": 2023-10-25T00:00:00.000Z,
                       "paymentOpenDate": 2023-10-17T00:00:00.000Z,
+                      "site": "helloproject",
                       "tickets": [
                         {
                           "num": 1,
@@ -502,18 +491,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                           "venue": "日本武道館",
                         },
                       ],
-                    },
-                    {
-                      "applicationDueDate": 2023-10-11T00:00:00.000Z,
-                      "applicationStartDate": 2023-10-04T00:00:00.000Z,
-                      "name": "入江里咲30thバースデーイベント",
-                      "paymentDueDate": 2023-10-16T00:00:00.000Z,
-                      "paymentOpenDate": 2023-10-13T00:00:00.000Z,
-                      "tickets": [],
-                    },
-                    {
-                      "name": "譜久村聖40thバースデーイベント",
-                      "tickets": [],
                     },
                   ]
                 }
@@ -539,463 +516,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                 windowSize={11}
               >
                 <View>
-                  <View
-                    onFocusCapture={[Function]}
-                    onLayout={[Function]}
-                    style={null}
-                  >
-                    <View
-                      style={
-                        [
-                          {
-                            "borderRadius": 3,
-                            "borderWidth": 1,
-                            "margin": 12,
-                          },
-                          {
-                            "borderColor": "#0075c2",
-                          },
-                          {
-                            "margin": 8,
-                          },
-                        ]
-                      }
-                    >
-                      <View
-                        style={
-                          [
-                            {
-                              "padding": 12,
-                            },
-                            {
-                              "backgroundColor": "#0075c2",
-                            },
-                            undefined,
-                          ]
-                        }
-                      >
-                        <Text
-                          numberOfLines={1}
-                          style={
-                            [
-                              {
-                                "color": "black",
-                              },
-                              {
-                                "fontSize": 14,
-                              },
-                              [
-                                {
-                                  "color": "white",
-                                },
-                                {
-                                  "fontSize": 14,
-                                  "fontWeight": "bold",
-                                },
-                              ],
-                            ]
-                          }
-                        >
-                          譜久村聖30thバースデーイベント
-                        </Text>
-                      </View>
-                      <View>
-                        <View
-                          style={
-                            [
-                              {
-                                "padding": 12,
-                              },
-                              undefined,
-                            ]
-                          }
-                        >
-                          <View
-                            style={
-                              [
-                                {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                },
-                              ]
-                            }
-                          >
-                            <View
-                              style={
-                                {
-                                  "alignItems": "flex-start",
-                                  "justifyContent": "center",
-                                  "minWidth": 0,
-                                }
-                              }
-                            >
-                              <View
-                                style={
-                                  {
-                                    "alignItems": "center",
-                                    "borderColor": "#cacaca",
-                                    "borderRadius": 8,
-                                    "borderWidth": 2,
-                                    "flexDirection": "column",
-                                    "height": 40,
-                                    "justifyContent": "center",
-                                    "width": 40,
-                                  }
-                                }
-                              >
-                                <Text
-                                  style={
-                                    [
-                                      {
-                                        "color": "black",
-                                      },
-                                      {
-                                        "fontSize": 14,
-                                      },
-                                      {
-                                        "fontSize": 9,
-                                        "fontWeight": "bold",
-                                        "marginTop": 2,
-                                        "textAlign": "center",
-                                        "width": "100%",
-                                      },
-                                    ]
-                                  }
-                                >
-                                  10
-                                  月
-                                </Text>
-                                <Text
-                                  style={
-                                    [
-                                      {
-                                        "color": "black",
-                                      },
-                                      {
-                                        "fontSize": 14,
-                                      },
-                                      {
-                                        "fontSize": 20,
-                                        "fontWeight": "bold",
-                                        "marginTop": -4,
-                                        "textAlign": "center",
-                                        "width": "100%",
-                                      },
-                                    ]
-                                  }
-                                >
-                                  30
-                                </Text>
-                              </View>
-                            </View>
-                            <View
-                              style={
-                                {
-                                  "flex": 1,
-                                  "flexGrow": 1,
-                                  "minWidth": 0,
-                                }
-                              }
-                            >
-                              <View
-                                style={
-                                  {
-                                    "flexGrow": 1,
-                                    "justifyContent": "space-around",
-                                    "paddingLeft": 12,
-                                    "paddingRight": 12,
-                                  }
-                                }
-                              >
-                                <Text
-                                  numberOfLines={1}
-                                  style={
-                                    [
-                                      {
-                                        "color": "black",
-                                      },
-                                      {
-                                        "fontSize": 14,
-                                      },
-                                      {
-                                        "fontSize": 12,
-                                      },
-                                    ]
-                                  }
-                                >
-                                  日本武道館
-                                </Text>
-                                <Text
-                                  style={
-                                    [
-                                      {
-                                        "color": "black",
-                                      },
-                                      {
-                                        "fontSize": 14,
-                                      },
-                                      {
-                                        "fontSize": 12,
-                                      },
-                                    ]
-                                  }
-                                >
-                                  開場: 02:00 開演:03:00
-                                </Text>
-                              </View>
-                            </View>
-                            <View
-                              style={
-                                {
-                                  "alignItems": "flex-end",
-                                  "justifyContent": "center",
-                                  "minWidth": 0,
-                                }
-                              }
-                            >
-                              <View
-                                style={
-                                  [
-                                    {
-                                      "alignItems": "center",
-                                      "paddingBottom": 4,
-                                      "paddingLeft": 8,
-                                      "paddingRight": 8,
-                                      "paddingTop": 4,
-                                      "width": 50,
-                                    },
-                                    {
-                                      "backgroundColor": "#52c41a",
-                                    },
-                                  ]
-                                }
-                              >
-                                <Text
-                                  style={
-                                    [
-                                      {
-                                        "color": "black",
-                                      },
-                                      {
-                                        "fontSize": 14,
-                                      },
-                                      [
-                                        {
-                                          "fontSize": 10,
-                                        },
-                                        {
-                                          "color": "#ffffff",
-                                        },
-                                      ],
-                                    ]
-                                  }
-                                >
-                                  申込済
-                                </Text>
-                              </View>
-                            </View>
-                          </View>
-                          <View
-                            style={
-                              [
-                                {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                },
-                              ]
-                            }
-                          >
-                            <View
-                              style={
-                                {
-                                  "alignItems": "flex-start",
-                                  "justifyContent": "center",
-                                  "minWidth": 0,
-                                }
-                              }
-                            >
-                              <View
-                                style={
-                                  {
-                                    "alignItems": "center",
-                                    "borderColor": "#cacaca",
-                                    "borderRadius": 8,
-                                    "borderWidth": 2,
-                                    "flexDirection": "column",
-                                    "height": 40,
-                                    "justifyContent": "center",
-                                    "width": 40,
-                                  }
-                                }
-                              >
-                                <Text
-                                  style={
-                                    [
-                                      {
-                                        "color": "black",
-                                      },
-                                      {
-                                        "fontSize": 14,
-                                      },
-                                      {
-                                        "fontSize": 9,
-                                        "fontWeight": "bold",
-                                        "marginTop": 2,
-                                        "textAlign": "center",
-                                        "width": "100%",
-                                      },
-                                    ]
-                                  }
-                                >
-                                  10
-                                  月
-                                </Text>
-                                <Text
-                                  style={
-                                    [
-                                      {
-                                        "color": "black",
-                                      },
-                                      {
-                                        "fontSize": 14,
-                                      },
-                                      {
-                                        "fontSize": 20,
-                                        "fontWeight": "bold",
-                                        "marginTop": -4,
-                                        "textAlign": "center",
-                                        "width": "100%",
-                                      },
-                                    ]
-                                  }
-                                >
-                                  30
-                                </Text>
-                              </View>
-                            </View>
-                            <View
-                              style={
-                                {
-                                  "flex": 1,
-                                  "flexGrow": 1,
-                                  "minWidth": 0,
-                                }
-                              }
-                            >
-                              <View
-                                style={
-                                  {
-                                    "flexGrow": 1,
-                                    "justifyContent": "space-around",
-                                    "paddingLeft": 12,
-                                    "paddingRight": 12,
-                                  }
-                                }
-                              >
-                                <Text
-                                  numberOfLines={1}
-                                  style={
-                                    [
-                                      {
-                                        "color": "black",
-                                      },
-                                      {
-                                        "fontSize": 14,
-                                      },
-                                      {
-                                        "fontSize": 12,
-                                      },
-                                    ]
-                                  }
-                                >
-                                  日本武道館
-                                </Text>
-                                <Text
-                                  style={
-                                    [
-                                      {
-                                        "color": "black",
-                                      },
-                                      {
-                                        "fontSize": 14,
-                                      },
-                                      {
-                                        "fontSize": 12,
-                                      },
-                                    ]
-                                  }
-                                >
-                                  開場: 05:00 開演:04:00
-                                </Text>
-                              </View>
-                            </View>
-                            <View
-                              style={
-                                {
-                                  "alignItems": "flex-end",
-                                  "justifyContent": "center",
-                                  "minWidth": 0,
-                                }
-                              }
-                            >
-                              <View
-                                style={
-                                  [
-                                    {
-                                      "alignItems": "center",
-                                      "paddingBottom": 4,
-                                      "paddingLeft": 8,
-                                      "paddingRight": 8,
-                                      "paddingTop": 4,
-                                      "width": 50,
-                                    },
-                                    {
-                                      "backgroundColor": "#52c41a",
-                                    },
-                                  ]
-                                }
-                              >
-                                <Text
-                                  style={
-                                    [
-                                      {
-                                        "color": "black",
-                                      },
-                                      {
-                                        "fontSize": 14,
-                                      },
-                                      [
-                                        {
-                                          "fontSize": 10,
-                                        },
-                                        {
-                                          "color": "#ffffff",
-                                        },
-                                      ],
-                                    ]
-                                  }
-                                >
-                                  申込済
-                                </Text>
-                              </View>
-                            </View>
-                          </View>
-                        </View>
-                      </View>
-                    </View>
-                  </View>
                   <View
                     onFocusCapture={[Function]}
                     onLayout={[Function]}
@@ -5172,18 +4692,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                       </View>
                     </View>
                   </View>
-                  <View
-                    onFocusCapture={[Function]}
-                    onLayout={[Function]}
-                    style={null}
-                  />
-                  <View
-                    style={
-                      {
-                        "height": 0,
-                      }
-                    }
-                  />
                 </View>
               </RCTScrollView>
             </View>

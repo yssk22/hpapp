@@ -43,8 +43,8 @@ describe('HomeTabUPFC', () => {
         useUPFCDemoScraper: true
       },
       upfcConfig: {
-        username: '00000000',
-        password: 'password'
+        hpUsername: '00000000',
+        hpPassword: 'password'
       }
     });
     const loading = await rendered.findByTestId('HomeTabUPFCCurrentApplicationList.Skelton');

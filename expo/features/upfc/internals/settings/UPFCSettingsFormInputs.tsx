@@ -10,10 +10,17 @@ import { View, StyleSheet } from 'react-native';
 export type UPFCSettingsFormInputsProps = {
   isSaving: boolean;
   lastError: unknown | null;
-  username: string;
-  onChangeUsername: (s: string) => void;
-  password: string;
-  onChangePassword: (s: string) => void;
+
+  hpUsername: string;
+  onChangeHPUsername: (s: string) => void;
+  hpPassword: string;
+  onChangeHPPassword: (s: string) => void;
+
+  mlUsername: string;
+  onChangeMLUsername: (s: string) => void;
+  mlPassword: string;
+  onChangeMLPassword: (s: string) => void;
+
   calendarId: string;
   onChangeCalendarId: (s: string) => void;
   eventPrefix: string;
@@ -23,10 +30,14 @@ export type UPFCSettingsFormInputsProps = {
 export default function UPFCSettingsFormInputs({
   isSaving,
   lastError,
-  username,
-  onChangeUsername,
-  password,
-  onChangePassword,
+  hpUsername,
+  onChangeHPUsername,
+  hpPassword,
+  onChangeHPPassword,
+  mlUsername,
+  onChangeMLUsername,
+  mlPassword,
+  onChangeMLPassword,
   calendarId,
   onChangeCalendarId,
   eventPrefix,
@@ -36,19 +47,19 @@ export default function UPFCSettingsFormInputs({
   return (
     <>
       <View style={styles.inputGroup}>
-        <Text style={styles.label}>{t('FC Member Number')}</Text>
+        <Text style={styles.label}>{t('FC Member Number (Hello ! Project)')}</Text>
         <Input
           disabled={isSaving}
           keyboardType="numeric"
           containerStyle={styles.input}
           errorStyle={styles.inputError}
-          placeholder={t('FC Member Number')}
-          value={username}
-          onChangeText={onChangeUsername}
+          placeholder={t('FC Member Number (Hello ! Project)')}
+          value={hpUsername}
+          onChangeText={onChangeHPUsername}
         />
       </View>
       <View style={styles.inputGroup}>
-        <Text style={styles.label}>{t('FC Password')}</Text>
+        <Text style={styles.label}>{t('FC Password (Hello ! Project)')}</Text>
         <Input
           disabled={isSaving}
           keyboardType="ascii-capable"
@@ -56,11 +67,38 @@ export default function UPFCSettingsFormInputs({
           secureTextEntry
           containerStyle={styles.input}
           errorStyle={styles.inputError}
-          placeholder={t('FC Password')}
-          value={password}
-          onChangeText={onChangePassword}
+          placeholder={t('FC Member Number (Hello ! Project)')}
+          value={hpPassword}
+          onChangeText={onChangeHPPassword}
         />
       </View>
+      <View style={styles.inputGroup}>
+        <Text style={styles.label}>{t('FC Member Number (M-line)')}</Text>
+        <Input
+          disabled={isSaving}
+          keyboardType="numeric"
+          containerStyle={styles.input}
+          errorStyle={styles.inputError}
+          placeholder={t('FC Member Number (M-line)')}
+          value={mlUsername}
+          onChangeText={onChangeMLUsername}
+        />
+      </View>
+      <View style={styles.inputGroup}>
+        <Text style={styles.label}>{t('FC Password (M-line)')}</Text>
+        <Input
+          disabled={isSaving}
+          keyboardType="ascii-capable"
+          textContentType="password"
+          secureTextEntry
+          containerStyle={styles.input}
+          errorStyle={styles.inputError}
+          placeholder={t('FC Password (M-line)')}
+          value={mlPassword}
+          onChangeText={onChangeMLPassword}
+        />
+      </View>
+
       <View style={styles.inputGroup}>
         <Text style={styles.label}>{t('Sync Events to Calendar')}</Text>
         <CalendarDropdown

@@ -55,7 +55,7 @@ type FeedContextModel = {
   loadNext: () => void;
 };
 
-function createFeedContext(): [(props: FeedContextProviderProps) => JSX.Element, () => FeedContextModel] {
+function createFeedContext(): [(props: FeedContextProviderProps) => React.JSX.Element, () => FeedContextModel] {
   const feedContext = createContext<FeedContextModel>({
     data: null,
     isLoading: false,

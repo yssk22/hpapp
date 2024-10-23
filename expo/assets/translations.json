@@ -87,11 +87,17 @@
   "FC Data Policy": {
     "ja": "ファンクラブデータ設定"
   },
-  "FC Member Number": {
-    "ja": "FC会員番号"
+  "FC Member Number (Hello ! Project)": {
+    "ja": "FC会員番号 (ハロー！プロジェクト)"
   },
-  "FC Password": {
-    "ja": "FCパスワード"
+  "FC Password (Hello ! Project)": {
+    "ja": "FCパスワード (ハロー！プロジェクト)"
+  },
+  "FC Member Number (M-line)": {
+    "ja": "FC会員番号 (エムライン)"
+  },
+  "FC Password (M-line)": {
+    "ja": "FCパスワード (エムライン)"
   },
   "Sync Events to Calendar": {
     "ja": "カレンダーにイベントを同期する"

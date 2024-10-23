@@ -30,6 +30,11 @@ export type UPFCEventTicket = {
 export type UPFCTicketApplicationStatus = '申込済' | '入金待' | '入金済' | '落選' | '入金忘' | '不明';
 
 /**
+ * a enum to represent a site of up-fc.jp
+ */
+export type UPFCSite = 'helloproject' | 'm-line';
+
+/**
  * application info for an event
  */
 export type UPFCEventApplication = {
@@ -38,6 +43,12 @@ export type UPFCEventApplication = {
    * '入江里咲バースデーイベント2024' and '【2次受付】入江里咲バースデーイベント2024'
    */
   name: string;
+
+  /**
+   * a fc site that host an event
+   */
+  site: UPFCSite;
+
   /**
    * an id for the application used in up-fc.jp (`EventSet_ID` parameter).
    */
@@ -71,22 +82,16 @@ export type UPFCEventApplicationTickets = {
  * An interface to scrape up-fc.jp.
  */
 export interface UPFCScraper {
-  authenticate(username: string, password: string): Promise<boolean>;
-  getEventApplications(): Promise<UPFCEventApplicationTickets[]>;
+  authenticate(username: string, password: string, site: UPFCSite): Promise<boolean>;
+  getEventApplications(site: UPFCSite): Promise<UPFCEventApplicationTickets[]>;
 }
 
 /**
  * An interface to interact with up-fc.jp.
  */
 export interface UPFCFetcher {
-  postCredential(username: string, password: string): Promise<string>;
-  fetchEventApplicationsHtml(): Promise<string>;
-  fetchExecEventApplicationsHtml(): Promise<string>;
-  fetchTicketsHtml(): Promise<string>;
+  postCredential(username: string, password: string, site: UPFCSite): Promise<string>;
+  fetchEventApplicationsHtml(site: UPFCSite): Promise<string>;
+  fetchExecEventApplicationsHtml(site: UPFCSite): Promise<string>;
+  fetchTicketsHtml(site: UPFCSite): Promise<string>;
 }
-
-export type UPFCScraperParams = {
-  username: string;
-  password: string;
-  useDemo: boolean;
-};

@@ -112,6 +112,7 @@
     "eas-cli": "5.4.0",
     "eslint": "^8.52.0",
     "eslint-config-universe": "^12.0.0",
+    "eslint-plugin-deprecation": "^3.0.0",
     "eslint-plugin-local-rules": "^3.0.2",
     "expo-env-info": "^1.2.0",
     "graphql": "^16.6.0",
