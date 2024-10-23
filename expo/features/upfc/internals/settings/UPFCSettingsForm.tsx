@@ -23,13 +23,18 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
   const upfcConfig = useUPFCConfig();
   const updateConfig = useUPFCConfigUpdator();
 
-  const [username, setUsername] = useState(upfcConfig?.username ?? '');
-  const [password, setPassword] = useState(upfcConfig?.password ?? '');
+  const [hpUsername, setHPUsername] = useState(upfcConfig?.hpUsername ?? '');
+  const [hpPassword, setHPPassword] = useState(upfcConfig?.hpPassword ?? '');
+  const [mlUsername, setMLUsername] = useState(upfcConfig?.mlUsername ?? '');
+  const [mlPassword, setMLPassword] = useState(upfcConfig?.mlPassword ?? '');
+
   const [calendarId, setCalendarId] = useState(upfcConfig?.calendarId ?? '');
   const [eventPrefix, setEventPrefix] = useState(upfcConfig?.eventPrefix ?? '');
   const handleOnClear = useCallback(async () => {
-    setUsername('');
-    setPassword('');
+    setHPUsername('');
+    setHPPassword('');
+    setMLUsername('');
+    setMLPassword('');
     setCalendarId('');
     setEventPrefix('');
     updateConfig(null);
@@ -37,7 +42,7 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
     // clear the cache
     // await upfc.clearCache();
     // await upfc.reload();
-  }, [updateConfig, setUsername, setPassword, setCalendarId, setEventPrefix]);
+  }, [updateConfig, setHPUsername, setHPPassword, setMLUsername, setMLPassword, setCalendarId, setEventPrefix]);
   const handleOnSave = useCallback(() => {
     setLastError(null);
     setIsSaving(true);
@@ -46,9 +51,17 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
         const scraper = appConfig.useUPFCDemoScraper
           ? new UPFCDemoScraper()
           : new UPFCSiteScraper(new UPFCHttpFetcher());
-        const ok = await scraper.authenticate(username, password);
-        if (!ok) {
-          throw new ErrUPFCAuthentication();
+        if (hpUsername !== '') {
+          const ok = await scraper.authenticate(hpUsername, hpPassword, 'helloproject');
+          if (!ok) {
+            throw new ErrUPFCAuthentication();
+          }
+        }
+        if (mlUsername !== '') {
+          const ok = await scraper.authenticate(mlUsername, mlPassword, 'm-line');
+          if (!ok) {
+            throw new ErrUPFCAuthentication();
+          }
         }
         Toast.show(t('Saved Successfully!'), {
           position: Toast.positions.BOTTOM,
@@ -57,8 +70,10 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
           backgroundColor: successColor
         });
         updateConfig({
-          username,
-          password,
+          hpUsername,
+          hpPassword,
+          mlUsername,
+          mlPassword,
           calendarId,
           eventPrefix
         });
@@ -71,16 +86,20 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
       }
       onSave && onSave();
     })();
-  }, [updateConfig, username, password, calendarId, eventPrefix]);
+  }, [updateConfig, hpUsername, hpPassword, mlUsername, mlPassword, calendarId, eventPrefix]);
   return (
     <View style={styles.container}>
       <UPFCSettingsFormInputs
         isSaving={isSaving}
         lastError={lastError}
-        username={username}
-        onChangeUsername={setUsername}
-        password={password}
-        onChangePassword={setPassword}
+        hpUsername={hpUsername}
+        onChangeHPUsername={setHPUsername}
+        hpPassword={hpPassword}
+        onChangeHPPassword={setHPPassword}
+        mlUsername={mlUsername}
+        onChangeMLUsername={setMLUsername}
+        mlPassword={mlPassword}
+        onChangeMLPassword={setMLPassword}
         calendarId={calendarId}
         onChangeCalendarId={setCalendarId}
         eventPrefix={eventPrefix}

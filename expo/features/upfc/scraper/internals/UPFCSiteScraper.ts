@@ -6,7 +6,8 @@ import {
   UPFCEventApplication,
   UPFCEventApplicationTickets,
   UPFCFetcher,
-  UPFCTicketApplicationStatus
+  UPFCTicketApplicationStatus,
+  UPFCSite
 } from './types';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -28,8 +29,8 @@ export default class UPFCSiteScraper implements UPFCScraper {
    * @param password password
    * @returns
    */
-  async authenticate(username: string, password: string): Promise<boolean> {
-    const html = await this.fetcher.postCredential(username, password);
+  async authenticate(username: string, password: string, site: UPFCSite): Promise<boolean> {
+    const html = await this.fetcher.postCredential(username, password, site);
     if (!this.parseRedirectPageHTML(html)) {
       throw new ErrUPFCAuthentication();
     }
@@ -39,12 +40,12 @@ export default class UPFCSiteScraper implements UPFCScraper {
   /**
    * @returns a list of event applications
    */
-  async getEventApplications(): Promise<UPFCEventApplicationTickets[]> {
-    const events = this.fetcher.fetchEventApplicationsHtml();
-    const exeEvents = this.fetcher.fetchExecEventApplicationsHtml();
-    const tickets = this.fetcher.fetchTicketsHtml();
+  async getEventApplications(site: UPFCSite): Promise<UPFCEventApplicationTickets[]> {
+    const events = this.fetcher.fetchEventApplicationsHtml(site);
+    const exeEvents = this.fetcher.fetchExecEventApplicationsHtml(site);
+    const tickets = this.fetcher.fetchTicketsHtml(site);
     const [eventsHtml, execEventHtml, ticketsHtml] = await Promise.all([events, exeEvents, tickets]);
-    return this.parseEventApplications(eventsHtml, execEventHtml, ticketsHtml);
+    return this.parseEventApplications(eventsHtml, execEventHtml, ticketsHtml, site);
   }
 
   parseRedirectPageHTML(text: string) {
@@ -55,7 +56,7 @@ export default class UPFCSiteScraper implements UPFCScraper {
       if (equiv && equiv.toLowerCase() === 'refresh') {
         const content = meta[i].getAttribute('content') as string | null;
         // eslint-disable-next-line quotes
-        if (content && content.toLowerCase() === "0;url='index.php'") {
+        if (content && content.toLowerCase().indexOf('index.php') >= 0) {
           return true;
         }
       }
@@ -66,11 +67,12 @@ export default class UPFCSiteScraper implements UPFCScraper {
   parseEventApplications(
     eventsHtml: string,
     execEventHtml: string,
-    ticketsHtml: string
+    ticketsHtml: string,
+    site: UPFCSite
   ): UPFCEventApplicationTickets[] {
-    const eventApplications = this.parseEventApplicationsHtml(eventsHtml);
-    const execEventApplications = this.parseEventApplicationsHtml(execEventHtml);
-    const ticketApplications = this.parseTicketsHtml(ticketsHtml);
+    const eventApplications = this.parseEventApplicationsHtml(eventsHtml, site);
+    const execEventApplications = this.parseEventApplicationsHtml(execEventHtml, site);
+    const ticketApplications = this.parseTicketsHtml(ticketsHtml, site);
     const result: UPFCEventApplicationTickets[] = [];
     const eventMap: Map<string, UPFCEventApplicationTickets> = new Map();
     const allApplications = eventApplications.concat(execEventApplications);
@@ -98,7 +100,7 @@ export default class UPFCSiteScraper implements UPFCScraper {
     return result;
   }
 
-  parseEventApplicationsHtml(text: string): UPFCEventApplication[] {
+  parseEventApplicationsHtml(text: string, site: UPFCSite): UPFCEventApplication[] {
     const doc = jsdom(text);
     const links = doc.querySelectorAll('div.contents-body a');
     if (links === null) {
@@ -106,7 +108,7 @@ export default class UPFCSiteScraper implements UPFCScraper {
     }
     const applications: UPFCEventApplication[] = [];
     for (let i = 0; i < links.length; i++) {
-      const availalble = this.parseEventApplicationLink(links[i]);
+      const availalble = this.parseEventApplicationLink(links[i], site);
       if (availalble) {
         applications.push(availalble);
       }
@@ -114,7 +116,7 @@ export default class UPFCSiteScraper implements UPFCScraper {
     return applications;
   }
 
-  parseTicketsHtml(text: string): UPFCEventApplicationTickets[] {
+  parseTicketsHtml(text: string, site: UPFCSite): UPFCEventApplicationTickets[] {
     const doc = jsdom(text);
     const today = date.getToday();
     const content = doc.querySelector('div.mypage_contents');
@@ -129,6 +131,7 @@ export default class UPFCSiteScraper implements UPFCScraper {
       const node = eventNameDOMs.item(i);
       const application: UPFCEventApplicationTickets = {
         name: this.parseEventApplicationName(node.innerHTML.trim()),
+        site,
         tickets: []
       };
       const rows = eventAttrDOMs.item(i).querySelectorAll('table tr');
@@ -179,7 +182,7 @@ export default class UPFCSiteScraper implements UPFCScraper {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  parseEventApplicationLink(link: any): UPFCEventApplication | null {
+  parseEventApplicationLink(link: any, site: UPFCSite): UPFCEventApplication | null {
     const href = link.getAttribute('href');
     const titleSpan = link.querySelector('span');
     if (!href || !titleSpan) {
@@ -219,6 +222,7 @@ export default class UPFCSiteScraper implements UPFCScraper {
     }
     return {
       name,
+      site,
       applicationID,
       ...dates
     };
@@ -229,8 +233,9 @@ export default class UPFCSiteScraper implements UPFCScraper {
   }
 
   private parseNumTickets(valueStr: string): number {
-    if (valueStr.match(/(\d+)\s*枚/)) {
-      return parseInt(RegExp.$1, 10);
+    const m = valueStr.match(/(\d+)\s*枚/);
+    if (m !== null) {
+      return parseInt(m[1], 10);
     }
     return 0;
   }
@@ -276,19 +281,19 @@ export default class UPFCSiteScraper implements UPFCScraper {
 
   private parseEventDate(dateStr: string, timeStr: string) {
     dateStr = dateStr.trim();
-    if (dateStr.match(/(\d{4}\/\d{2}\s*\/\d{2})/)) {
-      dateStr = RegExp.$1.toString().replace(' ', '').replace(/\//g, '-');
-      const m = timeStr.match(/(\d{2}:\d{2})/g);
-      if (m !== null) {
-        timeStr = RegExp.$1;
-        if (m.length > 1) {
+    const dateMatch = dateStr.match(/(\d{4}\/\d{2}\s*\/\d{2})/);
+    if (dateMatch !== null) {
+      dateStr = dateMatch[1].toString().replace(' ', '').replace(/\//g, '-');
+      const timeMatch = timeStr.match(/(\d{2}:\d{2})/g);
+      if (timeMatch !== null) {
+        if (timeMatch.length > 1) {
           return {
-            openAt: new Date(dateStr + 'T' + m[0] + ':00+09:00'),
-            startAt: new Date(dateStr + 'T' + m[1] + ':00+09:00')
+            openAt: new Date(dateStr + 'T' + timeMatch[0] + ':00+09:00'),
+            startAt: new Date(dateStr + 'T' + timeMatch[1] + ':00+09:00')
           };
         }
         return {
-          startAt: new Date(dateStr + 'T' + m[0] + ':00+09:00')
+          startAt: new Date(dateStr + 'T' + timeMatch[0] + ':00+09:00')
         };
       }
     }

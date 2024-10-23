@@ -26,7 +26,8 @@ describe('settings', () => {
 
     expect(content.getByTestId('settings.test.appConfig').props.children).toBe('http://localhost:8080/graphql/v3');
     expect(content.getByTestId('settings.test.userConfig').props.children).toBe('hpofficial');
-    expect(content.getByTestId('settings.test.upfcConfig').props.children).toBe('empty');
+    expect(content.getByTestId('settings.test.upfcConfig.hpUsername').props.children).toBe('empty');
+    expect(content.getByTestId('settings.test.upfcConfig.mlUsername').props.children).toBe('empty');
     expect(content.getByTestId('settings.test.currentUser').props.children).toBe('empty');
 
     await act(async () => fireEvent(content.getByTestId('settings.test.appConfigUpdate'), 'press'));
@@ -36,7 +37,8 @@ describe('settings', () => {
 
     expect(content.getByTestId('settings.test.appConfig').props.children).toBe('http://example.com');
     expect(content.getByTestId('settings.test.userConfig').props.children).toBe('hotpink');
-    expect(content.getByTestId('settings.test.upfcConfig').props.children).toBe('risa');
+    expect(content.getByTestId('settings.test.upfcConfig.hpUsername').props.children).toBe('risa');
+    expect(content.getByTestId('settings.test.upfcConfig.mlUsername').props.children).toBe('mizuki');
     expect(content.getByTestId('settings.test.currentUser').props.children).toBe('risa');
   });
 
@@ -52,8 +54,8 @@ describe('settings', () => {
           themeColorKeyPrimary: 'hotpink'
         }}
         upfcConfig={{
-          username: 'risa',
-          password: 'upfc-password'
+          hpUsername: 'risa',
+          hpPassword: 'upfc-password'
         }}
         currentUser={{
           id: '1234',
@@ -68,7 +70,8 @@ describe('settings', () => {
 
     expect(content.getByTestId('settings.test.appConfig').props.children).toBe('http://example.com');
     expect(content.getByTestId('settings.test.userConfig').props.children).toBe('hotpink');
-    expect(content.getByTestId('settings.test.upfcConfig').props.children).toBe('risa');
+    expect(content.getByTestId('settings.test.upfcConfig.hpUsername').props.children).toBe('risa');
+    expect(content.getByTestId('settings.test.upfcConfig.mlUsername').props.children).toBe('empty');
     expect(content.getByTestId('settings.test.currentUser').props.children).toBe('risa');
   });
 
@@ -105,14 +108,17 @@ describe('settings', () => {
             });
           }}
         />
-        <Text testID="settings.test.upfcConfig">{upfcConfig?.username ?? 'empty'}</Text>
+        <Text testID="settings.test.upfcConfig.hpUsername">{upfcConfig?.hpUsername ?? 'empty'}</Text>
+        <Text testID="settings.test.upfcConfig.mlUsername">{upfcConfig?.mlUsername ?? 'empty'}</Text>
         <Button
           title="upfcConfigUpdate"
           testID="settings.test.upfcConfigUpdate"
           onPress={() => {
             updateUPFCConfig({
-              username: 'risa',
-              password: 'upfc-password'
+              hpUsername: 'risa',
+              hpPassword: 'hp-password',
+              mlUsername: 'mizuki',
+              mlPassword: 'ml-password'
             });
           }}
         />

@@ -1,0 +1,216 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>マイページ｜オフィシャルファンクラブ エムラインクラブ</title>
+	<meta http-equiv="content-style-type" content="text/css" />
+	<meta http-equiv="content-script-type" content="text/javascript" />
+	<link rev="made" href="mailto:privacy@uf-fanclub.com" />
+	<link href="/m-line/css/m-line_import3.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("dd.ac_ticket").css("display","none");
+			$("dt.ac_ticket").click(function(){
+				$(this).toggleClass("open").next().slideToggle("nomal");
+			});
+		});
+	</script>
+	<style><!--
+		.refund_box{width:100%;}
+		.refund_box select{width:85%;text-align:center;}
+		.refund_box button{font-size:1.2em;margin:0.5em auto 0.2em;width:85%;background:#f69a07;border-radius:20px;border:none;color:#fff;padding:5px;font-weight:bold;box-shadow:0px 2px 0 #d9534f}
+		.mypageerr span{text-align:center;color:red;font-weight:bold;font-size:1em;display:block;width:90%;margin:0 auto 1em;}
+		.mypagescs span{text-align:center;color:#00A474;font-weight:bold;font-size:1em;display:block;width:90%;margin:0 auto 1em;}
+	--></style>
+<body>
+<div id="wrapper">
+<div id="container">
+	<!--header-->
+	<div id="header">
+		<h1><a href="/m-line/"><img src="https://www.up-fc.jp/m-line/images//m-line/top/main_logo.png" alt="エムラインクラブ" /></a></h1>
+
+			<div style="position:absolute;">
+
+				<a class="login_btn" href="/m-line/?UserSession=off" class="spacing">ログアウト</a>				<a class="nyukai_btn" href="/m-line/guidance.php">今すぐ会員登録</a>
+
+				<a href="https://twitter.com/M_lineclub" class="twitter fade"><img src="https://www.up-fc.jp/m-line/images/m-line/top/link_twitter.png" alt="M-line club公式Twitter" /></a>
+
+			</div>
+
+			<div style="position:absolute;">
+
+				<a class="address_btn" href="/m-line/faq.php">よくあるご質問</a>
+
+				<a class="keizoku_btn" href="/m-line/renewal01.php">継続手続きはこちら</a>
+
+			</div>
+
+	</div>
+
+		<div style="font-size:11px;color:#9e9e9f;clear:both">M-line clubは主にHello! Projectを卒業したアーティストによるWEB中心のファンクラブです</div>
+
+	<ul id="globalnavi" class="clearfix">
+		<li>
+			<a href="/m-line/news.php?@PS@=none">ニュース</a>
+		</li>
+		<li>
+			<a href="/m-line/fanclubinfo.php" class="spacing">サービス一覧</a>
+		</li>
+		<li>
+			<a href="/m-line/admission.php" class="spacing">入会・継続方法</a>
+		</li>
+		<li><a href="/m-line/members-menu.php" class="spacing">会員メニュー</a>
+			<ul>
+				<!-- <li><a href="/m-line/web_magazine.php">Web会報</a></li> -->
+				<li><a href="/m-line/greeting.php">Webグリーティングカード</a></li>
+				<li><a href="/m-line/fan_AllEventTour_List.php">チケット/イベント受付</a></li>
+				<li><a href="/m-line/fanshop_select.php">ファンクラブショップ</a></li>
+				<li><a href="/m-line/mailmagazine.php">メールサービス</a></li>
+				<li><a href="/m-line/spmember/">スペシャル会員限定ポイントプレゼント情報</a></li>
+				<li><a href="/m-line/spmember/gold_top.php">スペシャル会員（ゴールド）限定特典</a></li>
+				<li><a href="/m-line/member_edit.php">住所変更受付</a></li>
+				<li><a href="https://www.up-fc.jp/m-line/password_entry.php">パスワード確認</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="/m-line/mypage01.php" class="spacing">マイページ</a>
+		</li>
+	</ul>
+
+
+	<!--/header-->
+
+<div id="main">
+<h2>MY PAGE<span class="subtitle">マイページ</span></h2>
+<div class="contents-body">
+
+	<ul id="mypage_navi">
+	<a href="mypage01.php"><li>会員基本情報</li></a>
+	<a href="mypage02.php" class="select"><li>チケット申込状況</li></a>
+	<a href="mypage03.php"><li>ファンクラブショップ</li></a>
+			<a href="mypage04.php"><li>スペシャル会員サービス</li></a>
+		
+	
+</ul>
+
+	<div style="text-align:right;font-size:13px;margin:0 20px 30px;">※各種入金状況につきましては反映まで数日かかる場合がございます。</div>
+
+	
+
+	<div class="mypage_title">
+		チケット申込状況
+	</div>
+
+	<div class="mypageerr"></div><div class="mypagescs"></div>
+	
+	<div class="mypage_contents">
+
+		<div class="chapter">先行受付分</div>
+
+		
+				<!--EVENT-->
+		<dl class="ac">
+			<dt class="ac_ticket">
+				■ 譜久村聖FCイベント2024～いいふくの日に乾杯!!～			</dt>
+
+			<dd class="ac_ticket">
+				<table border="0" cellspacing="1" bgcolor="#ccc" class="mypage_table">
+							<tr>
+						<th width="7%">
+							公演番号<br />
+							<span>01</span>
+						</th>
+						<td width="8%" style="word-break:break-all">
+							2024/11 /29(金)						</td>
+						<td width="20%" style="line-height:1.1">
+							東京都<br />
+							江戸川区総合文化センター						</td>
+						<td width="10%">
+							開場16:00<br />開演16:50<br />						</td>
+						<td width="8%">
+							一般席<br />
+							1枚
+						</td>
+						<td width="10%">
+							<span style="color:#00AA33">当選</span><br /><span style="color:#999999; font-size:11px">(入金済)</span>
+
+						</td>
+						<td width="18%">
+														支払方法:コンビニ<br />
+							入金日:2024/10/20(日)<br />													</td>
+						<td style="padding:5px;">
+							
+							
+													</td>
+					</tr>
+						</table>
+			</dd>
+		</dl>
+		<!--/EVENT-->
+		
+		
+
+		<div class="chapter">先々行受付分</div>
+
+		
+	</div>
+
+</div>
+<div class="contents-bottom"></div>
+</div>
+
+
+		<div id="footer-container">
+			<div id="footer">
+				
+				<a class="FAQ" href="/m-line/faq.php">
+					<div style="width:26px;float:left;margin-right:8px;">
+						<img src="https://www.up-fc.jp/m-line/images/m-line/top/link_faq.png" alt="" />
+					</div>
+					<div style="padding-top:2px">
+						よくあるご質問
+					</div>
+				</a>
+
+				<a class="LINK" href="/m-line/link.php">
+					<div style="width:56px;float:left;margin-right:10px;">
+						<img src="https://www.up-fc.jp/m-line/images/m-line/top/link_link.png" alt="" />
+					</div>
+					<div style="padding-top:2px">
+						関連リンク
+					</div>
+				</a>
+
+				
+				<ul class="footer_nav clearfix">
+					<li><a href="/m-line/about.php">このサイトについて</a> ｜ </li>
+					<li><a href="/m-line/copyright.php">著作権について</a> ｜ </li>
+					<li><a href="/m-line/policy.php">個人情報の取扱について</a> ｜ </li>
+					<li><a href="/m-line/tuhanhou.php">特定商取引法に基づく表記</a></li>
+				</ul>
+				
+				<p id="copyright">当サイトに掲載されているすべてのコンテンツ（文章、写真、画像、動画、バナーなど） の著作権はアップフロントクリエイトに帰属しています。<br />
+				&copy;Copyright UP-FRONT CREATE 2024 All Rights Reserved
+				</p>
+			</div>
+		</div>
+
+<!--=====end main-container=====--></div>
+<!--=====end wrapper=====--></div>
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-12089729-31']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+</body>
+</html>

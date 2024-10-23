@@ -4,8 +4,8 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 type StyleProps = React.ComponentProps<typeof View>['style'];
 
 export type ListItemProps = {
-  leftContent?: JSX.Element;
-  rightContent?: JSX.Element;
+  leftContent?: React.JSX.Element;
+  rightContent?: React.JSX.Element;
   containerStyle?: StyleProps;
   children: React.ReactNode;
   onPress?: () => void;

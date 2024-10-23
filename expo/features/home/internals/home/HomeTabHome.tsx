@@ -1,6 +1,7 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
 import { Loading } from '@hpapp/features/common';
-import { SectionListRenderer, SectionList } from '@hpapp/features/common/sectionlist';
+import { SectionListRenderer, SectionList, SectionListLoading } from '@hpapp/features/common/sectionlist';
+import { t } from '@hpapp/system/i18n';
 import { useMemo } from 'react';
 
 import HomeTabHomeFeedItemListSection from './HomeTabHomeFeedItemListSection';
@@ -13,24 +14,40 @@ export default function HomeTabHome() {
   const { feed, upfc } = useHomeTabContext();
   const sections: SectionListRenderer<unknown>[] = useMemo(() => {
     const list: SectionListRenderer<unknown>[] = [];
-    if (upfc.data) {
-      list.push(new HomeTabHomeUPFCPendingPaymentsSection(primary, upfc.data));
-      list.push(new HomeTabHomeUPFCNextEventsSection(primary, upfc.data));
+    if (upfc.data !== null) {
+      list.push(new HomeTabHomeUPFCPendingPaymentsSection(primary, upfc.data.applications));
+      list.push(new HomeTabHomeUPFCNextEventsSection(primary, upfc.data.applications));
+    } else if (upfc.isLoading) {
+      // initial loading
+      list.push(
+        new SectionListLoading({
+          headerText: t('Fan Club'),
+          body: <Loading testID="HomeTabHomeSectionList.UPFC.Loading" />
+        })
+      );
     }
     if (feed.data !== null) {
       list.push(new HomeTabHomeFeedItemListSection(feed.data));
+    } else if (feed.isLoading) {
+      // initial loading
+      list.push(
+        new SectionListLoading({
+          headerText: t('Latest Posts'),
+          body: <Loading testID="HomeTabHomeSectionList.Feed.Loading" />
+        })
+      );
     }
     return list;
   }, [feed, upfc]);
-  if (sections.length === 0 && feed.isLoading) {
-    return <Loading testID="HomeTabHomeSectionList.Loading" />;
-  }
   return (
     <SectionList
       testID="HomeTabHomeSectionList.SectionList"
       sections={sections}
-      isLoading={feed.isLoading}
-      reload={feed.reload}
+      isLoading={feed.isLoading || upfc.isLoading}
+      reload={() => {
+        feed.reload();
+        upfc.reload();
+      }}
     />
   );
 }

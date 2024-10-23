@@ -4,7 +4,7 @@ import { FontSize } from '@hpapp/features/common/constants';
 import { StyleSheet, TouchableOpacity, Pressable, ActivityIndicator } from 'react-native';
 
 export type FeedItemCTAProps = {
-  icon?: JSX.Element;
+  icon?: React.JSX.Element;
   label: string;
   onPress?: () => void;
 };

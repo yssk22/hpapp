@@ -62,7 +62,7 @@ function createStackNavigator<P extends ScreenParams>(
   return forwardRef(function Navigator(
     props: StackProps<P>,
     ref?: React.Ref<NavigationContainerRef<ReactNavigation.RootParamList>> | undefined
-  ): JSX.Element {
+  ): React.JSX.Element {
     const [primary, contrastPrimary] = useThemeColor('primary');
     const [secondary] = useThemeColor('secondary');
     const { screens, onStateChange, initialRouteName, ...navigatorProps } = props;

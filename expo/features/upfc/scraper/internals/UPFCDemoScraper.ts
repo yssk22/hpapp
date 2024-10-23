@@ -1,12 +1,13 @@
 import { getToday, addDate } from '@hpapp/foundation/date';
 import { sleep } from '@hpapp/foundation/globals';
 
-import { UPFCEventApplicationTickets, UPFCScraper } from './types';
+import { UPFCEventApplicationTickets, UPFCScraper, UPFCSite } from './types';
 
-function buildDemoData(today: Date): UPFCEventApplicationTickets[] {
+function buildDemoData(today: Date, site: UPFCSite): UPFCEventApplicationTickets[] {
   return [
     {
       name: '譜久村聖30thバースデーイベント',
+      site: 'm-line',
       tickets: [
         {
           venue: '日本武道館',
@@ -26,6 +27,7 @@ function buildDemoData(today: Date): UPFCEventApplicationTickets[] {
     },
     {
       name: '横山玲奈30thバースデーイベント',
+      site: 'helloproject',
       tickets: [
         {
           venue: '日本武道館',
@@ -45,6 +47,7 @@ function buildDemoData(today: Date): UPFCEventApplicationTickets[] {
     },
     {
       name: '野中美希30thバースデーイベント',
+      site: 'helloproject',
       tickets: [
         {
           venue: '日本武道館',
@@ -65,6 +68,7 @@ function buildDemoData(today: Date): UPFCEventApplicationTickets[] {
     // past event with 入金待 status (should be render as '入金忘')
     {
       name: '譜久村聖20thバースデーイベント',
+      site: 'helloproject',
       tickets: [
         {
           venue: '日本武道館',
@@ -87,6 +91,7 @@ function buildDemoData(today: Date): UPFCEventApplicationTickets[] {
     // 1. Event Payment Due Date is Today
     {
       name: '山﨑愛生30thバースデーイベント',
+      site: 'helloproject',
       applicationStartDate: addDate(today, -14, 'day'),
       applicationDueDate: addDate(today, -7, 'day'),
       paymentOpenDate: addDate(today, -3, 'day'),
@@ -111,6 +116,7 @@ function buildDemoData(today: Date): UPFCEventApplicationTickets[] {
     // 2. Event Payment Due Date is past
     {
       name: '山﨑夢羽30thバースデーイベント',
+      site: 'helloproject',
       applicationStartDate: addDate(today, -14, 'day'),
       applicationDueDate: addDate(today, -7, 'day'),
       paymentOpenDate: addDate(today, -5, 'day'),
@@ -135,6 +141,7 @@ function buildDemoData(today: Date): UPFCEventApplicationTickets[] {
     // 3. PaymentOpenDate is future
     {
       name: '小田さくら30thバースデーイベント',
+      site: 'helloproject',
       applicationStartDate: addDate(today, -14, 'day'),
       applicationDueDate: addDate(today, -7, 'day'),
       paymentOpenDate: addDate(today, +2, 'day'),
@@ -159,6 +166,7 @@ function buildDemoData(today: Date): UPFCEventApplicationTickets[] {
     // for display only, comming soon events
     {
       name: '今週のイベントサンプル',
+      site: 'helloproject',
       applicationStartDate: addDate(today, 14, 'day'),
       applicationDueDate: addDate(today, 7, 'day'),
       paymentOpenDate: addDate(today, 2, 'day'),
@@ -184,6 +192,7 @@ function buildDemoData(today: Date): UPFCEventApplicationTickets[] {
       // looooong name
       // eslint-disable-next-line quotes
       name: "モーニング娘。'21 10期メンバー 石田亜佑美＆佐藤優樹FCイベント～ひよこが10年経ったら、さぁ何になる？～『まーバースデーやってないよ。せめて衣装だけ着させて！』『いや、タイトル長いよ！』 ",
+      site: 'helloproject',
       applicationStartDate: addDate(today, -1, 'day'),
       applicationDueDate: addDate(today, -7, 'day'),
       paymentOpenDate: addDate(today, -1, 'day'),
@@ -208,6 +217,7 @@ function buildDemoData(today: Date): UPFCEventApplicationTickets[] {
     // Open Event with due date
     {
       name: '入江里咲30thバースデーイベント',
+      site: 'helloproject',
       applicationStartDate: addDate(today, -14, 'day'),
       applicationDueDate: addDate(today, -7, 'day'),
       paymentOpenDate: addDate(today, -5, 'day'),
@@ -217,9 +227,10 @@ function buildDemoData(today: Date): UPFCEventApplicationTickets[] {
     // Open Event without due date
     {
       name: '譜久村聖40thバースデーイベント',
+      site: 'm-line',
       tickets: []
     }
-  ];
+  ].filter((e) => e.site === site) as UPFCEventApplicationTickets[];
 }
 
 /**
@@ -236,7 +247,7 @@ export default class UPFCDemoScraper implements UPFCScraper {
    * @param username
    * @returns true if username is UPFCDemoScraper.Username
    */
-  async authenticate(username: string, _: string): Promise<boolean> {
+  async authenticate(username: string, _password: string, _site: UPFCSite): Promise<boolean> {
     // await sleep(1000);
     return username === UPFCDemoScraper.Username;
   }
@@ -244,9 +255,9 @@ export default class UPFCDemoScraper implements UPFCScraper {
   /**
    * @returns a list of event applications
    */
-  async getEventApplications(): Promise<UPFCEventApplicationTickets[]> {
+  async getEventApplications(site: UPFCSite): Promise<UPFCEventApplicationTickets[]> {
     await sleep(500);
     // build the demodata dynamically so that we can test the date related features
-    return buildDemoData(getToday());
+    return buildDemoData(getToday(), site);
   }
 }
