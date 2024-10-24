@@ -8,15 +8,22 @@ import { t } from '@hpapp/system/i18n';
 import { Icon } from '@rneui/base';
 import { View, StyleSheet } from 'react-native';
 
+export type HomeTabHomeUPFCPendingPaymentsSectionProps = {
+  primaryColor: string;
+  data: UPFCEventApplicationTickets[];
+  onPressListItem: (event: UPFCEventApplicationTickets) => void;
+};
 export default class HomeTabHomeUPFCPendingPaymentsSection implements SectionListRenderer<UPFCEventApplicationTickets> {
   private primaryColor: string;
+  private onPressListItem: (event: UPFCEventApplicationTickets) => void;
   public readonly data: UPFCEventApplicationTickets[];
 
-  constructor(primaryColor: string, data: UPFCEventApplicationTickets[]) {
-    this.primaryColor = primaryColor;
+  constructor(props: HomeTabHomeUPFCPendingPaymentsSectionProps) {
+    this.primaryColor = props.primaryColor;
+    this.onPressListItem = props.onPressListItem;
     const now = new Date();
     // take only events with pending payment tickets
-    this.data = data
+    this.data = props.data
       .map((event) => {
         const tickets = event.tickets.filter((t) => {
           if (t.status !== '入金待') {
@@ -50,7 +57,7 @@ export default class HomeTabHomeUPFCPendingPaymentsSection implements SectionLis
         containerStyle={styles.listItem}
         leftContent={<CalendarDateIcon date={item.paymentDueDate} />}
         rightContent={<Icon name="pay-circle1" type="antdesign" size={IconSize.Medium} color={this.primaryColor} />}
-        onPress={() => {}}
+        onPress={() => this.onPressListItem(item)}
       >
         <View style={styles.listItemCenter}>
           <View>

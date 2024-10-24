@@ -6,7 +6,7 @@ import { UPFCEventApplicationTickets, UPFCEventTicket } from '@hpapp/features/up
 import * as date from '@hpapp/foundation/date';
 import { t } from '@hpapp/system/i18n';
 import { Icon } from '@rneui/base';
-import { View, StyleSheet } from 'react-native';
+import { Linking, View, StyleSheet } from 'react-native';
 
 type ApplicationEventTicket = UPFCEventTicket & {
   name: string;
@@ -59,7 +59,9 @@ export default class HomeTabHomeUPFCNextEventsSection implements SectionListRend
         containerStyle={styles.listItem}
         leftContent={<CalendarDateIcon date={item.startAt} />}
         rightContent={<Icon name="place" size={IconSize.Medium} color={this.primaryColor} />}
-        onPress={() => {}}
+        onPress={() => {
+          Linking.openURL(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue)}`);
+        }}
       >
         <View style={styles.listItemCenter}>
           <View>

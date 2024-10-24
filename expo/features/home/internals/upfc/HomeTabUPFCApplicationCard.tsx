@@ -48,7 +48,7 @@ export type UPFCApplicationCardProps = {
 
 export default function UPFCApplicationCard({ event }: UPFCApplicationCardProps) {
   const [color] = useThemeColor('primary');
-  const openUPFCWeView = useUPFCWebView();
+  const openUPFCWebView = useUPFCWebView();
   const paymentWindowString = `${toDateString(event.paymentOpenDate)} ~ ${toDateString(event.paymentDueDate)}`;
   const items = useMemo(() => {
     return event.tickets.map((t) => {
@@ -79,7 +79,7 @@ export default function UPFCApplicationCard({ event }: UPFCApplicationCardProps)
             color="secondary"
             type="outline"
             onPress={() => {
-              openUPFCWeView({
+              openUPFCWebView({
                 site: event.site,
                 urlParams: 'Contents=MYPAGE02'
               });
