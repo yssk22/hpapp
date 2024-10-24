@@ -1,6 +1,8 @@
 import { AssetIcon, ExternalImage } from '@hpapp/features/common';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
 import { ListItem } from '@hpapp/features/common/list';
+import { useNavigation } from '@hpapp/features/common/stack';
+import FeedItemScreen from '@hpapp/features/feed/FeedItemScreen';
 import * as date from '@hpapp/foundation/date';
 import { Divider } from '@rneui/base';
 import { View, Text, StyleSheet } from 'react-native';
@@ -32,6 +34,7 @@ const FeedListItemFragmentGraphQL = graphql`
 
 export default function FeedListItem({ data }: { data: FeedListItemFragment$key }) {
   const item = useFragment<FeedListItemFragment$key>(FeedListItemFragmentGraphQL, data);
+  const navigation = useNavigation();
   // TODO: use member thumbnail image if imageURL is not available.
   const imageUrl = item.imageURL ?? '';
   const dateString = date.toDateTimeString(item.postAt);
@@ -43,6 +46,9 @@ export default function FeedListItem({ data }: { data: FeedListItemFragment$key 
         rightContent={
           <ExternalImage uri={getOptimizedImageUrl(imageUrl)} style={styles.image} width={80} height={80} />
         }
+        onPress={() => {
+          navigation.navigate(FeedItemScreen, { feedId: item.id });
+        }}
       >
         <View style={styles.titleAndMetadata}>
           <Text style={styles.title}>{item.title}</Text>
