@@ -57,9 +57,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    flexGrow: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    flexGrow: 1
   },
   ctaContainer: {
     flexDirection: 'row',

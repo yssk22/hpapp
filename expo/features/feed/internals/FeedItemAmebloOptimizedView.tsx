@@ -37,34 +37,34 @@ async function getAmebloOptimizedContent(url: string): Promise<string> {
   const { html } = await fetchContent(url);
   const entryText = extractEntryText(html, id);
   return `
-      <!DOCTYPE html>
-      <html lang="ja" class="no-js">
-      <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
-      <style>
-      html {
-          line-height: 1.15;
-      }
-      body {
-          color: #333333;
-          background: #fff;
-          font-family: ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,ＭＳ Ｐゴシック,Helvetica,Arial,sans-serif;
-          overflow-wrap: break-word;
-          word-break: break-word;
-      }
-      a {
-          color: #666666;
-          text-decoration: underline;
-      }
-      </style>
-      </head>
-      <body>
-          <article style="overflow-x: hidden;">
-          ${entryText}
-          </article>
-      </body>
-      </html>                   
+        <!DOCTYPE html>
+        <html lang="ja" class="no-js">
+        <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          <style>
+          html {
+            line-height: 1.15;
+          }
+          body {
+            color: #333333;
+            background: #fff;
+            font-family: ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,ＭＳ Ｐゴシック,Helvetica,Arial,sans-serif;
+            overflow-wrap: break-word;
+            word-break: break-word;
+          }
+          a {
+            color: #666666;
+            text-decoration: underline;
+          }
+          </style>
+        </head>
+        <body>
+            <article style="overflow-x: hidden;">
+            ${entryText}
+            </article>
+          </body>
+        </html>
   `;
 }
 
