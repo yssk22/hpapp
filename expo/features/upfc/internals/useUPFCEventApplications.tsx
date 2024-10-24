@@ -1,6 +1,7 @@
 import { useAppConfig, useUPFCConfig } from '@hpapp/features/app/settings';
 import { useReloadableAsync, ReloadableAysncResult } from '@hpapp/features/common/';
 import {
+  ErrUPFCAuthentication,
   ErrUPFCNoCredential,
   UPFCDemoScraper,
   UPFCEventApplicationTickets,
@@ -25,8 +26,8 @@ type UPFCFetchApplicationsParams = {
 
 export type UPFCEventAPplicationsResult = {
   applications: UPFCEventApplicationTickets[];
-  hpAuth: boolean | undefined;
-  mlAuth: boolean | undefined;
+  hpError: Error | undefined;
+  mlError: Error | undefined;
   useDemo: boolean;
 };
 
@@ -76,10 +77,11 @@ async function fetchApplications({
     fetchApplicationsFromSite(helloproject.username, helloproject.password, 'helloproject', useDemo),
     fetchApplicationsFromSite(mline.username, mline.password, 'm-line', useDemo)
   ]);
+
   return {
     applications: result.flatMap((r) => r.applications),
-    hpAuth: result[0].auth,
-    mlAuth: result[1].auth,
+    hpError: result[0].error,
+    mlError: result[1].error,
     useDemo
   };
 }
@@ -90,25 +92,32 @@ async function fetchApplicationsFromSite(
   site: UPFCSite,
   useDemo: boolean
 ): Promise<{
-  auth: boolean | undefined;
+  error: Error | undefined;
   applications: UPFCEventApplicationTickets[];
 }> {
   const scraper = useDemo ? demoScraper : siteScraper;
   if (isEmpty(username)) {
     return {
-      auth: undefined,
+      error: new ErrUPFCNoCredential(),
       applications: []
     };
   }
   const ok = await scraper.authenticate(username, password, site);
   if (!ok) {
     return {
-      auth: false,
+      error: new ErrUPFCAuthentication(),
       applications: []
     };
   }
-  return {
-    auth: false,
-    applications: await scraper.getEventApplications(site)
-  };
+  try {
+    return {
+      error: undefined,
+      applications: await scraper.getEventApplications(site)
+    };
+  } catch (e) {
+    return {
+      error: e as Error,
+      applications: []
+    };
+  }
 }

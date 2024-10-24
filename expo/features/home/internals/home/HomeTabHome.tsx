@@ -1,6 +1,7 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
 import { Loading } from '@hpapp/features/common';
 import { SectionListRenderer, SectionList, SectionListLoading } from '@hpapp/features/common/sectionlist';
+import { useUPFCWebView } from '@hpapp/features/upfc';
 import { t } from '@hpapp/system/i18n';
 import { useMemo } from 'react';
 
@@ -10,12 +11,24 @@ import HomeTabHomeUPFCPendingPaymentsSection from './HomeTabHomeUPFCPendingPayme
 import { useHomeTabContext } from '../HomeTabProvider';
 
 export default function HomeTabHome() {
+  const openUPFCWebView = useUPFCWebView();
   const [primary] = useThemeColor('primary');
   const { feed, upfc } = useHomeTabContext();
   const sections: SectionListRenderer<unknown>[] = useMemo(() => {
     const list: SectionListRenderer<unknown>[] = [];
     if (upfc.data !== null) {
-      list.push(new HomeTabHomeUPFCPendingPaymentsSection(primary, upfc.data.applications));
+      list.push(
+        new HomeTabHomeUPFCPendingPaymentsSection({
+          primaryColor: primary,
+          data: upfc.data.applications,
+          onPressListItem: (event) => {
+            openUPFCWebView({
+              site: event.site,
+              urlParams: 'Contents=MYPAGE02'
+            });
+          }
+        })
+      );
       list.push(new HomeTabHomeUPFCNextEventsSection(primary, upfc.data.applications));
     } else if (upfc.isLoading) {
       // initial loading

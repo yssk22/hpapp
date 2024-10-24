@@ -30,6 +30,10 @@ export default function HomeTabUPFCCurrentApplicationList() {
   if (upfc.error) {
     return <UPFCErrorBox error={upfc.error} />;
   }
+  // if both site fails, show error box.
+  if (upfc.data?.hpError !== undefined && upfc.data?.mlError !== undefined) {
+    return <UPFCErrorBox error={upfc.data?.hpError} />;
+  }
   if (applications === null) {
     return (
       <View testID="HomeTabUPFCCurrentApplicationList.Skelton">
@@ -41,17 +45,20 @@ export default function HomeTabUPFCCurrentApplicationList() {
       </View>
     );
   }
+  // TODO: we may want to show a message when there is an error in hellorpoject or mline data.
   return (
-    <FlatList
-      testID="HomeTabUPFCCurrentApplicationList.Flatlist"
-      data={applications}
-      initialNumToRender={10}
-      maxToRenderPerBatch={1}
-      updateCellsBatchingPeriod={0}
-      removeClippedSubviews
-      windowSize={11}
-      keyExtractor={keyExtractor}
-      renderItem={renderItem}
-    />
+    <>
+      <FlatList
+        testID="HomeTabUPFCCurrentApplicationList.Flatlist"
+        data={applications}
+        initialNumToRender={10}
+        maxToRenderPerBatch={1}
+        updateCellsBatchingPeriod={0}
+        removeClippedSubviews
+        windowSize={11}
+        keyExtractor={keyExtractor}
+        renderItem={renderItem}
+      />
+    </>
   );
 }
