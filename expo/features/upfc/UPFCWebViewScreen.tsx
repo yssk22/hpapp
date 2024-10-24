@@ -4,25 +4,28 @@ import { useCallback, useRef } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 
+import { UPFCSite } from './scraper';
+
 const styles = StyleSheet.create({
   webviewConainer: {
     flex: 1
   }
 });
 
-type UPFCWebViewScreenProps = {
+export type UPFCWebViewScreenProps = {
+  site: UPFCSite;
   urlParams?: string;
 };
 
-export default defineScreen('/upfc/wv/', function UPFCWebViewScreen({ urlParams }: UPFCWebViewScreenProps) {
+export default defineScreen('/upfc/wv/', function UPFCWebViewScreen({ site, urlParams }: UPFCWebViewScreenProps) {
   useScreenTitle('up-fc.jp');
   const webview = useRef<WebView>(null);
   const config = useUPFCConfig();
-  const username = config?.username;
-  const password = config?.password;
+  const username = site === 'helloproject' ? config?.hpUsername : config?.mlUsername;
+  const password = site === 'helloproject' ? config?.hpPassword : config?.mlPassword;
   const uri = urlParams
-    ? `https://www.up-fc.jp/helloproject/fanclub_Login.php?${urlParams}`
-    : 'https://www.up-fc.jp/helloproject/fanclub_Login.php';
+    ? `https://www.up-fc.jp/${site}/fanclub_Login.php?${urlParams}`
+    : `https://www.up-fc.jp/${site}/fanclub_Login.php`;
   const onLoadEnd = useCallback(() => {
     webview?.current?.injectJavaScript(`(function(){
         if(document.getElementsByName('User_No').length > 0){

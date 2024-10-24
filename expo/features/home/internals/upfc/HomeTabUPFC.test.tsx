@@ -1,9 +1,10 @@
 import { SettingsAppConfigDefault } from '@hpapp/features/app/settings';
 import { mockUseNavigation, renderUserComponent } from '@hpapp/features/testhelper';
 import UPFCSettingsScreen from '@hpapp/features/upfc/UPFCSettingsScreen';
-import { act, fireEvent } from '@testing-library/react-native';
+import { act, fireEvent, waitFor } from '@testing-library/react-native';
 
 import HomeTabUPFC from './HomeTabUPFC';
+import HomeTabProvider from '../HomeTabProvider';
 // import UPFCSettingsScreen from '@hpapp/features/upfc/UPFCSettingsScreen';
 
 describe('HomeTabUPFC', () => {
@@ -22,12 +23,14 @@ describe('HomeTabUPFC', () => {
 
   test('render UPFCErrorBox if settings is not configured', async () => {
     const navigation = mockUseNavigation();
-    const rendered = await renderUserComponent(<HomeTabUPFC />);
-    await act(async () => {
-      jest.advanceTimersByTime(1500);
-    });
-    expect(rendered.toJSON()).toMatchSnapshot();
+    const rendered = await renderUserComponent(
+      <HomeTabProvider>
+        <HomeTabUPFC />
+      </HomeTabProvider>
+    );
+
     const errorBoxButton = await rendered.findByTestId('UPFCErrorBox.ConfigureButton');
+    expect(rendered.toJSON()).toMatchSnapshot();
     expect(errorBoxButton).toBeTruthy();
 
     await act(async () => {
@@ -37,21 +40,24 @@ describe('HomeTabUPFC', () => {
   });
 
   test('render list if settings is configured', async () => {
-    const rendered = await renderUserComponent(<HomeTabUPFC />, {
-      appConfig: {
-        ...SettingsAppConfigDefault,
-        useUPFCDemoScraper: true
-      },
-      upfcConfig: {
-        hpUsername: '00000000',
-        hpPassword: 'password'
+    const rendered = await renderUserComponent(
+      <HomeTabProvider>
+        <HomeTabUPFC />
+      </HomeTabProvider>,
+      {
+        appConfig: {
+          ...SettingsAppConfigDefault,
+          useUPFCDemoScraper: true
+        },
+        upfcConfig: {
+          hpUsername: '00000000',
+          hpPassword: 'password'
+        }
       }
-    });
+    );
     const loading = await rendered.findByTestId('HomeTabUPFCCurrentApplicationList.Skelton');
     expect(loading).toBeTruthy();
-    await act(async () => {
-      jest.advanceTimersByTime(1500);
-    });
+    await waitFor(() => rendered.getByTestId('HomeTabUPFCCurrentApplicationList.Flatlist'));
     expect(rendered.toJSON()).toMatchSnapshot();
   });
 });

@@ -80,6 +80,7 @@ export default function UPFCApplicationCard({ event }: UPFCApplicationCardProps)
             type="outline"
             onPress={() => {
               openUPFCWeView({
+                site: event.site,
                 urlParams: 'Contents=MYPAGE02'
               });
             }}

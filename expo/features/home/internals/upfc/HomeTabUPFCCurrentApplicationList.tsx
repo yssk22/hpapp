@@ -1,10 +1,11 @@
 import { CardSkelton } from '@hpapp/features/common/card';
-import { UPFCErrorBox, useUPFCEventApplications } from '@hpapp/features/upfc';
+import { UPFCErrorBox } from '@hpapp/features/upfc';
 import { UPFCEventApplicationTickets } from '@hpapp/features/upfc/scraper';
 import { useMemo } from 'react';
 import { FlatList, ListRenderItemInfo, View } from 'react-native';
 
 import UPFCApplicationCard from './HomeTabUPFCApplicationCard';
+import { useHomeTabContext } from '../HomeTabProvider';
 
 function keyExtractor(event: UPFCEventApplicationTickets) {
   return `${event.site}-${event.name}`; // just in case if two sites have the same name of event
@@ -15,19 +16,19 @@ function renderItem(event: ListRenderItemInfo<UPFCEventApplicationTickets>) {
 }
 
 export default function HomeTabUPFCCurrentApplicationList() {
-  const result = useUPFCEventApplications();
+  const { upfc } = useHomeTabContext();
   const applications = useMemo(() => {
-    if (result.error) {
+    if (upfc.error) {
       return null;
     }
-    if (result.data === null) {
+    if (upfc.data === null) {
       return null;
     }
-    return result.data.applications.filter((event) => event.tickets.length > 0);
-  }, [result]);
+    return upfc.data.applications.filter((event) => event.tickets.length > 0);
+  }, [upfc]);
 
-  if (result.error) {
-    return <UPFCErrorBox error={result.error} />;
+  if (upfc.error) {
+    return <UPFCErrorBox error={upfc.error} />;
   }
   if (applications === null) {
     return (
