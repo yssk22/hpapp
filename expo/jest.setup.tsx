@@ -149,6 +149,10 @@ jest.mock('@react-native-firebase/auth', () => {
   return module;
 });
 
+jest.mock('react-native-share', () => ({
+  default: jest.fn()
+}));
+
 jest.mock('@hpapp/system/graphql/relay');
 
 jest.setTimeout(5000);

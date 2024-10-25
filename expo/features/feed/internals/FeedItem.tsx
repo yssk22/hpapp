@@ -1,5 +1,3 @@
-import Feather from '@expo/vector-icons/Feather';
-import { useThemeColor } from '@hpapp/features/app/theme';
 import { AmebloIcon } from '@hpapp/features/common';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
 import { useNavigation } from '@hpapp/features/common/stack';
@@ -10,6 +8,7 @@ import FeedItemAmeblo from './FeedItemAmeblo';
 import FeedItemCTA from './FeedItemCTA';
 import { FeedItemCTADownload } from './FeedItemCTADownload';
 import { FeedItemCTALove } from './FeedItemCTALove';
+import { FeedItemCTAShare } from './FeedItemCTAShare';
 import { FeedItemQuery } from './__generated__/FeedItemQuery.graphql';
 
 const FeedItemQueryGraphQL = graphql`
@@ -30,7 +29,6 @@ export type FeedItemProps = {
 };
 
 export default function FeedItem({ feedId }: FeedItemProps) {
-  const [color] = useThemeColor('secondary');
   const data = useLazyLoadQuery<FeedItemQuery>(FeedItemQueryGraphQL, { feedId });
   const navigation = useNavigation();
   navigation.setOptions({
@@ -43,7 +41,7 @@ export default function FeedItem({ feedId }: FeedItemProps) {
       </View>
       <View style={styles.ctaContainer}>
         {data.node!.assetType === 'ameblo' && <FeedItemCTA label="Open" icon={<AmebloIcon size={IconSize.Medium} />} />}
-        <FeedItemCTA label="Share" icon={<Feather name="share" color={color} size={IconSize.Medium} />} />
+        <FeedItemCTAShare url={data.node!.sourceURL!} />
         <FeedItemCTADownload />
         <FeedItemCTALove />
       </View>
