@@ -98,6 +98,7 @@ exports[`app AppUpdateBanner show banner 1`] = `
     >
       <RNSScreen
         collapsable={false}
+        fullScreenSwipeShadowEnabled={false}
         gestureResponseDistance={
           {
             "bottom": -1,
@@ -106,6 +107,7 @@ exports[`app AppUpdateBanner show banner 1`] = `
             "top": -1,
           }
         }
+        hasLargeHeader={false}
         nativeBackButtonDismissalEnabled={false}
         onAppear={[Function]}
         onDisappear={[Function]}
@@ -114,6 +116,7 @@ exports[`app AppUpdateBanner show banner 1`] = `
         onHeaderBackButtonClicked={[Function]}
         onNativeDismissCancelled={[Function]}
         onTransitionProgress={[Function]}
+        onWillAppear={[Function]}
         onWillDisappear={[Function]}
         replaceAnimation="push"
         sheetAllowedDetents="large"

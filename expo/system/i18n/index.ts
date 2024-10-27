@@ -46,6 +46,7 @@ const convertTranslations = (src: TranslationCotentOriginalFormat): TranslationC
 
 const i18n = new I18n(convertTranslations(original));
 const locales = Localization.getLocales();
+// eslint-disable-next-line prettier/prettier
 const locale = locales.length === 0 ? 'ja' : locales[0]?.languageCode ?? 'ja';
 
 i18n.locale = ['ja', 'en'].indexOf(locale) >= 0 ? locale : 'en';

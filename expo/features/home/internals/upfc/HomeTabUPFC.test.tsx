@@ -36,7 +36,7 @@ describe('HomeTabUPFC', () => {
     await act(async () => {
       fireEvent.press(errorBoxButton);
     });
-    expect(navigation.push).toBeCalledWith(UPFCSettingsScreen);
+    expect(navigation.push).toHaveBeenCalledWith(UPFCSettingsScreen);
   });
 
   test('render list if settings is configured', async () => {
