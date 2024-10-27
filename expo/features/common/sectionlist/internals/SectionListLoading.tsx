@@ -1,5 +1,7 @@
-import { SectionListHeader, SectionListRenderer } from '@hpapp/features/common/sectionlist';
 import React from 'react';
+
+import SectionListHeader from './SectionListHeader';
+import SectionListRenderer from './SectionListRenderer';
 
 export type SectionListLoadingProps = {
   headerText: string;

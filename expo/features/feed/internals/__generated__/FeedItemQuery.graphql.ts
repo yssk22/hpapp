@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<d2f10705018f26844584f734b21a1d69>>
+ * @generated SignedSource<<2e5640f9e80beb9de002c498d5955c16>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -9,6 +9,7 @@
 // @ts-nocheck
 
 import { ConcreteRequest, Query } from 'relay-runtime';
+import { FragmentRefs } from "relay-runtime";
 export type HPFeedItemHPAssetType = "ameblo" | "elineupmall" | "instagram" | "tiktok" | "twitter" | "youtube" | "%future added value";
 export type FeedItemQuery$variables = {
   feedId: string;
@@ -25,6 +26,7 @@ export type FeedItemQuery$data = {
     } | null;
     readonly sourceURL?: string;
     readonly title?: string;
+    readonly " $fragmentSpreads": FragmentRefs<"FeedItemCTALove">;
   } | null;
 };
 export type FeedItemQuery = {
@@ -134,7 +136,12 @@ return {
                 ],
                 "storageKey": null
               },
-              (v7/*: any*/)
+              (v7/*: any*/),
+              {
+                "args": null,
+                "kind": "FragmentSpread",
+                "name": "FeedItemCTALove"
+              }
             ],
             "type": "HPFeedItem",
             "abstractKey": null
@@ -187,7 +194,26 @@ return {
                 ],
                 "storageKey": null
               },
-              (v7/*: any*/)
+              (v7/*: any*/),
+              {
+                "alias": null,
+                "args": null,
+                "concreteType": "HPViewHistory",
+                "kind": "LinkedField",
+                "name": "myViewHistory",
+                "plural": false,
+                "selections": [
+                  (v2/*: any*/),
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "isFavorite",
+                    "storageKey": null
+                  }
+                ],
+                "storageKey": null
+              }
             ],
             "type": "HPFeedItem",
             "abstractKey": null
@@ -198,16 +224,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "a02ef2e128f326e960cd1acc8a183691",
+    "cacheID": "b615b2c953455ff328845d67d6bc61e4",
     "id": null,
     "metadata": {},
     "name": "FeedItemQuery",
     "operationKind": "query",
-    "text": "query FeedItemQuery(\n  $feedId: ID!\n) {\n  node(id: $feedId) {\n    __typename\n    id\n    ... on HPFeedItem {\n      title\n      sourceURL\n      assetType\n      ownerMember {\n        name\n        id\n      }\n      media {\n        url\n      }\n    }\n  }\n}\n"
+    "text": "query FeedItemQuery(\n  $feedId: ID!\n) {\n  node(id: $feedId) {\n    __typename\n    id\n    ... on HPFeedItem {\n      title\n      sourceURL\n      assetType\n      ownerMember {\n        name\n        id\n      }\n      media {\n        url\n      }\n      ...FeedItemCTALove\n    }\n  }\n}\n\nfragment FeedItemCTALove on HPFeedItem {\n  id\n  myViewHistory {\n    id\n    isFavorite\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "37b5fa5df9951133e0052531f7fda43c";
+(node as any).hash = "4eb42237081703cf0763304962388b0b";
 
 export default node;

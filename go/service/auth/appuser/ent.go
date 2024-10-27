@@ -58,6 +58,11 @@ func (u *entUser) IsGuest(ctx context.Context) bool {
 func VerifyToken(ctx context.Context, token string) User {
 	user, err := ParseToken(ctx, token)
 	if err != nil {
+		slog.Warning(ctx, "cannot veirfy token by appuser",
+			slog.Name("service.auth.user.entAuthenticator"),
+			slog.A("token", token),
+			slog.A("error", err.Error()),
+		)
 		return nil
 	}
 	userid, err := strconv.Atoi(user.ID())
@@ -75,7 +80,7 @@ func VerifyToken(ctx context.Context, token string) User {
 	userrecord, err := entutil.NewClient(ctx).User.Query().Where(entuser.IDEQ(userid)).First(ctx)
 	if err != nil {
 		slog.Error(ctx,
-			"token is valid but not a valid entid",
+			"token is valid but not a valid entid (query failed)",
 			slog.Name("service.auth.user.entAuthenticator"),
 			slog.Attribute("user_id", user.ID()),
 			slog.Attribute("error", err.Error()),

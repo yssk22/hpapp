@@ -26,6 +26,7 @@ const FeedItemQueryGraphQL = graphql`
         media {
           url
         }
+        ...FeedItemCTALove
       }
     }
   }
@@ -54,7 +55,7 @@ export default function FeedItem({ feedId }: FeedItemProps) {
         {data.node!.assetType === 'ameblo' && <FeedItemCTA label="Open" icon={<AmebloIcon size={IconSize.Medium} />} />}
         <FeedItemCTAShare url={data.node!.sourceURL!} />
         {urls.length > 0 && <FeedItemCTADownload albumName={albumName} urls={urls} />}
-        <FeedItemCTALove />
+        <FeedItemCTALove fragment={data.node!} />
       </View>
     </View>
   );
