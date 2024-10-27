@@ -21,6 +21,7 @@ exports[`user should return Me object 1`] = `
   >
     <RNSScreen
       collapsable={false}
+      fullScreenSwipeShadowEnabled={false}
       gestureResponseDistance={
         {
           "bottom": -1,
@@ -29,6 +30,7 @@ exports[`user should return Me object 1`] = `
           "top": -1,
         }
       }
+      hasLargeHeader={false}
       nativeBackButtonDismissalEnabled={false}
       onAppear={[Function]}
       onDisappear={[Function]}
@@ -37,6 +39,7 @@ exports[`user should return Me object 1`] = `
       onHeaderBackButtonClicked={[Function]}
       onNativeDismissCancelled={[Function]}
       onTransitionProgress={[Function]}
+      onWillAppear={[Function]}
       onWillDisappear={[Function]}
       replaceAnimation="push"
       sheetAllowedDetents="large"
@@ -138,6 +141,7 @@ exports[`user useHelloProject 1`] = `
   >
     <RNSScreen
       collapsable={false}
+      fullScreenSwipeShadowEnabled={false}
       gestureResponseDistance={
         {
           "bottom": -1,
@@ -146,6 +150,7 @@ exports[`user useHelloProject 1`] = `
           "top": -1,
         }
       }
+      hasLargeHeader={false}
       nativeBackButtonDismissalEnabled={false}
       onAppear={[Function]}
       onDisappear={[Function]}
@@ -154,6 +159,7 @@ exports[`user useHelloProject 1`] = `
       onHeaderBackButtonClicked={[Function]}
       onNativeDismissCancelled={[Function]}
       onTransitionProgress={[Function]}
+      onWillAppear={[Function]}
       onWillDisappear={[Function]}
       replaceAnimation="push"
       sheetAllowedDetents="large"

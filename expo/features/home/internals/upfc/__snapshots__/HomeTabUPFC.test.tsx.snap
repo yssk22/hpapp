@@ -21,6 +21,7 @@ exports[`HomeTabUPFC render UPFCErrorBox if settings is not configured 1`] = `
   >
     <RNSScreen
       collapsable={false}
+      fullScreenSwipeShadowEnabled={false}
       gestureResponseDistance={
         {
           "bottom": -1,
@@ -29,6 +30,7 @@ exports[`HomeTabUPFC render UPFCErrorBox if settings is not configured 1`] = `
           "top": -1,
         }
       }
+      hasLargeHeader={false}
       nativeBackButtonDismissalEnabled={false}
       onAppear={[Function]}
       onDisappear={[Function]}
@@ -37,6 +39,7 @@ exports[`HomeTabUPFC render UPFCErrorBox if settings is not configured 1`] = `
       onHeaderBackButtonClicked={[Function]}
       onNativeDismissCancelled={[Function]}
       onTransitionProgress={[Function]}
+      onWillAppear={[Function]}
       onWillDisappear={[Function]}
       replaceAnimation="push"
       sheetAllowedDetents="large"
@@ -234,6 +237,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
   >
     <RNSScreen
       collapsable={false}
+      fullScreenSwipeShadowEnabled={false}
       gestureResponseDistance={
         {
           "bottom": -1,
@@ -242,6 +246,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
           "top": -1,
         }
       }
+      hasLargeHeader={false}
       nativeBackButtonDismissalEnabled={false}
       onAppear={[Function]}
       onDisappear={[Function]}
@@ -250,6 +255,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
       onHeaderBackButtonClicked={[Function]}
       onNativeDismissCancelled={[Function]}
       onTransitionProgress={[Function]}
+      onWillAppear={[Function]}
       onWillDisappear={[Function]}
       replaceAnimation="push"
       sheetAllowedDetents="large"

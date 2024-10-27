@@ -21,6 +21,7 @@ exports[`artist ArtistMemberFollowIcon following 1`] = `
   >
     <RNSScreen
       collapsable={false}
+      fullScreenSwipeShadowEnabled={false}
       gestureResponseDistance={
         {
           "bottom": -1,
@@ -29,6 +30,7 @@ exports[`artist ArtistMemberFollowIcon following 1`] = `
           "top": -1,
         }
       }
+      hasLargeHeader={false}
       nativeBackButtonDismissalEnabled={false}
       onAppear={[Function]}
       onDisappear={[Function]}
@@ -37,6 +39,7 @@ exports[`artist ArtistMemberFollowIcon following 1`] = `
       onHeaderBackButtonClicked={[Function]}
       onNativeDismissCancelled={[Function]}
       onTransitionProgress={[Function]}
+      onWillAppear={[Function]}
       onWillDisappear={[Function]}
       replaceAnimation="push"
       sheetAllowedDetents="large"
@@ -139,6 +142,7 @@ exports[`artist ArtistMemberFollowIcon not following 1`] = `
   >
     <RNSScreen
       collapsable={false}
+      fullScreenSwipeShadowEnabled={false}
       gestureResponseDistance={
         {
           "bottom": -1,
@@ -147,6 +151,7 @@ exports[`artist ArtistMemberFollowIcon not following 1`] = `
           "top": -1,
         }
       }
+      hasLargeHeader={false}
       nativeBackButtonDismissalEnabled={false}
       onAppear={[Function]}
       onDisappear={[Function]}
@@ -155,6 +160,7 @@ exports[`artist ArtistMemberFollowIcon not following 1`] = `
       onHeaderBackButtonClicked={[Function]}
       onNativeDismissCancelled={[Function]}
       onTransitionProgress={[Function]}
+      onWillAppear={[Function]}
       onWillDisappear={[Function]}
       replaceAnimation="push"
       sheetAllowedDetents="large"
@@ -250,6 +256,7 @@ exports[`artist ArtistMemberIcon icon 1`] = `
   >
     <RNSScreen
       collapsable={false}
+      fullScreenSwipeShadowEnabled={false}
       gestureResponseDistance={
         {
           "bottom": -1,
@@ -258,6 +265,7 @@ exports[`artist ArtistMemberIcon icon 1`] = `
           "top": -1,
         }
       }
+      hasLargeHeader={false}
       nativeBackButtonDismissalEnabled={false}
       onAppear={[Function]}
       onDisappear={[Function]}
@@ -266,6 +274,7 @@ exports[`artist ArtistMemberIcon icon 1`] = `
       onHeaderBackButtonClicked={[Function]}
       onNativeDismissCancelled={[Function]}
       onTransitionProgress={[Function]}
+      onWillAppear={[Function]}
       onWillDisappear={[Function]}
       replaceAnimation="push"
       sheetAllowedDetents="large"

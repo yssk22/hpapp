@@ -28,7 +28,7 @@ describe('app', () => {
       await act(async () => {
         fireEvent.press(content.getByTestId('AppConfigModal.btnClose'));
       });
-      expect(onClose).toBeCalled();
+      expect(onClose).toHaveBeenCalled();
     });
 
     test('render and save', async () => {
@@ -56,7 +56,7 @@ describe('app', () => {
       });
       // change is reflected in AppConfigSettings
       await waitForUserRootRerendered();
-      expect(onClose).toBeCalled();
+      expect(onClose).toHaveBeenCalled();
       expect(content.getByTestId('app.test').props.children).toEqual('https://risa.example.com:8080/graphql/v3');
     });
   });
@@ -89,8 +89,8 @@ describe('app', () => {
       await act(async () => {
         fireEvent(banner, 'press');
       });
-      expect(fetchUpdateAsync).toBeCalled();
-      expect(reloadAsync).toBeCalled();
+      expect(fetchUpdateAsync).toHaveBeenCalled();
+      expect(reloadAsync).toHaveBeenCalled();
 
       // reloadAsync will reload the app so do not need to validate the end result of the banner
 

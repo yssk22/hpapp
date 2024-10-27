@@ -153,6 +153,33 @@ jest.mock('react-native-share', () => ({
   default: jest.fn()
 }));
 
+jest.mock('expo-sqlite', () => ({
+  default: jest.fn(),
+  openDatabaseSync: jest.fn()
+}));
+
+jest.mock('@hpapp/system/media', () => {
+  const OriginalModule = jest.requireActual('@hpapp/system/media');
+  const Mock = {
+    ...OriginalModule,
+    LocalMediaManagerProvider({ name, children }: { name: string; children: React.ReactNode }) {
+      return children;
+    },
+    useLocalMediaManager: jest.fn(() => {
+      return {
+        isAvailable: true,
+        getAssetFromURI: jest.fn(() => {
+          return Promise.resolve(null);
+        }),
+        saveToAsset: jest.fn(() => {
+          return Promise.resolve();
+        })
+      };
+    })
+  };
+  return Mock;
+});
+
 jest.mock('@hpapp/system/graphql/relay');
 
 jest.setTimeout(5000);

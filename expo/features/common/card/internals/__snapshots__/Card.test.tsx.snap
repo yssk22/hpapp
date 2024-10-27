@@ -21,6 +21,7 @@ exports[`Card Basic 1`] = `
   >
     <RNSScreen
       collapsable={false}
+      fullScreenSwipeShadowEnabled={false}
       gestureResponseDistance={
         {
           "bottom": -1,
@@ -29,6 +30,7 @@ exports[`Card Basic 1`] = `
           "top": -1,
         }
       }
+      hasLargeHeader={false}
       nativeBackButtonDismissalEnabled={false}
       onAppear={[Function]}
       onDisappear={[Function]}
@@ -37,6 +39,7 @@ exports[`Card Basic 1`] = `
       onHeaderBackButtonClicked={[Function]}
       onNativeDismissCancelled={[Function]}
       onTransitionProgress={[Function]}
+      onWillAppear={[Function]}
       onWillDisappear={[Function]}
       replaceAnimation="push"
       sheetAllowedDetents="large"
@@ -224,6 +227,7 @@ exports[`Card SubHeader 1`] = `
   >
     <RNSScreen
       collapsable={false}
+      fullScreenSwipeShadowEnabled={false}
       gestureResponseDistance={
         {
           "bottom": -1,
@@ -232,6 +236,7 @@ exports[`Card SubHeader 1`] = `
           "top": -1,
         }
       }
+      hasLargeHeader={false}
       nativeBackButtonDismissalEnabled={false}
       onAppear={[Function]}
       onDisappear={[Function]}
@@ -240,6 +245,7 @@ exports[`Card SubHeader 1`] = `
       onHeaderBackButtonClicked={[Function]}
       onNativeDismissCancelled={[Function]}
       onTransitionProgress={[Function]}
+      onWillAppear={[Function]}
       onWillDisappear={[Function]}
       replaceAnimation="push"
       sheetAllowedDetents="large"

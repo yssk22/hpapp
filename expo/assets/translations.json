@@ -128,5 +128,8 @@
   },
   "authenticatoin failed.": {
     "ja": "認証に失敗しました。"
+  },
+  "Download": {
+    "ja": "ダウンロード"
   }
 }

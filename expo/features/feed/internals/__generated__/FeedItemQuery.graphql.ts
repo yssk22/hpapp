@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<b29900cda7e6f35395d193246139146c>>
+ * @generated SignedSource<<d2f10705018f26844584f734b21a1d69>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -17,6 +17,12 @@ export type FeedItemQuery$data = {
   readonly node: {
     readonly assetType?: HPFeedItemHPAssetType;
     readonly id: string;
+    readonly media?: ReadonlyArray<{
+      readonly url: string;
+    }>;
+    readonly ownerMember?: {
+      readonly name: string;
+    } | null;
     readonly sourceURL?: string;
     readonly title?: string;
   } | null;
@@ -49,32 +55,50 @@ v2 = {
   "storageKey": null
 },
 v3 = {
-  "kind": "InlineFragment",
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "title",
+  "storageKey": null
+},
+v4 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "sourceURL",
+  "storageKey": null
+},
+v5 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "assetType",
+  "storageKey": null
+},
+v6 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "name",
+  "storageKey": null
+},
+v7 = {
+  "alias": null,
+  "args": null,
+  "concreteType": "Media",
+  "kind": "LinkedField",
+  "name": "media",
+  "plural": true,
   "selections": [
     {
       "alias": null,
       "args": null,
       "kind": "ScalarField",
-      "name": "title",
-      "storageKey": null
-    },
-    {
-      "alias": null,
-      "args": null,
-      "kind": "ScalarField",
-      "name": "sourceURL",
-      "storageKey": null
-    },
-    {
-      "alias": null,
-      "args": null,
-      "kind": "ScalarField",
-      "name": "assetType",
+      "name": "url",
       "storageKey": null
     }
   ],
-  "type": "HPFeedItem",
-  "abstractKey": null
+  "storageKey": null
 };
 return {
   "fragment": {
@@ -92,7 +116,29 @@ return {
         "plural": false,
         "selections": [
           (v2/*: any*/),
-          (v3/*: any*/)
+          {
+            "kind": "InlineFragment",
+            "selections": [
+              (v3/*: any*/),
+              (v4/*: any*/),
+              (v5/*: any*/),
+              {
+                "alias": null,
+                "args": null,
+                "concreteType": "HPMember",
+                "kind": "LinkedField",
+                "name": "ownerMember",
+                "plural": false,
+                "selections": [
+                  (v6/*: any*/)
+                ],
+                "storageKey": null
+              },
+              (v7/*: any*/)
+            ],
+            "type": "HPFeedItem",
+            "abstractKey": null
+          }
         ],
         "storageKey": null
       }
@@ -122,23 +168,46 @@ return {
             "storageKey": null
           },
           (v2/*: any*/),
-          (v3/*: any*/)
+          {
+            "kind": "InlineFragment",
+            "selections": [
+              (v3/*: any*/),
+              (v4/*: any*/),
+              (v5/*: any*/),
+              {
+                "alias": null,
+                "args": null,
+                "concreteType": "HPMember",
+                "kind": "LinkedField",
+                "name": "ownerMember",
+                "plural": false,
+                "selections": [
+                  (v6/*: any*/),
+                  (v2/*: any*/)
+                ],
+                "storageKey": null
+              },
+              (v7/*: any*/)
+            ],
+            "type": "HPFeedItem",
+            "abstractKey": null
+          }
         ],
         "storageKey": null
       }
     ]
   },
   "params": {
-    "cacheID": "a4c4c4cfd6286d29a15facc0f65ef4f7",
+    "cacheID": "a02ef2e128f326e960cd1acc8a183691",
     "id": null,
     "metadata": {},
     "name": "FeedItemQuery",
     "operationKind": "query",
-    "text": "query FeedItemQuery(\n  $feedId: ID!\n) {\n  node(id: $feedId) {\n    __typename\n    id\n    ... on HPFeedItem {\n      title\n      sourceURL\n      assetType\n    }\n  }\n}\n"
+    "text": "query FeedItemQuery(\n  $feedId: ID!\n) {\n  node(id: $feedId) {\n    __typename\n    id\n    ... on HPFeedItem {\n      title\n      sourceURL\n      assetType\n      ownerMember {\n        name\n        id\n      }\n      media {\n        url\n      }\n    }\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "2a6be9df02ef2fa8ba635300ab83de60";
+(node as any).hash = "37b5fa5df9951133e0052531f7fda43c";
 
 export default node;
