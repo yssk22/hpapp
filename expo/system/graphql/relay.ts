@@ -35,7 +35,7 @@ export function createEnvironment(config: HttpClientConfig, tokenFactory: Reques
               headers['Authorization'] = 'Bearer ' + tokens.userToken;
             }
             if (tokens.clientToken) {
-              headers['X-HPAPP-CLIENT-AUTHORIZATION'] = `Bearer ${tokens.clientToken}`;
+              headers['X-HPAPP-CLIENT-AUTHORIZATION'] = `${tokens.clientToken}`;
             }
             if (tokens.idToken) {
               headers['X-HPAPP-3P-AUTHORIZATION'] = `Bearer ${tokens.idToken}`;

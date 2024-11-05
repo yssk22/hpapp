@@ -20,6 +20,7 @@ export default function AppConfigModal({ isVisible, onClose }: AppConfigModalPro
   const appConfigUpdate = useAppConfigUpdator();
   const [useStorybook, setUseStorybook] = useState(appConfig.useStorybook ?? false);
   const [useLocalAppConfig, setUseLocalAppConfig] = useState(appConfig.useLocalAppConfig ?? false);
+  const [useCustomGraphQLEndpoint, setUseCustomGraphQLEndpoint] = useState(appConfig.useCustomGraphQLEndpoint ?? false);
   const [graphQLEndpoint, setGraphQLEndpoint] = useState(appConfig.graphQLEndpoint ?? '');
   const [useLocalAuth, setUseLocalAuth] = useState(appConfig.useLocalAuth ?? false);
   const [useUPFCDemoScraper, setUseUPFCDemoScraper] = useState(appConfig.useUPFCDemoScraper ?? false);
@@ -27,6 +28,7 @@ export default function AppConfigModal({ isVisible, onClose }: AppConfigModalPro
     appConfigUpdate({
       useStorybook,
       useLocalAppConfig,
+      useCustomGraphQLEndpoint,
       graphQLEndpoint,
       useLocalAuth,
       useUPFCDemoScraper
@@ -63,6 +65,15 @@ export default function AppConfigModal({ isVisible, onClose }: AppConfigModalPro
               value={useLocalAuth}
               onValueChange={() => {
                 setUseLocalAuth(!useLocalAuth);
+              }}
+            />
+          </View>
+          <View style={[styles.inputGroup, styles.switchContainer]}>
+            <Text style={styles.label}>Use Custom GraphQL Endpoint</Text>
+            <Switch
+              value={useCustomGraphQLEndpoint}
+              onValueChange={() => {
+                setUseCustomGraphQLEndpoint(!useCustomGraphQLEndpoint);
               }}
             />
           </View>

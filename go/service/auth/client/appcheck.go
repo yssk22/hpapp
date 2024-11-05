@@ -64,6 +64,11 @@ func (f *firebaseAppCheck) VerifyToken(ctx context.Context, token string) Client
 	}
 	decodedToken, err := client.VerifyToken(token)
 	if err != nil {
+		slog.Warning(ctx, "cannot veirfy token by appcheck",
+			slog.Name("service.auth.client.firebaseAppCheck"),
+			slog.A("token", token),
+			slog.A("error", err.Error()),
+		)
 		return nil
 	}
 	return &firebaseAppCheckClient{

@@ -2,6 +2,7 @@ import { useAppConfig, useCurrentUser } from '@hpapp/features/app/settings';
 import { getAppCheckToken, getIdToken } from '@hpapp/system/firebase';
 import { createEnvironment } from '@hpapp/system/graphql/relay';
 import { RequestTokenSet } from '@hpapp/system/graphql/types';
+import Constants from 'expo-constants';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Platform } from 'react-native';
 import { RelayEnvironmentProvider } from 'react-relay';
@@ -11,7 +12,9 @@ export default function AppRelayProvider({ children }: { children: React.ReactNo
   const appConfig = useAppConfig();
   const environment = useMemo(() => {
     const httpConfig = {
-      Endpoint: appConfig.graphQLEndpoint,
+      Endpoint: appConfig.useCustomGraphQLEndpoint
+        ? appConfig.graphQLEndpoint
+        : Constants.expoConfig?.extra?.hpapp.graphQLEndpoint,
       NetworkTimeoutSecond: 60
     };
     const env = createEnvironment(httpConfig, async () => {
