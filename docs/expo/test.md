@@ -59,7 +59,7 @@ const rendered = await renderUserComponent(<ComponentName />, {
 If your commpnent uses GraphQL, you need a json data file to mock the GraphQL request. To make it easy to create a json data file, you can use the following environment variable when executing the test.
 
 - `HPAPP_GRAPHQL_ENDPOINT_FOR_JEST`: GraphQL endpoint for the test. we recommend to use the production.
-- `HPAPP_USER_TOKEN_FOR_JEST`: most of GraphQL requests need a user token.
+- `HPAPP_USER_TOKEN_FOR_JEST`: most of GraphQL requests need a user token. You can open the expo devclient app, then go to '設定' -> '開発者設定', then tap "Access Token" to get the token logged in your console.
 - `HPAPP_APP_TOKEN_FOR_JEST`: needed if you create a json data file from the production.
 
 When the jest execute the test first time (or the response snapshot file is not found.), it will issue the request to the server and save the respose snapshot file under `system/graphql/__mocks__/snapshots` directory and use the response for the next time.

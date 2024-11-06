@@ -51,8 +51,8 @@ const useViewHistory = () => {
           optimisticResponse,
           updater: (store, payload) => {
             const historyId = payload?.me?.upsertViewHistory?.id;
-            const feedItem = store.get(feedId);
-            if (historyId === undefined || feedItem === undefined || feedItem === null) {
+            const feedItem = store.get(feedId) ?? undefined;
+            if (historyId === undefined || feedItem === undefined) {
               return;
             }
             // explicitly add a linked record since there is no way for relay to identify

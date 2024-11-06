@@ -15,6 +15,7 @@ const helloProjectFragmentGraphQL = graphql`
         id
         key
         artistKey
+        artistID
         name
         nameKana
         thumbnailURL

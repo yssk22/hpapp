@@ -134,5 +134,27 @@
   },
   "Love": {
     "ja": "好き"
+  },
+  "dateOfBirth": {
+    "ja": "生年月日",
+    "en": "Date Of Birth"
+  },
+  "yearsold": {
+    "ja": "歳",
+    "en": "Years Old"
+  },
+  "joinAt": {
+    "ja": "加入日"
+  },
+  "days": {
+    "ja": "日"
+  },
+  "addFollowing": {
+    "ja": "フォローする",
+    "en": "Follow"
+  },
+  "isFollowing": {
+    "ja": "フォロー中",
+    "en": "Following"
   }
 }
