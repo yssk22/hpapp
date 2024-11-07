@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<9e8d4833f79b4d65b5aec519d8520db9>>
+ * @generated SignedSource<<042afa1d38c8892da59b5bf57be8c8aa>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -15,6 +15,7 @@ export type HelloProjectFragment$data = {
     readonly id: string;
     readonly key: string;
     readonly members: ReadonlyArray<{
+      readonly artistID: string | null;
       readonly artistKey: string;
       readonly bloodType: string;
       readonly dateOfBirth: string;
@@ -100,6 +101,13 @@ return {
               "name": "artistKey",
               "storageKey": null
             },
+            {
+              "alias": null,
+              "args": null,
+              "kind": "ScalarField",
+              "name": "artistID",
+              "storageKey": null
+            },
             (v2/*: any*/),
             {
               "alias": null,
@@ -149,6 +157,6 @@ return {
 };
 })();
 
-(node as any).hash = "abae7e2737b1aa2e79b5fdec4bc787ef";
+(node as any).hash = "92d091cdf617646cc1e8aa9e685bf157";
 
 export default node;

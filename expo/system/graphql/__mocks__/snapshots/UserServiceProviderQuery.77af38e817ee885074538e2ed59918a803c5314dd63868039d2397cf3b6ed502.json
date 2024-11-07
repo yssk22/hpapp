@@ -1,0 +1,2241 @@
+{
+  "operation": "UserServiceProviderQuery",
+  "response": {
+    "data": {
+      "helloproject": {
+        "artists": [
+          {
+            "id": "1",
+            "key": "morningmusume",
+            "name": "モーニング娘。'24",
+            "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/6d81ea36be71c8d1626726bcf63244779cfefa11.jpg",
+            "members": [
+              {
+                "id": "8589934592",
+                "key": "mizuki_fukumura",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "譜久村聖",
+                "nameKana": "フクムラミズキ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/8bf17e09fa5cb3e62ad57617c81e1b6c8f9958f6.jpg",
+                "dateOfBirth": "1996-10-29T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2011-01-01T15:00:00Z",
+                "graduateAt": "2023-11-30T23:59:59Z"
+              },
+              {
+                "id": "8589934593",
+                "key": "erina_ikuta",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "生田衣梨奈",
+                "nameKana": "イクタエリナ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/77fad448e5e5889e89fd8b49022ad432bdb62581.jpg",
+                "dateOfBirth": "1997-07-06T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2011-01-01T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934594",
+                "key": "ayumi_ishida",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "石田亜佑美",
+                "nameKana": "イシダアユミ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/731f74a6d447455ed959ccb0ee6ca02bdd4eebcc.jpg",
+                "dateOfBirth": "1997-01-06T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2011-09-28T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934595",
+                "key": "masaki_satou",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "佐藤優樹",
+                "nameKana": "サトウマサキ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/c28f02d1a45bb3b97a6dd5c6431a9ddd5bacc92b.jpg",
+                "dateOfBirth": "1999-05-06T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2011-09-28T15:00:00Z",
+                "graduateAt": "2021-12-14T23:59:59Z"
+              },
+              {
+                "id": "8589934596",
+                "key": "sakura_oda",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "小田さくら",
+                "nameKana": "オダサクラ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/1af9ae3666b51a17ccd5a7c4a0e0292c2cef3a2f.jpg",
+                "dateOfBirth": "1999-03-11T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2012-09-13T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934597",
+                "key": "miki_nonaka",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "野中美希",
+                "nameKana": "ノナカミキ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/338a0bd45c76ad92edc1439ef707866b9577462c.jpg",
+                "dateOfBirth": "1999-10-06T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2014-09-29T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934598",
+                "key": "maria_makino",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "牧野真莉愛",
+                "nameKana": "マキノマリア",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/101d148c59e31cad0663e48f178cf8c999b0a411.jpg",
+                "dateOfBirth": "2001-02-01T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2014-09-29T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934599",
+                "key": "akane_haga",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "羽賀朱音",
+                "nameKana": "ハガアカネ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/fe80b3795d6d8d0e118bc73fd02581fe86cab312.jpg",
+                "dateOfBirth": "2002-03-06T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2014-09-29T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934600",
+                "key": "kaede_kaga",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "加賀楓",
+                "nameKana": "カガカエデ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/06e556832d22b4579a9c72caed347fc447f67443.jpg",
+                "dateOfBirth": "1999-11-29T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2016-12-11T15:00:00Z",
+                "graduateAt": "2022-12-12T23:59:59Z"
+              },
+              {
+                "id": "8589934601",
+                "key": "reina_yokoyama",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "横山玲奈",
+                "nameKana": "ヨコヤマレイナ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/86cca7ef647c1beef4ab23805e1daa1e08916302.jpg",
+                "dateOfBirth": "2001-02-21T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2016-12-11T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934602",
+                "key": "chisaki_morito_m",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "森戸知沙希",
+                "nameKana": "モリトチサキ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/3a1fc2e04f0254a18f857a8809963c2fc8f8ffad.jpg",
+                "dateOfBirth": "2000-02-18T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2014-11-04T15:00:00Z",
+                "graduateAt": "2022-06-21T23:59:59Z"
+              },
+              {
+                "id": "8589934603",
+                "key": "rio_kitagawa",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "北川莉央",
+                "nameKana": "キタガワリオ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/ef7f3ebf257b8dc9e6c23f1cc4bbd37843b5be24.jpg",
+                "dateOfBirth": "2004-03-15T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2019-06-21T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934604",
+                "key": "homare_okamura",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "岡村ほまれ",
+                "nameKana": "オカムラホマレ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/0841a20c0f9a00441ad889b38053a318516bd1ff.jpg",
+                "dateOfBirth": "2005-05-08T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2019-06-21T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934605",
+                "key": "mei_yamazaki",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "山﨑愛生",
+                "nameKana": "ヤマザキメイ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/f7e0995ea90e7713d222dd7e93efabad7ff7be53.jpg",
+                "dateOfBirth": "2005-06-27T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2019-06-21T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934655",
+                "key": "riho_sayashi",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "鞘師里保",
+                "nameKana": "サヤシリホ",
+                "thumbnailURL": "https://wao-entertainment.com/wp-content/uploads/2018/12/SS-2018-12-08-9.06.08.jpg",
+                "dateOfBirth": "1998-05-27T15:00:00Z",
+                "bloodType": "AB",
+                "joinAt": "2012-01-01T15:00:00Z",
+                "graduateAt": "2015-12-30T15:00:00Z"
+              },
+              {
+                "id": "8589934656",
+                "key": "kanon_suzuki",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "鈴木香音",
+                "nameKana": "スズキカノン",
+                "thumbnailURL": "https://pbs.twimg.com/media/CgpjYliU4AMA3EB?format=jpg&name=small",
+                "dateOfBirth": "1998-08-04T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2012-01-01T15:00:00Z",
+                "graduateAt": "2016-05-30T15:00:00Z"
+              },
+              {
+                "id": "8589934657",
+                "key": "haruna_iikubo",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "飯窪春菜",
+                "nameKana": "イイクボハルナ",
+                "thumbnailURL": "http://saraca.mokuren.ne.jp/mem/g/c201805-mm-03.jpg",
+                "dateOfBirth": "1994-11-06T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2011-09-28T15:00:00Z",
+                "graduateAt": "2018-12-15T15:00:00Z"
+              },
+              {
+                "id": "8589934658",
+                "key": "haruka_kudo",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "工藤遥",
+                "nameKana": "クドウハルカ",
+                "thumbnailURL": "https://cdn-ak.f.st-hatena.com/images/fotolife/r/risacchi/20171104/20171104000854.jpg",
+                "dateOfBirth": "1999-10-26T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2011-09-28T15:00:00Z",
+                "graduateAt": "2017-12-10T15:00:00Z"
+              },
+              {
+                "id": "8589934659",
+                "key": "haruna_ogata",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "尾形春水",
+                "nameKana": "オガタハルナ",
+                "thumbnailURL": "https://sunshine-sakae.jp/img02/image/818.jpg",
+                "dateOfBirth": "1999-02-14T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2014-09-29T15:00:00Z",
+                "graduateAt": "2018-06-19T15:00:00Z"
+              },
+              {
+                "id": "8590222510",
+                "key": "rio_sakurai",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "櫻井梨央",
+                "nameKana": "サクライリオ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/9fab1120a105648104449dd8fedf44348ffc3bb4.jpg",
+                "dateOfBirth": "2005-11-10T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2022-06-28T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590786238",
+                "key": "haruka_inoue",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "井上春華",
+                "nameKana": "イノウエハルカ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/6724882fe6d8b0fcd2b26d2f7f37a74423d07936.jpg",
+                "dateOfBirth": "2006-05-05T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2023-05-22T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590786239",
+                "key": "ako_yumigeta",
+                "artistKey": "morningmusume",
+                "artistID": "1",
+                "name": "弓桁朱琴",
+                "nameKana": "ユミゲタアコ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/aa545c402a4dc9cbe9c567fb917634567bfd2370.jpg",
+                "dateOfBirth": "2008-07-07T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2023-05-22T15:00:00Z",
+                "graduateAt": null
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "key": "angerme",
+            "name": "アンジュルム",
+            "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/de4c0a32697603d3d8401b9e42facfff9ca72bea.jpg",
+            "members": [
+              {
+                "id": "8589934606",
+                "key": "akari_takeuchi",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "竹内朱莉",
+                "nameKana": "タケウチアカリ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/8f6e0c19b53350d6c39d1e1d9d2c589f99a139b9.jpg",
+                "dateOfBirth": "1997-11-22T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2011-08-13T15:00:00Z",
+                "graduateAt": "2023-06-22T23:59:59Z"
+              },
+              {
+                "id": "8589934607",
+                "key": "kana_nakanishi",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "中西香菜",
+                "nameKana": "ナカニシカナ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/d432937b7d73553154eb0376984f69f68c85fb2c.jpg",
+                "dateOfBirth": "1997-06-03T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2011-08-13T15:00:00Z",
+                "graduateAt": "2019-12-09T15:00:00Z"
+              },
+              {
+                "id": "8589934608",
+                "key": "ayano_kawamura",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "川村文乃",
+                "nameKana": "カワムラアヤノ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/9feb914740768983053403d10b1c4946f6319490.jpg",
+                "dateOfBirth": "1999-07-06T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2017-06-25T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934609",
+                "key": "mizuki_murota",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "室田瑞希",
+                "nameKana": "ムロタミズキ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/e96c5b700569d80f4b1a7faafa3f4aa7d2e1825d.jpg",
+                "dateOfBirth": "1998-06-11T15:00:00Z",
+                "bloodType": "AB",
+                "joinAt": "2014-10-03T15:00:00Z",
+                "graduateAt": "2020-03-23T23:59:59Z"
+              },
+              {
+                "id": "8589934610",
+                "key": "rikako_sasaki",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "佐々木莉佳子",
+                "nameKana": "ササキリカコ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/ac7a97007a64dde0b580efdca18d0335a2ca9275.jpg",
+                "dateOfBirth": "2001-05-27T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2014-10-03T15:00:00Z",
+                "graduateAt": "2024-06-20T23:59:59Z"
+              },
+              {
+                "id": "8589934611",
+                "key": "moe_kamikokuryo",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "上國料萌衣",
+                "nameKana": "カミコクリョウモエ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/44874dac618de45c52456b8f2a0103c06ec8a760.jpg",
+                "dateOfBirth": "1999-10-23T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2015-11-10T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934612",
+                "key": "momona_kasahara",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "笠原桃奈",
+                "nameKana": "カサハラモモナ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/af37b232f383c2c746d8d2d5fa4ad8b203bae8b2.jpg",
+                "dateOfBirth": "2003-10-21T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2016-07-15T15:00:00Z",
+                "graduateAt": "2021-11-16T23:59:59Z"
+              },
+              {
+                "id": "8589934613",
+                "key": "musubu_funaki_a",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "船木結",
+                "nameKana": "フナキムスブ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/38f312f66bdce6cff3f8c8fae7c426394b2d3490.jpg",
+                "dateOfBirth": "2002-05-09T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2017-06-25T15:00:00Z",
+                "graduateAt": "2020-12-10T23:59:59Z"
+              },
+              {
+                "id": "8589934614",
+                "key": "haruka_oota",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "太田遥香",
+                "nameKana": "オオタハルカ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/0cec151a243d45d7aa10462af6896e7699f62aaf.jpg",
+                "dateOfBirth": "2003-10-20T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2018-11-22T15:00:00Z",
+                "graduateAt": "2020-10-13T23:59:59Z"
+              },
+              {
+                "id": "8589934615",
+                "key": "layla_ise",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "伊勢鈴蘭",
+                "nameKana": "イセレイラ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/08aed3ea91dd319a1558448e3f17e8eae83dc35f.jpg",
+                "dateOfBirth": "2004-01-18T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2018-11-22T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934616",
+                "key": "rin_hashisako",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "橋迫鈴",
+                "nameKana": "ハシサコリン",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/39ead44736c03f4e24a5779a505b0045641cf56d.jpg",
+                "dateOfBirth": "2005-10-05T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2019-07-02T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934660",
+                "key": "rina_katsuta",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "勝田里奈",
+                "nameKana": "カツタリナ",
+                "thumbnailURL": "https://www.entamealive.com/wp-content/uploads/2019/07/katsuta02.jpg",
+                "dateOfBirth": "1998-04-05T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2011-08-13T15:00:00Z",
+                "graduateAt": "2019-09-24T15:00:00Z"
+              },
+              {
+                "id": "8589934661",
+                "key": "meimi_tamura",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "田村芽実",
+                "nameKana": "タムラメイミ",
+                "thumbnailURL": "https://userdisk.webry.biglobe.ne.jp/004/977/34/N000/000/022/145061832838025154177.jpg",
+                "dateOfBirth": "1998-10-29T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2011-08-13T15:00:00Z",
+                "graduateAt": "2016-05-29T15:00:00Z"
+              },
+              {
+                "id": "8589934662",
+                "key": "maho_aikata",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "相川茉穂",
+                "nameKana": "アイカワマホ",
+                "thumbnailURL": "https://stat.ameba.jp/user_images/20170111/23/offside12/66/47/j/o0475055013843459962.jpg?caw=800",
+                "dateOfBirth": "1999-03-25T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2014-10-03T15:00:00Z",
+                "graduateAt": "2017-12-30T15:00:00Z"
+              },
+              {
+                "id": "8589934669",
+                "key": "rin_kawana",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "川名凜",
+                "nameKana": "カワナリン",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/68ec210aec20c4a35b4f706d0cf675b590432fa5.jpg",
+                "dateOfBirth": "2003-12-05T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2020-11-01T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934670",
+                "key": "shion_tamenaga",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "為永幸音",
+                "nameKana": "タメナガシオン",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/45be1909e89238f20e16fa71b99944db5b15ca76.jpg",
+                "dateOfBirth": "2004-02-08T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2020-11-01T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934671",
+                "key": "wakana_matsumoto",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "松本わかな",
+                "nameKana": "マツモトワカナ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/c6c5f81dc07057cf7f3a3e831600940b457a5a48.jpg",
+                "dateOfBirth": "2007-08-31T15:00:00Z",
+                "bloodType": "AB",
+                "joinAt": "2020-11-01T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590085285",
+                "key": "yuki_hirayama",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "平山遊季",
+                "nameKana": "ヒラヤマユキ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/c562eeda15dc624ef2b854b7e995cebfc72e71b2.jpg",
+                "dateOfBirth": "2006-07-24T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2021-12-29T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590783732",
+                "key": "yukiho_shimoitani",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "下井谷幸穂",
+                "nameKana": "シモイタニユキホ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/6dd1c3ac9f0c59353a826fd8b2bf0a998df571fe.jpg",
+                "dateOfBirth": "2006-08-03T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2023-05-22T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590783733",
+                "key": "hana_goto",
+                "artistKey": "angerme",
+                "artistID": "2",
+                "name": "後藤花",
+                "nameKana": "ゴトウハナ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/acedbd0e1c17f6e6cf0eb38625e114548ba78ea1.jpg",
+                "dateOfBirth": "2008-06-04T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2023-05-22T15:00:00Z",
+                "graduateAt": null
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "key": "juicejuice",
+            "name": "Juice=Juice",
+            "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/f17cbeb1c69911f548b5ea8ab2be56c7a4eb668d.jpg",
+            "members": [
+              {
+                "id": "8589934617",
+                "key": "tomoko_kanazawa",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "金澤朋子",
+                "nameKana": "カナザワトモコ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/392d8f9f5473df532be1ef0e20aa2d4555997b2b.jpg",
+                "dateOfBirth": "1995-07-01T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2013-02-24T15:00:00Z",
+                "graduateAt": "2021-11-25T23:59:59Z"
+              },
+              {
+                "id": "8589934618",
+                "key": "sayuki_takagi",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "高木紗友希",
+                "nameKana": "タカギサユキ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/58e11168849faa85bd5cb227e9c72d7f9d44865e.jpg",
+                "dateOfBirth": "1997-04-20T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2013-02-24T15:00:00Z",
+                "graduateAt": "2021-02-12T23:59:59Z"
+              },
+              {
+                "id": "8589934619",
+                "key": "karin_miyamoto",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "宮本佳林",
+                "nameKana": "ミヤモトカリン",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/eed0cd62d68c3d48ed89bf18bdad6bf9e779f3a0.jpg",
+                "dateOfBirth": "1998-11-30T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2013-02-24T15:00:00Z",
+                "graduateAt": "2020-12-11T23:59:59Z"
+              },
+              {
+                "id": "8589934620",
+                "key": "akari_uemura",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "植村あかり",
+                "nameKana": "ウエムラアカリ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/365a21ba927880f37c74909ee3dfc2654034853e.jpg",
+                "dateOfBirth": "1998-12-29T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2013-02-24T15:00:00Z",
+                "graduateAt": "2024-06-17T23:59:59Z"
+              },
+              {
+                "id": "8589934621",
+                "key": "ruru_dambara",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "段原瑠々",
+                "nameKana": "ダンバラルル",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/acff7e0af241a30011643aa303f1cbff9c064a3c.jpg",
+                "dateOfBirth": "2001-05-06T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2017-06-25T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934622",
+                "key": "manaka_inaba",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "稲場愛香",
+                "nameKana": "イナバマナカ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/41e6b0ace5b82eadb5da6bedda1d29a5f353f18d.jpg",
+                "dateOfBirth": "1997-12-26T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2014-11-04T15:00:00Z",
+                "graduateAt": "2022-05-31T23:59:59Z"
+              },
+              {
+                "id": "8589934623",
+                "key": "yume_kudou",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "工藤由愛",
+                "nameKana": "クドウユメ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/9020babf1afe1101cd6c9e38843ff71ea3e20be8.jpg",
+                "dateOfBirth": "2004-09-27T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2019-06-13T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934624",
+                "key": "riai_matsunaga",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "松永里愛",
+                "nameKana": "マツナガリアイ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/a069bb1f932be748008694204cbf0763049b2635.jpg",
+                "dateOfBirth": "2005-07-06T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2019-06-13T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934666",
+                "key": "yuka_miyazaki",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "宮崎由加",
+                "nameKana": "ミヤザキユカ",
+                "thumbnailURL": "https://contents.oricon.co.jp/upimg/news/20181221/2126059_201812210640078001545393929c.jpg",
+                "dateOfBirth": "1994-04-01T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2013-02-24T15:00:00Z",
+                "graduateAt": "2019-06-16T15:00:00Z"
+              },
+              {
+                "id": "8589934667",
+                "key": "yanagawa_nanami",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "梁川奈々美",
+                "nameKana": "ヤナガワナナミ",
+                "thumbnailURL": "https://stat.ameba.jp/user_images/20181102/23/toshiki1970/76/bf/j/o0475055014295987031.jpg?caw=800",
+                "dateOfBirth": "2002-01-05T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2017-06-25T15:00:00Z",
+                "graduateAt": "2019-03-10T15:00:00Z"
+              },
+              {
+                "id": "8589934668",
+                "key": "rei_inoue",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "井上玲音",
+                "nameKana": "イノウエレイ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/2d08875bb8172ce45acd0cbcdc7f9bb14ad2652a.jpg",
+                "dateOfBirth": "2001-07-16T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2015-01-01T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934672",
+                "key": "ichika_arisawa",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "有澤一華",
+                "nameKana": "アリサワイチカ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/5b0eaf840c393d9296635128921412a146a1a015.jpg",
+                "dateOfBirth": "2003-12-22T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2021-07-06T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934673",
+                "key": "risa_irie",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "入江里咲",
+                "nameKana": "イリエリサ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/0ffb0d3959b77dd4c9bf96a6736fc34bb6a85ff7.jpg",
+                "dateOfBirth": "2005-10-17T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2021-07-06T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934674",
+                "key": "kisaki_ebata",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "江端妃咲",
+                "nameKana": "エバタキサキ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/bb75f62a9ff5473eaba71bf69069ec116d268a4a.jpg",
+                "dateOfBirth": "2007-01-29T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2021-07-06T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590222529",
+                "key": "sakura_ishiyama",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "石山咲良",
+                "nameKana": "イシヤマサクラ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/7ea0ac7a56efac310beb619216ac1165db31c9fc.jpg",
+                "dateOfBirth": "2004-02-21T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2022-06-28T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590222530",
+                "key": "akari_endo",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "遠藤彩加里",
+                "nameKana": "エンドウアカリ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/96918635cd1540932e5ceb3727db4ffb5cf498fe.jpg",
+                "dateOfBirth": "2008-04-25T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2022-06-28T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590783744",
+                "key": "mifu_kawashima",
+                "artistKey": "juicejuice",
+                "artistID": "3",
+                "name": "川嶋美楓",
+                "nameKana": "カワシマミフ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/b73339df75264e1455c3cd9b780bf3a96628f57f.jpg",
+                "dateOfBirth": "2007-12-12T15:00:00Z",
+                "bloodType": "AB",
+                "joinAt": "2023-05-22T15:00:00Z",
+                "graduateAt": null
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "key": "countrygirls",
+            "name": "カントリー・ガールズ",
+            "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/0de545fd02bc79b8faab45327f67441005f42560.jpg",
+            "members": [
+              {
+                "id": "8589934625",
+                "key": "risa_yamaki",
+                "artistKey": "countrygirls",
+                "artistID": "4",
+                "name": "山木梨沙",
+                "nameKana": "ヤマキリサ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/628b04c01fd268f619a6e2ee0f6976adb78f91c3.jpg",
+                "dateOfBirth": "1997-10-13T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2014-11-04T15:00:00Z",
+                "graduateAt": "2019-12-25T15:00:00Z"
+              },
+              {
+                "id": "8589934626",
+                "key": "chisaki_morito",
+                "artistKey": "countrygirls",
+                "artistID": "4",
+                "name": "森戸知沙希",
+                "nameKana": "モリトチサキ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/95d6b25afc64ce119df6605f721bddc982fc678d.jpg",
+                "dateOfBirth": "2000-02-18T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2014-11-04T15:00:00Z",
+                "graduateAt": "2019-12-25T15:00:00Z"
+              },
+              {
+                "id": "8589934627",
+                "key": "mai_ozeki",
+                "artistKey": "countrygirls",
+                "artistID": "4",
+                "name": "小関舞",
+                "nameKana": "オゼキマイ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/adaa01b151a1921a6a696aabdd5ac68f15a3b3a7.jpg",
+                "dateOfBirth": "2002-02-09T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2014-11-04T15:00:00Z",
+                "graduateAt": "2019-12-25T15:00:00Z"
+              },
+              {
+                "id": "8589934628",
+                "key": "musubu_funaki",
+                "artistKey": "countrygirls",
+                "artistID": "4",
+                "name": "船木結",
+                "nameKana": "フナキムスブ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/7aa4a4c45fdd31ae08cc667e718be612c6d9345c.jpg",
+                "dateOfBirth": "2002-05-09T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2015-11-04T15:00:00Z",
+                "graduateAt": "2019-12-25T15:00:00Z"
+              },
+              {
+                "id": "8589934663",
+                "key": "nanami_yanagawa",
+                "artistKey": "countrygirls",
+                "artistID": "4",
+                "name": "梁川奈々美",
+                "nameKana": "ヤナガワナナミ",
+                "thumbnailURL": "https://image.space.rakuten.co.jp/d/strg/ctrl/9/2a66680441a6600c737dedd30fbfe486e9d674bd.75.2.9.2.jpeg",
+                "dateOfBirth": "2002-01-05T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2015-11-04T15:00:00Z",
+                "graduateAt": "2019-03-10T15:00:00Z"
+              },
+              {
+                "id": "8589934664",
+                "key": "manaka_inaba_c",
+                "artistKey": "countrygirls",
+                "artistID": "4",
+                "name": "稲場愛香",
+                "nameKana": "イナバマナカ",
+                "thumbnailURL": "https://cdn-ak.f.st-hatena.com/images/fotolife/p/polka8dot/20160805/20160805204817.jpg",
+                "dateOfBirth": "1997-12-26T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2014-11-04T15:00:00Z",
+                "graduateAt": "2016-08-03T15:00:00Z"
+              },
+              {
+                "id": "8589934665",
+                "key": "momoko_tsugunaga_c",
+                "artistKey": "countrygirls",
+                "artistID": "4",
+                "name": "嗣永桃子",
+                "nameKana": "ツグナガモモコ",
+                "thumbnailURL": "https://stat.ameba.jp/user_images/20160420/21/hellopworld/cf/bb/j/o0475055013625033137.jpg?caw=800",
+                "dateOfBirth": "1992-03-05T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2014-11-04T15:00:00Z",
+                "graduateAt": "2017-06-29T15:00:00Z"
+              }
+            ]
+          },
+          {
+            "id": "5",
+            "key": "kobushifactory",
+            "name": "こぶしファクトリー",
+            "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/95d6977f58483a8586c28d9b86a40dfa57f23512.jpg",
+            "members": [
+              {
+                "id": "8589934629",
+                "key": "ayaka_hirose",
+                "artistKey": "kobushifactory",
+                "artistID": "5",
+                "name": "広瀬彩海",
+                "nameKana": "ヒロセアヤカ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/8e3884aa8fb84bd357ea7b7556735fb90752bb3a.jpg",
+                "dateOfBirth": "1999-08-03T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2015-01-01T15:00:00Z",
+                "graduateAt": "2020-03-30T23:59:59Z"
+              },
+              {
+                "id": "8589934630",
+                "key": "minami_nomura",
+                "artistKey": "kobushifactory",
+                "artistID": "5",
+                "name": "野村みな美",
+                "nameKana": "ノムラミナミ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/c940265d065dd710f1eb13fc606b0d6c075a4183.jpg",
+                "dateOfBirth": "2000-02-09T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2015-01-01T15:00:00Z",
+                "graduateAt": "2020-03-30T23:59:59Z"
+              },
+              {
+                "id": "8589934631",
+                "key": "ayano_hamaura",
+                "artistKey": "kobushifactory",
+                "artistID": "5",
+                "name": "浜浦彩乃",
+                "nameKana": "ハマウラアヤノ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/7677a797a4f95557bb8cb526919f3d8ebe8b518d.jpg",
+                "dateOfBirth": "2000-04-25T15:00:00Z",
+                "bloodType": "AB",
+                "joinAt": "2015-01-01T15:00:00Z",
+                "graduateAt": "2020-03-30T23:59:59Z"
+              },
+              {
+                "id": "8589934632",
+                "key": "sakurako_wada",
+                "artistKey": "kobushifactory",
+                "artistID": "5",
+                "name": "和田桜子",
+                "nameKana": "ワダサクラコ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/f2ca8febac34e3061e37fada823fb6401b72ef62.jpg",
+                "dateOfBirth": "2001-03-07T15:00:00Z",
+                "bloodType": "Ｂ",
+                "joinAt": "2015-01-01T15:00:00Z",
+                "graduateAt": "2020-03-30T23:59:59Z"
+              },
+              {
+                "id": "8589934633",
+                "key": "rei_inoue_k",
+                "artistKey": "kobushifactory",
+                "artistID": "5",
+                "name": "井上玲音",
+                "nameKana": "イノウエレイ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/c00f2a4ba8cf161313b1dfb1f0126e12f2101c52.jpg",
+                "dateOfBirth": "2001-07-16T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2015-01-01T15:00:00Z",
+                "graduateAt": "2020-03-30T23:59:59Z"
+              },
+              {
+                "id": "8590637495",
+                "key": "natsumi_taguchi",
+                "artistKey": "kobushifactory",
+                "artistID": "5",
+                "name": "田口夏実",
+                "nameKana": "タグチナツミ",
+                "thumbnailURL": "https://raw.githubusercontent.com/emolga587/hpsort2/master/public/member_pics/%E7%94%B0%E5%8F%A3%E5%A4%8F%E5%AE%9F.jpg",
+                "dateOfBirth": "2000-07-20T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2014-12-31T15:00:00Z",
+                "graduateAt": "2017-12-06T14:59:59Z"
+              },
+              {
+                "id": "8590637496",
+                "key": "rio_fujii",
+                "artistKey": "kobushifactory",
+                "artistID": "5",
+                "name": "藤井梨央",
+                "nameKana": "フジイリオ",
+                "thumbnailURL": "https://raw.githubusercontent.com/emolga587/hpsort2/master/public/member_pics/%E8%97%A4%E4%BA%95%E6%A2%A8%E5%A4%AE.jpg",
+                "dateOfBirth": "1999-03-03T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2014-12-31T15:00:00Z",
+                "graduateAt": "2017-09-06T14:59:59Z"
+              },
+              {
+                "id": "8590637497",
+                "key": "rena_ogawa",
+                "artistKey": "kobushifactory",
+                "artistID": "5",
+                "name": "小川麗奈",
+                "nameKana": "小川麗奈",
+                "thumbnailURL": "https://raw.githubusercontent.com/emolga587/hpsort2/master/public/member_pics/%E5%B0%8F%E5%B7%9D%E9%BA%97%E5%A5%88.jpg",
+                "dateOfBirth": "2000-03-26T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2014-12-31T15:00:00Z",
+                "graduateAt": "2020-09-06T14:59:59Z"
+              }
+            ]
+          },
+          {
+            "id": "6",
+            "key": "tsubakifactory",
+            "name": "つばきファクトリー",
+            "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/a3373a457d4b8e2f19932b4d5cc2bcbddf22c65a.jpg",
+            "members": [
+              {
+                "id": "8589934634",
+                "key": "riko_yamagishi",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "山岸理子",
+                "nameKana": "ヤマギシリコ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/94077777418909fcc34f57e994d798870c695bc8.jpg",
+                "dateOfBirth": "1998-11-23T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2015-04-28T15:00:00Z",
+                "graduateAt": "2023-11-07T23:59:59Z"
+              },
+              {
+                "id": "8589934635",
+                "key": "risa_ogata",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "小片リサ",
+                "nameKana": "オガタリサ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/4eaa066845403b6cd5006ccca7a8526618c2d18d.jpg",
+                "dateOfBirth": "1998-11-04T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2015-04-28T15:00:00Z",
+                "graduateAt": "2020-12-28T23:59:59Z"
+              },
+              {
+                "id": "8589934636",
+                "key": "kisora_niinuma",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "新沼希空",
+                "nameKana": "ニイヌマキソラ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/1a332fd76a054f1660bb7cd12a229b526be9b4f6.jpg",
+                "dateOfBirth": "1999-10-19T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2015-04-28T15:00:00Z",
+                "graduateAt": "2024-06-11T23:59:59Z"
+              },
+              {
+                "id": "8589934637",
+                "key": "ami_tanimoto",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "谷本安美",
+                "nameKana": "タニモトアミ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/af6f929a19936a076ec2d1eb3afc01a98823b50e.jpg",
+                "dateOfBirth": "1999-11-15T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2015-04-28T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934638",
+                "key": "yumeno_kishimoto",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "岸本ゆめの",
+                "nameKana": "キシモトユメノ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/e0931aa33a6da3118044cd491ab182c4fa00d2c6.jpg",
+                "dateOfBirth": "2000-03-31T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2015-04-28T15:00:00Z",
+                "graduateAt": "2023-11-07T23:59:59Z"
+              },
+              {
+                "id": "8589934639",
+                "key": "kiki_asakura",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "浅倉樹々",
+                "nameKana": "アサクラキキ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/4a54d3dffc03626f86e6dab1578951712f494965.jpg",
+                "dateOfBirth": "2000-09-02T15:00:00Z",
+                "bloodType": "AB",
+                "joinAt": "2015-04-28T15:00:00Z",
+                "graduateAt": "2023-04-03T23:59:59Z"
+              },
+              {
+                "id": "8589934640",
+                "key": "mizuho_ono",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "小野瑞歩",
+                "nameKana": "オノミズホ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/8071b6e3708d9f31b7ebf1fd3a3356aa5cea8eb2.jpg",
+                "dateOfBirth": "2000-09-28T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2016-08-12T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934641",
+                "key": "saori_onoda",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "小野田紗栞",
+                "nameKana": "オノダサオリ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/3d1fbb9eacbded4d5ffe453d1827b6cfa55e4acf.jpg",
+                "dateOfBirth": "2001-12-16T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2016-08-12T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934642",
+                "key": "mao_akiyama",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "秋山眞緒",
+                "nameKana": "アキヤママオ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/092ea1bf757b6c9e548f6394061ee8bc1bc959a5.jpg",
+                "dateOfBirth": "2002-07-28T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2016-08-12T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934675",
+                "key": "yuumi_kasai",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "河西結心",
+                "nameKana": "カサイユウミ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/79b0b317a2b34e3df8b8db1dbfae905ad3c837b1.jpg",
+                "dateOfBirth": "2003-07-29T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2021-07-06T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934676",
+                "key": "shiori_yagi",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "八木栞",
+                "nameKana": "ヤギシオリ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/3ce8b173bf301e3601e1f3d971951c1e5b72dc92.jpg",
+                "dateOfBirth": "2003-09-18T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2021-07-06T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934677",
+                "key": "marine_fukuda",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "福田真琳",
+                "nameKana": "フクダマリン",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/e0aa7941f2c915f1620de33484db56dbaf37546e.jpg",
+                "dateOfBirth": "2004-10-17T15:00:00Z",
+                "bloodType": "AB",
+                "joinAt": "2021-07-06T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934678",
+                "key": "runo_yofu",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "豫風瑠乃",
+                "nameKana": "ヨフウルノ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/f59072d613569775505882552046c04211cd995c.jpg",
+                "dateOfBirth": "2007-12-19T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2021-07-06T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590919624",
+                "key": "mihane_ishii",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "石井泉羽",
+                "nameKana": "イシイミハネ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/1dd7b6b0338dbe4bbc0e13de82d007ecd7b0adf6.jpg",
+                "dateOfBirth": "2008-10-19T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2024-02-06T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590919625",
+                "key": "yuu_murata",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "村田結生",
+                "nameKana": "ムラタユウ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/5b30afe487275dddd3252b26deabc656f13c6431.jpg",
+                "dateOfBirth": "2010-03-11T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2024-02-06T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590919626",
+                "key": "fuka_doi",
+                "artistKey": "tsubakifactory",
+                "artistID": "6",
+                "name": "土居楓奏",
+                "nameKana": "ドイフウカ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/0e065d7aff380d4aad730e01b5474689b3f8c35b.jpg",
+                "dateOfBirth": "2010-03-22T15:00:00Z",
+                "bloodType": "AB",
+                "joinAt": "2024-02-06T15:00:00Z",
+                "graduateAt": null
+              }
+            ]
+          },
+          {
+            "id": "7",
+            "key": "beyooooonds",
+            "name": "BEYOOOOONDS",
+            "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/30adc3f6da04a981e837496342fe67368ab43ac0.jpg",
+            "members": [
+              {
+                "id": "8589934643",
+                "key": "reina_ichioka",
+                "artistKey": "beyooooonds",
+                "artistID": "7",
+                "name": "一岡伶奈",
+                "nameKana": "イチオカレイナ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/ae8afdc41ee4f100f2acbdc646d81a9f64fec1fa.jpg",
+                "dateOfBirth": "1999-02-24T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2017-05-04T15:00:00Z",
+                "graduateAt": "2024-03-01T23:59:59Z"
+              },
+              {
+                "id": "8589934644",
+                "key": "rika_shimakura",
+                "artistKey": "beyooooonds",
+                "artistID": "7",
+                "name": "島倉りか",
+                "nameKana": "シマクラリカ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/d51b764876b32839be6b40391bda069ae6e4292a.jpg",
+                "dateOfBirth": "2000-08-19T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2018-06-08T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934645",
+                "key": "shiori_nishida",
+                "artistKey": "beyooooonds",
+                "artistID": "7",
+                "name": "西田汐里",
+                "nameKana": "ニシダシオリ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/f08fcb038840880ee48a9d54048b74a8c57e67d8.jpg",
+                "dateOfBirth": "2003-06-06T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2018-06-08T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934646",
+                "key": "saya_eguchi",
+                "artistKey": "beyooooonds",
+                "artistID": "7",
+                "name": "江口紗耶",
+                "nameKana": "エグチサヤ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/713a89446b9e7c8c70e7052dea15fc9220448afe.jpg",
+                "dateOfBirth": "2003-07-31T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2018-06-08T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934647",
+                "key": "kurumi_takase",
+                "artistKey": "beyooooonds",
+                "artistID": "7",
+                "name": "高瀬くるみ",
+                "nameKana": "タカセクルミ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/756e287737fd796e41a94bfa52d3ce0caea2c387.jpg",
+                "dateOfBirth": "1999-03-15T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2017-05-04T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934648",
+                "key": "kokoro_maeda",
+                "artistKey": "beyooooonds",
+                "artistID": "7",
+                "name": "前田こころ",
+                "nameKana": "マエダココロ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/3e7fac472ba63937df143d2d1461028a2d33595a.jpg",
+                "dateOfBirth": "2002-06-22T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2018-06-08T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934649",
+                "key": "yuhane_yamazaki",
+                "artistKey": "beyooooonds",
+                "artistID": "7",
+                "name": "山﨑夢羽",
+                "nameKana": "ヤマザキユハネ",
+                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/eb4c87bc0729f5ca99bc6333b34719939197d4ca.jpg",
+                "dateOfBirth": "2002-11-04T15:00:00Z",
+                "bloodType": "AB",
+                "joinAt": "2018-06-08T15:00:00Z",
+                "graduateAt": "2024-06-28T23:59:59Z"
+              },
+              {
+                "id": "8589934650",
+                "key": "minami_okamura",
+                "artistKey": "beyooooonds",
+                "artistID": "7",
+                "name": "岡村美波",
+                "nameKana": "オカムラミナミ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/d7bb8f85f6a3c99c7028d8cf8e220e4facdd17d4.jpg",
+                "dateOfBirth": "2004-10-19T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2018-06-08T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934651",
+                "key": "momohime_kiyono",
+                "artistKey": "beyooooonds",
+                "artistID": "7",
+                "name": "清野桃々姫",
+                "nameKana": "キヨノモモヒメ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/bfa2a43d378bd78d2bc2f4b93daa1e9cea57cb62.jpg",
+                "dateOfBirth": "2004-12-21T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2017-05-04T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934652",
+                "key": "miyo_hirai",
+                "artistKey": "beyooooonds",
+                "artistID": "7",
+                "name": "平井美葉",
+                "nameKana": "ヒライミヨ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/7f180abc696dce0dab77b20f89fbd1c44cf62b27.jpg",
+                "dateOfBirth": "1999-12-10T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2018-12-02T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934653",
+                "key": "honoka_kobayashi",
+                "artistKey": "beyooooonds",
+                "artistID": "7",
+                "name": "小林萌花",
+                "nameKana": "コバヤシホノカ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/15d1201821ec95a72f11e893ad5ca263fbae9a4f.jpg",
+                "dateOfBirth": "2000-08-15T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2018-12-02T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8589934654",
+                "key": "utano_satoyoshi",
+                "artistKey": "beyooooonds",
+                "artistID": "7",
+                "name": "里吉うたの",
+                "nameKana": "サトヨシウタノ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/43088e4f133e5df6392914720327292523b41b38.jpg",
+                "dateOfBirth": "2000-09-21T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2018-12-02T15:00:00Z",
+                "graduateAt": null
+              }
+            ]
+          },
+          {
+            "id": "8",
+            "key": "ochanorma",
+            "name": "OCHA NORMA",
+            "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/ded1aaf87f8d35ae2966ed47a869dde77fd51087.jpg",
+            "members": [
+              {
+                "id": "8590061983",
+                "key": "madoka_saito",
+                "artistKey": "ochanorma",
+                "artistID": "8",
+                "name": "斉藤円香",
+                "nameKana": "サイトウマドカ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/682b684fa2cb29306a0c65c82f1a80284df0abfc.jpg",
+                "dateOfBirth": "2002-10-27T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2021-12-11T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590061984",
+                "key": "ruli_hiromoto",
+                "artistKey": "ochanorma",
+                "artistID": "8",
+                "name": "広本瑠璃",
+                "nameKana": "ヒロモトルリ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/78e70428f963be4cf1336a86aa29ca0dce03a3b6.jpg",
+                "dateOfBirth": "2003-06-17T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2021-12-11T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590061985",
+                "key": "kanami_ishiguri",
+                "artistKey": "ochanorma",
+                "artistID": "8",
+                "name": "石栗奏美",
+                "nameKana": "イシグリカナミ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/f3969d6f4102e8c1d86f65383853c5ea76a49c84.jpg",
+                "dateOfBirth": "2004-04-19T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2021-12-11T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590061986",
+                "key": "kirara_yonemura",
+                "artistKey": "ochanorma",
+                "artistID": "8",
+                "name": "米村姫良々",
+                "nameKana": "ヨネムラキララ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/ebc156a708613677226e82d319d03426f9b77a2d.jpg",
+                "dateOfBirth": "2004-04-29T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2021-12-11T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590061987",
+                "key": "nanami_kubota",
+                "artistKey": "ochanorma",
+                "artistID": "8",
+                "name": "窪田七海",
+                "nameKana": "クボタナナミ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/4dc01eda31e61b55357aaf7121e6874de106ef66.jpg",
+                "dateOfBirth": "2004-07-22T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2021-12-11T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590061988",
+                "key": "sumire_tashiro",
+                "artistKey": "ochanorma",
+                "artistID": "8",
+                "name": "田代すみれ",
+                "nameKana": "タシロスミレ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/5a2a7c7791d9f5ffc8438192969b761fb16a3e3d.jpg",
+                "dateOfBirth": "2005-06-15T15:00:00Z",
+                "bloodType": "不明",
+                "joinAt": "2021-12-11T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590061989",
+                "key": "natsume_nakayama",
+                "artistKey": "ochanorma",
+                "artistID": "8",
+                "name": "中山夏月姫",
+                "nameKana": "ナカヤマナツメ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/9d0e8b993758d2a83762028de7f6cbfffdc9e24b.jpg",
+                "dateOfBirth": "2005-07-19T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2021-12-11T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590061990",
+                "key": "miku_nishizaki",
+                "artistKey": "ochanorma",
+                "artistID": "8",
+                "name": "西﨑美空",
+                "nameKana": "ニシザキミク",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/2f8b59c05a1ee24f6b2ac6fb39ca8e3d141c2cb2.jpg",
+                "dateOfBirth": "2006-04-16T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2021-12-11T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590061991",
+                "key": "momo_kitahara",
+                "artistKey": "ochanorma",
+                "artistID": "8",
+                "name": "北原もも",
+                "nameKana": "キタハラモモ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/1270a445c4d54408043f871f481592b65208a6cb.jpg",
+                "dateOfBirth": "2006-08-29T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2021-12-11T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590061992",
+                "key": "roko_tsutsui",
+                "artistKey": "ochanorma",
+                "artistID": "8",
+                "name": "筒井澪心",
+                "nameKana": "ツツイロコ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/0f27a1b69eb7bdadeb07f7b3e65c65b906a1d4c0.jpg",
+                "dateOfBirth": "2007-08-09T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2021-12-11T15:00:00Z",
+                "graduateAt": null
+              }
+            ]
+          },
+          {
+            "id": "5271",
+            "key": "rosychronicle",
+            "name": "ロージークロニクル",
+            "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/f917ef7f62559e91ae2e9feefa7309a76f30ef28.jpg",
+            "members": [
+              {
+                "id": "8590977222",
+                "key": "honoka_hashida",
+                "artistKey": "rosychronicle",
+                "artistID": "5271",
+                "name": "橋田歩果",
+                "nameKana": "ハシダホノカ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/aae736b363e140a0b6801f60cf50c87b3b831763.jpg",
+                "dateOfBirth": "2005-10-16T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2024-06-15T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590977223",
+                "key": "hinoha_yoshida",
+                "artistKey": "rosychronicle",
+                "artistID": "5271",
+                "name": "吉田姫杷",
+                "nameKana": "ヨシダヒノハ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/0cf47da3b603030e89eee559ab692325c16444e1.jpg",
+                "dateOfBirth": "2007-07-07T15:00:00Z",
+                "bloodType": "AB",
+                "joinAt": "2024-06-15T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590977224",
+                "key": "karin_onoda",
+                "artistKey": "rosychronicle",
+                "artistID": "5271",
+                "name": "小野田華凜",
+                "nameKana": "オノダカリン",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/fdf999bf920b6b199493cf3b040766648fbdceea.jpg",
+                "dateOfBirth": "2008-01-22T15:00:00Z",
+                "bloodType": "不明",
+                "joinAt": "2024-06-15T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590977225",
+                "key": "ayana_murakoshi",
+                "artistKey": "rosychronicle",
+                "artistID": "5271",
+                "name": "村越彩菜",
+                "nameKana": "ムラコシアヤナ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/22d2a96b012a3a886f1ed3cee070e6be1284ddbf.jpg",
+                "dateOfBirth": "2008-02-10T15:00:00Z",
+                "bloodType": "B",
+                "joinAt": "2024-06-15T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590977226",
+                "key": "hasumi_uemura",
+                "artistKey": "rosychronicle",
+                "artistID": "5271",
+                "name": "植村葉純",
+                "nameKana": "ウエムラハスミ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/a4dfc4c9bd5b941292c1911396f089522f300c22.jpg",
+                "dateOfBirth": "2008-02-24T15:00:00Z",
+                "bloodType": "AB",
+                "joinAt": "2024-06-15T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590977227",
+                "key": "yulia_matsubara",
+                "artistKey": "rosychronicle",
+                "artistID": "5271",
+                "name": "松原ユリヤ",
+                "nameKana": "マツバラユリヤ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/412de4bfc321e2954f22b324d36f4b0e8b399803.jpg",
+                "dateOfBirth": "2008-02-25T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2024-06-15T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590977228",
+                "key": "hana_shimakawa",
+                "artistKey": "rosychronicle",
+                "artistID": "5271",
+                "name": "島川波菜",
+                "nameKana": "シマカワハナ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/ce24b41885be6ea425daa2b25135c74360b3183a.jpg",
+                "dateOfBirth": "2008-04-17T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2024-06-15T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590977229",
+                "key": "rena_kamimura",
+                "artistKey": "rosychronicle",
+                "artistID": "5271",
+                "name": "上村麗菜",
+                "nameKana": "カミムラレナ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/ca1e5c7510cb969fb2af866f126a4dac333209ca.jpg",
+                "dateOfBirth": "2009-06-14T15:00:00Z",
+                "bloodType": "A",
+                "joinAt": "2024-06-15T15:00:00Z",
+                "graduateAt": null
+              },
+              {
+                "id": "8590977230",
+                "key": "yume_soma",
+                "artistKey": "rosychronicle",
+                "artistID": "5271",
+                "name": "相馬優芽",
+                "nameKana": "ソウマユメ",
+                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/d4ed779321f8324d707569a1039d10f290a2a9be.jpg",
+                "dateOfBirth": "2011-02-03T15:00:00Z",
+                "bloodType": "O",
+                "joinAt": "2024-06-15T15:00:00Z",
+                "graduateAt": null
+              }
+            ]
+          }
+        ],
+        "id": "helloproject"
+      },
+      "me": {
+        "id": "42949672973",
+        "username": "yssk22",
+        "clientId": "anonymous",
+        "clientName": "anonymous",
+        "followings": [
+          {
+            "type": "follow_with_notification",
+            "member": {
+              "id": "8589934592"
+            },
+            "id": "55834574890"
+          },
+          {
+            "type": "unfollow",
+            "member": {
+              "id": "8589934593"
+            },
+            "id": "55834574891"
+          },
+          {
+            "type": "unfollow",
+            "member": {
+              "id": "8589934594"
+            },
+            "id": "55834574888"
+          },
+          {
+            "type": "follow_with_notification",
+            "member": {
+              "id": "8589934596"
+            },
+            "id": "55834574885"
+          },
+          {
+            "type": "unfollow",
+            "member": {
+              "id": "8589934597"
+            },
+            "id": "55834574880"
+          },
+          {
+            "type": "follow_with_notification",
+            "member": {
+              "id": "8589934601"
+            },
+            "id": "55834574884"
+          },
+          {
+            "type": "unfollow",
+            "member": {
+              "id": "8589934603"
+            },
+            "id": "55834574882"
+          },
+          {
+            "type": "unfollow",
+            "member": {
+              "id": "8589934604"
+            },
+            "id": "55834574889"
+          },
+          {
+            "type": "follow_with_notification",
+            "member": {
+              "id": "8589934605"
+            },
+            "id": "55834574881"
+          },
+          {
+            "type": "unfollow",
+            "member": {
+              "id": "8589934611"
+            },
+            "id": "55834574887"
+          },
+          {
+            "type": "unfollow",
+            "member": {
+              "id": "8589934615"
+            },
+            "id": "55834574916"
+          },
+          {
+            "type": "follow_with_notification",
+            "member": {
+              "id": "8589934621"
+            },
+            "id": "55834574908"
+          },
+          {
+            "type": "follow",
+            "member": {
+              "id": "8589934623"
+            },
+            "id": "55834576108"
+          },
+          {
+            "type": "follow",
+            "member": {
+              "id": "8589934624"
+            },
+            "id": "55834574917"
+          },
+          {
+            "type": "unfollow",
+            "member": {
+              "id": "8589934640"
+            },
+            "id": "55834575067"
+          },
+          {
+            "type": "follow",
+            "member": {
+              "id": "8589934644"
+            },
+            "id": "55834574918"
+          },
+          {
+            "type": "unfollow",
+            "member": {
+              "id": "8589934649"
+            },
+            "id": "55834574883"
+          },
+          {
+            "type": "unfollow",
+            "member": {
+              "id": "8589934653"
+            },
+            "id": "55834574886"
+          },
+          {
+            "type": "follow",
+            "member": {
+              "id": "8589934672"
+            },
+            "id": "55834576081"
+          },
+          {
+            "type": "follow_with_notification",
+            "member": {
+              "id": "8589934673"
+            },
+            "id": "55834575266"
+          },
+          {
+            "type": "follow_with_notification",
+            "member": {
+              "id": "8589934674"
+            },
+            "id": "55834575468"
+          },
+          {
+            "type": "unfollow",
+            "member": {
+              "id": "8589934676"
+            },
+            "id": "55834582384"
+          },
+          {
+            "type": "follow",
+            "member": {
+              "id": "8590222529"
+            },
+            "id": "55834576327"
+          },
+          {
+            "type": "follow_with_notification",
+            "member": {
+              "id": "8590222530"
+            },
+            "id": "55834576328"
+          },
+          {
+            "type": "follow_with_notification",
+            "member": {
+              "id": "8590783732"
+            },
+            "id": "55834583639"
+          },
+          {
+            "type": "follow",
+            "member": {
+              "id": "8590783744"
+            },
+            "id": "55834583569"
+          },
+          {
+            "type": "follow_with_notification",
+            "member": {
+              "id": "8590786239"
+            },
+            "id": "55834583346"
+          },
+          {
+            "type": "follow",
+            "member": {
+              "id": "8590977222"
+            },
+            "id": "55834587782"
+          }
+        ],
+        "sortHistories": {
+          "edges": [
+            {
+              "node": {
+                "id": "51539607769",
+                "createdAt": "2024-10-05T12:57:05Z",
+                "sortResult": {
+                  "records": [
+                    {
+                      "artistId": 3,
+                      "memberId": 8589934673,
+                      "memberKey": "risa_irie"
+                    },
+                    {
+                      "artistId": 2,
+                      "memberId": 8590783732,
+                      "memberKey": "yukiho_shimoitani"
+                    },
+                    {
+                      "artistId": 3,
+                      "memberId": 8590222530,
+                      "memberKey": "akari_endo"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8589934596,
+                      "memberKey": "sakura_oda"
+                    },
+                    {
+                      "artistId": 3,
+                      "memberId": 8589934674,
+                      "memberKey": "kisaki_ebata"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8589934601,
+                      "memberKey": "reina_yokoyama"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8589934599,
+                      "memberKey": "akane_haga"
+                    },
+                    {
+                      "artistId": 3,
+                      "memberId": 8589934623,
+                      "memberKey": "yume_kudou"
+                    },
+                    {
+                      "artistId": 3,
+                      "memberId": 8589934672,
+                      "memberKey": "ichika_arisawa"
+                    },
+                    {
+                      "artistId": 3,
+                      "memberId": 8589934621,
+                      "memberKey": "ruru_dambara"
+                    },
+                    {
+                      "artistId": 3,
+                      "memberId": 8590222529,
+                      "memberKey": "sakura_ishiyama"
+                    },
+                    {
+                      "artistId": 7,
+                      "memberId": 8589934644,
+                      "memberKey": "rika_shimakura"
+                    },
+                    {
+                      "artistId": 3,
+                      "memberId": 8589934624,
+                      "memberKey": "riai_matsunaga"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8589934605,
+                      "memberKey": "mei_yamazaki"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8589934598,
+                      "memberKey": "maria_makino"
+                    },
+                    {
+                      "artistId": 3,
+                      "memberId": 8590783744,
+                      "memberKey": "mifu_kawashima"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8589934597,
+                      "memberKey": "miki_nonaka"
+                    },
+                    {
+                      "artistId": 5271,
+                      "memberId": 8590977222,
+                      "memberKey": "honoka_hashida"
+                    },
+                    {
+                      "artistId": 3,
+                      "memberId": 8589934668,
+                      "memberKey": "rei_inoue"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8590786239,
+                      "memberKey": "ako_yumigeta"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8590786238,
+                      "memberKey": "haruka_inoue"
+                    },
+                    {
+                      "artistId": 8,
+                      "memberId": 8590061990,
+                      "memberKey": "miku_nishizaki"
+                    },
+                    {
+                      "artistId": 2,
+                      "memberId": 8590783733,
+                      "memberKey": "hana_goto"
+                    },
+                    {
+                      "artistId": 6,
+                      "memberId": 8589934676,
+                      "memberKey": "shiori_yagi"
+                    },
+                    {
+                      "artistId": 7,
+                      "memberId": 8589934650,
+                      "memberKey": "minami_okamura"
+                    },
+                    {
+                      "artistId": 7,
+                      "memberId": 8589934645,
+                      "memberKey": "shiori_nishida"
+                    },
+                    {
+                      "artistId": 2,
+                      "memberId": 8589934615,
+                      "memberKey": "layla_ise"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8589934594,
+                      "memberKey": "ayumi_ishida"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8589934593,
+                      "memberKey": "erina_ikuta"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8589934604,
+                      "memberKey": "homare_okamura"
+                    },
+                    {
+                      "artistId": 7,
+                      "memberId": 8589934653,
+                      "memberKey": "honoka_kobayashi"
+                    },
+                    {
+                      "artistId": 7,
+                      "memberId": 8589934654,
+                      "memberKey": "utano_satoyoshi"
+                    },
+                    {
+                      "artistId": 7,
+                      "memberId": 8589934647,
+                      "memberKey": "kurumi_takase"
+                    },
+                    {
+                      "artistId": 6,
+                      "memberId": 8590919625,
+                      "memberKey": "yuu_murata"
+                    },
+                    {
+                      "artistId": 5271,
+                      "memberId": 8590977228,
+                      "memberKey": "hana_shimakawa"
+                    },
+                    {
+                      "artistId": 8,
+                      "memberId": 8590061986,
+                      "memberKey": "kirara_yonemura"
+                    },
+                    {
+                      "artistId": 6,
+                      "memberId": 8590919626,
+                      "memberKey": "fuka_doi"
+                    },
+                    {
+                      "artistId": 8,
+                      "memberId": 8590061988,
+                      "memberKey": "sumire_tashiro"
+                    },
+                    {
+                      "artistId": 2,
+                      "memberId": 8589934611,
+                      "memberKey": "moe_kamikokuryo"
+                    },
+                    {
+                      "artistId": 2,
+                      "memberId": 8589934671,
+                      "memberKey": "wakana_matsumoto"
+                    },
+                    {
+                      "artistId": 8,
+                      "memberId": 8590061985,
+                      "memberKey": "kanami_ishiguri"
+                    },
+                    {
+                      "artistId": 7,
+                      "memberId": 8589934648,
+                      "memberKey": "kokoro_maeda"
+                    },
+                    {
+                      "artistId": 7,
+                      "memberId": 8589934652,
+                      "memberKey": "miyo_hirai"
+                    },
+                    {
+                      "artistId": 5271,
+                      "memberId": 8590977224,
+                      "memberKey": "karin_onoda"
+                    },
+                    {
+                      "artistId": 8,
+                      "memberId": 8590061984,
+                      "memberKey": "ruli_hiromoto"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8590222510,
+                      "memberKey": "rio_sakurai"
+                    },
+                    {
+                      "artistId": 1,
+                      "memberId": 8589934603,
+                      "memberKey": "rio_kitagawa"
+                    },
+                    {
+                      "artistId": 2,
+                      "memberId": 8589934608,
+                      "memberKey": "ayano_kawamura"
+                    },
+                    {
+                      "artistId": 6,
+                      "memberId": 8589934642,
+                      "memberKey": "mao_akiyama"
+                    },
+                    {
+                      "artistId": 8,
+                      "memberId": 8590061992,
+                      "memberKey": "roko_tsutsui"
+                    },
+                    {
+                      "artistId": 5271,
+                      "memberId": 8590977230,
+                      "memberKey": "yume_soma"
+                    },
+                    {
+                      "artistId": 7,
+                      "memberId": 8589934651,
+                      "memberKey": "momohime_kiyono"
+                    },
+                    {
+                      "artistId": 5271,
+                      "memberId": 8590977227,
+                      "memberKey": "yulia_matsubara"
+                    },
+                    {
+                      "artistId": 7,
+                      "memberId": 8589934646,
+                      "memberKey": "saya_eguchi"
+                    },
+                    {
+                      "artistId": 5271,
+                      "memberId": 8590977226,
+                      "memberKey": "hasumi_uemura"
+                    },
+                    {
+                      "artistId": 6,
+                      "memberId": 8589934637,
+                      "memberKey": "ami_tanimoto"
+                    },
+                    {
+                      "artistId": 6,
+                      "memberId": 8589934678,
+                      "memberKey": "runo_yofu"
+                    },
+                    {
+                      "artistId": 8,
+                      "memberId": 8590061983,
+                      "memberKey": "madoka_saito"
+                    },
+                    {
+                      "artistId": 6,
+                      "memberId": 8589934640,
+                      "memberKey": "mizuho_ono"
+                    },
+                    {
+                      "artistId": 8,
+                      "memberId": 8590061987,
+                      "memberKey": "nanami_kubota"
+                    },
+                    {
+                      "artistId": 6,
+                      "memberId": 8590919624,
+                      "memberKey": "mihane_ishii"
+                    },
+                    {
+                      "artistId": 6,
+                      "memberId": 8589934675,
+                      "memberKey": "yuumi_kasai"
+                    },
+                    {
+                      "artistId": 5271,
+                      "memberId": 8590977229,
+                      "memberKey": "rena_kamimura"
+                    },
+                    {
+                      "artistId": 6,
+                      "memberId": 8589934677,
+                      "memberKey": "marine_fukuda"
+                    },
+                    {
+                      "artistId": 5271,
+                      "memberId": 8590977225,
+                      "memberKey": "ayana_murakoshi"
+                    },
+                    {
+                      "artistId": 5271,
+                      "memberId": 8590977223,
+                      "memberKey": "hinoha_yoshida"
+                    },
+                    {
+                      "artistId": 8,
+                      "memberId": 8590061989,
+                      "memberKey": "natsume_nakayama"
+                    },
+                    {
+                      "artistId": 2,
+                      "memberId": 8589934669,
+                      "memberKey": "rin_kawana"
+                    },
+                    {
+                      "artistId": 2,
+                      "memberId": 8589934616,
+                      "memberKey": "rin_hashisako"
+                    },
+                    {
+                      "artistId": 8,
+                      "memberId": 8590061991,
+                      "memberKey": "momo_kitahara"
+                    },
+                    {
+                      "artistId": 6,
+                      "memberId": 8589934641,
+                      "memberKey": "saori_onoda"
+                    },
+                    {
+                      "artistId": 2,
+                      "memberId": 8590085285,
+                      "memberKey": "yuki_hirayama"
+                    },
+                    {
+                      "artistId": 2,
+                      "memberId": 8589934670,
+                      "memberKey": "shion_tamenaga"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "variables": {}
+}

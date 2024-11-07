@@ -26,10 +26,11 @@ export default function HPSortResultListTopItem({
         <View style={styles.labelHeaderRank}>
           <Icon type="material-community" name="chess-king" size={IconSize.Small} color={iconColor} />
           <Text style={styles.labelHeaderRankText}>{rank + 1}</Text>
+        </View>
+        <View style={styles.labelHeaderRankDiff}>
           <HPSortResultRankDiffIcon diff={rankDiff} />
         </View>
         <Text style={styles.labelHeaderText}>{member!.name}</Text>
-        <ArtistMemberIcon member={memberId} size={IconSize.Small} />
       </View>
       <ArtistMemberIcon member={memberId} size={ArtistMemberIconSize.Medium} showFollowIcon />
     </View>
@@ -48,11 +49,15 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   labelHeaderRank: {
-    alignItems: 'center',
-    marginRight: Spacing.Small
+    alignItems: 'center'
   },
   labelHeaderRankText: {
     fontSize: FontSize.Small
+  },
+  labelHeaderRankDiff: {
+    fontSize: FontSize.Small,
+    marginLeft: Spacing.XXSmall,
+    marginRight: Spacing.XXSmall
   },
   labelHeaderText: {
     fontSize: FontSize.Medium,

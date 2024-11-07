@@ -180,7 +180,7 @@ exports[`home HomeScreen 1`] = `
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -596,6 +596,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -604,16 +605,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499657",
+                                    "__id": "94489508452",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499657",
+                                    "id": "94489508452",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -1029,6 +1030,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -1037,16 +1039,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499661",
+                                    "__id": "94489508446",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499661",
+                                    "id": "94489508446",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -1462,6 +1464,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -1470,16 +1473,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499658",
+                                    "__id": "94489508436",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499658",
+                                    "id": "94489508436",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -1895,6 +1898,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -1903,16 +1907,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499639",
+                                    "__id": "94489508468",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499639",
+                                    "id": "94489508468",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -2328,6 +2332,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -2336,16 +2341,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499638",
+                                    "__id": "94489508425",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499638",
+                                    "id": "94489508425",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -2761,6 +2766,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -2769,16 +2775,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499630",
+                                    "__id": "94489508421",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499630",
+                                    "id": "94489508421",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -3194,6 +3200,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -3202,16 +3209,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499637",
+                                    "__id": "94489508411",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499637",
+                                    "id": "94489508411",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -3627,6 +3634,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -3635,16 +3643,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499607",
+                                    "__id": "94489508479",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499607",
+                                    "id": "94489508479",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -4060,6 +4068,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -4068,16 +4077,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499600",
+                                    "__id": "94489508410",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499600",
+                                    "id": "94489508410",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -4493,6 +4502,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -4501,16 +4511,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499596",
+                                    "__id": "94489508461",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499596",
+                                    "id": "94489508461",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -4926,6 +4936,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -4934,16 +4945,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499588",
+                                    "__id": "94489508412",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499588",
+                                    "id": "94489508412",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -5359,6 +5370,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -5367,16 +5379,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499603",
+                                    "__id": "94489508409",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499603",
+                                    "id": "94489508409",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -5792,6 +5804,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -5800,16 +5813,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499625",
+                                    "__id": "94489508399",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499625",
+                                    "id": "94489508399",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -6225,6 +6238,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -6233,16 +6247,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499577",
+                                    "__id": "94489508393",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499577",
+                                    "id": "94489508393",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -6658,6 +6672,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -6666,16 +6681,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499641",
+                                    "__id": "94489508370",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499641",
+                                    "id": "94489508370",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -7091,6 +7106,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -7099,16 +7115,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499568",
+                                    "__id": "94489508373",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499568",
+                                    "id": "94489508373",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -7524,6 +7540,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -7532,16 +7549,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499545",
+                                    "__id": "94489508374",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499545",
+                                    "id": "94489508374",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -7957,6 +7974,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -7965,16 +7983,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499534",
+                                    "__id": "94489508364",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499534",
+                                    "id": "94489508364",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -8390,6 +8408,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -8398,16 +8417,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499523",
+                                    "__id": "94489508354",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499523",
+                                    "id": "94489508354",
                                   },
                                   {
                                     "__fragmentOwner": {
                                       "cacheConfig": {
                                         "force": true,
                                       },
-                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239"]}}",
+                                      "identifier": "d5c3ccae2fdda3c342091d9ce203c534{"after":null,"first":20,"params":{"assetTypes":["ameblo","instagram","tiktok","twitter"],"memberIDs":["8589934592","8589934596","8589934601","8589934605","8589934621","8589934623","8589934624","8589934644","8589934672","8589934673","8589934674","8590222529","8590222530","8590783732","8590783744","8590786239","8590977222"]}}",
                                       "node": {
                                         "fragment": {
                                           "abstractKey": null,
@@ -8823,6 +8842,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             "8590783732",
                                             "8590783744",
                                             "8590786239",
+                                            "8590977222",
                                           ],
                                           "useMemberTaggings": undefined,
                                         },
@@ -8831,9 +8851,9 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     "__fragments": {
                                       "FeedListItemFragment": {},
                                     },
-                                    "__id": "94489499626",
+                                    "__id": "94489508353",
                                     "__typename": "HPFeedItem",
-                                    "id": "94489499626",
+                                    "id": "94489508353",
                                   },
                                 ],
                               },
@@ -9011,7 +9031,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                           }
                                         }
                                       >
-                                        Lucky  Riai
+                                        どハマりドラマ!!!⚾   橋田歩果
                                       </Text>
                                       <View
                                         style={
@@ -9156,7 +9176,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             }
                                           }
                                         >
-                                          2024/07/15 20:58
+                                          2024/11/06 22:01
                                         </Text>
                                         <Entypo
                                           color="#e5007f"
@@ -9178,7 +9198,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     <Image
                                       source={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20240715/20/juicejuice-official/b0/c2/j/o1080081015463535699.jpg?cpd=300",
+                                          "uri": "https://stat.ameba.jp/user_images/20241106/21/rosychronicle/51/6a/j/o0810108015506985160.jpg?cpd=300",
                                         }
                                       }
                                       style={
@@ -9287,7 +9307,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                           }
                                         }
                                       >
-                                        No.1806  最KIYOU ♪  山﨑愛生
+                                        やったぜ〜〜〜★ 島倉りか
                                       </Text>
                                       <View
                                         style={
@@ -9432,7 +9452,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             }
                                           }
                                         >
-                                          2024/07/15 20:56
+                                          2024/11/06 21:54
                                         </Text>
                                         <Entypo
                                           color="#e5007f"
@@ -9454,7 +9474,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     <Image
                                       source={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20240715/20/morningmusume15ki/fb/88/j/o1080143915463537147.jpg?cpd=300",
+                                          "uri": "https://stat.ameba.jp/user_images/20241106/21/beyooooonds-chicatetsu/dd/ec/j/o1080144015506978014.jpg?cpd=300",
                                         }
                                       }
                                       style={
@@ -9563,7 +9583,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                           }
                                         }
                                       >
-                                        フェス　有澤一華
+                                        よかった……遠藤彩加里
                                       </Text>
                                       <View
                                         style={
@@ -9708,7 +9728,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             }
                                           }
                                         >
-                                          2024/07/15 20:33
+                                          2024/11/06 21:44
                                         </Text>
                                         <Entypo
                                           color="#e5007f"
@@ -9730,7 +9750,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     <Image
                                       source={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20240715/20/juicejuice-official/90/5d/j/o1080081015463538040.jpg?cpd=300",
+                                          "uri": "https://stat.ameba.jp/user_images/20241106/21/juicejuice-official/5d/40/j/o1000133215506982852.jpg?cpd=300",
                                         }
                                       }
                                       style={
@@ -9839,7 +9859,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                           }
                                         }
                                       >
-                                        オールスター合唱バトル！ 島倉りか
+                                        🫶  なっちゃんとお昼にアフターヌーンティーして、夜まで一緒にいた日☺️  しおりんはじめましてでした！ 楽しかった〜！  みんな広島出身なのです😊    #ノイミー #河口夏音 ちゃん #永田詩央里
                                       </Text>
                                       <View
                                         style={
@@ -9849,131 +9869,10 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                           }
                                         }
                                       >
-                                        <RNSVGSvgView
-                                          align="xMidYMid"
-                                          bbHeight={16}
-                                          bbWidth={16}
-                                          focusable={false}
-                                          meetOrSlice={0}
-                                          minX={0}
-                                          minY={0}
-                                          style={
-                                            [
-                                              {
-                                                "backgroundColor": "transparent",
-                                                "borderWidth": 0,
-                                              },
-                                              {
-                                                "height": 16,
-                                                "width": 16,
-                                              },
-                                              {
-                                                "flex": 0,
-                                                "height": 16,
-                                                "width": 16,
-                                              },
-                                            ]
-                                          }
-                                          vbHeight={34.7}
-                                          vbWidth={34.7}
-                                          x="0px"
-                                          y="0px"
-                                        >
-                                          <RNSVGGroup
-                                            fill={
-                                              {
-                                                "payload": 4278190080,
-                                                "type": 0,
-                                              }
-                                            }
-                                          >
-                                            <RNSVGGroup
-                                              fill={
-                                                {
-                                                  "payload": 4278190080,
-                                                  "type": 0,
-                                                }
-                                              }
-                                            >
-                                              <RNSVGPath
-                                                d="M28.7,24.5c-2-1-1.9-3.5-1.7-5.9c0.3-2.4,0.3-3.7-0.3-5.8C26.1,11,25.1,10,25.1,8c0-1.5,0-3.5,0-4.7c0-1.8-0.8-2.4-1.6-2.4 c-2.3,0-3.1,4-6.2,4h0c-3.1,0-3.9-4-6.2-4c-0.7,0-1.6,0.6-1.6,2.4c0,1.3,0,3.3,0,4.7c0,2-1,3-1.6,4.8c-0.6,2.1-0.6,3.4-0.4,5.8 C7.9,21.1,8,23.5,6,24.5c-1.6,0.8-2.6,2.1-1.8,3.2c0.9,1.4,2.6-0.2,3.4,0c0.9,0.2-0.1,1.5,1.3,1.5c0.7,0,0.9-2.2,1.6-2 c0.5,0.1,0.6,1.5,0.1,2.5c-0.2,0.5-2,1.6-1.8,2.8c0.2,1.2,1.2,1.4,2.6,1.4c1,0,2.7,0,3.7,0c0.9,0,1.8-0.9,1.8-1.5 c0-0.6-0.8-1.9,0.5-1.9h0c1.3,0,0.5,1.3,0.5,1.9c0,0.6,0.9,1.5,1.8,1.5c0.9,0,2.6,0,3.7,0c1.4,0,2.4-0.2,2.6-1.4 c0.2-1.2-1.6-2.3-1.8-2.8c-0.5-1.1-0.3-2.4,0.1-2.5c0.7-0.2,0.9,2,1.6,2c1.4,0,0.4-1.3,1.3-1.5c0.8-0.2,2.5,1.4,3.4,0 C31.3,26.6,30.3,25.3,28.7,24.5z"
-                                                fill={
-                                                  {
-                                                    "payload": 4278222848,
-                                                    "type": 0,
-                                                  }
-                                                }
-                                                propList={
-                                                  [
-                                                    "fill",
-                                                  ]
-                                                }
-                                              />
-                                            </RNSVGGroup>
-                                            <RNSVGCircle
-                                              cx="22.4"
-                                              cy="11.5"
-                                              fill={
-                                                {
-                                                  "payload": 4294967295,
-                                                  "type": 0,
-                                                }
-                                              }
-                                              propList={
-                                                [
-                                                  "fill",
-                                                ]
-                                              }
-                                              r="0.9"
-                                            />
-                                            <RNSVGCircle
-                                              cx="12.3"
-                                              cy="11.5"
-                                              fill={
-                                                {
-                                                  "payload": 4294967295,
-                                                  "type": 0,
-                                                }
-                                              }
-                                              propList={
-                                                [
-                                                  "fill",
-                                                ]
-                                              }
-                                              r="0.9"
-                                            />
-                                            <RNSVGCircle
-                                              cx="17.4"
-                                              cy="25.1"
-                                              fill={
-                                                {
-                                                  "payload": 4294967295,
-                                                  "type": 0,
-                                                }
-                                              }
-                                              propList={
-                                                [
-                                                  "fill",
-                                                ]
-                                              }
-                                              r="4.2"
-                                            />
-                                            <RNSVGPath
-                                              d="M17.4,12.2c-2.6,0-6.2,1.6-6.2,4.1c0,2,1.3,2.7,2.9,2.7s2.1-1.8,3.4-1.8c1.3,0,1.8,1.8,3.4,1.8 c1.6,0,2.9-0.7,2.9-2.7C23.6,13.8,20,12.2,17.4,12.2z M17.4,15.9c-1.1,0-2.1-0.7-2.1-1.5c0-0.9,0.9-1.5,2.1-1.5 c1.1,0,2.1,0.7,2.1,1.5C19.4,15.2,18.5,15.9,17.4,15.9z"
-                                              fill={
-                                                {
-                                                  "payload": 4294967295,
-                                                  "type": 0,
-                                                }
-                                              }
-                                              propList={
-                                                [
-                                                  "fill",
-                                                ]
-                                              }
-                                            />
-                                          </RNSVGGroup>
-                                        </RNSVGSvgView>
+                                        <Ionicons
+                                          name="logo-instagram"
+                                          size={16}
+                                        />
                                         <Text
                                           ellipsizeMode="tail"
                                           numberOfLines={1}
@@ -9984,7 +9883,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             }
                                           }
                                         >
-                                          2024/07/14 22:31
+                                          2024/11/06 21:04
                                         </Text>
                                         <Entypo
                                           color="#e5007f"
@@ -10006,7 +9905,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     <Image
                                       source={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20240714/22/beyooooonds-chicatetsu/f5/fa/j/o1080081115463150842.jpg?cpd=300",
+                                          "uri": "https://storage.googleapis.com/hpblob.yssk22.dev/www.instagram.com/p/DCB32ARz2AM/0/image.jpg",
                                         }
                                       }
                                       style={
@@ -10115,7 +10014,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                           }
                                         }
                                       >
-                                        アルタイル  川嶋美楓
+                                        ♛︎未確認中学生X　江端妃咲
                                       </Text>
                                       <View
                                         style={
@@ -10260,7 +10159,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             }
                                           }
                                         >
-                                          2024/07/14 22:27
+                                          2024/11/06 21:00
                                         </Text>
                                         <Entypo
                                           color="#e5007f"
@@ -10282,7 +10181,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     <Image
                                       source={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20240714/20/juicejuice-official/cd/97/j/o1080192015463099163.jpg?cpd=300",
+                                          "uri": "https://stat.ameba.jp/user_images/20241106/19/juicejuice-official/fb/cb/j/o1080144015506924618.jpg?cpd=300",
                                         }
                                       }
                                       style={
@@ -10391,7 +10290,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                           }
                                         }
                                       >
-                                        彦星 下井谷幸穂
+                                        みかん 段原瑠々
                                       </Text>
                                       <View
                                         style={
@@ -10536,7 +10435,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             }
                                           }
                                         >
-                                          2024/07/14 22:13
+                                          2024/11/06 20:42
                                         </Text>
                                       </View>
                                     </View>
@@ -10553,7 +10452,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     <Image
                                       source={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20240714/22/angerme-new/89/4a/j/o0960158415463143971.jpg?cpd=300",
+                                          "uri": "https://stat.ameba.jp/user_images/20241106/20/juicejuice-official/2c/76/j/o1080144015506956563.jpg?cpd=300",
                                         }
                                       }
                                       style={
@@ -10662,7 +10561,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                           }
                                         }
                                       >
-                                        立川2日目！ 遠藤彩加里
+                                        みんなの好きなことはなに？　有澤一華
                                       </Text>
                                       <View
                                         style={
@@ -10807,7 +10706,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             }
                                           }
                                         >
-                                          2024/07/14 22:08
+                                          2024/11/06 18:04
                                         </Text>
                                         <Entypo
                                           color="#e5007f"
@@ -10829,7 +10728,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     <Image
                                       source={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20240714/22/juicejuice-official/52/00/j/o1080143915463141684.jpg?cpd=300",
+                                          "uri": "https://stat.ameba.jp/user_images/20241106/18/juicejuice-official/fa/03/j/o1080267415506897367.jpg?cpd=300",
                                         }
                                       }
                                       style={
@@ -10938,7 +10837,162 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                           }
                                         }
                                       >
-                                        合唱バトル！ 段原瑠々
+                                        . セルフネイルしてます💅 ジェルネイル楽しいです♪  📷 ①ピンクと青のグラデーション🩷🩵 ②ピンクのマグネットジェルにハートをかいた💕  毎回、 写真撮るの忘れて、外す時に撮っちゃう😅 ネイルも写
+                                      </Text>
+                                      <View
+                                        style={
+                                          {
+                                            "alignItems": "center",
+                                            "flexDirection": "row",
+                                          }
+                                        }
+                                      >
+                                        <Ionicons
+                                          name="logo-instagram"
+                                          size={16}
+                                        />
+                                        <Text
+                                          ellipsizeMode="tail"
+                                          numberOfLines={1}
+                                          style={
+                                            {
+                                              "paddingLeft": 8,
+                                              "paddingRight": 8,
+                                            }
+                                          }
+                                        >
+                                          2024/11/06 17:41
+                                        </Text>
+                                        <Entypo
+                                          color="#e5007f"
+                                          name="new"
+                                          size={16}
+                                        />
+                                      </View>
+                                    </View>
+                                  </View>
+                                  <View
+                                    style={
+                                      {
+                                        "alignItems": "flex-end",
+                                        "justifyContent": "center",
+                                        "minWidth": 0,
+                                      }
+                                    }
+                                  >
+                                    <Image
+                                      source={
+                                        {
+                                          "uri": "https://storage.googleapis.com/hpblob.yssk22.dev/www.instagram.com/p/DCBgiQnJU5S/0/image.jpg",
+                                        }
+                                      }
+                                      style={
+                                        [
+                                          {
+                                            "height": 80,
+                                            "width": 80,
+                                          },
+                                          {
+                                            "height": 80,
+                                            "width": 80,
+                                          },
+                                        ]
+                                      }
+                                      testID="ExternalImage.Image"
+                                    />
+                                  </View>
+                                </View>
+                              </View>
+                            </View>
+                            <View
+                              onFocusCapture={[Function]}
+                              onLayout={[Function]}
+                              style={null}
+                            >
+                              <View
+                                style={
+                                  {
+                                    "borderBottomColor": "#bcbbc1",
+                                    "borderBottomWidth": 0.5,
+                                  }
+                                }
+                                testID="RNE__Divider"
+                              />
+                              <View
+                                accessibilityState={
+                                  {
+                                    "busy": undefined,
+                                    "checked": undefined,
+                                    "disabled": undefined,
+                                    "expanded": undefined,
+                                    "selected": undefined,
+                                  }
+                                }
+                                accessibilityValue={
+                                  {
+                                    "max": undefined,
+                                    "min": undefined,
+                                    "now": undefined,
+                                    "text": undefined,
+                                  }
+                                }
+                                accessible={true}
+                                collapsable={false}
+                                focusable={true}
+                                onClick={[Function]}
+                                onResponderGrant={[Function]}
+                                onResponderMove={[Function]}
+                                onResponderRelease={[Function]}
+                                onResponderTerminate={[Function]}
+                                onResponderTerminationRequest={[Function]}
+                                onStartShouldSetResponder={[Function]}
+                                style={
+                                  {
+                                    "opacity": 1,
+                                  }
+                                }
+                              >
+                                <View
+                                  style={
+                                    [
+                                      {
+                                        "height": 100,
+                                        "padding": 12,
+                                      },
+                                      {
+                                        "flexDirection": "row",
+                                        "justifyContent": "space-between",
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      {
+                                        "flex": 1,
+                                        "flexGrow": 1,
+                                        "minWidth": 0,
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        {
+                                          "flexDirection": "column",
+                                          "flexGrow": 1,
+                                          "justifyContent": "center",
+                                          "marginRight": 16,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        style={
+                                          {
+                                            "flexGrow": 1,
+                                          }
+                                        }
+                                      >
+                                        No.1898  発売日も開催するよ♪  山﨑愛生
                                       </Text>
                                       <View
                                         style={
@@ -11083,8 +11137,13 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                             }
                                           }
                                         >
-                                          2024/07/14 22:01
+                                          2024/11/06 17:39
                                         </Text>
+                                        <Entypo
+                                          color="#e5007f"
+                                          name="new"
+                                          size={16}
+                                        />
                                       </View>
                                     </View>
                                   </View>
@@ -11100,278 +11159,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     <Image
                                       source={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20240714/22/juicejuice-official/c0/84/j/o1080144015463138365.jpg?cpd=300",
-                                        }
-                                      }
-                                      style={
-                                        [
-                                          {
-                                            "height": 80,
-                                            "width": 80,
-                                          },
-                                          {
-                                            "height": 80,
-                                            "width": 80,
-                                          },
-                                        ]
-                                      }
-                                      testID="ExternalImage.Image"
-                                    />
-                                  </View>
-                                </View>
-                              </View>
-                            </View>
-                            <View
-                              onFocusCapture={[Function]}
-                              onLayout={[Function]}
-                              style={null}
-                            >
-                              <View
-                                style={
-                                  {
-                                    "borderBottomColor": "#bcbbc1",
-                                    "borderBottomWidth": 0.5,
-                                  }
-                                }
-                                testID="RNE__Divider"
-                              />
-                              <View
-                                accessibilityState={
-                                  {
-                                    "busy": undefined,
-                                    "checked": undefined,
-                                    "disabled": undefined,
-                                    "expanded": undefined,
-                                    "selected": undefined,
-                                  }
-                                }
-                                accessibilityValue={
-                                  {
-                                    "max": undefined,
-                                    "min": undefined,
-                                    "now": undefined,
-                                    "text": undefined,
-                                  }
-                                }
-                                accessible={true}
-                                collapsable={false}
-                                focusable={true}
-                                onClick={[Function]}
-                                onResponderGrant={[Function]}
-                                onResponderMove={[Function]}
-                                onResponderRelease={[Function]}
-                                onResponderTerminate={[Function]}
-                                onResponderTerminationRequest={[Function]}
-                                onStartShouldSetResponder={[Function]}
-                                style={
-                                  {
-                                    "opacity": 1,
-                                  }
-                                }
-                              >
-                                <View
-                                  style={
-                                    [
-                                      {
-                                        "height": 100,
-                                        "padding": 12,
-                                      },
-                                      {
-                                        "flexDirection": "row",
-                                        "justifyContent": "space-between",
-                                      },
-                                    ]
-                                  }
-                                >
-                                  <View
-                                    style={
-                                      {
-                                        "flex": 1,
-                                        "flexGrow": 1,
-                                        "minWidth": 0,
-                                      }
-                                    }
-                                  >
-                                    <View
-                                      style={
-                                        {
-                                          "flexDirection": "column",
-                                          "flexGrow": 1,
-                                          "justifyContent": "center",
-                                          "marginRight": 16,
-                                        }
-                                      }
-                                    >
-                                      <Text
-                                        style={
-                                          {
-                                            "flexGrow": 1,
-                                          }
-                                        }
-                                      >
-                                        アルタイル！初日！工藤由愛
-                                      </Text>
-                                      <View
-                                        style={
-                                          {
-                                            "alignItems": "center",
-                                            "flexDirection": "row",
-                                          }
-                                        }
-                                      >
-                                        <RNSVGSvgView
-                                          align="xMidYMid"
-                                          bbHeight={16}
-                                          bbWidth={16}
-                                          focusable={false}
-                                          meetOrSlice={0}
-                                          minX={0}
-                                          minY={0}
-                                          style={
-                                            [
-                                              {
-                                                "backgroundColor": "transparent",
-                                                "borderWidth": 0,
-                                              },
-                                              {
-                                                "height": 16,
-                                                "width": 16,
-                                              },
-                                              {
-                                                "flex": 0,
-                                                "height": 16,
-                                                "width": 16,
-                                              },
-                                            ]
-                                          }
-                                          vbHeight={34.7}
-                                          vbWidth={34.7}
-                                          x="0px"
-                                          y="0px"
-                                        >
-                                          <RNSVGGroup
-                                            fill={
-                                              {
-                                                "payload": 4278190080,
-                                                "type": 0,
-                                              }
-                                            }
-                                          >
-                                            <RNSVGGroup
-                                              fill={
-                                                {
-                                                  "payload": 4278190080,
-                                                  "type": 0,
-                                                }
-                                              }
-                                            >
-                                              <RNSVGPath
-                                                d="M28.7,24.5c-2-1-1.9-3.5-1.7-5.9c0.3-2.4,0.3-3.7-0.3-5.8C26.1,11,25.1,10,25.1,8c0-1.5,0-3.5,0-4.7c0-1.8-0.8-2.4-1.6-2.4 c-2.3,0-3.1,4-6.2,4h0c-3.1,0-3.9-4-6.2-4c-0.7,0-1.6,0.6-1.6,2.4c0,1.3,0,3.3,0,4.7c0,2-1,3-1.6,4.8c-0.6,2.1-0.6,3.4-0.4,5.8 C7.9,21.1,8,23.5,6,24.5c-1.6,0.8-2.6,2.1-1.8,3.2c0.9,1.4,2.6-0.2,3.4,0c0.9,0.2-0.1,1.5,1.3,1.5c0.7,0,0.9-2.2,1.6-2 c0.5,0.1,0.6,1.5,0.1,2.5c-0.2,0.5-2,1.6-1.8,2.8c0.2,1.2,1.2,1.4,2.6,1.4c1,0,2.7,0,3.7,0c0.9,0,1.8-0.9,1.8-1.5 c0-0.6-0.8-1.9,0.5-1.9h0c1.3,0,0.5,1.3,0.5,1.9c0,0.6,0.9,1.5,1.8,1.5c0.9,0,2.6,0,3.7,0c1.4,0,2.4-0.2,2.6-1.4 c0.2-1.2-1.6-2.3-1.8-2.8c-0.5-1.1-0.3-2.4,0.1-2.5c0.7-0.2,0.9,2,1.6,2c1.4,0,0.4-1.3,1.3-1.5c0.8-0.2,2.5,1.4,3.4,0 C31.3,26.6,30.3,25.3,28.7,24.5z"
-                                                fill={
-                                                  {
-                                                    "payload": 4278222848,
-                                                    "type": 0,
-                                                  }
-                                                }
-                                                propList={
-                                                  [
-                                                    "fill",
-                                                  ]
-                                                }
-                                              />
-                                            </RNSVGGroup>
-                                            <RNSVGCircle
-                                              cx="22.4"
-                                              cy="11.5"
-                                              fill={
-                                                {
-                                                  "payload": 4294967295,
-                                                  "type": 0,
-                                                }
-                                              }
-                                              propList={
-                                                [
-                                                  "fill",
-                                                ]
-                                              }
-                                              r="0.9"
-                                            />
-                                            <RNSVGCircle
-                                              cx="12.3"
-                                              cy="11.5"
-                                              fill={
-                                                {
-                                                  "payload": 4294967295,
-                                                  "type": 0,
-                                                }
-                                              }
-                                              propList={
-                                                [
-                                                  "fill",
-                                                ]
-                                              }
-                                              r="0.9"
-                                            />
-                                            <RNSVGCircle
-                                              cx="17.4"
-                                              cy="25.1"
-                                              fill={
-                                                {
-                                                  "payload": 4294967295,
-                                                  "type": 0,
-                                                }
-                                              }
-                                              propList={
-                                                [
-                                                  "fill",
-                                                ]
-                                              }
-                                              r="4.2"
-                                            />
-                                            <RNSVGPath
-                                              d="M17.4,12.2c-2.6,0-6.2,1.6-6.2,4.1c0,2,1.3,2.7,2.9,2.7s2.1-1.8,3.4-1.8c1.3,0,1.8,1.8,3.4,1.8 c1.6,0,2.9-0.7,2.9-2.7C23.6,13.8,20,12.2,17.4,12.2z M17.4,15.9c-1.1,0-2.1-0.7-2.1-1.5c0-0.9,0.9-1.5,2.1-1.5 c1.1,0,2.1,0.7,2.1,1.5C19.4,15.2,18.5,15.9,17.4,15.9z"
-                                              fill={
-                                                {
-                                                  "payload": 4294967295,
-                                                  "type": 0,
-                                                }
-                                              }
-                                              propList={
-                                                [
-                                                  "fill",
-                                                ]
-                                              }
-                                            />
-                                          </RNSVGGroup>
-                                        </RNSVGSvgView>
-                                        <Text
-                                          ellipsizeMode="tail"
-                                          numberOfLines={1}
-                                          style={
-                                            {
-                                              "paddingLeft": 8,
-                                              "paddingRight": 8,
-                                            }
-                                          }
-                                        >
-                                          2024/07/14 22:00
-                                        </Text>
-                                      </View>
-                                    </View>
-                                  </View>
-                                  <View
-                                    style={
-                                      {
-                                        "alignItems": "flex-end",
-                                        "justifyContent": "center",
-                                        "minWidth": 0,
-                                      }
-                                    }
-                                  >
-                                    <Image
-                                      source={
-                                        {
-                                          "uri": "https://stat.ameba.jp/user_images/20240714/21/juicejuice-official/ce/f7/j/o1000133215463119857.jpg?cpd=300",
+                                          "uri": "https://stat.ameba.jp/user_images/20241106/16/morningmusume15ki/bb/3a/j/o1080144015506870151.jpg?cpd=300",
                                         }
                                       }
                                       style={

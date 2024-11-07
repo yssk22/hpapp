@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<f7b3e48d5ed0352486131c90a6a07b6c>>
+ * @generated SignedSource<<3b3a4fd5ecd3ba99582edaec717b9212>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -137,6 +137,13 @@ return {
                     "args": null,
                     "kind": "ScalarField",
                     "name": "artistKey",
+                    "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "artistID",
                     "storageKey": null
                   },
                   (v2/*: any*/),
@@ -343,12 +350,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "fb4783a2eb42b1563623281917d11788",
+    "cacheID": "5767fc97b27e6e7611d5d4f9543c6c5d",
     "id": null,
     "metadata": {},
     "name": "UserServiceProviderQuery",
     "operationKind": "query",
-    "text": "query UserServiceProviderQuery {\n  helloproject {\n    ...HelloProjectFragment\n    id\n  }\n  me {\n    ...MeFragment\n    id\n  }\n}\n\nfragment HelloProjectFragment on HelloProjectQuery {\n  artists {\n    id\n    key\n    name\n    thumbnailURL\n    members {\n      id\n      key\n      artistKey\n      name\n      nameKana\n      thumbnailURL\n      dateOfBirth\n      bloodType\n      joinAt\n      graduateAt\n    }\n  }\n}\n\nfragment MeFragment on MeQuery {\n  id\n  username\n  clientId\n  clientName\n  followings {\n    type\n    member {\n      id\n    }\n    id\n  }\n  sortHistories(first: 1) {\n    edges {\n      node {\n        id\n        createdAt\n        sortResult {\n          records {\n            artistId\n            memberId\n            memberKey\n          }\n        }\n      }\n    }\n  }\n}\n"
+    "text": "query UserServiceProviderQuery {\n  helloproject {\n    ...HelloProjectFragment\n    id\n  }\n  me {\n    ...MeFragment\n    id\n  }\n}\n\nfragment HelloProjectFragment on HelloProjectQuery {\n  artists {\n    id\n    key\n    name\n    thumbnailURL\n    members {\n      id\n      key\n      artistKey\n      artistID\n      name\n      nameKana\n      thumbnailURL\n      dateOfBirth\n      bloodType\n      joinAt\n      graduateAt\n    }\n  }\n}\n\nfragment MeFragment on MeQuery {\n  id\n  username\n  clientId\n  clientName\n  followings {\n    type\n    member {\n      id\n    }\n    id\n  }\n  sortHistories(first: 1) {\n    edges {\n      node {\n        id\n        createdAt\n        sortResult {\n          records {\n            artistId\n            memberId\n            memberKey\n          }\n        }\n      }\n    }\n  }\n}\n"
   }
 };
 })();
