@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<4dc1d5445174582f0b27801f41f55bbb>>
+ * @generated SignedSource<<6dd7e219f574cee9b38a514c06819dc5>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,18 +8,18 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ConcreteRequest, Query } from 'relay-runtime';
+import { ConcreteRequest } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type HPAssetType = "ameblo" | "elineup_mall" | "instagram" | "tiktok" | "twitter" | "youtube" | "%future added value";
 export type HPFeedQueryParamsInput = {
-  assetTypes?: ReadonlyArray<HPAssetType> | null;
-  memberIDs?: ReadonlyArray<string> | null;
-  minPostAt?: string | null;
-  useMemberTaggings?: boolean | null;
+  assetTypes?: ReadonlyArray<HPAssetType> | null | undefined;
+  memberIDs?: ReadonlyArray<string> | null | undefined;
+  minPostAt?: string | null | undefined;
+  useMemberTaggings?: boolean | null | undefined;
 };
 export type FeedContextQuery$variables = {
-  after?: any | null;
-  first?: number | null;
+  after?: any | null | undefined;
+  first?: number | null | undefined;
   params: HPFeedQueryParamsInput;
 };
 export type FeedContextQuery$data = {

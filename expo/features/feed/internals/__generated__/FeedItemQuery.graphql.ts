@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<2e5640f9e80beb9de002c498d5955c16>>
+ * @generated SignedSource<<dbf9ce164bd7260c4bff7c899186c3e7>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,7 +8,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ConcreteRequest, Query } from 'relay-runtime';
+import { ConcreteRequest } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type HPFeedItemHPAssetType = "ameblo" | "elineupmall" | "instagram" | "tiktok" | "twitter" | "youtube" | "%future added value";
 export type FeedItemQuery$variables = {
@@ -23,11 +23,11 @@ export type FeedItemQuery$data = {
     }>;
     readonly ownerMember?: {
       readonly name: string;
-    } | null;
+    } | null | undefined;
     readonly sourceURL?: string;
     readonly title?: string;
     readonly " $fragmentSpreads": FragmentRefs<"FeedItemCTALove">;
-  } | null;
+  } | null | undefined;
 };
 export type FeedItemQuery = {
   response: FeedItemQuery$data;

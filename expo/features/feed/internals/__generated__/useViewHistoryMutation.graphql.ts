@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<e2cacf8275d86037b17285c7071f091b>>
+ * @generated SignedSource<<c9489d76bcaade3331e34afa7cddc53a>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,7 +8,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ConcreteRequest, Mutation } from 'relay-runtime';
+import { ConcreteRequest } from 'relay-runtime';
 export type HPViewHistoryUpsertParamsInput = {
   feedId: number;
   isFavorite: boolean;
@@ -22,8 +22,8 @@ export type useViewHistoryMutation$data = {
     readonly upsertViewHistory: {
       readonly id: string;
       readonly isFavorite: boolean;
-    } | null;
-  } | null;
+    } | null | undefined;
+  } | null | undefined;
 };
 export type useViewHistoryMutation = {
   response: useViewHistoryMutation$data;

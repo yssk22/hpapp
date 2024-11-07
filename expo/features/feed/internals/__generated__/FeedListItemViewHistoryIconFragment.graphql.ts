@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<0e32b51cbb06752b84c227e117d45484>>
+ * @generated SignedSource<<2d70e8bf4442b0cfb28a31a6255e068d>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,13 +8,13 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Fragment, ReaderFragment } from 'relay-runtime';
+import { ReaderFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type FeedListItemViewHistoryIconFragment$data = {
   readonly myViewHistory: {
     readonly id: string;
     readonly isFavorite: boolean;
-  } | null;
+  } | null | undefined;
   readonly " $fragmentType": "FeedListItemViewHistoryIconFragment";
 };
 export type FeedListItemViewHistoryIconFragment$key = {

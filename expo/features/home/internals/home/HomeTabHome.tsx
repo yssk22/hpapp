@@ -1,6 +1,7 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
 import { Loading } from '@hpapp/features/common';
 import { SectionListRenderer, SectionList, SectionListLoading } from '@hpapp/features/common/sectionlist';
+import { FeedListItemLoadMore } from '@hpapp/features/feed';
 import { useUPFCWebView } from '@hpapp/features/upfc';
 import { t } from '@hpapp/system/i18n';
 import { useMemo } from 'react';
@@ -61,6 +62,11 @@ export default function HomeTabHome() {
         feed.reload();
         upfc.reload();
       }}
+      onEndReachedThreshold={0.01}
+      onEndReached={() => {
+        feed.loadNext();
+      }}
+      ListFooterComponent={feed.hasNext ? <FeedListItemLoadMore /> : null}
     />
   );
 }

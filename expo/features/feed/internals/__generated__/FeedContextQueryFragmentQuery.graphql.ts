@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<910b9c9c15be55f6c5d275ee9e0e707a>>
+ * @generated SignedSource<<d7a4446a7889377fbec18362b7a9950f>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,25 +8,25 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ConcreteRequest, Query } from 'relay-runtime';
+import { ConcreteRequest } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type HPAssetType = "ameblo" | "elineup_mall" | "instagram" | "tiktok" | "twitter" | "youtube" | "%future added value";
 export type HPFeedQueryParamsInput = {
-  assetTypes?: ReadonlyArray<HPAssetType> | null;
-  memberIDs?: ReadonlyArray<string> | null;
-  minPostAt?: string | null;
-  useMemberTaggings?: boolean | null;
+  assetTypes?: ReadonlyArray<HPAssetType> | null | undefined;
+  memberIDs?: ReadonlyArray<string> | null | undefined;
+  minPostAt?: string | null | undefined;
+  useMemberTaggings?: boolean | null | undefined;
 };
 export type FeedContextQueryFragmentQuery$variables = {
-  after?: any | null;
-  first?: number | null;
+  after?: any | null | undefined;
+  first?: number | null | undefined;
   id: string;
   params: HPFeedQueryParamsInput;
 };
 export type FeedContextQueryFragmentQuery$data = {
   readonly node: {
     readonly " $fragmentSpreads": FragmentRefs<"FeedContextQuery_helloproject_query_feed">;
-  } | null;
+  } | null | undefined;
 };
 export type FeedContextQueryFragmentQuery = {
   response: FeedContextQueryFragmentQuery$data;

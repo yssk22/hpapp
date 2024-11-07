@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<5308d40ff1d41ba8c8de223dd171d1b5>>
+ * @generated SignedSource<<e404fc326b5ea9207927d9ecf27f8bbc>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,7 +8,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ConcreteRequest, Mutation } from 'relay-runtime';
+import { ConcreteRequest } from 'relay-runtime';
 export type HPFollowHPFollowType = "follow" | "follow_with_notification" | "unfollow" | "%future added value";
 export type HPFollowType = "follow" | "follow_with_notification" | "unfollow" | "%future added value";
 export type HPFollowUpsertParamsInput = {
@@ -26,8 +26,8 @@ export type useFollowingsMutation$data = {
         readonly id: string;
       };
       readonly type: HPFollowHPFollowType;
-    } | null;
-  } | null;
+    } | null | undefined;
+  } | null | undefined;
 };
 export type useFollowingsMutation = {
   response: useFollowingsMutation$data;

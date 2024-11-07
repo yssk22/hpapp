@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<3b3a4fd5ecd3ba99582edaec717b9212>>
+ * @generated SignedSource<<f2a64276b6f3fa6da531b8920e007998>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,9 +8,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ConcreteRequest, Query } from 'relay-runtime';
+import { ConcreteRequest } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
-export type UserServiceProviderQuery$variables = {};
+export type UserServiceProviderQuery$variables = Record<PropertyKey, never>;
 export type UserServiceProviderQuery$data = {
   readonly helloproject: {
     readonly " $fragmentSpreads": FragmentRefs<"HelloProjectFragment">;

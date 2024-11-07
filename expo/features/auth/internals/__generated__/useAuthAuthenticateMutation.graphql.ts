@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<180ac0c93b0911e00623465bac58d1cf>>
+ * @generated SignedSource<<ef8d411c490bd6346ca9a6818ca754c6>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,14 +8,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ConcreteRequest, Mutation } from 'relay-runtime';
-export type useAuthAuthenticateMutation$variables = {};
+import { ConcreteRequest } from 'relay-runtime';
+export type useAuthAuthenticateMutation$variables = Record<PropertyKey, never>;
 export type useAuthAuthenticateMutation$data = {
   readonly authenticate: {
     readonly accessToken: string;
     readonly id: string;
     readonly username: string;
-  } | null;
+  } | null | undefined;
 };
 export type useAuthAuthenticateMutation = {
   response: useAuthAuthenticateMutation$data;

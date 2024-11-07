@@ -1,5 +1,5 @@
 import { HPMember } from '@hpapp/features/app/user';
-import { FeedListItem, HPAssetType, HPFeedItem } from '@hpapp/features/feed';
+import { FeedListItem, FeedListItemLoadMore, HPAssetType, HPFeedItem } from '@hpapp/features/feed';
 import { FlatList } from 'react-native';
 
 import { useArtistMemberFeed } from './ArtistMemberContext';
@@ -31,6 +31,11 @@ export default function ArtistMemberFlatList({ member, onSelect }: ArtistMemberF
         }
         return <FeedListItem data={item as HPFeedItem} />;
       }}
+      onEndReachedThreshold={0.01}
+      onEndReached={() => {
+        feed.loadNext();
+      }}
+      ListFooterComponent={feed.hasNext ? <FeedListItemLoadMore /> : null}
     />
   );
 }

@@ -171,6 +171,7 @@ exports[`home HomeScreen 1`] = `
                         }
                       >
                         <RCTScrollView
+                          ListFooterComponent={<FeedListItemLoadMore />}
                           data={
                             [
                               HomeTabHomeFeedItemListSection {
@@ -8863,6 +8864,8 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                           getItemCount={[Function]}
                           keyExtractor={[Function]}
                           onContentSizeChange={[Function]}
+                          onEndReached={[Function]}
+                          onEndReachedThreshold={0.01}
                           onLayout={[Function]}
                           onMomentumScrollBegin={[Function]}
                           onMomentumScrollEnd={[Function]}
@@ -11187,6 +11190,46 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                 }
                               }
                             />
+                            <View
+                              onLayout={[Function]}
+                            >
+                              <View
+                                style={
+                                  [
+                                    {
+                                      "padding": 12,
+                                    },
+                                    {
+                                      "flexDirection": "row",
+                                      "justifyContent": "space-between",
+                                    },
+                                  ]
+                                }
+                              >
+                                <View
+                                  style={
+                                    {
+                                      "flex": 1,
+                                      "flexGrow": 1,
+                                      "minWidth": 0,
+                                    }
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      {
+                                        "flex": 1,
+                                        "justifyContent": "space-between",
+                                      }
+                                    }
+                                  >
+                                    <ActivityIndicator
+                                      size="small"
+                                    />
+                                  </View>
+                                </View>
+                              </View>
+                            </View>
                           </View>
                         </RCTScrollView>
                       </View>
