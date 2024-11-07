@@ -10,6 +10,7 @@ import FeedItemCTA from './FeedItemCTA';
 import { FeedItemCTADownload } from './FeedItemCTADownload';
 import { FeedItemCTALove } from './FeedItemCTALove';
 import { FeedItemCTAShare } from './FeedItemCTAShare';
+import FeedItemInstagram from './FeedItemInstagram';
 import { FeedItemQuery } from './__generated__/FeedItemQuery.graphql';
 
 const FeedItemQueryGraphQL = graphql`
@@ -20,6 +21,7 @@ const FeedItemQueryGraphQL = graphql`
         title
         sourceURL
         assetType
+        sourceID
         ownerMember {
           name
         }
@@ -49,7 +51,10 @@ export default function FeedItem({ feedId }: FeedItemProps) {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <FeedItemAmeblo url={data.node!.sourceURL!} optimize />
+        {data.node?.assetType === 'ameblo' && <FeedItemAmeblo url={data.node!.sourceURL!} optimize />}
+        {data.node?.assetType === 'instagram' && (
+          <FeedItemInstagram url={data.node!.sourceURL!} sourceId={data.node.sourceID!} optimize />
+        )}
       </View>
       <View style={[styles.ctaContainer, { marginBottom: insets.bottom }]}>
         {data.node!.assetType === 'ameblo' && <FeedItemCTA label="Open" icon={<AmebloIcon size={IconSize.Medium} />} />}
