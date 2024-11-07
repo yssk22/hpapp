@@ -1,9 +1,11 @@
+import { ArtistMemberIcon } from '@hpapp/features/artist';
 import { AssetIcon, ExternalImage } from '@hpapp/features/common';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
 import { ListItem } from '@hpapp/features/common/list';
 import { useNavigation } from '@hpapp/features/common/stack';
 import FeedItemScreen from '@hpapp/features/feed/FeedItemScreen';
 import * as date from '@hpapp/foundation/date';
+import { isEmpty } from '@hpapp/foundation/string';
 import { Divider } from '@rneui/base';
 import { View, Text, StyleSheet } from 'react-native';
 import { graphql, useFragment } from 'react-relay';
@@ -44,7 +46,11 @@ export default function FeedListItem({ data }: { data: FeedListItemFragment$key 
       <ListItem
         containerStyle={styles.container}
         rightContent={
-          <ExternalImage uri={getOptimizedImageUrl(imageUrl)} style={styles.image} width={80} height={80} />
+          isEmpty(imageUrl) ? (
+            <ArtistMemberIcon member={item.ownerMember!.id} size={80} />
+          ) : (
+            <ExternalImage uri={getOptimizedImageUrl(imageUrl)} style={styles.image} width={80} height={80} />
+          )
         }
         onPress={() => {
           navigation.navigate(FeedItemScreen, { feedId: item.id });
