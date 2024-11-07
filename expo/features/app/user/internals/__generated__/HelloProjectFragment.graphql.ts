@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<042afa1d38c8892da59b5bf57be8c8aa>>
+ * @generated SignedSource<<e34d45d29949052f58b210b9b09192aa>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,28 +8,28 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Fragment, ReaderFragment } from 'relay-runtime';
+import { ReaderFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type HelloProjectFragment$data = {
   readonly artists: ReadonlyArray<{
     readonly id: string;
     readonly key: string;
     readonly members: ReadonlyArray<{
-      readonly artistID: string | null;
+      readonly artistID: string | null | undefined;
       readonly artistKey: string;
       readonly bloodType: string;
       readonly dateOfBirth: string;
-      readonly graduateAt: string | null;
+      readonly graduateAt: string | null | undefined;
       readonly id: string;
-      readonly joinAt: string | null;
+      readonly joinAt: string | null | undefined;
       readonly key: string;
       readonly name: string;
       readonly nameKana: string;
       readonly thumbnailURL: string;
-    }> | null;
+    }> | null | undefined;
     readonly name: string;
     readonly thumbnailURL: string;
-  } | null> | null;
+  } | null | undefined> | null | undefined;
   readonly " $fragmentType": "HelloProjectFragment";
 };
 export type HelloProjectFragment$key = {

@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<f5595f200f7a1e3cac794cff1447652a>>
+ * @generated SignedSource<<643d0bdd9d5330d0de6e697baaa8a804>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,24 +8,24 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Fragment, ReaderFragment } from 'relay-runtime';
+import { ReaderFragment } from 'relay-runtime';
 export type HPFeedItemHPAssetType = "ameblo" | "elineupmall" | "instagram" | "tiktok" | "twitter" | "youtube" | "%future added value";
 import { FragmentRefs } from "relay-runtime";
 export type FeedListItemFragment$data = {
   readonly assetType: HPFeedItemHPAssetType;
   readonly id: string;
-  readonly imageURL: string | null;
+  readonly imageURL: string | null | undefined;
   readonly ownerMember: {
     readonly id: string;
     readonly key: string;
-  } | null;
+  } | null | undefined;
   readonly postAt: string;
   readonly sourceID: number;
   readonly sourceURL: string;
   readonly taggedMembers: ReadonlyArray<{
     readonly id: string;
     readonly key: string;
-  }> | null;
+  }> | null | undefined;
   readonly title: string;
   readonly " $fragmentSpreads": FragmentRefs<"FeedListItemViewHistoryIconFragment">;
   readonly " $fragmentType": "FeedListItemFragment";

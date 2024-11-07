@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<497ca03b6fd1b232e7c9c1a8920b43e7>>
+ * @generated SignedSource<<ba3340e159f9390a9bd53fbc2b9fc59f>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,34 +8,34 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Fragment, ReaderFragment } from 'relay-runtime';
+import { ReaderFragment } from 'relay-runtime';
 export type HPFollowHPFollowType = "follow" | "follow_with_notification" | "unfollow" | "%future added value";
 import { FragmentRefs } from "relay-runtime";
 export type MeFragment$data = {
-  readonly clientId: string | null;
-  readonly clientName: string | null;
+  readonly clientId: string | null | undefined;
+  readonly clientName: string | null | undefined;
   readonly followings: ReadonlyArray<{
     readonly member: {
       readonly id: string;
     };
     readonly type: HPFollowHPFollowType;
-  } | null> | null;
+  } | null | undefined> | null | undefined;
   readonly id: string;
   readonly sortHistories: {
     readonly edges: ReadonlyArray<{
       readonly node: {
-        readonly createdAt: string | null;
+        readonly createdAt: string | null | undefined;
         readonly id: string;
         readonly sortResult: {
           readonly records: ReadonlyArray<{
             readonly artistId: number;
             readonly memberId: number;
             readonly memberKey: string;
-          }> | null;
+          }> | null | undefined;
         };
-      } | null;
-    } | null> | null;
-  } | null;
+      } | null | undefined;
+    } | null | undefined> | null | undefined;
+  } | null | undefined;
   readonly username: string;
   readonly " $fragmentType": "MeFragment";
 };

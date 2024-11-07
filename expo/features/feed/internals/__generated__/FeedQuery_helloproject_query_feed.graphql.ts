@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<5918db2e4b13ce75f7e909d20a028132>>
+ * @generated SignedSource<<51281bc613d97b5fd1cc9f3a3830789a>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,7 +8,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ReaderFragment, RefetchableFragment } from 'relay-runtime';
+import { ReaderFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type FeedQuery_helloproject_query_feed$data = {
   readonly feed: {
@@ -16,9 +16,9 @@ export type FeedQuery_helloproject_query_feed$data = {
       readonly node: {
         readonly id: string;
         readonly " $fragmentSpreads": FragmentRefs<"FeedListItemFragment">;
-      } | null;
-    } | null> | null;
-  } | null;
+      } | null | undefined;
+    } | null | undefined> | null | undefined;
+  } | null | undefined;
   readonly id: string;
   readonly " $fragmentType": "FeedQuery_helloproject_query_feed";
 };
@@ -76,7 +76,10 @@ return {
         "node"
       ],
       "operation": require('./FeedQueryFragmentQuery.graphql'),
-      "identifierField": "id"
+      "identifierInfo": {
+        "identifierField": "id",
+        "identifierQueryVariableName": "id"
+      }
     }
   },
   "name": "FeedQuery_helloproject_query_feed",
