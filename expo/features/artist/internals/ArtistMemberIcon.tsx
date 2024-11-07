@@ -20,7 +20,7 @@ export default function ArtistMemberIcon({
   disableTouch = false
 }: {
   member: HPMember | string;
-  size?: ArtistMemberIconSize;
+  size?: ArtistMemberIconSize | number;
   circle?: boolean;
   showFollowIcon?: boolean;
   disableTouch?: boolean;
