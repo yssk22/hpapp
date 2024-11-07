@@ -7,6 +7,7 @@ import ExternalImage from './internals/ExternalImage';
 import Initializer from './internals/Initializer';
 import Link from './internals/Link';
 import Loading from './internals/Loading';
+import Media from './internals/Media';
 import Text from './internals/Text';
 import useAssetContent from './internals/useAssetContent';
 import useAsync from './internals/useAsync';
@@ -27,6 +28,7 @@ export {
   Initializer,
   Link,
   Loading,
+  Media,
   Text,
   useErrorMessage,
   useMutationPromise,

@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<dbf9ce164bd7260c4bff7c899186c3e7>>
+ * @generated SignedSource<<c6321e55bfe820d4a1e46aafa278a53f>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -24,6 +24,7 @@ export type FeedItemQuery$data = {
     readonly ownerMember?: {
       readonly name: string;
     } | null | undefined;
+    readonly sourceID?: number;
     readonly sourceURL?: string;
     readonly title?: string;
     readonly " $fragmentSpreads": FragmentRefs<"FeedItemCTALove">;
@@ -81,10 +82,17 @@ v6 = {
   "alias": null,
   "args": null,
   "kind": "ScalarField",
-  "name": "name",
+  "name": "sourceID",
   "storageKey": null
 },
 v7 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "name",
+  "storageKey": null
+},
+v8 = {
   "alias": null,
   "args": null,
   "concreteType": "Media",
@@ -124,6 +132,7 @@ return {
               (v3/*: any*/),
               (v4/*: any*/),
               (v5/*: any*/),
+              (v6/*: any*/),
               {
                 "alias": null,
                 "args": null,
@@ -132,11 +141,11 @@ return {
                 "name": "ownerMember",
                 "plural": false,
                 "selections": [
-                  (v6/*: any*/)
+                  (v7/*: any*/)
                 ],
                 "storageKey": null
               },
-              (v7/*: any*/),
+              (v8/*: any*/),
               {
                 "args": null,
                 "kind": "FragmentSpread",
@@ -181,6 +190,7 @@ return {
               (v3/*: any*/),
               (v4/*: any*/),
               (v5/*: any*/),
+              (v6/*: any*/),
               {
                 "alias": null,
                 "args": null,
@@ -189,12 +199,12 @@ return {
                 "name": "ownerMember",
                 "plural": false,
                 "selections": [
-                  (v6/*: any*/),
+                  (v7/*: any*/),
                   (v2/*: any*/)
                 ],
                 "storageKey": null
               },
-              (v7/*: any*/),
+              (v8/*: any*/),
               {
                 "alias": null,
                 "args": null,
@@ -224,16 +234,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "b615b2c953455ff328845d67d6bc61e4",
+    "cacheID": "d312d9dab849381101f9c31093272cf7",
     "id": null,
     "metadata": {},
     "name": "FeedItemQuery",
     "operationKind": "query",
-    "text": "query FeedItemQuery(\n  $feedId: ID!\n) {\n  node(id: $feedId) {\n    __typename\n    id\n    ... on HPFeedItem {\n      title\n      sourceURL\n      assetType\n      ownerMember {\n        name\n        id\n      }\n      media {\n        url\n      }\n      ...FeedItemCTALove\n    }\n  }\n}\n\nfragment FeedItemCTALove on HPFeedItem {\n  id\n  myViewHistory {\n    id\n    isFavorite\n  }\n}\n"
+    "text": "query FeedItemQuery(\n  $feedId: ID!\n) {\n  node(id: $feedId) {\n    __typename\n    id\n    ... on HPFeedItem {\n      title\n      sourceURL\n      assetType\n      sourceID\n      ownerMember {\n        name\n        id\n      }\n      media {\n        url\n      }\n      ...FeedItemCTALove\n    }\n  }\n}\n\nfragment FeedItemCTALove on HPFeedItem {\n  id\n  myViewHistory {\n    id\n    isFavorite\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "4eb42237081703cf0763304962388b0b";
+(node as any).hash = "3b07e3810fcde5f553f33a99bca73b72";
 
 export default node;
