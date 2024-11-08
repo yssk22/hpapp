@@ -428,6 +428,7 @@ type ComplexityRoot struct {
 		Followings       func(childComplexity int) int
 		ID               func(childComplexity int) int
 		SortHistories    func(childComplexity int, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
+		UserID           func(childComplexity int) int
 		Username         func(childComplexity int) int
 	}
 
@@ -2466,6 +2467,13 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.MeQuery.SortHistories(childComplexity, args["after"].(*entgql.Cursor[int]), args["first"].(*int), args["before"].(*entgql.Cursor[int]), args["last"].(*int)), true
+
+	case "MeQuery.userId":
+		if e.complexity.MeQuery.UserID == nil {
+			break
+		}
+
+		return e.complexity.MeQuery.UserID(childComplexity), true
 
 	case "MeQuery.username":
 		if e.complexity.MeQuery.Username == nil {
@@ -15968,7 +15976,7 @@ func (ec *executionContext) _MeQuery_id(ctx context.Context, field graphql.Colle
 	}()
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
 		ctx = rctx // use context from middleware stack in children
-		return obj.ID(ctx)
+		return obj.ID(), nil
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -15993,6 +16001,50 @@ func (ec *executionContext) fieldContext_MeQuery_id(ctx context.Context, field g
 		IsResolver: false,
 		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
 			return nil, errors.New("field of type ID does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _MeQuery_userId(ctx context.Context, field graphql.CollectedField, obj *me.MeQuery) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_MeQuery_userId(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.UserID(ctx)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_MeQuery_userId(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "MeQuery",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type String does not have child fields")
 		},
 	}
 	return fc, nil
@@ -17725,6 +17777,8 @@ func (ec *executionContext) fieldContext_Query_me(ctx context.Context, field gra
 			switch field.Name {
 			case "id":
 				return ec.fieldContext_MeQuery_id(ctx, field)
+			case "userId":
+				return ec.fieldContext_MeQuery_userId(ctx, field)
 			case "username":
 				return ec.fieldContext_MeQuery_username(ctx, field)
 			case "clientId":
@@ -23946,6 +24000,13 @@ func (ec *executionContext) _MeQuery(ctx context.Context, sel ast.SelectionSet, 
 		case "__typename":
 			out.Values[i] = graphql.MarshalString("MeQuery")
 		case "id":
+
+			out.Values[i] = ec._MeQuery_id(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "userId":
 			field := field
 
 			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
@@ -23954,7 +24015,7 @@ func (ec *executionContext) _MeQuery(ctx context.Context, sel ast.SelectionSet, 
 						ec.Error(ctx, ec.Recover(ctx, r))
 					}
 				}()
-				res = ec._MeQuery_id(ctx, field, obj)
+				res = ec._MeQuery_userId(ctx, field, obj)
 				if res == graphql.Null {
 					atomic.AddUint32(&invalids, 1)
 				}

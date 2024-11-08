@@ -11,7 +11,7 @@ import HomeTabProvider from './HomeTabProvider';
 import HomeTabArtist from './artist/HomeTabArtist';
 import HomeTabGoods from './goods/HomeTabGoods';
 import HomeTabHome from './home/HomeTabHome';
-import HomeTabSettings from './settings/HomeTabSettings';
+import HomeTabSettings from './menu/HomeTabMenu';
 import HomeTabUPFC from './upfc/HomeTabUPFC';
 
 export default function HomeTab() {
@@ -88,9 +88,9 @@ const Tabs: TabSpec[] = [
     icon: 'cart'
   },
   {
-    name: 'Settings',
+    name: 'Menu',
     component: HomeTabSettings,
-    icon: 'settings'
+    icon: 'menu'
   }
 ];
 

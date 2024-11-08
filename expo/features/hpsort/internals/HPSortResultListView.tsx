@@ -5,14 +5,14 @@ import { StyleSheet, View } from 'react-native';
 import HPSortResultListItem from './HPSortResultListItem';
 import HPSortResultListTopItem from './HPSortResultListTopItem';
 
-export default function HPSortResultListView({
-  list
-}: {
+export type HPSortResultListViewProps = {
   list: {
     memberId: string;
     previousRank?: number;
   }[];
-}) {
+};
+
+export default function HPSortResultListView({ list }: HPSortResultListViewProps) {
   const top3 = list.slice(0, 3) ?? [];
   const rest = list.slice(3) ?? [];
   return (

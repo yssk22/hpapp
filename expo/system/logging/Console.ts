@@ -23,18 +23,25 @@ class Console implements LogSink {
       }).length > 0;
 
     if (level === 'error') {
-      console.error(event, message, JSON.stringify(data, null, '  '));
+      console.error(event, message, this.limitSize(JSON.stringify(data, null, '  ')));
     } else if (level === 'debug') {
       if (__DEV__) {
-        console.log(event, message, JSON.stringify(data, null, '  '));
+        console.log(event, message, this.limitSize(JSON.stringify(data, null, '  ')));
       }
     } else {
       if (isFocus) {
-        console.log(event, message, JSON.stringify(data, null, '  '));
+        console.log(event, message, this.limitSize(JSON.stringify(data, null, '  ')));
       } else {
         console.log(event, message);
       }
     }
+  }
+
+  limitSize(output: string, limit = 10000) {
+    if (output.length > limit) {
+      return output.substring(0, limit) + '\n... Output truncated ...';
+    }
+    return output;
   }
 }
 

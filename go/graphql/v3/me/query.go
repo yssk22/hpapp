@@ -26,7 +26,11 @@ type MeQuery struct{}
 
 func (h *MeQuery) IsNode() {}
 
-func (h *MeQuery) ID(ctx context.Context) (string, error) {
+func (h *MeQuery) ID() string {
+	return "me"
+}
+
+func (h *MeQuery) UserID(ctx context.Context) (string, error) {
 	return appuser.CurrentUser(ctx).ID(), nil
 }
 

@@ -2,7 +2,7 @@
 
 import { renderUserComponent } from '@hpapp/features/testhelper';
 
-import HomeTabSettings from './HomeTabSettings';
+import HomeTabSettings from './HomeTabMenu';
 
 describe('SettingsTab', () => {
   test('render', async () => {

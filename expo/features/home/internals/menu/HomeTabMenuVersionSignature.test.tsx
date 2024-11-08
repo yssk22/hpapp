@@ -1,9 +1,9 @@
 import { renderUserComponent } from '@hpapp/features/testhelper';
 import { composeStories } from '@storybook/react';
 
-import * as stories from './HomeTabSettingsVersionSignature.stories';
+import * as stories from './HomeTabMenuVersionSignature.stories';
 
-describe('HomeTabSettingsVersionSignature', () => {
+describe('HomeTabMenuVersionSignature', () => {
   const composed = composeStories(stories);
   Object.keys(composed).forEach((key) => {
     const C = (composed as any)[key];
