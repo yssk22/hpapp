@@ -20,6 +20,9 @@ func (r *queryResolver) Node(ctx context.Context, id string) (ent.Noder, error) 
 	if id == "helloproject" {
 		return &helloproject.HelloProjectQuery{}, nil
 	}
+	if id == "me" {
+		return &me.MeQuery{}, nil
+	}
 	entid, err := strconv.Atoi(id)
 	if err != nil {
 		return nil, fmt.Errorf("not a valid node id")

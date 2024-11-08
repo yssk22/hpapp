@@ -3,7 +3,6 @@ import { useUserRoles } from '@hpapp/features/auth';
 import { Link, Text } from '@hpapp/features/common';
 import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { ApplicationVersion, BuildNumber } from '@hpapp/features/common/version';
-import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -17,7 +16,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function HomeTabSettingsVersionSignature() {
+export default function HomeTabMenuVersionSignature() {
   const roles = useUserRoles();
   const user = useCurrentUser();
   return (

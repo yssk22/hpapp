@@ -22,6 +22,7 @@ enum HPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enum
 
 type MeQuery implements Node @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeQuery") {
   id: ID!
+  userId: String!
   username: String!
   clientId: String
   clientName: String

@@ -11931,7 +11931,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                     </Text>
                   </View>
                   <View
-                    accessibilityLabel="設定, tab, 5 of 5"
+                    accessibilityLabel="メニュー, tab, 5 of 5"
                     accessibilityRole="button"
                     accessibilityState={
                       {
@@ -12010,7 +12010,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                       >
                         <Ionicons
                           color="#0075c2"
-                          name="settings"
+                          name="menu"
                           size={25}
                         />
                       </View>
@@ -12034,7 +12034,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                       >
                         <Ionicons
                           color="#80BAE1"
-                          name="settings-outline"
+                          name="menu-outline"
                           size={25}
                         />
                       </View>
@@ -12057,7 +12057,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                         ]
                       }
                     >
-                      設定
+                      メニュー
                     </Text>
                   </View>
                 </View>

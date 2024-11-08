@@ -7,11 +7,13 @@
 import S0 from '@hpapp/features/artist/ArtistMemberScreen';
 import S1 from '@hpapp/features/feed/FeedItemScreen';
 import S2 from '@hpapp/features/home/HomeScreen';
-import S3 from '@hpapp/features/settings/SettingsDevOnlyScreen';
-import S4 from '@hpapp/features/settings/SettingsThemeColorSelectorScreen';
-import S5 from '@hpapp/features/settings/SettingsThemeScreen';
-import S6 from '@hpapp/features/upfc/UPFCSettingsScreen';
-import S7 from '@hpapp/features/upfc/UPFCWebViewScreen';
+import S3 from '@hpapp/features/hpsort/HPSortResultScreen';
+import S4 from '@hpapp/features/hpsort/HPSortScreen';
+import S5 from '@hpapp/features/settings/SettingsDevOnlyScreen';
+import S6 from '@hpapp/features/settings/SettingsThemeColorSelectorScreen';
+import S7 from '@hpapp/features/settings/SettingsThemeScreen';
+import S8 from '@hpapp/features/upfc/UPFCSettingsScreen';
+import S9 from '@hpapp/features/upfc/UPFCWebViewScreen';
 
 const Screens = [
   S0,
@@ -22,5 +24,7 @@ const Screens = [
   S5,
   S6,
   S7,
+  S8,
+  S9,
 ];
 export default Screens;

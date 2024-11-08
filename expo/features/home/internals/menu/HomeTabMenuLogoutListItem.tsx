@@ -3,7 +3,7 @@ import { Text } from '@hpapp/features/common';
 import { t } from '@hpapp/system/i18n';
 import { ListItem } from '@rneui/themed';
 
-export default function HomeTabSettingsLogoutListItem() {
+export default function HomeTabMenuLogoutListItem() {
   const logout = useLogout();
   return (
     <ListItem onPress={logout}>
