@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="/helloproject/css/import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="/helloproject/css/app.css" media="all" />
+
+    <link rel="icon" href="./favicon.png" type="image/vnd.microsoft.icon" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/cmn/apple-touch-icon.png" />
+
+    <script src="/helloproject/js/jquery-3.5.1.min.js"></script>
+
+    <!-- font-awsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Josefin+Sans:wght@700&family=Noto+Sans+JP:wght@400;500;700&family=EB+Garamond&display=swap" rel="stylesheet"> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anta&family=Barlow:wght@600&family=Josefin+Sans:wght@700&family=M+PLUS+Rounded+1c:wght@700&family=Noto+Sans+JP:wght@500;600;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>イベント詳細</title>
+    <meta name="keyword" content="" />
+    <meta name="description" content="" />
+
+    <meta property="og:url" content="https://upfc.jp/helloproject/event/event_info.php?@uid=wSjsyWxBARuW4eqn" />
+    <meta property="og:title" content="イベント詳細" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/helloproject/images/site_image.png" />
+    <meta name="twitter:card" content="summary" />
+
+    <script>
+      var _sort_tbl_ = '';
+    </script>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+      $(function () {});
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6N6N1FYXBX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-6N6N1FYXBX');
+    </script>
+  </head>
+
+  <body class="app__page">
+    <header id="top" class="">
+      <div class="hd__inner">
+        <div class="hd__flex flex jc-between align-items">
+          <div class="hd__left">
+            <h1 class="hd__logo">
+              <a href="/helloproject/"
+                ><img
+                  src="/helloproject/images/cmn/hd_logo.svg"
+                  alt="Hello! Projectオフィシャルファンクラブ"
+                  loading="lazy"
+              /></a>
+            </h1>
+          </div>
+
+          <nav class="g-nav__pc pc color-ma">
+            <ul class="g-nav__pc--ul flex jc-center">
+              <li class="g-nav__li news"><a href="/helloproject/news_list.php?@rst=all">ファンクラブニュース</a></li>
+
+              <li class="g-nav__li mypage"><a href="/helloproject/mypage/">マイページ</a></li>
+              <li class="g-nav__li membercard"><a href="/helloproject/mypage/member_card.php">会員証</a></li>
+
+              <!-- <li class="g-nav__li service"><a href="/helloproject/service.php">サービス一覧</a></li> -->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="g-nav__bg">
+      <div class="g-nav__bg--inner">
+        <nav class="g-nav__sp">
+          <h3 class="menu_ttl">MEMBER'S MENU</h3>
+
+          <div class="menu_logout"><a href="/helloproject/logout.php">LOGOUT</a></div>
+
+          <ul class="g-nav__sp-ul">
+            <li class="g-nav__li mypage"><a href="/helloproject/mypage/">マイページ</a></li>
+            <li class="g-nav__li news"><a href="/helloproject/news_list.php?@rst=all">ファンクラブニュース</a></li>
+            <li class="g-nav__li event"><a href="/helloproject/event/event_list.php?@rst=all">チケット受付</a></li>
+            <li class="g-nav__li shop"><a href="/helloproject/shop/?@rst=all">ファンクラブショップ</a></li>
+            <li class="g-nav__li blog">
+              <a href="/helloproject/staff_report.php?CategoryClear=on&@rst=all">スタッフレポート</a>
+            </li>
+
+            <li class="g-nav__li special"><a href="/helloproject/fan/sp_item_list.php">SP限定ポイントプレゼント</a></li>
+
+            <li class="g-nav__li gold">
+              <a href="/helloproject/fan/spgold_item_list.php">SP(ゴールド)限定ポイントプレゼント</a>
+            </li>
+            <li class="g-nav__li gold">
+              <a href="/helloproject/fan/spgold_wallpaper.php">SP(ゴールド)限定・オリジナル壁紙</a>
+            </li>
+          </ul>
+
+          <h3 class="menu_ttl">ARTIST</h3>
+
+          <ul class="g-nav__sp-ul column2">
+            <li class="g-nav__li artist MORNING">
+              <a href="/helloproject/artist/?@uid=MORNING&@rst=all">モーニング娘。’24</a>
+            </li>
+            <li class="g-nav__li artist ANGERME">
+              <a href="/helloproject/artist/?@uid=ANGERME&@rst=all">アンジュルム</a>
+            </li>
+            <li class="g-nav__li artist JUICEJUICE">
+              <a href="/helloproject/artist/?@uid=JUICEJUICE&@rst=all">Juice=Juice</a>
+            </li>
+            <li class="g-nav__li artist TSUBAKIFACTORY">
+              <a href="/helloproject/artist/?@uid=TSUBAKIFACTORY&@rst=all">つばきファクトリー</a>
+            </li>
+            <li class="g-nav__li artist BEYOOOOONDS">
+              <a href="/helloproject/artist/?@uid=BEYOOOOONDS&@rst=all">BEYOOOOONDS</a>
+            </li>
+            <li class="g-nav__li artist OCHANORMA">
+              <a href="/helloproject/artist/?@uid=OCHANORMA&@rst=all">OCHA NORMA</a>
+            </li>
+            <li class="g-nav__li artist KENSYUSEI">
+              <a href="/helloproject/artist/?@uid=KENSYUSEI&@rst=all">ハロプロ研修生</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="hd__gnav--sp hd__menu p-hd__menu">
+      <div class="hd__hamburger ps-r">
+        <span class="hd__hamburger--top ps-a"></span>
+        <span class="hd__hamburger--middle ps-a"></span>
+        <span class="hd__hamburger--bottom ps-a"></span>
+      </div>
+    </div>
+
+    <main class="ps-r">
+      <section class="p-ttl__area mv__area ps-r">
+        <div class="inner">
+          <h2 class="p-ttl"><span class="font-en">CONCERT & EVENTS</span>イベント申し込み</h2>
+        </div>
+      </section>
+
+      <div class="bc__area">
+        <div class="inner">
+          <p class="breadcrumb">
+            <a href="/helloproject/">HOME</a>
+            <span class="arw">&gt;</span>
+            <a href="/helloproject/event/event_list.php">コンサート・イベント一覧</a>
+            <span class="arw">&gt;</span>
+            <span class="current">コンサート・イベント詳細</span>
+          </p>
+        </div>
+      </div>
+
+      <section class="p-section ps-r">
+        <!-- オブジェクト -->
+        <p class="imoprtant__obj--left ps-a"><img src="/helloproject/images/top/imp_left.png" alt="object" /></p>
+        <p class="imoprtant__obj--right ps-a"><img src="/helloproject/images/top/imp_right.png" alt="object" /></p>
+        <!-- /オブジェクト -->
+
+        <div class="inner">
+          <h3 class="fs-30 color-bl bold mb-30">
+            【先々行受付】Hello! Project 2025 Winter Fes. 「各」／「合」
+            <div class="event_ttl_tag">
+              <span class="tag_ahead">先々行受付</span><span class="tag_event_now">受付中</span>
+            </div>
+          </h3>
+
+          <div class="preface">
+            <p>以下の注意事項を必ずご確認のうえお申し込みください。</p>
+          </div>
+
+          <div id="post_detail" class="event_info mb-60">
+            <div class="mb-30">
+              <table border="1" cellpadding="1" cellspacing="1" style="width: 100%">
+                <tbody>
+                  <tr>
+                    <th scope="row">申込期間</th>
+                    <td>
+                      <span style="color: #3498db">2024年11月8日（金）17時～11月12日（火）17時まで</span><br />
+                      申込後、受付確認メールが届きます。（マイページ内「申込状況＆利用履歴（チケット申込状況）」でもお申込内容の確認が出来ます。）<br />
+                      <span style="color: #e74c3c"
+                        ><span style="font-size: 10.5pt"
+                          ><span style="font-family: Century, serif"
+                            ><span style="font-family: 'ＭＳ Ｐゴシック'"
+                              >※アドレスに変更がある場合は、申込前にマイページの「メールアドレス変更」よりお手続きください。</span
+                            ></span
+                          ></span
+                        ></span
+                      ><br />
+                      ※申込期間内であれば申込内容の変更・キャンセルが可能です。キャンセル後、マイページ内「申込状況＆利用履歴（チケット申込状況）」でご確認ください。（キャンセルの確認メールは送信されません。）<br />
+                      <span style="color: #e74c3c">※「upfc.jp」のメールが受信できるように設定を行ってください。</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">当選・落選確認期間</th>
+                    <td>
+                      <span style="color: #3498db">2024年11月13日（水）16時～11月25日（月）23時まで</span><br />
+                      抽選結果は、マイページ内「申込状況＆利用履歴（チケット申込状況）」でのみご案内いたします。当落発表が始まると、お申込みいただいた方全員に「チケット先々行受付抽選結果発表のご案内」をお送りいたします。（当選メールではありません。）必ずご自身で抽選結果をご確認ください。<br />
+                      ※当選された方はマイページ内「申込状況＆利用履歴（チケット申込状況）」よりお支払い方法を選択のうえ、入金締切日までにお支払いをお願いいたします。<br />
+                      <span style="color: #e74c3c"
+                        >（抽選結果確認期間を過ぎるとお手続きができなくなります。ご注意ください。）</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">入金締切日</th>
+                    <td><span style="color: #3498db">2024年11月25日（月）</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">チケット発送</th>
+                    <td>
+                      <span style="color: #3498db"
+                        >1月2日（木）～1月5日（日）の公演：2024年12月19日（木）に発送予定</span
+                      ><br />
+                      <span style="color: #e74c3c"
+                        >（チケットが届かない場合、12月26日（木）18時までにお問い合わせください。）</span
+                      ><br />
+                      <span style="color: #3498db">1月18日（土）以降の公演：公演9日前に発送予定</span><br />
+                      <br />
+                      簡易書留にて上記日程に発送予定です。<br />
+                      発送が完了しましたら、メールにてお知らせいたします。<br />
+                      ご不在で受け取れなかった場合は、ご不在連絡票がポストに届きますので、ご確認のうえ公演までに必ずお受け取りをお願いいたします。<br />
+                      <span style="color: #e74c3c"
+                        >（会場対応はしておりませんので、必ずご自宅にてチケットをお受取りください。）</span
+                      ><br />
+                      チケットが届かない場合は、公演3日前までに必ずファンクラブにお問い合わせください。<br />
+                      <span style="color: #e74c3c"
+                        >事前に連絡もなくチケットを持たずにお越しいただいた場合、会場での対応はできませんので、くれぐれもご注意ください。</span
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="post_detail">
+              <h4>【お申込みに関してのご注意】</h4>
+
+              <ul class="kome">
+                <li>
+                  <span style="color: #e74c3c"
+                    >品川公演の1F全自由(整理番号付き)は、整理番号順の入場、スタンディングでの鑑賞となります。女性専用エリアを設けます。</span
+                  >
+                </li>
+                <li>
+                  <span style="color: #e74c3c"
+                    >先々行受付では、ファミリー席/2Fファミリー席のお取り扱いはございません。</span
+                  >
+                </li>
+                <li>チケットのお受け取りが可能なお客様のみお申込みをお願いいたします。</li>
+                <li>
+                  チケット料金はファンクラブ特別価格です。一般発売での価格は【品川公演の全自由：￥8,100／それ以外：￥8,600（税込）】になります。
+                </li>
+                <li>車椅子スペースは、状況によってステージが見にくい場合がございます。予めご了承ください。</li>
+                <li>車椅子でお越しの方はチケットが届き次第、各問い合わせ先にご連絡ください。</li>
+                <li>申込期間内であれば申込内容の変更・キャンセルが可能です。</li>
+                <li>
+                  規定枚数に達した場合は厳正なる抽選をさせていただき、落選となる場合がございますので予めご了承ください。
+                </li>
+                <li>
+                  チケット料金の他に1公演ごとに事務手数料（￥830）、コンビニ支払いの場合は支払手数料（￥300）が別途必要です。
+                </li>
+                <li>
+                  ご当選された場合は必ずチケット料金をご入金してください。ご入金がなかった場合は、次回からのチケット受付がご利用できなくなる事もございます。
+                </li>
+                <li>振込受領証は公演終了まで大切に保管してください。</li>
+                <li>チケットの送り先は、ファンクラブに登録されている住所になります。</li>
+                <li>
+                  チケットはいかなる事情（紛失、消失、破損、盗難など）があっても、再発行はいたしません。チケットがない場合、入場ができませんので大切に保管してください。
+                </li>
+              </ul>
+              &nbsp;
+
+              <h4>【公演に関してのご注意】</h4>
+
+              <ul class="kome">
+                <li>開場・開演時間などは変更になる場合もございます。予めご了承ください。</li>
+                <li>
+                  声出しは可能ですが、周囲のお客様のご迷惑となるような声量での継続的な歌唱や声援は、ご遠慮いただきますようお願いいたします。
+                </li>
+                <li>ジャンプ行為は禁止となります。</li>
+                <li>
+                  転売チケット等、不正に購入したチケットで入場を発見した場合は、いかなる理由があっても、その場で退場していただきます。その場合、チケット代の返金はいたしません。（入場口や場内にて、必要に応じて、チケットチェックを実施いたします。ご協力の程お願いいたします。）
+                </li>
+                <li>録音・録画・写真撮影は禁止となります。</li>
+                <li>アルコール類の持ち込み、及び飲酒しての入場は固くお断りいたします。</li>
+                <li>高輝度/扇形/円形/極端に長いサイリウム、誘導灯のご使用は固くお断りいたします。</li>
+                <li>
+                  今後の感染状況により、政府・各自治体の指針・ガイドラインの変更があった場合は、それに基づいた対応をさせていただきます。
+                </li>
+                <li>
+                  出演者は一部変更となる場合がございます。出演者変更によるチケット代金の払い戻しはできませんので、予めご了承ください。
+                </li>
+                <li>
+                  主催者都合による公演中止以外でのチケットの払戻しはできません。<span style="color: #e74c3c"
+                    >公演中止・延期の場合でも事務手数料・コンビニ支払い手数料・交通費・宿泊費・通信費等の補償はできませんので、予めご了承ください。</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="ad__btn mb-50">
+            <a class="link__btn03" href="/helloproject/event/event_detail.php">注意事項に同意してお申し込み</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-bnrarea ps-r" id="page-bnrarea ">
+        <div class="inner ps-r">
+          <ul class="pick__snswrap flex jc-center align-items wow fadeInUp">
+            <li class="pick__sns">
+              <a href="https://twitter.com/ufi_fc" target="_blank" rel="noopener noreferrer"
+                ><img src="/helloproject/images/cmn/ico_X.png" alt="twitter"
+              /></a>
+            </li>
+            <li class="pick__sns">
+              <a href="https://www.instagram.com/hp_officialfanclub/" target="_blank" rel="noopener noreferrer"
+                ><img src="/helloproject/images/cmn/ico_ig.png" alt="instagram"
+              /></a>
+            </li>
+            <li class="pick__sns">
+              <a href="https://www.youtube.com/@UFfanclub" target="_blank" rel="noopener noreferrer"
+                ><img src="/helloproject/images/cmn/ico_yt.png" alt="youtube"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="ps-r">
+      <p class="ft__obj01"></p>
+      <p class="ft__obj02"></p>
+      <p class="ft__obj03"></p>
+      <div class="inner ps-r">
+        <h2 class="ft__logo">
+          <a href="index.html"
+            ><img
+              src="/helloproject/images/cmn/hd_logo.svg"
+              alt="オフィシャルファンクラブWEBサイト HELLO! PROJECT SINCE1998"
+              loading="lazy"
+          /></a>
+        </h2>
+
+        <ul class="ft__topnav ft__nav02 flex jc-center">
+          <li class="ft-topnav__li"><a href="/helloproject/mypage/">マイページ</a></li>
+        </ul>
+
+        <div class="ft__flex flex jc-between">
+          <div class="ft__left">
+            <ul class="ft__nav ft__nav03 flex">
+              <li class="ft-nav__li"><a href="/helloproject/news_list.php">ファンクラブニュース</a></li>
+              <li class="ft-nav__li"><a href="/helloproject/service.php">サービス一覧</a></li>
+              <li class="ft-nav__li"><a href="/helloproject/faq.php">よくあるご質問</a></li>
+              <li class="ft-nav__li"><a href="/helloproject/contact.php">お問合せ</a></li>
+              <li class="ft-nav__li sponly"><a href="/helloproject/information.php">サイト案内</a></li>
+              <li class="ft-nav__li sponly"><a href="/helloproject/terms.php">会員規約</a></li>
+              <li class="ft-nav__li sponly"><a href="/helloproject/privacy.php">個人情報保護方針</a></li>
+              <li class="ft-nav__li sponly"><a href="/helloproject/law.php">特定商取引法</a></li>
+            </ul>
+            <ul class="ft__nav ft__nav04 flex spnone">
+              <li class="ft-nav__li"><a href="/helloproject/information.php">サイト案内</a></li>
+              <li class="ft-nav__li"><a href="/helloproject/terms.php">会員規約</a></li>
+              <li class="ft-nav__li"><a href="/helloproject/privacy.php">個人情報保護方針</a></li>
+              <li class="ft-nav__li"><a href="/helloproject/law.php">特定商取引法</a></li>
+            </ul>
+          </div>
+          <div class="ft__right">
+            <div class="ft__infowrap flex jc-end">
+              <div class="ft__info ft__jasrac flex">
+                <p class="ft__info--logo"><img src="/helloproject/images/cmn/jasrac_logo.png" alt="jasrac" /></p>
+                <p class="ft__info--txt">
+                  JASRAC許諾<br />
+                  第6657568030Y31016号<br />
+                  第6657568031Y45037号<br />
+                  第6657568032Y45037号
+                </p>
+              </div>
+              <div class="ft__info ft__jasrac flex">
+                <p class="ft__info--logo"><img src="/helloproject/images/cmn/nextone_logo.png" alt="nexton" /></p>
+                <p class="ft__info--txt">
+                  NexTone許諾<br />
+                  ID000006322<br />
+                  ID000006514
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="ft__notice">
+          当サイトに掲載されているすべてのコンテンツ（文章、写真、画像、動画、バナーなど）
+          の著作権はアップフロントインターナショナルに帰属しています。
+        </p>
+        <p class="ft__copyright"><small>© 1998-2024 UP-FRONT INTERNATIONAL Co.,Ltd.</small></p>
+      </div>
+    </footer>
+
+    <p class="js-pagetop" id="page-top">
+      <a href="#top"><img src="/helloproject/images/cmn/pagetop.png" alt="pagetop" /></a>
+    </p>
+
+    <!-- <script src="/helloproject/js/swiper-bundle.min.js"></script> -->
+    <script type="text/javascript" src="/helloproject/js/slick/slick.min.js"></script>
+    <script src="/helloproject/js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <script src="/helloproject/js/modaal.min.js"></script>
+    <script>
+      $('.moddal').modaal({
+        overlay_close: true, //モーダル背景クリック時に閉じるか
+        before_open: function () {
+          // モーダルが開く前に行う動作
+          $('html').css('overflow-y', 'hidden'); /*縦スクロールバーを出さない*/
+        },
+        after_close: function () {
+          // モーダルが閉じた後に行う動作
+          $('html').css('overflow-y', 'scroll'); /*縦スクロールバーを出す*/
+        }
+      });
+    </script>
+    <script src="/helloproject/js/script.js"></script>
+  </body>
+</html>

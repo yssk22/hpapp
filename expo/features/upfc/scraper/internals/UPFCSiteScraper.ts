@@ -56,7 +56,7 @@ export default class UPFCSiteScraper implements UPFCScraper {
       if (equiv && equiv.toLowerCase() === 'refresh') {
         const content = meta[i].getAttribute('content') as string | null;
         // eslint-disable-next-line quotes
-        if (content && content.toLowerCase().indexOf('index.php') >= 0) {
+        if (content && content.toLowerCase().indexOf('mypage01.php') >= 0) {
           return true;
         }
       }

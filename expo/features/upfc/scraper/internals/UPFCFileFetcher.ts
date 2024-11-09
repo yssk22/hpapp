@@ -1,3 +1,4 @@
+import { isEmpty } from '@hpapp/foundation/string';
 import { readFile } from '@hpapp/foundation/test_helper';
 
 /**
@@ -9,8 +10,10 @@ export default class UPFCFileFetcher {
   private paths: {
     redirectPageHtmlPath: string;
     openEventApplicationsHtmlPath: string;
-    openExecEventApplicationsHtmlPath: string;
+    openExecEventApplicationsHtmlPath?: string;
+    applicationDetailHtmlPath?: string;
     ticketsHtmlPath: string;
+    ticketDetailHtmlPath?: string;
   };
 
   constructor(
@@ -19,8 +22,10 @@ export default class UPFCFileFetcher {
     paths: {
       redirectPageHtmlPath: string;
       openEventApplicationsHtmlPath: string;
-      openExecEventApplicationsHtmlPath: string;
+      openExecEventApplicationsHtmlPath?: string;
+      applicationDetailHtmlPath?: string;
       ticketsHtmlPath: string;
+      ticketDetailHtmlPath?: string;
     }
   ) {
     this.username = username;
@@ -40,11 +45,28 @@ export default class UPFCFileFetcher {
   }
 
   async fetchExecEventApplicationsHtml(): Promise<string> {
-    return await this.readFile(this.paths.openExecEventApplicationsHtmlPath);
+    if (isEmpty(this.paths.openExecEventApplicationsHtmlPath)) {
+      return '';
+    }
+    return await this.readFile(this.paths.openExecEventApplicationsHtmlPath!);
   }
 
   async fetchTicketsHtml(): Promise<string> {
     return await this.readFile(this.paths.ticketsHtmlPath);
+  }
+
+  async fetchEventApplicationDetailHtml(): Promise<string> {
+    if (isEmpty(this.paths.applicationDetailHtmlPath)) {
+      return '';
+    }
+    return await this.readFile(this.paths.applicationDetailHtmlPath!);
+  }
+
+  async fetchTicketDetailHtml(): Promise<string> {
+    if (isEmpty(this.paths.ticketDetailHtmlPath)) {
+      return '';
+    }
+    return await this.readFile(this.paths.ticketDetailHtmlPath!);
   }
 
   async readFile(path: string): Promise<string> {

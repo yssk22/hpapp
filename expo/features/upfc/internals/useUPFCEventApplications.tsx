@@ -3,11 +3,14 @@ import { useReloadableAsync, ReloadableAysncResult } from '@hpapp/features/commo
 import {
   ErrUPFCAuthentication,
   ErrUPFCNoCredential,
+  UPFC2HttpFetcher,
+  UPFC2SiteScraper,
   UPFCDemoScraper,
   UPFCEventApplicationTickets,
   UPFCHttpFetcher,
   UPFCSite,
-  UPFCSiteScraper
+  UPFCSiteScraper,
+  UPFCCombiedSiteScraper
 } from '@hpapp/features/upfc/scraper';
 import { isEmpty } from '@hpapp/foundation/string';
 import { useMemo } from 'react';
@@ -64,6 +67,8 @@ export default function useUPFCEventApplications(): ReloadableAysncResult<
 
 const demoScraper = new UPFCDemoScraper();
 const siteScraper = new UPFCSiteScraper(new UPFCHttpFetcher());
+const siteScraper2 = new UPFC2SiteScraper(new UPFC2HttpFetcher());
+const combinedScraper = new UPFCCombiedSiteScraper([siteScraper2, siteScraper]);
 
 async function fetchApplications({
   helloproject,
@@ -95,7 +100,7 @@ async function fetchApplicationsFromSite(
   error: Error | undefined;
   applications: UPFCEventApplicationTickets[];
 }> {
-  const scraper = useDemo ? demoScraper : siteScraper;
+  const scraper = useDemo ? demoScraper : combinedScraper;
   if (isEmpty(username)) {
     return {
       error: new ErrUPFCNoCredential(),

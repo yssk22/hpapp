@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="/helloproject/css/import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="/helloproject/css/app.css" media="all" />
+
+    <link rel="icon" href="./favicon.png" type="image/vnd.microsoft.icon" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/cmn/apple-touch-icon.png" />
+
+    <script src="/helloproject/js/jquery-3.5.1.min.js"></script>
+
+    <!-- font-awsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Josefin+Sans:wght@700&family=Noto+Sans+JP:wght@400;500;700&family=EB+Garamond&display=swap" rel="stylesheet"> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anta&family=Barlow:wght@600&family=Josefin+Sans:wght@700&family=M+PLUS+Rounded+1c:wght@700&family=Noto+Sans+JP:wght@500;600;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>イベントリスト</title>
+    <meta name="keyword" content="" />
+    <meta name="description" content="" />
+
+    <meta property="og:url" content="https://www.upfc.jp/helloproject/event/event_list.php" />
+    <meta property="og:title" content="イベントリスト" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/helloproject/images/site_image.png" />
+    <meta name="twitter:card" content="summary" />
+
+    <script>
+      var _sort_tbl_ = '';
+    </script>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+      $(function () {});
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6N6N1FYXBX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-6N6N1FYXBX');
+    </script>
+  </head>
+
+  <body class="app__page">
+    <header id="top" class="">
+      <div class="hd__inner">
+        <div class="hd__flex flex jc-between align-items">
+          <div class="hd__left">
+            <h1 class="hd__logo">
+              <a href="/helloproject/"
+                ><img
+                  src="/helloproject/images/cmn/hd_logo.svg"
+                  alt="Hello! Projectオフィシャルファンクラブ"
+                  loading="lazy"
+              /></a>
+            </h1>
+          </div>
+
+          <nav class="g-nav__pc pc color-ma">
+            <ul class="g-nav__pc--ul flex jc-center">
+              <li class="g-nav__li news"><a href="/helloproject/news_list.php?@rst=all">ファンクラブニュース</a></li>
+
+              <li class="g-nav__li mypage"><a href="/helloproject/mypage/">マイページ</a></li>
+              <li class="g-nav__li membercard"><a href="/helloproject/mypage/member_card.php">会員証</a></li>
+
+              <!-- <li class="g-nav__li service"><a href="/helloproject/service.php">サービス一覧</a></li> -->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="g-nav__bg">
+      <div class="g-nav__bg--inner">
+        <nav class="g-nav__sp">
+          <h3 class="menu_ttl">MEMBER'S MENU</h3>
+
+          <div class="menu_logout"><a href="/helloproject/logout.php">LOGOUT</a></div>
+
+          <ul class="g-nav__sp-ul">
+            <li class="g-nav__li mypage"><a href="/helloproject/mypage/">マイページ</a></li>
+            <li class="g-nav__li news"><a href="/helloproject/news_list.php?@rst=all">ファンクラブニュース</a></li>
+            <li class="g-nav__li event"><a href="/helloproject/event/event_list.php?@rst=all">チケット受付</a></li>
+            <li class="g-nav__li shop"><a href="/helloproject/shop/?@rst=all">ファンクラブショップ</a></li>
+            <li class="g-nav__li blog">
+              <a href="/helloproject/staff_report.php?CategoryClear=on&@rst=all">スタッフレポート</a>
+            </li>
+
+            <li class="g-nav__li special"><a href="/helloproject/fan/sp_item_list.php">SP限定ポイントプレゼント</a></li>
+
+            <li class="g-nav__li gold">
+              <a href="/helloproject/fan/spgold_item_list.php">SP(ゴールド)限定ポイントプレゼント</a>
+            </li>
+            <li class="g-nav__li gold">
+              <a href="/helloproject/fan/spgold_wallpaper.php">SP(ゴールド)限定・オリジナル壁紙</a>
+            </li>
+          </ul>
+
+          <h3 class="menu_ttl">ARTIST</h3>
+
+          <ul class="g-nav__sp-ul column2">
+            <li class="g-nav__li artist MORNING">
+              <a href="/helloproject/artist/?@uid=MORNING&@rst=all">モーニング娘。’24</a>
+            </li>
+            <li class="g-nav__li artist ANGERME">
+              <a href="/helloproject/artist/?@uid=ANGERME&@rst=all">アンジュルム</a>
+            </li>
+            <li class="g-nav__li artist JUICEJUICE">
+              <a href="/helloproject/artist/?@uid=JUICEJUICE&@rst=all">Juice=Juice</a>
+            </li>
+            <li class="g-nav__li artist TSUBAKIFACTORY">
+              <a href="/helloproject/artist/?@uid=TSUBAKIFACTORY&@rst=all">つばきファクトリー</a>
+            </li>
+            <li class="g-nav__li artist BEYOOOOONDS">
+              <a href="/helloproject/artist/?@uid=BEYOOOOONDS&@rst=all">BEYOOOOONDS</a>
+            </li>
+            <li class="g-nav__li artist OCHANORMA">
+              <a href="/helloproject/artist/?@uid=OCHANORMA&@rst=all">OCHA NORMA</a>
+            </li>
+            <li class="g-nav__li artist KENSYUSEI">
+              <a href="/helloproject/artist/?@uid=KENSYUSEI&@rst=all">ハロプロ研修生</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="hd__gnav--sp hd__menu p-hd__menu">
+      <div class="hd__hamburger ps-r">
+        <span class="hd__hamburger--top ps-a"></span>
+        <span class="hd__hamburger--middle ps-a"></span>
+        <span class="hd__hamburger--bottom ps-a"></span>
+      </div>
+    </div>
+
+    <main class="ps-r">
+      <section class="p-ttl__area mv__area ps-r">
+        <div class="inner">
+          <h2 class="p-ttl"><span class="font-en">CONCERT & EVENTS</span>チケット申し込み</h2>
+        </div>
+      </section>
+
+      <div class="bc__area">
+        <div class="inner">
+          <p class="breadcrumb">
+            <a href="/helloproject/">HOME</a>
+            <span class="arw">&gt;</span>
+            <span class="current">コンサート・イベント一覧</span>
+          </p>
+        </div>
+      </div>
+
+      <section class="p-section ps-r">
+        <div class="inner">
+          <h3 class="p-h3"><span class="mark">■</span>チケット不正転売禁止法施行にあたってのお願い</h3>
+          <p class="lh-2">
+            上記法律の施行により、不正転売の違反者は厳しく処罰される可能性がございます。<br />
+            会員の皆様におかれましては、法令を遵守いただきますようお願いいたします。<br />
+            ※チケットについては主催者の同意なく有償での譲渡を禁止いたします。<br />
+            ※チケットについては申込者の氏名及び連絡先を確認のうえ販売いたします。
+          </p>
+        </div>
+      </section>
+
+      <section class="a-event p-section ps-r" id="a-event">
+        <!-- オブジェクト -->
+        <p class="cal__left ps-a"><img src="/helloproject/images/top/cal_left.png" alt="" /></p>
+        <p class="cal__right ps-a"><img src="/helloproject/images/top/cal_right.png" alt="" /></p>
+        <!-- /オブジェクト -->
+
+        <p class="cal__right--btm ps-a"></p>
+        <div class="inner ps-r">
+          <!-- <h2 class="ae__ttl section__ttl smoothText color-pi mb-60">
+                                        <span class="smoothTextTrigger">
+                                                <strong>CONCERT &amp; EVENTS</strong>
+                                                コンサート・イベント一覧
+                                        </span>
+                                </h2> -->
+
+          <ul class="p-list event_list">
+            <li class="p-list__li">
+              <a href="event_info.php?@uid=7MUPAfEaTTTRLXZ0" class="flex align-items">
+                <div class="p-list__imgwrap">
+                  <figure class="p-list__img">
+                    <img src="/helloproject/images/event/event_7MUPAfEaTTTRLXZ0_1.jpg" alt="" />
+                  </figure>
+                </div>
+                <div class="p-list__ttlwarp">
+                  <div class="event_tag_wrap">
+                    <ul class="event_tag">
+                      <li class="tag_ahead">先々行受付</li>
+                      <li class="tag_event_now">受付中</li>
+                    </ul>
+                  </div>
+                  <h3 class="event_ttl">【先々行受付】モーニング娘。'24 FCイベント ～娘。×FAN×Fun！×クリスマス～</h3>
+                </div>
+              </a>
+            </li>
+            <li class="p-list__li">
+              <a href="event_info.php?@uid=Uy8Dz9edPiWk5F4u" class="flex align-items">
+                <div class="p-list__imgwrap">
+                  <figure class="p-list__img">
+                    <img src="/helloproject/images/event/event_Uy8Dz9edPiWk5F4u_1.jpg" alt="" />
+                  </figure>
+                </div>
+                <div class="p-list__ttlwarp">
+                  <div class="event_tag_wrap">
+                    <ul class="event_tag">
+                      <li class="tag_event_now">受付中</li>
+                    </ul>
+                  </div>
+                  <h3 class="event_ttl">モーニング娘。'24 FCイベント ～娘。×FAN×Fun！×クリスマス～</h3>
+                </div>
+              </a>
+            </li>
+            <li class="p-list__li">
+              <a href="event_info.php?@uid=wSjsyWxBARuW4eqn" class="flex align-items">
+                <div class="p-list__imgwrap">
+                  <figure class="p-list__img">
+                    <img src="/helloproject/images/cmn/event_noimage.png" alt="" />
+                  </figure>
+                </div>
+                <div class="p-list__ttlwarp">
+                  <div class="event_tag_wrap">
+                    <ul class="event_tag">
+                      <li class="tag_ahead">先々行受付</li>
+                      <li class="tag_event_now">受付中</li>
+                    </ul>
+                  </div>
+                  <h3 class="event_ttl">【先々行受付】Hello! Project 2025 Winter Fes. 「各」／「合」</h3>
+                </div>
+              </a>
+            </li>
+            <li class="p-list__li">
+              <a href="event_info.php?@uid=aG1D8uYAQuqRIN7U" class="flex align-items">
+                <div class="p-list__imgwrap">
+                  <figure class="p-list__img">
+                    <img src="/helloproject/images/cmn/event_noimage.png" alt="" />
+                  </figure>
+                </div>
+                <div class="p-list__ttlwarp">
+                  <div class="event_tag_wrap">
+                    <ul class="event_tag">
+                      <li class="tag_event_now">受付中</li>
+                    </ul>
+                  </div>
+                  <h3 class="event_ttl">Hello! Project 2025 Winter Fes. 「各」／「合」</h3>
+                </div>
+              </a>
+            </li>
+            <li class="p-list__li">
+              <a href="event_info.php?@uid=Dppvx3ybTgpPFSFI" class="flex align-items">
+                <div class="p-list__imgwrap">
+                  <figure class="p-list__img">
+                    <img src="/helloproject/images/event/event_Dppvx3ybTgpPFSFI_1.jpg" alt="" />
+                  </figure>
+                </div>
+                <div class="p-list__ttlwarp">
+                  <div class="event_tag_wrap">
+                    <ul class="event_tag">
+                      <li class="tag_event_now">受付中</li>
+                    </ul>
+                  </div>
+                  <h3 class="event_ttl">アンジュルム 川名凜バースデーイベント2024 in 名古屋</h3>
+                </div>
+              </a>
+            </li>
+            <li class="p-list__li">
+              <a href="event_info.php?@uid=ThqFqmVI6ddtIz7m" class="flex align-items">
+                <div class="p-list__imgwrap">
+                  <figure class="p-list__img">
+                    <img src="/helloproject/images/event/event_ThqFqmVI6ddtIz7m_1.jpg" alt="" />
+                  </figure>
+                </div>
+                <div class="p-list__ttlwarp">
+                  <div class="event_tag_wrap">
+                    <ul class="event_tag">
+                      <li class="tag_event_now">受付中</li>
+                    </ul>
+                  </div>
+                  <h3 class="event_ttl">【当日券予約】竹内朱莉バースデーイベント2024～Ⅱ～</h3>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="a-flow p-section ps-r" id="a-flow">
+        <!-- オブジェクト -->
+        <p class="cal__left ps-a"><img src="/helloproject/images/top/cal_left.png" alt="オブジェクト" /></p>
+        <p class="cal__right ps-a"><img src="/helloproject/images/top/cal_right.png" alt="オブジェクト" /></p>
+        <p class="cal__right--btm ps-a"></p>
+        <!-- /オブジェクト -->
+
+        <div class="inner ps-r">
+          <!-- <h2 class="af__ttl section__ttl smoothText color-bl mb-60">
+                                        <span class="smoothTextTrigger">
+                                                <strong>FLOW</strong>
+                                                申し込みの流れ
+                                        </span>
+                                </h2> -->
+
+          <div class="af__ac--btn ac__btn bg-bl ps-r">
+            <h3 class="af__h3 fs-30">チケット受付 申し込みの流れ</h3>
+            <p class="af__notice">チケット受付のお申し込みまでの流れをご説明いたします。</p>
+            <p class="af__arw ps-a"><img src="/helloproject/images/cmn/ac_arw.png" alt="矢印" /></p>
+          </div>
+          <div class="af__ac--area ac__area">
+            <ul class="af__ul">
+              <li>
+                <h4 class="af__h4 fs-18 bold">
+                  <span class="step font-en color-bl fs-30 bold">STEP01</span>公演詳細を確認する
+                </h4>
+                <p class="af__txt">
+                  公演により申込公演制限数・申込枚数制限数などが異なりますので、ご確認のうえお申込みください。
+                </p>
+              </li>
+              <li>
+                <h4 class="af__h4 fs-18 bold"><span class="step font-en color-bl fs-30 bold">STEP02</span>申込み</h4>
+                <p class="af__txt">
+                  公演日・席種等を選択し、お申込をしてください。<br />
+                  <span class="color-red">※座席は全て抽選です。前の席をお取りできるとは限りません。</span>
+                </p>
+              </li>
+              <li>
+                <h4 class="af__h4 fs-18 bold">
+                  <span class="step font-en color-bl fs-30 bold">STEP03</span>申込内容を確認する
+                </h4>
+                <p class="af__txt">
+                  ファンクラブにご登録のアドレスへ「申込確認メール」をお送りいたします。<br />
+                  またマイページの「チケット申込状況」からもお申込内容をご確認いただけます。<br />
+                  ※申込期間内であれば申込内容の変更・キャンセルが可能です。<br />
+                  <span class="color-red"
+                    >※「upfc.jp」のメールが受信できるようにドメイン指定受信等の設定を必ず行ってください。</span
+                  >
+                </p>
+              </li>
+              <li>
+                <h4 class="af__h4 fs-18 bold">
+                  <span class="step font-en color-bl fs-30 bold">STEP04</span>抽選結果を確認する
+                </h4>
+                <p class="af__txt">
+                  お申込みいただいた方全員に「当落確認案内メール」をお送りいたします。（当選メールではありません。）<br />
+                  必ずご自身で抽選結果確認期間中にマイページの「チケット申込状況」にてご確認ください。
+                </p>
+              </li>
+              <li>
+                <h4 class="af__h4 fs-18 bold"><span class="step font-en color-bl fs-30 bold">STEP05</span>お支払い</h4>
+                <p class="af__txt">
+                  <span class="color-red"
+                    >入金がない場合、次回からの受付がご利用できなくなることもございますので、ご注意ください。</span
+                  ><br />
+                  <span class="color-red"
+                    >※ご当選の公演まとめてのお支払いとなります。ご希望の公演のみのお支払いはできません。</span
+                  ><br />
+                  <br />
+
+                  <strong>【コンビニ支払いをご選択の場合】</strong><br />
+                  抽選結果確認期間中にマイページの「チケット申込状況」の「コンビニ支払い」ボタンを押して、コンビニエンスストアを選択してください。<br />
+                  <span class="color-red"
+                    >（抽選結果確認期間を過ぎるとお手続きができなくなります。ご注意ください。）</span
+                  ><br />
+                  コンビニでのお支払いに必要な情報（支払い番号等）が表示されますので、<br />
+                  お支払番号を持参の上、ご指定のコンビニで入金締切日までに現金でお支払いください。<br />
+                  ※お選びいただいたコンビニにより、お支払い方法が異なります。詳しくは<a
+                    class="color-bl"
+                    href="/helloproject/payment_guide.php"
+                    >こちら</a
+                  >でご確認ください。<br />
+                  <span class="color-red"
+                    >手続き完了後、表示されているページは必ずプリントアウト、もしくは保存してください。</span
+                  ><br />
+                  <span class="color-red"
+                    >お支払番号はファンクラブにご登録のメールアドレスにお送りします。また、マイページの「チケット申込状況」でもご確認いただけます。</span
+                  ><br />
+                  ※お支払合計金額は、チケット料金・手数料・コンビニ支払い手数料（￥300）が含まれています。<br />
+                  （ご当選されたすべての公演のチケット料金・手数料の合計となります。）<br />
+                  ※「upfc.jp」のメールが受信できるようにドメイン指定受信等の設定を必ず行ってください。<br />
+                  お支払金額が30万円を超えた場合は、コンビニ決済システムの都合上、コンビニでのお支払いができない為、「郵便局」でのお支払いに限らせていただきます。<br />
+                  コンビニ決済へ進んだ際、エラーメッセージが出ます。その際はファンクラブまでお問い合わせください。<br />
+                  <br />
+
+                  <strong
+                    >【クレジットカード支払いをご選択の場合<span class="color-red">（スペシャル会員のみ）</span
+                    >】</strong
+                  ><br />
+                  ・ご本人様名義のスペシャル会員専用クレジットカード（Hello! Projectカード・Hello!
+                  Projectゴールドカード）のみご利用いただけます。<br />
+                  ・決済は一括払いのみとなります。分割払い・リボ払いは利用できません。<br />
+                  ・決算後の購入の変更・キャンセルはできませんのでご注意ください。<br />
+                  ・決済時に本人認証（3Dセキュア2.0）が必要な場合があります。<br />
+                  3Dセキュア2.0…クレジットカード決済をより安全に行うための本人認証サービスです。カードご利用者様の決済情報等を基にリスクベースの認証を行います。<br />
+                  3Dセキュア2.0での本人認証の場合、取引の大半は追加認証無しに認証が完了いたします。高リスクと判断される取引の場合のみ、ワンタイムパスワード等の追加認証が行われます。<br />
+                  ※お支払合計金額は、チケット料金・手数料が含まれています。
+                </p>
+              </li>
+              <li>
+                <h4 class="af__h4 fs-18 bold">
+                  <span class="step font-en color-bl fs-30 bold">STEP06</span>チケット or 確認メールが届く
+                </h4>
+                <p class="af__txt">
+                  【チケット発送の場合】<br />
+                  チケットは公演ごとに、公演日の約8日前に簡易書留で発送いたします。<br />
+                  紛失・盗難等によるチケットの再発行は一切できませんので、大切に保管してください。その際にはファンクラブでは対応できかねますので、ご了承ください。<br /><br />
+
+                  【確認メール配信の場合】<br />
+                  座席番号またはチケットURLを明記した確認メールをお送りします。（公演日の約7日前頃を予定しております。）<br />
+                  届かない場合は配信日の翌日以降にファンクラブまでご連絡ください。<br />
+                  ※ファンクラブにご登録のメールアドレスへお送りします。アドレスの変更がございましたら事前に登録の変更をお願いいたします。
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-bnrarea ps-r" id="page-bnrarea ">
+        <div class="inner ps-r">
+          <ul class="pick__snswrap flex jc-center align-items wow fadeInUp">
+            <li class="pick__sns">
+              <a href="https://twitter.com/ufi_fc" target="_blank" rel="noopener noreferrer"
+                ><img src="/helloproject/images/cmn/ico_X.png" alt="twitter"
+              /></a>
+            </li>
+            <li class="pick__sns">
+              <a href="https://www.instagram.com/hp_officialfanclub/" target="_blank" rel="noopener noreferrer"
+                ><img src="/helloproject/images/cmn/ico_ig.png" alt="instagram"
+              /></a>
+            </li>
+            <li class="pick__sns">
+              <a href="https://www.youtube.com/@UFfanclub" target="_blank" rel="noopener noreferrer"
+                ><img src="/helloproject/images/cmn/ico_yt.png" alt="youtube"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="ps-r">
+      <p class="ft__obj01"></p>
+      <p class="ft__obj02"></p>
+      <p class="ft__obj03"></p>
+      <div class="inner ps-r">
+        <h2 class="ft__logo">
+          <a href="index.html"
+            ><img
+              src="/helloproject/images/cmn/hd_logo.svg"
+              alt="オフィシャルファンクラブWEBサイト HELLO! PROJECT SINCE1998"
+              loading="lazy"
+          /></a>
+        </h2>
+
+        <ul class="ft__topnav ft__nav02 flex jc-center">
+          <li class="ft-topnav__li"><a href="/helloproject/mypage/">マイページ</a></li>
+        </ul>
+
+        <div class="ft__flex flex jc-between">
+          <div class="ft__left">
+            <ul class="ft__nav ft__nav03 flex">
+              <li class="ft-nav__li"><a href="/helloproject/news_list.php">ファンクラブニュース</a></li>
+              <li class="ft-nav__li"><a href="/helloproject/service.php">サービス一覧</a></li>
+              <li class="ft-nav__li"><a href="/helloproject/faq.php">よくあるご質問</a></li>
+              <li class="ft-nav__li"><a href="/helloproject/contact.php">お問合せ</a></li>
+              <li class="ft-nav__li sponly"><a href="/helloproject/information.php">サイト案内</a></li>
+              <li class="ft-nav__li sponly"><a href="/helloproject/terms.php">会員規約</a></li>
+              <li class="ft-nav__li sponly"><a href="/helloproject/privacy.php">個人情報保護方針</a></li>
+              <li class="ft-nav__li sponly"><a href="/helloproject/law.php">特定商取引法</a></li>
+            </ul>
+            <ul class="ft__nav ft__nav04 flex spnone">
+              <li class="ft-nav__li"><a href="/helloproject/information.php">サイト案内</a></li>
+              <li class="ft-nav__li"><a href="/helloproject/terms.php">会員規約</a></li>
+              <li class="ft-nav__li"><a href="/helloproject/privacy.php">個人情報保護方針</a></li>
+              <li class="ft-nav__li"><a href="/helloproject/law.php">特定商取引法</a></li>
+            </ul>
+          </div>
+          <div class="ft__right">
+            <div class="ft__infowrap flex jc-end">
+              <div class="ft__info ft__jasrac flex">
+                <p class="ft__info--logo"><img src="/helloproject/images/cmn/jasrac_logo.png" alt="jasrac" /></p>
+                <p class="ft__info--txt">
+                  JASRAC許諾<br />
+                  第6657568030Y31016号<br />
+                  第6657568031Y45037号<br />
+                  第6657568032Y45037号
+                </p>
+              </div>
+              <div class="ft__info ft__jasrac flex">
+                <p class="ft__info--logo"><img src="/helloproject/images/cmn/nextone_logo.png" alt="nexton" /></p>
+                <p class="ft__info--txt">
+                  NexTone許諾<br />
+                  ID000006322<br />
+                  ID000006514
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="ft__notice">
+          当サイトに掲載されているすべてのコンテンツ（文章、写真、画像、動画、バナーなど）
+          の著作権はアップフロントインターナショナルに帰属しています。
+        </p>
+        <p class="ft__copyright"><small>© 1998-2024 UP-FRONT INTERNATIONAL Co.,Ltd.</small></p>
+      </div>
+    </footer>
+
+    <p class="js-pagetop" id="page-top">
+      <a href="#top"><img src="/helloproject/images/cmn/pagetop.png" alt="pagetop" /></a>
+    </p>
+
+    <!-- <script src="/helloproject/js/swiper-bundle.min.js"></script> -->
+    <script type="text/javascript" src="/helloproject/js/slick/slick.min.js"></script>
+    <script src="/helloproject/js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <script src="/helloproject/js/modaal.min.js"></script>
+    <script>
+      $('.moddal').modaal({
+        overlay_close: true, //モーダル背景クリック時に閉じるか
+        before_open: function () {
+          // モーダルが開く前に行う動作
+          $('html').css('overflow-y', 'hidden'); /*縦スクロールバーを出さない*/
+        },
+        after_close: function () {
+          // モーダルが閉じた後に行う動作
+          $('html').css('overflow-y', 'scroll'); /*縦スクロールバーを出す*/
+        }
+      });
+    </script>
+    <script src="/helloproject/js/script.js"></script>
+  </body>
+</html>

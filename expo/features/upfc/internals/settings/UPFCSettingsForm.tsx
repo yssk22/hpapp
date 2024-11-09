@@ -1,7 +1,12 @@
 import { useAppConfig, useUPFCConfigUpdator, useUPFCConfig } from '@hpapp/features/app/settings';
 import { useThemeColor } from '@hpapp/features/app/theme';
 import { Spacing } from '@hpapp/features/common/constants';
-import { UPFCDemoScraper, UPFCHttpFetcher, UPFCSiteScraper, ErrUPFCAuthentication } from '@hpapp/features/upfc/scraper';
+import {
+  UPFCDemoScraper,
+  ErrUPFCAuthentication,
+  UPFC2SiteScraper,
+  UPFC2HttpFetcher
+} from '@hpapp/features/upfc/scraper';
 import { t } from '@hpapp/system/i18n';
 import { Button } from '@rneui/themed';
 import { useCallback, useState } from 'react';
@@ -50,7 +55,7 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
       try {
         const scraper = appConfig.useUPFCDemoScraper
           ? new UPFCDemoScraper()
-          : new UPFCSiteScraper(new UPFCHttpFetcher());
+          : new UPFC2SiteScraper(new UPFC2HttpFetcher());
         if (hpUsername !== '') {
           const ok = await scraper.authenticate(hpUsername, hpPassword, 'helloproject');
           if (!ok) {
