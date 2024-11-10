@@ -27,7 +27,7 @@ export type UPFCEventTicket = {
 /**
  * a enum to represent a ticket application status.
  */
-export type UPFCTicketApplicationStatus = '申込済' | '入金待' | '入金済' | '落選' | '入金忘' | '不明';
+export type UPFCTicketApplicationStatus = '抽選前' | '申込済' | '入金待' | '入金済' | '落選' | '入金忘' | '不明';
 
 /**
  * a enum to represent a site of up-fc.jp
@@ -93,5 +93,7 @@ export interface UPFCFetcher {
   postCredential(username: string, password: string, site: UPFCSite): Promise<string>;
   fetchEventApplicationsHtml(site: UPFCSite): Promise<string>;
   fetchExecEventApplicationsHtml(site: UPFCSite): Promise<string>;
+  fetchEventApplicationDetailHtml(site: UPFCSite, id: string): Promise<string>;
   fetchTicketsHtml(site: UPFCSite): Promise<string>;
+  fetchTicketDetailHtml(site: UPFCSite, id: string): Promise<string>;
 }

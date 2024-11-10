@@ -4,7 +4,7 @@ import { UPFCFetcher, UPFCSite } from './types';
 /**
  * a UPFCFetcher fetches html from up-fc.jp
  */
-export default class UPFCHttpFetcher implements UPFCFetcher {
+export default class UPFC2HttpFetcher implements UPFCFetcher {
   /**
    * post a credential to up-fc.jp
    * @param username
@@ -12,14 +12,13 @@ export default class UPFCHttpFetcher implements UPFCFetcher {
    * @returns
    */
   async postCredential(username: string, password: string, site: UPFCSite): Promise<string> {
-    const url = `https://www.up-fc.jp/${site}/fanclub_Login.php`;
+    const url = `https://www.upfc.jp/${site}/login.php`;
 
     await this.fetch(url); // dummy request to generate session
     const params = new URLSearchParams();
-    params.append('User_No', username);
-    params.append('User_LoginPassword', password);
-    params.append('pp', 'OK');
-    params.append('@Control_Name@', '認証');
+    params.append('Member_No', username);
+    params.append('Member_Password', password);
+    params.append('@btn', 'login');
     const resp = await fetch(url, {
       method: 'POST',
       headers: {
@@ -35,29 +34,44 @@ export default class UPFCHttpFetcher implements UPFCFetcher {
   }
 
   async fetchEventApplicationsHtml(site: UPFCSite): Promise<string> {
-    return await this.fetch(`https://www.up-fc.jp/${site}/event_Event_SetList.php`);
+    return await this.fetch(`https://www.upfc.jp/${site}/event/event_list.php`);
   }
 
   async fetchExecEventApplicationsHtml(site: UPFCSite): Promise<string> {
-    return await this.fetch(`https://www.up-fc.jp/${site}/fanticket_DM_List.php`);
+    return ''; // no exec event specici page
   }
 
   async fetchTicketsHtml(site: UPFCSite): Promise<string> {
-    return await this.fetch(`https://www.up-fc.jp/${site}/mypage02.php`);
+    return await this.postForm(`https://www.upfc.jp/${site}/mypage/mypage_event_entry_list.php`, 'category=event');
   }
 
-  fetchEventApplicationDetailHtml(site: UPFCSite, id: string): Promise<string> {
-    // unused methods
-    throw new Error('Method not implemented.');
+  async fetchEventApplicationDetailHtml(site: UPFCSite, id: string): Promise<string> {
+    return await this.fetch(`https://www.upfc.jp/${site}/event/event_info.php?@uid=${id}`);
   }
-  fetchTicketDetailHtml(site: UPFCSite, id: string): Promise<string> {
-    // unused methods
-    throw new Error('Method not implemented.');
+
+  async fetchTicketDetailHtml(site: UPFCSite, id: string): Promise<string> {
+    return await this.fetch(`https://www.upfc.jp/${site}/mypage/event_payment.php?@uid=${id}`);
   }
 
   async fetch(url: string): Promise<string> {
     const resp = await fetch(url, {
       credentials: 'include'
+    });
+    if (!resp.ok) {
+      throw new ErrUPFCInvalidStatusCode();
+    }
+    const html = await resp.text();
+    return html;
+  }
+
+  async postForm(url: string, body: string): Promise<string> {
+    const resp = await fetch(url, {
+      method: 'POST',
+      credentials: 'include',
+      body,
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
     });
     if (!resp.ok) {
       throw new ErrUPFCInvalidStatusCode();

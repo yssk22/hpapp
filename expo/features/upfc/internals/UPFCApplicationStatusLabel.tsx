@@ -6,6 +6,7 @@ import { ThemeColorScheme } from '@hpapp/system/theme';
 import { View, StyleSheet } from 'react-native';
 
 const StatusColorScheme: Record<string, ThemeColorScheme> = {
+  // 抽選前: 'success',
   申込済: 'success',
   入金待: 'error',
   入金済: 'primary',
@@ -19,7 +20,7 @@ export type UPFCApplicationStatusLabelProps = {
 };
 
 export default function UPFCApplicationStatusLabel({ ticket }: UPFCApplicationStatusLabelProps) {
-  const [color, contrast] = useThemeColor(StatusColorScheme[ticket.status]);
+  const [color, contrast] = useThemeColor(StatusColorScheme[ticket.status] ?? 'warning');
   return (
     <View style={[styles.container, { backgroundColor: color }]}>
       <Text style={[styles.text, { color: contrast }]}>{ticket.status}</Text>

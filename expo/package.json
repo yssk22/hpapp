@@ -71,6 +71,7 @@
     "expo-updates": "~0.25.17",
     "i18n-js": "^4.3.2",
     "jsdom-jscore-rn": "^0.1.8",
+    "node-html-parser": "^6.1.13",
     "path": "^0.12.7",
     "react": "18.2.0",
     "react-content-loader": "^7.0.2",
