@@ -61,7 +61,35 @@ export default function useUPFCEventApplications(): ReloadableAysncResult<
   ]);
 
   return useReloadableAsync(fetchApplications, params, {
-    logEventName: 'features.upfc.hooks.useUPFCEventApplications'
+    logEventName: 'features.upfc.hooks.useUPFCEventApplications',
+    cache: {
+      key: 'useUPFCEventApplications',
+      loadFn: async (value: string) => {
+        const result = JSON.parse(value) as UPFCEventAPplicationsResult;
+        return {
+          applications: result.applications.map((a) => {
+            return {
+              name: a.name,
+              site: a.site,
+              applicationDueDate: dateOrUndefined(a.applicationDueDate),
+              applicationStartDate: dateOrUndefined(a.applicationStartDate),
+              paymentOpenDate: dateOrUndefined(a.paymentOpenDate),
+              paymentDueDate: dateOrUndefined(a.paymentDueDate),
+              tickets: a.tickets.map((t) => {
+                return {
+                  ...t,
+                  startAt: dateOrUndefined(t.startAt)!,
+                  openAt: dateOrUndefined(t.openAt)
+                };
+              })
+            };
+          }),
+          hpError: result.hpError ? new Error(result.hpError.message) : undefined,
+          mlError: result.mlError ? new Error(result.mlError.message) : undefined,
+          useDemo: result.useDemo
+        };
+      }
+    }
   });
 }
 
@@ -125,4 +153,11 @@ async function fetchApplicationsFromSite(
       applications: []
     };
   }
+}
+
+function dateOrUndefined(d: Date | undefined): Date | undefined {
+  if (d) {
+    return new Date(d);
+  }
+  return undefined;
 }
