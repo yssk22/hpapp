@@ -2,7 +2,7 @@ import { CardSkelton } from '@hpapp/features/common/card';
 import { UPFCErrorBox } from '@hpapp/features/upfc';
 import { UPFCEventApplicationTickets } from '@hpapp/features/upfc/scraper';
 import { useMemo } from 'react';
-import { FlatList, ListRenderItemInfo, View } from 'react-native';
+import { FlatList, ListRenderItemInfo, RefreshControl, View } from 'react-native';
 
 import UPFCApplicationCard from './HomeTabUPFCApplicationCard';
 import { useHomeTabContext } from '../HomeTabProvider';
@@ -58,6 +58,14 @@ export default function HomeTabUPFCCurrentApplicationList() {
         windowSize={11}
         keyExtractor={keyExtractor}
         renderItem={renderItem}
+        refreshControl={
+          <RefreshControl
+            refreshing={upfc.isLoading ?? false}
+            onRefresh={() => {
+              upfc.reload();
+            }}
+          />
+        }
       />
     </>
   );

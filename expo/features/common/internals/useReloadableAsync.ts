@@ -1,10 +1,12 @@
+import { CacheOptions, FileSystemCache } from '@hpapp/system/cache';
 import * as logging from '@hpapp/system/logging';
 import { useCallback, useEffect, useState } from 'react';
 
 import useIsMounted from './useIsMounted';
 
-export type ReloadableAysncOptions = {
+export type ReloadableAysncOptions<T> = {
   logEventName?: string;
+  cache?: CacheOptions<T>;
   onError?: (e: Error) => void;
 };
 
@@ -22,28 +24,30 @@ export type ReloadableAysncResult<T, V> = {
 export default function useReloadableAsync<T, V>(
   asyncFn: (params: T) => Promise<V>,
   initialParams: T,
-  options: ReloadableAysncOptions = {
-    logEventName: ''
+  options: ReloadableAysncOptions<V> = {
+    logEventName: '',
+    cache: undefined
   }
 ): ReloadableAysncResult<T, V> {
   const mounted = useIsMounted();
   const [data, setData] = useState<null | V>(null);
   const [error, setError] = useState<null | Error>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const reload = useCallback(
+  const loadFn = useCallback(
     async (p: T = initialParams) => {
       mounted && setIsLoading(true);
       setError(null);
       try {
-        const applications = await asyncFn(p);
+        const data = await asyncFn(p);
         if (options.logEventName) {
           logging.Info(options.logEventName, 'async hook completed', {
             params: p
           });
         }
-        mounted && setData(applications);
+        mounted && setData(data);
+        return data;
       } catch (e: any) {
-        options.onError && options.onError(e);
+        options.onError?.(e);
         if (options.logEventName) {
           logging.Info(options.logEventName, 'async hook failed', {
             params: p,
@@ -51,13 +55,36 @@ export default function useReloadableAsync<T, V>(
           });
         }
         setError(e);
+        return null;
       } finally {
         mounted && setIsLoading(false);
       }
     },
     [setData, setIsLoading]
   );
+
+  const reload = useCallback(
+    async (p: T = initialParams) => {
+      const data = await loadFn(p);
+      if (options.cache !== undefined && data !== null) {
+        const cache = new FileSystemCache(options.cache);
+        await cache.save(data);
+      }
+    },
+    [loadFn]
+  );
+
   useEffect(() => {
+    if (options.cache !== undefined) {
+      const cache = new FileSystemCache(options.cache);
+      const loadCache = async () => {
+        const data = await cache.load();
+        if (mounted && data != null) {
+          setData(data);
+        }
+      };
+      loadCache();
+    }
     reload(initialParams);
   }, [initialParams, setData, setIsLoading]);
   return {
