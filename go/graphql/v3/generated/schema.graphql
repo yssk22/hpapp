@@ -52,7 +52,7 @@ type MeMutation @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeMuta
   authenticate: User
   removeAuthentication: Auth
   upsertFollow(params: HPFollowUpsertParamsInput!): HPFollow
-  upsertEvents(params: UpsertEventsParamsInput!): [HPEvent]
+  upsertEvents(params: HPEventTicketApplicationUpsertParamsInput!): [HPEvent]
   upsertViewHistory(params: HPViewHistoryUpsertParamsInput!): HPViewHistory
 }
 
@@ -61,11 +61,11 @@ input HPFollowUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/serv
   followType: HPFollowType!
 }
 
-input UpsertEventsParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.UpsertEventsParams") {
+input HPEventTicketApplicationUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPEventTicketApplicationUpsertParams") {
   fcMemberSha256: String!
   userId: Int!
-  site: HPEventFCTicketSite!
-  applications: [EventTicketApplicationInput!]
+  site: HPFCEventTicketSite!
+  applications: [HPEventTicketApplicationInput!]
 }
 
 input HPViewHistoryUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/feed.HPViewHistoryUpsertParams") {
@@ -80,18 +80,18 @@ enum HPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enu
   unfollow
 }
 
-enum HPEventFCTicketSite @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketSite") {
+enum HPFCEventTicketSite @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketSite") {
   hello_project
   m_line
 }
 
-input EventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.EventTicketApplication") {
+input HPEventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPEventTicketApplication") {
   title: String!
   openAt: Time
   startAt: Time!
   fullyQualifiedVenueName: String!
   num: Int!
-  status: HPEventFCTicketStatus!
+  status: HPFCEventTicketApplicationStatus!
   applicationId: String
   applicationStartDate: Time
   applicationDueDate: Time
@@ -99,7 +99,7 @@ input EventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/se
   paymentDueDate: Time
 }
 
-enum HPEventFCTicketStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketStatus") {
+enum HPFCEventTicketApplicationStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketApplicationStatus") {
   before_lottery
   completed
   payment_overdue

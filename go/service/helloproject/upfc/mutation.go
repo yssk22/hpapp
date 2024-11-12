@@ -17,19 +17,19 @@ import (
 	"github.com/yssk22/hpapp/go/system/slog"
 )
 
-type UpsertEventsParams struct {
+type HPEventTicketApplicationUpsertParams struct {
 	FCMemberSha256 string
 	UserId         int
-	Site           enums.HPEventFCTicketSite
-	Applications   []EventTicketApplication
+	Site           enums.HPFCEventTicketSite
+	Applications   []HPEventTicketApplication
 }
-type EventTicketApplication struct {
+type HPEventTicketApplication struct {
 	Title                   string
 	OpenAt                  *time.Time
 	StartAt                 time.Time
 	FullyQualifiedVenueName string
 	Num                     int
-	Status                  enums.HPEventFCTicketStatus
+	Status                  enums.HPFCEventTicketApplicationStatus
 	ApplicationID           *string
 	ApplicationStartDate    *time.Time
 	ApplicationDueDate      *time.Time
@@ -39,7 +39,7 @@ type EventTicketApplication struct {
 
 // UpsertEventsAndApplications upserts the events and their applications
 // The information is collected by users' mobile application we split that info into HPEvent and HPFCEventTikect ents.
-func UpsertEventsAndApplications(ctx context.Context, params UpsertEventsParams) ([]*ent.HPEvent, error) {
+func UpsertEventsAndApplications(ctx context.Context, params HPEventTicketApplicationUpsertParams) ([]*ent.HPEvent, error) {
 	if params.FCMemberSha256 == "" {
 		return nil, fmt.Errorf("member sha256 is empty")
 	}
@@ -128,9 +128,9 @@ type upsertFCEventTicketParams struct {
 	MemberSha256         string
 	ApplicationTitle     string
 	Num                  int
-	Status               enums.HPEventFCTicketStatus
+	Status               enums.HPFCEventTicketApplicationStatus
 	ApplicationID        *string
-	ApplicationSite      enums.HPEventFCTicketSite
+	ApplicationSite      enums.HPFCEventTicketSite
 	ApplicationStartDate *time.Time
 	ApplicationDueDate   *time.Time
 	PaymentStartDate     *time.Time

@@ -36,8 +36,8 @@ func (HPFCEventTicket) Fields() []ent.Field {
 	return []ent.Field{
 		field.Int("num"),
 		field.Enum("status").
-			GoType(enums.HPEventFCTicketStatusSubmitted).
-			Default(string(enums.HPEventFCTicketStatusSubmitted)),
+			GoType(enums.HPFCEventTicketApplicationStatusSubmitted).
+			Default(string(enums.HPFCEventTicketApplicationStatusSubmitted)),
 		// Note that we don't have member id but have SHA256 version of member id as we don't want to collect memberid,
 		// which is used as a part of login credential.
 		// we just use this field to handle multi accounts scenario
@@ -47,8 +47,8 @@ func (HPFCEventTicket) Fields() []ent.Field {
 		field.String("application_title"),
 		field.String("application_id").Nillable().Optional(),
 		field.Enum("application_site").
-			GoType(enums.HPEventFCTicketSiteHelloProject).
-			Default(string(enums.HPEventFCTicketSiteHelloProject)),
+			GoType(enums.HPFCEventTicketSiteHelloProject).
+			Default(string(enums.HPFCEventTicketSiteHelloProject)),
 
 		// field.String("application_id").Nillable().Optional(),
 		field.Time("application_start_date").Nillable().Optional(),

@@ -204,8 +204,8 @@ func (s *upfcService) queryEventTickets(ctx context.Context, date time.Time, nda
 	jstNextDate := jstDate.Add(time.Duration(ndays) * 24 * time.Hour)
 	query := entclient.HPFCEventTicket.Query().Where(
 		hpfceventticket.StatusNotIn(
-			enums.HPEventFCTicketStatusCompleted,
-			enums.HPEventFCTicketStatusRejected,
+			enums.HPFCEventTicketApplicationStatusCompleted,
+			enums.HPFCEventTicketApplicationStatusRejected,
 		),
 	)
 	switch qtype {

@@ -27,7 +27,7 @@ type HPFCEventTicket struct {
 	// Num holds the value of the "num" field.
 	Num int `json:"num,omitempty"`
 	// Status holds the value of the "status" field.
-	Status enums.HPEventFCTicketStatus `json:"status,omitempty"`
+	Status enums.HPFCEventTicketApplicationStatus `json:"status,omitempty"`
 	// FcMemberSha256 holds the value of the "fc_member_sha256" field.
 	FcMemberSha256 string `json:"fc_member_sha256,omitempty"`
 	// ApplicationTitle holds the value of the "application_title" field.
@@ -35,7 +35,7 @@ type HPFCEventTicket struct {
 	// ApplicationID holds the value of the "application_id" field.
 	ApplicationID *string `json:"application_id,omitempty"`
 	// ApplicationSite holds the value of the "application_site" field.
-	ApplicationSite enums.HPEventFCTicketSite `json:"application_site,omitempty"`
+	ApplicationSite enums.HPFCEventTicketSite `json:"application_site,omitempty"`
 	// ApplicationStartDate holds the value of the "application_start_date" field.
 	ApplicationStartDate *time.Time `json:"application_start_date,omitempty"`
 	// ApplicationDueDate holds the value of the "application_due_date" field.
@@ -146,7 +146,7 @@ func (het *HPFCEventTicket) assignValues(columns []string, values []any) error {
 			if value, ok := values[i].(*sql.NullString); !ok {
 				return fmt.Errorf("unexpected type %T for field status", values[i])
 			} else if value.Valid {
-				het.Status = enums.HPEventFCTicketStatus(value.String)
+				het.Status = enums.HPFCEventTicketApplicationStatus(value.String)
 			}
 		case hpfceventticket.FieldFcMemberSha256:
 			if value, ok := values[i].(*sql.NullString); !ok {
@@ -171,7 +171,7 @@ func (het *HPFCEventTicket) assignValues(columns []string, values []any) error {
 			if value, ok := values[i].(*sql.NullString); !ok {
 				return fmt.Errorf("unexpected type %T for field application_site", values[i])
 			} else if value.Valid {
-				het.ApplicationSite = enums.HPEventFCTicketSite(value.String)
+				het.ApplicationSite = enums.HPFCEventTicketSite(value.String)
 			}
 		case hpfceventticket.FieldApplicationStartDate:
 			if value, ok := values[i].(*sql.NullTime); !ok {
