@@ -32,7 +32,7 @@ func (h *MeMutation) UpsertFollow(ctx context.Context, params user.HPFollowUpser
 	return user.UpsertFollow(ctx, appuser.EntID(appuser.CurrentUser(ctx)), params)
 }
 
-func (h *MeMutation) UpsertEvents(ctx context.Context, params upfc.UpsertEventsParams) ([]*ent.HPEvent, error) {
+func (h *MeMutation) UpsertEvents(ctx context.Context, params upfc.HPEventTicketApplicationUpsertParams) ([]*ent.HPEvent, error) {
 	return upfc.UpsertEventsAndApplications(ctx, params)
 }
 

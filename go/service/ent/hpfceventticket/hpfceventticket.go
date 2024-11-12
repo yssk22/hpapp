@@ -114,10 +114,10 @@ var (
 	Policy ent.Policy
 )
 
-const DefaultStatus enums.HPEventFCTicketStatus = "Submitted"
+const DefaultStatus enums.HPFCEventTicketApplicationStatus = "Submitted"
 
 // StatusValidator is a validator for the "status" field enum values. It is called by the builders before save.
-func StatusValidator(s enums.HPEventFCTicketStatus) error {
+func StatusValidator(s enums.HPFCEventTicketApplicationStatus) error {
 	switch s {
 	case "BeforeLottery", "Completed", "PaymentOverdue", "PendingPayment", "Rejected", "Submitted", "Unknown":
 		return nil
@@ -126,10 +126,10 @@ func StatusValidator(s enums.HPEventFCTicketStatus) error {
 	}
 }
 
-const DefaultApplicationSite enums.HPEventFCTicketSite = "helloproject"
+const DefaultApplicationSite enums.HPFCEventTicketSite = "helloproject"
 
 // ApplicationSiteValidator is a validator for the "application_site" field enum values. It is called by the builders before save.
-func ApplicationSiteValidator(as enums.HPEventFCTicketSite) error {
+func ApplicationSiteValidator(as enums.HPFCEventTicketSite) error {
 	switch as {
 	case "helloproject", "mline":
 		return nil
@@ -240,15 +240,15 @@ func newUserStep() *sqlgraph.Step {
 }
 
 var (
-	// enums.HPEventFCTicketStatus must implement graphql.Marshaler.
-	_ graphql.Marshaler = (*enums.HPEventFCTicketStatus)(nil)
-	// enums.HPEventFCTicketStatus must implement graphql.Unmarshaler.
-	_ graphql.Unmarshaler = (*enums.HPEventFCTicketStatus)(nil)
+	// enums.HPFCEventTicketApplicationStatus must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFCEventTicketApplicationStatus)(nil)
+	// enums.HPFCEventTicketApplicationStatus must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFCEventTicketApplicationStatus)(nil)
 )
 
 var (
-	// enums.HPEventFCTicketSite must implement graphql.Marshaler.
-	_ graphql.Marshaler = (*enums.HPEventFCTicketSite)(nil)
-	// enums.HPEventFCTicketSite must implement graphql.Unmarshaler.
-	_ graphql.Unmarshaler = (*enums.HPEventFCTicketSite)(nil)
+	// enums.HPFCEventTicketSite must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFCEventTicketSite)(nil)
+	// enums.HPFCEventTicketSite must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFCEventTicketSite)(nil)
 )

@@ -10772,11 +10772,11 @@ type HPFCEventTicketMutation struct {
 	updated_at             *time.Time
 	num                    *int
 	addnum                 *int
-	status                 *enums.HPEventFCTicketStatus
+	status                 *enums.HPFCEventTicketApplicationStatus
 	fc_member_sha256       *string
 	application_title      *string
 	application_id         *string
-	application_site       *enums.HPEventFCTicketSite
+	application_site       *enums.HPFCEventTicketSite
 	application_start_date *time.Time
 	application_due_date   *time.Time
 	payment_start_date     *time.Time
@@ -11044,12 +11044,12 @@ func (m *HPFCEventTicketMutation) ResetNum() {
 }
 
 // SetStatus sets the "status" field.
-func (m *HPFCEventTicketMutation) SetStatus(eefts enums.HPEventFCTicketStatus) {
-	m.status = &eefts
+func (m *HPFCEventTicketMutation) SetStatus(eetas enums.HPFCEventTicketApplicationStatus) {
+	m.status = &eetas
 }
 
 // Status returns the value of the "status" field in the mutation.
-func (m *HPFCEventTicketMutation) Status() (r enums.HPEventFCTicketStatus, exists bool) {
+func (m *HPFCEventTicketMutation) Status() (r enums.HPFCEventTicketApplicationStatus, exists bool) {
 	v := m.status
 	if v == nil {
 		return
@@ -11060,7 +11060,7 @@ func (m *HPFCEventTicketMutation) Status() (r enums.HPEventFCTicketStatus, exist
 // OldStatus returns the old "status" field's value of the HPFCEventTicket entity.
 // If the HPFCEventTicket object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
-func (m *HPFCEventTicketMutation) OldStatus(ctx context.Context) (v enums.HPEventFCTicketStatus, err error) {
+func (m *HPFCEventTicketMutation) OldStatus(ctx context.Context) (v enums.HPFCEventTicketApplicationStatus, err error) {
 	if !m.op.Is(OpUpdateOne) {
 		return v, errors.New("OldStatus is only allowed on UpdateOne operations")
 	}
@@ -11201,12 +11201,12 @@ func (m *HPFCEventTicketMutation) ResetApplicationID() {
 }
 
 // SetApplicationSite sets the "application_site" field.
-func (m *HPFCEventTicketMutation) SetApplicationSite(eefts enums.HPEventFCTicketSite) {
-	m.application_site = &eefts
+func (m *HPFCEventTicketMutation) SetApplicationSite(eets enums.HPFCEventTicketSite) {
+	m.application_site = &eets
 }
 
 // ApplicationSite returns the value of the "application_site" field in the mutation.
-func (m *HPFCEventTicketMutation) ApplicationSite() (r enums.HPEventFCTicketSite, exists bool) {
+func (m *HPFCEventTicketMutation) ApplicationSite() (r enums.HPFCEventTicketSite, exists bool) {
 	v := m.application_site
 	if v == nil {
 		return
@@ -11217,7 +11217,7 @@ func (m *HPFCEventTicketMutation) ApplicationSite() (r enums.HPEventFCTicketSite
 // OldApplicationSite returns the old "application_site" field's value of the HPFCEventTicket entity.
 // If the HPFCEventTicket object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
-func (m *HPFCEventTicketMutation) OldApplicationSite(ctx context.Context) (v enums.HPEventFCTicketSite, err error) {
+func (m *HPFCEventTicketMutation) OldApplicationSite(ctx context.Context) (v enums.HPFCEventTicketSite, err error) {
 	if !m.op.Is(OpUpdateOne) {
 		return v, errors.New("OldApplicationSite is only allowed on UpdateOne operations")
 	}
@@ -11720,7 +11720,7 @@ func (m *HPFCEventTicketMutation) SetField(name string, value ent.Value) error {
 		m.SetNum(v)
 		return nil
 	case hpfceventticket.FieldStatus:
-		v, ok := value.(enums.HPEventFCTicketStatus)
+		v, ok := value.(enums.HPFCEventTicketApplicationStatus)
 		if !ok {
 			return fmt.Errorf("unexpected type %T for field %s", value, name)
 		}
@@ -11748,7 +11748,7 @@ func (m *HPFCEventTicketMutation) SetField(name string, value ent.Value) error {
 		m.SetApplicationID(v)
 		return nil
 	case hpfceventticket.FieldApplicationSite:
-		v, ok := value.(enums.HPEventFCTicketSite)
+		v, ok := value.(enums.HPFCEventTicketSite)
 		if !ok {
 			return fmt.Errorf("unexpected type %T for field %s", value, name)
 		}

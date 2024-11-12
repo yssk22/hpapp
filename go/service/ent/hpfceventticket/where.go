@@ -252,19 +252,19 @@ func NumLTE(v int) predicate.HPFCEventTicket {
 }
 
 // StatusEQ applies the EQ predicate on the "status" field.
-func StatusEQ(v enums.HPEventFCTicketStatus) predicate.HPFCEventTicket {
+func StatusEQ(v enums.HPFCEventTicketApplicationStatus) predicate.HPFCEventTicket {
 	vc := v
 	return predicate.HPFCEventTicket(sql.FieldEQ(FieldStatus, vc))
 }
 
 // StatusNEQ applies the NEQ predicate on the "status" field.
-func StatusNEQ(v enums.HPEventFCTicketStatus) predicate.HPFCEventTicket {
+func StatusNEQ(v enums.HPFCEventTicketApplicationStatus) predicate.HPFCEventTicket {
 	vc := v
 	return predicate.HPFCEventTicket(sql.FieldNEQ(FieldStatus, vc))
 }
 
 // StatusIn applies the In predicate on the "status" field.
-func StatusIn(vs ...enums.HPEventFCTicketStatus) predicate.HPFCEventTicket {
+func StatusIn(vs ...enums.HPFCEventTicketApplicationStatus) predicate.HPFCEventTicket {
 	v := make([]any, len(vs))
 	for i := range v {
 		v[i] = vs[i]
@@ -273,7 +273,7 @@ func StatusIn(vs ...enums.HPEventFCTicketStatus) predicate.HPFCEventTicket {
 }
 
 // StatusNotIn applies the NotIn predicate on the "status" field.
-func StatusNotIn(vs ...enums.HPEventFCTicketStatus) predicate.HPFCEventTicket {
+func StatusNotIn(vs ...enums.HPFCEventTicketApplicationStatus) predicate.HPFCEventTicket {
 	v := make([]any, len(vs))
 	for i := range v {
 		v[i] = vs[i]
@@ -487,19 +487,19 @@ func ApplicationIDContainsFold(v string) predicate.HPFCEventTicket {
 }
 
 // ApplicationSiteEQ applies the EQ predicate on the "application_site" field.
-func ApplicationSiteEQ(v enums.HPEventFCTicketSite) predicate.HPFCEventTicket {
+func ApplicationSiteEQ(v enums.HPFCEventTicketSite) predicate.HPFCEventTicket {
 	vc := v
 	return predicate.HPFCEventTicket(sql.FieldEQ(FieldApplicationSite, vc))
 }
 
 // ApplicationSiteNEQ applies the NEQ predicate on the "application_site" field.
-func ApplicationSiteNEQ(v enums.HPEventFCTicketSite) predicate.HPFCEventTicket {
+func ApplicationSiteNEQ(v enums.HPFCEventTicketSite) predicate.HPFCEventTicket {
 	vc := v
 	return predicate.HPFCEventTicket(sql.FieldNEQ(FieldApplicationSite, vc))
 }
 
 // ApplicationSiteIn applies the In predicate on the "application_site" field.
-func ApplicationSiteIn(vs ...enums.HPEventFCTicketSite) predicate.HPFCEventTicket {
+func ApplicationSiteIn(vs ...enums.HPFCEventTicketSite) predicate.HPFCEventTicket {
 	v := make([]any, len(vs))
 	for i := range v {
 		v[i] = vs[i]
@@ -508,7 +508,7 @@ func ApplicationSiteIn(vs ...enums.HPEventFCTicketSite) predicate.HPFCEventTicke
 }
 
 // ApplicationSiteNotIn applies the NotIn predicate on the "application_site" field.
-func ApplicationSiteNotIn(vs ...enums.HPEventFCTicketSite) predicate.HPFCEventTicket {
+func ApplicationSiteNotIn(vs ...enums.HPFCEventTicketSite) predicate.HPFCEventTicket {
 	v := make([]any, len(vs))
 	for i := range v {
 		v[i] = vs[i]

@@ -65,15 +65,15 @@ func (hetu *HPFCEventTicketUpdate) AddNum(i int) *HPFCEventTicketUpdate {
 }
 
 // SetStatus sets the "status" field.
-func (hetu *HPFCEventTicketUpdate) SetStatus(eefts enums.HPEventFCTicketStatus) *HPFCEventTicketUpdate {
-	hetu.mutation.SetStatus(eefts)
+func (hetu *HPFCEventTicketUpdate) SetStatus(eetas enums.HPFCEventTicketApplicationStatus) *HPFCEventTicketUpdate {
+	hetu.mutation.SetStatus(eetas)
 	return hetu
 }
 
 // SetNillableStatus sets the "status" field if the given value is not nil.
-func (hetu *HPFCEventTicketUpdate) SetNillableStatus(eefts *enums.HPEventFCTicketStatus) *HPFCEventTicketUpdate {
-	if eefts != nil {
-		hetu.SetStatus(*eefts)
+func (hetu *HPFCEventTicketUpdate) SetNillableStatus(eetas *enums.HPFCEventTicketApplicationStatus) *HPFCEventTicketUpdate {
+	if eetas != nil {
+		hetu.SetStatus(*eetas)
 	}
 	return hetu
 }
@@ -111,15 +111,15 @@ func (hetu *HPFCEventTicketUpdate) ClearApplicationID() *HPFCEventTicketUpdate {
 }
 
 // SetApplicationSite sets the "application_site" field.
-func (hetu *HPFCEventTicketUpdate) SetApplicationSite(eefts enums.HPEventFCTicketSite) *HPFCEventTicketUpdate {
-	hetu.mutation.SetApplicationSite(eefts)
+func (hetu *HPFCEventTicketUpdate) SetApplicationSite(eets enums.HPFCEventTicketSite) *HPFCEventTicketUpdate {
+	hetu.mutation.SetApplicationSite(eets)
 	return hetu
 }
 
 // SetNillableApplicationSite sets the "application_site" field if the given value is not nil.
-func (hetu *HPFCEventTicketUpdate) SetNillableApplicationSite(eefts *enums.HPEventFCTicketSite) *HPFCEventTicketUpdate {
-	if eefts != nil {
-		hetu.SetApplicationSite(*eefts)
+func (hetu *HPFCEventTicketUpdate) SetNillableApplicationSite(eets *enums.HPFCEventTicketSite) *HPFCEventTicketUpdate {
+	if eets != nil {
+		hetu.SetApplicationSite(*eets)
 	}
 	return hetu
 }
@@ -483,15 +483,15 @@ func (hetuo *HPFCEventTicketUpdateOne) AddNum(i int) *HPFCEventTicketUpdateOne {
 }
 
 // SetStatus sets the "status" field.
-func (hetuo *HPFCEventTicketUpdateOne) SetStatus(eefts enums.HPEventFCTicketStatus) *HPFCEventTicketUpdateOne {
-	hetuo.mutation.SetStatus(eefts)
+func (hetuo *HPFCEventTicketUpdateOne) SetStatus(eetas enums.HPFCEventTicketApplicationStatus) *HPFCEventTicketUpdateOne {
+	hetuo.mutation.SetStatus(eetas)
 	return hetuo
 }
 
 // SetNillableStatus sets the "status" field if the given value is not nil.
-func (hetuo *HPFCEventTicketUpdateOne) SetNillableStatus(eefts *enums.HPEventFCTicketStatus) *HPFCEventTicketUpdateOne {
-	if eefts != nil {
-		hetuo.SetStatus(*eefts)
+func (hetuo *HPFCEventTicketUpdateOne) SetNillableStatus(eetas *enums.HPFCEventTicketApplicationStatus) *HPFCEventTicketUpdateOne {
+	if eetas != nil {
+		hetuo.SetStatus(*eetas)
 	}
 	return hetuo
 }
@@ -529,15 +529,15 @@ func (hetuo *HPFCEventTicketUpdateOne) ClearApplicationID() *HPFCEventTicketUpda
 }
 
 // SetApplicationSite sets the "application_site" field.
-func (hetuo *HPFCEventTicketUpdateOne) SetApplicationSite(eefts enums.HPEventFCTicketSite) *HPFCEventTicketUpdateOne {
-	hetuo.mutation.SetApplicationSite(eefts)
+func (hetuo *HPFCEventTicketUpdateOne) SetApplicationSite(eets enums.HPFCEventTicketSite) *HPFCEventTicketUpdateOne {
+	hetuo.mutation.SetApplicationSite(eets)
 	return hetuo
 }
 
 // SetNillableApplicationSite sets the "application_site" field if the given value is not nil.
-func (hetuo *HPFCEventTicketUpdateOne) SetNillableApplicationSite(eefts *enums.HPEventFCTicketSite) *HPFCEventTicketUpdateOne {
-	if eefts != nil {
-		hetuo.SetApplicationSite(*eefts)
+func (hetuo *HPFCEventTicketUpdateOne) SetNillableApplicationSite(eets *enums.HPFCEventTicketSite) *HPFCEventTicketUpdateOne {
+	if eets != nil {
+		hetuo.SetApplicationSite(*eets)
 	}
 	return hetuo
 }

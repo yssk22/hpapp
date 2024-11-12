@@ -203,23 +203,18 @@ type HPFCEventTicket implements Node {
   createdAt: Time
   updatedAt: Time
   num: Int!
-  status: HPFCEventTicketHPEventFCTicketStatus!
+  status: HPFCEventTicketHPFCEventTicketApplicationStatus!
   fcMemberSha256: String!
   applicationTitle: String!
   applicationID: String
-  applicationSite: HPFCEventTicketHPEventFCTicketSite!
+  applicationSite: HPFCEventTicketHPFCEventTicketSite!
   applicationStartDate: Time
   applicationDueDate: Time
   paymentStartDate: Time
   paymentDueDate: Time
 }
-"""HPFCEventTicketHPEventFCTicketSite is enum for the field application_site"""
-enum HPFCEventTicketHPEventFCTicketSite @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketSite") {
-  helloproject
-  mline
-}
-"""HPFCEventTicketHPEventFCTicketStatus is enum for the field status"""
-enum HPFCEventTicketHPEventFCTicketStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketStatus") {
+"""HPFCEventTicketHPFCEventTicketApplicationStatus is enum for the field status"""
+enum HPFCEventTicketHPFCEventTicketApplicationStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketApplicationStatus") {
   BeforeLottery
   Completed
   PaymentOverdue
@@ -227,6 +222,11 @@ enum HPFCEventTicketHPEventFCTicketStatus @goModel(model: "github.com/yssk22/hpa
   Rejected
   Submitted
   Unknown
+}
+"""HPFCEventTicketHPFCEventTicketSite is enum for the field application_site"""
+enum HPFCEventTicketHPFCEventTicketSite @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketSite") {
+  helloproject
+  mline
 }
 type HPFeedItem implements Node {
   id: ID!

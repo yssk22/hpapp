@@ -58,63 +58,63 @@ func TestUPFC(t *testing.T) {
 				EventId:          event1.ID,
 				UserId:           appuser.EntID(user1),
 				MemberSha256:     "fcmemberid",
-				ApplicationSite:  enums.HPEventFCTicketSiteHelloProject,
+				ApplicationSite:  enums.HPFCEventTicketSiteHelloProject,
 				ApplicationTitle: "モーニング娘。'21 コンサートツアー秋",
 				ApplicationID:    object.Nullable("mm21-1"),
 				Num:              2,
 				PaymentStartDate: &paymentStartDate,
 				PaymentDueDate:   &paymentDueDate,
-				Status:           enums.HPEventFCTicketStatusPendingPayment,
+				Status:           enums.HPFCEventTicketApplicationStatusPendingPayment,
 			}))
 			assert.X(upsertFCEventTicket(appuser.WithUser(ctx, user1), upsertFCEventTicketParams{
 				EventId:          event2.ID,
 				UserId:           appuser.EntID(user1),
 				MemberSha256:     "fcmemberid",
-				ApplicationSite:  enums.HPEventFCTicketSiteHelloProject,
+				ApplicationSite:  enums.HPFCEventTicketSiteHelloProject,
 				ApplicationTitle: "モーニング娘。'21 コンサートツアー秋",
 				ApplicationID:    object.Nullable("mm21-2"),
 				Num:              2,
 				PaymentStartDate: &paymentStartDate,
 				PaymentDueDate:   &paymentDueDate,
-				Status:           enums.HPEventFCTicketStatusPendingPayment,
+				Status:           enums.HPFCEventTicketApplicationStatusPendingPayment,
 			}))
 			// user2 have tickets for event1 and event2
 			assert.X(upsertFCEventTicket(appuser.WithUser(ctx, user2), upsertFCEventTicketParams{
 				EventId:          event1.ID,
 				UserId:           appuser.EntID(user2),
 				MemberSha256:     "fcmemberid2",
-				ApplicationSite:  enums.HPEventFCTicketSiteHelloProject,
+				ApplicationSite:  enums.HPFCEventTicketSiteHelloProject,
 				ApplicationTitle: "モーニング娘。'21 コンサートツアー秋",
 				ApplicationID:    object.Nullable("mm21-1"),
 				Num:              2,
 				PaymentStartDate: &paymentStartDate,
 				PaymentDueDate:   &paymentDueDate,
-				Status:           enums.HPEventFCTicketStatusPendingPayment,
+				Status:           enums.HPFCEventTicketApplicationStatusPendingPayment,
 			}))
 			assert.X(upsertFCEventTicket(appuser.WithUser(ctx, user2), upsertFCEventTicketParams{
 				EventId:          event2.ID,
 				UserId:           appuser.EntID(user2),
 				MemberSha256:     "fcmemberid2",
-				ApplicationSite:  enums.HPEventFCTicketSiteHelloProject,
+				ApplicationSite:  enums.HPFCEventTicketSiteHelloProject,
 				ApplicationTitle: "モーニング娘。'21 コンサートツアー秋 先々行",
 				ApplicationID:    object.Nullable("mm21-2"),
 				Num:              2,
 				PaymentStartDate: &paymentStartDate,
 				PaymentDueDate:   &paymentDueDate,
-				Status:           enums.HPEventFCTicketStatusPendingPayment,
+				Status:           enums.HPFCEventTicketApplicationStatusPendingPayment,
 			}))
 			// user3 has only one ticket for event1
 			assert.X(upsertFCEventTicket(appuser.WithUser(ctx, user3), upsertFCEventTicketParams{
 				EventId:          event1.ID,
 				UserId:           appuser.EntID(user3),
 				MemberSha256:     "fcmemberid3",
-				ApplicationSite:  enums.HPEventFCTicketSiteHelloProject,
+				ApplicationSite:  enums.HPFCEventTicketSiteHelloProject,
 				ApplicationTitle: "モーニング娘。'21 コンサートツアー秋",
 				ApplicationID:    object.Nullable("mm21-1"),
 				Num:              2,
 				PaymentStartDate: &paymentStartDate,
 				PaymentDueDate:   &paymentDueDate,
-				Status:           enums.HPEventFCTicketStatusPendingPayment,
+				Status:           enums.HPFCEventTicketApplicationStatusPendingPayment,
 			}))
 			/*
 				All applications start payment at 2021/10/02 JST.
@@ -173,7 +173,7 @@ func TestUPFC(t *testing.T) {
 				Num:              2,
 				PaymentStartDate: &paymentStartDate,
 				PaymentDueDate:   &paymentDueDate,
-				Status:           enums.HPEventFCTicketStatusCompleted,
+				Status:           enums.HPFCEventTicketApplicationStatusCompleted,
 			}))
 			notifications, _ = s.buildNotifications(appuser.WithAdmin(ctx), sendDate, 1, paymentStartQuery)
 			a.Equals(1, len(notifications))
@@ -195,7 +195,7 @@ func TestUPFC(t *testing.T) {
 				Num:              2,
 				PaymentStartDate: &paymentStartDate,
 				PaymentDueDate:   &paymentDueDate,
-				Status:           enums.HPEventFCTicketStatusRejected,
+				Status:           enums.HPFCEventTicketApplicationStatusRejected,
 			}))
 			notifications, _ = s.buildNotifications(appuser.WithAdmin(ctx), sendDate, 1, paymentStartQuery)
 			a.Equals(1, len(notifications))
@@ -215,38 +215,38 @@ func TestUPFC(t *testing.T) {
 			assert.X(upsertFCEventTicket(appuser.WithUser(ctx, user1), upsertFCEventTicketParams{
 				EventId:          event1.ID,
 				UserId:           appuser.EntID(user1),
-				ApplicationSite:  enums.HPEventFCTicketSiteHelloProject,
+				ApplicationSite:  enums.HPFCEventTicketSiteHelloProject,
 				MemberSha256:     "fcmemberid",
 				ApplicationTitle: "モーニング娘。'21 コンサートツアー秋",
 				ApplicationID:    object.Nullable("mm21-1"),
 				Num:              2,
 				PaymentStartDate: &paymentStartDate,
 				PaymentDueDate:   &paymentDueDate,
-				Status:           enums.HPEventFCTicketStatusPendingPayment,
+				Status:           enums.HPFCEventTicketApplicationStatusPendingPayment,
 			}))
 			assert.X(upsertFCEventTicket(appuser.WithUser(ctx, user2), upsertFCEventTicketParams{
 				EventId:          event1.ID,
 				UserId:           appuser.EntID(user2),
-				ApplicationSite:  enums.HPEventFCTicketSiteHelloProject,
+				ApplicationSite:  enums.HPFCEventTicketSiteHelloProject,
 				MemberSha256:     "fcmemberid2",
 				ApplicationTitle: "モーニング娘。'21 コンサートツアー秋",
 				ApplicationID:    object.Nullable("mm21-1"),
 				Num:              2,
 				PaymentStartDate: &paymentStartDate,
 				PaymentDueDate:   &paymentDueDate,
-				Status:           enums.HPEventFCTicketStatusPendingPayment,
+				Status:           enums.HPFCEventTicketApplicationStatusPendingPayment,
 			}))
 			assert.X(upsertFCEventTicket(appuser.WithUser(ctx, user3), upsertFCEventTicketParams{
 				EventId:          event1.ID,
 				UserId:           appuser.EntID(user3),
-				ApplicationSite:  enums.HPEventFCTicketSiteHelloProject,
+				ApplicationSite:  enums.HPFCEventTicketSiteHelloProject,
 				MemberSha256:     "fcmemberid3",
 				ApplicationTitle: "モーニング娘。'21 コンサートツアー秋",
 				ApplicationID:    object.Nullable("mm21-1"),
 				Num:              2,
 				PaymentStartDate: &paymentStartDate,
 				PaymentDueDate:   &paymentDueDate,
-				Status:           enums.HPEventFCTicketStatusPendingPayment,
+				Status:           enums.HPFCEventTicketApplicationStatusPendingPayment,
 			}))
 			/*
 				3 applications, all of which starts payment at 2021/10/02 JST and the due is at 2021/10/05 JST

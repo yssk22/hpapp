@@ -103,37 +103,37 @@ func (HPElineupMallItemCategory) Values() (types []string) {
 	return
 }
 
-func (HPEventFCTicketSite) Values() (types []string) {
-
-	for _, r := range []HPEventFCTicketSite{
-		HPEventFCTicketSiteHelloProject,
-		HPEventFCTicketSiteMLine,
-	} {
-		types = append(types, string(r))
-	}
-	return
-}
-
-func (HPEventFCTicketStatus) Values() (types []string) {
-
-	for _, r := range []HPEventFCTicketStatus{
-		HPEventFCTicketStatusBeforeLottery,
-		HPEventFCTicketStatusCompleted,
-		HPEventFCTicketStatusPaymentOverdue,
-		HPEventFCTicketStatusPendingPayment,
-		HPEventFCTicketStatusRejected,
-		HPEventFCTicketStatusSubmitted,
-		HPEventFCTicketStatusUnknown,
-	} {
-		types = append(types, string(r))
-	}
-	return
-}
-
 func (HPEventSource) Values() (types []string) {
 
 	for _, r := range []HPEventSource{
 		HPEventSourceFCScrape,
+	} {
+		types = append(types, string(r))
+	}
+	return
+}
+
+func (HPFCEventTicketApplicationStatus) Values() (types []string) {
+
+	for _, r := range []HPFCEventTicketApplicationStatus{
+		HPFCEventTicketApplicationStatusBeforeLottery,
+		HPFCEventTicketApplicationStatusCompleted,
+		HPFCEventTicketApplicationStatusPaymentOverdue,
+		HPFCEventTicketApplicationStatusPendingPayment,
+		HPFCEventTicketApplicationStatusRejected,
+		HPFCEventTicketApplicationStatusSubmitted,
+		HPFCEventTicketApplicationStatusUnknown,
+	} {
+		types = append(types, string(r))
+	}
+	return
+}
+
+func (HPFCEventTicketSite) Values() (types []string) {
+
+	for _, r := range []HPFCEventTicketSite{
+		HPFCEventTicketSiteHelloProject,
+		HPFCEventTicketSiteMLine,
 	} {
 		types = append(types, string(r))
 	}

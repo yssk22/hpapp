@@ -260,64 +260,6 @@ func (e *HPElineupMallItemCategory) UnmarshalGQL(v interface{}) error {
 	return nil
 }
 
-func (e HPEventFCTicketSite) MarshalGQL(w io.Writer) {
-	switch e {
-	case HPEventFCTicketSiteHelloProject:
-		fmt.Fprint(w, strconv.Quote("hello_project"))
-	case HPEventFCTicketSiteMLine:
-		fmt.Fprint(w, strconv.Quote("m_line"))
-	}
-}
-
-func (e *HPEventFCTicketSite) UnmarshalGQL(v interface{}) error {
-	switch v.(string) {
-	case "hello_project":
-		*e = HPEventFCTicketSiteHelloProject
-	case "m_line":
-		*e = HPEventFCTicketSiteMLine
-	}
-	return nil
-}
-
-func (e HPEventFCTicketStatus) MarshalGQL(w io.Writer) {
-	switch e {
-	case HPEventFCTicketStatusBeforeLottery:
-		fmt.Fprint(w, strconv.Quote("before_lottery"))
-	case HPEventFCTicketStatusCompleted:
-		fmt.Fprint(w, strconv.Quote("completed"))
-	case HPEventFCTicketStatusPaymentOverdue:
-		fmt.Fprint(w, strconv.Quote("payment_overdue"))
-	case HPEventFCTicketStatusPendingPayment:
-		fmt.Fprint(w, strconv.Quote("pending_payment"))
-	case HPEventFCTicketStatusRejected:
-		fmt.Fprint(w, strconv.Quote("rejected"))
-	case HPEventFCTicketStatusSubmitted:
-		fmt.Fprint(w, strconv.Quote("submitted"))
-	case HPEventFCTicketStatusUnknown:
-		fmt.Fprint(w, strconv.Quote("unknown"))
-	}
-}
-
-func (e *HPEventFCTicketStatus) UnmarshalGQL(v interface{}) error {
-	switch v.(string) {
-	case "before_lottery":
-		*e = HPEventFCTicketStatusBeforeLottery
-	case "completed":
-		*e = HPEventFCTicketStatusCompleted
-	case "payment_overdue":
-		*e = HPEventFCTicketStatusPaymentOverdue
-	case "pending_payment":
-		*e = HPEventFCTicketStatusPendingPayment
-	case "rejected":
-		*e = HPEventFCTicketStatusRejected
-	case "submitted":
-		*e = HPEventFCTicketStatusSubmitted
-	case "unknown":
-		*e = HPEventFCTicketStatusUnknown
-	}
-	return nil
-}
-
 func (e HPEventSource) MarshalGQL(w io.Writer) {
 	switch e {
 	case HPEventSourceFCScrape:
@@ -329,6 +271,64 @@ func (e *HPEventSource) UnmarshalGQL(v interface{}) error {
 	switch v.(string) {
 	case "fc_scrape":
 		*e = HPEventSourceFCScrape
+	}
+	return nil
+}
+
+func (e HPFCEventTicketApplicationStatus) MarshalGQL(w io.Writer) {
+	switch e {
+	case HPFCEventTicketApplicationStatusBeforeLottery:
+		fmt.Fprint(w, strconv.Quote("before_lottery"))
+	case HPFCEventTicketApplicationStatusCompleted:
+		fmt.Fprint(w, strconv.Quote("completed"))
+	case HPFCEventTicketApplicationStatusPaymentOverdue:
+		fmt.Fprint(w, strconv.Quote("payment_overdue"))
+	case HPFCEventTicketApplicationStatusPendingPayment:
+		fmt.Fprint(w, strconv.Quote("pending_payment"))
+	case HPFCEventTicketApplicationStatusRejected:
+		fmt.Fprint(w, strconv.Quote("rejected"))
+	case HPFCEventTicketApplicationStatusSubmitted:
+		fmt.Fprint(w, strconv.Quote("submitted"))
+	case HPFCEventTicketApplicationStatusUnknown:
+		fmt.Fprint(w, strconv.Quote("unknown"))
+	}
+}
+
+func (e *HPFCEventTicketApplicationStatus) UnmarshalGQL(v interface{}) error {
+	switch v.(string) {
+	case "before_lottery":
+		*e = HPFCEventTicketApplicationStatusBeforeLottery
+	case "completed":
+		*e = HPFCEventTicketApplicationStatusCompleted
+	case "payment_overdue":
+		*e = HPFCEventTicketApplicationStatusPaymentOverdue
+	case "pending_payment":
+		*e = HPFCEventTicketApplicationStatusPendingPayment
+	case "rejected":
+		*e = HPFCEventTicketApplicationStatusRejected
+	case "submitted":
+		*e = HPFCEventTicketApplicationStatusSubmitted
+	case "unknown":
+		*e = HPFCEventTicketApplicationStatusUnknown
+	}
+	return nil
+}
+
+func (e HPFCEventTicketSite) MarshalGQL(w io.Writer) {
+	switch e {
+	case HPFCEventTicketSiteHelloProject:
+		fmt.Fprint(w, strconv.Quote("hello_project"))
+	case HPFCEventTicketSiteMLine:
+		fmt.Fprint(w, strconv.Quote("m_line"))
+	}
+}
+
+func (e *HPFCEventTicketSite) UnmarshalGQL(v interface{}) error {
+	switch v.(string) {
+	case "hello_project":
+		*e = HPFCEventTicketSiteHelloProject
+	case "m_line":
+		*e = HPFCEventTicketSiteMLine
 	}
 	return nil
 }
