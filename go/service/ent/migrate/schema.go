@@ -277,10 +277,11 @@ var (
 		{Name: "created_at", Type: field.TypeTime, Nullable: true},
 		{Name: "updated_at", Type: field.TypeTime, Nullable: true},
 		{Name: "num", Type: field.TypeInt},
-		{Name: "status", Type: field.TypeEnum, Enums: []string{"Completed", "PaymentOverdue", "PendingPayment", "Rejected", "Submitted", "Unknown"}, Default: "Submitted"},
+		{Name: "status", Type: field.TypeEnum, Enums: []string{"BeforeLottery", "Completed", "PaymentOverdue", "PendingPayment", "Rejected", "Submitted", "Unknown"}, Default: "Submitted"},
 		{Name: "fc_member_sha256", Type: field.TypeString},
 		{Name: "application_title", Type: field.TypeString},
 		{Name: "application_id", Type: field.TypeString, Nullable: true},
+		{Name: "application_site", Type: field.TypeEnum, Enums: []string{"helloproject", "mline"}, Default: "helloproject"},
 		{Name: "application_start_date", Type: field.TypeTime, Nullable: true},
 		{Name: "application_due_date", Type: field.TypeTime, Nullable: true},
 		{Name: "payment_start_date", Type: field.TypeTime, Nullable: true},
@@ -296,13 +297,13 @@ var (
 		ForeignKeys: []*schema.ForeignKey{
 			{
 				Symbol:     "hpfc_event_tickets_hp_events_hpfc_event_tickets",
-				Columns:    []*schema.Column{HpfcEventTicketsColumns[12]},
+				Columns:    []*schema.Column{HpfcEventTicketsColumns[13]},
 				RefColumns: []*schema.Column{HpEventsColumns[0]},
 				OnDelete:   schema.SetNull,
 			},
 			{
 				Symbol:     "hpfc_event_tickets_users_hpfc_event_tickets",
-				Columns:    []*schema.Column{HpfcEventTicketsColumns[13]},
+				Columns:    []*schema.Column{HpfcEventTicketsColumns[14]},
 				RefColumns: []*schema.Column{UsersColumns[0]},
 				OnDelete:   schema.Cascade,
 			},
@@ -311,7 +312,7 @@ var (
 			{
 				Name:    "hpfceventticket_user_hpfc_event_tickets_hp_event_hpfc_event_tickets",
 				Unique:  false,
-				Columns: []*schema.Column{HpfcEventTicketsColumns[13], HpfcEventTicketsColumns[12]},
+				Columns: []*schema.Column{HpfcEventTicketsColumns[14], HpfcEventTicketsColumns[13]},
 			},
 		},
 	}

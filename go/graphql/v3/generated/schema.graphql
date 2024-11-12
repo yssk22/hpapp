@@ -64,6 +64,7 @@ input HPFollowUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/serv
 input UpsertEventsParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.UpsertEventsParams") {
   fcMemberSha256: String!
   userId: Int!
+  site: HPEventFCTicketSite!
   applications: [EventTicketApplicationInput!]
 }
 
@@ -77,6 +78,11 @@ enum HPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enu
   follow
   follow_with_notification
   unfollow
+}
+
+enum HPEventFCTicketSite @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketSite") {
+  hello_project
+  m_line
 }
 
 input EventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.EventTicketApplication") {
@@ -94,6 +100,7 @@ input EventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/se
 }
 
 enum HPEventFCTicketStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketStatus") {
+  before_lottery
   completed
   payment_overdue
   pending_payment

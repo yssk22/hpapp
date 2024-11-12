@@ -207,13 +207,20 @@ type HPFCEventTicket implements Node {
   fcMemberSha256: String!
   applicationTitle: String!
   applicationID: String
+  applicationSite: HPFCEventTicketHPEventFCTicketSite!
   applicationStartDate: Time
   applicationDueDate: Time
   paymentStartDate: Time
   paymentDueDate: Time
 }
+"""HPFCEventTicketHPEventFCTicketSite is enum for the field application_site"""
+enum HPFCEventTicketHPEventFCTicketSite @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketSite") {
+  helloproject
+  mline
+}
 """HPFCEventTicketHPEventFCTicketStatus is enum for the field status"""
 enum HPFCEventTicketHPEventFCTicketStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketStatus") {
+  BeforeLottery
   Completed
   PaymentOverdue
   PendingPayment

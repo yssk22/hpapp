@@ -486,6 +486,36 @@ func ApplicationIDContainsFold(v string) predicate.HPFCEventTicket {
 	return predicate.HPFCEventTicket(sql.FieldContainsFold(FieldApplicationID, v))
 }
 
+// ApplicationSiteEQ applies the EQ predicate on the "application_site" field.
+func ApplicationSiteEQ(v enums.HPEventFCTicketSite) predicate.HPFCEventTicket {
+	vc := v
+	return predicate.HPFCEventTicket(sql.FieldEQ(FieldApplicationSite, vc))
+}
+
+// ApplicationSiteNEQ applies the NEQ predicate on the "application_site" field.
+func ApplicationSiteNEQ(v enums.HPEventFCTicketSite) predicate.HPFCEventTicket {
+	vc := v
+	return predicate.HPFCEventTicket(sql.FieldNEQ(FieldApplicationSite, vc))
+}
+
+// ApplicationSiteIn applies the In predicate on the "application_site" field.
+func ApplicationSiteIn(vs ...enums.HPEventFCTicketSite) predicate.HPFCEventTicket {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFCEventTicket(sql.FieldIn(FieldApplicationSite, v...))
+}
+
+// ApplicationSiteNotIn applies the NotIn predicate on the "application_site" field.
+func ApplicationSiteNotIn(vs ...enums.HPEventFCTicketSite) predicate.HPFCEventTicket {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFCEventTicket(sql.FieldNotIn(FieldApplicationSite, v...))
+}
+
 // ApplicationStartDateEQ applies the EQ predicate on the "application_start_date" field.
 func ApplicationStartDateEQ(v time.Time) predicate.HPFCEventTicket {
 	return predicate.HPFCEventTicket(sql.FieldEQ(FieldApplicationStartDate, v))

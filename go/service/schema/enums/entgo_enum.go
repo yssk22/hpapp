@@ -103,9 +103,21 @@ func (HPElineupMallItemCategory) Values() (types []string) {
 	return
 }
 
+func (HPEventFCTicketSite) Values() (types []string) {
+
+	for _, r := range []HPEventFCTicketSite{
+		HPEventFCTicketSiteHelloProject,
+		HPEventFCTicketSiteMLine,
+	} {
+		types = append(types, string(r))
+	}
+	return
+}
+
 func (HPEventFCTicketStatus) Values() (types []string) {
 
 	for _, r := range []HPEventFCTicketStatus{
+		HPEventFCTicketStatusBeforeLottery,
 		HPEventFCTicketStatusCompleted,
 		HPEventFCTicketStatusPaymentOverdue,
 		HPEventFCTicketStatusPendingPayment,

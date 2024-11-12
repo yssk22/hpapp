@@ -20,6 +20,7 @@ import (
 type UpsertEventsParams struct {
 	FCMemberSha256 string
 	UserId         int
+	Site           enums.HPEventFCTicketSite
 	Applications   []EventTicketApplication
 }
 type EventTicketApplication struct {
@@ -62,6 +63,7 @@ func UpsertEventsAndApplications(ctx context.Context, params UpsertEventsParams)
 			ApplicationTitle:     app.Title,
 			Num:                  app.Num,
 			Status:               app.Status,
+			ApplicationSite:      params.Site,
 			ApplicationID:        app.ApplicationID,
 			ApplicationStartDate: app.ApplicationStartDate,
 			ApplicationDueDate:   app.ApplicationDueDate,
@@ -128,6 +130,7 @@ type upsertFCEventTicketParams struct {
 	Num                  int
 	Status               enums.HPEventFCTicketStatus
 	ApplicationID        *string
+	ApplicationSite      enums.HPEventFCTicketSite
 	ApplicationStartDate *time.Time
 	ApplicationDueDate   *time.Time
 	PaymentStartDate     *time.Time
@@ -199,6 +202,7 @@ func upsertFCEventTicket(ctx context.Context, params upsertFCEventTicketParams) 
 		SetEventID(params.EventId).
 		SetFcMemberSha256(params.MemberSha256).
 		SetApplicationTitle(params.ApplicationTitle).
+		SetApplicationSite(params.ApplicationSite).
 		SetNillableApplicationID(params.ApplicationID).
 		SetNum(params.Num).
 		SetStatus(params.Status).
