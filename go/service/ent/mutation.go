@@ -10776,6 +10776,7 @@ type HPFCEventTicketMutation struct {
 	fc_member_sha256       *string
 	application_title      *string
 	application_id         *string
+	application_site       *enums.HPEventFCTicketSite
 	application_start_date *time.Time
 	application_due_date   *time.Time
 	payment_start_date     *time.Time
@@ -11199,6 +11200,42 @@ func (m *HPFCEventTicketMutation) ResetApplicationID() {
 	delete(m.clearedFields, hpfceventticket.FieldApplicationID)
 }
 
+// SetApplicationSite sets the "application_site" field.
+func (m *HPFCEventTicketMutation) SetApplicationSite(eefts enums.HPEventFCTicketSite) {
+	m.application_site = &eefts
+}
+
+// ApplicationSite returns the value of the "application_site" field in the mutation.
+func (m *HPFCEventTicketMutation) ApplicationSite() (r enums.HPEventFCTicketSite, exists bool) {
+	v := m.application_site
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldApplicationSite returns the old "application_site" field's value of the HPFCEventTicket entity.
+// If the HPFCEventTicket object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFCEventTicketMutation) OldApplicationSite(ctx context.Context) (v enums.HPEventFCTicketSite, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldApplicationSite is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldApplicationSite requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldApplicationSite: %w", err)
+	}
+	return oldValue.ApplicationSite, nil
+}
+
+// ResetApplicationSite resets all changes to the "application_site" field.
+func (m *HPFCEventTicketMutation) ResetApplicationSite() {
+	m.application_site = nil
+}
+
 // SetApplicationStartDate sets the "application_start_date" field.
 func (m *HPFCEventTicketMutation) SetApplicationStartDate(t time.Time) {
 	m.application_start_date = &t
@@ -11543,7 +11580,7 @@ func (m *HPFCEventTicketMutation) Type() string {
 // order to get all numeric fields that were incremented/decremented, call
 // AddedFields().
 func (m *HPFCEventTicketMutation) Fields() []string {
-	fields := make([]string, 0, 12)
+	fields := make([]string, 0, 13)
 	if m.created_at != nil {
 		fields = append(fields, hpfceventticket.FieldCreatedAt)
 	}
@@ -11564,6 +11601,9 @@ func (m *HPFCEventTicketMutation) Fields() []string {
 	}
 	if m.application_id != nil {
 		fields = append(fields, hpfceventticket.FieldApplicationID)
+	}
+	if m.application_site != nil {
+		fields = append(fields, hpfceventticket.FieldApplicationSite)
 	}
 	if m.application_start_date != nil {
 		fields = append(fields, hpfceventticket.FieldApplicationStartDate)
@@ -11602,6 +11642,8 @@ func (m *HPFCEventTicketMutation) Field(name string) (ent.Value, bool) {
 		return m.ApplicationTitle()
 	case hpfceventticket.FieldApplicationID:
 		return m.ApplicationID()
+	case hpfceventticket.FieldApplicationSite:
+		return m.ApplicationSite()
 	case hpfceventticket.FieldApplicationStartDate:
 		return m.ApplicationStartDate()
 	case hpfceventticket.FieldApplicationDueDate:
@@ -11635,6 +11677,8 @@ func (m *HPFCEventTicketMutation) OldField(ctx context.Context, name string) (en
 		return m.OldApplicationTitle(ctx)
 	case hpfceventticket.FieldApplicationID:
 		return m.OldApplicationID(ctx)
+	case hpfceventticket.FieldApplicationSite:
+		return m.OldApplicationSite(ctx)
 	case hpfceventticket.FieldApplicationStartDate:
 		return m.OldApplicationStartDate(ctx)
 	case hpfceventticket.FieldApplicationDueDate:
@@ -11702,6 +11746,13 @@ func (m *HPFCEventTicketMutation) SetField(name string, value ent.Value) error {
 			return fmt.Errorf("unexpected type %T for field %s", value, name)
 		}
 		m.SetApplicationID(v)
+		return nil
+	case hpfceventticket.FieldApplicationSite:
+		v, ok := value.(enums.HPEventFCTicketSite)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetApplicationSite(v)
 		return nil
 	case hpfceventticket.FieldApplicationStartDate:
 		v, ok := value.(time.Time)
@@ -11867,6 +11918,9 @@ func (m *HPFCEventTicketMutation) ResetField(name string) error {
 		return nil
 	case hpfceventticket.FieldApplicationID:
 		m.ResetApplicationID()
+		return nil
+	case hpfceventticket.FieldApplicationSite:
+		m.ResetApplicationSite()
 		return nil
 	case hpfceventticket.FieldApplicationStartDate:
 		m.ResetApplicationStartDate()

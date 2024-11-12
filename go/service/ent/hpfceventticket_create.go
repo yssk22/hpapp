@@ -99,6 +99,20 @@ func (hetc *HPFCEventTicketCreate) SetNillableApplicationID(s *string) *HPFCEven
 	return hetc
 }
 
+// SetApplicationSite sets the "application_site" field.
+func (hetc *HPFCEventTicketCreate) SetApplicationSite(eefts enums.HPEventFCTicketSite) *HPFCEventTicketCreate {
+	hetc.mutation.SetApplicationSite(eefts)
+	return hetc
+}
+
+// SetNillableApplicationSite sets the "application_site" field if the given value is not nil.
+func (hetc *HPFCEventTicketCreate) SetNillableApplicationSite(eefts *enums.HPEventFCTicketSite) *HPFCEventTicketCreate {
+	if eefts != nil {
+		hetc.SetApplicationSite(*eefts)
+	}
+	return hetc
+}
+
 // SetApplicationStartDate sets the "application_start_date" field.
 func (hetc *HPFCEventTicketCreate) SetApplicationStartDate(t time.Time) *HPFCEventTicketCreate {
 	hetc.mutation.SetApplicationStartDate(t)
@@ -232,6 +246,10 @@ func (hetc *HPFCEventTicketCreate) defaults() error {
 		v := hpfceventticket.DefaultStatus
 		hetc.mutation.SetStatus(v)
 	}
+	if _, ok := hetc.mutation.ApplicationSite(); !ok {
+		v := hpfceventticket.DefaultApplicationSite
+		hetc.mutation.SetApplicationSite(v)
+	}
 	return nil
 }
 
@@ -253,6 +271,14 @@ func (hetc *HPFCEventTicketCreate) check() error {
 	}
 	if _, ok := hetc.mutation.ApplicationTitle(); !ok {
 		return &ValidationError{Name: "application_title", err: errors.New(`ent: missing required field "HPFCEventTicket.application_title"`)}
+	}
+	if _, ok := hetc.mutation.ApplicationSite(); !ok {
+		return &ValidationError{Name: "application_site", err: errors.New(`ent: missing required field "HPFCEventTicket.application_site"`)}
+	}
+	if v, ok := hetc.mutation.ApplicationSite(); ok {
+		if err := hpfceventticket.ApplicationSiteValidator(v); err != nil {
+			return &ValidationError{Name: "application_site", err: fmt.Errorf(`ent: validator failed for field "HPFCEventTicket.application_site": %w`, err)}
+		}
 	}
 	if _, ok := hetc.mutation.OwnerUserID(); !ok {
 		return &ValidationError{Name: "owner_user_id", err: errors.New(`ent: missing required field "HPFCEventTicket.owner_user_id"`)}
@@ -314,6 +340,10 @@ func (hetc *HPFCEventTicketCreate) createSpec() (*HPFCEventTicket, *sqlgraph.Cre
 	if value, ok := hetc.mutation.ApplicationID(); ok {
 		_spec.SetField(hpfceventticket.FieldApplicationID, field.TypeString, value)
 		_node.ApplicationID = &value
+	}
+	if value, ok := hetc.mutation.ApplicationSite(); ok {
+		_spec.SetField(hpfceventticket.FieldApplicationSite, field.TypeEnum, value)
+		_node.ApplicationSite = value
 	}
 	if value, ok := hetc.mutation.ApplicationStartDate(); ok {
 		_spec.SetField(hpfceventticket.FieldApplicationStartDate, field.TypeTime, value)
@@ -504,6 +534,18 @@ func (u *HPFCEventTicketUpsert) UpdateApplicationID() *HPFCEventTicketUpsert {
 // ClearApplicationID clears the value of the "application_id" field.
 func (u *HPFCEventTicketUpsert) ClearApplicationID() *HPFCEventTicketUpsert {
 	u.SetNull(hpfceventticket.FieldApplicationID)
+	return u
+}
+
+// SetApplicationSite sets the "application_site" field.
+func (u *HPFCEventTicketUpsert) SetApplicationSite(v enums.HPEventFCTicketSite) *HPFCEventTicketUpsert {
+	u.Set(hpfceventticket.FieldApplicationSite, v)
+	return u
+}
+
+// UpdateApplicationSite sets the "application_site" field to the value that was provided on create.
+func (u *HPFCEventTicketUpsert) UpdateApplicationSite() *HPFCEventTicketUpsert {
+	u.SetExcluded(hpfceventticket.FieldApplicationSite)
 	return u
 }
 
@@ -738,6 +780,20 @@ func (u *HPFCEventTicketUpsertOne) UpdateApplicationID() *HPFCEventTicketUpsertO
 func (u *HPFCEventTicketUpsertOne) ClearApplicationID() *HPFCEventTicketUpsertOne {
 	return u.Update(func(s *HPFCEventTicketUpsert) {
 		s.ClearApplicationID()
+	})
+}
+
+// SetApplicationSite sets the "application_site" field.
+func (u *HPFCEventTicketUpsertOne) SetApplicationSite(v enums.HPEventFCTicketSite) *HPFCEventTicketUpsertOne {
+	return u.Update(func(s *HPFCEventTicketUpsert) {
+		s.SetApplicationSite(v)
+	})
+}
+
+// UpdateApplicationSite sets the "application_site" field to the value that was provided on create.
+func (u *HPFCEventTicketUpsertOne) UpdateApplicationSite() *HPFCEventTicketUpsertOne {
+	return u.Update(func(s *HPFCEventTicketUpsert) {
+		s.UpdateApplicationSite()
 	})
 }
 
@@ -1148,6 +1204,20 @@ func (u *HPFCEventTicketUpsertBulk) UpdateApplicationID() *HPFCEventTicketUpsert
 func (u *HPFCEventTicketUpsertBulk) ClearApplicationID() *HPFCEventTicketUpsertBulk {
 	return u.Update(func(s *HPFCEventTicketUpsert) {
 		s.ClearApplicationID()
+	})
+}
+
+// SetApplicationSite sets the "application_site" field.
+func (u *HPFCEventTicketUpsertBulk) SetApplicationSite(v enums.HPEventFCTicketSite) *HPFCEventTicketUpsertBulk {
+	return u.Update(func(s *HPFCEventTicketUpsert) {
+		s.SetApplicationSite(v)
+	})
+}
+
+// UpdateApplicationSite sets the "application_site" field to the value that was provided on create.
+func (u *HPFCEventTicketUpsertBulk) UpdateApplicationSite() *HPFCEventTicketUpsertBulk {
+	return u.Update(func(s *HPFCEventTicketUpsert) {
+		s.UpdateApplicationSite()
 	})
 }
 

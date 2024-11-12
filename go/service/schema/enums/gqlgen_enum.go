@@ -260,8 +260,29 @@ func (e *HPElineupMallItemCategory) UnmarshalGQL(v interface{}) error {
 	return nil
 }
 
+func (e HPEventFCTicketSite) MarshalGQL(w io.Writer) {
+	switch e {
+	case HPEventFCTicketSiteHelloProject:
+		fmt.Fprint(w, strconv.Quote("hello_project"))
+	case HPEventFCTicketSiteMLine:
+		fmt.Fprint(w, strconv.Quote("m_line"))
+	}
+}
+
+func (e *HPEventFCTicketSite) UnmarshalGQL(v interface{}) error {
+	switch v.(string) {
+	case "hello_project":
+		*e = HPEventFCTicketSiteHelloProject
+	case "m_line":
+		*e = HPEventFCTicketSiteMLine
+	}
+	return nil
+}
+
 func (e HPEventFCTicketStatus) MarshalGQL(w io.Writer) {
 	switch e {
+	case HPEventFCTicketStatusBeforeLottery:
+		fmt.Fprint(w, strconv.Quote("before_lottery"))
 	case HPEventFCTicketStatusCompleted:
 		fmt.Fprint(w, strconv.Quote("completed"))
 	case HPEventFCTicketStatusPaymentOverdue:
@@ -279,6 +300,8 @@ func (e HPEventFCTicketStatus) MarshalGQL(w io.Writer) {
 
 func (e *HPEventFCTicketStatus) UnmarshalGQL(v interface{}) error {
 	switch v.(string) {
+	case "before_lottery":
+		*e = HPEventFCTicketStatusBeforeLottery
 	case "completed":
 		*e = HPEventFCTicketStatusCompleted
 	case "payment_overdue":

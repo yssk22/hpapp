@@ -110,6 +110,20 @@ func (hetu *HPFCEventTicketUpdate) ClearApplicationID() *HPFCEventTicketUpdate {
 	return hetu
 }
 
+// SetApplicationSite sets the "application_site" field.
+func (hetu *HPFCEventTicketUpdate) SetApplicationSite(eefts enums.HPEventFCTicketSite) *HPFCEventTicketUpdate {
+	hetu.mutation.SetApplicationSite(eefts)
+	return hetu
+}
+
+// SetNillableApplicationSite sets the "application_site" field if the given value is not nil.
+func (hetu *HPFCEventTicketUpdate) SetNillableApplicationSite(eefts *enums.HPEventFCTicketSite) *HPFCEventTicketUpdate {
+	if eefts != nil {
+		hetu.SetApplicationSite(*eefts)
+	}
+	return hetu
+}
+
 // SetApplicationStartDate sets the "application_start_date" field.
 func (hetu *HPFCEventTicketUpdate) SetApplicationStartDate(t time.Time) *HPFCEventTicketUpdate {
 	hetu.mutation.SetApplicationStartDate(t)
@@ -277,6 +291,11 @@ func (hetu *HPFCEventTicketUpdate) check() error {
 			return &ValidationError{Name: "status", err: fmt.Errorf(`ent: validator failed for field "HPFCEventTicket.status": %w`, err)}
 		}
 	}
+	if v, ok := hetu.mutation.ApplicationSite(); ok {
+		if err := hpfceventticket.ApplicationSiteValidator(v); err != nil {
+			return &ValidationError{Name: "application_site", err: fmt.Errorf(`ent: validator failed for field "HPFCEventTicket.application_site": %w`, err)}
+		}
+	}
 	if _, ok := hetu.mutation.UserID(); hetu.mutation.UserCleared() && !ok {
 		return errors.New(`ent: clearing a required unique edge "HPFCEventTicket.user"`)
 	}
@@ -324,6 +343,9 @@ func (hetu *HPFCEventTicketUpdate) sqlSave(ctx context.Context) (n int, err erro
 	}
 	if hetu.mutation.ApplicationIDCleared() {
 		_spec.ClearField(hpfceventticket.FieldApplicationID, field.TypeString)
+	}
+	if value, ok := hetu.mutation.ApplicationSite(); ok {
+		_spec.SetField(hpfceventticket.FieldApplicationSite, field.TypeEnum, value)
 	}
 	if value, ok := hetu.mutation.ApplicationStartDate(); ok {
 		_spec.SetField(hpfceventticket.FieldApplicationStartDate, field.TypeTime, value)
@@ -503,6 +525,20 @@ func (hetuo *HPFCEventTicketUpdateOne) SetNillableApplicationID(s *string) *HPFC
 // ClearApplicationID clears the value of the "application_id" field.
 func (hetuo *HPFCEventTicketUpdateOne) ClearApplicationID() *HPFCEventTicketUpdateOne {
 	hetuo.mutation.ClearApplicationID()
+	return hetuo
+}
+
+// SetApplicationSite sets the "application_site" field.
+func (hetuo *HPFCEventTicketUpdateOne) SetApplicationSite(eefts enums.HPEventFCTicketSite) *HPFCEventTicketUpdateOne {
+	hetuo.mutation.SetApplicationSite(eefts)
+	return hetuo
+}
+
+// SetNillableApplicationSite sets the "application_site" field if the given value is not nil.
+func (hetuo *HPFCEventTicketUpdateOne) SetNillableApplicationSite(eefts *enums.HPEventFCTicketSite) *HPFCEventTicketUpdateOne {
+	if eefts != nil {
+		hetuo.SetApplicationSite(*eefts)
+	}
 	return hetuo
 }
 
@@ -686,6 +722,11 @@ func (hetuo *HPFCEventTicketUpdateOne) check() error {
 			return &ValidationError{Name: "status", err: fmt.Errorf(`ent: validator failed for field "HPFCEventTicket.status": %w`, err)}
 		}
 	}
+	if v, ok := hetuo.mutation.ApplicationSite(); ok {
+		if err := hpfceventticket.ApplicationSiteValidator(v); err != nil {
+			return &ValidationError{Name: "application_site", err: fmt.Errorf(`ent: validator failed for field "HPFCEventTicket.application_site": %w`, err)}
+		}
+	}
 	if _, ok := hetuo.mutation.UserID(); hetuo.mutation.UserCleared() && !ok {
 		return errors.New(`ent: clearing a required unique edge "HPFCEventTicket.user"`)
 	}
@@ -750,6 +791,9 @@ func (hetuo *HPFCEventTicketUpdateOne) sqlSave(ctx context.Context) (_node *HPFC
 	}
 	if hetuo.mutation.ApplicationIDCleared() {
 		_spec.ClearField(hpfceventticket.FieldApplicationID, field.TypeString)
+	}
+	if value, ok := hetuo.mutation.ApplicationSite(); ok {
+		_spec.SetField(hpfceventticket.FieldApplicationSite, field.TypeEnum, value)
 	}
 	if value, ok := hetuo.mutation.ApplicationStartDate(); ok {
 		_spec.SetField(hpfceventticket.FieldApplicationStartDate, field.TypeTime, value)

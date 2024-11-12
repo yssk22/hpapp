@@ -46,6 +46,11 @@ func (HPFCEventTicket) Fields() []ent.Field {
 		// and normalization didn't work well.
 		field.String("application_title"),
 		field.String("application_id").Nillable().Optional(),
+		field.Enum("application_site").
+			GoType(enums.HPEventFCTicketSiteHelloProject).
+			Default(string(enums.HPEventFCTicketSiteHelloProject)),
+
+		// field.String("application_id").Nillable().Optional(),
 		field.Time("application_start_date").Nillable().Optional(),
 		field.Time("application_due_date").Nillable().Optional(),
 		field.Time("payment_start_date").Nillable().Optional(),

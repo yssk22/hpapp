@@ -975,6 +975,11 @@ func (het *HPFCEventTicketQuery) collectField(ctx context.Context, opCtx *graphq
 				selectedFields = append(selectedFields, hpfceventticket.FieldApplicationID)
 				fieldSeen[hpfceventticket.FieldApplicationID] = struct{}{}
 			}
+		case "applicationSite":
+			if _, ok := fieldSeen[hpfceventticket.FieldApplicationSite]; !ok {
+				selectedFields = append(selectedFields, hpfceventticket.FieldApplicationSite)
+				fieldSeen[hpfceventticket.FieldApplicationSite] = struct{}{}
+			}
 		case "applicationStartDate":
 			if _, ok := fieldSeen[hpfceventticket.FieldApplicationStartDate]; !ok {
 				selectedFields = append(selectedFields, hpfceventticket.FieldApplicationStartDate)

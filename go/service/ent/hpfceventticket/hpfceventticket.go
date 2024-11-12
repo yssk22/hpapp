@@ -31,6 +31,8 @@ const (
 	FieldApplicationTitle = "application_title"
 	// FieldApplicationID holds the string denoting the application_id field in the database.
 	FieldApplicationID = "application_id"
+	// FieldApplicationSite holds the string denoting the application_site field in the database.
+	FieldApplicationSite = "application_site"
 	// FieldApplicationStartDate holds the string denoting the application_start_date field in the database.
 	FieldApplicationStartDate = "application_start_date"
 	// FieldApplicationDueDate holds the string denoting the application_due_date field in the database.
@@ -73,6 +75,7 @@ var Columns = []string{
 	FieldFcMemberSha256,
 	FieldApplicationTitle,
 	FieldApplicationID,
+	FieldApplicationSite,
 	FieldApplicationStartDate,
 	FieldApplicationDueDate,
 	FieldPaymentStartDate,
@@ -116,10 +119,22 @@ const DefaultStatus enums.HPEventFCTicketStatus = "Submitted"
 // StatusValidator is a validator for the "status" field enum values. It is called by the builders before save.
 func StatusValidator(s enums.HPEventFCTicketStatus) error {
 	switch s {
-	case "Completed", "PaymentOverdue", "PendingPayment", "Rejected", "Submitted", "Unknown":
+	case "BeforeLottery", "Completed", "PaymentOverdue", "PendingPayment", "Rejected", "Submitted", "Unknown":
 		return nil
 	default:
 		return fmt.Errorf("hpfceventticket: invalid enum value for status field: %q", s)
+	}
+}
+
+const DefaultApplicationSite enums.HPEventFCTicketSite = "helloproject"
+
+// ApplicationSiteValidator is a validator for the "application_site" field enum values. It is called by the builders before save.
+func ApplicationSiteValidator(as enums.HPEventFCTicketSite) error {
+	switch as {
+	case "helloproject", "mline":
+		return nil
+	default:
+		return fmt.Errorf("hpfceventticket: invalid enum value for application_site field: %q", as)
 	}
 }
 
@@ -164,6 +179,11 @@ func ByApplicationTitle(opts ...sql.OrderTermOption) Order {
 // ByApplicationID orders the results by the application_id field.
 func ByApplicationID(opts ...sql.OrderTermOption) Order {
 	return sql.OrderByField(FieldApplicationID, opts...).ToFunc()
+}
+
+// ByApplicationSite orders the results by the application_site field.
+func ByApplicationSite(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldApplicationSite, opts...).ToFunc()
 }
 
 // ByApplicationStartDate orders the results by the application_start_date field.
@@ -224,4 +244,11 @@ var (
 	_ graphql.Marshaler = (*enums.HPEventFCTicketStatus)(nil)
 	// enums.HPEventFCTicketStatus must implement graphql.Unmarshaler.
 	_ graphql.Unmarshaler = (*enums.HPEventFCTicketStatus)(nil)
+)
+
+var (
+	// enums.HPEventFCTicketSite must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPEventFCTicketSite)(nil)
+	// enums.HPEventFCTicketSite must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPEventFCTicketSite)(nil)
 )

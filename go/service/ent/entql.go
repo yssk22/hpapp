@@ -233,6 +233,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			hpfceventticket.FieldFcMemberSha256:       {Type: field.TypeString, Column: hpfceventticket.FieldFcMemberSha256},
 			hpfceventticket.FieldApplicationTitle:     {Type: field.TypeString, Column: hpfceventticket.FieldApplicationTitle},
 			hpfceventticket.FieldApplicationID:        {Type: field.TypeString, Column: hpfceventticket.FieldApplicationID},
+			hpfceventticket.FieldApplicationSite:      {Type: field.TypeEnum, Column: hpfceventticket.FieldApplicationSite},
 			hpfceventticket.FieldApplicationStartDate: {Type: field.TypeTime, Column: hpfceventticket.FieldApplicationStartDate},
 			hpfceventticket.FieldApplicationDueDate:   {Type: field.TypeTime, Column: hpfceventticket.FieldApplicationDueDate},
 			hpfceventticket.FieldPaymentStartDate:     {Type: field.TypeTime, Column: hpfceventticket.FieldPaymentStartDate},
@@ -2481,6 +2482,11 @@ func (f *HPFCEventTicketFilter) WhereApplicationTitle(p entql.StringP) {
 // WhereApplicationID applies the entql string predicate on the application_id field.
 func (f *HPFCEventTicketFilter) WhereApplicationID(p entql.StringP) {
 	f.Where(p.Field(hpfceventticket.FieldApplicationID))
+}
+
+// WhereApplicationSite applies the entql string predicate on the application_site field.
+func (f *HPFCEventTicketFilter) WhereApplicationSite(p entql.StringP) {
+	f.Where(p.Field(hpfceventticket.FieldApplicationSite))
 }
 
 // WhereApplicationStartDate applies the entql time.Time predicate on the application_start_date field.

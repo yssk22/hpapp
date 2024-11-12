@@ -31,6 +31,7 @@ func TestUPFCMutation(t *testing.T) {
 		_, err := UpsertEventsAndApplications(ctx, UpsertEventsParams{
 			FCMemberSha256: "dummysha256",
 			UserId:         uid,
+			Site:           enums.HPEventFCTicketSiteHelloProject,
 			Applications: []EventTicketApplication{
 				{
 					Title:                   "Juice=Juice 入江里咲バースデーイベント2022",
@@ -50,11 +51,13 @@ func TestUPFCMutation(t *testing.T) {
 		a.Equals("LANDMARK HALL", event.Venue)
 		a.Equals(1, len(event.Edges.HpfcEventTickets))
 		a.Equals(enums.HPEventFCTicketStatusSubmitted, event.Edges.HpfcEventTickets[0].Status)
+		a.Equals(enums.HPEventFCTicketSiteHelloProject, event.Edges.HpfcEventTickets[0].ApplicationSite)
 
 		// now the application is rejected so trying to submit 2次受付
 		_, err = UpsertEventsAndApplications(ctx, UpsertEventsParams{
 			FCMemberSha256: "dummysha256",
 			UserId:         uid,
+			Site:           enums.HPEventFCTicketSiteHelloProject,
 			Applications: []EventTicketApplication{
 				{
 					Title:                   "Juice=Juice 入江里咲バースデーイベント2022",
@@ -88,6 +91,7 @@ func TestUPFCMutation(t *testing.T) {
 		_, err = UpsertEventsAndApplications(ctx, UpsertEventsParams{
 			FCMemberSha256: "dummysha256",
 			UserId:         uid,
+			Site:           enums.HPEventFCTicketSiteHelloProject,
 			Applications: []EventTicketApplication{
 				{
 					Title:                   "Juice=Juice 入江里咲バースデーイベント2022",
@@ -121,6 +125,7 @@ func TestUPFCMutation(t *testing.T) {
 		_, err = UpsertEventsAndApplications(ctx, UpsertEventsParams{
 			FCMemberSha256: "dummysha256",
 			UserId:         uid,
+			Site:           enums.HPEventFCTicketSiteHelloProject,
 			Applications: []EventTicketApplication{
 				{
 					Title:                   "Juice=Juice 入江里咲バースデーイベント2022",
