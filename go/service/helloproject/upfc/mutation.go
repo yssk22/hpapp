@@ -17,19 +17,19 @@ import (
 	"github.com/yssk22/hpapp/go/system/slog"
 )
 
-type HPEventTicketApplicationUpsertParams struct {
-	FCMemberSha256 string
-	UserId         int
-	Site           enums.HPFCEventTicketSite
-	Applications   []HPEventTicketApplication
+type HPFCEventTicketApplicationUpsertParams struct {
+	UserId       int
+	Applications []HPFCEventTicketApplication
 }
-type HPEventTicketApplication struct {
+type HPFCEventTicketApplication struct {
+	MemberSha256            string // sha256 of FC username
 	Title                   string
 	OpenAt                  *time.Time
 	StartAt                 time.Time
 	FullyQualifiedVenueName string
 	Num                     int
 	Status                  enums.HPFCEventTicketApplicationStatus
+	ApplicationSite         enums.HPFCEventTicketApplicationSite
 	ApplicationID           *string
 	ApplicationStartDate    *time.Time
 	ApplicationDueDate      *time.Time
@@ -39,10 +39,7 @@ type HPEventTicketApplication struct {
 
 // UpsertEventsAndApplications upserts the events and their applications
 // The information is collected by users' mobile application we split that info into HPEvent and HPFCEventTikect ents.
-func UpsertEventsAndApplications(ctx context.Context, params HPEventTicketApplicationUpsertParams) ([]*ent.HPEvent, error) {
-	if params.FCMemberSha256 == "" {
-		return nil, fmt.Errorf("member sha256 is empty")
-	}
+func UpsertEventsAndApplications(ctx context.Context, params HPFCEventTicketApplicationUpsertParams) ([]*ent.HPEvent, error) {
 	var events []*ent.HPEvent
 	var err error
 	var lastUpsertedEvent *ent.HPEvent
@@ -59,11 +56,11 @@ func UpsertEventsAndApplications(ctx context.Context, params HPEventTicketApplic
 		_, err = upsertFCEventTicket(ctx, upsertFCEventTicketParams{
 			EventId:              lastUpsertedEvent.ID,
 			UserId:               params.UserId,
-			MemberSha256:         params.FCMemberSha256,
+			MemberSha256:         app.MemberSha256,
 			ApplicationTitle:     app.Title,
 			Num:                  app.Num,
 			Status:               app.Status,
-			ApplicationSite:      params.Site,
+			ApplicationSite:      app.ApplicationSite,
 			ApplicationID:        app.ApplicationID,
 			ApplicationStartDate: app.ApplicationStartDate,
 			ApplicationDueDate:   app.ApplicationDueDate,
@@ -130,7 +127,7 @@ type upsertFCEventTicketParams struct {
 	Num                  int
 	Status               enums.HPFCEventTicketApplicationStatus
 	ApplicationID        *string
-	ApplicationSite      enums.HPFCEventTicketSite
+	ApplicationSite      enums.HPFCEventTicketApplicationSite
 	ApplicationStartDate *time.Time
 	ApplicationDueDate   *time.Time
 	PaymentStartDate     *time.Time

@@ -35,7 +35,7 @@ type HPFCEventTicket struct {
 	// ApplicationID holds the value of the "application_id" field.
 	ApplicationID *string `json:"application_id,omitempty"`
 	// ApplicationSite holds the value of the "application_site" field.
-	ApplicationSite enums.HPFCEventTicketSite `json:"application_site,omitempty"`
+	ApplicationSite enums.HPFCEventTicketApplicationSite `json:"application_site,omitempty"`
 	// ApplicationStartDate holds the value of the "application_start_date" field.
 	ApplicationStartDate *time.Time `json:"application_start_date,omitempty"`
 	// ApplicationDueDate holds the value of the "application_due_date" field.
@@ -171,7 +171,7 @@ func (het *HPFCEventTicket) assignValues(columns []string, values []any) error {
 			if value, ok := values[i].(*sql.NullString); !ok {
 				return fmt.Errorf("unexpected type %T for field application_site", values[i])
 			} else if value.Valid {
-				het.ApplicationSite = enums.HPFCEventTicketSite(value.String)
+				het.ApplicationSite = enums.HPFCEventTicketApplicationSite(value.String)
 			}
 		case hpfceventticket.FieldApplicationStartDate:
 			if value, ok := values[i].(*sql.NullTime); !ok {

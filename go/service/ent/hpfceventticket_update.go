@@ -111,15 +111,15 @@ func (hetu *HPFCEventTicketUpdate) ClearApplicationID() *HPFCEventTicketUpdate {
 }
 
 // SetApplicationSite sets the "application_site" field.
-func (hetu *HPFCEventTicketUpdate) SetApplicationSite(eets enums.HPFCEventTicketSite) *HPFCEventTicketUpdate {
-	hetu.mutation.SetApplicationSite(eets)
+func (hetu *HPFCEventTicketUpdate) SetApplicationSite(eetas enums.HPFCEventTicketApplicationSite) *HPFCEventTicketUpdate {
+	hetu.mutation.SetApplicationSite(eetas)
 	return hetu
 }
 
 // SetNillableApplicationSite sets the "application_site" field if the given value is not nil.
-func (hetu *HPFCEventTicketUpdate) SetNillableApplicationSite(eets *enums.HPFCEventTicketSite) *HPFCEventTicketUpdate {
-	if eets != nil {
-		hetu.SetApplicationSite(*eets)
+func (hetu *HPFCEventTicketUpdate) SetNillableApplicationSite(eetas *enums.HPFCEventTicketApplicationSite) *HPFCEventTicketUpdate {
+	if eetas != nil {
+		hetu.SetApplicationSite(*eetas)
 	}
 	return hetu
 }
@@ -529,15 +529,15 @@ func (hetuo *HPFCEventTicketUpdateOne) ClearApplicationID() *HPFCEventTicketUpda
 }
 
 // SetApplicationSite sets the "application_site" field.
-func (hetuo *HPFCEventTicketUpdateOne) SetApplicationSite(eets enums.HPFCEventTicketSite) *HPFCEventTicketUpdateOne {
-	hetuo.mutation.SetApplicationSite(eets)
+func (hetuo *HPFCEventTicketUpdateOne) SetApplicationSite(eetas enums.HPFCEventTicketApplicationSite) *HPFCEventTicketUpdateOne {
+	hetuo.mutation.SetApplicationSite(eetas)
 	return hetuo
 }
 
 // SetNillableApplicationSite sets the "application_site" field if the given value is not nil.
-func (hetuo *HPFCEventTicketUpdateOne) SetNillableApplicationSite(eets *enums.HPFCEventTicketSite) *HPFCEventTicketUpdateOne {
-	if eets != nil {
-		hetuo.SetApplicationSite(*eets)
+func (hetuo *HPFCEventTicketUpdateOne) SetNillableApplicationSite(eetas *enums.HPFCEventTicketApplicationSite) *HPFCEventTicketUpdateOne {
+	if eetas != nil {
+		hetuo.SetApplicationSite(*eetas)
 	}
 	return hetuo
 }

@@ -10776,7 +10776,7 @@ type HPFCEventTicketMutation struct {
 	fc_member_sha256       *string
 	application_title      *string
 	application_id         *string
-	application_site       *enums.HPFCEventTicketSite
+	application_site       *enums.HPFCEventTicketApplicationSite
 	application_start_date *time.Time
 	application_due_date   *time.Time
 	payment_start_date     *time.Time
@@ -11201,12 +11201,12 @@ func (m *HPFCEventTicketMutation) ResetApplicationID() {
 }
 
 // SetApplicationSite sets the "application_site" field.
-func (m *HPFCEventTicketMutation) SetApplicationSite(eets enums.HPFCEventTicketSite) {
-	m.application_site = &eets
+func (m *HPFCEventTicketMutation) SetApplicationSite(eetas enums.HPFCEventTicketApplicationSite) {
+	m.application_site = &eetas
 }
 
 // ApplicationSite returns the value of the "application_site" field in the mutation.
-func (m *HPFCEventTicketMutation) ApplicationSite() (r enums.HPFCEventTicketSite, exists bool) {
+func (m *HPFCEventTicketMutation) ApplicationSite() (r enums.HPFCEventTicketApplicationSite, exists bool) {
 	v := m.application_site
 	if v == nil {
 		return
@@ -11217,7 +11217,7 @@ func (m *HPFCEventTicketMutation) ApplicationSite() (r enums.HPFCEventTicketSite
 // OldApplicationSite returns the old "application_site" field's value of the HPFCEventTicket entity.
 // If the HPFCEventTicket object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
-func (m *HPFCEventTicketMutation) OldApplicationSite(ctx context.Context) (v enums.HPFCEventTicketSite, err error) {
+func (m *HPFCEventTicketMutation) OldApplicationSite(ctx context.Context) (v enums.HPFCEventTicketApplicationSite, err error) {
 	if !m.op.Is(OpUpdateOne) {
 		return v, errors.New("OldApplicationSite is only allowed on UpdateOne operations")
 	}
@@ -11748,7 +11748,7 @@ func (m *HPFCEventTicketMutation) SetField(name string, value ent.Value) error {
 		m.SetApplicationID(v)
 		return nil
 	case hpfceventticket.FieldApplicationSite:
-		v, ok := value.(enums.HPFCEventTicketSite)
+		v, ok := value.(enums.HPFCEventTicketApplicationSite)
 		if !ok {
 			return fmt.Errorf("unexpected type %T for field %s", value, name)
 		}

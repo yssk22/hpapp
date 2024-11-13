@@ -1,8 +1,8 @@
 package enums
 
-type HPFCEventTicketSite string
+type HPFCEventTicketApplicationSite string
 
 const (
-	HPFCEventTicketSiteHelloProject HPFCEventTicketSite = "helloproject"
-	HPFCEventTicketSiteMLine        HPFCEventTicketSite = "mline"
+	HPFCEventTicketApplicationSiteHelloProject HPFCEventTicketApplicationSite = "helloproject"
+	HPFCEventTicketApplicationSiteMLine        HPFCEventTicketApplicationSite = "mline"
 )

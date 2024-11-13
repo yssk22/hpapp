@@ -207,11 +207,16 @@ type HPFCEventTicket implements Node {
   fcMemberSha256: String!
   applicationTitle: String!
   applicationID: String
-  applicationSite: HPFCEventTicketHPFCEventTicketSite!
+  applicationSite: HPFCEventTicketHPFCEventTicketApplicationSite!
   applicationStartDate: Time
   applicationDueDate: Time
   paymentStartDate: Time
   paymentDueDate: Time
+}
+"""HPFCEventTicketHPFCEventTicketApplicationSite is enum for the field application_site"""
+enum HPFCEventTicketHPFCEventTicketApplicationSite @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketApplicationSite") {
+  helloproject
+  mline
 }
 """HPFCEventTicketHPFCEventTicketApplicationStatus is enum for the field status"""
 enum HPFCEventTicketHPFCEventTicketApplicationStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketApplicationStatus") {
@@ -222,11 +227,6 @@ enum HPFCEventTicketHPFCEventTicketApplicationStatus @goModel(model: "github.com
   Rejected
   Submitted
   Unknown
-}
-"""HPFCEventTicketHPFCEventTicketSite is enum for the field application_site"""
-enum HPFCEventTicketHPFCEventTicketSite @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketSite") {
-  helloproject
-  mline
 }
 type HPFeedItem implements Node {
   id: ID!

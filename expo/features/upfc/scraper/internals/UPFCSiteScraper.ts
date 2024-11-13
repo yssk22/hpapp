@@ -18,6 +18,8 @@ const jsdom = require('jsdom-jscore-rn').jsdom;
  */
 export default class UPFCSiteScraper implements UPFCScraper {
   private readonly fetcher: UPFCFetcher;
+  private username: string | undefined;
+  private site: UPFCSite | undefined;
 
   constructor(fetcher: UPFCFetcher) {
     this.fetcher = fetcher;
@@ -34,18 +36,23 @@ export default class UPFCSiteScraper implements UPFCScraper {
     if (!this.parseRedirectPageHTML(html)) {
       throw new ErrUPFCAuthentication();
     }
+    this.username = username;
+    this.site = site;
     return true;
   }
 
   /**
    * @returns a list of event applications
    */
-  async getEventApplications(site: UPFCSite): Promise<UPFCEventApplicationTickets[]> {
-    const events = this.fetcher.fetchEventApplicationsHtml(site);
-    const exeEvents = this.fetcher.fetchExecEventApplicationsHtml(site);
-    const tickets = this.fetcher.fetchTicketsHtml(site);
+  async getEventApplications(): Promise<UPFCEventApplicationTickets[]> {
+    if (this.site === undefined) {
+      throw new Error('not authenticated');
+    }
+    const events = this.fetcher.fetchEventApplicationsHtml(this.site);
+    const exeEvents = this.fetcher.fetchExecEventApplicationsHtml(this.site);
+    const tickets = this.fetcher.fetchTicketsHtml(this.site);
     const [eventsHtml, execEventHtml, ticketsHtml] = await Promise.all([events, exeEvents, tickets]);
-    return this.parseEventApplications(eventsHtml, execEventHtml, ticketsHtml, site);
+    return this.parseEventApplications(eventsHtml, execEventHtml, ticketsHtml);
   }
 
   parseRedirectPageHTML(text: string) {
@@ -67,12 +74,11 @@ export default class UPFCSiteScraper implements UPFCScraper {
   parseEventApplications(
     eventsHtml: string,
     execEventHtml: string,
-    ticketsHtml: string,
-    site: UPFCSite
+    ticketsHtml: string
   ): UPFCEventApplicationTickets[] {
-    const eventApplications = this.parseEventApplicationsHtml(eventsHtml, site);
-    const execEventApplications = this.parseEventApplicationsHtml(execEventHtml, site);
-    const ticketApplications = this.parseTicketsHtml(ticketsHtml, site);
+    const eventApplications = this.parseEventApplicationsHtml(eventsHtml);
+    const execEventApplications = this.parseEventApplicationsHtml(execEventHtml);
+    const ticketApplications = this.parseTicketsHtml(ticketsHtml);
     const result: UPFCEventApplicationTickets[] = [];
     const eventMap: Map<string, UPFCEventApplicationTickets> = new Map();
     const allApplications = eventApplications.concat(execEventApplications);
@@ -100,7 +106,7 @@ export default class UPFCSiteScraper implements UPFCScraper {
     return result;
   }
 
-  parseEventApplicationsHtml(text: string, site: UPFCSite): UPFCEventApplication[] {
+  parseEventApplicationsHtml(text: string): UPFCEventApplication[] {
     const doc = jsdom(text);
     const links = doc.querySelectorAll('div.contents-body a');
     if (links === null) {
@@ -108,7 +114,7 @@ export default class UPFCSiteScraper implements UPFCScraper {
     }
     const applications: UPFCEventApplication[] = [];
     for (let i = 0; i < links.length; i++) {
-      const availalble = this.parseEventApplicationLink(links[i], site);
+      const availalble = this.parseEventApplicationLink(links[i]);
       if (availalble) {
         applications.push(availalble);
       }
@@ -116,7 +122,7 @@ export default class UPFCSiteScraper implements UPFCScraper {
     return applications;
   }
 
-  parseTicketsHtml(text: string, site: UPFCSite): UPFCEventApplicationTickets[] {
+  parseTicketsHtml(text: string): UPFCEventApplicationTickets[] {
     const doc = jsdom(text);
     const today = date.getToday();
     const content = doc.querySelector('div.mypage_contents');
@@ -131,7 +137,8 @@ export default class UPFCSiteScraper implements UPFCScraper {
       const node = eventNameDOMs.item(i);
       const application: UPFCEventApplicationTickets = {
         name: this.parseEventApplicationName(node.innerHTML.trim()),
-        site,
+        site: this.site!,
+        username: this.username!,
         tickets: []
       };
       const rows = eventAttrDOMs.item(i).querySelectorAll('table tr');
@@ -182,7 +189,7 @@ export default class UPFCSiteScraper implements UPFCScraper {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  parseEventApplicationLink(link: any, site: UPFCSite): UPFCEventApplication | null {
+  parseEventApplicationLink(link: any): UPFCEventApplication | null {
     const href = link.getAttribute('href');
     const titleSpan = link.querySelector('span');
     if (!href || !titleSpan) {
@@ -222,7 +229,8 @@ export default class UPFCSiteScraper implements UPFCScraper {
     }
     return {
       name,
-      site,
+      site: this.site!,
+      username: this.username!,
       applicationID,
       ...dates
     };

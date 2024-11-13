@@ -41,13 +41,13 @@ describe('date', () => {
   });
 
   test('toQueryString', () => {
-    expect(date.toQueryString(new Date('2005/10/18 10:18:23'))).toEqual('2005-10-18T10:18:23.000');
+    expect(date.toQueryString(new Date('2005/10/18 10:18:23'))).toEqual('2005-10-18T10:18:23.000Z');
     expect(date.toQueryString(new Date('abc'))).toEqual('');
   });
 
   test('toNullableQueryString', () => {
-    expect(date.toNullableQueryString(new Date('2005/10/18 10:18:23'))).toEqual('2005-10-18T10:18:23.000');
-    expect(date.toNullableQueryString(new Date('abc'))).toEqual('null');
+    expect(date.toNullableQueryString(new Date('2005/10/18 10:18:23'))).toEqual('2005-10-18T10:18:23.000Z');
+    expect(date.toNullableQueryString(new Date('abc'))).toEqual(null);
   });
 
   test('getDuration', () => {

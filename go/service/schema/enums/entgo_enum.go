@@ -113,6 +113,17 @@ func (HPEventSource) Values() (types []string) {
 	return
 }
 
+func (HPFCEventTicketApplicationSite) Values() (types []string) {
+
+	for _, r := range []HPFCEventTicketApplicationSite{
+		HPFCEventTicketApplicationSiteHelloProject,
+		HPFCEventTicketApplicationSiteMLine,
+	} {
+		types = append(types, string(r))
+	}
+	return
+}
+
 func (HPFCEventTicketApplicationStatus) Values() (types []string) {
 
 	for _, r := range []HPFCEventTicketApplicationStatus{
@@ -123,17 +134,6 @@ func (HPFCEventTicketApplicationStatus) Values() (types []string) {
 		HPFCEventTicketApplicationStatusRejected,
 		HPFCEventTicketApplicationStatusSubmitted,
 		HPFCEventTicketApplicationStatusUnknown,
-	} {
-		types = append(types, string(r))
-	}
-	return
-}
-
-func (HPFCEventTicketSite) Values() (types []string) {
-
-	for _, r := range []HPFCEventTicketSite{
-		HPFCEventTicketSiteHelloProject,
-		HPFCEventTicketSiteMLine,
 	} {
 		types = append(types, string(r))
 	}

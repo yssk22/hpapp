@@ -275,6 +275,25 @@ func (e *HPEventSource) UnmarshalGQL(v interface{}) error {
 	return nil
 }
 
+func (e HPFCEventTicketApplicationSite) MarshalGQL(w io.Writer) {
+	switch e {
+	case HPFCEventTicketApplicationSiteHelloProject:
+		fmt.Fprint(w, strconv.Quote("hello_project"))
+	case HPFCEventTicketApplicationSiteMLine:
+		fmt.Fprint(w, strconv.Quote("m_line"))
+	}
+}
+
+func (e *HPFCEventTicketApplicationSite) UnmarshalGQL(v interface{}) error {
+	switch v.(string) {
+	case "hello_project":
+		*e = HPFCEventTicketApplicationSiteHelloProject
+	case "m_line":
+		*e = HPFCEventTicketApplicationSiteMLine
+	}
+	return nil
+}
+
 func (e HPFCEventTicketApplicationStatus) MarshalGQL(w io.Writer) {
 	switch e {
 	case HPFCEventTicketApplicationStatusBeforeLottery:
@@ -310,25 +329,6 @@ func (e *HPFCEventTicketApplicationStatus) UnmarshalGQL(v interface{}) error {
 		*e = HPFCEventTicketApplicationStatusSubmitted
 	case "unknown":
 		*e = HPFCEventTicketApplicationStatusUnknown
-	}
-	return nil
-}
-
-func (e HPFCEventTicketSite) MarshalGQL(w io.Writer) {
-	switch e {
-	case HPFCEventTicketSiteHelloProject:
-		fmt.Fprint(w, strconv.Quote("hello_project"))
-	case HPFCEventTicketSiteMLine:
-		fmt.Fprint(w, strconv.Quote("m_line"))
-	}
-}
-
-func (e *HPFCEventTicketSite) UnmarshalGQL(v interface{}) error {
-	switch v.(string) {
-	case "hello_project":
-		*e = HPFCEventTicketSiteHelloProject
-	case "m_line":
-		*e = HPFCEventTicketSiteMLine
 	}
 	return nil
 }

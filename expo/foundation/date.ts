@@ -193,8 +193,7 @@ export function toQueryString(t: maybeDate) {
   if (isInvalidDate(t)) {
     return '';
   }
-  const s = JSON.stringify(t);
-  return s.substring(1, s.length - 2);
+  return t.toISOString();
 }
 
 /**
@@ -205,10 +204,9 @@ export function toQueryString(t: maybeDate) {
 export function toNullableQueryString(t: maybeDate) {
   t = parseDate(t);
   if (isInvalidDate(t)) {
-    return 'null';
+    return null;
   }
-  const s = JSON.stringify(t);
-  return s.substring(1, s.length - 2);
+  return t.toISOString();
 }
 
 /**

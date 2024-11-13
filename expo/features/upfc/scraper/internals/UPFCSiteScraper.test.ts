@@ -44,7 +44,8 @@ describe('UPFCSiteScraper', () => {
           ticketsHtmlPath: path.join(__dirname, './testdata/valid-tickets-page.html')
         });
         const scraper = new UPFCSiteScraper(fetcher);
-        const got = await scraper.getEventApplications('helloproject');
+        await scraper.authenticate('mizuki', 'fukumura', 'helloproject');
+        const got = await scraper.getEventApplications();
         const expected = await readFileAsJSON<UPFCEventApplicationTickets[]>(
           path.join(__dirname, './testdata/valid-tickets-page.expected.json')
         );
@@ -76,7 +77,8 @@ describe('UPFCSiteScraper', () => {
           ticketsHtmlPath: path.join(__dirname, './testdata/test-no-event.html')
         });
         const scraper = new UPFCSiteScraper(fetcher);
-        const got = await scraper.getEventApplications('helloproject');
+        await scraper.authenticate('mizuki', 'fukumura', 'helloproject');
+        const got = await scraper.getEventApplications();
         const expected = await readFileAsJSON<UPFCEventApplicationTickets[]>(
           path.join(__dirname, './testdata/valid-available-applications.expected.json')
         );
@@ -101,7 +103,9 @@ describe('UPFCSiteScraper', () => {
           ticketsHtmlPath: path.join(__dirname, './testdata/test-no-event.html')
         });
         const scraper = new UPFCSiteScraper(fetcher);
-        const got = await scraper.getEventApplications('helloproject');
+        await scraper.authenticate('mizuki', 'fukumura', 'helloproject');
+
+        const got = await scraper.getEventApplications();
         const expected = await readFileAsJSON<UPFCEventApplicationTickets[]>(
           path.join(__dirname, './testdata/valid-available-applications-exe.expected.json')
         );
@@ -131,7 +135,9 @@ describe('UPFCSiteScraper', () => {
           ticketsHtmlPath: path.join(__dirname, './testdata/integration-test-tickets.html')
         });
         const scraper = new UPFCSiteScraper(fetcher);
-        const got = await scraper.getEventApplications('helloproject');
+        await scraper.authenticate('mizuki', 'fukumura', 'helloproject');
+
+        const got = await scraper.getEventApplications();
         const expected = await readFileAsJSON<UPFCEventApplicationTickets[]>(
           path.join(__dirname, './testdata/integration-test.exepected.json')
         );
@@ -163,7 +169,9 @@ describe('UPFCSiteScraper', () => {
           ticketsHtmlPath: path.join(__dirname, './testdata/m-line/mypage02.html')
         });
         const scraper = new UPFCSiteScraper(fetcher);
-        const got = await scraper.getEventApplications('m-line');
+        await scraper.authenticate('mizuki', 'fukumura', 'm-line');
+
+        const got = await scraper.getEventApplications();
         const expected = await readFileAsJSON<UPFCEventApplicationTickets[]>(
           path.join(__dirname, './testdata/m-line/expected.json')
         );

@@ -414,7 +414,7 @@ type ComplexityRoot struct {
 	MeMutation struct {
 		Authenticate         func(childComplexity int) int
 		RemoveAuthentication func(childComplexity int) int
-		UpsertEvents         func(childComplexity int, params upfc.HPEventTicketApplicationUpsertParams) int
+		UpsertEvents         func(childComplexity int, params upfc.HPFCEventTicketApplicationUpsertParams) int
 		UpsertFollow         func(childComplexity int, params user.HPFollowUpsertParams) int
 		UpsertViewHistory    func(childComplexity int, params feed.HPViewHistoryUpsertParams) int
 	}
@@ -2372,7 +2372,7 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 			return 0, false
 		}
 
-		return e.complexity.MeMutation.UpsertEvents(childComplexity, args["params"].(upfc.HPEventTicketApplicationUpsertParams)), true
+		return e.complexity.MeMutation.UpsertEvents(childComplexity, args["params"].(upfc.HPFCEventTicketApplicationUpsertParams)), true
 
 	case "MeMutation.upsertFollow":
 		if e.complexity.MeMutation.UpsertFollow == nil {
@@ -2884,8 +2884,8 @@ func (e *executableSchema) Exec(ctx context.Context) graphql.ResponseHandler {
 	rc := graphql.GetOperationContext(ctx)
 	ec := executionContext{rc, e}
 	inputUnmarshalMap := graphql.BuildUnmarshalerMap(
-		ec.unmarshalInputHPEventTicketApplicationInput,
-		ec.unmarshalInputHPEventTicketApplicationUpsertParamsInput,
+		ec.unmarshalInputHPFCEventTicketApplicationInput,
+		ec.unmarshalInputHPFCEventTicketApplicationUpsertParamsInput,
 		ec.unmarshalInputHPFeedItemOrder,
 		ec.unmarshalInputHPFeedQueryParamsInput,
 		ec.unmarshalInputHPFollowUpsertParamsInput,
@@ -3085,10 +3085,10 @@ func (ec *executionContext) field_HelloProjectQuery_feed_args(ctx context.Contex
 func (ec *executionContext) field_MeMutation_upsertEvents_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
 	var err error
 	args := map[string]interface{}{}
-	var arg0 upfc.HPEventTicketApplicationUpsertParams
+	var arg0 upfc.HPFCEventTicketApplicationUpsertParams
 	if tmp, ok := rawArgs["params"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("params"))
-		arg0, err = ec.unmarshalNHPEventTicketApplicationUpsertParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋupfcᚐHPEventTicketApplicationUpsertParams(ctx, tmp)
+		arg0, err = ec.unmarshalNHPFCEventTicketApplicationUpsertParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋupfcᚐHPFCEventTicketApplicationUpsertParams(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -9179,9 +9179,9 @@ func (ec *executionContext) _HPFCEventTicket_applicationSite(ctx context.Context
 		}
 		return graphql.Null
 	}
-	res := resTmp.(enums.HPFCEventTicketSite)
+	res := resTmp.(enums.HPFCEventTicketApplicationSite)
 	fc.Result = res
-	return ec.marshalNHPFCEventTicketHPFCEventTicketSite2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketSite(ctx, field.Selections, res)
+	return ec.marshalNHPFCEventTicketHPFCEventTicketApplicationSite2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketApplicationSite(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_HPFCEventTicket_applicationSite(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -9191,7 +9191,7 @@ func (ec *executionContext) fieldContext_HPFCEventTicket_applicationSite(ctx con
 		IsMethod:   false,
 		IsResolver: false,
 		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
-			return nil, errors.New("field of type HPFCEventTicketHPFCEventTicketSite does not have child fields")
+			return nil, errors.New("field of type HPFCEventTicketHPFCEventTicketApplicationSite does not have child fields")
 		},
 	}
 	return fc, nil
@@ -15884,7 +15884,7 @@ func (ec *executionContext) _MeMutation_upsertEvents(ctx context.Context, field 
 	}()
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
 		ctx = rctx // use context from middleware stack in children
-		return obj.UpsertEvents(ctx, fc.Args["params"].(upfc.HPEventTicketApplicationUpsertParams))
+		return obj.UpsertEvents(ctx, fc.Args["params"].(upfc.HPFCEventTicketApplicationUpsertParams))
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -20996,20 +20996,28 @@ func (ec *executionContext) fieldContext___Type_specifiedByURL(ctx context.Conte
 
 // region    **************************** input.gotpl *****************************
 
-func (ec *executionContext) unmarshalInputHPEventTicketApplicationInput(ctx context.Context, obj interface{}) (upfc.HPEventTicketApplication, error) {
-	var it upfc.HPEventTicketApplication
+func (ec *executionContext) unmarshalInputHPFCEventTicketApplicationInput(ctx context.Context, obj interface{}) (upfc.HPFCEventTicketApplication, error) {
+	var it upfc.HPFCEventTicketApplication
 	asMap := map[string]interface{}{}
 	for k, v := range obj.(map[string]interface{}) {
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"title", "openAt", "startAt", "fullyQualifiedVenueName", "num", "status", "applicationId", "applicationStartDate", "applicationDueDate", "paymentStartDate", "paymentDueDate"}
+	fieldsInOrder := [...]string{"memberSha256", "title", "openAt", "startAt", "fullyQualifiedVenueName", "num", "status", "applicationSite", "applicationId", "applicationStartDate", "applicationDueDate", "paymentStartDate", "paymentDueDate"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
 			continue
 		}
 		switch k {
+		case "memberSha256":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("memberSha256"))
+			it.MemberSha256, err = ec.unmarshalNString2string(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "title":
 			var err error
 
@@ -21055,6 +21063,14 @@ func (ec *executionContext) unmarshalInputHPEventTicketApplicationInput(ctx cont
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("status"))
 			it.Status, err = ec.unmarshalNHPFCEventTicketApplicationStatus2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketApplicationStatus(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "applicationSite":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("applicationSite"))
+			it.ApplicationSite, err = ec.unmarshalNHPFCEventTicketApplicationSite2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketApplicationSite(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -21104,28 +21120,20 @@ func (ec *executionContext) unmarshalInputHPEventTicketApplicationInput(ctx cont
 	return it, nil
 }
 
-func (ec *executionContext) unmarshalInputHPEventTicketApplicationUpsertParamsInput(ctx context.Context, obj interface{}) (upfc.HPEventTicketApplicationUpsertParams, error) {
-	var it upfc.HPEventTicketApplicationUpsertParams
+func (ec *executionContext) unmarshalInputHPFCEventTicketApplicationUpsertParamsInput(ctx context.Context, obj interface{}) (upfc.HPFCEventTicketApplicationUpsertParams, error) {
+	var it upfc.HPFCEventTicketApplicationUpsertParams
 	asMap := map[string]interface{}{}
 	for k, v := range obj.(map[string]interface{}) {
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"fcMemberSha256", "userId", "site", "applications"}
+	fieldsInOrder := [...]string{"userId", "applications"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
 			continue
 		}
 		switch k {
-		case "fcMemberSha256":
-			var err error
-
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("fcMemberSha256"))
-			it.FCMemberSha256, err = ec.unmarshalNString2string(ctx, v)
-			if err != nil {
-				return it, err
-			}
 		case "userId":
 			var err error
 
@@ -21134,19 +21142,11 @@ func (ec *executionContext) unmarshalInputHPEventTicketApplicationUpsertParamsIn
 			if err != nil {
 				return it, err
 			}
-		case "site":
-			var err error
-
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("site"))
-			it.Site, err = ec.unmarshalNHPFCEventTicketSite2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketSite(ctx, v)
-			if err != nil {
-				return it, err
-			}
 		case "applications":
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("applications"))
-			it.Applications, err = ec.unmarshalOHPEventTicketApplicationInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋupfcᚐHPEventTicketApplicationᚄ(ctx, v)
+			it.Applications, err = ec.unmarshalOHPFCEventTicketApplicationInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋupfcᚐHPFCEventTicketApplicationᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -25433,16 +25433,6 @@ func (ec *executionContext) marshalNHPEventHPEventSource2githubᚗcomᚋyssk22�
 	return v
 }
 
-func (ec *executionContext) unmarshalNHPEventTicketApplicationInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋupfcᚐHPEventTicketApplication(ctx context.Context, v interface{}) (upfc.HPEventTicketApplication, error) {
-	res, err := ec.unmarshalInputHPEventTicketApplicationInput(ctx, v)
-	return res, graphql.ErrorOnPath(ctx, err)
-}
-
-func (ec *executionContext) unmarshalNHPEventTicketApplicationUpsertParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋupfcᚐHPEventTicketApplicationUpsertParams(ctx context.Context, v interface{}) (upfc.HPEventTicketApplicationUpsertParams, error) {
-	res, err := ec.unmarshalInputHPEventTicketApplicationUpsertParamsInput(ctx, v)
-	return res, graphql.ErrorOnPath(ctx, err)
-}
-
 func (ec *executionContext) marshalNHPFCEventTicket2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPFCEventTicket(ctx context.Context, sel ast.SelectionSet, v *ent.HPFCEventTicket) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -25451,6 +25441,21 @@ func (ec *executionContext) marshalNHPFCEventTicket2ᚖgithubᚗcomᚋyssk22ᚋh
 		return graphql.Null
 	}
 	return ec._HPFCEventTicket(ctx, sel, v)
+}
+
+func (ec *executionContext) unmarshalNHPFCEventTicketApplicationInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋupfcᚐHPFCEventTicketApplication(ctx context.Context, v interface{}) (upfc.HPFCEventTicketApplication, error) {
+	res, err := ec.unmarshalInputHPFCEventTicketApplicationInput(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) unmarshalNHPFCEventTicketApplicationSite2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketApplicationSite(ctx context.Context, v interface{}) (enums.HPFCEventTicketApplicationSite, error) {
+	var res enums.HPFCEventTicketApplicationSite
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPFCEventTicketApplicationSite2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketApplicationSite(ctx context.Context, sel ast.SelectionSet, v enums.HPFCEventTicketApplicationSite) graphql.Marshaler {
+	return v
 }
 
 func (ec *executionContext) unmarshalNHPFCEventTicketApplicationStatus2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketApplicationStatus(ctx context.Context, v interface{}) (enums.HPFCEventTicketApplicationStatus, error) {
@@ -25463,6 +25468,21 @@ func (ec *executionContext) marshalNHPFCEventTicketApplicationStatus2githubᚗco
 	return v
 }
 
+func (ec *executionContext) unmarshalNHPFCEventTicketApplicationUpsertParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋupfcᚐHPFCEventTicketApplicationUpsertParams(ctx context.Context, v interface{}) (upfc.HPFCEventTicketApplicationUpsertParams, error) {
+	res, err := ec.unmarshalInputHPFCEventTicketApplicationUpsertParamsInput(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) unmarshalNHPFCEventTicketHPFCEventTicketApplicationSite2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketApplicationSite(ctx context.Context, v interface{}) (enums.HPFCEventTicketApplicationSite, error) {
+	var res enums.HPFCEventTicketApplicationSite
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPFCEventTicketHPFCEventTicketApplicationSite2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketApplicationSite(ctx context.Context, sel ast.SelectionSet, v enums.HPFCEventTicketApplicationSite) graphql.Marshaler {
+	return v
+}
+
 func (ec *executionContext) unmarshalNHPFCEventTicketHPFCEventTicketApplicationStatus2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketApplicationStatus(ctx context.Context, v interface{}) (enums.HPFCEventTicketApplicationStatus, error) {
 	var res enums.HPFCEventTicketApplicationStatus
 	err := res.UnmarshalGQL(v)
@@ -25470,26 +25490,6 @@ func (ec *executionContext) unmarshalNHPFCEventTicketHPFCEventTicketApplicationS
 }
 
 func (ec *executionContext) marshalNHPFCEventTicketHPFCEventTicketApplicationStatus2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketApplicationStatus(ctx context.Context, sel ast.SelectionSet, v enums.HPFCEventTicketApplicationStatus) graphql.Marshaler {
-	return v
-}
-
-func (ec *executionContext) unmarshalNHPFCEventTicketHPFCEventTicketSite2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketSite(ctx context.Context, v interface{}) (enums.HPFCEventTicketSite, error) {
-	var res enums.HPFCEventTicketSite
-	err := res.UnmarshalGQL(v)
-	return res, graphql.ErrorOnPath(ctx, err)
-}
-
-func (ec *executionContext) marshalNHPFCEventTicketHPFCEventTicketSite2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketSite(ctx context.Context, sel ast.SelectionSet, v enums.HPFCEventTicketSite) graphql.Marshaler {
-	return v
-}
-
-func (ec *executionContext) unmarshalNHPFCEventTicketSite2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketSite(ctx context.Context, v interface{}) (enums.HPFCEventTicketSite, error) {
-	var res enums.HPFCEventTicketSite
-	err := res.UnmarshalGQL(v)
-	return res, graphql.ErrorOnPath(ctx, err)
-}
-
-func (ec *executionContext) marshalNHPFCEventTicketSite2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFCEventTicketSite(ctx context.Context, sel ast.SelectionSet, v enums.HPFCEventTicketSite) graphql.Marshaler {
 	return v
 }
 
@@ -26710,26 +26710,6 @@ func (ec *executionContext) marshalOHPEventEdge2ᚖgithubᚗcomᚋyssk22ᚋhpapp
 	return ec._HPEventEdge(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalOHPEventTicketApplicationInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋupfcᚐHPEventTicketApplicationᚄ(ctx context.Context, v interface{}) ([]upfc.HPEventTicketApplication, error) {
-	if v == nil {
-		return nil, nil
-	}
-	var vSlice []interface{}
-	if v != nil {
-		vSlice = graphql.CoerceList(v)
-	}
-	var err error
-	res := make([]upfc.HPEventTicketApplication, len(vSlice))
-	for i := range vSlice {
-		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithIndex(i))
-		res[i], err = ec.unmarshalNHPEventTicketApplicationInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋupfcᚐHPEventTicketApplication(ctx, vSlice[i])
-		if err != nil {
-			return nil, err
-		}
-	}
-	return res, nil
-}
-
 func (ec *executionContext) marshalOHPFCEventTicket2ᚕᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPFCEventTicketᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.HPFCEventTicket) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
@@ -26775,6 +26755,26 @@ func (ec *executionContext) marshalOHPFCEventTicket2ᚕᚖgithubᚗcomᚋyssk22�
 	}
 
 	return ret
+}
+
+func (ec *executionContext) unmarshalOHPFCEventTicketApplicationInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋupfcᚐHPFCEventTicketApplicationᚄ(ctx context.Context, v interface{}) ([]upfc.HPFCEventTicketApplication, error) {
+	if v == nil {
+		return nil, nil
+	}
+	var vSlice []interface{}
+	if v != nil {
+		vSlice = graphql.CoerceList(v)
+	}
+	var err error
+	res := make([]upfc.HPFCEventTicketApplication, len(vSlice))
+	for i := range vSlice {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithIndex(i))
+		res[i], err = ec.unmarshalNHPFCEventTicketApplicationInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋupfcᚐHPFCEventTicketApplication(ctx, vSlice[i])
+		if err != nil {
+			return nil, err
+		}
+	}
+	return res, nil
 }
 
 func (ec *executionContext) marshalOHPFeedItem2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPFeedItem(ctx context.Context, sel ast.SelectionSet, v *ent.HPFeedItem) graphql.Marshaler {

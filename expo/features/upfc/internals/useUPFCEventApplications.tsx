@@ -1,4 +1,4 @@
-import { useAppConfig, useUPFCConfig } from '@hpapp/features/app/settings';
+import { useAppConfig, useCurrentUser, useUPFCConfig } from '@hpapp/features/app/settings';
 import { useReloadableAsync, ReloadableAysncResult } from '@hpapp/features/common/';
 import {
   ErrUPFCAuthentication,
@@ -11,14 +11,25 @@ import {
   UPFCSite,
   UPFCSiteScraper,
   UPFCCombiedSiteScraper,
-  UPFCEventTicket
+  UPFCEventTicket,
+  UPFCTicketApplicationStatus
 } from '@hpapp/features/upfc/scraper';
 import * as date from '@hpapp/foundation/date';
 import { isEmpty } from '@hpapp/foundation/string';
 import * as logging from '@hpapp/system/logging';
 import * as Calendar from 'expo-calendar';
+import * as Crypto from 'expo-crypto';
 import { useMemo } from 'react';
 import { Platform } from 'react-native';
+import { useRelayEnvironment } from 'react-relay';
+import { commitMutation, graphql, IEnvironment } from 'relay-runtime';
+import RelayModernEnvironment from 'relay-runtime/lib/store/RelayModernEnvironment';
+
+import {
+  HPFCEventTicketApplicationStatus,
+  HPFCEventTicketApplicationSite,
+  useUPFCEventApplicationsUpsertMutation
+} from './__generated__/useUPFCEventApplicationsUpsertMutation.graphql';
 
 type UPFCFetchApplicationsParams = {
   helloproject: {
@@ -32,9 +43,11 @@ type UPFCFetchApplicationsParams = {
   useDemo: boolean;
   calendarId: string | undefined;
   eventPrefix: string | undefined;
+  userId: string;
+  env: RelayModernEnvironment;
 };
 
-export type UPFCEventAPplicationsResult = {
+export type UPFCEventApplicationsResult = {
   applications: UPFCEventApplicationTickets[];
   hpError: Error | undefined;
   mlError: Error | undefined;
@@ -43,10 +56,12 @@ export type UPFCEventAPplicationsResult = {
 
 export default function useUPFCEventApplications(): ReloadableAysncResult<
   UPFCFetchApplicationsParams,
-  UPFCEventAPplicationsResult
+  UPFCEventApplicationsResult
 > {
+  const env = useRelayEnvironment();
   const appConfig = useAppConfig();
   const upfcConfig = useUPFCConfig();
+  const userId = useCurrentUser()!.id;
   const params = useMemo(() => {
     return {
       helloproject: {
@@ -59,7 +74,9 @@ export default function useUPFCEventApplications(): ReloadableAysncResult<
       },
       useDemo: appConfig.useUPFCDemoScraper || upfcConfig?.hpUsername === UPFCDemoScraper.Username,
       calendarId: upfcConfig?.calendarId ?? undefined,
-      eventPrefix: upfcConfig?.eventPrefix ?? undefined
+      eventPrefix: upfcConfig?.eventPrefix ?? undefined,
+      userId,
+      env
     };
   }, [
     upfcConfig?.calendarId,
@@ -76,12 +93,11 @@ export default function useUPFCEventApplications(): ReloadableAysncResult<
     cache: {
       key: 'useUPFCEventApplications',
       loadFn: async (value: string) => {
-        const result = JSON.parse(value) as UPFCEventAPplicationsResult;
+        const result = JSON.parse(value) as UPFCEventApplicationsResult;
         return {
           applications: result.applications.map((a) => {
             return {
-              name: a.name,
-              site: a.site,
+              ...a,
               applicationDueDate: dateOrUndefined(a.applicationDueDate),
               applicationStartDate: dateOrUndefined(a.applicationStartDate),
               paymentOpenDate: dateOrUndefined(a.paymentOpenDate),
@@ -114,8 +130,10 @@ async function fetchApplications({
   mline,
   useDemo,
   calendarId,
-  eventPrefix
-}: UPFCFetchApplicationsParams): Promise<UPFCEventAPplicationsResult> {
+  eventPrefix,
+  userId,
+  env
+}: UPFCFetchApplicationsParams): Promise<UPFCEventApplicationsResult> {
   if (isEmpty(helloproject?.username) && isEmpty(mline?.username)) {
     throw new ErrUPFCNoCredential();
   }
@@ -125,7 +143,12 @@ async function fetchApplications({
   ]);
   // optionally sync calendar and server in background.
   const applications = result.flatMap((r) => r.applications);
-  syncUPFC(calendarId, eventPrefix, applications);
+  if (!useDemo) {
+    if (!isEmpty(calendarId)) {
+      syncToCalender(calendarId!, eventPrefix ?? '', applications);
+    }
+    syncToServer(env, userId, applications);
+  }
 
   return {
     applications: result.flatMap((r) => r.applications),
@@ -161,7 +184,7 @@ async function fetchApplicationsFromSite(
   try {
     return {
       error: undefined,
-      applications: await scraper.getEventApplications(site)
+      applications: await scraper.getEventApplications()
     };
   } catch (e) {
     return {
@@ -176,16 +199,6 @@ function dateOrUndefined(d: Date | undefined): Date | undefined {
     return new Date(d);
   }
   return undefined;
-}
-
-async function syncUPFC(
-  calenderId: string | undefined,
-  eventPrefix: string | undefined,
-  applications: UPFCEventApplicationTickets[]
-): Promise<void> {
-  if (!isEmpty(calenderId)) {
-    await syncToCalender(calenderId!, eventPrefix ?? '', applications);
-  }
 }
 
 type SyncParam = [UPFCEventTicket, string];
@@ -321,4 +334,97 @@ async function syncToCalendarEvent(params: SyncParam[], calendarId: string, pref
       }
     })
   );
+}
+
+const useUPFCEventApplicationsUpsertMutationGraphQL = graphql`
+  mutation useUPFCEventApplicationsUpsertMutation($params: HPFCEventTicketApplicationUpsertParamsInput!) {
+    me {
+      upsertEvents(params: $params) {
+        id
+      }
+    }
+  }
+`;
+
+async function syncToServer(
+  env: IEnvironment,
+  userId: string,
+  applications: UPFCEventApplicationTickets[]
+): Promise<void> {
+  const tickets = (
+    await Promise.all(
+      applications.map(async (a) => {
+        const tickets = await Promise.all(
+          a.tickets.map(async (t) => {
+            return {
+              title: a.name,
+              startAt: date.toQueryString(t.startAt),
+              openAt: date.toNullableQueryString(t.openAt),
+              fullyQualifiedVenueName: t.venue,
+              num: t.num,
+              status: getStatusEnumValue(t.status),
+              memberSha256: await Crypto.digestStringAsync(Crypto.CryptoDigestAlgorithm.SHA256, a.username),
+              applicationId: a.applicationID,
+              applicationSite: getApplicationSiteEnumValue(a.site),
+              applicationStartDate: date.toNullableQueryString(a.applicationStartDate),
+              applicationDueDate: date.toNullableQueryString(a.applicationDueDate),
+              paymentStartDate: date.toNullableQueryString(a.paymentOpenDate),
+              paymentDueDate: date.toNullableQueryString(a.paymentDueDate)
+            };
+          })
+        );
+        return tickets;
+      })
+    )
+  ).flat();
+  return new Promise((resolve, reject) => {
+    commitMutation<useUPFCEventApplicationsUpsertMutation>(env, {
+      mutation: useUPFCEventApplicationsUpsertMutationGraphQL,
+      variables: {
+        params: {
+          userId: parseInt(userId, 10),
+          applications: tickets
+        }
+      },
+      onCompleted: (response, errors) => {
+        if (errors) {
+          reject(errors);
+        } else {
+          logging.Info('features.upfc.internals.useUPFCEventApplications.syncToServer', 'completed', {
+            numApplications: tickets.length
+          });
+          resolve();
+        }
+      },
+      onError: (error) => {
+        reject(error);
+      }
+    });
+  });
+}
+
+function getStatusEnumValue(status: UPFCTicketApplicationStatus): HPFCEventTicketApplicationStatus {
+  switch (status) {
+    case '抽選前':
+      return 'before_lottery';
+    case '申込済':
+      return 'submitted';
+    case '入金待':
+      return 'pending_payment';
+    case '入金済':
+      return 'completed';
+    case '落選':
+      return 'rejected';
+    case '入金忘':
+      return 'payment_overdue';
+    default:
+      return 'unknown';
+  }
+}
+
+function getApplicationSiteEnumValue(site: UPFCSite): HPFCEventTicketApplicationSite {
+  if (site === 'm-line') {
+    return 'm_line';
+  }
+  return 'hello_project';
 }

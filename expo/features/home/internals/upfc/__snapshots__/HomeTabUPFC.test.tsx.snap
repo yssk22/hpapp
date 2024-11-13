@@ -337,6 +337,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                           "venue": "日本武道館",
                         },
                       ],
+                      "username": "demo",
                     },
                     {
                       "name": "野中美希30thバースデーイベント",
@@ -357,6 +358,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                           "venue": "日本武道館",
                         },
                       ],
+                      "username": "demo",
                     },
                     {
                       "name": "譜久村聖20thバースデーイベント",
@@ -377,6 +379,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                           "venue": "日本武道館",
                         },
                       ],
+                      "username": "demo",
                     },
                     {
                       "applicationDueDate": 2023-10-11T00:00:00.000Z,
@@ -401,6 +404,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                           "venue": "日本武道館",
                         },
                       ],
+                      "username": "demo",
                     },
                     {
                       "applicationDueDate": 2023-10-11T00:00:00.000Z,
@@ -425,6 +429,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                           "venue": "日本武道館",
                         },
                       ],
+                      "username": "demo",
                     },
                     {
                       "applicationDueDate": 2023-10-11T00:00:00.000Z,
@@ -449,6 +454,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                           "venue": "日本武道館",
                         },
                       ],
+                      "username": "demo",
                     },
                     {
                       "applicationDueDate": 2023-10-25T00:00:00.000Z,
@@ -473,6 +479,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                           "venue": "埼玉県川口総合文化センター・リリア メインホール",
                         },
                       ],
+                      "username": "demo",
                     },
                     {
                       "applicationDueDate": 2023-10-11T00:00:00.000Z,
@@ -497,6 +504,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                           "venue": "日本武道館",
                         },
                       ],
+                      "username": "demo",
                     },
                   ]
                 }
