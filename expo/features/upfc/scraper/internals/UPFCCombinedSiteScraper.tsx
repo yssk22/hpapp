@@ -16,8 +16,8 @@ export default class UPFCCombiedSiteScraper implements UPFCScraper {
     return results.some((r) => r === true);
   }
 
-  public async getEventApplications(site: UPFCSite): Promise<UPFCEventApplicationTickets[]> {
-    const results = await Promise.all(this.scrapers.map((s) => s.getEventApplications(site)));
+  public async getEventApplications(): Promise<UPFCEventApplicationTickets[]> {
+    const results = await Promise.all(this.scrapers.map((s) => s.getEventApplications()));
     return results.flat();
   }
 }

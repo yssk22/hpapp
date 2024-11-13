@@ -52,7 +52,7 @@ type MeMutation @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeMuta
   authenticate: User
   removeAuthentication: Auth
   upsertFollow(params: HPFollowUpsertParamsInput!): HPFollow
-  upsertEvents(params: HPEventTicketApplicationUpsertParamsInput!): [HPEvent]
+  upsertEvents(params: HPFCEventTicketApplicationUpsertParamsInput!): [HPEvent]
   upsertViewHistory(params: HPViewHistoryUpsertParamsInput!): HPViewHistory
 }
 
@@ -61,11 +61,9 @@ input HPFollowUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/serv
   followType: HPFollowType!
 }
 
-input HPEventTicketApplicationUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPEventTicketApplicationUpsertParams") {
-  fcMemberSha256: String!
+input HPFCEventTicketApplicationUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPFCEventTicketApplicationUpsertParams") {
   userId: Int!
-  site: HPFCEventTicketSite!
-  applications: [HPEventTicketApplicationInput!]
+  applications: [HPFCEventTicketApplicationInput!]
 }
 
 input HPViewHistoryUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/feed.HPViewHistoryUpsertParams") {
@@ -80,18 +78,15 @@ enum HPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enu
   unfollow
 }
 
-enum HPFCEventTicketSite @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketSite") {
-  hello_project
-  m_line
-}
-
-input HPEventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPEventTicketApplication") {
+input HPFCEventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPFCEventTicketApplication") {
+  memberSha256: String!
   title: String!
   openAt: Time
   startAt: Time!
   fullyQualifiedVenueName: String!
   num: Int!
   status: HPFCEventTicketApplicationStatus!
+  applicationSite: HPFCEventTicketApplicationSite!
   applicationId: String
   applicationStartDate: Time
   applicationDueDate: Time
@@ -107,6 +102,11 @@ enum HPFCEventTicketApplicationStatus @goModel(model: "github.com/yssk22/hpapp/g
   rejected
   submitted
   unknown
+}
+
+enum HPFCEventTicketApplicationSite @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketApplicationSite") {
+  hello_project
+  m_line
 }
 
 type Media @goModel(model: "github.com/yssk22/hpapp/go/service/schema/jsonfields.Media") {

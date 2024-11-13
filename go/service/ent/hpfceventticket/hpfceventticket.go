@@ -126,10 +126,10 @@ func StatusValidator(s enums.HPFCEventTicketApplicationStatus) error {
 	}
 }
 
-const DefaultApplicationSite enums.HPFCEventTicketSite = "helloproject"
+const DefaultApplicationSite enums.HPFCEventTicketApplicationSite = "helloproject"
 
 // ApplicationSiteValidator is a validator for the "application_site" field enum values. It is called by the builders before save.
-func ApplicationSiteValidator(as enums.HPFCEventTicketSite) error {
+func ApplicationSiteValidator(as enums.HPFCEventTicketApplicationSite) error {
 	switch as {
 	case "helloproject", "mline":
 		return nil
@@ -247,8 +247,8 @@ var (
 )
 
 var (
-	// enums.HPFCEventTicketSite must implement graphql.Marshaler.
-	_ graphql.Marshaler = (*enums.HPFCEventTicketSite)(nil)
-	// enums.HPFCEventTicketSite must implement graphql.Unmarshaler.
-	_ graphql.Unmarshaler = (*enums.HPFCEventTicketSite)(nil)
+	// enums.HPFCEventTicketApplicationSite must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFCEventTicketApplicationSite)(nil)
+	// enums.HPFCEventTicketApplicationSite must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFCEventTicketApplicationSite)(nil)
 )

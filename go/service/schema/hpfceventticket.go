@@ -47,10 +47,8 @@ func (HPFCEventTicket) Fields() []ent.Field {
 		field.String("application_title"),
 		field.String("application_id").Nillable().Optional(),
 		field.Enum("application_site").
-			GoType(enums.HPFCEventTicketSiteHelloProject).
-			Default(string(enums.HPFCEventTicketSiteHelloProject)),
-
-		// field.String("application_id").Nillable().Optional(),
+			GoType(enums.HPFCEventTicketApplicationSiteHelloProject).
+			Default(string(enums.HPFCEventTicketApplicationSiteHelloProject)),
 		field.Time("application_start_date").Nillable().Optional(),
 		field.Time("application_due_date").Nillable().Optional(),
 		field.Time("payment_start_date").Nillable().Optional(),

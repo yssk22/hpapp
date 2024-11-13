@@ -16,6 +16,8 @@ import {
  */
 export default class UPFC2SiteScraper implements UPFCScraper {
   private readonly fetcher: UPFCFetcher;
+  private username: string | undefined;
+  private site: UPFCSite | undefined;
 
   constructor(fetcher: UPFCFetcher) {
     this.fetcher = fetcher;
@@ -32,17 +34,22 @@ export default class UPFC2SiteScraper implements UPFCScraper {
     if (!this.parseRedirectPageHTML(html)) {
       throw new ErrUPFCAuthentication();
     }
+    this.username = username;
+    this.site = site;
     return true;
   }
 
   /**
    * @returns a list of event applications
    */
-  async getEventApplications(site: UPFCSite): Promise<UPFCEventApplicationTickets[]> {
-    const events = this.fetcher.fetchEventApplicationsHtml(site);
-    const tickets = this.fetcher.fetchTicketsHtml(site);
+  async getEventApplications(): Promise<UPFCEventApplicationTickets[]> {
+    if (this.site === undefined) {
+      throw new Error('not authenticated');
+    }
+    const events = this.fetcher.fetchEventApplicationsHtml(this.site!);
+    const tickets = this.fetcher.fetchTicketsHtml(this.site!);
     const [eventsHtml, ticketsHtml] = await Promise.all([events, tickets]);
-    return await this.parseEventApplications(site, eventsHtml, ticketsHtml);
+    return await this.parseEventApplications(eventsHtml, ticketsHtml);
   }
 
   parseRedirectPageHTML(text: string) {
@@ -55,15 +62,11 @@ export default class UPFC2SiteScraper implements UPFCScraper {
     return false;
   }
 
-  async parseEventApplications(
-    site: UPFCSite,
-    eventsHtml: string,
-    ticketsHtml: string
-  ): Promise<UPFCEventApplicationTickets[]> {
+  async parseEventApplications(eventsHtml: string, ticketsHtml: string): Promise<UPFCEventApplicationTickets[]> {
     // events avaialble on upfc.jp
-    const events = await this.parseEventApplicationsHtml(site, eventsHtml);
+    const events = await this.parseEventApplicationsHtml(eventsHtml);
     // tickets available on upfc.jp including past events
-    const ticketApplications = await this.parseTicketsHtml(site, ticketsHtml);
+    const ticketApplications = await this.parseTicketsHtml(ticketsHtml);
     const result: UPFCEventApplicationTickets[] = [];
     const eventMap: Map<string, UPFCEventApplicationTickets> = new Map();
 
@@ -93,7 +96,7 @@ export default class UPFC2SiteScraper implements UPFCScraper {
     return result;
   }
 
-  async parseEventApplicationsHtml(site: UPFCSite, text: string): Promise<UPFCEventApplication[]> {
+  async parseEventApplicationsHtml(text: string): Promise<UPFCEventApplication[]> {
     const doc = parse(text);
     const links = doc.querySelectorAll('li.p-list__li a');
     if (links === null) {
@@ -113,15 +116,19 @@ export default class UPFC2SiteScraper implements UPFCScraper {
       }
       applications.push({
         name: this.normalizeApplicationName(titleH3.textContent.trim()),
-        site,
+        site: this.site!,
+        username: this.username!,
         applicationID: match![1]
       });
     }
     return (await Promise.all(
       applications.map(async (a) => {
         try {
-          const applicationDetailHtml = await this.fetcher.fetchEventApplicationDetailHtml(site, a.applicationID!);
-          const details = this.parseEventApplicationDetailHtml(site, applicationDetailHtml);
+          const applicationDetailHtml = await this.fetcher.fetchEventApplicationDetailHtml(
+            this.site!,
+            a.applicationID!
+          );
+          const details = this.parseEventApplicationDetailHtml(applicationDetailHtml);
           return {
             ...a,
             ...details
@@ -134,10 +141,7 @@ export default class UPFC2SiteScraper implements UPFCScraper {
     )) as UPFCEventApplicationTickets[];
   }
 
-  parseEventApplicationDetailHtml(
-    site: UPFCSite,
-    detailHtml: string
-  ): {
+  parseEventApplicationDetailHtml(detailHtml: string): {
     applicationStartDate?: Date;
     applicationDueDate?: Date;
     paymentOpenDate?: Date;
@@ -180,7 +184,7 @@ export default class UPFC2SiteScraper implements UPFCScraper {
     return obj;
   }
 
-  async parseTicketsHtml(site: UPFCSite, ticketsHtml: string): Promise<UPFCEventApplicationTickets[]> {
+  async parseTicketsHtml(ticketsHtml: string): Promise<UPFCEventApplicationTickets[]> {
     const doc = parse(ticketsHtml);
     const links = doc.querySelectorAll('a');
     if (links === null) {
@@ -203,7 +207,8 @@ export default class UPFC2SiteScraper implements UPFCScraper {
       const applicationName = this.normalizeApplicationName(titleH5.textContent.trim());
       applicaions.push({
         name: applicationName,
-        site,
+        site: this.site!,
+        username: this.username!,
         applicationID
       });
     }
@@ -212,8 +217,8 @@ export default class UPFC2SiteScraper implements UPFCScraper {
       await Promise.all(
         applicaions.map(async (a) => {
           try {
-            const ticketDetailHtml = await this.fetcher.fetchTicketDetailHtml(site, a.applicationID!);
-            const tickets = await this.parseTicketDetailHtml(site, ticketDetailHtml);
+            const ticketDetailHtml = await this.fetcher.fetchTicketDetailHtml(this.site!, a.applicationID!);
+            const tickets = await this.parseTicketDetailHtml(ticketDetailHtml);
             return {
               ...a,
               tickets
@@ -246,16 +251,18 @@ export default class UPFC2SiteScraper implements UPFCScraper {
     ];
   }
 
-  private async parseTicketDetailHtml(site: UPFCSite, detailHtml: string): Promise<UPFCEventTicket[]> {
+  private async parseTicketDetailHtml(detailHtml: string): Promise<UPFCEventTicket[]> {
     const tickets = [] as UPFCEventTicket[];
     const dom = parse(detailHtml);
     const rows = dom.querySelectorAll('table tbody tr');
     if (rows === null) {
       return [];
     }
+    const paymentCompleted = dom.querySelector('div.order_number span.order_status')?.textContent.trim() === '入金完了';
+
     for (let i = 0; i < rows.length; i++) {
       const tr = rows[i];
-      const status = this.parseTicketStatus(tr.querySelector('td.bingo ul li')!.textContent.trim());
+      const status = this.parseTicketStatus(tr.querySelector('td.bingo ul li')!.textContent.trim(), paymentCompleted);
       const show = this.parseTicketShow(tr.querySelector('td.show')!.textContent.trim());
       const num = this.parseNumTickets(tr.querySelector('td.ticket')!.textContent.trim());
       if (show === null) {
@@ -276,7 +283,7 @@ export default class UPFC2SiteScraper implements UPFCScraper {
     return valueStr.replace('■', '').replace('\u2019', "'").trim();
   }
 
-  private parseTicketStatus(valueStr: string): UPFCTicketApplicationStatus {
+  private parseTicketStatus(valueStr: string, paymentCompleted: boolean): UPFCTicketApplicationStatus {
     if (valueStr.indexOf('抽選前') >= 0) {
       return '抽選前';
     }
@@ -284,7 +291,7 @@ export default class UPFC2SiteScraper implements UPFCScraper {
       return '落選';
     }
     if (valueStr.indexOf('当選') >= 0) {
-      if (valueStr.indexOf('入金済') >= 0) {
+      if (paymentCompleted) {
         return '入金済';
       }
       return '入金待';

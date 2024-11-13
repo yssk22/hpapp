@@ -16,7 +16,9 @@ describe('UPFCSiteScraper', () => {
           ticketDetailHtmlPath: path.join(__dirname, './testdata/upfc2/valid-ticket-detail.html')
         });
         const scraper = new UPFC2SiteScraper(fetcher);
-        const got = await scraper.getEventApplications('helloproject');
+        await scraper.authenticate('mizuki', 'fukumura', 'helloproject');
+
+        const got = await scraper.getEventApplications();
         const expected = await readFileAsJSON<UPFCEventApplicationTickets[]>(
           path.join(__dirname, './testdata/upfc2/valid.expected.json')
         );

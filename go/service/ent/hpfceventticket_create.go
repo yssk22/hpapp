@@ -100,15 +100,15 @@ func (hetc *HPFCEventTicketCreate) SetNillableApplicationID(s *string) *HPFCEven
 }
 
 // SetApplicationSite sets the "application_site" field.
-func (hetc *HPFCEventTicketCreate) SetApplicationSite(eets enums.HPFCEventTicketSite) *HPFCEventTicketCreate {
-	hetc.mutation.SetApplicationSite(eets)
+func (hetc *HPFCEventTicketCreate) SetApplicationSite(eetas enums.HPFCEventTicketApplicationSite) *HPFCEventTicketCreate {
+	hetc.mutation.SetApplicationSite(eetas)
 	return hetc
 }
 
 // SetNillableApplicationSite sets the "application_site" field if the given value is not nil.
-func (hetc *HPFCEventTicketCreate) SetNillableApplicationSite(eets *enums.HPFCEventTicketSite) *HPFCEventTicketCreate {
-	if eets != nil {
-		hetc.SetApplicationSite(*eets)
+func (hetc *HPFCEventTicketCreate) SetNillableApplicationSite(eetas *enums.HPFCEventTicketApplicationSite) *HPFCEventTicketCreate {
+	if eetas != nil {
+		hetc.SetApplicationSite(*eetas)
 	}
 	return hetc
 }
@@ -538,7 +538,7 @@ func (u *HPFCEventTicketUpsert) ClearApplicationID() *HPFCEventTicketUpsert {
 }
 
 // SetApplicationSite sets the "application_site" field.
-func (u *HPFCEventTicketUpsert) SetApplicationSite(v enums.HPFCEventTicketSite) *HPFCEventTicketUpsert {
+func (u *HPFCEventTicketUpsert) SetApplicationSite(v enums.HPFCEventTicketApplicationSite) *HPFCEventTicketUpsert {
 	u.Set(hpfceventticket.FieldApplicationSite, v)
 	return u
 }
@@ -784,7 +784,7 @@ func (u *HPFCEventTicketUpsertOne) ClearApplicationID() *HPFCEventTicketUpsertOn
 }
 
 // SetApplicationSite sets the "application_site" field.
-func (u *HPFCEventTicketUpsertOne) SetApplicationSite(v enums.HPFCEventTicketSite) *HPFCEventTicketUpsertOne {
+func (u *HPFCEventTicketUpsertOne) SetApplicationSite(v enums.HPFCEventTicketApplicationSite) *HPFCEventTicketUpsertOne {
 	return u.Update(func(s *HPFCEventTicketUpsert) {
 		s.SetApplicationSite(v)
 	})
@@ -1208,7 +1208,7 @@ func (u *HPFCEventTicketUpsertBulk) ClearApplicationID() *HPFCEventTicketUpsertB
 }
 
 // SetApplicationSite sets the "application_site" field.
-func (u *HPFCEventTicketUpsertBulk) SetApplicationSite(v enums.HPFCEventTicketSite) *HPFCEventTicketUpsertBulk {
+func (u *HPFCEventTicketUpsertBulk) SetApplicationSite(v enums.HPFCEventTicketApplicationSite) *HPFCEventTicketUpsertBulk {
 	return u.Update(func(s *HPFCEventTicketUpsert) {
 		s.SetApplicationSite(v)
 	})

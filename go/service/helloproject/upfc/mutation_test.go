@@ -28,18 +28,18 @@ func TestUPFCMutation(t *testing.T) {
 		uid := appuser.CurrentEntUserID(ctx)
 
 		// first application
-		_, err := UpsertEventsAndApplications(ctx, HPEventTicketApplicationUpsertParams{
-			FCMemberSha256: "dummysha256",
-			UserId:         uid,
-			Site:           enums.HPFCEventTicketSiteHelloProject,
-			Applications: []HPEventTicketApplication{
+		_, err := UpsertEventsAndApplications(ctx, HPFCEventTicketApplicationUpsertParams{
+			UserId: uid,
+			Applications: []HPFCEventTicketApplication{
 				{
+					MemberSha256:            "dummysha256",
 					Title:                   "Juice=Juice 入江里咲バースデーイベント2022",
 					FullyQualifiedVenueName: "神奈川県 LANDMARK HALL",
 					StartAt:                 startAt,
 					Num:                     1,
 					Status:                  enums.HPFCEventTicketApplicationStatusSubmitted,
 					ApplicationID:           object.Nullable("A123"),
+					ApplicationSite:         enums.HPFCEventTicketApplicationSiteHelloProject,
 				},
 			},
 		})
@@ -51,29 +51,31 @@ func TestUPFCMutation(t *testing.T) {
 		a.Equals("LANDMARK HALL", event.Venue)
 		a.Equals(1, len(event.Edges.HpfcEventTickets))
 		a.Equals(enums.HPFCEventTicketApplicationStatusSubmitted, event.Edges.HpfcEventTickets[0].Status)
-		a.Equals(enums.HPFCEventTicketSiteHelloProject, event.Edges.HpfcEventTickets[0].ApplicationSite)
+		a.Equals(enums.HPFCEventTicketApplicationSiteHelloProject, event.Edges.HpfcEventTickets[0].ApplicationSite)
 
 		// now the application is rejected so trying to submit 2次受付
-		_, err = UpsertEventsAndApplications(ctx, HPEventTicketApplicationUpsertParams{
-			FCMemberSha256: "dummysha256",
-			UserId:         uid,
-			Site:           enums.HPFCEventTicketSiteHelloProject,
-			Applications: []HPEventTicketApplication{
+		_, err = UpsertEventsAndApplications(ctx, HPFCEventTicketApplicationUpsertParams{
+			UserId: uid,
+			Applications: []HPFCEventTicketApplication{
 				{
+					MemberSha256:            "dummysha256",
 					Title:                   "Juice=Juice 入江里咲バースデーイベント2022",
 					FullyQualifiedVenueName: "神奈川県 LANDMARK HALL",
 					StartAt:                 startAt,
 					Num:                     1,
 					Status:                  enums.HPFCEventTicketApplicationStatusRejected,
 					ApplicationID:           object.Nullable("A123"),
+					ApplicationSite:         enums.HPFCEventTicketApplicationSiteHelloProject,
 				},
 				{
+					MemberSha256:            "dummysha256",
 					Title:                   "【二次受付】 Juice=Juice 入江里咲バースデーイベント2022",
 					FullyQualifiedVenueName: "神奈川県 LANDMARK HALL",
 					StartAt:                 startAt,
 					Num:                     1,
 					Status:                  enums.HPFCEventTicketApplicationStatusSubmitted,
 					ApplicationID:           object.Nullable("A124"),
+					ApplicationSite:         enums.HPFCEventTicketApplicationSiteHelloProject,
 				},
 			},
 		})
@@ -88,26 +90,28 @@ func TestUPFCMutation(t *testing.T) {
 		a.Equals(enums.HPFCEventTicketApplicationStatusSubmitted, event.Edges.HpfcEventTickets[1].Status)
 
 		// the second one now gets pending payment
-		_, err = UpsertEventsAndApplications(ctx, HPEventTicketApplicationUpsertParams{
-			FCMemberSha256: "dummysha256",
-			UserId:         uid,
-			Site:           enums.HPFCEventTicketSiteHelloProject,
-			Applications: []HPEventTicketApplication{
+		_, err = UpsertEventsAndApplications(ctx, HPFCEventTicketApplicationUpsertParams{
+			UserId: uid,
+			Applications: []HPFCEventTicketApplication{
 				{
+					MemberSha256:            "dummysha256",
 					Title:                   "Juice=Juice 入江里咲バースデーイベント2022",
 					FullyQualifiedVenueName: "神奈川県 LANDMARK HALL",
 					StartAt:                 startAt,
 					Num:                     1,
 					Status:                  enums.HPFCEventTicketApplicationStatusRejected,
 					ApplicationID:           object.Nullable("A123"),
+					ApplicationSite:         enums.HPFCEventTicketApplicationSiteHelloProject,
 				},
 				{
+					MemberSha256:            "dummysha256",
 					Title:                   "【二次受付】 Juice=Juice 入江里咲バースデーイベント2022",
 					FullyQualifiedVenueName: "神奈川県 LANDMARK HALL",
 					StartAt:                 startAt,
 					Num:                     1,
 					Status:                  enums.HPFCEventTicketApplicationStatusPendingPayment,
 					ApplicationID:           object.Nullable("A124"),
+					ApplicationSite:         enums.HPFCEventTicketApplicationSiteHelloProject,
 				},
 			},
 		})
@@ -122,26 +126,28 @@ func TestUPFCMutation(t *testing.T) {
 		a.Equals(enums.HPFCEventTicketApplicationStatusRejected, event.Edges.HpfcEventTickets[1].Status)
 
 		// complete payment
-		_, err = UpsertEventsAndApplications(ctx, HPEventTicketApplicationUpsertParams{
-			FCMemberSha256: "dummysha256",
-			UserId:         uid,
-			Site:           enums.HPFCEventTicketSiteHelloProject,
-			Applications: []HPEventTicketApplication{
+		_, err = UpsertEventsAndApplications(ctx, HPFCEventTicketApplicationUpsertParams{
+			UserId: uid,
+			Applications: []HPFCEventTicketApplication{
 				{
+					MemberSha256:            "dummysha256",
 					Title:                   "Juice=Juice 入江里咲バースデーイベント2022",
 					FullyQualifiedVenueName: "神奈川県 LANDMARK HALL",
 					StartAt:                 startAt,
 					Num:                     1,
 					Status:                  enums.HPFCEventTicketApplicationStatusRejected,
 					ApplicationID:           object.Nullable("A123"),
+					ApplicationSite:         enums.HPFCEventTicketApplicationSiteHelloProject,
 				},
 				{
+					MemberSha256:            "dummysha256",
 					Title:                   "【二次受付】 Juice=Juice 入江里咲バースデーイベント2022",
 					FullyQualifiedVenueName: "神奈川県 LANDMARK HALL",
 					StartAt:                 startAt,
 					Num:                     1,
 					Status:                  enums.HPFCEventTicketApplicationStatusCompleted,
 					ApplicationID:           object.Nullable("A124"),
+					ApplicationSite:         enums.HPFCEventTicketApplicationSiteHelloProject,
 				},
 			},
 		})
@@ -176,25 +182,28 @@ func TestUPFCMutation(t *testing.T) {
 			// Even admin should not be able to upsert the records by the user.
 			// This is a protect mechanism for the accidental mutation.
 			// they has to use appuser.WithUser(ctx) before calling UpsertEventsAndApplications
-			_, err = UpsertEventsAndApplications(appuser.WithAdmin(ctx), HPEventTicketApplicationUpsertParams{
-				FCMemberSha256: "dummysha256",
-				UserId:         uid,
-				Applications: []HPEventTicketApplication{
+			_, err = UpsertEventsAndApplications(appuser.WithAdmin(ctx), HPFCEventTicketApplicationUpsertParams{
+				UserId: uid,
+				Applications: []HPFCEventTicketApplication{
 					{
+						MemberSha256:            "dummysha256",
 						Title:                   "Juice=Juice 入江里咲バースデーイベント2022",
 						FullyQualifiedVenueName: "神奈川県 LANDMARK HALL",
 						StartAt:                 startAt,
 						Num:                     1,
 						Status:                  enums.HPFCEventTicketApplicationStatusCompleted,
 						ApplicationID:           object.Nullable("A123"),
+						ApplicationSite:         enums.HPFCEventTicketApplicationSiteHelloProject,
 					},
 					{
+						MemberSha256:            "dummysha256",
 						Title:                   "【二次受付】 Juice=Juice 入江里咲バースデーイベント2022",
 						FullyQualifiedVenueName: "神奈川県 LANDMARK HALL",
 						StartAt:                 startAt,
 						Num:                     1,
 						Status:                  enums.HPFCEventTicketApplicationStatusCompleted,
 						ApplicationID:           object.Nullable("A124"),
+						ApplicationSite:         enums.HPFCEventTicketApplicationSiteHelloProject,
 					},
 				},
 			})

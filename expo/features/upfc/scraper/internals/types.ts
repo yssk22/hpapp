@@ -50,6 +50,11 @@ export type UPFCEventApplication = {
   site: UPFCSite;
 
   /**
+   * username who applied for the event
+   */
+  username: string;
+
+  /**
    * an id for the application used in up-fc.jp (`EventSet_ID` parameter).
    */
   applicationID?: string | null;
@@ -83,7 +88,7 @@ export type UPFCEventApplicationTickets = {
  */
 export interface UPFCScraper {
   authenticate(username: string, password: string, site: UPFCSite): Promise<boolean>;
-  getEventApplications(site: UPFCSite): Promise<UPFCEventApplicationTickets[]>;
+  getEventApplications(): Promise<UPFCEventApplicationTickets[]>;
 }
 
 /**

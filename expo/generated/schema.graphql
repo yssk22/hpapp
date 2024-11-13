@@ -269,18 +269,30 @@ type HPFCEventTicket implements Node {
   createdAt: Time
   updatedAt: Time
   num: Int!
-  status: HPFCEventTicketHPEventFCTicketStatus!
+  status: HPFCEventTicketHPFCEventTicketApplicationStatus!
   fcMemberSha256: String!
   applicationTitle: String!
   applicationID: String
+  applicationSite: HPFCEventTicketHPFCEventTicketApplicationSite!
   applicationStartDate: Time
   applicationDueDate: Time
   paymentStartDate: Time
   paymentDueDate: Time
 }
 
-"""HPFCEventTicketHPEventFCTicketStatus is enum for the field status"""
-enum HPFCEventTicketHPEventFCTicketStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketStatus") {
+"""
+HPFCEventTicketHPFCEventTicketApplicationSite is enum for the field application_site
+"""
+enum HPFCEventTicketHPFCEventTicketApplicationSite @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketApplicationSite") {
+  helloproject
+  mline
+}
+
+"""
+HPFCEventTicketHPFCEventTicketApplicationStatus is enum for the field status
+"""
+enum HPFCEventTicketHPFCEventTicketApplicationStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketApplicationStatus") {
+  BeforeLottery
   Completed
   PaymentOverdue
   PendingPayment
@@ -617,7 +629,7 @@ type MeMutation @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeMuta
   authenticate: User
   removeAuthentication: Auth
   upsertFollow(params: HPFollowUpsertParamsInput!): HPFollow
-  upsertEvents(params: UpsertEventsParamsInput!): [HPEvent]
+  upsertEvents(params: HPFCEventTicketApplicationUpsertParamsInput!): [HPEvent]
   upsertViewHistory(params: HPViewHistoryUpsertParamsInput!): HPViewHistory
 }
 
@@ -626,10 +638,9 @@ input HPFollowUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/serv
   followType: HPFollowType!
 }
 
-input UpsertEventsParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.UpsertEventsParams") {
-  fcMemberSha256: String!
+input HPFCEventTicketApplicationUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPFCEventTicketApplicationUpsertParams") {
   userId: Int!
-  applications: [EventTicketApplicationInput!]
+  applications: [HPFCEventTicketApplicationInput!]
 }
 
 input HPViewHistoryUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/feed.HPViewHistoryUpsertParams") {
@@ -644,13 +655,15 @@ enum HPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enu
   unfollow
 }
 
-input EventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.EventTicketApplication") {
+input HPFCEventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPFCEventTicketApplication") {
+  memberSha256: String!
   title: String!
   openAt: Time
   startAt: Time!
   fullyQualifiedVenueName: String!
   num: Int!
-  status: HPEventFCTicketStatus!
+  status: HPFCEventTicketApplicationStatus!
+  applicationSite: HPFCEventTicketApplicationSite!
   applicationId: String
   applicationStartDate: Time
   applicationDueDate: Time
@@ -658,13 +671,19 @@ input EventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/se
   paymentDueDate: Time
 }
 
-enum HPEventFCTicketStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventFCTicketStatus") {
+enum HPFCEventTicketApplicationStatus @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketApplicationStatus") {
+  before_lottery
   completed
   payment_overdue
   pending_payment
   rejected
   submitted
   unknown
+}
+
+enum HPFCEventTicketApplicationSite @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFCEventTicketApplicationSite") {
+  hello_project
+  m_line
 }
 
 type Media @goModel(model: "github.com/yssk22/hpapp/go/service/schema/jsonfields.Media") {

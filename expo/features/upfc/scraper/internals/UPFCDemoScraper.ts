@@ -8,6 +8,7 @@ function buildDemoData(today: Date, site: UPFCSite): UPFCEventApplicationTickets
     {
       name: '譜久村聖30thバースデーイベント',
       site: 'm-line',
+      username: 'demo',
       tickets: [
         {
           venue: '日本武道館',
@@ -28,6 +29,7 @@ function buildDemoData(today: Date, site: UPFCSite): UPFCEventApplicationTickets
     {
       name: '横山玲奈30thバースデーイベント',
       site: 'helloproject',
+      username: 'demo',
       tickets: [
         {
           venue: '日本武道館',
@@ -48,6 +50,7 @@ function buildDemoData(today: Date, site: UPFCSite): UPFCEventApplicationTickets
     {
       name: '野中美希30thバースデーイベント',
       site: 'helloproject',
+      username: 'demo',
       tickets: [
         {
           venue: '日本武道館',
@@ -69,6 +72,7 @@ function buildDemoData(today: Date, site: UPFCSite): UPFCEventApplicationTickets
     {
       name: '譜久村聖20thバースデーイベント',
       site: 'helloproject',
+      username: 'demo',
       tickets: [
         {
           venue: '日本武道館',
@@ -92,6 +96,7 @@ function buildDemoData(today: Date, site: UPFCSite): UPFCEventApplicationTickets
     {
       name: '山﨑愛生30thバースデーイベント',
       site: 'helloproject',
+      username: 'demo',
       applicationStartDate: addDate(today, -14, 'day'),
       applicationDueDate: addDate(today, -7, 'day'),
       paymentOpenDate: addDate(today, -3, 'day'),
@@ -117,6 +122,7 @@ function buildDemoData(today: Date, site: UPFCSite): UPFCEventApplicationTickets
     {
       name: '山﨑夢羽30thバースデーイベント',
       site: 'helloproject',
+      username: 'demo',
       applicationStartDate: addDate(today, -14, 'day'),
       applicationDueDate: addDate(today, -7, 'day'),
       paymentOpenDate: addDate(today, -5, 'day'),
@@ -142,6 +148,7 @@ function buildDemoData(today: Date, site: UPFCSite): UPFCEventApplicationTickets
     {
       name: '小田さくら30thバースデーイベント',
       site: 'helloproject',
+      username: 'demo',
       applicationStartDate: addDate(today, -14, 'day'),
       applicationDueDate: addDate(today, -7, 'day'),
       paymentOpenDate: addDate(today, +2, 'day'),
@@ -167,6 +174,7 @@ function buildDemoData(today: Date, site: UPFCSite): UPFCEventApplicationTickets
     {
       name: '今週のイベントサンプル',
       site: 'helloproject',
+      username: 'demo',
       applicationStartDate: addDate(today, 14, 'day'),
       applicationDueDate: addDate(today, 7, 'day'),
       paymentOpenDate: addDate(today, 2, 'day'),
@@ -193,6 +201,7 @@ function buildDemoData(today: Date, site: UPFCSite): UPFCEventApplicationTickets
       // eslint-disable-next-line quotes
       name: "モーニング娘。'21 10期メンバー 石田亜佑美＆佐藤優樹FCイベント～ひよこが10年経ったら、さぁ何になる？～『まーバースデーやってないよ。せめて衣装だけ着させて！』『いや、タイトル長いよ！』 ",
       site: 'helloproject',
+      username: 'demo',
       applicationStartDate: addDate(today, -1, 'day'),
       applicationDueDate: addDate(today, -7, 'day'),
       paymentOpenDate: addDate(today, -1, 'day'),
@@ -218,6 +227,7 @@ function buildDemoData(today: Date, site: UPFCSite): UPFCEventApplicationTickets
     {
       name: '入江里咲30thバースデーイベント',
       site: 'helloproject',
+      username: 'demo',
       applicationStartDate: addDate(today, -14, 'day'),
       applicationDueDate: addDate(today, -7, 'day'),
       paymentOpenDate: addDate(today, -5, 'day'),
@@ -228,6 +238,7 @@ function buildDemoData(today: Date, site: UPFCSite): UPFCEventApplicationTickets
     {
       name: '譜久村聖40thバースデーイベント',
       site: 'm-line',
+      username: 'demo',
       tickets: []
     }
   ].filter((e) => e.site === site) as UPFCEventApplicationTickets[];
@@ -255,9 +266,9 @@ export default class UPFCDemoScraper implements UPFCScraper {
   /**
    * @returns a list of event applications
    */
-  async getEventApplications(site: UPFCSite): Promise<UPFCEventApplicationTickets[]> {
+  async getEventApplications(): Promise<UPFCEventApplicationTickets[]> {
     await sleep(500);
     // build the demodata dynamically so that we can test the date related features
-    return buildDemoData(getToday(), site);
+    return buildDemoData(getToday(), 'helloproject');
   }
 }
