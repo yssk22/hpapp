@@ -5,6 +5,7 @@ import { NavigationListItem } from '@hpapp/features/common/list';
 import HPSortScreen from '@hpapp/features/hpsort/HPSortScreen';
 import SettingsDevOnlyScreen from '@hpapp/features/settings/SettingsDevOnlyScreen';
 import ThemeSettingsScreen from '@hpapp/features/settings/SettingsThemeScreen';
+import UPFCHistoryScreen from '@hpapp/features/upfc/UPFCHistoryScreen';
 import UPFCSettingsScreen from '@hpapp/features/upfc/UPFCSettingsScreen';
 import { t } from '@hpapp/system/i18n';
 import { Divider, ListItem } from '@rneui/themed';
@@ -19,6 +20,7 @@ export default function HomeTabSettings() {
   return (
     <ScrollView>
       <NavigationListItem screen={HPSortScreen}>{t('Sort')}</NavigationListItem>
+      <NavigationListItem screen={UPFCHistoryScreen}>{t('Event History')}</NavigationListItem>
       <ListItem containerStyle={{ backgroundColor: sectionColor }}>
         <ListItem.Title>
           <Text style={{ color: sectionColorContrast, fontWeight: 'bold' }}>{t('Settings')}</Text>

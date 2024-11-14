@@ -2,11 +2,11 @@
 
 import { renderUserComponent } from '@hpapp/features/testhelper';
 
-import HomeTabSettings from './HomeTabMenu';
+import HomeTabMenu from './HomeTabMenu';
 
 describe('SettingsTab', () => {
   test('render', async () => {
-    const rendered = await renderUserComponent(<HomeTabSettings />);
+    const rendered = await renderUserComponent(<HomeTabMenu />);
     expect(rendered).toMatchSnapshot();
   });
 });
