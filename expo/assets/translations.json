@@ -78,6 +78,15 @@
     "ja": "まだソートを一度もやっていません。試しますか?",
     "en": "You haven't had any sort yet, do you try it?"
   },
+  "Policies": {
+    "ja": "ポリシー"
+  },
+  "Terms of Service": {
+    "ja": "利用規約"
+  },
+  "Privacy Policy": {
+    "ja": "プライバシーポリシー"
+  },
   "Theme Settings": {
     "ja": "テーマの設定"
   },
@@ -94,7 +103,7 @@
     "ja": "ファンクラブ設定"
   },
   "FC Data Policy": {
-    "ja": "ファンクラブデータ設定"
+    "ja": "ファンクラブデータ規約"
   },
   "FC Member Number (Hello ! Project)": {
     "ja": "FC会員番号 (ハロー！プロジェクト)"
@@ -128,6 +137,9 @@
   },
   "Dev Only Settings": {
     "ja": "開発者設定"
+  },
+  "Other": {
+    "ja": "その他"
   },
   "Logout": {
     "ja": "ログアウト"

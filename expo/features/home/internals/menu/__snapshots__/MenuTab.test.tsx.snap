@@ -322,6 +322,333 @@ exports[`SettingsTab render 1`] = `
                           ]
                         }
                       >
+                        ポリシー
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+                <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": undefined,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#bcbbc1",
+                        "flexDirection": "row",
+                        "padding": 12,
+                      }
+                    }
+                    testID="RNE__LISTITEM__padView"
+                  >
+                    <View
+                      style={
+                        [
+                          {
+                            "alignItems": "flex-start",
+                            "flex": 1,
+                            "justifyContent": "center",
+                          },
+                          undefined,
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "black",
+                            },
+                            {
+                              "fontSize": 14,
+                            },
+                            undefined,
+                          ]
+                        }
+                      >
+                        利用規約
+                      </Text>
+                    </View>
+                    <View
+                      style={
+                        {
+                          "paddingLeft": 16,
+                        }
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "alignItems": "flex-end",
+                          "justifyContent": "center",
+                        }
+                      }
+                    >
+                      <Icon
+                        name="navigate-next"
+                        size={16}
+                      />
+                    </View>
+                  </View>
+                </View>
+                <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": undefined,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#bcbbc1",
+                        "flexDirection": "row",
+                        "padding": 12,
+                      }
+                    }
+                    testID="RNE__LISTITEM__padView"
+                  >
+                    <View
+                      style={
+                        [
+                          {
+                            "alignItems": "flex-start",
+                            "flex": 1,
+                            "justifyContent": "center",
+                          },
+                          undefined,
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "black",
+                            },
+                            {
+                              "fontSize": 14,
+                            },
+                            undefined,
+                          ]
+                        }
+                      >
+                        プライバシーポリシー
+                      </Text>
+                    </View>
+                    <View
+                      style={
+                        {
+                          "paddingLeft": 16,
+                        }
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "alignItems": "flex-end",
+                          "justifyContent": "center",
+                        }
+                      }
+                    >
+                      <Icon
+                        name="navigate-next"
+                        size={16}
+                      />
+                    </View>
+                  </View>
+                </View>
+                <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": undefined,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#bcbbc1",
+                        "flexDirection": "row",
+                        "padding": 12,
+                      }
+                    }
+                    testID="RNE__LISTITEM__padView"
+                  >
+                    <View
+                      style={
+                        [
+                          {
+                            "alignItems": "flex-start",
+                            "flex": 1,
+                            "justifyContent": "center",
+                          },
+                          undefined,
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "black",
+                            },
+                            {
+                              "fontSize": 14,
+                            },
+                            undefined,
+                          ]
+                        }
+                      >
+                        ファンクラブデータ規約
+                      </Text>
+                    </View>
+                    <View
+                      style={
+                        {
+                          "paddingLeft": 16,
+                        }
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "alignItems": "flex-end",
+                          "justifyContent": "center",
+                        }
+                      }
+                    >
+                      <Icon
+                        name="navigate-next"
+                        size={16}
+                      />
+                    </View>
+                  </View>
+                </View>
+                <View
+                  replaceTheme={[Function]}
+                  updateTheme={[Function]}
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "hsl(208, 8%, 90%)",
+                        "borderColor": "#bcbbc1",
+                        "flexDirection": "row",
+                        "padding": 14,
+                      }
+                    }
+                    testID="RNE__LISTITEM__padView"
+                  >
+                    <Text
+                      accessibilityRole="text"
+                      style={
+                        {
+                          "backgroundColor": "transparent",
+                          "color": "#242424",
+                          "fontSize": 17,
+                        }
+                      }
+                      testID="listItemTitle"
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "black",
+                            },
+                            {
+                              "fontSize": 14,
+                            },
+                            {
+                              "color": "#242424",
+                              "fontWeight": "bold",
+                            },
+                          ]
+                        }
+                      >
                         設定
                       </Text>
                     </Text>
@@ -676,6 +1003,42 @@ exports[`SettingsTab render 1`] = `
                   updateTheme={[Function]}
                 />
                 <View
+                  replaceTheme={[Function]}
+                  updateTheme={[Function]}
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "hsl(208, 8%, 90%)",
+                        "borderColor": "#bcbbc1",
+                        "flexDirection": "row",
+                        "padding": 14,
+                      }
+                    }
+                    testID="RNE__LISTITEM__padView"
+                  >
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "black",
+                          },
+                          {
+                            "fontSize": 14,
+                          },
+                          {
+                            "color": "#242424",
+                            "fontWeight": "bold",
+                          },
+                        ]
+                      }
+                    >
+                      その他
+                    </Text>
+                  </View>
+                </View>
+                <View
                   accessibilityState={
                     {
                       "busy": undefined,
@@ -748,6 +1111,23 @@ exports[`SettingsTab render 1`] = `
                       </Text>
                     </Text>
                   </View>
+                </View>
+                <View
+                  replaceTheme={[Function]}
+                  updateTheme={[Function]}
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "hsl(208, 8%, 90%)",
+                        "borderColor": "#bcbbc1",
+                        "flexDirection": "row",
+                        "padding": 14,
+                      }
+                    }
+                    testID="RNE__LISTITEM__padView"
+                  />
                 </View>
                 <View
                   replaceTheme={[Function]}
