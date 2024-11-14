@@ -2884,13 +2884,27 @@ func (e *executableSchema) Exec(ctx context.Context) graphql.ResponseHandler {
 	rc := graphql.GetOperationContext(ctx)
 	ec := executionContext{rc, e}
 	inputUnmarshalMap := graphql.BuildUnmarshalerMap(
+		ec.unmarshalInputAuthOrder,
+		ec.unmarshalInputHPAmebloPostOrder,
+		ec.unmarshalInputHPArtistOrder,
+		ec.unmarshalInputHPBlobOrder,
+		ec.unmarshalInputHPElineupMallItemOrder,
+		ec.unmarshalInputHPEventOrder,
 		ec.unmarshalInputHPFCEventTicketApplicationInput,
 		ec.unmarshalInputHPFCEventTicketApplicationUpsertParamsInput,
+		ec.unmarshalInputHPFCEventTicketOrder,
 		ec.unmarshalInputHPFeedItemOrder,
 		ec.unmarshalInputHPFeedQueryParamsInput,
+		ec.unmarshalInputHPFollowOrder,
 		ec.unmarshalInputHPFollowUpsertParamsInput,
+		ec.unmarshalInputHPIgPostOrder,
+		ec.unmarshalInputHPMemberOrder,
+		ec.unmarshalInputHPSortHistoryOrder,
+		ec.unmarshalInputHPViewHistoryOrder,
 		ec.unmarshalInputHPViewHistoryUpsertParamsInput,
 		ec.unmarshalInputMeFavoriteQueryParamsInput,
+		ec.unmarshalInputUserNotificationSettingOrder,
+		ec.unmarshalInputUserOrder,
 	)
 	first := true
 
@@ -20996,6 +21010,246 @@ func (ec *executionContext) fieldContext___Type_specifiedByURL(ctx context.Conte
 
 // region    **************************** input.gotpl *****************************
 
+func (ec *executionContext) unmarshalInputAuthOrder(ctx context.Context, obj interface{}) (ent.AuthOrder, error) {
+	var it ent.AuthOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNAuthOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐAuthOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputHPAmebloPostOrder(ctx context.Context, obj interface{}) (ent.HPAmebloPostOrder, error) {
+	var it ent.HPAmebloPostOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNHPAmebloPostOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPAmebloPostOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputHPArtistOrder(ctx context.Context, obj interface{}) (ent.HPArtistOrder, error) {
+	var it ent.HPArtistOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNHPArtistOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPArtistOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputHPBlobOrder(ctx context.Context, obj interface{}) (ent.HPBlobOrder, error) {
+	var it ent.HPBlobOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNHPBlobOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPBlobOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputHPElineupMallItemOrder(ctx context.Context, obj interface{}) (ent.HPElineupMallItemOrder, error) {
+	var it ent.HPElineupMallItemOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNHPElineupMallItemOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItemOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputHPEventOrder(ctx context.Context, obj interface{}) (ent.HPEventOrder, error) {
+	var it ent.HPEventOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNHPEventOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPEventOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
 func (ec *executionContext) unmarshalInputHPFCEventTicketApplicationInput(ctx context.Context, obj interface{}) (upfc.HPFCEventTicketApplication, error) {
 	var it upfc.HPFCEventTicketApplication
 	asMap := map[string]interface{}{}
@@ -21156,6 +21410,46 @@ func (ec *executionContext) unmarshalInputHPFCEventTicketApplicationUpsertParams
 	return it, nil
 }
 
+func (ec *executionContext) unmarshalInputHPFCEventTicketOrder(ctx context.Context, obj interface{}) (ent.HPFCEventTicketOrder, error) {
+	var it ent.HPFCEventTicketOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNHPFCEventTicketOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPFCEventTicketOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
 func (ec *executionContext) unmarshalInputHPFeedItemOrder(ctx context.Context, obj interface{}) (ent.HPFeedItemOrder, error) {
 	var it ent.HPFeedItemOrder
 	asMap := map[string]interface{}{}
@@ -21248,6 +21542,46 @@ func (ec *executionContext) unmarshalInputHPFeedQueryParamsInput(ctx context.Con
 	return it, nil
 }
 
+func (ec *executionContext) unmarshalInputHPFollowOrder(ctx context.Context, obj interface{}) (ent.HPFollowOrder, error) {
+	var it ent.HPFollowOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNHPFollowOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPFollowOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
 func (ec *executionContext) unmarshalInputHPFollowUpsertParamsInput(ctx context.Context, obj interface{}) (user.HPFollowUpsertParams, error) {
 	var it user.HPFollowUpsertParams
 	asMap := map[string]interface{}{}
@@ -21275,6 +21609,166 @@ func (ec *executionContext) unmarshalInputHPFollowUpsertParamsInput(ctx context.
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("followType"))
 			it.FollowType, err = ec.unmarshalNHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputHPIgPostOrder(ctx context.Context, obj interface{}) (ent.HPIgPostOrder, error) {
+	var it ent.HPIgPostOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNHPIgPostOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPIgPostOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputHPMemberOrder(ctx context.Context, obj interface{}) (ent.HPMemberOrder, error) {
+	var it ent.HPMemberOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNHPMemberOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPMemberOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputHPSortHistoryOrder(ctx context.Context, obj interface{}) (ent.HPSortHistoryOrder, error) {
+	var it ent.HPSortHistoryOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNHPSortHistoryOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPSortHistoryOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputHPViewHistoryOrder(ctx context.Context, obj interface{}) (ent.HPViewHistoryOrder, error) {
+	var it ent.HPViewHistoryOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNHPViewHistoryOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPViewHistoryOrderField(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -21355,6 +21849,86 @@ func (ec *executionContext) unmarshalInputMeFavoriteQueryParamsInput(ctx context
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("assetTypes"))
 			it.AssetTypes, err = ec.unmarshalOHPAssetType2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPAssetTypeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputUserNotificationSettingOrder(ctx context.Context, obj interface{}) (ent.UserNotificationSettingOrder, error) {
+	var it ent.UserNotificationSettingOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNUserNotificationSettingOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserNotificationSettingOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputUserOrder(ctx context.Context, obj interface{}) (ent.UserOrder, error) {
+	var it ent.UserOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNUserOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserOrderField(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -25294,6 +25868,22 @@ func (ec *executionContext) marshalNAuth2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgo�
 	return ec._Auth(ctx, sel, v)
 }
 
+func (ec *executionContext) unmarshalNAuthOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐAuthOrderField(ctx context.Context, v interface{}) (*ent.AuthOrderField, error) {
+	var res = new(ent.AuthOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNAuthOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐAuthOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.AuthOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
+}
+
 func (ec *executionContext) unmarshalNBoolean2bool(ctx context.Context, v interface{}) (bool, error) {
 	res, err := graphql.UnmarshalBoolean(v)
 	return res, graphql.ErrorOnPath(ctx, err)
@@ -25333,6 +25923,22 @@ func (ec *executionContext) marshalNHPAmebloPost2ᚖgithubᚗcomᚋyssk22ᚋhpap
 	return ec._HPAmebloPost(ctx, sel, v)
 }
 
+func (ec *executionContext) unmarshalNHPAmebloPostOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPAmebloPostOrderField(ctx context.Context, v interface{}) (*ent.HPAmebloPostOrderField, error) {
+	var res = new(ent.HPAmebloPostOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPAmebloPostOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPAmebloPostOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.HPAmebloPostOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
+}
+
 func (ec *executionContext) unmarshalNHPAmebloPostSource2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚋhpameblopostᚐSource(ctx context.Context, v interface{}) (hpameblopost.Source, error) {
 	var res hpameblopost.Source
 	err := res.UnmarshalGQL(v)
@@ -25351,6 +25957,22 @@ func (ec *executionContext) marshalNHPArtist2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋ
 		return graphql.Null
 	}
 	return ec._HPArtist(ctx, sel, v)
+}
+
+func (ec *executionContext) unmarshalNHPArtistOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPArtistOrderField(ctx context.Context, v interface{}) (*ent.HPArtistOrderField, error) {
+	var res = new(ent.HPArtistOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPArtistOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPArtistOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.HPArtistOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
 }
 
 func (ec *executionContext) unmarshalNHPAssetType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPAssetType(ctx context.Context, v interface{}) (enums.HPAssetType, error) {
@@ -25403,6 +26025,22 @@ func (ec *executionContext) marshalNHPBlobHPBlobType2githubᚗcomᚋyssk22ᚋhpa
 	return v
 }
 
+func (ec *executionContext) unmarshalNHPBlobOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPBlobOrderField(ctx context.Context, v interface{}) (*ent.HPBlobOrderField, error) {
+	var res = new(ent.HPBlobOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPBlobOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPBlobOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.HPBlobOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
+}
+
 func (ec *executionContext) unmarshalNHPBlobType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPBlobType(ctx context.Context, v interface{}) (enums.HPBlobType, error) {
 	var res enums.HPBlobType
 	err := res.UnmarshalGQL(v)
@@ -25423,6 +26061,22 @@ func (ec *executionContext) marshalNHPElineupMallItemHPElineupMallItemCategory2g
 	return v
 }
 
+func (ec *executionContext) unmarshalNHPElineupMallItemOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItemOrderField(ctx context.Context, v interface{}) (*ent.HPElineupMallItemOrderField, error) {
+	var res = new(ent.HPElineupMallItemOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPElineupMallItemOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItemOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.HPElineupMallItemOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
+}
+
 func (ec *executionContext) unmarshalNHPEventHPEventSource2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPEventSource(ctx context.Context, v interface{}) (enums.HPEventSource, error) {
 	var res enums.HPEventSource
 	err := res.UnmarshalGQL(v)
@@ -25430,6 +26084,22 @@ func (ec *executionContext) unmarshalNHPEventHPEventSource2githubᚗcomᚋyssk22
 }
 
 func (ec *executionContext) marshalNHPEventHPEventSource2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPEventSource(ctx context.Context, sel ast.SelectionSet, v enums.HPEventSource) graphql.Marshaler {
+	return v
+}
+
+func (ec *executionContext) unmarshalNHPEventOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPEventOrderField(ctx context.Context, v interface{}) (*ent.HPEventOrderField, error) {
+	var res = new(ent.HPEventOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPEventOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPEventOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.HPEventOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
 	return v
 }
 
@@ -25493,6 +26163,22 @@ func (ec *executionContext) marshalNHPFCEventTicketHPFCEventTicketApplicationSta
 	return v
 }
 
+func (ec *executionContext) unmarshalNHPFCEventTicketOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPFCEventTicketOrderField(ctx context.Context, v interface{}) (*ent.HPFCEventTicketOrderField, error) {
+	var res = new(ent.HPFCEventTicketOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPFCEventTicketOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPFCEventTicketOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.HPFCEventTicketOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
+}
+
 func (ec *executionContext) unmarshalNHPFeedItemHPAssetType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPAssetType(ctx context.Context, v interface{}) (enums.HPAssetType, error) {
 	var res enums.HPAssetType
 	err := res.UnmarshalGQL(v)
@@ -25544,6 +26230,22 @@ func (ec *executionContext) marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22�
 	return v
 }
 
+func (ec *executionContext) unmarshalNHPFollowOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPFollowOrderField(ctx context.Context, v interface{}) (*ent.HPFollowOrderField, error) {
+	var res = new(ent.HPFollowOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPFollowOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPFollowOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.HPFollowOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
+}
+
 func (ec *executionContext) unmarshalNHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx context.Context, v interface{}) (enums.HPFollowType, error) {
 	var res enums.HPFollowType
 	err := res.UnmarshalGQL(v)
@@ -25573,6 +26275,22 @@ func (ec *executionContext) marshalNHPIgPost2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋ
 	return ec._HPIgPost(ctx, sel, v)
 }
 
+func (ec *executionContext) unmarshalNHPIgPostOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPIgPostOrderField(ctx context.Context, v interface{}) (*ent.HPIgPostOrderField, error) {
+	var res = new(ent.HPIgPostOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPIgPostOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPIgPostOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.HPIgPostOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
+}
+
 func (ec *executionContext) marshalNHPMember2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPMember(ctx context.Context, sel ast.SelectionSet, v *ent.HPMember) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -25583,6 +26301,22 @@ func (ec *executionContext) marshalNHPMember2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋ
 	return ec._HPMember(ctx, sel, v)
 }
 
+func (ec *executionContext) unmarshalNHPMemberOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPMemberOrderField(ctx context.Context, v interface{}) (*ent.HPMemberOrderField, error) {
+	var res = new(ent.HPMemberOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPMemberOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPMemberOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.HPMemberOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
+}
+
 func (ec *executionContext) marshalNHPSortHistory2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPSortHistory(ctx context.Context, sel ast.SelectionSet, v *ent.HPSortHistory) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -25591,6 +26325,22 @@ func (ec *executionContext) marshalNHPSortHistory2ᚖgithubᚗcomᚋyssk22ᚋhpa
 		return graphql.Null
 	}
 	return ec._HPSortHistory(ctx, sel, v)
+}
+
+func (ec *executionContext) unmarshalNHPSortHistoryOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPSortHistoryOrderField(ctx context.Context, v interface{}) (*ent.HPSortHistoryOrderField, error) {
+	var res = new(ent.HPSortHistoryOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPSortHistoryOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPSortHistoryOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.HPSortHistoryOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
 }
 
 func (ec *executionContext) marshalNHPSortResult2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋjsonfieldsᚐHPSortResult(ctx context.Context, sel ast.SelectionSet, v jsonfields.HPSortResult) graphql.Marshaler {
@@ -25618,6 +26368,22 @@ func (ec *executionContext) unmarshalNHPViewHistoryHPAssetType2githubᚗcomᚋys
 }
 
 func (ec *executionContext) marshalNHPViewHistoryHPAssetType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPAssetType(ctx context.Context, sel ast.SelectionSet, v enums.HPAssetType) graphql.Marshaler {
+	return v
+}
+
+func (ec *executionContext) unmarshalNHPViewHistoryOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPViewHistoryOrderField(ctx context.Context, v interface{}) (*ent.HPViewHistoryOrderField, error) {
+	var res = new(ent.HPViewHistoryOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPViewHistoryOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPViewHistoryOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.HPViewHistoryOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
 	return v
 }
 
@@ -25932,6 +26698,38 @@ func (ec *executionContext) marshalNUserNotificationSetting2ᚖgithubᚗcomᚋys
 		return graphql.Null
 	}
 	return ec._UserNotificationSetting(ctx, sel, v)
+}
+
+func (ec *executionContext) unmarshalNUserNotificationSettingOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserNotificationSettingOrderField(ctx context.Context, v interface{}) (*ent.UserNotificationSettingOrderField, error) {
+	var res = new(ent.UserNotificationSettingOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNUserNotificationSettingOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserNotificationSettingOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.UserNotificationSettingOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
+}
+
+func (ec *executionContext) unmarshalNUserOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserOrderField(ctx context.Context, v interface{}) (*ent.UserOrderField, error) {
+	var res = new(ent.UserOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNUserOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.UserOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
 }
 
 func (ec *executionContext) marshalN__Directive2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐDirective(ctx context.Context, sel ast.SelectionSet, v introspection.Directive) graphql.Marshaler {

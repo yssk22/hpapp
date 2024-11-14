@@ -312,6 +312,63 @@ func (a *AuthQuery) Paginate(
 	return conn, nil
 }
 
+var (
+	// AuthOrderFieldCreatedAt orders Auth by created_at.
+	AuthOrderFieldCreatedAt = &AuthOrderField{
+		field: auth.FieldCreatedAt,
+		toCursor: func(a *Auth) Cursor {
+			return Cursor{
+				ID:    a.ID,
+				Value: a.CreatedAt,
+			}
+		},
+	}
+	// AuthOrderFieldUpdatedAt orders Auth by updated_at.
+	AuthOrderFieldUpdatedAt = &AuthOrderField{
+		field: auth.FieldUpdatedAt,
+		toCursor: func(a *Auth) Cursor {
+			return Cursor{
+				ID:    a.ID,
+				Value: a.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f AuthOrderField) String() string {
+	var str string
+	switch f.field {
+	case auth.FieldCreatedAt:
+		str = "createdAt"
+	case auth.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f AuthOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *AuthOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("AuthOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *AuthOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *AuthOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid AuthOrderField", str)
+	}
+	return nil
+}
+
 // AuthOrderField defines the ordering field of Auth.
 type AuthOrderField struct {
 	field    string
@@ -545,6 +602,63 @@ func (hap *HPAmebloPostQuery) Paginate(
 	}
 	conn.build(nodes, pager, after, first, before, last)
 	return conn, nil
+}
+
+var (
+	// HPAmebloPostOrderFieldCreatedAt orders HPAmebloPost by created_at.
+	HPAmebloPostOrderFieldCreatedAt = &HPAmebloPostOrderField{
+		field: hpameblopost.FieldCreatedAt,
+		toCursor: func(hap *HPAmebloPost) Cursor {
+			return Cursor{
+				ID:    hap.ID,
+				Value: hap.CreatedAt,
+			}
+		},
+	}
+	// HPAmebloPostOrderFieldUpdatedAt orders HPAmebloPost by updated_at.
+	HPAmebloPostOrderFieldUpdatedAt = &HPAmebloPostOrderField{
+		field: hpameblopost.FieldUpdatedAt,
+		toCursor: func(hap *HPAmebloPost) Cursor {
+			return Cursor{
+				ID:    hap.ID,
+				Value: hap.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f HPAmebloPostOrderField) String() string {
+	var str string
+	switch f.field {
+	case hpameblopost.FieldCreatedAt:
+		str = "createdAt"
+	case hpameblopost.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f HPAmebloPostOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *HPAmebloPostOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("HPAmebloPostOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *HPAmebloPostOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPAmebloPostOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid HPAmebloPostOrderField", str)
+	}
+	return nil
 }
 
 // HPAmebloPostOrderField defines the ordering field of HPAmebloPost.
@@ -782,6 +896,63 @@ func (ha *HPArtistQuery) Paginate(
 	return conn, nil
 }
 
+var (
+	// HPArtistOrderFieldCreatedAt orders HPArtist by created_at.
+	HPArtistOrderFieldCreatedAt = &HPArtistOrderField{
+		field: hpartist.FieldCreatedAt,
+		toCursor: func(ha *HPArtist) Cursor {
+			return Cursor{
+				ID:    ha.ID,
+				Value: ha.CreatedAt,
+			}
+		},
+	}
+	// HPArtistOrderFieldUpdatedAt orders HPArtist by updated_at.
+	HPArtistOrderFieldUpdatedAt = &HPArtistOrderField{
+		field: hpartist.FieldUpdatedAt,
+		toCursor: func(ha *HPArtist) Cursor {
+			return Cursor{
+				ID:    ha.ID,
+				Value: ha.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f HPArtistOrderField) String() string {
+	var str string
+	switch f.field {
+	case hpartist.FieldCreatedAt:
+		str = "createdAt"
+	case hpartist.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f HPArtistOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *HPArtistOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("HPArtistOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *HPArtistOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPArtistOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid HPArtistOrderField", str)
+	}
+	return nil
+}
+
 // HPArtistOrderField defines the ordering field of HPArtist.
 type HPArtistOrderField struct {
 	field    string
@@ -1015,6 +1186,63 @@ func (hb *HPBlobQuery) Paginate(
 	}
 	conn.build(nodes, pager, after, first, before, last)
 	return conn, nil
+}
+
+var (
+	// HPBlobOrderFieldCreatedAt orders HPBlob by created_at.
+	HPBlobOrderFieldCreatedAt = &HPBlobOrderField{
+		field: hpblob.FieldCreatedAt,
+		toCursor: func(hb *HPBlob) Cursor {
+			return Cursor{
+				ID:    hb.ID,
+				Value: hb.CreatedAt,
+			}
+		},
+	}
+	// HPBlobOrderFieldUpdatedAt orders HPBlob by updated_at.
+	HPBlobOrderFieldUpdatedAt = &HPBlobOrderField{
+		field: hpblob.FieldUpdatedAt,
+		toCursor: func(hb *HPBlob) Cursor {
+			return Cursor{
+				ID:    hb.ID,
+				Value: hb.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f HPBlobOrderField) String() string {
+	var str string
+	switch f.field {
+	case hpblob.FieldCreatedAt:
+		str = "createdAt"
+	case hpblob.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f HPBlobOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *HPBlobOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("HPBlobOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *HPBlobOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPBlobOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid HPBlobOrderField", str)
+	}
+	return nil
 }
 
 // HPBlobOrderField defines the ordering field of HPBlob.
@@ -1252,6 +1480,63 @@ func (hemi *HPElineupMallItemQuery) Paginate(
 	return conn, nil
 }
 
+var (
+	// HPElineupMallItemOrderFieldCreatedAt orders HPElineupMallItem by created_at.
+	HPElineupMallItemOrderFieldCreatedAt = &HPElineupMallItemOrderField{
+		field: hpelineupmallitem.FieldCreatedAt,
+		toCursor: func(hemi *HPElineupMallItem) Cursor {
+			return Cursor{
+				ID:    hemi.ID,
+				Value: hemi.CreatedAt,
+			}
+		},
+	}
+	// HPElineupMallItemOrderFieldUpdatedAt orders HPElineupMallItem by updated_at.
+	HPElineupMallItemOrderFieldUpdatedAt = &HPElineupMallItemOrderField{
+		field: hpelineupmallitem.FieldUpdatedAt,
+		toCursor: func(hemi *HPElineupMallItem) Cursor {
+			return Cursor{
+				ID:    hemi.ID,
+				Value: hemi.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f HPElineupMallItemOrderField) String() string {
+	var str string
+	switch f.field {
+	case hpelineupmallitem.FieldCreatedAt:
+		str = "createdAt"
+	case hpelineupmallitem.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f HPElineupMallItemOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *HPElineupMallItemOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("HPElineupMallItemOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *HPElineupMallItemOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPElineupMallItemOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid HPElineupMallItemOrderField", str)
+	}
+	return nil
+}
+
 // HPElineupMallItemOrderField defines the ordering field of HPElineupMallItem.
 type HPElineupMallItemOrderField struct {
 	field    string
@@ -1487,6 +1772,77 @@ func (he *HPEventQuery) Paginate(
 	return conn, nil
 }
 
+var (
+	// HPEventOrderFieldCreatedAt orders HPEvent by created_at.
+	HPEventOrderFieldCreatedAt = &HPEventOrderField{
+		field: hpevent.FieldCreatedAt,
+		toCursor: func(he *HPEvent) Cursor {
+			return Cursor{
+				ID:    he.ID,
+				Value: he.CreatedAt,
+			}
+		},
+	}
+	// HPEventOrderFieldUpdatedAt orders HPEvent by updated_at.
+	HPEventOrderFieldUpdatedAt = &HPEventOrderField{
+		field: hpevent.FieldUpdatedAt,
+		toCursor: func(he *HPEvent) Cursor {
+			return Cursor{
+				ID:    he.ID,
+				Value: he.UpdatedAt,
+			}
+		},
+	}
+	// HPEventOrderFieldStartAt orders HPEvent by start_at.
+	HPEventOrderFieldStartAt = &HPEventOrderField{
+		field: hpevent.FieldStartAt,
+		toCursor: func(he *HPEvent) Cursor {
+			return Cursor{
+				ID:    he.ID,
+				Value: he.StartAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f HPEventOrderField) String() string {
+	var str string
+	switch f.field {
+	case hpevent.FieldCreatedAt:
+		str = "createdAt"
+	case hpevent.FieldUpdatedAt:
+		str = "updatedAt"
+	case hpevent.FieldStartAt:
+		str = "startAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f HPEventOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *HPEventOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("HPEventOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *HPEventOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPEventOrderFieldUpdatedAt
+	case "startAt":
+		*f = *HPEventOrderFieldStartAt
+	default:
+		return fmt.Errorf("%s is not a valid HPEventOrderField", str)
+	}
+	return nil
+}
+
 // HPEventOrderField defines the ordering field of HPEvent.
 type HPEventOrderField struct {
 	field    string
@@ -1720,6 +2076,63 @@ func (het *HPFCEventTicketQuery) Paginate(
 	}
 	conn.build(nodes, pager, after, first, before, last)
 	return conn, nil
+}
+
+var (
+	// HPFCEventTicketOrderFieldCreatedAt orders HPFCEventTicket by created_at.
+	HPFCEventTicketOrderFieldCreatedAt = &HPFCEventTicketOrderField{
+		field: hpfceventticket.FieldCreatedAt,
+		toCursor: func(het *HPFCEventTicket) Cursor {
+			return Cursor{
+				ID:    het.ID,
+				Value: het.CreatedAt,
+			}
+		},
+	}
+	// HPFCEventTicketOrderFieldUpdatedAt orders HPFCEventTicket by updated_at.
+	HPFCEventTicketOrderFieldUpdatedAt = &HPFCEventTicketOrderField{
+		field: hpfceventticket.FieldUpdatedAt,
+		toCursor: func(het *HPFCEventTicket) Cursor {
+			return Cursor{
+				ID:    het.ID,
+				Value: het.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f HPFCEventTicketOrderField) String() string {
+	var str string
+	switch f.field {
+	case hpfceventticket.FieldCreatedAt:
+		str = "createdAt"
+	case hpfceventticket.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f HPFCEventTicketOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *HPFCEventTicketOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("HPFCEventTicketOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *HPFCEventTicketOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPFCEventTicketOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid HPFCEventTicketOrderField", str)
+	}
+	return nil
 }
 
 // HPFCEventTicketOrderField defines the ordering field of HPFCEventTicket.
@@ -1958,6 +2371,26 @@ func (hfi *HPFeedItemQuery) Paginate(
 }
 
 var (
+	// HPFeedItemOrderFieldCreatedAt orders HPFeedItem by created_at.
+	HPFeedItemOrderFieldCreatedAt = &HPFeedItemOrderField{
+		field: hpfeeditem.FieldCreatedAt,
+		toCursor: func(hfi *HPFeedItem) Cursor {
+			return Cursor{
+				ID:    hfi.ID,
+				Value: hfi.CreatedAt,
+			}
+		},
+	}
+	// HPFeedItemOrderFieldUpdatedAt orders HPFeedItem by updated_at.
+	HPFeedItemOrderFieldUpdatedAt = &HPFeedItemOrderField{
+		field: hpfeeditem.FieldUpdatedAt,
+		toCursor: func(hfi *HPFeedItem) Cursor {
+			return Cursor{
+				ID:    hfi.ID,
+				Value: hfi.UpdatedAt,
+			}
+		},
+	}
 	// HPFeedItemOrderFieldPostAt orders HPFeedItem by post_at.
 	HPFeedItemOrderFieldPostAt = &HPFeedItemOrderField{
 		field: hpfeeditem.FieldPostAt,
@@ -1974,6 +2407,10 @@ var (
 func (f HPFeedItemOrderField) String() string {
 	var str string
 	switch f.field {
+	case hpfeeditem.FieldCreatedAt:
+		str = "createdAt"
+	case hpfeeditem.FieldUpdatedAt:
+		str = "updatedAt"
 	case hpfeeditem.FieldPostAt:
 		str = "postAt"
 	}
@@ -1992,6 +2429,10 @@ func (f *HPFeedItemOrderField) UnmarshalGQL(v interface{}) error {
 		return fmt.Errorf("HPFeedItemOrderField %T must be a string", v)
 	}
 	switch str {
+	case "createdAt":
+		*f = *HPFeedItemOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPFeedItemOrderFieldUpdatedAt
 	case "postAt":
 		*f = *HPFeedItemOrderFieldPostAt
 	default:
@@ -2235,6 +2676,63 @@ func (hf *HPFollowQuery) Paginate(
 	return conn, nil
 }
 
+var (
+	// HPFollowOrderFieldCreatedAt orders HPFollow by created_at.
+	HPFollowOrderFieldCreatedAt = &HPFollowOrderField{
+		field: hpfollow.FieldCreatedAt,
+		toCursor: func(hf *HPFollow) Cursor {
+			return Cursor{
+				ID:    hf.ID,
+				Value: hf.CreatedAt,
+			}
+		},
+	}
+	// HPFollowOrderFieldUpdatedAt orders HPFollow by updated_at.
+	HPFollowOrderFieldUpdatedAt = &HPFollowOrderField{
+		field: hpfollow.FieldUpdatedAt,
+		toCursor: func(hf *HPFollow) Cursor {
+			return Cursor{
+				ID:    hf.ID,
+				Value: hf.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f HPFollowOrderField) String() string {
+	var str string
+	switch f.field {
+	case hpfollow.FieldCreatedAt:
+		str = "createdAt"
+	case hpfollow.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f HPFollowOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *HPFollowOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("HPFollowOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *HPFollowOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPFollowOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid HPFollowOrderField", str)
+	}
+	return nil
+}
+
 // HPFollowOrderField defines the ordering field of HPFollow.
 type HPFollowOrderField struct {
 	field    string
@@ -2468,6 +2966,63 @@ func (hip *HPIgPostQuery) Paginate(
 	}
 	conn.build(nodes, pager, after, first, before, last)
 	return conn, nil
+}
+
+var (
+	// HPIgPostOrderFieldCreatedAt orders HPIgPost by created_at.
+	HPIgPostOrderFieldCreatedAt = &HPIgPostOrderField{
+		field: hpigpost.FieldCreatedAt,
+		toCursor: func(hip *HPIgPost) Cursor {
+			return Cursor{
+				ID:    hip.ID,
+				Value: hip.CreatedAt,
+			}
+		},
+	}
+	// HPIgPostOrderFieldUpdatedAt orders HPIgPost by updated_at.
+	HPIgPostOrderFieldUpdatedAt = &HPIgPostOrderField{
+		field: hpigpost.FieldUpdatedAt,
+		toCursor: func(hip *HPIgPost) Cursor {
+			return Cursor{
+				ID:    hip.ID,
+				Value: hip.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f HPIgPostOrderField) String() string {
+	var str string
+	switch f.field {
+	case hpigpost.FieldCreatedAt:
+		str = "createdAt"
+	case hpigpost.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f HPIgPostOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *HPIgPostOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("HPIgPostOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *HPIgPostOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPIgPostOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid HPIgPostOrderField", str)
+	}
+	return nil
 }
 
 // HPIgPostOrderField defines the ordering field of HPIgPost.
@@ -2705,6 +3260,63 @@ func (hm *HPMemberQuery) Paginate(
 	return conn, nil
 }
 
+var (
+	// HPMemberOrderFieldCreatedAt orders HPMember by created_at.
+	HPMemberOrderFieldCreatedAt = &HPMemberOrderField{
+		field: hpmember.FieldCreatedAt,
+		toCursor: func(hm *HPMember) Cursor {
+			return Cursor{
+				ID:    hm.ID,
+				Value: hm.CreatedAt,
+			}
+		},
+	}
+	// HPMemberOrderFieldUpdatedAt orders HPMember by updated_at.
+	HPMemberOrderFieldUpdatedAt = &HPMemberOrderField{
+		field: hpmember.FieldUpdatedAt,
+		toCursor: func(hm *HPMember) Cursor {
+			return Cursor{
+				ID:    hm.ID,
+				Value: hm.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f HPMemberOrderField) String() string {
+	var str string
+	switch f.field {
+	case hpmember.FieldCreatedAt:
+		str = "createdAt"
+	case hpmember.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f HPMemberOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *HPMemberOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("HPMemberOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *HPMemberOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPMemberOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid HPMemberOrderField", str)
+	}
+	return nil
+}
+
 // HPMemberOrderField defines the ordering field of HPMember.
 type HPMemberOrderField struct {
 	field    string
@@ -2938,6 +3550,63 @@ func (hsh *HPSortHistoryQuery) Paginate(
 	}
 	conn.build(nodes, pager, after, first, before, last)
 	return conn, nil
+}
+
+var (
+	// HPSortHistoryOrderFieldCreatedAt orders HPSortHistory by created_at.
+	HPSortHistoryOrderFieldCreatedAt = &HPSortHistoryOrderField{
+		field: hpsorthistory.FieldCreatedAt,
+		toCursor: func(hsh *HPSortHistory) Cursor {
+			return Cursor{
+				ID:    hsh.ID,
+				Value: hsh.CreatedAt,
+			}
+		},
+	}
+	// HPSortHistoryOrderFieldUpdatedAt orders HPSortHistory by updated_at.
+	HPSortHistoryOrderFieldUpdatedAt = &HPSortHistoryOrderField{
+		field: hpsorthistory.FieldUpdatedAt,
+		toCursor: func(hsh *HPSortHistory) Cursor {
+			return Cursor{
+				ID:    hsh.ID,
+				Value: hsh.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f HPSortHistoryOrderField) String() string {
+	var str string
+	switch f.field {
+	case hpsorthistory.FieldCreatedAt:
+		str = "createdAt"
+	case hpsorthistory.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f HPSortHistoryOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *HPSortHistoryOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("HPSortHistoryOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *HPSortHistoryOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPSortHistoryOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid HPSortHistoryOrderField", str)
+	}
+	return nil
 }
 
 // HPSortHistoryOrderField defines the ordering field of HPSortHistory.
@@ -3175,6 +3844,63 @@ func (hvh *HPViewHistoryQuery) Paginate(
 	return conn, nil
 }
 
+var (
+	// HPViewHistoryOrderFieldCreatedAt orders HPViewHistory by created_at.
+	HPViewHistoryOrderFieldCreatedAt = &HPViewHistoryOrderField{
+		field: hpviewhistory.FieldCreatedAt,
+		toCursor: func(hvh *HPViewHistory) Cursor {
+			return Cursor{
+				ID:    hvh.ID,
+				Value: hvh.CreatedAt,
+			}
+		},
+	}
+	// HPViewHistoryOrderFieldUpdatedAt orders HPViewHistory by updated_at.
+	HPViewHistoryOrderFieldUpdatedAt = &HPViewHistoryOrderField{
+		field: hpviewhistory.FieldUpdatedAt,
+		toCursor: func(hvh *HPViewHistory) Cursor {
+			return Cursor{
+				ID:    hvh.ID,
+				Value: hvh.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f HPViewHistoryOrderField) String() string {
+	var str string
+	switch f.field {
+	case hpviewhistory.FieldCreatedAt:
+		str = "createdAt"
+	case hpviewhistory.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f HPViewHistoryOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *HPViewHistoryOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("HPViewHistoryOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *HPViewHistoryOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPViewHistoryOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid HPViewHistoryOrderField", str)
+	}
+	return nil
+}
+
 // HPViewHistoryOrderField defines the ordering field of HPViewHistory.
 type HPViewHistoryOrderField struct {
 	field    string
@@ -3410,6 +4136,63 @@ func (u *UserQuery) Paginate(
 	return conn, nil
 }
 
+var (
+	// UserOrderFieldCreatedAt orders User by created_at.
+	UserOrderFieldCreatedAt = &UserOrderField{
+		field: user.FieldCreatedAt,
+		toCursor: func(u *User) Cursor {
+			return Cursor{
+				ID:    u.ID,
+				Value: u.CreatedAt,
+			}
+		},
+	}
+	// UserOrderFieldUpdatedAt orders User by updated_at.
+	UserOrderFieldUpdatedAt = &UserOrderField{
+		field: user.FieldUpdatedAt,
+		toCursor: func(u *User) Cursor {
+			return Cursor{
+				ID:    u.ID,
+				Value: u.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f UserOrderField) String() string {
+	var str string
+	switch f.field {
+	case user.FieldCreatedAt:
+		str = "createdAt"
+	case user.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f UserOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *UserOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("UserOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *UserOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *UserOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid UserOrderField", str)
+	}
+	return nil
+}
+
 // UserOrderField defines the ordering field of User.
 type UserOrderField struct {
 	field    string
@@ -3643,6 +4426,63 @@ func (uns *UserNotificationSettingQuery) Paginate(
 	}
 	conn.build(nodes, pager, after, first, before, last)
 	return conn, nil
+}
+
+var (
+	// UserNotificationSettingOrderFieldCreatedAt orders UserNotificationSetting by created_at.
+	UserNotificationSettingOrderFieldCreatedAt = &UserNotificationSettingOrderField{
+		field: usernotificationsetting.FieldCreatedAt,
+		toCursor: func(uns *UserNotificationSetting) Cursor {
+			return Cursor{
+				ID:    uns.ID,
+				Value: uns.CreatedAt,
+			}
+		},
+	}
+	// UserNotificationSettingOrderFieldUpdatedAt orders UserNotificationSetting by updated_at.
+	UserNotificationSettingOrderFieldUpdatedAt = &UserNotificationSettingOrderField{
+		field: usernotificationsetting.FieldUpdatedAt,
+		toCursor: func(uns *UserNotificationSetting) Cursor {
+			return Cursor{
+				ID:    uns.ID,
+				Value: uns.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f UserNotificationSettingOrderField) String() string {
+	var str string
+	switch f.field {
+	case usernotificationsetting.FieldCreatedAt:
+		str = "createdAt"
+	case usernotificationsetting.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f UserNotificationSettingOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *UserNotificationSettingOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("UserNotificationSettingOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *UserNotificationSettingOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *UserNotificationSettingOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid UserNotificationSettingOrderField", str)
+	}
+	return nil
 }
 
 // UserNotificationSettingOrderField defines the ordering field of UserNotificationSetting.

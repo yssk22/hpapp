@@ -8,14 +8,15 @@ import (
 	"entgo.io/ent"
 	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/field"
+	"entgo.io/ent/schema/index"
 	"entgo.io/ent/schema/mixin"
 	"github.com/yssk22/hpapp/go/system/clock"
 )
 
 // Timestamp implements the ent.Mixin for adding timestamps into fields
 // Fields added:
-//    - created_at time.Time (immutable)
-//    - updated_at time.Time
+//   - created_at time.Time (immutable)
+//   - updated_at time.Time
 type Timestamp struct {
 	mixin.Schema
 }
@@ -24,9 +25,9 @@ func (Timestamp) Fields() []ent.Field {
 	return []ent.Field{
 		field.Time("created_at").
 			Immutable().
-			Optional(),
+			Optional().Annotations(entgql.OrderField("createdAt")),
 		field.Time("updated_at").
-			Optional(),
+			Optional().Annotations(entgql.OrderField("updatedAt")),
 	}
 }
 
@@ -35,7 +36,10 @@ func (Timestamp) Edges() []ent.Edge {
 }
 
 func (Timestamp) Indexes() []ent.Index {
-	return nil
+	return []ent.Index{
+		index.Fields("created_at"),
+		index.Fields("updated_at"),
+	}
 }
 
 func (Timestamp) Hooks() []ent.Hook {
