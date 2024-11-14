@@ -1,4 +1,5 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
+import { FontSize } from '@hpapp/features/common/constants';
 import { t } from '@hpapp/system/i18n';
 import { Header, Button } from '@rneui/themed';
 import React from 'react';
@@ -33,10 +34,12 @@ export default function ConsentGate({
     <View style={{ flex: 1, paddingBottom: insets.bottom }}>
       {showHeader && (
         <Header
-          placement="left"
+          placement="center"
           centerComponent={{
             text: title,
             style: {
+              fontSize: FontSize.Large,
+              fontWeight: 'bold',
               color: contrastColor
             }
           }}

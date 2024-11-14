@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CalendarDateIcon.stories Basic 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
+<View
   style={
     [
       {
@@ -180,12 +179,11 @@ exports[`CalendarDateIcon.stories Basic 1`] = `
       />
     </RNSScreen>
   </RNSScreenStack>
-</RNCSafeAreaProvider>
+</View>
 `;
 
 exports[`CalendarDateIcon.stories InvalidDate 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
+<View
   style={
     [
       {
@@ -340,5 +338,5 @@ exports[`CalendarDateIcon.stories InvalidDate 1`] = `
       />
     </RNSScreen>
   </RNSScreenStack>
-</RNCSafeAreaProvider>
+</View>
 `;

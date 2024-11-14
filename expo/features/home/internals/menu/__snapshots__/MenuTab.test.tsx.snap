@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SettingsTab render 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
+<View
   style={
     [
       {
@@ -1318,5 +1317,5 @@ exports[`SettingsTab render 1`] = `
       />
     </RNSScreen>
   </RNSScreenStack>
-</RNCSafeAreaProvider>
+</View>
 `;

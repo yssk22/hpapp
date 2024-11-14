@@ -1,3 +1,5 @@
+import mockSafeAreaContext from 'react-native-safe-area-context/jest/mock';
+
 jest.mock('expo-asset', () => ({
   useAssets: jest.fn((moduleIds: number | number[]) => {
     if (typeof moduleIds === 'number') {
@@ -148,6 +150,8 @@ jest.mock('@react-native-firebase/auth', () => {
   };
   return module;
 });
+
+jest.mock('react-native-safe-area-context', () => mockSafeAreaContext);
 
 jest.mock('react-native-share', () => ({
   default: jest.fn()

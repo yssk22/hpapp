@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`home HomeScreen 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
+<View
   style={
     [
       {
@@ -11321,7 +11320,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                               {
                                 "justifyContent": "center",
                                 "marginHorizontal": 16,
-                                "maxWidth": 718,
+                                "maxWidth": 288,
                               }
                             }
                           >
@@ -12084,5 +12083,5 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
       />
     </RNSScreen>
   </RNSScreenStack>
-</RNCSafeAreaProvider>
+</View>
 `;
