@@ -2,6 +2,7 @@ import { useThemeColor } from '@hpapp/features/app/theme';
 import { AuthGateByRole } from '@hpapp/features/auth';
 import { Text } from '@hpapp/features/common';
 import { NavigationListItem } from '@hpapp/features/common/list';
+import ContentScreen from '@hpapp/features/content/ContentScreen';
 import HPSortScreen from '@hpapp/features/hpsort/HPSortScreen';
 import SettingsDevOnlyScreen from '@hpapp/features/settings/SettingsDevOnlyScreen';
 import ThemeSettingsScreen from '@hpapp/features/settings/SettingsThemeScreen';
@@ -23,6 +24,38 @@ export default function HomeTabSettings() {
       <NavigationListItem screen={UPFCHistoryScreen}>{t('Event History')}</NavigationListItem>
       <ListItem containerStyle={{ backgroundColor: sectionColor }}>
         <ListItem.Title>
+          <Text style={{ color: sectionColorContrast, fontWeight: 'bold' }}>{t('Policies')}</Text>
+        </ListItem.Title>
+      </ListItem>
+      <NavigationListItem
+        screen={ContentScreen}
+        params={{
+          title: t('Terms of Service'),
+          moduleId: require('assets/policy/tos.html')
+        }}
+      >
+        {t('Terms of Service')}
+      </NavigationListItem>
+      <NavigationListItem
+        screen={ContentScreen}
+        params={{
+          title: t('Privacy Policy'),
+          moduleId: require('assets/policy/privacy.html')
+        }}
+      >
+        {t('Privacy Policy')}
+      </NavigationListItem>
+      <NavigationListItem
+        screen={ContentScreen}
+        params={{
+          title: t('FC Data Policy'),
+          moduleId: require('assets/policy/fcdata.html')
+        }}
+      >
+        {t('FC Data Policy')}
+      </NavigationListItem>
+      <ListItem containerStyle={{ backgroundColor: sectionColor }}>
+        <ListItem.Title>
           <Text style={{ color: sectionColorContrast, fontWeight: 'bold' }}>{t('Settings')}</Text>
         </ListItem.Title>
       </ListItem>
@@ -34,7 +67,11 @@ export default function HomeTabSettings() {
         <NavigationListItem screen={SettingsDevOnlyScreen}>{t('Dev Only Settings')}</NavigationListItem>
       </AuthGateByRole>
       <Divider />
+      <ListItem containerStyle={{ backgroundColor: sectionColor }}>
+        <Text style={{ color: sectionColorContrast, fontWeight: 'bold' }}>{t('Other')}</Text>
+      </ListItem>
       <HomeTabSettingsLogoutListItem />
+      <ListItem containerStyle={{ backgroundColor: sectionColor }} />
       <Divider />
       <HomeTabSettingsVersionSignature />
     </ScrollView>
