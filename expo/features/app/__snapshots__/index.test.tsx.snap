@@ -78,8 +78,7 @@ exports[`app AppUpdateBanner show banner 1`] = `
       </Text>
     </View>
   </View>,
-  <RNCSafeAreaProvider
-    onInsetsChange={[Function]}
+  <View
     style={
       [
         {
@@ -194,6 +193,6 @@ exports[`app AppUpdateBanner show banner 1`] = `
         />
       </RNSScreen>
     </RNSScreenStack>
-  </RNCSafeAreaProvider>,
+  </View>,
 ]
 `;

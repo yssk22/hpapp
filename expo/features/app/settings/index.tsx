@@ -7,7 +7,7 @@ import SettingsCurrentUser, { CurrentUser } from './internals/SettingsCurrentUse
 import SettingsList from './internals/SettingsList';
 import Provider, { useSettings } from './internals/SettingsProvider';
 import SettingsUPFCConfig, { UPFCConfig } from './internals/SettingsUPFCConfig';
-import SettingsUserConfig, { UserConfig } from './internals/SettingsUserConfig';
+import SettingsUserConfig, { UserConfig, SettingsUserConfigDefault } from './internals/SettingsUserConfig';
 
 export type SettingsProviderProps = {
   appConfig?: AppConfig;
@@ -161,3 +161,5 @@ export function useCurrentUserUpdator() {
     [updator]
   );
 }
+
+export { SettingsUserConfigDefault };

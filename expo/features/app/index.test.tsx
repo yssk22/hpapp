@@ -7,8 +7,16 @@ import { Text } from 'react-native';
 
 import { AppRoot } from './';
 import AppConfigModal from './internals/AppConfigModal';
-import { useAppConfig } from './settings';
+import { SettingsUserConfigDefault, useAppConfig } from './settings';
 import { clearSettings } from './settings/testhelper';
+
+const userConfig = {
+  ...SettingsUserConfigDefault,
+  completeOnboarding: true,
+  consentOnToS: true,
+  consentOnPrivacy: true,
+  consentOnUPFCDataPolicy: true
+};
 
 beforeEach(async () => {
   await clearSettings();
@@ -111,6 +119,7 @@ describe('app', () => {
             username: 'risa',
             accessToken: 'token'
           }}
+          userConfig={userConfig}
         />
       );
       await act(() => {});
@@ -121,7 +130,7 @@ describe('app', () => {
     });
 
     test('guest', async () => {
-      const content = await render(<AppRoot screens={[TestScreen]} />);
+      const content = await render(<AppRoot screens={[TestScreen]} userConfig={userConfig} />);
       await act(() => {});
       expect(content.queryByTestId('UserRoot.Loading')).toBeNull();
       expect(content.getByTestId('AppRootGuest')).toBeTruthy();

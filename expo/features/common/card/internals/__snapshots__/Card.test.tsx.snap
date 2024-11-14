@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card Basic 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
+<View
   style={
     [
       {
@@ -203,12 +202,11 @@ exports[`Card Basic 1`] = `
       />
     </RNSScreen>
   </RNSScreenStack>
-</RNCSafeAreaProvider>
+</View>
 `;
 
 exports[`Card SubHeader 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
+<View
   style={
     [
       {
@@ -432,5 +430,5 @@ exports[`Card SubHeader 1`] = `
       />
     </RNSScreen>
   </RNSScreenStack>
-</RNCSafeAreaProvider>
+</View>
 `;

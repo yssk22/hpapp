@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HomeTabUPFC render UPFCErrorBox if settings is not configured 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
+<View
   style={
     [
       {
@@ -213,12 +212,11 @@ exports[`HomeTabUPFC render UPFCErrorBox if settings is not configured 1`] = `
       />
     </RNSScreen>
   </RNSScreenStack>
-</RNCSafeAreaProvider>
+</View>
 `;
 
 exports[`HomeTabUPFC render list if settings is configured 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
+<View
   style={
     [
       {
@@ -4737,5 +4735,5 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
       />
     </RNSScreen>
   </RNSScreenStack>
-</RNCSafeAreaProvider>
+</View>
 `;

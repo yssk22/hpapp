@@ -3,6 +3,7 @@ import { defineScreen } from '@hpapp/features/common/stack';
 import { Divider } from '@rneui/themed';
 
 import SettingsDevOnlyListItem from './internals/SettingsDevOnlyListItem';
+import SettingsUserConfigForm from './internals/SettingsUserConfigForm';
 
 export default defineScreen('/settings/devonly/', function DevOnlySettingsScreen() {
   const user = useCurrentUser();
@@ -18,6 +19,7 @@ export default defineScreen('/settings/devonly/', function DevOnlySettingsScreen
         displayValue={user!.accessToken.substring(0, 4) + '****'}
       />
       <Divider />
+      <SettingsUserConfigForm />
       <SettingsDevOnlyListItem name="Local User Config" value={JSON.stringify(userConfig, null, 2)} />
       <Divider />
       <SettingsDevOnlyListItem name="Local App  Config" value={JSON.stringify(appConfig, null, 2)} />

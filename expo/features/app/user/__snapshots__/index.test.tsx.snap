@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`user should return Me object 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
+<View
   style={
     [
       {
@@ -117,12 +116,11 @@ exports[`user should return Me object 1`] = `
       />
     </RNSScreen>
   </RNSScreenStack>
-</RNCSafeAreaProvider>
+</View>
 `;
 
 exports[`user useHelloProject 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
+<View
   style={
     [
       {
@@ -330,5 +328,5 @@ yume_soma
       />
     </RNSScreen>
   </RNSScreenStack>
-</RNCSafeAreaProvider>
+</View>
 `;
