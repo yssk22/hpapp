@@ -35,10 +35,7 @@ const HPSortHistoryListQueryFragmentGraphQL = graphql`
   }
 `;
 
-/**
- * TODO: #103 optimize and fix the logic for HPSortHistoryScreen.
- */
-const numPerFetch = 30;
+const numPerFetch = 10;
 
 export default function HPSortHistoryList() {
   const data = useLazyLoadQuery<HPSortHistoryListQuery>(HPSortHistoryListQueryGraphQL, {
@@ -79,9 +76,6 @@ export default function HPSortHistoryList() {
       }}
       onEndReachedThreshold={0.01}
       onEndReached={() => {
-        /**
-         * TODO: #103 optimize and fix the logic for HPSortHistoryScreen.
-         */
         histories.loadNext(numPerFetch);
       }}
       ListFooterComponent={histories.hasNext ? <ListItemLoadMore /> : null}

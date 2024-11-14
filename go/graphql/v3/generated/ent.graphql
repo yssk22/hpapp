@@ -7,6 +7,18 @@ type Auth implements Node {
   """oauth provider name"""
   providerName: String!
 }
+"""Ordering options for Auth connections"""
+input AuthOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order Auths."""
+  field: AuthOrderField!
+}
+"""Properties by which Auth connections can be ordered."""
+enum AuthOrderField {
+  createdAt
+  updatedAt
+}
 """
 Define a Relay Cursor type:
 https://relay.dev/graphql/connections.htm#sec-Cursor
@@ -42,6 +54,18 @@ type HPAmebloPost implements Node {
   taggedMembers: [HPMember!]
   blobs: [HPBlob!]
 }
+"""Ordering options for HPAmebloPost connections"""
+input HPAmebloPostOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPAmebloPosts."""
+  field: HPAmebloPostOrderField!
+}
+"""Properties by which HPAmebloPost connections can be ordered."""
+enum HPAmebloPostOrderField {
+  createdAt
+  updatedAt
+}
 """HPAmebloPostSource is enum for the field source"""
 enum HPAmebloPostSource @goModel(model: "github.com/yssk22/hpapp/go/service/ent/hpameblopost.Source") {
   rss
@@ -61,6 +85,18 @@ type HPArtist implements Node {
   thumbnailURL: String!
   index: Int!
   members: [HPMember!]
+}
+"""Ordering options for HPArtist connections"""
+input HPArtistOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPArtists."""
+  field: HPArtistOrderField!
+}
+"""Properties by which HPArtist connections can be ordered."""
+enum HPArtistOrderField {
+  createdAt
+  updatedAt
 }
 type HPBlob implements Node {
   id: ID!
@@ -117,6 +153,18 @@ enum HPBlobHPBlobType @goModel(model: "github.com/yssk22/hpapp/go/service/schema
   unknown
   video
 }
+"""Ordering options for HPBlob connections"""
+input HPBlobOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPBlobs."""
+  field: HPBlobOrderField!
+}
+"""Properties by which HPBlob connections can be ordered."""
+enum HPBlobOrderField {
+  createdAt
+  updatedAt
+}
 type HPElineupMallItem implements Node {
   id: ID!
   crawledAt: Time
@@ -166,6 +214,18 @@ enum HPElineupMallItemHPElineupMallItemCategory @goModel(model: "github.com/yssk
   PhotoOther
   TShirt
 }
+"""Ordering options for HPElineupMallItem connections"""
+input HPElineupMallItemOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPElineupMallItems."""
+  field: HPElineupMallItemOrderField!
+}
+"""Properties by which HPElineupMallItem connections can be ordered."""
+enum HPElineupMallItemOrderField {
+  createdAt
+  updatedAt
+}
 type HPEvent implements Node {
   id: ID!
   createdAt: Time
@@ -198,6 +258,19 @@ type HPEventEdge {
 enum HPEventHPEventSource @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPEventSource") {
   fc_scrape
 }
+"""Ordering options for HPEvent connections"""
+input HPEventOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPEvents."""
+  field: HPEventOrderField!
+}
+"""Properties by which HPEvent connections can be ordered."""
+enum HPEventOrderField {
+  createdAt
+  updatedAt
+  startAt
+}
 type HPFCEventTicket implements Node {
   id: ID!
   createdAt: Time
@@ -227,6 +300,18 @@ enum HPFCEventTicketHPFCEventTicketApplicationStatus @goModel(model: "github.com
   Rejected
   Submitted
   Unknown
+}
+"""Ordering options for HPFCEventTicket connections"""
+input HPFCEventTicketOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPFCEventTickets."""
+  field: HPFCEventTicketOrderField!
+}
+"""Properties by which HPFCEventTicket connections can be ordered."""
+enum HPFCEventTicketOrderField {
+  createdAt
+  updatedAt
 }
 type HPFeedItem implements Node {
   id: ID!
@@ -280,6 +365,8 @@ input HPFeedItemOrder {
 }
 """Properties by which HPFeedItem connections can be ordered."""
 enum HPFeedItemOrderField {
+  createdAt
+  updatedAt
   postAt
 }
 type HPFollow implements Node {
@@ -295,6 +382,18 @@ enum HPFollowHPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/sc
   follow
   follow_with_notification
   unfollow
+}
+"""Ordering options for HPFollow connections"""
+input HPFollowOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPFollows."""
+  field: HPFollowOrderField!
+}
+"""Properties by which HPFollow connections can be ordered."""
+enum HPFollowOrderField {
+  createdAt
+  updatedAt
 }
 type HPIgPost implements Node {
   id: ID!
@@ -335,6 +434,18 @@ type HPIgPostEdge {
   """A cursor for use in pagination."""
   cursor: Cursor!
 }
+"""Ordering options for HPIgPost connections"""
+input HPIgPostOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPIgPosts."""
+  field: HPIgPostOrderField!
+}
+"""Properties by which HPIgPost connections can be ordered."""
+enum HPIgPostOrderField {
+  createdAt
+  updatedAt
+}
 type HPMember implements Node {
   id: ID!
   crawledAt: Time
@@ -372,6 +483,18 @@ type HPMemberEdge {
   """A cursor for use in pagination."""
   cursor: Cursor!
 }
+"""Ordering options for HPMember connections"""
+input HPMemberOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPMembers."""
+  field: HPMemberOrderField!
+}
+"""Properties by which HPMember connections can be ordered."""
+enum HPMemberOrderField {
+  createdAt
+  updatedAt
+}
 type HPSortHistory implements Node {
   id: ID!
   createdAt: Time
@@ -394,6 +517,18 @@ type HPSortHistoryEdge {
   node: HPSortHistory
   """A cursor for use in pagination."""
   cursor: Cursor!
+}
+"""Ordering options for HPSortHistory connections"""
+input HPSortHistoryOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPSortHistories."""
+  field: HPSortHistoryOrderField!
+}
+"""Properties by which HPSortHistory connections can be ordered."""
+enum HPSortHistoryOrderField {
+  createdAt
+  updatedAt
 }
 type HPViewHistory implements Node {
   id: ID!
@@ -430,6 +565,18 @@ enum HPViewHistoryHPAssetType @goModel(model: "github.com/yssk22/hpapp/go/servic
   tiktok
   twitter
   youtube
+}
+"""Ordering options for HPViewHistory connections"""
+input HPViewHistoryOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPViewHistories."""
+  field: HPViewHistoryOrderField!
+}
+"""Properties by which HPViewHistory connections can be ordered."""
+enum HPViewHistoryOrderField {
+  createdAt
+  updatedAt
 }
 """
 An object with an ID.
@@ -504,4 +651,28 @@ type UserNotificationSetting implements Node {
   """notify when a payment due date is close"""
   enablePaymentDue: Boolean!
   user: User
+}
+"""Ordering options for UserNotificationSetting connections"""
+input UserNotificationSettingOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order UserNotificationSettings."""
+  field: UserNotificationSettingOrderField!
+}
+"""Properties by which UserNotificationSetting connections can be ordered."""
+enum UserNotificationSettingOrderField {
+  createdAt
+  updatedAt
+}
+"""Ordering options for User connections"""
+input UserOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order Users."""
+  field: UserOrderField!
+}
+"""Properties by which User connections can be ordered."""
+enum UserOrderField {
+  createdAt
+  updatedAt
 }

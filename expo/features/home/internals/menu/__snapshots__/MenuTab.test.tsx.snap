@@ -187,6 +187,99 @@ exports[`SettingsTab render 1`] = `
                   </View>
                 </View>
                 <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": undefined,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#bcbbc1",
+                        "flexDirection": "row",
+                        "padding": 12,
+                      }
+                    }
+                    testID="RNE__LISTITEM__padView"
+                  >
+                    <View
+                      style={
+                        [
+                          {
+                            "alignItems": "flex-start",
+                            "flex": 1,
+                            "justifyContent": "center",
+                          },
+                          undefined,
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "black",
+                            },
+                            {
+                              "fontSize": 14,
+                            },
+                            undefined,
+                          ]
+                        }
+                      >
+                        イベント履歴
+                      </Text>
+                    </View>
+                    <View
+                      style={
+                        {
+                          "paddingLeft": 16,
+                        }
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "alignItems": "flex-end",
+                          "justifyContent": "center",
+                        }
+                      }
+                    >
+                      <Icon
+                        name="navigate-next"
+                        size={16}
+                      />
+                    </View>
+                  </View>
+                </View>
+                <View
                   replaceTheme={[Function]}
                   updateTheme={[Function]}
                 >
