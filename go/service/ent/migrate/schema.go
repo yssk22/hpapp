@@ -36,6 +36,16 @@ var (
 		},
 		Indexes: []*schema.Index{
 			{
+				Name:    "auth_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{AuthsColumns[1]},
+			},
+			{
+				Name:    "auth_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{AuthsColumns[2]},
+			},
+			{
 				Name:    "auth_provider_name_provider_user_id",
 				Unique:  true,
 				Columns: []*schema.Column{AuthsColumns[3], AuthsColumns[4]},
@@ -95,6 +105,18 @@ var (
 				OnDelete:   schema.SetNull,
 			},
 		},
+		Indexes: []*schema.Index{
+			{
+				Name:    "hpameblopost_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpAmebloPostsColumns[6]},
+			},
+			{
+				Name:    "hpameblopost_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpAmebloPostsColumns[7]},
+			},
+		},
 	}
 	// HpArtistsColumns holds the columns for the "hp_artists" table.
 	HpArtistsColumns = []*schema.Column{
@@ -123,6 +145,18 @@ var (
 				Columns:    []*schema.Column{HpArtistsColumns[12]},
 				RefColumns: []*schema.Column{HpEventsColumns[0]},
 				OnDelete:   schema.SetNull,
+			},
+		},
+		Indexes: []*schema.Index{
+			{
+				Name:    "hpartist_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpArtistsColumns[6]},
+			},
+			{
+				Name:    "hpartist_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpArtistsColumns[7]},
 			},
 		},
 	}
@@ -199,6 +233,16 @@ var (
 		},
 		Indexes: []*schema.Index{
 			{
+				Name:    "hpblob_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpBlobsColumns[1]},
+			},
+			{
+				Name:    "hpblob_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpBlobsColumns[2]},
+			},
+			{
 				Name:    "hpblob_storage_path",
 				Unique:  false,
 				Columns: []*schema.Column{HpBlobsColumns[3]},
@@ -234,6 +278,16 @@ var (
 		PrimaryKey: []*schema.Column{HpElineupMallItemsColumns[0]},
 		Indexes: []*schema.Index{
 			{
+				Name:    "hpelineupmallitem_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpElineupMallItemsColumns[6]},
+			},
+			{
+				Name:    "hpelineupmallitem_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpElineupMallItemsColumns[7]},
+			},
+			{
 				Name:    "hpelineupmallitem_permalink",
 				Unique:  true,
 				Columns: []*schema.Column{HpElineupMallItemsColumns[8]},
@@ -265,9 +319,24 @@ var (
 		PrimaryKey: []*schema.Column{HpEventsColumns[0]},
 		Indexes: []*schema.Index{
 			{
+				Name:    "hpevent_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpEventsColumns[1]},
+			},
+			{
+				Name:    "hpevent_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpEventsColumns[2]},
+			},
+			{
 				Name:    "hpevent_key",
 				Unique:  true,
 				Columns: []*schema.Column{HpEventsColumns[3]},
+			},
+			{
+				Name:    "hpevent_start_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpEventsColumns[6]},
 			},
 		},
 	}
@@ -310,6 +379,16 @@ var (
 		},
 		Indexes: []*schema.Index{
 			{
+				Name:    "hpfceventticket_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpfcEventTicketsColumns[1]},
+			},
+			{
+				Name:    "hpfceventticket_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpfcEventTicketsColumns[2]},
+			},
+			{
 				Name:    "hpfceventticket_user_hpfc_event_tickets_hp_event_hpfc_event_tickets",
 				Unique:  false,
 				Columns: []*schema.Column{HpfcEventTicketsColumns[14], HpfcEventTicketsColumns[13]},
@@ -351,6 +430,16 @@ var (
 			},
 		},
 		Indexes: []*schema.Index{
+			{
+				Name:    "hpfeeditem_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpFeedItemsColumns[1]},
+			},
+			{
+				Name:    "hpfeeditem_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpFeedItemsColumns[2]},
+			},
 			{
 				Name:    "hpfeeditem_post_at",
 				Unique:  false,
@@ -397,6 +486,16 @@ var (
 			},
 		},
 		Indexes: []*schema.Index{
+			{
+				Name:    "hpfollow_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpFollowsColumns[1]},
+			},
+			{
+				Name:    "hpfollow_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpFollowsColumns[2]},
+			},
 			{
 				Name:    "hpfollow_hp_follow_member",
 				Unique:  false,
@@ -455,6 +554,18 @@ var (
 				OnDelete:   schema.SetNull,
 			},
 		},
+		Indexes: []*schema.Index{
+			{
+				Name:    "hpigpost_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpIgPostsColumns[6]},
+			},
+			{
+				Name:    "hpigpost_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpIgPostsColumns[7]},
+			},
+		},
 	}
 	// HpMembersColumns holds the columns for the "hp_members" table.
 	HpMembersColumns = []*schema.Column{
@@ -498,6 +609,18 @@ var (
 				OnDelete:   schema.SetNull,
 			},
 		},
+		Indexes: []*schema.Index{
+			{
+				Name:    "hpmember_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpMembersColumns[6]},
+			},
+			{
+				Name:    "hpmember_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpMembersColumns[7]},
+			},
+		},
 	}
 	// HpSortHistoriesColumns holds the columns for the "hp_sort_histories" table.
 	HpSortHistoriesColumns = []*schema.Column{
@@ -518,6 +641,18 @@ var (
 				Columns:    []*schema.Column{HpSortHistoriesColumns[4]},
 				RefColumns: []*schema.Column{UsersColumns[0]},
 				OnDelete:   schema.Cascade,
+			},
+		},
+		Indexes: []*schema.Index{
+			{
+				Name:    "hpsorthistory_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpSortHistoriesColumns[1]},
+			},
+			{
+				Name:    "hpsorthistory_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpSortHistoriesColumns[2]},
 			},
 		},
 	}
@@ -553,6 +688,16 @@ var (
 			},
 		},
 		Indexes: []*schema.Index{
+			{
+				Name:    "hpviewhistory_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpViewHistoriesColumns[1]},
+			},
+			{
+				Name:    "hpviewhistory_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpViewHistoriesColumns[2]},
+			},
 			{
 				Name:    "hpviewhistory_content_id_user_hpview_history",
 				Unique:  true,
@@ -598,6 +743,18 @@ var (
 		Name:       "users",
 		Columns:    UsersColumns,
 		PrimaryKey: []*schema.Column{UsersColumns[0]},
+		Indexes: []*schema.Index{
+			{
+				Name:    "user_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{UsersColumns[1]},
+			},
+			{
+				Name:    "user_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{UsersColumns[2]},
+			},
+		},
 	}
 	// UserNotificationLogsColumns holds the columns for the "user_notification_logs" table.
 	UserNotificationLogsColumns = []*schema.Column{
@@ -618,6 +775,16 @@ var (
 		Columns:    UserNotificationLogsColumns,
 		PrimaryKey: []*schema.Column{UserNotificationLogsColumns[0]},
 		Indexes: []*schema.Index{
+			{
+				Name:    "usernotificationlog_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{UserNotificationLogsColumns[1]},
+			},
+			{
+				Name:    "usernotificationlog_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{UserNotificationLogsColumns[2]},
+			},
 			{
 				Name:    "usernotificationlog_key_trigger",
 				Unique:  true,
@@ -652,6 +819,16 @@ var (
 			},
 		},
 		Indexes: []*schema.Index{
+			{
+				Name:    "usernotificationsetting_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{UserNotificationSettingsColumns[1]},
+			},
+			{
+				Name:    "usernotificationsetting_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{UserNotificationSettingsColumns[2]},
+			},
 			{
 				Name:    "usernotificationsetting_token_user_notification_settings",
 				Unique:  false,

@@ -26,6 +26,7 @@ func (HPEvent) Indexes() []ent.Index {
 	return []ent.Index{
 		index.Fields("key").
 			Unique(),
+		index.Fields("start_at"),
 	}
 }
 
@@ -38,7 +39,7 @@ func (HPEvent) Fields() []ent.Field {
 		field.String("key").Unique(),
 		field.Strings("display_titles"),
 		field.Time("open_at").Optional(),
-		field.Time("start_at"),
+		field.Time("start_at").Annotations(entgql.OrderField("startAt")),
 		field.String("venue"),
 		field.String("prefecture"),
 		field.Enum("source").

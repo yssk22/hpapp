@@ -94,6 +94,28 @@ func newAuthPaginateArgs(rv map[string]interface{}) *authPaginateArgs {
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
 	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &AuthOrder{Field: &AuthOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithAuthOrder(order))
+			}
+		case *AuthOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithAuthOrder(v))
+			}
+		}
+	}
 	return args
 }
 
@@ -325,6 +347,28 @@ func newHPAmebloPostPaginateArgs(rv map[string]interface{}) *hpameblopostPaginat
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
 	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &HPAmebloPostOrder{Field: &HPAmebloPostOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithHPAmebloPostOrder(order))
+			}
+		case *HPAmebloPostOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithHPAmebloPostOrder(v))
+			}
+		}
+	}
 	return args
 }
 
@@ -443,6 +487,28 @@ func newHPArtistPaginateArgs(rv map[string]interface{}) *hpartistPaginateArgs {
 	}
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
+	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &HPArtistOrder{Field: &HPArtistOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithHPArtistOrder(order))
+			}
+		case *HPArtistOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithHPArtistOrder(v))
+			}
+		}
 	}
 	return args
 }
@@ -648,6 +714,28 @@ func newHPBlobPaginateArgs(rv map[string]interface{}) *hpblobPaginateArgs {
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
 	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &HPBlobOrder{Field: &HPBlobOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithHPBlobOrder(order))
+			}
+		case *HPBlobOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithHPBlobOrder(v))
+			}
+		}
+	}
 	return args
 }
 
@@ -814,6 +902,28 @@ func newHPElineupMallItemPaginateArgs(rv map[string]interface{}) *hpelineupmalli
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
 	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &HPElineupMallItemOrder{Field: &HPElineupMallItemOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithHPElineupMallItemOrder(order))
+			}
+		case *HPElineupMallItemOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithHPElineupMallItemOrder(v))
+			}
+		}
+	}
 	return args
 }
 
@@ -915,6 +1025,28 @@ func newHPEventPaginateArgs(rv map[string]interface{}) *hpeventPaginateArgs {
 	}
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
+	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &HPEventOrder{Field: &HPEventOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithHPEventOrder(order))
+			}
+		case *HPEventOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithHPEventOrder(v))
+			}
+		}
 	}
 	return args
 }
@@ -1032,6 +1164,28 @@ func newHPFCEventTicketPaginateArgs(rv map[string]interface{}) *hpfceventticketP
 	}
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
+	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &HPFCEventTicketOrder{Field: &HPFCEventTicketOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithHPFCEventTicketOrder(order))
+			}
+		case *HPFCEventTicketOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithHPFCEventTicketOrder(v))
+			}
+		}
 	}
 	return args
 }
@@ -1311,6 +1465,28 @@ func newHPFollowPaginateArgs(rv map[string]interface{}) *hpfollowPaginateArgs {
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
 	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &HPFollowOrder{Field: &HPFollowOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithHPFollowOrder(order))
+			}
+		case *HPFollowOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithHPFollowOrder(v))
+			}
+		}
+	}
 	return args
 }
 
@@ -1507,6 +1683,28 @@ func newHPIgPostPaginateArgs(rv map[string]interface{}) *hpigpostPaginateArgs {
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
 	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &HPIgPostOrder{Field: &HPIgPostOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithHPIgPostOrder(order))
+			}
+		case *HPIgPostOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithHPIgPostOrder(v))
+			}
+		}
+	}
 	return args
 }
 
@@ -1663,6 +1861,28 @@ func newHPMemberPaginateArgs(rv map[string]interface{}) *hpmemberPaginateArgs {
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
 	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &HPMemberOrder{Field: &HPMemberOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithHPMemberOrder(order))
+			}
+		case *HPMemberOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithHPMemberOrder(v))
+			}
+		}
+	}
 	return args
 }
 
@@ -1748,6 +1968,28 @@ func newHPSortHistoryPaginateArgs(rv map[string]interface{}) *hpsorthistoryPagin
 	}
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
+	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &HPSortHistoryOrder{Field: &HPSortHistoryOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithHPSortHistoryOrder(order))
+			}
+		case *HPSortHistoryOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithHPSortHistoryOrder(v))
+			}
+		}
 	}
 	return args
 }
@@ -1845,6 +2087,28 @@ func newHPViewHistoryPaginateArgs(rv map[string]interface{}) *hpviewhistoryPagin
 	}
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
+	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &HPViewHistoryOrder{Field: &HPViewHistoryOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithHPViewHistoryOrder(order))
+			}
+		case *HPViewHistoryOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithHPViewHistoryOrder(v))
+			}
+		}
 	}
 	return args
 }
@@ -1995,6 +2259,28 @@ func newUserPaginateArgs(rv map[string]interface{}) *userPaginateArgs {
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
 	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &UserOrder{Field: &UserOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithUserOrder(order))
+			}
+		case *UserOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithUserOrder(v))
+			}
+		}
+	}
 	return args
 }
 
@@ -2105,6 +2391,28 @@ func newUserNotificationSettingPaginateArgs(rv map[string]interface{}) *usernoti
 	}
 	if v := rv[beforeField]; v != nil {
 		args.before = v.(*Cursor)
+	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &UserNotificationSettingOrder{Field: &UserNotificationSettingOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithUserNotificationSettingOrder(order))
+			}
+		case *UserNotificationSettingOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithUserNotificationSettingOrder(v))
+			}
+		}
 	}
 	return args
 }

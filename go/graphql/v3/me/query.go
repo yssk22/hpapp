@@ -74,8 +74,10 @@ func (h *MeQuery) SortHistories(ctx context.Context, after *ent.Cursor, first *i
 	client := entutil.NewClient(ctx)
 	return client.HPSortHistory.Query().
 		Where(hpsorthistory.OwnerUserIDEQ(appuser.CurrentEntUserID(ctx))).
-		Order(ent.Desc(hpsorthistory.FieldCreatedAt)).
-		Paginate(ctx, after, first, before, last)
+		Paginate(ctx, after, first, before, last, ent.WithHPSortHistoryOrder(&ent.HPSortHistoryOrder{
+			Direction: "DESC",
+			Field:     ent.HPSortHistoryOrderFieldCreatedAt,
+		}))
 }
 
 type HPEventQueryParams struct {
@@ -87,8 +89,11 @@ func (h *MeQuery) Events(ctx context.Context, after *ent.Cursor, first *int, bef
 	first = common.First(first, 20)
 	q := client.HPEvent.Query().WithHpfcEventTickets(func(q *ent.HPFCEventTicketQuery) {
 		q.Where(hpfceventticket.OwnerUserIDEQ(uid))
-	}).Where(hpevent.HasHpfcEventTicketsWith(hpfceventticket.OwnerUserIDEQ(uid))).Order(ent.Desc(hpevent.FieldStartAt), ent.Asc(hpevent.FieldPrefecture))
-	return q.Paginate(ctx, after, first, before, last)
+	}).Where(hpevent.HasHpfcEventTicketsWith(hpfceventticket.OwnerUserIDEQ(uid)))
+	return q.Paginate(ctx, after, first, before, last, ent.WithHPEventOrder(&ent.HPEventOrder{
+		Direction: "DESC",
+		Field:     ent.HPEventOrderFieldStartAt,
+	}))
 }
 
 type MeFavoriteQueryParams struct {
@@ -110,6 +115,9 @@ func (h *MeQuery) Favorites(ctx context.Context, params MeFavoriteQueryParams, a
 	if len(params.AssetTypes) > 0 {
 		ps = append(ps, hpfeeditem.AssetTypeIn(params.AssetTypes...))
 	}
-	q := client.HPFeedItem.Query().Where(ps...).Order(ent.Desc(hpfeeditem.FieldPostAt))
-	return q.Paginate(ctx, after, first, before, last)
+	q := client.HPFeedItem.Query().Where(ps...)
+	return q.Paginate(ctx, after, first, before, last, ent.WithHPFeedItemOrder(&ent.HPFeedItemOrder{
+		Direction: "DESC",
+		Field:     ent.HPFeedItemOrderFieldPostAt,
+	}))
 }
