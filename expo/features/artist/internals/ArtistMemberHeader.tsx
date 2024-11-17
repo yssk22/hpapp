@@ -18,7 +18,7 @@ export default function ArtistMemberHeader({ member }: ArtistMemberHeaderProps) 
   return (
     <View style={styles.containerRow}>
       <View style={styles.memberThumbnailColumn}>
-        <ArtistMemberIcon member={member.id} size={ArtistMemberIconSize.Large} circle disableTouch />
+        <ArtistMemberIcon member={member.id} size={ArtistMemberIconSize.Large} circle />
       </View>
       <View style={styles.memberInfoColumn}>
         <View style={styles.memberInfoRow}>

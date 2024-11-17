@@ -118,18 +118,29 @@ jest.mock('@rneui/themed', () => {
   Mock.Icon = 'Icon';
   return Mock;
 });
-
-// import Ionicons from 'react-native-vector-icons/Ionicons';
 jest.mock('react-native-vector-icons/Ionicons', () => {
   return 'Ionicons';
 });
-
-// import Ionicons from 'react-native-vector-icons/Ionicons';
 jest.mock('@expo/vector-icons/Ionicons', () => {
   return 'Ionicons';
 });
+jest.mock('react-native-vector-icons/Entypo', () => {
+  return 'Entypo';
+});
 jest.mock('@expo/vector-icons/Entypo', () => {
   return 'Entypo';
+});
+jest.mock('react-native-vector-icons/MaterialIcons', () => {
+  return 'MaterialIcons';
+});
+jest.mock('@expo/vector-icons/MaterialIcons', () => {
+  return 'MaterialIcons';
+});
+jest.mock('react-native-vector-icons/MaterialCommunityIcons', () => {
+  return 'MaterialCommunityIcons';
+});
+jest.mock('@expo/vector-icons/MaterialCommunityIcons', () => {
+  return 'MaterialCommunityIcons';
 });
 
 // Firebase Mock

@@ -1,9 +1,11 @@
-import { useHelloProject } from '@hpapp/features/app/user';
+import { HPMember, useHelloProject } from '@hpapp/features/app/user';
+import { ArtistCard } from '@hpapp/features/artist';
+import ArtistMemberScreen from '@hpapp/features/artist/ArtistMemberScreen';
+import { useNavigation } from '@hpapp/features/common/stack';
 import { FlatList } from 'react-native';
 
-import HomeTabArtistByGroupViewCard from './HomeTabArtistByGroupViewCard';
-
 export default function HomeTabArtistByGroupView() {
+  const navigation = useNavigation();
   const hp = useHelloProject();
   const artists = hp.useArtists(false);
   return (
@@ -12,7 +14,15 @@ export default function HomeTabArtistByGroupView() {
       data={artists}
       keyExtractor={(a) => a.id}
       renderItem={(item) => {
-        return <HomeTabArtistByGroupViewCard artist={item.item} />;
+        return (
+          <ArtistCard
+            artist={item.item}
+            memberIconShowFollow
+            onMemberIconPress={(member: HPMember) => {
+              navigation.push(ArtistMemberScreen, { memberId: member!.id });
+            }}
+          />
+        );
       }}
     />
   );

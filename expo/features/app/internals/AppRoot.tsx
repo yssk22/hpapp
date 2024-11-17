@@ -5,6 +5,7 @@ import { ConsentGate } from '@hpapp/features/common';
 import { t } from '@hpapp/system/i18n';
 import { registerDevMenuItems } from 'expo-dev-menu';
 import { useEffect, useState } from 'react';
+import { RootSiblingParent } from 'react-native-root-siblings';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import AppConfigMoal from './AppConfigModal';
@@ -28,29 +29,31 @@ export default function AppRoot(props?: UserRootProps) {
   const userConfig = useUserConfig()!;
   const userConfigUpdator = useUserConfigUpdator();
   return (
-    <SafeAreaProvider testID="AppRoot.SafeAreaProvider">
-      <AppConfigMoal isVisible={showAppConfigModal} onClose={() => setShowAppConfigModal(false)} />
-      <ConsentGate
-        title={t('Terms of Service')}
-        showHeader
-        moduleId={require('assets/policy/tos.html')}
-        onConsent={() => {
-          userConfigUpdator({ ...userConfig, consentOnToS: !userConfig.consentOnToS });
-        }}
-        pass={userConfig!.consentOnToS ?? false}
-      >
+    <RootSiblingParent>
+      <SafeAreaProvider testID="AppRoot.SafeAreaProvider">
+        <AppConfigMoal isVisible={showAppConfigModal} onClose={() => setShowAppConfigModal(false)} />
         <ConsentGate
-          title={t('Privacy Policy')}
+          title={t('Terms of Service')}
           showHeader
-          moduleId={require('assets/policy/privacy.html')}
+          moduleId={require('assets/policy/tos.html')}
           onConsent={() => {
-            userConfigUpdator({ ...userConfig, consentOnPrivacy: !userConfig.consentOnPrivacy });
+            userConfigUpdator({ ...userConfig, consentOnToS: !userConfig.consentOnToS });
           }}
-          pass={userConfig!.consentOnPrivacy ?? false}
+          pass={userConfig!.consentOnToS ?? false}
         >
-          {component}
+          <ConsentGate
+            title={t('Privacy Policy')}
+            showHeader
+            moduleId={require('assets/policy/privacy.html')}
+            onConsent={() => {
+              userConfigUpdator({ ...userConfig, consentOnPrivacy: !userConfig.consentOnPrivacy });
+            }}
+            pass={userConfig!.consentOnPrivacy ?? false}
+          >
+            {component}
+          </ConsentGate>
         </ConsentGate>
-      </ConsentGate>
-    </SafeAreaProvider>
+      </SafeAreaProvider>
+    </RootSiblingParent>
   );
 }

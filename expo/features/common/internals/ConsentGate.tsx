@@ -3,7 +3,7 @@ import { FontSize } from '@hpapp/features/common/constants';
 import { t } from '@hpapp/system/i18n';
 import { Header, Button } from '@rneui/themed';
 import React from 'react';
-import { View } from 'react-native';
+import { StyleProp, View, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import WebView from 'react-native-webview';
 
@@ -14,6 +14,7 @@ export default function ConsentGate({
   moduleId,
   pass,
   showHeader,
+  containerStyle,
   children,
   onConsent
 }: {
@@ -21,6 +22,7 @@ export default function ConsentGate({
   moduleId: number;
   pass: boolean;
   showHeader?: boolean;
+  containerStyle?: StyleProp<ViewStyle>;
   children: React.ReactNode;
   onConsent: () => void;
 }) {
@@ -31,7 +33,7 @@ export default function ConsentGate({
     return <>{children}</>;
   }
   return (
-    <View style={{ flex: 1, paddingBottom: insets.bottom }}>
+    <View style={[{ flex: 1, paddingBottom: insets.bottom }, containerStyle]}>
       {showHeader && (
         <Header
           placement="center"
@@ -46,7 +48,7 @@ export default function ConsentGate({
         />
       )}
       <>
-        <WebView source={{ html: content }} />
+        <WebView style={{ flex: 1 }} source={{ html: content }} />
         <Button title={t('I agree')} onPress={onConsent} loading={isLoading} disabled={isLoading} />
       </>
     </View>

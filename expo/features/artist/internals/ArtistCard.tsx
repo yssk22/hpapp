@@ -1,15 +1,28 @@
-import { HPArtist } from '@hpapp/features/app/user';
-import { ArtistMemberIcon, ArtistMemberIconSize } from '@hpapp/features/artist';
+import { HPArtist, HPMember } from '@hpapp/features/app/user';
 import { Text } from '@hpapp/features/common';
 import { Spacing } from '@hpapp/features/common/constants';
 import { Card } from '@rneui/themed';
 import { useCallback, useMemo, useState } from 'react';
 import { View, StyleSheet, LayoutChangeEvent } from 'react-native';
 
+import ArtistMemberIcon, { ArtistMemberIconSize } from './ArtistMemberIcon';
+
 const MemberIconSize = 60;
 const MemberIconMargin = MemberIconSize / 10;
 
-export default function HomeTabArtistByByGroupViewCard({ artist }: { artist: HPArtist }) {
+export type ArtistCardProps = {
+  artist: HPArtist;
+  memberIconCircle?: boolean;
+  memberIconShowFollow?: boolean;
+  onMemberIconPress?: (member: HPMember) => void;
+};
+
+export default function ArtistCard({
+  artist,
+  memberIconCircle,
+  memberIconShowFollow,
+  onMemberIconPress
+}: ArtistCardProps) {
   const [componentWidth, setComponentWidth] = useState(0);
   const handleLayout = useCallback((event: LayoutChangeEvent) => {
     const { width } = event.nativeEvent.layout;
@@ -33,7 +46,7 @@ export default function HomeTabArtistByByGroupViewCard({ artist }: { artist: HPA
     return new Array(numPadding).fill(0);
   }, [componentWidth, members]);
   return (
-    <Card>
+    <Card key={artist.key}>
       <Card.Title>
         <Text bold style={{ textAlign: 'left' }}>
           {artist.name}
@@ -44,7 +57,19 @@ export default function HomeTabArtistByByGroupViewCard({ artist }: { artist: HPA
         {members.map((m) => {
           return (
             <View style={styles.memberIcon} key={m.key}>
-              <ArtistMemberIcon member={m} size={ArtistMemberIconSize.Medium} />
+              <ArtistMemberIcon
+                member={m}
+                size={ArtistMemberIconSize.Medium}
+                circle={memberIconCircle}
+                showFollowIcon={memberIconShowFollow}
+                onPress={
+                  onMemberIconPress
+                    ? () => {
+                        onMemberIconPress(m);
+                      }
+                    : undefined
+                }
+              />
             </View>
           );
         })}

@@ -1,3 +1,4 @@
+import { useUserConfig } from '@hpapp/features/app/settings';
 import { Initializer, Loading } from '@hpapp/features/common';
 import { Screen, ScreenParams, createStackNavigator } from '@hpapp/features/common/stack';
 import * as logging from '@hpapp/system/logging';
@@ -18,6 +19,7 @@ const Screens: Screen<ScreenParams>[] = [];
 export type UserRootProps = { screens?: Screen<ScreenParams>[] };
 
 export default function UserRoot({ screens = Screens }: UserRootProps) {
+  const userConfig = useUserConfig();
   const navigation = useNavigationContainerRef<ReactNavigation.RootParamList>();
   return (
     <Initializer initializers={initializers}>
@@ -25,7 +27,7 @@ export default function UserRoot({ screens = Screens }: UserRootProps) {
         <Stack
           ref={navigation}
           screens={screens}
-          initialRouteName="/"
+          initialRouteName={userConfig?.completeOnboarding ? '/' : '/onboarding/'}
           onStateChange={(state) => {
             logging.Info('features.app.user.onStateChagne', `to ${state.screen.name}`, {
               name: state.screen.name,
