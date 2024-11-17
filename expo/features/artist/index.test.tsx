@@ -21,8 +21,15 @@ describe('artist', () => {
   });
 
   describe('ArtistMemberIcon', () => {
-    test('icon', async () => {
+    test('icon no press', async () => {
       const content = await renderUserComponent(<ArtistMemberIcon member="8589934592" />);
+      const icon = content.queryByTestId('ArtistMemberIcon.NoOnPress');
+      expect(icon).toBeTruthy();
+      expect(content).toMatchSnapshot();
+    });
+
+    test('icon with press', async () => {
+      const content = await renderUserComponent(<ArtistMemberIcon member="8589934592" onPress={() => {}} />);
       const icon = content.queryByTestId('ArtistMemberIcon');
       expect(icon).toBeTruthy();
       expect(content).toMatchSnapshot();

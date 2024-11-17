@@ -1,4 +1,43 @@
 {
+  "Welcome to Hello!Fan App!": {
+    "ja": "ハロー！ファンアプリへようこそ！"
+  },
+  "Step 1: Follow Members": {
+    "ja": "ステップ1: メンバーをフォロー"
+  },
+  "Tap members you want to follow to get blog and instagram updates.": {
+    "ja": "メンバーをタップしてフォローするとブログやインスタグラムの更新を取得できます。"
+  },
+  "You can also subscribe e-LineUP!Mall goods for your following members.": {
+    "ja": "また、フォローしたメンバーの e-LineUP!Mall のグッズを閲覧することもできます。"
+  },
+  "Following": {
+    "ja": "フォロー中"
+  },
+  "Following (notification)": {
+    "ja": "フォロー中 (通知あり)"
+  },
+  "Step 2: Set FC Credentails": {
+    "ja": "ステップ2: ファンクラブの認証情報を設定"
+  },
+  "You can manage your FC tickets in the app by provising your fan club credentails.": {
+    "ja": "ファンクラブの認証情報を提供することで、アプリでファンクラブのチケットを管理できます。"
+  },
+  "Please read the data policy below and agree to it before you can proceed.": {
+    "ja": "続行する前に、以下のデータポリシーをお読みいただき、同意してください。"
+  },
+  "You can skip this step to complete the initial settings.": {
+    "ja": "このステップをスキップして初期設定を完了することもできます。"
+  },
+  "Back": {
+    "ja": "前へ"
+  },
+  "Next": {
+    "ja": "次へ"
+  },
+  "Complete": {
+    "ja": "完了"
+  },
   "something went wrong.": {
     "ja": "エラーが発生しました。"
   },

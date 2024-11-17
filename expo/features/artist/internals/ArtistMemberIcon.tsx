@@ -1,7 +1,9 @@
-import { HPMember, useHelloProject } from '@hpapp/features/app/user';
+import { useThemeColor } from '@hpapp/features/app/theme';
+import { HPFollowType, HPMember, useHelloProject, useMe } from '@hpapp/features/app/user';
 import { ExternalImage } from '@hpapp/features/common';
-import { useNavigation } from '@hpapp/features/common/stack';
-import { TouchableOpacity, View } from 'react-native';
+import { IconSize } from '@hpapp/features/common/constants';
+import { Icon } from '@rneui/themed';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 export enum ArtistMemberIconSize {
   // eslint-disable-next-line no-unused-vars
@@ -12,27 +14,32 @@ export enum ArtistMemberIconSize {
   Large = 96
 }
 
+export type ArtistMemberIconProps = {
+  member: HPMember | string;
+  size?: ArtistMemberIconSize | number;
+  circle?: boolean;
+  showFollowIcon?: boolean;
+  onPress?: () => void;
+};
+
 export default function ArtistMemberIcon({
   member,
   size = ArtistMemberIconSize.Medium,
   circle = false,
   showFollowIcon = false,
-  disableTouch = false
-}: {
-  member: HPMember | string;
-  size?: ArtistMemberIconSize | number;
-  circle?: boolean;
-  showFollowIcon?: boolean;
-  disableTouch?: boolean;
-}) {
-  const navigation = useNavigation();
+  onPress
+}: ArtistMemberIconProps) {
+  const [color, contrast] = useThemeColor('secondary');
   const hp = useHelloProject();
+  const me = useMe();
   const m = hp.useMember(member);
+  const followType = me.useFollowType(m!.id);
+  const iconName = getFollowIconName(followType);
   const circleProps = circle ? { borderRadius: size * 2 } : {};
-  if (disableTouch) {
+  if (onPress === undefined) {
     return (
       <View
-        testID="ArtistMemberIcon.DisableTouch"
+        testID="ArtistMemberIcon.NoOnPress"
         style={{
           width: size,
           height: size
@@ -45,6 +52,11 @@ export default function ArtistMemberIcon({
           height={size}
           {...circleProps}
         />
+        {showFollowIcon && iconName && (
+          <View style={[{ backgroundColor: contrast }, styles.icon]}>
+            <Icon name={iconName} type="material-community" color={color} size={IconSize.Small} />
+          </View>
+        )}
       </View>
     );
   }
@@ -55,17 +67,7 @@ export default function ArtistMemberIcon({
         width: size,
         height: size
       }}
-      onPress={() => {
-        // TODO: Use the dummy screen object is to avoid circular dependency. We should refactor this.
-        navigation.push(
-          {
-            name: 'dummy',
-            path: '/arttist/member/',
-            component: () => null
-          },
-          { memberId: m!.id }
-        );
-      }}
+      onPress={onPress}
     >
       <ExternalImage
         uri={m!.thumbnailURL}
@@ -74,6 +76,31 @@ export default function ArtistMemberIcon({
         height={size}
         {...circleProps}
       />
+      {showFollowIcon && iconName && (
+        <View style={[{ backgroundColor: contrast }, styles.icon]}>
+          <Icon name={iconName} type="material-community" color={color} size={IconSize.Small} />
+        </View>
+      )}
     </TouchableOpacity>
   );
 }
+
+function getFollowIconName(type: HPFollowType) {
+  switch (type) {
+    case 'follow':
+      return 'account-check';
+    case 'follow_with_notification':
+      return 'bell-check';
+    default:
+      return null;
+  }
+}
+
+const styles = StyleSheet.create({
+  icon: {
+    position: 'absolute',
+    right: 0, // IconSize.Small / 2 - 1,
+    top: 0, // Spacing.Small,
+    alignItems: 'flex-end'
+  }
+});

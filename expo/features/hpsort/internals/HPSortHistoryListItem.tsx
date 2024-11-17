@@ -32,7 +32,7 @@ export default function HPSortHistoryListItem({ createdAt, current, previous }: 
             if (i >= 3) {
               return null;
             }
-            return <ArtistMemberIcon member={id} key={id} disableTouch />;
+            return <ArtistMemberIcon member={id} key={id} />;
           })}
         </View>
         <View style={styles.sortMetadata}>
