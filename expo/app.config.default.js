@@ -65,6 +65,10 @@ module.exports = {
       bundler: 'metro',
       favicon: './assets/favicon.png'
     },
+    locales: {
+      ja: './assets/app.ja.json',
+      en: './assets/app.en.json'
+    },
     plugins: [
       '@react-native-firebase/app',
       'expo-localization',

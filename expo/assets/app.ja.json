@@ -1,0 +1,6 @@
+{
+  "CFBundleDisplayName": "ハロー！ファン",
+  "NSCalendarsUsageDescription": "アプリはカレンダーにイベントを追加します。",
+  "NSPhotoLibraryUsageDescription": "アプリはメンバー投稿の写真や動画をライブラリに追加します。",
+  "NSRemindersUsageDescription": "アプリはイベントのリマインドをします。"
+}

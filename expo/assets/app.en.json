@@ -1,0 +1,6 @@
+{
+  "CFBundleDisplayName": "Hello!Fan",
+  "NSCalendarsUsageDescription": "App uses your calendar to update event schedule.",
+  "NSPhotoLibraryUsageDescription": "App adds media from member contents to your library.",
+  "NSRemindersUsageDescription": "App reminds you of events"
+}

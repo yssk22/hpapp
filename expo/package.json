@@ -15,7 +15,7 @@
     "start-dev": "HPAPP_CONFIG_NAME=dev expo start --dev-client --lan",
     "build-dev": "HPAPP_CONFIG_NAME=dev ./scripts/eas.sh build --profile dev --platform ios --non-interactive",
     "build-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh build --profile beta --non-interactive",
-    "build-prod": "HPAPP_CONFIG_NAME=prod ./scripts/eas.sh build --profile prod --non-interactive",
+    "build-prod": "HPAPP_CONFIG_NAME=prod ./scripts/eas.sh build --profile prod --platform ios",
     "update-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh update --channel beta --non-interactive --auto",
     "storybook-generate": "sb-rn-get-stories"
   },
