@@ -2,6 +2,7 @@ type HelloProjectQuery implements Node @goModel(model: "github.com/yssk22/hpapp/
   id: ID!
   artists(after: Cursor, first: Int, before: Cursor, last: Int): [HPArtist]
   feed(params: HPFeedQueryParamsInput!, after: Cursor, first: Int, before: Cursor, last: Int): HPFeedItemConnection
+  elineupMallItems(params: HPElineumpMallItemsParamsInput!, after: Cursor, first: Int, before: Cursor, last: Int): HPElineupMallItemConnection
 }
 
 input HPFeedQueryParamsInput @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HPFeedQueryParams") {
@@ -11,6 +12,11 @@ input HPFeedQueryParamsInput @goModel(model: "github.com/yssk22/hpapp/go/graphql
   minPostAt: Time
 }
 
+input HPElineumpMallItemsParamsInput @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HPElineumpMallItemsParams") {
+  memberIDs: [String!]
+  categories: [HPElineupMallItemCategory!]
+}
+
 enum HPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPAssetType") {
   ameblo
   elineup_mall
@@ -18,6 +24,33 @@ enum HPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enum
   tiktok
   twitter
   youtube
+}
+
+enum HPElineupMallItemCategory @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPElineupMallItemCategory") {
+  blueray
+  clear_file
+  colllection_other
+  colllection_photo
+  colllection_pinnap_poster
+  dvd
+  dvd_magazine
+  dvd_magazine_other
+  fsk
+  keyring_other
+  microfiber_towel
+  muffler_towel
+  other
+  penlight
+  photo2_l
+  photo_a4
+  photo_a5
+  photo_album
+  photo_album_other
+  photo_book
+  photo_book_other
+  photo_daily
+  photo_other
+  t_shirt
 }
 
 type MeQuery implements Node @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeQuery") {

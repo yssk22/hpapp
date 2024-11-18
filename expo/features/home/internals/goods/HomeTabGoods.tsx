@@ -1,18 +1,9 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { useMe } from '@hpapp/features/app/user';
+import { ElineupMallLimitedTimeItemList } from '@hpapp/features/elineupmall';
 
 export default function HomeTabGoods() {
-  return (
-    <View style={styles.container}>
-      <Text>Shops</Text>
-    </View>
-  );
+  const followings = useMe()
+    .followings.filter((f) => f.type !== 'unfollow')
+    .map((f) => f.memberId);
+  return <ElineupMallLimitedTimeItemList memberIds={followings} />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});

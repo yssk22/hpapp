@@ -1,7 +1,9 @@
 package schema
 
 import (
+	"entgo.io/contrib/entgql"
 	"entgo.io/ent"
+	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
 	"entgo.io/ent/schema/index"
@@ -27,6 +29,7 @@ func (HPElineupMallItem) Indexes() []ent.Index {
 		index.Fields("permalink").
 			Unique(),
 		index.Fields("order_end_at"),
+		index.Fields("order_end_at", "category"),
 	}
 }
 
@@ -44,9 +47,8 @@ func (HPElineupMallItem) Fields() []ent.Field {
 		field.Enum("category").
 			GoType(enums.HPElineupMallItemCategoryOther).
 			Default(string(enums.HPElineupMallItemCategoryOther)),
-
-		field.Time("order_start_at").Optional().Nillable(),
-		field.Time("order_end_at").Optional().Nillable(),
+		field.Time("order_start_at").Optional().Nillable().Annotations(entgql.OrderField("orderStartAt")),
+		field.Time("order_end_at").Optional().Nillable().Annotations(entgql.OrderField("orderEndAt")),
 	}
 }
 
@@ -56,4 +58,14 @@ func (HPElineupMallItem) Edges() []ent.Edge {
 		edge.From("tagged_artists", HPArtist.Type).Ref("tagged_elineup_mall_items"),
 		edge.From("tagged_members", HPMember.Type).Ref("tagged_elineup_mall_items"),
 	}
+}
+
+func (HPElineupMallItem) Annotations() []schema.Annotation {
+	return []schema.Annotation{
+		entgql.RelayConnection(),
+	}
+}
+
+func (HPElineupMallItem) Hooks() []ent.Hook {
+	return []ent.Hook{}
 }

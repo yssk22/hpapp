@@ -8,10 +8,12 @@ import (
 	"github.com/yssk22/hpapp/go/foundation/slice"
 	"github.com/yssk22/hpapp/go/graphql/common"
 	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/entutil"
 	"github.com/yssk22/hpapp/go/service/schema/enums"
+	"github.com/yssk22/hpapp/go/system/clock"
 )
 
 type HelloProjectQuery struct{}
@@ -55,5 +57,28 @@ func (h *HelloProjectQuery) Feed(ctx context.Context, params HPFeedQueryParams, 
 	return q.Paginate(ctx, after, first, before, last, ent.WithHPFeedItemOrder(&ent.HPFeedItemOrder{
 		Direction: "DESC",
 		Field:     ent.HPFeedItemOrderFieldPostAt,
+	}))
+}
+
+type HPElineumpMallItemsParams struct {
+	MemberIDs  []string
+	Categories []enums.HPElineupMallItemCategory
+}
+
+func (h *HelloProjectQuery) ElineupMallItems(ctx context.Context, params HPElineumpMallItemsParams, after *ent.Cursor, first *int, before *ent.Cursor, last *int) (*ent.HPElineupMallItemConnection, error) {
+	client := entutil.NewClient(ctx)
+	now := clock.Now(ctx)
+	first = common.First(first, 20)
+	memberIds := assert.X(slice.MapStringToInt(params.MemberIDs))
+	q := client.HPElineupMallItem.Query().Where(
+		hpelineupmallitem.HasTaggedMembersWith(hpmember.IDIn(memberIds...)),
+		hpelineupmallitem.OrderEndAtGTE(now),
+	)
+	if len(params.Categories) > 0 {
+		q.Where(hpelineupmallitem.CategoryIn(params.Categories...))
+	}
+	return q.Paginate(ctx, after, first, before, last, ent.WithHPElineupMallItemOrder(&ent.HPElineupMallItemOrder{
+		Direction: "ASC",
+		Field:     ent.HPElineupMallItemOrderFieldOrderEndAt,
 	}))
 }

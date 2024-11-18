@@ -179,6 +179,17 @@ type ComplexityRoot struct {
 		UpdatedAt        func(childComplexity int) int
 	}
 
+	HPElineupMallItemConnection struct {
+		Edges      func(childComplexity int) int
+		PageInfo   func(childComplexity int) int
+		TotalCount func(childComplexity int) int
+	}
+
+	HPElineupMallItemEdge struct {
+		Cursor func(childComplexity int) int
+		Node   func(childComplexity int) int
+	}
+
 	HPEvent struct {
 		CreatedAt     func(childComplexity int) int
 		DisplayTitles func(childComplexity int) int
@@ -406,9 +417,10 @@ type ComplexityRoot struct {
 	}
 
 	HelloProjectQuery struct {
-		Artists func(childComplexity int, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
-		Feed    func(childComplexity int, params helloproject.HPFeedQueryParams, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
-		ID      func(childComplexity int) int
+		Artists          func(childComplexity int, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
+		ElineupMallItems func(childComplexity int, params helloproject.HPElineumpMallItemsParams, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
+		Feed             func(childComplexity int, params helloproject.HPFeedQueryParams, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
+		ID               func(childComplexity int) int
 	}
 
 	MeMutation struct {
@@ -1238,6 +1250,41 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.HPElineupMallItem.UpdatedAt(childComplexity), true
+
+	case "HPElineupMallItemConnection.edges":
+		if e.complexity.HPElineupMallItemConnection.Edges == nil {
+			break
+		}
+
+		return e.complexity.HPElineupMallItemConnection.Edges(childComplexity), true
+
+	case "HPElineupMallItemConnection.pageInfo":
+		if e.complexity.HPElineupMallItemConnection.PageInfo == nil {
+			break
+		}
+
+		return e.complexity.HPElineupMallItemConnection.PageInfo(childComplexity), true
+
+	case "HPElineupMallItemConnection.totalCount":
+		if e.complexity.HPElineupMallItemConnection.TotalCount == nil {
+			break
+		}
+
+		return e.complexity.HPElineupMallItemConnection.TotalCount(childComplexity), true
+
+	case "HPElineupMallItemEdge.cursor":
+		if e.complexity.HPElineupMallItemEdge.Cursor == nil {
+			break
+		}
+
+		return e.complexity.HPElineupMallItemEdge.Cursor(childComplexity), true
+
+	case "HPElineupMallItemEdge.node":
+		if e.complexity.HPElineupMallItemEdge.Node == nil {
+			break
+		}
+
+		return e.complexity.HPElineupMallItemEdge.Node(childComplexity), true
 
 	case "HPEvent.createdAt":
 		if e.complexity.HPEvent.CreatedAt == nil {
@@ -2329,6 +2376,18 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.HelloProjectQuery.Artists(childComplexity, args["after"].(*entgql.Cursor[int]), args["first"].(*int), args["before"].(*entgql.Cursor[int]), args["last"].(*int)), true
 
+	case "HelloProjectQuery.elineupMallItems":
+		if e.complexity.HelloProjectQuery.ElineupMallItems == nil {
+			break
+		}
+
+		args, err := ec.field_HelloProjectQuery_elineupMallItems_args(context.TODO(), rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.HelloProjectQuery.ElineupMallItems(childComplexity, args["params"].(helloproject.HPElineumpMallItemsParams), args["after"].(*entgql.Cursor[int]), args["first"].(*int), args["before"].(*entgql.Cursor[int]), args["last"].(*int)), true
+
 	case "HelloProjectQuery.feed":
 		if e.complexity.HelloProjectQuery.Feed == nil {
 			break
@@ -2888,6 +2947,7 @@ func (e *executableSchema) Exec(ctx context.Context) graphql.ResponseHandler {
 		ec.unmarshalInputHPAmebloPostOrder,
 		ec.unmarshalInputHPArtistOrder,
 		ec.unmarshalInputHPBlobOrder,
+		ec.unmarshalInputHPElineumpMallItemsParamsInput,
 		ec.unmarshalInputHPElineupMallItemOrder,
 		ec.unmarshalInputHPEventOrder,
 		ec.unmarshalInputHPFCEventTicketApplicationInput,
@@ -3042,6 +3102,57 @@ func (ec *executionContext) field_HelloProjectQuery_artists_args(ctx context.Con
 		}
 	}
 	args["last"] = arg3
+	return args, nil
+}
+
+func (ec *executionContext) field_HelloProjectQuery_elineupMallItems_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
+	var err error
+	args := map[string]interface{}{}
+	var arg0 helloproject.HPElineumpMallItemsParams
+	if tmp, ok := rawArgs["params"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("params"))
+		arg0, err = ec.unmarshalNHPElineumpMallItemsParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParams(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["params"] = arg0
+	var arg1 *entgql.Cursor[int]
+	if tmp, ok := rawArgs["after"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("after"))
+		arg1, err = ec.unmarshalOCursor2ᚖentgoᚗioᚋcontribᚋentgqlᚐCursor(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["after"] = arg1
+	var arg2 *int
+	if tmp, ok := rawArgs["first"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("first"))
+		arg2, err = ec.unmarshalOInt2ᚖint(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["first"] = arg2
+	var arg3 *entgql.Cursor[int]
+	if tmp, ok := rawArgs["before"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("before"))
+		arg3, err = ec.unmarshalOCursor2ᚖentgoᚗioᚋcontribᚋentgqlᚐCursor(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["before"] = arg3
+	var arg4 *int
+	if tmp, ok := rawArgs["last"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("last"))
+		arg4, err = ec.unmarshalOInt2ᚖint(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["last"] = arg4
 	return args, nil
 }
 
@@ -8065,6 +8176,278 @@ func (ec *executionContext) fieldContext_HPElineupMallItem_taggedMembers(ctx con
 				return ec.fieldContext_HPMember_artist(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPMember", field.Name)
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPElineupMallItemConnection_edges(ctx context.Context, field graphql.CollectedField, obj *ent.HPElineupMallItemConnection) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPElineupMallItemConnection_edges(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Edges, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.([]*ent.HPElineupMallItemEdge)
+	fc.Result = res
+	return ec.marshalOHPElineupMallItemEdge2ᚕᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItemEdge(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPElineupMallItemConnection_edges(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPElineupMallItemConnection",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "node":
+				return ec.fieldContext_HPElineupMallItemEdge_node(ctx, field)
+			case "cursor":
+				return ec.fieldContext_HPElineupMallItemEdge_cursor(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type HPElineupMallItemEdge", field.Name)
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPElineupMallItemConnection_pageInfo(ctx context.Context, field graphql.CollectedField, obj *ent.HPElineupMallItemConnection) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPElineupMallItemConnection_pageInfo(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.PageInfo, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(entgql.PageInfo[int])
+	fc.Result = res
+	return ec.marshalNPageInfo2entgoᚗioᚋcontribᚋentgqlᚐPageInfo(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPElineupMallItemConnection_pageInfo(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPElineupMallItemConnection",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "hasNextPage":
+				return ec.fieldContext_PageInfo_hasNextPage(ctx, field)
+			case "hasPreviousPage":
+				return ec.fieldContext_PageInfo_hasPreviousPage(ctx, field)
+			case "startCursor":
+				return ec.fieldContext_PageInfo_startCursor(ctx, field)
+			case "endCursor":
+				return ec.fieldContext_PageInfo_endCursor(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type PageInfo", field.Name)
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPElineupMallItemConnection_totalCount(ctx context.Context, field graphql.CollectedField, obj *ent.HPElineupMallItemConnection) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPElineupMallItemConnection_totalCount(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.TotalCount, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(int)
+	fc.Result = res
+	return ec.marshalNInt2int(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPElineupMallItemConnection_totalCount(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPElineupMallItemConnection",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Int does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPElineupMallItemEdge_node(ctx context.Context, field graphql.CollectedField, obj *ent.HPElineupMallItemEdge) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPElineupMallItemEdge_node(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Node, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*ent.HPElineupMallItem)
+	fc.Result = res
+	return ec.marshalOHPElineupMallItem2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItem(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPElineupMallItemEdge_node(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPElineupMallItemEdge",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "id":
+				return ec.fieldContext_HPElineupMallItem_id(ctx, field)
+			case "crawledAt":
+				return ec.fieldContext_HPElineupMallItem_crawledAt(ctx, field)
+			case "errorCount":
+				return ec.fieldContext_HPElineupMallItem_errorCount(ctx, field)
+			case "lastErrorMessage":
+				return ec.fieldContext_HPElineupMallItem_lastErrorMessage(ctx, field)
+			case "recrawlRequired":
+				return ec.fieldContext_HPElineupMallItem_recrawlRequired(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_HPElineupMallItem_createdAt(ctx, field)
+			case "updatedAt":
+				return ec.fieldContext_HPElineupMallItem_updatedAt(ctx, field)
+			case "permalink":
+				return ec.fieldContext_HPElineupMallItem_permalink(ctx, field)
+			case "name":
+				return ec.fieldContext_HPElineupMallItem_name(ctx, field)
+			case "description":
+				return ec.fieldContext_HPElineupMallItem_description(ctx, field)
+			case "supplier":
+				return ec.fieldContext_HPElineupMallItem_supplier(ctx, field)
+			case "price":
+				return ec.fieldContext_HPElineupMallItem_price(ctx, field)
+			case "isLimitedToFc":
+				return ec.fieldContext_HPElineupMallItem_isLimitedToFc(ctx, field)
+			case "isOutOfStock":
+				return ec.fieldContext_HPElineupMallItem_isOutOfStock(ctx, field)
+			case "images":
+				return ec.fieldContext_HPElineupMallItem_images(ctx, field)
+			case "category":
+				return ec.fieldContext_HPElineupMallItem_category(ctx, field)
+			case "orderStartAt":
+				return ec.fieldContext_HPElineupMallItem_orderStartAt(ctx, field)
+			case "orderEndAt":
+				return ec.fieldContext_HPElineupMallItem_orderEndAt(ctx, field)
+			case "taggedArtists":
+				return ec.fieldContext_HPElineupMallItem_taggedArtists(ctx, field)
+			case "taggedMembers":
+				return ec.fieldContext_HPElineupMallItem_taggedMembers(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type HPElineupMallItem", field.Name)
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPElineupMallItemEdge_cursor(ctx context.Context, field graphql.CollectedField, obj *ent.HPElineupMallItemEdge) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPElineupMallItemEdge_cursor(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Cursor, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(entgql.Cursor[int])
+	fc.Result = res
+	return ec.marshalNCursor2entgoᚗioᚋcontribᚋentgqlᚐCursor(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPElineupMallItemEdge_cursor(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPElineupMallItemEdge",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Cursor does not have child fields")
 		},
 	}
 	return fc, nil
@@ -15702,6 +16085,66 @@ func (ec *executionContext) fieldContext_HelloProjectQuery_feed(ctx context.Cont
 	return fc, nil
 }
 
+func (ec *executionContext) _HelloProjectQuery_elineupMallItems(ctx context.Context, field graphql.CollectedField, obj *helloproject.HelloProjectQuery) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HelloProjectQuery_elineupMallItems(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupMallItems(ctx, fc.Args["params"].(helloproject.HPElineumpMallItemsParams), fc.Args["after"].(*entgql.Cursor[int]), fc.Args["first"].(*int), fc.Args["before"].(*entgql.Cursor[int]), fc.Args["last"].(*int))
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*ent.HPElineupMallItemConnection)
+	fc.Result = res
+	return ec.marshalOHPElineupMallItemConnection2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItemConnection(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HelloProjectQuery_elineupMallItems(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HelloProjectQuery",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "edges":
+				return ec.fieldContext_HPElineupMallItemConnection_edges(ctx, field)
+			case "pageInfo":
+				return ec.fieldContext_HPElineupMallItemConnection_pageInfo(ctx, field)
+			case "totalCount":
+				return ec.fieldContext_HPElineupMallItemConnection_totalCount(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type HPElineupMallItemConnection", field.Name)
+		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_HelloProjectQuery_elineupMallItems_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return
+	}
+	return fc, nil
+}
+
 func (ec *executionContext) _MeMutation_authenticate(ctx context.Context, field graphql.CollectedField, obj *me.MeMutation) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_MeMutation_authenticate(ctx, field)
 	if err != nil {
@@ -17797,6 +18240,8 @@ func (ec *executionContext) fieldContext_Query_helloproject(ctx context.Context,
 				return ec.fieldContext_HelloProjectQuery_artists(ctx, field)
 			case "feed":
 				return ec.fieldContext_HelloProjectQuery_feed(ctx, field)
+			case "elineupMallItems":
+				return ec.fieldContext_HelloProjectQuery_elineupMallItems(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HelloProjectQuery", field.Name)
 		},
@@ -21170,6 +21615,42 @@ func (ec *executionContext) unmarshalInputHPBlobOrder(ctx context.Context, obj i
 	return it, nil
 }
 
+func (ec *executionContext) unmarshalInputHPElineumpMallItemsParamsInput(ctx context.Context, obj interface{}) (helloproject.HPElineumpMallItemsParams, error) {
+	var it helloproject.HPElineumpMallItemsParams
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	fieldsInOrder := [...]string{"memberIDs", "categories"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "memberIDs":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("memberIDs"))
+			it.MemberIDs, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "categories":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("categories"))
+			it.Categories, err = ec.unmarshalOHPElineupMallItemCategory2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPElineupMallItemCategoryᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
 func (ec *executionContext) unmarshalInputHPElineupMallItemOrder(ctx context.Context, obj interface{}) (ent.HPElineupMallItemOrder, error) {
 	var it ent.HPElineupMallItemOrder
 	asMap := map[string]interface{}{}
@@ -22874,6 +23355,77 @@ func (ec *executionContext) _HPElineupMallItem(ctx context.Context, sel ast.Sele
 	return out
 }
 
+var hPElineupMallItemConnectionImplementors = []string{"HPElineupMallItemConnection"}
+
+func (ec *executionContext) _HPElineupMallItemConnection(ctx context.Context, sel ast.SelectionSet, obj *ent.HPElineupMallItemConnection) graphql.Marshaler {
+	fields := graphql.CollectFields(ec.OperationContext, sel, hPElineupMallItemConnectionImplementors)
+	out := graphql.NewFieldSet(fields)
+	var invalids uint32
+	for i, field := range fields {
+		switch field.Name {
+		case "__typename":
+			out.Values[i] = graphql.MarshalString("HPElineupMallItemConnection")
+		case "edges":
+
+			out.Values[i] = ec._HPElineupMallItemConnection_edges(ctx, field, obj)
+
+		case "pageInfo":
+
+			out.Values[i] = ec._HPElineupMallItemConnection_pageInfo(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				invalids++
+			}
+		case "totalCount":
+
+			out.Values[i] = ec._HPElineupMallItemConnection_totalCount(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				invalids++
+			}
+		default:
+			panic("unknown field " + strconv.Quote(field.Name))
+		}
+	}
+	out.Dispatch()
+	if invalids > 0 {
+		return graphql.Null
+	}
+	return out
+}
+
+var hPElineupMallItemEdgeImplementors = []string{"HPElineupMallItemEdge"}
+
+func (ec *executionContext) _HPElineupMallItemEdge(ctx context.Context, sel ast.SelectionSet, obj *ent.HPElineupMallItemEdge) graphql.Marshaler {
+	fields := graphql.CollectFields(ec.OperationContext, sel, hPElineupMallItemEdgeImplementors)
+	out := graphql.NewFieldSet(fields)
+	var invalids uint32
+	for i, field := range fields {
+		switch field.Name {
+		case "__typename":
+			out.Values[i] = graphql.MarshalString("HPElineupMallItemEdge")
+		case "node":
+
+			out.Values[i] = ec._HPElineupMallItemEdge_node(ctx, field, obj)
+
+		case "cursor":
+
+			out.Values[i] = ec._HPElineupMallItemEdge_cursor(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				invalids++
+			}
+		default:
+			panic("unknown field " + strconv.Quote(field.Name))
+		}
+	}
+	out.Dispatch()
+	if invalids > 0 {
+		return graphql.Null
+	}
+	return out
+}
+
 var hPEventImplementors = []string{"HPEvent", "Node"}
 
 func (ec *executionContext) _HPEvent(ctx context.Context, sel ast.SelectionSet, obj *ent.HPEvent) graphql.Marshaler {
@@ -24517,6 +25069,23 @@ func (ec *executionContext) _HelloProjectQuery(ctx context.Context, sel ast.Sele
 				return innerFunc(ctx)
 
 			})
+		case "elineupMallItems":
+			field := field
+
+			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._HelloProjectQuery_elineupMallItems(ctx, field, obj)
+				return res
+			}
+
+			out.Concurrently(i, func() graphql.Marshaler {
+				return innerFunc(ctx)
+
+			})
 		default:
 			panic("unknown field " + strconv.Quote(field.Name))
 		}
@@ -26051,6 +26620,21 @@ func (ec *executionContext) marshalNHPBlobType2githubᚗcomᚋyssk22ᚋhpappᚋg
 	return v
 }
 
+func (ec *executionContext) unmarshalNHPElineumpMallItemsParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParams(ctx context.Context, v interface{}) (helloproject.HPElineumpMallItemsParams, error) {
+	res, err := ec.unmarshalInputHPElineumpMallItemsParamsInput(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) unmarshalNHPElineupMallItemCategory2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPElineupMallItemCategory(ctx context.Context, v interface{}) (enums.HPElineupMallItemCategory, error) {
+	var res enums.HPElineupMallItemCategory
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNHPElineupMallItemCategory2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPElineupMallItemCategory(ctx context.Context, sel ast.SelectionSet, v enums.HPElineupMallItemCategory) graphql.Marshaler {
+	return v
+}
+
 func (ec *executionContext) unmarshalNHPElineupMallItemHPElineupMallItemCategory2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPElineupMallItemCategory(ctx context.Context, v interface{}) (enums.HPElineupMallItemCategory, error) {
 	var res enums.HPElineupMallItemCategory
 	err := res.UnmarshalGQL(v)
@@ -27403,6 +27987,135 @@ func (ec *executionContext) marshalOHPBlobThumbnail2ᚖgithubᚗcomᚋyssk22ᚋh
 		return graphql.Null
 	}
 	return ec._HPBlobThumbnail(ctx, sel, v)
+}
+
+func (ec *executionContext) marshalOHPElineupMallItem2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItem(ctx context.Context, sel ast.SelectionSet, v *ent.HPElineupMallItem) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._HPElineupMallItem(ctx, sel, v)
+}
+
+func (ec *executionContext) unmarshalOHPElineupMallItemCategory2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPElineupMallItemCategoryᚄ(ctx context.Context, v interface{}) ([]enums.HPElineupMallItemCategory, error) {
+	if v == nil {
+		return nil, nil
+	}
+	var vSlice []interface{}
+	if v != nil {
+		vSlice = graphql.CoerceList(v)
+	}
+	var err error
+	res := make([]enums.HPElineupMallItemCategory, len(vSlice))
+	for i := range vSlice {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithIndex(i))
+		res[i], err = ec.unmarshalNHPElineupMallItemCategory2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPElineupMallItemCategory(ctx, vSlice[i])
+		if err != nil {
+			return nil, err
+		}
+	}
+	return res, nil
+}
+
+func (ec *executionContext) marshalOHPElineupMallItemCategory2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPElineupMallItemCategoryᚄ(ctx context.Context, sel ast.SelectionSet, v []enums.HPElineupMallItemCategory) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	ret := make(graphql.Array, len(v))
+	var wg sync.WaitGroup
+	isLen1 := len(v) == 1
+	if !isLen1 {
+		wg.Add(len(v))
+	}
+	for i := range v {
+		i := i
+		fc := &graphql.FieldContext{
+			Index:  &i,
+			Result: &v[i],
+		}
+		ctx := graphql.WithFieldContext(ctx, fc)
+		f := func(i int) {
+			defer func() {
+				if r := recover(); r != nil {
+					ec.Error(ctx, ec.Recover(ctx, r))
+					ret = nil
+				}
+			}()
+			if !isLen1 {
+				defer wg.Done()
+			}
+			ret[i] = ec.marshalNHPElineupMallItemCategory2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPElineupMallItemCategory(ctx, sel, v[i])
+		}
+		if isLen1 {
+			f(i)
+		} else {
+			go f(i)
+		}
+
+	}
+	wg.Wait()
+
+	for _, e := range ret {
+		if e == graphql.Null {
+			return graphql.Null
+		}
+	}
+
+	return ret
+}
+
+func (ec *executionContext) marshalOHPElineupMallItemConnection2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItemConnection(ctx context.Context, sel ast.SelectionSet, v *ent.HPElineupMallItemConnection) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._HPElineupMallItemConnection(ctx, sel, v)
+}
+
+func (ec *executionContext) marshalOHPElineupMallItemEdge2ᚕᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItemEdge(ctx context.Context, sel ast.SelectionSet, v []*ent.HPElineupMallItemEdge) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	ret := make(graphql.Array, len(v))
+	var wg sync.WaitGroup
+	isLen1 := len(v) == 1
+	if !isLen1 {
+		wg.Add(len(v))
+	}
+	for i := range v {
+		i := i
+		fc := &graphql.FieldContext{
+			Index:  &i,
+			Result: &v[i],
+		}
+		ctx := graphql.WithFieldContext(ctx, fc)
+		f := func(i int) {
+			defer func() {
+				if r := recover(); r != nil {
+					ec.Error(ctx, ec.Recover(ctx, r))
+					ret = nil
+				}
+			}()
+			if !isLen1 {
+				defer wg.Done()
+			}
+			ret[i] = ec.marshalOHPElineupMallItemEdge2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItemEdge(ctx, sel, v[i])
+		}
+		if isLen1 {
+			f(i)
+		} else {
+			go f(i)
+		}
+
+	}
+	wg.Wait()
+
+	return ret
+}
+
+func (ec *executionContext) marshalOHPElineupMallItemEdge2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItemEdge(ctx context.Context, sel ast.SelectionSet, v *ent.HPElineupMallItemEdge) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._HPElineupMallItemEdge(ctx, sel, v)
 }
 
 func (ec *executionContext) marshalOHPEvent2ᚕᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPEvent(ctx context.Context, sel ast.SelectionSet, v []*ent.HPEvent) graphql.Marshaler {

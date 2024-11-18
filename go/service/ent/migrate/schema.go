@@ -297,6 +297,11 @@ var (
 				Unique:  false,
 				Columns: []*schema.Column{HpElineupMallItemsColumns[18]},
 			},
+			{
+				Name:    "hpelineupmallitem_order_end_at_category",
+				Unique:  false,
+				Columns: []*schema.Column{HpElineupMallItemsColumns[18], HpElineupMallItemsColumns[16]},
+			},
 		},
 	}
 	// HpEventsColumns holds the columns for the "hp_events" table.

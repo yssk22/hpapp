@@ -1501,6 +1501,26 @@ var (
 			}
 		},
 	}
+	// HPElineupMallItemOrderFieldOrderStartAt orders HPElineupMallItem by order_start_at.
+	HPElineupMallItemOrderFieldOrderStartAt = &HPElineupMallItemOrderField{
+		field: hpelineupmallitem.FieldOrderStartAt,
+		toCursor: func(hemi *HPElineupMallItem) Cursor {
+			return Cursor{
+				ID:    hemi.ID,
+				Value: hemi.OrderStartAt,
+			}
+		},
+	}
+	// HPElineupMallItemOrderFieldOrderEndAt orders HPElineupMallItem by order_end_at.
+	HPElineupMallItemOrderFieldOrderEndAt = &HPElineupMallItemOrderField{
+		field: hpelineupmallitem.FieldOrderEndAt,
+		toCursor: func(hemi *HPElineupMallItem) Cursor {
+			return Cursor{
+				ID:    hemi.ID,
+				Value: hemi.OrderEndAt,
+			}
+		},
+	}
 )
 
 // String implement fmt.Stringer interface.
@@ -1511,6 +1531,10 @@ func (f HPElineupMallItemOrderField) String() string {
 		str = "createdAt"
 	case hpelineupmallitem.FieldUpdatedAt:
 		str = "updatedAt"
+	case hpelineupmallitem.FieldOrderStartAt:
+		str = "orderStartAt"
+	case hpelineupmallitem.FieldOrderEndAt:
+		str = "orderEndAt"
 	}
 	return str
 }
@@ -1531,6 +1555,10 @@ func (f *HPElineupMallItemOrderField) UnmarshalGQL(v interface{}) error {
 		*f = *HPElineupMallItemOrderFieldCreatedAt
 	case "updatedAt":
 		*f = *HPElineupMallItemOrderFieldUpdatedAt
+	case "orderStartAt":
+		*f = *HPElineupMallItemOrderFieldOrderStartAt
+	case "orderEndAt":
+		*f = *HPElineupMallItemOrderFieldOrderEndAt
 	default:
 		return fmt.Errorf("%s is not a valid HPElineupMallItemOrderField", str)
 	}
