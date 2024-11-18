@@ -89,6 +89,15 @@
   "Goods": {
     "ja": "グッズ"
   },
+  "Order End At": {
+    "ja": "販売終了日時"
+  },
+  "Price": {
+    "ja": "価格"
+  },
+  "%{price} JPY": {
+    "ja": "%{price}円"
+  },
   "Menu": {
     "ja": "メニュー"
   },

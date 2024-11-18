@@ -6,17 +6,18 @@
 
 import S0 from '@hpapp/features/artist/ArtistMemberScreen';
 import S1 from '@hpapp/features/content/ContentScreen';
-import S2 from '@hpapp/features/feed/FeedItemScreen';
-import S3 from '@hpapp/features/home/HomeScreen';
-import S4 from '@hpapp/features/hpsort/HPSortResultScreen';
-import S5 from '@hpapp/features/hpsort/HPSortScreen';
-import S6 from '@hpapp/features/onboarding/OnboardingScreen';
-import S7 from '@hpapp/features/settings/SettingsDevOnlyScreen';
-import S8 from '@hpapp/features/settings/SettingsThemeColorSelectorScreen';
-import S9 from '@hpapp/features/settings/SettingsThemeScreen';
-import S10 from '@hpapp/features/upfc/UPFCHistoryScreen';
-import S11 from '@hpapp/features/upfc/UPFCSettingsScreen';
-import S12 from '@hpapp/features/upfc/UPFCWebViewScreen';
+import S2 from '@hpapp/features/elineupmall/ElineupMallWebViewScreen';
+import S3 from '@hpapp/features/feed/FeedItemScreen';
+import S4 from '@hpapp/features/home/HomeScreen';
+import S5 from '@hpapp/features/hpsort/HPSortResultScreen';
+import S6 from '@hpapp/features/hpsort/HPSortScreen';
+import S7 from '@hpapp/features/onboarding/OnboardingScreen';
+import S8 from '@hpapp/features/settings/SettingsDevOnlyScreen';
+import S9 from '@hpapp/features/settings/SettingsThemeColorSelectorScreen';
+import S10 from '@hpapp/features/settings/SettingsThemeScreen';
+import S11 from '@hpapp/features/upfc/UPFCHistoryScreen';
+import S12 from '@hpapp/features/upfc/UPFCSettingsScreen';
+import S13 from '@hpapp/features/upfc/UPFCWebViewScreen';
 
 const Screens = [
   S0,
@@ -32,5 +33,6 @@ const Screens = [
   S10,
   S11,
   S12,
+  S13,
 ];
 export default Screens;

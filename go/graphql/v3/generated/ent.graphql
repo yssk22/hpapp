@@ -187,6 +187,22 @@ type HPElineupMallItem implements Node {
   taggedArtists: [HPArtist!]
   taggedMembers: [HPMember!]
 }
+"""A connection to a list of items."""
+type HPElineupMallItemConnection {
+  """A list of edges."""
+  edges: [HPElineupMallItemEdge]
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+  """Identifies the total count of items in the connection."""
+  totalCount: Int!
+}
+"""An edge in a connection."""
+type HPElineupMallItemEdge {
+  """The item at the end of the edge."""
+  node: HPElineupMallItem
+  """A cursor for use in pagination."""
+  cursor: Cursor!
+}
 """HPElineupMallItemHPElineupMallItemCategory is enum for the field category"""
 enum HPElineupMallItemHPElineupMallItemCategory @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPElineupMallItemCategory") {
   Blueray
@@ -225,6 +241,8 @@ input HPElineupMallItemOrder {
 enum HPElineupMallItemOrderField {
   createdAt
   updatedAt
+  orderStartAt
+  orderEndAt
 }
 type HPEvent implements Node {
   id: ID!
