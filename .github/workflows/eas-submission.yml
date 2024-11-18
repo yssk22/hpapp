@@ -1,0 +1,38 @@
+name: EAS - submit
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: "Platform to build for"
+        required: true
+        default: "ios"
+        type: choice
+        options:
+          - ios
+          - android
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: eas-submission
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "yarn"
+          cache-dependency-path: "expo/package.json"
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: 5.4.0
+          token: ${{ secrets.EXPO_TOKEN }}
+      # - run: cd expo && yarn install
+      - name: Extract AppStoreKey.p8 file.
+        run: cd expo && envsubst < config/prod/AppStoreKey.p8.env > config/prod/AppStoreKey.p8
+        env:
+          APPLE_APP_STORE_KEY_P8: ${{ secrets.APPLE_APP_STORE_KEY_P8 }}
+      - run: cd expo && cat config/prod/AppStoreKey.p8
+      # - run: cd expo && ./scripts/eas.sh build --profile ${{inputs.config}} --platform ${{inputs.platform}} --non-interactive
+      #   env:
+      #     HPAPP_CONFIG_NAME: ${{inputs.config}}
+      #     HPAPP_CONFIG_PLATFORM: ${{inputs.platform}}

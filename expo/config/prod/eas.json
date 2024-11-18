@@ -1,0 +1,15 @@
+{
+    "cli": {
+        "version": "5.4.0"
+    },
+    "build": {
+        "prod": {
+            "env": {
+                "HPAPP_CONFIG_NAME": "prod"
+            },
+            "channel": "prod",
+            "ios": {},
+            "android": {}
+        }
+    }
+}
