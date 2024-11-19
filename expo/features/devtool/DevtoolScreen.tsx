@@ -7,10 +7,10 @@ import { Image } from 'expo-image';
 import { ScrollView } from 'react-native';
 import Toast from 'react-native-root-toast';
 
-import SettingsDevOnlyListItem from './internals/SettingsDevOnlyListItem';
-import SettingsUserConfigForm from './internals/SettingsUserConfigForm';
+import SettingsDevOnlyListItem from './internals/DevtoolListItem';
+import SettingsUserConfigForm from './internals/DevtoolUserConfigForm';
 
-export default defineScreen('/settings/devonly/', function DevOnlySettingsScreen() {
+export default defineScreen('/devtool/', function DevtoolScreen() {
   const user = useCurrentUser();
   const appConfig = useAppConfig();
   const userConfig = useUserConfig();

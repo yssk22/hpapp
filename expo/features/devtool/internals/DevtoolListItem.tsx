@@ -1,7 +1,7 @@
 import { Text } from '@hpapp/features/common';
 import { ListItem } from '@rneui/themed';
 
-export default function SettingsDevOnlyListItem({
+export default function DevtoolListItem({
   name,
   value,
   displayValue

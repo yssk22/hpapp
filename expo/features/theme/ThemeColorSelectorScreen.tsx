@@ -1,12 +1,12 @@
 import { defineScreen, useScreenTitle } from '@hpapp/features/common/stack';
 import { ThemeColorScheme } from '@hpapp/system/theme';
 
-import SettingsThemeColorSelectorContainer from './internals/SettingsThemeColorSelectorContainer';
+import ThemeColorSelectorContainer from './internals/ThemeColorSelectorContainer';
 
 export default defineScreen(
-  '/settings/theme/colors/',
+  '/theme/colors/',
   function SettingsThemeColorSelectorScreen({ title, scheme }: { title: string; scheme: ThemeColorScheme }) {
     useScreenTitle(title);
-    return <SettingsThemeColorSelectorContainer scheme={scheme} />;
+    return <ThemeColorSelectorContainer scheme={scheme} />;
   }
 );

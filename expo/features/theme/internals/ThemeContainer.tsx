@@ -2,12 +2,12 @@ import { useThemeColor } from '@hpapp/features/app/theme';
 import { Text } from '@hpapp/features/common';
 import { Spacing } from '@hpapp/features/common/constants';
 import { NavigationListItem } from '@hpapp/features/common/list';
-import ThemeColorSelectorScreen from '@hpapp/features/settings/SettingsThemeColorSelectorScreen';
+import ThemeColorSelectorScreen from '@hpapp/features/theme/ThemeColorSelectorScreen';
 import { t } from '@hpapp/system/i18n';
 import { ThemeColorScheme } from '@hpapp/system/theme';
 import { View, StyleSheet } from 'react-native';
 
-export default function SettingsThemeContainer() {
+export default function ThemeContainer() {
   const [primary, primaryContrast] = useThemeColor('primary');
   const [secondary, secondaryContrast] = useThemeColor('secondary');
   const [background, backgroundContrast] = useThemeColor('background');
