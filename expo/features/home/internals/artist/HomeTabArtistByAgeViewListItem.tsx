@@ -23,6 +23,7 @@ export default function HomeTabArtistByAgeViewListItem({ label, members }: { lab
           {members.map((m) => {
             return (
               <TouchableOpacity
+                key={m.id}
                 onPress={() => {
                   navigation.navigate(ArtistMemberScreen, { memberId: m.id });
                 }}

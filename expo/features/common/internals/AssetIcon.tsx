@@ -19,6 +19,7 @@ export default function AssetIcon({ type, size }: AssetIconProps) {
     case 'elineupmall':
       return (
         <ExternalImage
+          cachePolicy="disk"
           uri="https://cdn.elineupmall.com/images/logos/2/favicon_3h0z-m5.ico"
           width={size}
           height={size}

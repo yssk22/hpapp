@@ -42,7 +42,15 @@ export function ElineupMallLimitedTimeItemListItem({ data }: { data: ElineupMall
       <Divider />
       <ListItem
         containerStyle={styles.container}
-        rightContent={<ExternalImage uri={imageUrl} style={styles.image} width={imageSize} height={imageSize} />}
+        rightContent={
+          <ExternalImage
+            uri={imageUrl}
+            style={styles.image}
+            width={imageSize}
+            height={imageSize}
+            cachePolicy="memory-disk"
+          />
+        }
         onPress={() => {
           navigation.navigate(ElineupMallWebViewScreen, { uri: item.permalink });
         }}

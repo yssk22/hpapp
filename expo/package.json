@@ -63,6 +63,7 @@
     "expo-dev-menu": "^5.0.15",
     "expo-device": "~6.0.2",
     "expo-file-system": "~17.0.1",
+    "expo-image": "~1.13.0",
     "expo-linking": "~6.3.1",
     "expo-localization": "~15.0.3",
     "expo-media-library": "~16.0.5",

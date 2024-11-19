@@ -84,3 +84,11 @@ export async function get(uri: string) {
     return null;
   }
 }
+
+export async function clearCacheDir() {
+  const dirInfo = await FileSystem.getInfoAsync(cacheDir);
+  if (dirInfo.exists) {
+    await FileSystem.deleteAsync(cacheDir);
+    await FileSystem.makeDirectoryAsync(cacheDir, { intermediates: true });
+  }
+}

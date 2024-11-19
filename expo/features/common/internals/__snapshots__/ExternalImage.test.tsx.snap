@@ -99,24 +99,52 @@ exports[`ExternalImage Basic 1`] = `
                 }
               }
             >
-              <Image
-                resizeMethod="resize"
-                resizeMode="contain"
-                source={
+              <ViewManagerAdapter_ExpoImage
+                cachePolicy="memory"
+                containerViewRef={"[React.ref]"}
+                contentFit="contain"
+                contentPosition={
                   {
-                    "uri": "http://cdn.helloproject.com/img/rotation/ff25b71d00ea5ff0b44e18c31c0e1e3c4a7230c9.jpg",
+                    "left": "50%",
+                    "top": "50%",
                   }
                 }
-                style={
+                height={150}
+                nativeViewRef={"[React.ref]"}
+                onError={[Function]}
+                onLoad={[Function]}
+                onLoadStart={[Function]}
+                onProgress={[Function]}
+                placeholder={
                   [
                     {
-                      "height": 150,
-                      "width": 150,
+                      "height": 16,
+                      "uri": "blurhash:/L:O%7Cw%3FRkxtWCRkoeayfQ~Ut6Rkoe",
+                      "width": 16,
                     },
-                    undefined,
                   ]
                 }
+                resizeMethod="resize"
+                source={
+                  [
+                    {
+                      "uri": "http://cdn.helloproject.com/img/rotation/ff25b71d00ea5ff0b44e18c31c0e1e3c4a7230c9.jpg",
+                    },
+                  ]
+                }
+                style={
+                  {
+                    "height": 150,
+                    "width": 150,
+                  }
+                }
                 testID="ExternalImage.Image"
+                transition={
+                  {
+                    "duration": 1000,
+                  }
+                }
+                width={150}
               />
             </View>
           </View>

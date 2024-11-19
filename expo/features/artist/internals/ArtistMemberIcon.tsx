@@ -50,6 +50,7 @@ export default function ArtistMemberIcon({
           style={{ width: size, height: size }}
           width={size}
           height={size}
+          cachePolicy="disk"
           {...circleProps}
         />
         {showFollowIcon && iconName && (
@@ -74,6 +75,7 @@ export default function ArtistMemberIcon({
         style={{ width: size, height: size }}
         width={size}
         height={size}
+        cachePolicy="disk"
         {...circleProps}
       />
       {showFollowIcon && iconName && (
