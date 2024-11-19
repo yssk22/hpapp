@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Icon, ListItem } from '@rneui/themed';
 import { StyleSheet, ScrollView } from 'react-native';
 
-export default function SettingsThemeColorSelectorContainer({ scheme }: { scheme: ThemeColorScheme }) {
+export default function ThemeColorSelectorContainer({ scheme }: { scheme: ThemeColorScheme }) {
   const navigation = useNavigation();
   const userConfig = useUserConfig();
   const updateConfig = useUserConfigUpdator();

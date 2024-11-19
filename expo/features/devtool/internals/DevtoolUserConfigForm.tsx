@@ -4,7 +4,7 @@ import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { Switch } from '@rneui/themed';
 import { StyleSheet, View } from 'react-native';
 
-export default function SettingsUserConfigForm() {
+export default function DevtoolUserConfigForm() {
   const userConfig = useUserConfig()!;
   const userConfigUpdate = useUserConfigUpdator();
 

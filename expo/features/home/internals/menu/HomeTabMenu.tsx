@@ -3,9 +3,9 @@ import { AuthGateByRole } from '@hpapp/features/auth';
 import { Text } from '@hpapp/features/common';
 import { NavigationListItem } from '@hpapp/features/common/list';
 import ContentScreen from '@hpapp/features/content/ContentScreen';
+import SettingsDevOnlyScreen from '@hpapp/features/devtool/DevtoolScreen';
 import HPSortScreen from '@hpapp/features/hpsort/HPSortScreen';
-import SettingsDevOnlyScreen from '@hpapp/features/settings/SettingsDevOnlyScreen';
-import ThemeSettingsScreen from '@hpapp/features/settings/SettingsThemeScreen';
+import ThemeScreen from '@hpapp/features/theme/ThemeScreen';
 import UPFCHistoryScreen from '@hpapp/features/upfc/UPFCHistoryScreen';
 import UPFCSettingsScreen from '@hpapp/features/upfc/UPFCSettingsScreen';
 import { t } from '@hpapp/system/i18n';
@@ -59,7 +59,7 @@ export default function HomeTabSettings() {
           <Text style={{ color: sectionColorContrast, fontWeight: 'bold' }}>{t('Settings')}</Text>
         </ListItem.Title>
       </ListItem>
-      <NavigationListItem screen={ThemeSettingsScreen}>{t('Theme Settings')}</NavigationListItem>
+      <NavigationListItem screen={ThemeScreen}>{t('Theme Settings')}</NavigationListItem>
       <Divider />
       <NavigationListItem screen={UPFCSettingsScreen}>{t('FC Settings')}</NavigationListItem>
       <AuthGateByRole allow="admin">
