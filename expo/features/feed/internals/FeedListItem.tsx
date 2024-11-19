@@ -49,7 +49,13 @@ export default function FeedListItem({ data }: { data: FeedListItemFragment$key 
           isEmpty(imageUrl) ? (
             <ArtistMemberIcon member={item.ownerMember!.id} size={80} />
           ) : (
-            <ExternalImage uri={getOptimizedImageUrl(imageUrl)} style={styles.image} width={80} height={80} />
+            <ExternalImage
+              uri={getOptimizedImageUrl(imageUrl)}
+              style={styles.image}
+              width={80}
+              height={80}
+              cachePolicy="memory-disk"
+            />
           )
         }
         onPress={() => {

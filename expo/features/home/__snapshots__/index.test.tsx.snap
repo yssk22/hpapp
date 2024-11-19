@@ -9197,25 +9197,51 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       }
                                     }
                                   >
-                                    <Image
-                                      source={
+                                    <ViewManagerAdapter_ExpoImage
+                                      cachePolicy="memory-disk"
+                                      containerViewRef={"[React.ref]"}
+                                      contentFit="cover"
+                                      contentPosition={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20241106/21/rosychronicle/51/6a/j/o0810108015506985160.jpg?cpd=300",
+                                          "left": "50%",
+                                          "top": "50%",
                                         }
                                       }
-                                      style={
+                                      height={80}
+                                      nativeViewRef={"[React.ref]"}
+                                      onError={[Function]}
+                                      onLoad={[Function]}
+                                      onLoadStart={[Function]}
+                                      onProgress={[Function]}
+                                      placeholder={
                                         [
                                           {
-                                            "height": 80,
-                                            "width": 80,
-                                          },
-                                          {
-                                            "height": 80,
-                                            "width": 80,
+                                            "height": 16,
+                                            "uri": "blurhash:/L:O%7Cw%3FRkxtWCRkoeayfQ~Ut6Rkoe",
+                                            "width": 16,
                                           },
                                         ]
                                       }
+                                      source={
+                                        [
+                                          {
+                                            "uri": "https://stat.ameba.jp/user_images/20241106/21/rosychronicle/51/6a/j/o0810108015506985160.jpg?cpd=300",
+                                          },
+                                        ]
+                                      }
+                                      style={
+                                        {
+                                          "height": 80,
+                                          "width": 80,
+                                        }
+                                      }
                                       testID="ExternalImage.Image"
+                                      transition={
+                                        {
+                                          "duration": 1000,
+                                        }
+                                      }
+                                      width={80}
                                     />
                                   </View>
                                 </View>
@@ -9473,25 +9499,51 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       }
                                     }
                                   >
-                                    <Image
-                                      source={
+                                    <ViewManagerAdapter_ExpoImage
+                                      cachePolicy="memory-disk"
+                                      containerViewRef={"[React.ref]"}
+                                      contentFit="cover"
+                                      contentPosition={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20241106/21/beyooooonds-chicatetsu/dd/ec/j/o1080144015506978014.jpg?cpd=300",
+                                          "left": "50%",
+                                          "top": "50%",
                                         }
                                       }
-                                      style={
+                                      height={80}
+                                      nativeViewRef={"[React.ref]"}
+                                      onError={[Function]}
+                                      onLoad={[Function]}
+                                      onLoadStart={[Function]}
+                                      onProgress={[Function]}
+                                      placeholder={
                                         [
                                           {
-                                            "height": 80,
-                                            "width": 80,
-                                          },
-                                          {
-                                            "height": 80,
-                                            "width": 80,
+                                            "height": 16,
+                                            "uri": "blurhash:/L:O%7Cw%3FRkxtWCRkoeayfQ~Ut6Rkoe",
+                                            "width": 16,
                                           },
                                         ]
                                       }
+                                      source={
+                                        [
+                                          {
+                                            "uri": "https://stat.ameba.jp/user_images/20241106/21/beyooooonds-chicatetsu/dd/ec/j/o1080144015506978014.jpg?cpd=300",
+                                          },
+                                        ]
+                                      }
+                                      style={
+                                        {
+                                          "height": 80,
+                                          "width": 80,
+                                        }
+                                      }
                                       testID="ExternalImage.Image"
+                                      transition={
+                                        {
+                                          "duration": 1000,
+                                        }
+                                      }
+                                      width={80}
                                     />
                                   </View>
                                 </View>
@@ -9749,25 +9801,51 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       }
                                     }
                                   >
-                                    <Image
-                                      source={
+                                    <ViewManagerAdapter_ExpoImage
+                                      cachePolicy="memory-disk"
+                                      containerViewRef={"[React.ref]"}
+                                      contentFit="cover"
+                                      contentPosition={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20241106/21/juicejuice-official/5d/40/j/o1000133215506982852.jpg?cpd=300",
+                                          "left": "50%",
+                                          "top": "50%",
                                         }
                                       }
-                                      style={
+                                      height={80}
+                                      nativeViewRef={"[React.ref]"}
+                                      onError={[Function]}
+                                      onLoad={[Function]}
+                                      onLoadStart={[Function]}
+                                      onProgress={[Function]}
+                                      placeholder={
                                         [
                                           {
-                                            "height": 80,
-                                            "width": 80,
-                                          },
-                                          {
-                                            "height": 80,
-                                            "width": 80,
+                                            "height": 16,
+                                            "uri": "blurhash:/L:O%7Cw%3FRkxtWCRkoeayfQ~Ut6Rkoe",
+                                            "width": 16,
                                           },
                                         ]
                                       }
+                                      source={
+                                        [
+                                          {
+                                            "uri": "https://stat.ameba.jp/user_images/20241106/21/juicejuice-official/5d/40/j/o1000133215506982852.jpg?cpd=300",
+                                          },
+                                        ]
+                                      }
+                                      style={
+                                        {
+                                          "height": 80,
+                                          "width": 80,
+                                        }
+                                      }
                                       testID="ExternalImage.Image"
+                                      transition={
+                                        {
+                                          "duration": 1000,
+                                        }
+                                      }
+                                      width={80}
                                     />
                                   </View>
                                 </View>
@@ -9904,25 +9982,51 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       }
                                     }
                                   >
-                                    <Image
-                                      source={
+                                    <ViewManagerAdapter_ExpoImage
+                                      cachePolicy="memory-disk"
+                                      containerViewRef={"[React.ref]"}
+                                      contentFit="cover"
+                                      contentPosition={
                                         {
-                                          "uri": "https://storage.googleapis.com/hpblob.yssk22.dev/www.instagram.com/p/DCB32ARz2AM/0/image.jpg",
+                                          "left": "50%",
+                                          "top": "50%",
                                         }
                                       }
-                                      style={
+                                      height={80}
+                                      nativeViewRef={"[React.ref]"}
+                                      onError={[Function]}
+                                      onLoad={[Function]}
+                                      onLoadStart={[Function]}
+                                      onProgress={[Function]}
+                                      placeholder={
                                         [
                                           {
-                                            "height": 80,
-                                            "width": 80,
-                                          },
-                                          {
-                                            "height": 80,
-                                            "width": 80,
+                                            "height": 16,
+                                            "uri": "blurhash:/L:O%7Cw%3FRkxtWCRkoeayfQ~Ut6Rkoe",
+                                            "width": 16,
                                           },
                                         ]
                                       }
+                                      source={
+                                        [
+                                          {
+                                            "uri": "https://storage.googleapis.com/hpblob.yssk22.dev/www.instagram.com/p/DCB32ARz2AM/0/image.jpg",
+                                          },
+                                        ]
+                                      }
+                                      style={
+                                        {
+                                          "height": 80,
+                                          "width": 80,
+                                        }
+                                      }
                                       testID="ExternalImage.Image"
+                                      transition={
+                                        {
+                                          "duration": 1000,
+                                        }
+                                      }
+                                      width={80}
                                     />
                                   </View>
                                 </View>
@@ -10180,25 +10284,51 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       }
                                     }
                                   >
-                                    <Image
-                                      source={
+                                    <ViewManagerAdapter_ExpoImage
+                                      cachePolicy="memory-disk"
+                                      containerViewRef={"[React.ref]"}
+                                      contentFit="cover"
+                                      contentPosition={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20241106/19/juicejuice-official/fb/cb/j/o1080144015506924618.jpg?cpd=300",
+                                          "left": "50%",
+                                          "top": "50%",
                                         }
                                       }
-                                      style={
+                                      height={80}
+                                      nativeViewRef={"[React.ref]"}
+                                      onError={[Function]}
+                                      onLoad={[Function]}
+                                      onLoadStart={[Function]}
+                                      onProgress={[Function]}
+                                      placeholder={
                                         [
                                           {
-                                            "height": 80,
-                                            "width": 80,
-                                          },
-                                          {
-                                            "height": 80,
-                                            "width": 80,
+                                            "height": 16,
+                                            "uri": "blurhash:/L:O%7Cw%3FRkxtWCRkoeayfQ~Ut6Rkoe",
+                                            "width": 16,
                                           },
                                         ]
                                       }
+                                      source={
+                                        [
+                                          {
+                                            "uri": "https://stat.ameba.jp/user_images/20241106/19/juicejuice-official/fb/cb/j/o1080144015506924618.jpg?cpd=300",
+                                          },
+                                        ]
+                                      }
+                                      style={
+                                        {
+                                          "height": 80,
+                                          "width": 80,
+                                        }
+                                      }
                                       testID="ExternalImage.Image"
+                                      transition={
+                                        {
+                                          "duration": 1000,
+                                        }
+                                      }
+                                      width={80}
                                     />
                                   </View>
                                 </View>
@@ -10451,25 +10581,51 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       }
                                     }
                                   >
-                                    <Image
-                                      source={
+                                    <ViewManagerAdapter_ExpoImage
+                                      cachePolicy="memory-disk"
+                                      containerViewRef={"[React.ref]"}
+                                      contentFit="cover"
+                                      contentPosition={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20241106/20/juicejuice-official/2c/76/j/o1080144015506956563.jpg?cpd=300",
+                                          "left": "50%",
+                                          "top": "50%",
                                         }
                                       }
-                                      style={
+                                      height={80}
+                                      nativeViewRef={"[React.ref]"}
+                                      onError={[Function]}
+                                      onLoad={[Function]}
+                                      onLoadStart={[Function]}
+                                      onProgress={[Function]}
+                                      placeholder={
                                         [
                                           {
-                                            "height": 80,
-                                            "width": 80,
-                                          },
-                                          {
-                                            "height": 80,
-                                            "width": 80,
+                                            "height": 16,
+                                            "uri": "blurhash:/L:O%7Cw%3FRkxtWCRkoeayfQ~Ut6Rkoe",
+                                            "width": 16,
                                           },
                                         ]
                                       }
+                                      source={
+                                        [
+                                          {
+                                            "uri": "https://stat.ameba.jp/user_images/20241106/20/juicejuice-official/2c/76/j/o1080144015506956563.jpg?cpd=300",
+                                          },
+                                        ]
+                                      }
+                                      style={
+                                        {
+                                          "height": 80,
+                                          "width": 80,
+                                        }
+                                      }
                                       testID="ExternalImage.Image"
+                                      transition={
+                                        {
+                                          "duration": 1000,
+                                        }
+                                      }
+                                      width={80}
                                     />
                                   </View>
                                 </View>
@@ -10727,25 +10883,51 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       }
                                     }
                                   >
-                                    <Image
-                                      source={
+                                    <ViewManagerAdapter_ExpoImage
+                                      cachePolicy="memory-disk"
+                                      containerViewRef={"[React.ref]"}
+                                      contentFit="cover"
+                                      contentPosition={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20241106/18/juicejuice-official/fa/03/j/o1080267415506897367.jpg?cpd=300",
+                                          "left": "50%",
+                                          "top": "50%",
                                         }
                                       }
-                                      style={
+                                      height={80}
+                                      nativeViewRef={"[React.ref]"}
+                                      onError={[Function]}
+                                      onLoad={[Function]}
+                                      onLoadStart={[Function]}
+                                      onProgress={[Function]}
+                                      placeholder={
                                         [
                                           {
-                                            "height": 80,
-                                            "width": 80,
-                                          },
-                                          {
-                                            "height": 80,
-                                            "width": 80,
+                                            "height": 16,
+                                            "uri": "blurhash:/L:O%7Cw%3FRkxtWCRkoeayfQ~Ut6Rkoe",
+                                            "width": 16,
                                           },
                                         ]
                                       }
+                                      source={
+                                        [
+                                          {
+                                            "uri": "https://stat.ameba.jp/user_images/20241106/18/juicejuice-official/fa/03/j/o1080267415506897367.jpg?cpd=300",
+                                          },
+                                        ]
+                                      }
+                                      style={
+                                        {
+                                          "height": 80,
+                                          "width": 80,
+                                        }
+                                      }
                                       testID="ExternalImage.Image"
+                                      transition={
+                                        {
+                                          "duration": 1000,
+                                        }
+                                      }
+                                      width={80}
                                     />
                                   </View>
                                 </View>
@@ -10882,25 +11064,51 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       }
                                     }
                                   >
-                                    <Image
-                                      source={
+                                    <ViewManagerAdapter_ExpoImage
+                                      cachePolicy="memory-disk"
+                                      containerViewRef={"[React.ref]"}
+                                      contentFit="cover"
+                                      contentPosition={
                                         {
-                                          "uri": "https://storage.googleapis.com/hpblob.yssk22.dev/www.instagram.com/p/DCBgiQnJU5S/0/image.jpg",
+                                          "left": "50%",
+                                          "top": "50%",
                                         }
                                       }
-                                      style={
+                                      height={80}
+                                      nativeViewRef={"[React.ref]"}
+                                      onError={[Function]}
+                                      onLoad={[Function]}
+                                      onLoadStart={[Function]}
+                                      onProgress={[Function]}
+                                      placeholder={
                                         [
                                           {
-                                            "height": 80,
-                                            "width": 80,
-                                          },
-                                          {
-                                            "height": 80,
-                                            "width": 80,
+                                            "height": 16,
+                                            "uri": "blurhash:/L:O%7Cw%3FRkxtWCRkoeayfQ~Ut6Rkoe",
+                                            "width": 16,
                                           },
                                         ]
                                       }
+                                      source={
+                                        [
+                                          {
+                                            "uri": "https://storage.googleapis.com/hpblob.yssk22.dev/www.instagram.com/p/DCBgiQnJU5S/0/image.jpg",
+                                          },
+                                        ]
+                                      }
+                                      style={
+                                        {
+                                          "height": 80,
+                                          "width": 80,
+                                        }
+                                      }
                                       testID="ExternalImage.Image"
+                                      transition={
+                                        {
+                                          "duration": 1000,
+                                        }
+                                      }
+                                      width={80}
                                     />
                                   </View>
                                 </View>
@@ -11158,25 +11366,51 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       }
                                     }
                                   >
-                                    <Image
-                                      source={
+                                    <ViewManagerAdapter_ExpoImage
+                                      cachePolicy="memory-disk"
+                                      containerViewRef={"[React.ref]"}
+                                      contentFit="cover"
+                                      contentPosition={
                                         {
-                                          "uri": "https://stat.ameba.jp/user_images/20241106/16/morningmusume15ki/bb/3a/j/o1080144015506870151.jpg?cpd=300",
+                                          "left": "50%",
+                                          "top": "50%",
                                         }
                                       }
-                                      style={
+                                      height={80}
+                                      nativeViewRef={"[React.ref]"}
+                                      onError={[Function]}
+                                      onLoad={[Function]}
+                                      onLoadStart={[Function]}
+                                      onProgress={[Function]}
+                                      placeholder={
                                         [
                                           {
-                                            "height": 80,
-                                            "width": 80,
-                                          },
-                                          {
-                                            "height": 80,
-                                            "width": 80,
+                                            "height": 16,
+                                            "uri": "blurhash:/L:O%7Cw%3FRkxtWCRkoeayfQ~Ut6Rkoe",
+                                            "width": 16,
                                           },
                                         ]
                                       }
+                                      source={
+                                        [
+                                          {
+                                            "uri": "https://stat.ameba.jp/user_images/20241106/16/morningmusume15ki/bb/3a/j/o1080144015506870151.jpg?cpd=300",
+                                          },
+                                        ]
+                                      }
+                                      style={
+                                        {
+                                          "height": 80,
+                                          "width": 80,
+                                        }
+                                      }
                                       testID="ExternalImage.Image"
+                                      transition={
+                                        {
+                                          "duration": 1000,
+                                        }
+                                      }
+                                      width={80}
                                     />
                                   </View>
                                 </View>

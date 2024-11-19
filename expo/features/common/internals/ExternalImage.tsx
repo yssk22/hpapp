@@ -1,7 +1,8 @@
-import { ComponentProps } from 'react';
-import { View, Image, ActivityIndicator, StyleSheet } from 'react-native';
+import { Image } from 'expo-image';
+import { ComponentProps, useState } from 'react';
+import { View } from 'react-native';
 
-import useURICache from './useURICache';
+const blurhash = 'L:O|w?RkxtWCRkoeayfQ~Ut6Rkoe';
 
 export type ExternalImageProps = Omit<ComponentProps<typeof Image>, 'source'> & {
   spinnerStyle?: React.ComponentProps<typeof View>['style'];
@@ -9,7 +10,8 @@ export type ExternalImageProps = Omit<ComponentProps<typeof Image>, 'source'> & 
   /**
    * If true, the image will be cached on the device's file system.
    */
-  cache?: boolean;
+  cachePolicy?: 'none' | 'disk' | 'memory' | 'memory-disk' | null | undefined;
+  maxRetries?: number | undefined;
   width: number;
   height: number;
 };
@@ -20,46 +22,36 @@ export type ExternalImageProps = Omit<ComponentProps<typeof Image>, 'source'> & 
  */
 export default function ExternalImage({
   uri,
-  cache = false,
+  cachePolicy = 'memory',
+  maxRetries = 5,
   spinnerStyle,
   height,
   width,
   style,
   ...rest
 }: ExternalImageProps) {
-  const cachedURI = useURICache(uri);
-  if (cachedURI.data !== undefined) {
-    return (
-      <Image
-        testID="ExternalImage.Image"
-        {...rest}
-        key={`${cachedURI.data!}${new Date()}`}
-        source={{ uri: cachedURI.data }}
-        style={[
-          {
-            width,
-            height
-          },
-          style
-        ]}
-      />
-    );
-  }
+  const [retry, setRetry] = useState(0);
   return (
-    <View style={[spinnerStyle, styles.spinner]}>
-      <ActivityIndicator color="#ff0000" />
-    </View>
+    <Image
+      testID="ExternalImage.Image"
+      {...rest}
+      cachePolicy={cachePolicy}
+      key={`${uri}$$${retry}`}
+      source={uri}
+      placeholder={{ blurhash }}
+      style={[
+        {
+          width,
+          height
+        },
+        style
+      ]}
+      transition={1000}
+      onError={() => {
+        if (retry < maxRetries) {
+          setRetry(retry + 1);
+        }
+      }}
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  spinner: {
-    position: 'absolute',
-    alignContent: 'center',
-    justifyContent: 'center',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0
-  }
-});

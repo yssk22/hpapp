@@ -332,25 +332,51 @@ exports[`artist ArtistMemberIcon icon no press 1`] = `
               }
               testID="ArtistMemberIcon.NoOnPress"
             >
-              <Image
-                source={
+              <ViewManagerAdapter_ExpoImage
+                cachePolicy="disk"
+                containerViewRef={"[React.ref]"}
+                contentFit="cover"
+                contentPosition={
                   {
-                    "uri": "http://cdn.helloproject.com/img/artist/m/8bf17e09fa5cb3e62ad57617c81e1b6c8f9958f6.jpg",
+                    "left": "50%",
+                    "top": "50%",
                   }
                 }
-                style={
+                height={64}
+                nativeViewRef={"[React.ref]"}
+                onError={[Function]}
+                onLoad={[Function]}
+                onLoadStart={[Function]}
+                onProgress={[Function]}
+                placeholder={
                   [
                     {
-                      "height": 64,
-                      "width": 64,
-                    },
-                    {
-                      "height": 64,
-                      "width": 64,
+                      "height": 16,
+                      "uri": "blurhash:/L:O%7Cw%3FRkxtWCRkoeayfQ~Ut6Rkoe",
+                      "width": 16,
                     },
                   ]
                 }
+                source={
+                  [
+                    {
+                      "uri": "http://cdn.helloproject.com/img/artist/m/8bf17e09fa5cb3e62ad57617c81e1b6c8f9958f6.jpg",
+                    },
+                  ]
+                }
+                style={
+                  {
+                    "height": 64,
+                    "width": 64,
+                  }
+                }
                 testID="ExternalImage.Image"
+                transition={
+                  {
+                    "duration": 1000,
+                  }
+                }
+                width={64}
               />
             </View>
           </View>
@@ -504,25 +530,51 @@ exports[`artist ArtistMemberIcon icon with press 1`] = `
               }
               testID="ArtistMemberIcon"
             >
-              <Image
-                source={
+              <ViewManagerAdapter_ExpoImage
+                cachePolicy="disk"
+                containerViewRef={"[React.ref]"}
+                contentFit="cover"
+                contentPosition={
                   {
-                    "uri": "http://cdn.helloproject.com/img/artist/m/8bf17e09fa5cb3e62ad57617c81e1b6c8f9958f6.jpg",
+                    "left": "50%",
+                    "top": "50%",
                   }
                 }
-                style={
+                height={64}
+                nativeViewRef={"[React.ref]"}
+                onError={[Function]}
+                onLoad={[Function]}
+                onLoadStart={[Function]}
+                onProgress={[Function]}
+                placeholder={
                   [
                     {
-                      "height": 64,
-                      "width": 64,
-                    },
-                    {
-                      "height": 64,
-                      "width": 64,
+                      "height": 16,
+                      "uri": "blurhash:/L:O%7Cw%3FRkxtWCRkoeayfQ~Ut6Rkoe",
+                      "width": 16,
                     },
                   ]
                 }
+                source={
+                  [
+                    {
+                      "uri": "http://cdn.helloproject.com/img/artist/m/8bf17e09fa5cb3e62ad57617c81e1b6c8f9958f6.jpg",
+                    },
+                  ]
+                }
+                style={
+                  {
+                    "height": 64,
+                    "width": 64,
+                  }
+                }
                 testID="ExternalImage.Image"
+                transition={
+                  {
+                    "duration": 1000,
+                  }
+                }
+                width={64}
               />
             </View>
           </View>
