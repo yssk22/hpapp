@@ -5,7 +5,6 @@ package client
 import (
 	"context"
 	"errors"
-	"log"
 	"net/http"
 
 	"github.com/yssk22/hpapp/go/service/bootstrap/http/middleware"
@@ -99,7 +98,6 @@ func (f *httpMiddleware) Process(r *http.Request) *middleware.Result {
 	for _, a := range f.authenticators {
 		token := r.Header.Get(a.TokenHeaderKey())
 		client := a.VerifyToken(ctx, token)
-		log.Println("authenticate", a.TokenHeaderKey(), token)
 		if client != nil {
 			return &middleware.Result{
 				Code:    0,

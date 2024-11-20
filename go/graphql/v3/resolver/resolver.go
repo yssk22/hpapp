@@ -48,6 +48,7 @@ func (r *queryResolver) Me(ctx context.Context) (*me.MeQuery, error) {
 // Query returns QueryResolver implementation.
 func (r *Resolver) Query() generated.QueryResolver           { return &queryResolver{r} }
 func (r *Resolver) Mutation() generated.MutationResolver     { return &v3.Mutation{} }
+func (r *Resolver) HPMember() generated.HPMemberResolver     { return &HPMemberResolver{} }
 func (r *Resolver) HPEvent() generated.HPEventResolver       { return &HPEventResolver{} }
 func (r *Resolver) HPFeedItem() generated.HPFeedItemResolver { return &HPFeedItemResolver{} }
 
