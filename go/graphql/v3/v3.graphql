@@ -8,6 +8,10 @@ scalar Upload
 scalar Any
 scalar Map
 
+extend type HPMember {
+  myFollowStatus: HPFollow
+}
+
 extend type HPEvent {
   tickets: [HPFCEventTicket!]
 }
