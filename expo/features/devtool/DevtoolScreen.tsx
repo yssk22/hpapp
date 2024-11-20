@@ -1,44 +1,47 @@
+import { ListItemClearCache } from '@hpapp/features/account';
 import { useAppConfig, useCurrentUser, useUserConfig } from '@hpapp/features/app/settings';
+import { useThemeColor } from '@hpapp/features/app/theme';
+import { AuthGateByRole } from '@hpapp/features/auth';
 import { Text } from '@hpapp/features/common';
 import { defineScreen } from '@hpapp/features/common/stack';
-import { clearCacheDir } from '@hpapp/system/uricache';
+import { t } from '@hpapp/system/i18n';
 import { Divider, ListItem } from '@rneui/themed';
-import { Image } from 'expo-image';
 import { ScrollView } from 'react-native';
-import Toast from 'react-native-root-toast';
 
-import SettingsDevOnlyListItem from './internals/DevtoolListItem';
-import SettingsUserConfigForm from './internals/DevtoolUserConfigForm';
+import DevtoolListItem from './internals/DevtoolListItem';
+import DevtoolUserConfigForm from './internals/DevtoolUserConfigForm';
 
 export default defineScreen('/devtool/', function DevtoolScreen() {
+  const [color, contrast] = useThemeColor('warning');
   const user = useCurrentUser();
   const appConfig = useAppConfig();
   const userConfig = useUserConfig();
   return (
     <ScrollView>
-      <SettingsDevOnlyListItem name="User ID" value={user!.id} />
+      <ListItem containerStyle={{ backgroundColor: color }}>
+        <ListItem.Content>
+          <Text style={{ color: contrast }}>
+            {t('These Settings are for Developers only.') + t("Do not change unless you know what you're doing.")}
+          </Text>
+        </ListItem.Content>
+      </ListItem>
       <Divider />
-      <SettingsDevOnlyListItem
+      <DevtoolListItem name="User ID" value={user!.id} />
+      <Divider />
+      <DevtoolListItem
         name="Access Token"
         value={user!.accessToken}
         displayValue={user!.accessToken.substring(0, 4) + '****'}
       />
       <Divider />
-      <ListItem
-        onPress={async () => {
-          await Promise.all([Image.clearDiskCache(), clearCacheDir()]);
-          Toast.show('Cache cleared', { duration: Toast.durations.SHORT });
-        }}
-      >
-        <ListItem.Content>
-          <Text>Clear Cache</Text>
-        </ListItem.Content>
-      </ListItem>
+      <ListItemClearCache />
       <Divider />
-      <SettingsUserConfigForm />
-      <SettingsDevOnlyListItem name="Local User Config" value={JSON.stringify(userConfig, null, 2)} />
-      <Divider />
-      <SettingsDevOnlyListItem name="Local App  Config" value={JSON.stringify(appConfig, null, 2)} />
+      <DevtoolUserConfigForm />
+      <AuthGateByRole allow={['admin', 'developer']}>
+        <DevtoolListItem name="Local User Config" value={JSON.stringify(userConfig, null, 2)} />
+        <Divider />
+        <DevtoolListItem name="Local App  Config" value={JSON.stringify(appConfig, null, 2)} />
+      </AuthGateByRole>
       <Divider />
     </ScrollView>
   );

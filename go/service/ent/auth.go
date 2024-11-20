@@ -27,9 +27,9 @@ type Auth struct {
 	ProviderName string `json:"provider_name,omitempty"`
 	// user id that the provider uses
 	ProviderUserID string `json:"provider_user_id,omitempty"`
-	// access token
+	// [DEPRECATED - #125] access token
 	AccessToken string `json:"-"`
-	// refresh token
+	// [DEPRECATED - #125] refresh token
 	RefreshToken string `json:"-"`
 	// token expire
 	ExpireAt time.Time `json:"expire_at,omitempty"`
