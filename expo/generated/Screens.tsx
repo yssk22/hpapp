@@ -4,20 +4,21 @@
 /* eslint-disable import/order */
 /* eslint-disable prettier/prettier */
 
-import S0 from '@hpapp/features/artist/ArtistMemberScreen';
-import S1 from '@hpapp/features/content/ContentScreen';
-import S2 from '@hpapp/features/devtool/DevtoolScreen';
-import S3 from '@hpapp/features/elineupmall/ElineupMallWebViewScreen';
-import S4 from '@hpapp/features/feed/FeedItemScreen';
-import S5 from '@hpapp/features/home/HomeScreen';
-import S6 from '@hpapp/features/hpsort/HPSortResultScreen';
-import S7 from '@hpapp/features/hpsort/HPSortScreen';
-import S8 from '@hpapp/features/onboarding/OnboardingScreen';
-import S9 from '@hpapp/features/theme/ThemeColorSelectorScreen';
-import S10 from '@hpapp/features/theme/ThemeScreen';
-import S11 from '@hpapp/features/upfc/UPFCHistoryScreen';
-import S12 from '@hpapp/features/upfc/UPFCSettingsScreen';
-import S13 from '@hpapp/features/upfc/UPFCWebViewScreen';
+import S0 from '@hpapp/features/account/AccountScreen';
+import S1 from '@hpapp/features/artist/ArtistMemberScreen';
+import S2 from '@hpapp/features/content/ContentScreen';
+import S3 from '@hpapp/features/devtool/DevtoolScreen';
+import S4 from '@hpapp/features/elineupmall/ElineupMallWebViewScreen';
+import S5 from '@hpapp/features/feed/FeedItemScreen';
+import S6 from '@hpapp/features/home/HomeScreen';
+import S7 from '@hpapp/features/hpsort/HPSortResultScreen';
+import S8 from '@hpapp/features/hpsort/HPSortScreen';
+import S9 from '@hpapp/features/onboarding/OnboardingScreen';
+import S10 from '@hpapp/features/theme/ThemeColorSelectorScreen';
+import S11 from '@hpapp/features/theme/ThemeScreen';
+import S12 from '@hpapp/features/upfc/UPFCHistoryScreen';
+import S13 from '@hpapp/features/upfc/UPFCSettingsScreen';
+import S14 from '@hpapp/features/upfc/UPFCWebViewScreen';
 
 const Screens = [
   S0,
@@ -34,5 +35,6 @@ const Screens = [
   S11,
   S12,
   S13,
+  S14,
 ];
 export default Screens;

@@ -3,6 +3,7 @@ package extuser
 import (
 	"context"
 	"fmt"
+	"time"
 
 	firebase "firebase.google.com/go/v4"
 	"github.com/yssk22/hpapp/go/system/slog"
@@ -44,9 +45,10 @@ func (fa *firebaseAuthenticator) VerifyToken(ctx context.Context, token string) 
 	//    there are some records with "twitter.com" provider while they are not with firebase authentication and their provider user ids are different.
 	providerName := fmt.Sprintf("firebase[%s]", t.Firebase.SignInProvider)
 	return &ExternalUser{
-		UserID:       t.UID,
-		ProviderName: providerName,
-		AccessToken:  token,
+		UserID:        t.UID,
+		ProviderName:  providerName,
+		AccessToken:   token,
+		TokenExpireAt: time.Unix(t.Expires, 0),
 	}
 }
 

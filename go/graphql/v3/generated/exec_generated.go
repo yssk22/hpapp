@@ -425,6 +425,7 @@ type ComplexityRoot struct {
 
 	MeMutation struct {
 		Authenticate         func(childComplexity int) int
+		Delete               func(childComplexity int) int
 		RemoveAuthentication func(childComplexity int) int
 		UpsertEvents         func(childComplexity int, params upfc.HPFCEventTicketApplicationUpsertParams) int
 		UpsertFollow         func(childComplexity int, params user.HPFollowUpsertParams) int
@@ -2413,6 +2414,13 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.MeMutation.Authenticate(childComplexity), true
+
+	case "MeMutation.delete":
+		if e.complexity.MeMutation.Delete == nil {
+			break
+		}
+
+		return e.complexity.MeMutation.Delete(childComplexity), true
 
 	case "MeMutation.removeAuthentication":
 		if e.complexity.MeMutation.RemoveAuthentication == nil {
@@ -16261,6 +16269,50 @@ func (ec *executionContext) fieldContext_MeMutation_removeAuthentication(ctx con
 	return fc, nil
 }
 
+func (ec *executionContext) _MeMutation_delete(ctx context.Context, field graphql.CollectedField, obj *me.MeMutation) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_MeMutation_delete(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Delete(ctx)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(bool)
+	fc.Result = res
+	return ec.marshalNBoolean2bool(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_MeMutation_delete(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "MeMutation",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Boolean does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
 func (ec *executionContext) _MeMutation_upsertFollow(ctx context.Context, field graphql.CollectedField, obj *me.MeMutation) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_MeMutation_upsertFollow(ctx, field)
 	if err != nil {
@@ -17905,6 +17957,8 @@ func (ec *executionContext) fieldContext_Mutation_me(ctx context.Context, field 
 				return ec.fieldContext_MeMutation_authenticate(ctx, field)
 			case "removeAuthentication":
 				return ec.fieldContext_MeMutation_removeAuthentication(ctx, field)
+			case "delete":
+				return ec.fieldContext_MeMutation_delete(ctx, field)
 			case "upsertFollow":
 				return ec.fieldContext_MeMutation_upsertFollow(ctx, field)
 			case "upsertEvents":
@@ -25134,6 +25188,26 @@ func (ec *executionContext) _MeMutation(ctx context.Context, sel ast.SelectionSe
 					}
 				}()
 				res = ec._MeMutation_removeAuthentication(ctx, field, obj)
+				return res
+			}
+
+			out.Concurrently(i, func() graphql.Marshaler {
+				return innerFunc(ctx)
+
+			})
+		case "delete":
+			field := field
+
+			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._MeMutation_delete(ctx, field, obj)
+				if res == graphql.Null {
+					atomic.AddUint32(&invalids, 1)
+				}
 				return res
 			}
 

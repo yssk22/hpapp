@@ -1,5 +1,4 @@
-import { Text } from '@hpapp/features/common';
-import { ListItem } from '@rneui/themed';
+import { ListItemKeyValue } from '@hpapp/features/common/list';
 
 export default function DevtoolListItem({
   name,
@@ -11,23 +10,15 @@ export default function DevtoolListItem({
   displayValue?: string;
 }) {
   return (
-    <>
-      <ListItem
-        onPress={() => {
-          // intentional console output so that developer can copy on their terminal.
-          // eslint-disable-next-line no-console
-          console.log('Settings', name, ':', value);
-        }}
-      >
-        <ListItem.Content>
-          <ListItem.Title>
-            <Text>{name}</Text>
-          </ListItem.Title>
-          <ListItem.Subtitle>
-            <Text>{displayValue ?? value}</Text>
-          </ListItem.Subtitle>
-        </ListItem.Content>
-      </ListItem>
-    </>
+    <ListItemKeyValue
+      name={name}
+      value={value}
+      displayValue={displayValue}
+      onPress={() => {
+        // intentional console output so that developer can copy on their terminal.
+        // eslint-disable-next-line no-console
+        console.log('Settings', name, ':', value);
+      }}
+    />
   );
 }

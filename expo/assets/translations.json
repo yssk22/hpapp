@@ -183,8 +183,14 @@
   "Clear": {
     "ja": "クリア"
   },
-  "Dev Only Settings": {
+  "Developer Settings": {
     "ja": "開発者設定"
+  },
+  "These Settings are for Developers only.": {
+    "ja": "これらの設定は開発者専用です。"
+  },
+  "Do not change unless you know what you're doing.": {
+    "ja": "わからない場合は変更しないでください。"
   },
   "Other": {
     "ja": "その他"
@@ -225,5 +231,32 @@
   "isFollowing": {
     "ja": "フォロー中",
     "en": "Following"
+  },
+  "Account": {
+    "ja": "アカウント"
+  },
+  "User ID": {
+    "ja": "ユーザーID"
+  },
+  "User Name": {
+    "ja": "ユーザー名"
+  },
+  "User Role": {
+    "ja": "ユーザーロール"
+  },
+  "Access Token": {
+    "ja": "アクセストークン"
+  },
+  "Delete Account": {
+    "ja": "アカウントを削除"
+  },
+  "Are you really ok to delete your account?": {
+    "ja": "本当,にアカウントを削除してもよろしいですか？"
+  },
+  "OK": {
+    "ja": "OK"
+  },
+  "Cancel": {
+    "ja": "キャンセル"
   }
 }

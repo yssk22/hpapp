@@ -882,6 +882,7 @@ type Mutation @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3.Mutation") 
 type MeMutation @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeMutation") {
   authenticate: User
   removeAuthentication: Auth
+  delete: Boolean!
   upsertFollow(params: HPFollowUpsertParamsInput!): HPFollow
   upsertEvents(params: HPFCEventTicketApplicationUpsertParamsInput!): [HPEvent]
   upsertViewHistory(params: HPViewHistoryUpsertParamsInput!): HPViewHistory

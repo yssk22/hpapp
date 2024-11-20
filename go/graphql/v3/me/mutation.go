@@ -28,6 +28,11 @@ func (h *MeMutation) RemoveAuthentication(ctx context.Context) (*ent.Auth, error
 	return appuser.RemoveAuthentication(ctx)
 }
 
+func (h *MeMutation) Delete(ctx context.Context) (bool, error) {
+	err := appuser.DeleteUser(ctx, appuser.CurrentUser(ctx).ID())
+	return err == nil, err
+}
+
 func (h *MeMutation) UpsertFollow(ctx context.Context, params user.HPFollowUpsertParams) (*ent.HPFollow, error) {
 	return user.UpsertFollow(ctx, appuser.EntID(appuser.CurrentUser(ctx)), params)
 }

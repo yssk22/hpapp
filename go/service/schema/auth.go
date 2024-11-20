@@ -35,8 +35,8 @@ func (Auth) Fields() []ent.Field {
 		field.String("provider_user_id").Unique().Comment("user id that the provider uses").Annotations(
 			entgql.Skip(entgql.SkipAll),
 		),
-		field.Text("access_token").Sensitive().Comment("access token"),
-		field.Text("refresh_token").Sensitive().Optional().Comment("refresh token"),
+		field.Text("access_token").Sensitive().Comment("[DEPRECATED - #125] access token"),
+		field.Text("refresh_token").Sensitive().Optional().Comment("[DEPRECATED - #125] refresh token"),
 		field.Time("expire_at").Optional().Comment("token expire").Annotations(
 			entgql.Skip(entgql.SkipAll),
 		),

@@ -1,9 +1,9 @@
+import AccountScreen from '@hpapp/features/account/AccountScreen';
 import { useThemeColor } from '@hpapp/features/app/theme';
-import { AuthGateByRole } from '@hpapp/features/auth';
 import { Text } from '@hpapp/features/common';
 import { NavigationListItem } from '@hpapp/features/common/list';
 import ContentScreen from '@hpapp/features/content/ContentScreen';
-import SettingsDevOnlyScreen from '@hpapp/features/devtool/DevtoolScreen';
+import DevtoolScreen from '@hpapp/features/devtool/DevtoolScreen';
 import HPSortScreen from '@hpapp/features/hpsort/HPSortScreen';
 import ThemeScreen from '@hpapp/features/theme/ThemeScreen';
 import UPFCHistoryScreen from '@hpapp/features/upfc/UPFCHistoryScreen';
@@ -62,10 +62,10 @@ export default function HomeTabSettings() {
       <NavigationListItem screen={ThemeScreen}>{t('Theme Settings')}</NavigationListItem>
       <Divider />
       <NavigationListItem screen={UPFCSettingsScreen}>{t('FC Settings')}</NavigationListItem>
-      <AuthGateByRole allow="admin">
-        <Divider />
-        <NavigationListItem screen={SettingsDevOnlyScreen}>{t('Dev Only Settings')}</NavigationListItem>
-      </AuthGateByRole>
+      <Divider />
+      <NavigationListItem screen={AccountScreen}>{t('Account')}</NavigationListItem>
+      <Divider />
+      <NavigationListItem screen={DevtoolScreen}>{t('Developer Settings')}</NavigationListItem>
       <Divider />
       <ListItem containerStyle={{ backgroundColor: sectionColor }}>
         <Text style={{ color: sectionColorContrast, fontWeight: 'bold' }}>{t('Other')}</Text>

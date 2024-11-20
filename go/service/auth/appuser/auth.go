@@ -260,11 +260,11 @@ var (
 
 // validateUsername validates the username
 //
-//    1) it must start with a-z or A-Z
-//    2) it can include a-z, A-Z, 0-9, -, _, or .
-//    3) it must be at least 3 characters long
-//    4) it must not be longer than 32 characters
-//    5) it must not be already taken by another user
+//  1. it must start with a-z or A-Z
+//  2. it can include a-z, A-Z, 0-9, -, _, or .
+//  3. it must be at least 3 characters long
+//  4. it must not be longer than 32 characters
+//  5. it must not be already taken by another user
 //
 // this func was used before to validate the username from user inputs, but now we generate username automatically on server side so
 // we technicall don't need this func but keep it as is for future use when we introduce the user profile feature
@@ -344,11 +344,13 @@ func createUserRecord(ctx context.Context, username string, euser *extuser.Exter
 func createAuthRecord(ctx context.Context, authclient *ent.AuthClient, userrecord *ent.User, euser *extuser.ExternalUser) (*ent.Auth, error) {
 	return authclient.Create().
 		SetProviderName(euser.ProviderName).
-		SetAccessToken(euser.AccessToken).
 		SetProviderUserID(euser.UserID).
-		SetRefreshToken(euser.RefreshToken).
 		SetExpireAt(euser.TokenExpireAt).
-		SetUser(userrecord).Save(ctx)
+		SetUser(userrecord).
+		// #125: we don't use access token and refresh token anymore
+		SetAccessToken(euser.UserID).
+		SetRefreshToken(euser.UserID).
+		Save(ctx)
 }
 
 func refreshUserToken(ctx context.Context, userrecord *ent.User) (*ent.User, error) {
@@ -356,13 +358,11 @@ func refreshUserToken(ctx context.Context, userrecord *ent.User) (*ent.User, err
 	if err != nil {
 		return nil, err
 	}
-	userrecord, err = userrecord.Update().SetAccessToken(newToken).Save(ctx)
-	if err != nil {
-		return nil, err
-	}
 	slog.Info(ctx, "a user token has been refreshed",
 		slog.Name("service.auth.appuser.refreshUserToken"),
 		slog.Attribute("user_id", userrecord.ID),
 	)
+	// #125: we don't store access token on the database but use it for client accesses
+	userrecord.AccessToken = newToken
 	return userrecord, nil
 }
