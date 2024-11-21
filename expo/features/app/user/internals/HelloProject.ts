@@ -2,7 +2,11 @@ import { useMemo } from 'react';
 import { useFragment, graphql } from 'react-relay';
 import { FragmentRefs } from 'relay-runtime';
 
-import { HelloProjectFragment$key, HelloProjectFragment$data } from './__generated__/HelloProjectFragment.graphql';
+import {
+  HelloProjectFragment$key,
+  HelloProjectFragment$data,
+  HPFollowHPFollowType
+} from './__generated__/HelloProjectFragment.graphql';
 
 const helloProjectFragmentGraphQL = graphql`
   fragment HelloProjectFragment on HelloProjectQuery {
@@ -23,6 +27,10 @@ const helloProjectFragmentGraphQL = graphql`
         bloodType
         joinAt
         graduateAt
+        myFollowStatus {
+          id
+          type
+        }
       }
     }
   }
@@ -39,6 +47,7 @@ export function useHelloProjectFragment(helloproject: {
 
 export type HPArtist = NonNullable<NonNullable<HelloProjectFragment$data['artists']>[number]>;
 export type HPMember = NonNullable<HPArtist['members']>[0];
+export type HPFollowType = HPFollowHPFollowType;
 
 /**
  * A wrapper class for helloproject data set fetched via GraphQL.
@@ -93,6 +102,12 @@ export default class HelloProject {
     }
     return this.memberList.filter((m) => {
       return m.graduateAt === null;
+    });
+  }
+
+  public useFollowingMembers(includeOG: boolean = false) {
+    return this.useMembers(includeOG).filter((m) => {
+      return m.myFollowStatus?.type === 'follow' || m.myFollowStatus?.type === 'follow_with_notification';
     });
   }
 

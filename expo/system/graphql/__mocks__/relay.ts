@@ -79,7 +79,7 @@ ${JSON.stringify(variables, null, 2)}
 function getHeaders(operation: RequestParameters, variables: Variables): [string, { [key: string]: string }] {
   const endpoint = process.env['HPAPP_GRAPHQL_ENDPOINT_FOR_JEST'];
   const userToken = process.env['HPAPP_USER_TOKEN_FOR_JEST'];
-  const clientToken = process.env['HPAPP_APP_TOKEN_FOR_JEST'];
+  const clientToken = process.env['HPAPP_APP_CHECK_TOKEN_FOR_JEST'];
   if (endpoint === undefined) {
     throw new Error('HPAPP_GRAPHQL_ENDPOINT_FOR_JEST is not set to create a response snapshot');
   }

@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<f2a64276b6f3fa6da531b8920e007998>>
+ * @generated SignedSource<<e4d8ddcf6a667d650002730324d4b125>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -182,6 +182,25 @@ return {
                     "kind": "ScalarField",
                     "name": "graduateAt",
                     "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "HPFollow",
+                    "kind": "LinkedField",
+                    "name": "myFollowStatus",
+                    "plural": false,
+                    "selections": [
+                      (v0/*: any*/),
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "type",
+                        "storageKey": null
+                      }
+                    ],
+                    "storageKey": null
                   }
                 ],
                 "storageKey": null
@@ -221,37 +240,6 @@ return {
             "args": null,
             "kind": "ScalarField",
             "name": "clientName",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "concreteType": "HPFollow",
-            "kind": "LinkedField",
-            "name": "followings",
-            "plural": true,
-            "selections": [
-              {
-                "alias": null,
-                "args": null,
-                "kind": "ScalarField",
-                "name": "type",
-                "storageKey": null
-              },
-              {
-                "alias": null,
-                "args": null,
-                "concreteType": "HPMember",
-                "kind": "LinkedField",
-                "name": "member",
-                "plural": false,
-                "selections": [
-                  (v0/*: any*/)
-                ],
-                "storageKey": null
-              },
-              (v0/*: any*/)
-            ],
             "storageKey": null
           },
           {
@@ -350,12 +338,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "5767fc97b27e6e7611d5d4f9543c6c5d",
+    "cacheID": "b781f21155fe9a2b25bb0db1dd36c689",
     "id": null,
     "metadata": {},
     "name": "UserServiceProviderQuery",
     "operationKind": "query",
-    "text": "query UserServiceProviderQuery {\n  helloproject {\n    ...HelloProjectFragment\n    id\n  }\n  me {\n    ...MeFragment\n    id\n  }\n}\n\nfragment HelloProjectFragment on HelloProjectQuery {\n  artists {\n    id\n    key\n    name\n    thumbnailURL\n    members {\n      id\n      key\n      artistKey\n      artistID\n      name\n      nameKana\n      thumbnailURL\n      dateOfBirth\n      bloodType\n      joinAt\n      graduateAt\n    }\n  }\n}\n\nfragment MeFragment on MeQuery {\n  id\n  username\n  clientId\n  clientName\n  followings {\n    type\n    member {\n      id\n    }\n    id\n  }\n  sortHistories(first: 1) {\n    edges {\n      node {\n        id\n        createdAt\n        sortResult {\n          records {\n            artistId\n            memberId\n            memberKey\n          }\n        }\n      }\n    }\n  }\n}\n"
+    "text": "query UserServiceProviderQuery {\n  helloproject {\n    ...HelloProjectFragment\n    id\n  }\n  me {\n    ...MeFragment\n    id\n  }\n}\n\nfragment HelloProjectFragment on HelloProjectQuery {\n  artists {\n    id\n    key\n    name\n    thumbnailURL\n    members {\n      id\n      key\n      artistKey\n      artistID\n      name\n      nameKana\n      thumbnailURL\n      dateOfBirth\n      bloodType\n      joinAt\n      graduateAt\n      myFollowStatus {\n        id\n        type\n      }\n    }\n  }\n}\n\nfragment MeFragment on MeQuery {\n  id\n  username\n  clientId\n  clientName\n  sortHistories(first: 1) {\n    edges {\n      node {\n        id\n        createdAt\n        sortResult {\n          records {\n            artistId\n            memberId\n            memberKey\n          }\n        }\n      }\n    }\n  }\n}\n"
   }
 };
 })();

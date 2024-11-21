@@ -1,6 +1,6 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
-import { useHelloProject, useMe } from '@hpapp/features/app/user';
-import { ArtistCard, useFollowings } from '@hpapp/features/artist';
+import { useHelloProject } from '@hpapp/features/app/user';
+import { ArtistCard, useUpsertFollow } from '@hpapp/features/artist';
 import { Text } from '@hpapp/features/common';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
 import { t } from '@hpapp/system/i18n';
@@ -10,9 +10,8 @@ import { StyleSheet, View } from 'react-native';
 export default function OnboardingStepFollowMembers() {
   const [color] = useThemeColor('secondary');
   const hp = useHelloProject();
-  const me = useMe();
   const artists = hp.useArtists(false);
-  const [updateFollow] = useFollowings();
+  const [upsertFollow] = useUpsertFollow();
   return (
     <>
       <View style={styles.iconDescription}>
@@ -40,19 +39,16 @@ export default function OnboardingStepFollowMembers() {
             key={a.key}
             memberIconShowFollow
             onMemberIconPress={async (member) => {
-              const followType = me.useFollowType(member.id);
-              switch (followType) {
+              switch (member.myFollowStatus?.type) {
                 case 'follow':
-                  await updateFollow(member.id, 'unfollow');
+                  await upsertFollow(member.id, 'unfollow');
                   return;
                 case 'follow_with_notification':
-                  await updateFollow(member.id, 'follow');
+                  await upsertFollow(member.id, 'follow');
                   return;
-                case 'unfollow':
-                  await updateFollow(member.id, 'follow_with_notification');
-                  return;
+                default:
+                  await upsertFollow(member.id, 'follow_with_notification');
               }
-              await updateFollow(member.id, 'follow');
             }}
           />
         );

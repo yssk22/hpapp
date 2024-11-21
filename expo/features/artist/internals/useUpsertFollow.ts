@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
 import { graphql, useMutation } from 'react-relay';
 
-import { useFollowingsMutation, HPFollowType } from './__generated__/useFollowingsMutation.graphql';
+import { useUpsertFollowMutation, HPFollowType } from './__generated__/useUpsertFollowMutation.graphql';
 
-const useFollowingsMutationGraphQL = graphql`
-  mutation useFollowingsMutation($params: HPFollowUpsertParamsInput!) {
+const useUpsertFollowMutationGraphQL = graphql`
+  mutation useUpsertFollowMutation($params: HPFollowUpsertParamsInput!) {
     me {
       upsertFollow(params: $params) {
         id
@@ -17,8 +17,8 @@ const useFollowingsMutationGraphQL = graphql`
   }
 `;
 
-const useFollowings = (): [(memberId: string, followType: HPFollowType) => Promise<string>, boolean] => {
-  const [upsertFollow, isUpdating] = useMutation<useFollowingsMutation>(useFollowingsMutationGraphQL);
+const useUpsertFollow = (): [(memberId: string, followType: HPFollowType) => Promise<string>, boolean] => {
+  const [upsertFollow, isUpdating] = useMutation<useUpsertFollowMutation>(useUpsertFollowMutationGraphQL);
   const update = useCallback(
     async (memberId: string, followType: HPFollowType): Promise<string> => {
       const p = new Promise((resolve: (id: string) => void, reject: (err: object) => void) => {
@@ -46,9 +46,9 @@ const useFollowings = (): [(memberId: string, followType: HPFollowType) => Promi
             if (followId === undefined || member === undefined) {
               return;
             }
-            const record = member.getOrCreateLinkedRecord('following', 'HPFollow');
+            const record = member.getOrCreateLinkedRecord('myFollowStatus', 'HPFollow');
             record.setValue(followId, 'id');
-            record.setValue(followType, 'followType');
+            record.setValue(followType, 'type');
           }
         });
       });
@@ -59,4 +59,4 @@ const useFollowings = (): [(memberId: string, followType: HPFollowType) => Promi
   return [update, isUpdating];
 };
 
-export default useFollowings;
+export default useUpsertFollow;

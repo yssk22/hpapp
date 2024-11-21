@@ -4,8 +4,10 @@ import { useThemeColor } from '@hpapp/features/app/theme';
 import { AuthGateByRole } from '@hpapp/features/auth';
 import { Text } from '@hpapp/features/common';
 import { defineScreen } from '@hpapp/features/common/stack';
+import { getAppCheckToken } from '@hpapp/system/firebase';
 import { t } from '@hpapp/system/i18n';
 import { Divider, ListItem } from '@rneui/themed';
+import { useEffect, useState } from 'react';
 import { ScrollView } from 'react-native';
 
 import DevtoolListItem from './internals/DevtoolListItem';
@@ -16,6 +18,13 @@ export default defineScreen('/devtool/', function DevtoolScreen() {
   const user = useCurrentUser();
   const appConfig = useAppConfig();
   const userConfig = useUserConfig();
+  const [appCheckToken, setAppCheckToken] = useState<string | null>(null);
+  useEffect(() => {
+    (async () => {
+      setAppCheckToken((await getAppCheckToken()).token);
+    })();
+  }, [setAppCheckToken]);
+
   return (
     <ScrollView>
       <ListItem containerStyle={{ backgroundColor: color }}>
@@ -31,7 +40,13 @@ export default defineScreen('/devtool/', function DevtoolScreen() {
       <DevtoolListItem
         name="Access Token"
         value={user!.accessToken}
-        displayValue={user!.accessToken.substring(0, 4) + '****'}
+        displayValue={user!.accessToken.substring(0, 20) + '****'}
+      />
+      <Divider />
+      <DevtoolListItem
+        name="App Check Token"
+        value={appCheckToken ?? ''}
+        displayValue={(appCheckToken ?? '').substring(0, 20) + '****'}
       />
       <Divider />
       <ListItemClearCache />

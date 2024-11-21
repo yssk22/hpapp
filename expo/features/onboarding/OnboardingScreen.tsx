@@ -1,11 +1,11 @@
 import { useUserConfig, useUserConfigUpdator } from '@hpapp/features/app/settings';
 import { defineScreen, useNavigation } from '@hpapp/features/common/stack';
+import HomeScreen from '@hpapp/features/home/HomeScreen';
 import { t } from '@hpapp/system/i18n';
 
 import OnboardingStepFollowMembers from './internals/OnboardingStepFollowMembers';
 import OnboardingStepProvider from './internals/OnboardingStepProvider';
 import OnboardinStepUPCSettings from './internals/OnboardingStepUPFCSettings';
-import HomeScreen from '@hpapp/features/home/HomeScreen';
 
 export default defineScreen('/onboarding/', function OnboardingScreen() {
   const navigation = useNavigation();

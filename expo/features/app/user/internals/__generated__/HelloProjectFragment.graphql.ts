@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<e34d45d29949052f58b210b9b09192aa>>
+ * @generated SignedSource<<9c25464f2a13ffe6cbdca07a25411be5>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -9,6 +9,7 @@
 // @ts-nocheck
 
 import { ReaderFragment } from 'relay-runtime';
+export type HPFollowHPFollowType = "follow" | "follow_with_notification" | "unfollow" | "%future added value";
 import { FragmentRefs } from "relay-runtime";
 export type HelloProjectFragment$data = {
   readonly artists: ReadonlyArray<{
@@ -23,6 +24,10 @@ export type HelloProjectFragment$data = {
       readonly id: string;
       readonly joinAt: string | null | undefined;
       readonly key: string;
+      readonly myFollowStatus: {
+        readonly id: string;
+        readonly type: HPFollowHPFollowType;
+      } | null | undefined;
       readonly name: string;
       readonly nameKana: string;
       readonly thumbnailURL: string;
@@ -144,6 +149,25 @@ return {
               "kind": "ScalarField",
               "name": "graduateAt",
               "storageKey": null
+            },
+            {
+              "alias": null,
+              "args": null,
+              "concreteType": "HPFollow",
+              "kind": "LinkedField",
+              "name": "myFollowStatus",
+              "plural": false,
+              "selections": [
+                (v0/*: any*/),
+                {
+                  "alias": null,
+                  "args": null,
+                  "kind": "ScalarField",
+                  "name": "type",
+                  "storageKey": null
+                }
+              ],
+              "storageKey": null
             }
           ],
           "storageKey": null
@@ -157,6 +181,6 @@ return {
 };
 })();
 
-(node as any).hash = "92d091cdf617646cc1e8aa9e685bf157";
+(node as any).hash = "b5c428c4a80097a3170f93ce3950f3ba";
 
 export default node;

@@ -1,11 +1,11 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
-import { HPMember, useHelloProject, useMe } from '@hpapp/features/app/user';
+import { HPMember } from '@hpapp/features/app/user';
 import { Spacing } from '@hpapp/features/common/constants';
 import { t } from '@hpapp/system/i18n';
 import { Button, Icon } from '@rneui/themed';
 import { View, StyleSheet } from 'react-native';
 
-import useFollowings from './useFollowings';
+import useUpsertFollow from './useUpsertFollow';
 
 const styles = StyleSheet.create({
   container: {
@@ -29,11 +29,8 @@ export type ArtistMemberFollowButtonProps = {
 
 export default function ArtistMemberFollowButton({ member }: ArtistMemberFollowButtonProps) {
   const [color, contrast] = useThemeColor('primary');
-  const [updateFollow, isUpdating] = useFollowings();
-  const hp = useHelloProject();
-  const me = useMe();
-  const m = hp.useMember(member);
-  const followType = me.useFollowType(m!.id);
+  const [updateFollow, isUpdating] = useUpsertFollow();
+  const followType = member.myFollowStatus?.type ?? 'unfollow';
   const variant = followType === 'unfollow' ? 'outline' : undefined;
   const followActionType = followType === 'unfollow' ? 'follow' : 'unfollow';
   const bellName = followType === 'follow_with_notification' ? 'bell-check' : 'bell-outline';

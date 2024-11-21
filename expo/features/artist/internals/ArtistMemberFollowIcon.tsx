@@ -1,5 +1,5 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
-import { HPFollowType, HPMember, useHelloProject, useMe } from '@hpapp/features/app/user';
+import { HPFollowType, HPMember, useHelloProject } from '@hpapp/features/app/user';
 import { ThemeColorScheme } from '@hpapp/system/theme';
 import { Icon } from '@rneui/themed';
 
@@ -24,9 +24,8 @@ export default function ArtistMemberFollowIcon({
   size?: number;
 }) {
   const hp = useHelloProject();
-  const me = useMe();
   const m = hp.useMember(member);
-  const followType = me.useFollowType(m!.id);
+  const followType = m!.myFollowStatus?.type ?? 'unfollow';
   const iconName = getIconName(followType);
   const [color] = useThemeColor(colorScheme);
   if (iconName === null) {

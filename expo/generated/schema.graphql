@@ -25,6 +25,29 @@ scalar Any
 
 scalar Map
 
+type HPMember implements Node {
+  myFollowStatus: HPFollow
+  id: ID!
+  crawledAt: Time
+  errorCount: Int!
+  lastErrorMessage: String
+  recrawlRequired: Boolean
+  createdAt: Time
+  updatedAt: Time
+  key: String!
+  artistKey: String!
+  name: String!
+  nameKana: String!
+  thumbnailURL: String!
+  dateOfBirth: Time!
+  bloodType: String!
+  hometown: String!
+  joinAt: Time
+  graduateAt: Time
+  artistID: ID
+  artist: HPArtist
+}
+
 type HPEvent implements Node {
   tickets: [HPFCEventTicket!]
   id: ID!
@@ -547,28 +570,6 @@ input HPIgPostOrder {
 enum HPIgPostOrderField {
   createdAt
   updatedAt
-}
-
-type HPMember implements Node {
-  id: ID!
-  crawledAt: Time
-  errorCount: Int!
-  lastErrorMessage: String
-  recrawlRequired: Boolean
-  createdAt: Time
-  updatedAt: Time
-  key: String!
-  artistKey: String!
-  name: String!
-  nameKana: String!
-  thumbnailURL: String!
-  dateOfBirth: Time!
-  bloodType: String!
-  hometown: String!
-  joinAt: Time
-  graduateAt: Time
-  artistID: ID
-  artist: HPArtist
 }
 
 """A connection to a list of items."""
