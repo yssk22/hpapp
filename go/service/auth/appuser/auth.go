@@ -24,19 +24,20 @@ func DeleteUser(ctx context.Context, id string) error {
 	if err != nil {
 		return errors.Wrap(ctx, err)
 	}
-	client, err := entutil.NewClient(ctx).Tx(ctx)
-	if err != nil {
-		return errors.Wrap(ctx, err)
-	}
 	return entutil.RunTxOne(ctx, func(tx *ent.Tx) error {
-		_, err = client.Auth.Delete().Where(entauth.HasUserWith(entuser.IDEQ(uid))).Exec(ctx)
+		_, err = tx.Auth.Delete().Where(entauth.HasUserWith(entuser.IDEQ(uid))).Exec(ctx)
 		if err != nil {
 			return errors.Wrap(ctx, err)
 		}
-		err = client.User.DeleteOneID(uid).Exec(ctx)
+		err = tx.User.DeleteOneID(uid).Exec(ctx)
 		if err != nil {
 			return errors.Wrap(ctx, err)
 		}
+		slog.Info(ctx,
+			fmt.Sprintf("A user %s is deleted", id),
+			slog.Name("services.auth.delete_user"),
+			slog.Attribute("userid", id),
+		)
 		return nil
 	})
 }
@@ -165,7 +166,7 @@ func MigrateAuthentication(ctx context.Context) (*ent.Auth, error) {
 			}
 			slog.Info(ctx,
 				fmt.Sprintf("an orphaned user %d was deleted as a result of the authentication migration", olduser.ID),
-				slog.Name("services.user.auth.migrate_auth.remove_orphan_user"),
+				slog.Name("services.auth.migrate_auth.remove_orphan_user"),
 				slog.Attribute("from", olduser.ID),
 				slog.Attribute("to", userrecord.ID),
 			)
@@ -176,7 +177,7 @@ func MigrateAuthentication(ctx context.Context) (*ent.Auth, error) {
 			return nil, errors.Wrap(ctx, err)
 		}
 		slog.Info(ctx, fmt.Sprintf("auth record (%d) has been migrated successfully", created.ID),
-			slog.Name("services.user.auth.migrate"),
+			slog.Name("services.auth.migrate"),
 			slog.Attribute("from", olduser.ID),
 			slog.Attribute("to", userrecord.ID),
 		)

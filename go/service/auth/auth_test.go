@@ -2,6 +2,7 @@ package auth
 
 import (
 	"context"
+	"fmt"
 	"testing"
 
 	"github.com/yssk22/hpapp/go/foundation/assert"
@@ -157,7 +158,15 @@ func TestAuth(t *testing.T) {
 				)
 			})
 
+			t.Run("mizuki deletes the account", func(t *testing.T) {
+				adminCtx := appuser.WithAdmin(ctx)
+				mizukiCtx := appuser.WithUser(ctx, appuser.EntUser(mizuki))
+				id := mizuki.ID
+				a.Nil(appuser.DeleteUser(mizukiCtx, fmt.Sprintf("%d", mizuki.ID)))
+				entclient := entutil.NewClient(adminCtx)
+				_, err := entclient.User.Get(ctx, id)
+				a.NotNil(err)
+			})
 		})
-
 	})
 }
