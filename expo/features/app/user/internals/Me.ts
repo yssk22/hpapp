@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { useFragment, graphql } from 'react-relay';
 import { FragmentRefs } from 'relay-runtime';
 
-import { HPFollowHPFollowType, MeFragment$data, MeFragment$key } from './__generated__/MeFragment.graphql';
+import { MeFragment$data, MeFragment$key } from './__generated__/MeFragment.graphql';
 
 const meFragmentGraphQL = graphql`
   fragment MeFragment on MeQuery {
@@ -11,12 +11,6 @@ const meFragmentGraphQL = graphql`
     username
     clientId
     clientName
-    followings {
-      type
-      member {
-        id
-      }
-    }
     sortHistories(first: 1) {
       edges {
         node {
@@ -42,22 +36,12 @@ export function useMeFragment(me: { readonly ' $fragmentSpreads': FragmentRefs<'
   }, [me$]);
 }
 
-export type HPFollowType = HPFollowHPFollowType;
-
-export type HPFollow = {
-  type: HPFollowType;
-  memberId: string;
-};
-
 // Me class implements a logic to use user data stored on the server.
 export default class Me {
   public readonly id: string;
   public readonly username: string;
   public readonly clientId: string;
   public readonly clientName: string;
-
-  public readonly followings: HPFollow[];
-  private readonly followingsMap: Map<string, HPFollow>;
 
   public readonly sortResult: HPSortResult | null;
 
@@ -66,19 +50,6 @@ export default class Me {
     this.username = me.username;
     this.clientId = me.clientId!;
     this.clientName = me.clientName!;
-
-    this.followings = me!
-      .followings!.filter((f) => f?.member !== undefined)
-      .map((f) => {
-        return {
-          type: f!.type,
-          memberId: f!.member.id
-        };
-      });
-    this.followingsMap = this.followings.reduce((a, v) => {
-      a.set(v.memberId, v);
-      return a;
-    }, new Map<string, HPFollow>());
 
     const sorts = me?.sortHistories?.edges;
     if (sorts === null || sorts === undefined || sorts.length === 0) {
@@ -93,10 +64,5 @@ export default class Me {
           };
         });
     }
-  }
-
-  public useFollowType(memberId: string) {
-    const follow = this.followingsMap.get(memberId);
-    return follow?.type ?? 'unfollow';
   }
 }

@@ -8,7 +8,7 @@ import { Network, RequestParameters, Variables, Environment, Store, RecordSource
 
 import { HttpClientConfig, RequestTokenFactory } from './types';
 
-const QueryToSuppressDebugLogs: string[] = ['UserServiceProviderQuery', 'FeedContextQuery'];
+const QueryToSuppressDebugLogs: string[] = [];
 
 export function createEnvironment(config: HttpClientConfig, tokenFactory: RequestTokenFactory) {
   const endpoint = config.Endpoint;
@@ -63,7 +63,7 @@ export function createEnvironment(config: HttpClientConfig, tokenFactory: Reques
         response: json,
         benchmark
       });
-      if (!isIn(operation.name, ...QueryToSuppressDebugLogs)) {
+      if (isIn(operation.name, ...QueryToSuppressDebugLogs)) {
         logging.Debug(eventName, 'GraphQL success', {
           request: {
             body: {

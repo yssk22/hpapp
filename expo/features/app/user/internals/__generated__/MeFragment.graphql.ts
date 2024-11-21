@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<ba3340e159f9390a9bd53fbc2b9fc59f>>
+ * @generated SignedSource<<00d21a00dff35109688e08c237083c02>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -9,17 +9,10 @@
 // @ts-nocheck
 
 import { ReaderFragment } from 'relay-runtime';
-export type HPFollowHPFollowType = "follow" | "follow_with_notification" | "unfollow" | "%future added value";
 import { FragmentRefs } from "relay-runtime";
 export type MeFragment$data = {
   readonly clientId: string | null | undefined;
   readonly clientName: string | null | undefined;
-  readonly followings: ReadonlyArray<{
-    readonly member: {
-      readonly id: string;
-    };
-    readonly type: HPFollowHPFollowType;
-  } | null | undefined> | null | undefined;
   readonly id: string;
   readonly sortHistories: {
     readonly edges: ReadonlyArray<{
@@ -78,36 +71,6 @@ return {
       "args": null,
       "kind": "ScalarField",
       "name": "clientName",
-      "storageKey": null
-    },
-    {
-      "alias": null,
-      "args": null,
-      "concreteType": "HPFollow",
-      "kind": "LinkedField",
-      "name": "followings",
-      "plural": true,
-      "selections": [
-        {
-          "alias": null,
-          "args": null,
-          "kind": "ScalarField",
-          "name": "type",
-          "storageKey": null
-        },
-        {
-          "alias": null,
-          "args": null,
-          "concreteType": "HPMember",
-          "kind": "LinkedField",
-          "name": "member",
-          "plural": false,
-          "selections": [
-            (v0/*: any*/)
-          ],
-          "storageKey": null
-        }
-      ],
       "storageKey": null
     },
     {
@@ -206,6 +169,6 @@ return {
 };
 })();
 
-(node as any).hash = "4d32362d96980716113c84f591743ecd";
+(node as any).hash = "b711c41d642be8ab97bfff4b2f370e38";
 
 export default node;
