@@ -11,4 +11,6 @@ type HPSortResultRecord struct {
 	ArtistKey string
 	MemberID  int
 	MemberKey string
+	Point     *int // field used in <= v2 series
+	Rank      *int // field used in >= v3 series
 }

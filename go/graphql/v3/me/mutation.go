@@ -44,3 +44,7 @@ func (h *MeMutation) UpsertEvents(ctx context.Context, params upfc.HPFCEventTick
 func (h *MeMutation) UpsertViewHistory(ctx context.Context, params feed.HPViewHistoryUpsertParams) (*ent.HPViewHistory, error) {
 	return feed.UpsertViewHistory(ctx, params)
 }
+
+func (h *MeMutation) CreateSortHistory(ctx context.Context, params user.HPSortHistoryCreateParams) (*ent.HPSortHistory, error) {
+	return user.CreateSortHistory(ctx, appuser.EntID(appuser.CurrentUser(ctx)), params)
+}
