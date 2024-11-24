@@ -394,6 +394,8 @@ type ComplexityRoot struct {
 		ArtistKey func(childComplexity int) int
 		MemberID  func(childComplexity int) int
 		MemberKey func(childComplexity int) int
+		Point     func(childComplexity int) int
+		Rank      func(childComplexity int) int
 	}
 
 	HPViewHistory struct {
@@ -427,6 +429,7 @@ type ComplexityRoot struct {
 
 	MeMutation struct {
 		Authenticate         func(childComplexity int) int
+		CreateSortHistory    func(childComplexity int, params user.HPSortHistoryCreateParams) int
 		Delete               func(childComplexity int) int
 		RemoveAuthentication func(childComplexity int) int
 		UpsertEvents         func(childComplexity int, params upfc.HPFCEventTicketApplicationUpsertParams) int
@@ -2286,6 +2289,20 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.HPSortResultRecord.MemberKey(childComplexity), true
 
+	case "HPSortResultRecord.point":
+		if e.complexity.HPSortResultRecord.Point == nil {
+			break
+		}
+
+		return e.complexity.HPSortResultRecord.Point(childComplexity), true
+
+	case "HPSortResultRecord.rank":
+		if e.complexity.HPSortResultRecord.Rank == nil {
+			break
+		}
+
+		return e.complexity.HPSortResultRecord.Rank(childComplexity), true
+
 	case "HPViewHistory.assetType":
 		if e.complexity.HPViewHistory.AssetType == nil {
 			break
@@ -2426,6 +2443,18 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.MeMutation.Authenticate(childComplexity), true
+
+	case "MeMutation.createSortHistory":
+		if e.complexity.MeMutation.CreateSortHistory == nil {
+			break
+		}
+
+		args, err := ec.field_MeMutation_createSortHistory_args(context.TODO(), rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.MeMutation.CreateSortHistory(childComplexity, args["params"].(user.HPSortHistoryCreateParams)), true
 
 	case "MeMutation.delete":
 		if e.complexity.MeMutation.Delete == nil {
@@ -2979,7 +3008,9 @@ func (e *executableSchema) Exec(ctx context.Context) graphql.ResponseHandler {
 		ec.unmarshalInputHPFollowUpsertParamsInput,
 		ec.unmarshalInputHPIgPostOrder,
 		ec.unmarshalInputHPMemberOrder,
+		ec.unmarshalInputHPSortHistoryCreateParamsInput,
 		ec.unmarshalInputHPSortHistoryOrder,
+		ec.unmarshalInputHPSortResultRecordInput,
 		ec.unmarshalInputHPViewHistoryOrder,
 		ec.unmarshalInputHPViewHistoryUpsertParamsInput,
 		ec.unmarshalInputMeFavoriteQueryParamsInput,
@@ -3228,6 +3259,21 @@ func (ec *executionContext) field_HelloProjectQuery_feed_args(ctx context.Contex
 		}
 	}
 	args["last"] = arg4
+	return args, nil
+}
+
+func (ec *executionContext) field_MeMutation_createSortHistory_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
+	var err error
+	args := map[string]interface{}{}
+	var arg0 user.HPSortHistoryCreateParams
+	if tmp, ok := rawArgs["params"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("params"))
+		arg0, err = ec.unmarshalNHPSortHistoryCreateParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋuserᚐHPSortHistoryCreateParams(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["params"] = arg0
 	return args, nil
 }
 
@@ -15194,6 +15240,10 @@ func (ec *executionContext) fieldContext_HPSortResult_records(ctx context.Contex
 				return ec.fieldContext_HPSortResultRecord_memberId(ctx, field)
 			case "memberKey":
 				return ec.fieldContext_HPSortResultRecord_memberKey(ctx, field)
+			case "point":
+				return ec.fieldContext_HPSortResultRecord_point(ctx, field)
+			case "rank":
+				return ec.fieldContext_HPSortResultRecord_rank(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPSortResultRecord", field.Name)
 		},
@@ -15372,6 +15422,88 @@ func (ec *executionContext) fieldContext_HPSortResultRecord_memberKey(ctx contex
 		IsResolver: false,
 		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
 			return nil, errors.New("field of type String does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPSortResultRecord_point(ctx context.Context, field graphql.CollectedField, obj *jsonfields.HPSortResultRecord) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPSortResultRecord_point(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Point, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*int)
+	fc.Result = res
+	return ec.marshalOInt2ᚖint(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPSortResultRecord_point(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPSortResultRecord",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Int does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPSortResultRecord_rank(ctx context.Context, field graphql.CollectedField, obj *jsonfields.HPSortResultRecord) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPSortResultRecord_rank(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Rank, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*int)
+	fc.Result = res
+	return ec.marshalOInt2ᚖint(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPSortResultRecord_rank(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPSortResultRecord",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Int does not have child fields")
 		},
 	}
 	return fc, nil
@@ -16612,6 +16744,70 @@ func (ec *executionContext) fieldContext_MeMutation_upsertViewHistory(ctx contex
 	}()
 	ctx = graphql.WithFieldContext(ctx, fc)
 	if fc.Args, err = ec.field_MeMutation_upsertViewHistory_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _MeMutation_createSortHistory(ctx context.Context, field graphql.CollectedField, obj *me.MeMutation) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_MeMutation_createSortHistory(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.CreateSortHistory(ctx, fc.Args["params"].(user.HPSortHistoryCreateParams))
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*ent.HPSortHistory)
+	fc.Result = res
+	return ec.marshalOHPSortHistory2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPSortHistory(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_MeMutation_createSortHistory(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "MeMutation",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "id":
+				return ec.fieldContext_HPSortHistory_id(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_HPSortHistory_createdAt(ctx, field)
+			case "updatedAt":
+				return ec.fieldContext_HPSortHistory_updatedAt(ctx, field)
+			case "sortResult":
+				return ec.fieldContext_HPSortHistory_sortResult(ctx, field)
+			case "owner":
+				return ec.fieldContext_HPSortHistory_owner(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type HPSortHistory", field.Name)
+		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_MeMutation_createSortHistory_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
 		ec.Error(ctx, err)
 		return
 	}
@@ -18058,6 +18254,8 @@ func (ec *executionContext) fieldContext_Mutation_me(ctx context.Context, field 
 				return ec.fieldContext_MeMutation_upsertEvents(ctx, field)
 			case "upsertViewHistory":
 				return ec.fieldContext_MeMutation_upsertViewHistory(ctx, field)
+			case "createSortHistory":
+				return ec.fieldContext_MeMutation_createSortHistory(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type MeMutation", field.Name)
 		},
@@ -22326,6 +22524,34 @@ func (ec *executionContext) unmarshalInputHPMemberOrder(ctx context.Context, obj
 	return it, nil
 }
 
+func (ec *executionContext) unmarshalInputHPSortHistoryCreateParamsInput(ctx context.Context, obj interface{}) (user.HPSortHistoryCreateParams, error) {
+	var it user.HPSortHistoryCreateParams
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	fieldsInOrder := [...]string{"records"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "records":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("records"))
+			it.Records, err = ec.unmarshalOHPSortResultRecordInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋjsonfieldsᚐHPSortResultRecordᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
 func (ec *executionContext) unmarshalInputHPSortHistoryOrder(ctx context.Context, obj interface{}) (ent.HPSortHistoryOrder, error) {
 	var it ent.HPSortHistoryOrder
 	asMap := map[string]interface{}{}
@@ -22357,6 +22583,74 @@ func (ec *executionContext) unmarshalInputHPSortHistoryOrder(ctx context.Context
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
 			it.Field, err = ec.unmarshalNHPSortHistoryOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPSortHistoryOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputHPSortResultRecordInput(ctx context.Context, obj interface{}) (jsonfields.HPSortResultRecord, error) {
+	var it jsonfields.HPSortResultRecord
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	fieldsInOrder := [...]string{"artistId", "artistKey", "memberId", "memberKey", "point", "rank"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "artistId":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("artistId"))
+			it.ArtistID, err = ec.unmarshalNInt2int(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "artistKey":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("artistKey"))
+			it.ArtistKey, err = ec.unmarshalNString2string(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "memberId":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("memberId"))
+			it.MemberID, err = ec.unmarshalNInt2int(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "memberKey":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("memberKey"))
+			it.MemberKey, err = ec.unmarshalNString2string(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "point":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("point"))
+			it.Point, err = ec.unmarshalOInt2ᚖint(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "rank":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("rank"))
+			it.Rank, err = ec.unmarshalOInt2ᚖint(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -25019,6 +25313,14 @@ func (ec *executionContext) _HPSortResultRecord(ctx context.Context, sel ast.Sel
 			if out.Values[i] == graphql.Null {
 				invalids++
 			}
+		case "point":
+
+			out.Values[i] = ec._HPSortResultRecord_point(ctx, field, obj)
+
+		case "rank":
+
+			out.Values[i] = ec._HPSortResultRecord_rank(ctx, field, obj)
+
 		default:
 			panic("unknown field " + strconv.Quote(field.Name))
 		}
@@ -25369,6 +25671,23 @@ func (ec *executionContext) _MeMutation(ctx context.Context, sel ast.SelectionSe
 					}
 				}()
 				res = ec._MeMutation_upsertViewHistory(ctx, field, obj)
+				return res
+			}
+
+			out.Concurrently(i, func() graphql.Marshaler {
+				return innerFunc(ctx)
+
+			})
+		case "createSortHistory":
+			field := field
+
+			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._MeMutation_createSortHistory(ctx, field, obj)
 				return res
 			}
 
@@ -27095,6 +27414,11 @@ func (ec *executionContext) marshalNHPSortHistory2ᚖgithubᚗcomᚋyssk22ᚋhpa
 	return ec._HPSortHistory(ctx, sel, v)
 }
 
+func (ec *executionContext) unmarshalNHPSortHistoryCreateParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋuserᚐHPSortHistoryCreateParams(ctx context.Context, v interface{}) (user.HPSortHistoryCreateParams, error) {
+	res, err := ec.unmarshalInputHPSortHistoryCreateParamsInput(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
 func (ec *executionContext) unmarshalNHPSortHistoryOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPSortHistoryOrderField(ctx context.Context, v interface{}) (*ent.HPSortHistoryOrderField, error) {
 	var res = new(ent.HPSortHistoryOrderField)
 	err := res.UnmarshalGQL(v)
@@ -27117,6 +27441,11 @@ func (ec *executionContext) marshalNHPSortResult2githubᚗcomᚋyssk22ᚋhpapp�
 
 func (ec *executionContext) marshalNHPSortResultRecord2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋjsonfieldsᚐHPSortResultRecord(ctx context.Context, sel ast.SelectionSet, v jsonfields.HPSortResultRecord) graphql.Marshaler {
 	return ec._HPSortResultRecord(ctx, sel, &v)
+}
+
+func (ec *executionContext) unmarshalNHPSortResultRecordInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋjsonfieldsᚐHPSortResultRecord(ctx context.Context, v interface{}) (jsonfields.HPSortResultRecord, error) {
+	res, err := ec.unmarshalInputHPSortResultRecordInput(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
 }
 
 func (ec *executionContext) marshalNHPViewHistory2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPViewHistory(ctx context.Context, sel ast.SelectionSet, v *ent.HPViewHistory) graphql.Marshaler {
@@ -29041,6 +29370,26 @@ func (ec *executionContext) marshalOHPSortResultRecord2ᚕgithubᚗcomᚋyssk22�
 	}
 
 	return ret
+}
+
+func (ec *executionContext) unmarshalOHPSortResultRecordInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋjsonfieldsᚐHPSortResultRecordᚄ(ctx context.Context, v interface{}) ([]jsonfields.HPSortResultRecord, error) {
+	if v == nil {
+		return nil, nil
+	}
+	var vSlice []interface{}
+	if v != nil {
+		vSlice = graphql.CoerceList(v)
+	}
+	var err error
+	res := make([]jsonfields.HPSortResultRecord, len(vSlice))
+	for i := range vSlice {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithIndex(i))
+		res[i], err = ec.unmarshalNHPSortResultRecordInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋjsonfieldsᚐHPSortResultRecord(ctx, vSlice[i])
+		if err != nil {
+			return nil, err
+		}
+	}
+	return res, nil
 }
 
 func (ec *executionContext) marshalOHPViewHistory2ᚕᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPViewHistoryᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.HPViewHistory) graphql.Marshaler {
