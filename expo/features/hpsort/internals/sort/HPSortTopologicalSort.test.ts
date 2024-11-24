@@ -55,11 +55,15 @@ describe('HPSortTopologicalSort', () => {
     expect(c).toBeNull();
 
     // // then graph is built so we can get the sort result.
-    const values = s.getResult().map((v) => v.value.value);
+    const result = s.getResult();
+    const values = result.map((v) => v.value.value);
     expect(values).toEqual([8, 4, 4, 3, 1]);
 
-    const ids = s.getResult().map((v) => v.value.getId());
+    const ids = result.map((v) => v.value.getId());
     expect(ids).toEqual(['0', '1', '4', '2', '3']);
+
+    const ranks = result.map((r) => r.rank);
+    expect(ranks).toEqual([1, 2, 2, 4, 5]);
   });
 
   it('random', () => {
@@ -72,7 +76,7 @@ describe('HPSortTopologicalSort', () => {
       const dataset = new Array(size).fill(0, 0, size).map((v, idx) => {
         return Math.floor(Math.random() * size);
       });
-      const s = new HPSortTopologicalSort(dataset.map(NumberNode.fromNumber), 4);
+      const s = new HPSortTopologicalSort(dataset.map(NumberNode.fromNumber), 4, true);
       let count = 0;
       while (true) {
         const comparison = s.getComparable();

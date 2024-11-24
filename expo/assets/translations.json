@@ -258,5 +258,41 @@
   },
   "Cancel": {
     "ja": "キャンセル"
+  },
+  "New Sort": {
+    "ja": "新規ソート"
+  },
+  "Sort Configuration": {
+    "ja": "ソート設定"
+  },
+  "Choose the number of members one round shows.": {
+    "ja": "1ラウンドで表示するメンバーの数を選択してください。"
+  },
+  "You can complete sorting faster when it shows more members.": {
+    "ja": "表示するメンバーの数が多いほど、ソートを早く完了できます。"
+  },
+  "%{num} members": {
+    "ja": "%{num}人"
+  },
+  "Start": {
+    "ja": "開始"
+  },
+  "Round %{round}": {
+    "ja": "ラウンド %{round}"
+  },
+  "Draw": {
+    "ja": "引き分け"
+  },
+  "Tap and select the member you like better.": {
+    "ja": "好きなメンバーをタップして選択してください。"
+  },
+  "Tap and select one or more members you like and tap next.": {
+    "ja": "１人または複数の好きなメンバーをタップして選択し、次へをタップします。"
+  },
+  "If you can select all or nothign if you cannot select some.": {
+    "ja": "選択できない場合は、全員を選択するか誰も選択しないでください。"
+  },
+  "Retry": {
+    "ja": "やり直す"
   }
 }

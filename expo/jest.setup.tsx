@@ -142,6 +142,12 @@ jest.mock('react-native-vector-icons/MaterialCommunityIcons', () => {
 jest.mock('@expo/vector-icons/MaterialCommunityIcons', () => {
   return 'MaterialCommunityIcons';
 });
+jest.mock('react-native-vector-icons/FontAwesome', () => {
+  return 'FontAwesome';
+});
+jest.mock('@expo/vector-icons/FontAwesome', () => {
+  return 'FontAwesome';
+});
 
 // Firebase Mock
 jest.mock('@react-native-firebase/auth', () => {

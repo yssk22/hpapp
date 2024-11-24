@@ -94,3 +94,28 @@ You can also launch the storybook web by running `yarn storybook-web` and access
 
 The storybook configuration is in the `.storybook` directory.
 ```
+
+## Common Troubleshooting
+
+### Icon error
+
+You may see Icon error something like below when you run the test.
+
+```
+    The above error occurred in the <Icon> component:
+
+        at construct (/workspaces/hpapp/expo/node_modules/@expo/vector-icons/src/createIconSet.tsx:112:3)
+        at View
+```
+
+This is because `Icon` you use in your component is not mocked. Make sure you include Icon module from '@rneui/themed', not '@rneui/base'.
+If you still see the error, you need to mock the Icon module in the test setup file. Open `jest.setup.tsx` and add the following line.
+
+```typescript
+jest.mock("react-native-vector-icons/{IconSetName}", () => {
+  return "FontAwesome";
+});
+jest.mock("@expo/vector-icons/{IconSetName}", () => {
+  return "FontAwesome";
+});
+```

@@ -6,14 +6,12 @@ import HPSortResultScreen from '@hpapp/features/hpsort/HPSortResultScreen';
 import { toDateTimeString } from '@hpapp/foundation/date';
 import { StyleSheet, View } from 'react-native';
 
+import { HPSortResultMemberRank } from './types';
+
 export type HPSortHistoryListItemProps = {
   createdAt: string;
-  current: {
-    memberIds: string[];
-  };
-  previous?: {
-    memberIds: string[];
-  };
+  current: HPSortResultMemberRank[];
+  previous?: HPSortResultMemberRank[];
 };
 
 export default function HPSortHistoryListItem({ createdAt, current, previous }: HPSortHistoryListItemProps) {
@@ -28,11 +26,11 @@ export default function HPSortHistoryListItem({ createdAt, current, previous }: 
     >
       <View style={styles.row}>
         <View style={styles.memberThumbnails}>
-          {current.memberIds.map((id, i) => {
+          {current.map((v, i) => {
             if (i >= 3) {
               return null;
             }
-            return <ArtistMemberIcon member={id} key={id} />;
+            return <ArtistMemberIcon member={v.memberId} key={v.memberId} />;
           })}
         </View>
         <View style={styles.sortMetadata}>

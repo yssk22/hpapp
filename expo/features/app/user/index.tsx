@@ -12,3 +12,8 @@ export function useHelloProject() {
 export function useMe() {
   return useUserServiceContext().me!;
 }
+
+export function useUserRootReloader(): [() => Promise<void>, boolean] {
+  const { reload, isReloading } = useUserServiceContext();
+  return [reload, isReloading];
+}

@@ -85,7 +85,7 @@ export default class HPSortClassicMergeSort<T> implements HPSortBase<T> {
 
   select(...winnerIdx: number[]): void {
     if (winnerIdx.length === 2) {
-      this.selectInternal('draw');
+      this.tie();
       return;
     } else if (winnerIdx.length === 1) {
       if (winnerIdx[0] === 0) {

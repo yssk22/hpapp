@@ -18,14 +18,14 @@ export default function HPSortResultListTopItem({
 }) {
   const hp = useHelloProject();
   const member = hp.useMember(memberId);
-  const iconColor = rank === 0 ? 'gold' : rank === 1 ? 'silver' : '#cd7f32';
+  const iconColor = rank === 1 ? 'gold' : rank === 2 ? 'silver' : '#cd7f32';
   const rankDiff = previousRank !== undefined ? previousRank - rank : undefined;
   return (
     <View style={styles.container}>
       <View style={styles.labelHeader}>
         <View style={styles.labelHeaderRank}>
           <Icon type="material-community" name="chess-king" size={IconSize.Small} color={iconColor} />
-          <Text style={styles.labelHeaderRankText}>{rank + 1}</Text>
+          <Text style={styles.labelHeaderRankText}>{rank}</Text>
         </View>
         <View style={styles.labelHeaderRankDiff}>
           <HPSortResultRankDiffIcon diff={rankDiff} />

@@ -1,3 +1,5 @@
+import { shuffle } from '@hpapp/foundation/object';
+
 import HPSortBase, { HPSortProgress, HPSortResult } from './HPSortBase';
 
 export interface HPSortTopologicalSortNode {
@@ -9,6 +11,7 @@ export default class HPSortTopologicalSort<T extends HPSortTopologicalSortNode> 
   private map: Map<string, T>;
   private numCompared: number;
   private numCompares: number;
+  private randomize: boolean;
   private comparable: T[] | null = null;
 
   // a graph that maintains the comparison result. If a wins b, then we add an eddge from a to b
@@ -18,13 +21,14 @@ export default class HPSortTopologicalSort<T extends HPSortTopologicalSortNode> 
   // record which ids are already compared yet
   private compared: Map<string, Set<string>>;
 
-  constructor(list: T[], numCompares = 4) {
+  constructor(list: T[], numCompares = 4, randomize = false) {
     this.list = list;
     this.map = new Map(list.map((v) => [v.getId(), v]));
     this.graph = new Map(list.map((v) => [v.getId(), new Set<string>()]));
     this.ties = new Map(list.map((v) => [v.getId(), new Set<string>()]));
     this.compared = new Map(list.map((v) => [v.getId(), new Set<string>()]));
     this.numCompared = 0;
+    this.randomize = randomize;
     this.numCompares = numCompares;
     this.updateComparable();
   }
@@ -32,6 +36,10 @@ export default class HPSortTopologicalSort<T extends HPSortTopologicalSortNode> 
   public select(...winnerIdx: number[]) {
     const comprable = this.comparable;
     if (comprable === null) {
+      return;
+    }
+    if (winnerIdx.length === 0 || comprable.length === winnerIdx.length) {
+      this.tie();
       return;
     }
     const loserIdx = comprable.map((v, idx) => idx).filter((idx) => !winnerIdx.includes(idx));
@@ -53,16 +61,25 @@ export default class HPSortTopologicalSort<T extends HPSortTopologicalSortNode> 
     this.compared.get(winner.getId())!.add(loser.getId());
     this.compared.get(loser.getId())!.add(winner.getId());
 
-    // all losers of loser is also a loser of winner.
+    // Transitive law
+    // winner > loser, loser > loserOfLoser    : => winner > loserOfLoser
     for (const loserOfLoser of this.graph.get(loser.getId())!) {
       this.addEdge(winner, this.map.get(loserOfLoser)!);
     }
-
-    // all winners of winner is also a winner of loser.
+    // winner > losser, winner > winnerOfWinner: => winnerOfWinner > loser
     for (const winnerOfWinner of Array.from(this.graph.keys())) {
       if (this.graph.get(winnerOfWinner)!.has(winner.getId())) {
         this.addEdge(this.map.get(winnerOfWinner)!, loser);
       }
+    }
+
+    // winner > loser, loser = v: => winner
+    for (const v of this.ties.get(loser.getId())!) {
+      this.addEdge(winner, this.map.get(v)!);
+    }
+    // winner > loswer, winer = v : => v > loser
+    for (const v of this.ties.get(winner.getId())!) {
+      this.addEdge(this.map.get(v)!, loser);
     }
   }
 
@@ -74,15 +91,33 @@ export default class HPSortTopologicalSort<T extends HPSortTopologicalSortNode> 
     for (const v1 of comparable) {
       for (const v2 of comparable) {
         if (v1.getId() !== v2.getId()) {
-          this.ties.get(v1.getId())!.add(v2.getId());
-          this.ties.get(v2.getId())!.add(v2.getId());
-          this.compared.get(v1.getId())!.add(v2.getId());
-          this.compared.get(v2.getId())!.add(v1.getId());
+          this.addTies(v1, v2);
         }
       }
     }
     this.numCompared++;
     this.updateComparable();
+  }
+
+  private addTies(v1: T, v2: T) {
+    if (!this.ties.get(v1.getId())!.has(v2.getId())) {
+      this.ties.get(v1.getId())!.add(v2.getId());
+      this.compared.get(v1.getId())!.add(v2.getId());
+      // Transitive law
+      // v1 == v2, v2 == v3: => v1 == v3
+      for (const v3 of this.ties.get(v2.getId())!) {
+        this.addTies(v1, this.map.get(v3)!);
+      }
+    }
+    if (!this.ties.get(v2.getId())!.has(v1.getId())) {
+      this.ties.get(v2.getId())!.add(v1.getId());
+      this.compared.get(v2.getId())!.add(v1.getId());
+      // Transitive law
+      // v1 == v2, v1 == v3: => v2 == v3
+      for (const v3 of this.ties.get(v1.getId())!) {
+        this.addTies(v2, this.map.get(v3)!);
+      }
+    }
   }
 
   public getComparable(): T[] | null {
@@ -111,7 +146,18 @@ export default class HPSortTopologicalSort<T extends HPSortTopologicalSortNode> 
   }
 
   public getResult(): HPSortResult<T> {
-    return this.topologicalSort().map((v, idx) => ({ value: v, rank: idx }));
+    const sorted = this.topologicalSort();
+    let rank = 1;
+    return sorted.map((v, idx) => {
+      if (idx > 0) {
+        const prev = sorted[idx - 1];
+        if (!this.ties.get(prev.getId())!.has(v.getId())) {
+          // increment the rank to idx+1 only when the current is not tied with the previous.
+          rank = idx + 1;
+        }
+      }
+      return { value: v, rank };
+    });
   }
 
   /**
@@ -164,11 +210,13 @@ export default class HPSortTopologicalSort<T extends HPSortTopologicalSortNode> 
     const added = new Set<string>();
     const uncompared: T[] = [];
     const numCompares = this.numCompares;
-    for (const v1 of this.list) {
+
+    const randomized = this.randomize ? shuffle(this.list) : this.list;
+    for (const v1 of randomized) {
       if (added.has(v1.getId())) {
         continue;
       }
-      if (this.compared.get(v1.getId())!.size < this.list.length - 1) {
+      if (this.compared.get(v1.getId())!.size < randomized.length - 1) {
         // v1 does not copmare with all other nodes
         if (uncompared.length > 0) {
           // if any of uncompared node has a comparison with v1, then we should not add v1 to the list.
@@ -190,7 +238,7 @@ export default class HPSortTopologicalSort<T extends HPSortTopologicalSortNode> 
           }
         }
 
-        for (const v2 of this.list) {
+        for (const v2 of randomized) {
           if (v1.getId() === v2.getId()) {
             continue;
           }

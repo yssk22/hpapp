@@ -1,6 +1,13 @@
 import { ErrorBoundary, FallbackComponent, Loading } from '@hpapp/features/common';
-import { Suspense, createContext, useContext, useEffect, useMemo } from 'react';
-import { graphql, useQueryLoader, usePreloadedQuery, PreloadedQuery, useRelayEnvironment } from 'react-relay';
+import { Suspense, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import {
+  graphql,
+  useQueryLoader,
+  usePreloadedQuery,
+  PreloadedQuery,
+  useRelayEnvironment,
+  fetchQuery
+} from 'react-relay';
 
 import HelloProject, { useHelloProjectFragment } from './HelloProject';
 import Me, { useMeFragment } from './Me';
@@ -21,7 +28,8 @@ const UserServiceProviderQueryGraphQL = graphql`
 type ServiceRoot = {
   hp: HelloProject;
   me: Me;
-  reload: () => void;
+  isReloading: boolean;
+  reload: () => Promise<void>;
 };
 
 const ctx = createContext<ServiceRoot | null>(null);
@@ -46,16 +54,28 @@ export default function UserServiceProvider({
 }
 
 function LoadServiceRootQuery({ children }: { children: React.ReactElement }) {
+  const env = useRelayEnvironment();
   const [queryRef, loadQuery, dispose] = useQueryLoader<UserServiceProviderQuery>(UserServiceProviderQueryGraphQL);
-
-  const load = useMemo(() => {
-    return () => {
-      loadQuery({});
-    };
+  const [isReloading, setIsReloading] = useState(false);
+  // use fetchQuery to avoid triggering suspense.
+  const reload = useCallback(async () => {
+    setIsReloading(true);
+    try {
+      await fetchQuery(env, UserServiceProviderQueryGraphQL, {}).toPromise();
+      loadQuery(
+        {},
+        {
+          fetchPolicy: 'store-only'
+        }
+      );
+      // TODO: error handling
+    } finally {
+      setIsReloading(false);
+    }
   }, [loadQuery]);
 
   useEffect(() => {
-    load();
+    loadQuery({});
     return () => {
       dispose();
     };
@@ -64,7 +84,7 @@ function LoadServiceRootQuery({ children }: { children: React.ReactElement }) {
     return <></>;
   }
   return (
-    <RenderServiceRootQuery queryRef={queryRef} reload={load}>
+    <RenderServiceRootQuery queryRef={queryRef} reload={reload} isReloading={isReloading}>
       {children}
     </RenderServiceRootQuery>
   );
@@ -77,10 +97,12 @@ export function useUserServiceContext() {
 function RenderServiceRootQuery({
   queryRef,
   reload,
+  isReloading,
   children
 }: {
   queryRef: PreloadedQuery<UserServiceProviderQuery, Record<string, unknown>>;
-  reload: () => void;
+  reload: () => Promise<void>;
+  isReloading: boolean;
   children: React.ReactElement;
 }) {
   const data = usePreloadedQuery<UserServiceProviderQuery>(UserServiceProviderQueryGraphQL, queryRef);
@@ -90,8 +112,9 @@ function RenderServiceRootQuery({
     return {
       hp,
       me,
-      reload
+      reload,
+      isReloading
     };
-  }, [hp, me]);
+  }, [hp, me, reload, isReloading]);
   return <ctx.Provider value={serviceRoot}>{children}</ctx.Provider>;
 }

@@ -895,9 +895,117 @@ exports[`HomeTabArtist tab 1`] = `
                       ]
                     }
                   >
+                    <View
+                      collapsable={false}
+                      style={
+                        {
+                          "alignItems": "center",
+                          "borderRadius": 28,
+                          "bottom": 0,
+                          "flexDirection": "row",
+                          "justifyContent": "center",
+                          "margin": 16,
+                          "opacity": 1,
+                          "position": "absolute",
+                          "right": 0,
+                          "transform": [
+                            {
+                              "scale": 1,
+                            },
+                          ],
+                          "zIndex": 1000,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "overflow": "hidden",
+                            },
+                            {
+                              "borderRadius": 2,
+                            },
+                            {
+                              "borderRadius": 28,
+                              "elevation": 4,
+                            },
+                            false,
+                          ]
+                        }
+                        testID="RNE_BUTTON_WRAPPER"
+                      >
+                        <View
+                          accessibilityRole="button"
+                          accessibilityState={
+                            {
+                              "busy": false,
+                              "checked": undefined,
+                              "disabled": false,
+                              "expanded": undefined,
+                              "selected": undefined,
+                            }
+                          }
+                          accessibilityValue={
+                            {
+                              "max": undefined,
+                              "min": undefined,
+                              "now": undefined,
+                              "text": undefined,
+                            }
+                          }
+                          accessible={true}
+                          collapsable={false}
+                          focusable={true}
+                          onClick={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            {
+                              "opacity": 1,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              {
+                                "alignItems": "center",
+                                "backgroundColor": "#e5007f",
+                                "borderColor": "#0075c2",
+                                "borderRadius": 2,
+                                "borderWidth": 0,
+                                "flexDirection": "row",
+                                "height": 56,
+                                "justifyContent": "center",
+                                "padding": 16,
+                                "paddingHorizontal": 10,
+                                "width": 56,
+                              }
+                            }
+                          >
+                            <Icon
+                              color="white"
+                              name="sort-numeric-asc"
+                              type="font-awesome"
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
                     <RCTScrollView
+                      refreshControl={
+                        <RefreshControlMock
+                          onRefresh={[Function]}
+                          refreshing={false}
+                        />
+                      }
                       testID="HomeTabArtistBySortView.ScrollView"
                     >
+                      <RCTRefreshControl />
                       <View>
                         <View
                           style={
@@ -965,7 +1073,13 @@ exports[`HomeTabArtist tab 1`] = `
                                     "marginRight": 4,
                                   }
                                 }
-                              />
+                              >
+                                <Icon
+                                  name="minus"
+                                  size={16}
+                                  type="material-community"
+                                />
+                              </View>
                               <Text
                                 style={
                                   [
@@ -1090,7 +1204,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 }
                               >
                                 <Icon
-                                  color="silver"
+                                  color="gold"
                                   name="chess-king"
                                   size={16}
                                   type="material-community"
@@ -1110,7 +1224,7 @@ exports[`HomeTabArtist tab 1`] = `
                                     ]
                                   }
                                 >
-                                  2
+                                  1
                                 </Text>
                               </View>
                               <View
@@ -1121,7 +1235,13 @@ exports[`HomeTabArtist tab 1`] = `
                                     "marginRight": 4,
                                   }
                                 }
-                              />
+                              >
+                                <Icon
+                                  name="minus"
+                                  size={16}
+                                  type="material-community"
+                                />
+                              </View>
                               <Text
                                 style={
                                   [
@@ -1246,7 +1366,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 }
                               >
                                 <Icon
-                                  color="#cd7f32"
+                                  color="silver"
                                   name="chess-king"
                                   size={16}
                                   type="material-community"
@@ -1266,7 +1386,7 @@ exports[`HomeTabArtist tab 1`] = `
                                     ]
                                   }
                                 >
-                                  3
+                                  2
                                 </Text>
                               </View>
                               <View
@@ -1277,7 +1397,14 @@ exports[`HomeTabArtist tab 1`] = `
                                     "marginRight": 4,
                                   }
                                 }
-                              />
+                              >
+                                <Icon
+                                  color="#e5007f"
+                                  name="chevron-up"
+                                  size={16}
+                                  type="feather"
+                                />
+                              </View>
                               <Text
                                 style={
                                   [
@@ -1420,7 +1547,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              4
+                              3
                               位
                             </Text>
                           </View>
@@ -1430,7 +1557,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -1647,7 +1781,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              5
+                              4
                               位
                             </Text>
                           </View>
@@ -1657,7 +1791,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -1874,7 +2015,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              6
+                              5
                               位
                             </Text>
                           </View>
@@ -1884,7 +2025,13 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              name="minus"
+                              size={16}
+                              type="material-community"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -2101,7 +2248,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              7
+                              6
                               位
                             </Text>
                           </View>
@@ -2111,7 +2258,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -2320,7 +2474,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              8
+                              7
                               位
                             </Text>
                           </View>
@@ -2330,7 +2484,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -2547,7 +2708,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              9
+                              8
                               位
                             </Text>
                           </View>
@@ -2557,7 +2718,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -2774,7 +2942,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              10
+                              9
                               位
                             </Text>
                           </View>
@@ -2784,7 +2952,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -3001,7 +3176,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              11
+                              10
                               位
                             </Text>
                           </View>
@@ -3011,7 +3186,13 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              name="minus"
+                              size={16}
+                              type="material-community"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -3228,7 +3409,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              12
+                              11
                               位
                             </Text>
                           </View>
@@ -3238,7 +3419,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -3455,7 +3643,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              13
+                              12
                               位
                             </Text>
                           </View>
@@ -3465,7 +3653,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -3682,7 +3877,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              14
+                              13
                               位
                             </Text>
                           </View>
@@ -3692,7 +3887,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -3909,7 +4111,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              15
+                              14
                               位
                             </Text>
                           </View>
@@ -3919,7 +4121,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -4128,7 +4337,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              16
+                              14
                               位
                             </Text>
                           </View>
@@ -4138,7 +4347,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -4355,7 +4571,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              17
+                              16
                               位
                             </Text>
                           </View>
@@ -4365,7 +4581,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -4574,7 +4797,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              18
+                              17
                               位
                             </Text>
                           </View>
@@ -4584,7 +4807,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -4801,7 +5031,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              19
+                              18
                               位
                             </Text>
                           </View>
@@ -4811,7 +5041,13 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              name="minus"
+                              size={16}
+                              type="material-community"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -5020,7 +5256,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              20
+                              19
                               位
                             </Text>
                           </View>
@@ -5030,7 +5266,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -5247,7 +5490,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              21
+                              20
                               位
                             </Text>
                           </View>
@@ -5257,7 +5500,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -5466,7 +5716,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              22
+                              21
                               位
                             </Text>
                           </View>
@@ -5476,7 +5726,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -5685,7 +5942,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              23
+                              22
                               位
                             </Text>
                           </View>
@@ -5695,7 +5952,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -5904,7 +6168,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              24
+                              23
                               位
                             </Text>
                           </View>
@@ -5914,7 +6178,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -6123,7 +6394,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              25
+                              24
                               位
                             </Text>
                           </View>
@@ -6133,7 +6404,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -6342,7 +6620,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              26
+                              25
                               位
                             </Text>
                           </View>
@@ -6352,7 +6630,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -6561,7 +6846,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              27
+                              25
                               位
                             </Text>
                           </View>
@@ -6571,7 +6856,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -6780,7 +7072,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              28
+                              27
                               位
                             </Text>
                           </View>
@@ -6790,7 +7082,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -6999,7 +7298,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              29
+                              27
                               位
                             </Text>
                           </View>
@@ -7009,7 +7308,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -7218,7 +7524,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              30
+                              27
                               位
                             </Text>
                           </View>
@@ -7228,7 +7534,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -7437,7 +7750,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              31
+                              30
                               位
                             </Text>
                           </View>
@@ -7447,7 +7760,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -7656,7 +7976,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              32
+                              30
                               位
                             </Text>
                           </View>
@@ -7666,7 +7986,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -7875,7 +8202,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              33
+                              30
                               位
                             </Text>
                           </View>
@@ -7885,7 +8212,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -8094,7 +8428,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              34
+                              30
                               位
                             </Text>
                           </View>
@@ -8104,7 +8438,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -8313,7 +8654,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              35
+                              30
                               位
                             </Text>
                           </View>
@@ -8323,7 +8664,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -8532,7 +8880,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              36
+                              30
                               位
                             </Text>
                           </View>
@@ -8542,7 +8890,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -8751,7 +9106,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              37
+                              30
                               位
                             </Text>
                           </View>
@@ -8761,7 +9116,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -8970,7 +9332,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              38
+                              30
                               位
                             </Text>
                           </View>
@@ -8980,7 +9342,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -9189,7 +9558,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              39
+                              30
                               位
                             </Text>
                           </View>
@@ -9199,7 +9568,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -9408,7 +9784,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              40
+                              30
                               位
                             </Text>
                           </View>
@@ -9418,7 +9794,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -9627,7 +10010,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              41
+                              30
                               位
                             </Text>
                           </View>
@@ -9637,7 +10020,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -9846,7 +10236,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              42
+                              30
                               位
                             </Text>
                           </View>
@@ -9856,7 +10246,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -10065,7 +10462,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              43
+                              30
                               位
                             </Text>
                           </View>
@@ -10075,7 +10472,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -10284,7 +10688,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              44
+                              30
                               位
                             </Text>
                           </View>
@@ -10294,7 +10698,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -10503,7 +10914,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              45
+                              30
                               位
                             </Text>
                           </View>
@@ -10513,7 +10924,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -10722,7 +11140,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              46
+                              30
                               位
                             </Text>
                           </View>
@@ -10732,7 +11150,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -10941,7 +11366,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              47
+                              30
                               位
                             </Text>
                           </View>
@@ -10951,7 +11376,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -11160,7 +11592,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              48
+                              30
                               位
                             </Text>
                           </View>
@@ -11170,7 +11602,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -11379,7 +11818,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              49
+                              30
                               位
                             </Text>
                           </View>
@@ -11389,7 +11828,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -11598,7 +12044,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              50
+                              49
                               位
                             </Text>
                           </View>
@@ -11608,7 +12054,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -11817,7 +12270,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              51
+                              49
                               位
                             </Text>
                           </View>
@@ -11827,7 +12280,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -12036,7 +12496,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              52
+                              49
                               位
                             </Text>
                           </View>
@@ -12046,7 +12506,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -12255,7 +12722,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              53
+                              49
                               位
                             </Text>
                           </View>
@@ -12265,7 +12732,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -12474,7 +12948,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              54
+                              49
                               位
                             </Text>
                           </View>
@@ -12484,7 +12958,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -12693,7 +13174,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              55
+                              49
                               位
                             </Text>
                           </View>
@@ -12703,7 +13184,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -12912,7 +13400,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              56
+                              49
                               位
                             </Text>
                           </View>
@@ -12922,7 +13410,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -13131,7 +13626,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              57
+                              49
                               位
                             </Text>
                           </View>
@@ -13141,7 +13636,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -13350,7 +13852,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              58
+                              49
                               位
                             </Text>
                           </View>
@@ -13360,7 +13862,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -13569,7 +14078,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              59
+                              49
                               位
                             </Text>
                           </View>
@@ -13579,7 +14088,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -13788,7 +14304,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              60
+                              49
                               位
                             </Text>
                           </View>
@@ -13798,7 +14314,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -14007,7 +14530,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              61
+                              49
                               位
                             </Text>
                           </View>
@@ -14017,7 +14540,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -14226,7 +14756,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              62
+                              49
                               位
                             </Text>
                           </View>
@@ -14236,7 +14766,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -14445,7 +14982,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              63
+                              49
                               位
                             </Text>
                           </View>
@@ -14455,7 +14992,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -14664,7 +15208,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              64
+                              63
                               位
                             </Text>
                           </View>
@@ -14674,7 +15218,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -14883,7 +15434,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              65
+                              63
                               位
                             </Text>
                           </View>
@@ -14893,7 +15444,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -15102,7 +15660,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              66
+                              65
                               位
                             </Text>
                           </View>
@@ -15112,7 +15670,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -15321,7 +15886,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              67
+                              65
                               位
                             </Text>
                           </View>
@@ -15331,7 +15896,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -15540,7 +16112,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              68
+                              65
                               位
                             </Text>
                           </View>
@@ -15550,7 +16122,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -15759,7 +16338,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              69
+                              65
                               位
                             </Text>
                           </View>
@@ -15769,7 +16348,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -15978,7 +16564,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              70
+                              65
                               位
                             </Text>
                           </View>
@@ -15988,7 +16574,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-up"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -16197,7 +16790,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              71
+                              65
                               位
                             </Text>
                           </View>
@@ -16207,7 +16800,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -16416,7 +17016,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              72
+                              65
                               位
                             </Text>
                           </View>
@@ -16426,7 +17026,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#e5007f"
+                              name="chevron-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {
@@ -16635,7 +17242,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 ]
                               }
                             >
-                              73
+                              65
                               位
                             </Text>
                           </View>
@@ -16645,7 +17252,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "paddingRight": 16,
                               }
                             }
-                          />
+                          >
+                            <Icon
+                              color="#0075c2"
+                              name="chevrons-down"
+                              size={16}
+                              type="feather"
+                            />
+                          </View>
                           <View
                             style={
                               {

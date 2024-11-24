@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<e99e9bbf69ea0ca7d14c7cd67e6b0d4b>>
+ * @generated SignedSource<<e19576fa7ad25ce02a654dcb41218cc5>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -22,6 +22,8 @@ export type HPSortHistoryListQuery_me_query_sortHistories$data = {
             readonly artistId: number;
             readonly memberId: number;
             readonly memberKey: string;
+            readonly point: number | null | undefined;
+            readonly rank: number | null | undefined;
           }> | null | undefined;
         };
       } | null | undefined;
@@ -155,6 +157,20 @@ return {
                           "kind": "ScalarField",
                           "name": "memberKey",
                           "storageKey": null
+                        },
+                        {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "point",
+                          "storageKey": null
+                        },
+                        {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "rank",
+                          "storageKey": null
                         }
                       ],
                       "storageKey": null
@@ -217,6 +233,6 @@ return {
 };
 })();
 
-(node as any).hash = "dabcb42a91227a53353f171eb1a1f230";
+(node as any).hash = "5ba669fb0801d193138162234da12c76";
 
 export default node;

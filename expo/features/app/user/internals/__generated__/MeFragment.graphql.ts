@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<00d21a00dff35109688e08c237083c02>>
+ * @generated SignedSource<<bc649cf1e726131d0ad23ee10e075e36>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -24,6 +24,8 @@ export type MeFragment$data = {
             readonly artistId: number;
             readonly memberId: number;
             readonly memberKey: string;
+            readonly point: number | null | undefined;
+            readonly rank: number | null | undefined;
           }> | null | undefined;
         };
       } | null | undefined;
@@ -79,7 +81,7 @@ return {
         {
           "kind": "Literal",
           "name": "first",
-          "value": 1
+          "value": 2
         }
       ],
       "concreteType": "HPSortHistoryConnection",
@@ -147,6 +149,20 @@ return {
                           "kind": "ScalarField",
                           "name": "memberKey",
                           "storageKey": null
+                        },
+                        {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "point",
+                          "storageKey": null
+                        },
+                        {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "rank",
+                          "storageKey": null
                         }
                       ],
                       "storageKey": null
@@ -161,7 +177,7 @@ return {
           "storageKey": null
         }
       ],
-      "storageKey": "sortHistories(first:1)"
+      "storageKey": "sortHistories(first:2)"
     }
   ],
   "type": "MeQuery",
@@ -169,6 +185,6 @@ return {
 };
 })();
 
-(node as any).hash = "b711c41d642be8ab97bfff4b2f370e38";
+(node as any).hash = "7d8ed18a69d3352164aa5e2d3fed4eb9";
 
 export default node;

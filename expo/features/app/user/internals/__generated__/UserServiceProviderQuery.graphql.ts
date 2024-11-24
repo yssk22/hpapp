@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<e4d8ddcf6a667d650002730324d4b125>>
+ * @generated SignedSource<<3bee21e7750fdc8ef26ceeffec999039>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -248,7 +248,7 @@ return {
               {
                 "kind": "Literal",
                 "name": "first",
-                "value": 1
+                "value": 2
               }
             ],
             "concreteType": "HPSortHistoryConnection",
@@ -316,6 +316,20 @@ return {
                                 "kind": "ScalarField",
                                 "name": "memberKey",
                                 "storageKey": null
+                              },
+                              {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "point",
+                                "storageKey": null
+                              },
+                              {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "rank",
+                                "storageKey": null
                               }
                             ],
                             "storageKey": null
@@ -330,7 +344,7 @@ return {
                 "storageKey": null
               }
             ],
-            "storageKey": "sortHistories(first:1)"
+            "storageKey": "sortHistories(first:2)"
           }
         ],
         "storageKey": null
@@ -338,12 +352,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "b781f21155fe9a2b25bb0db1dd36c689",
+    "cacheID": "7752f697c6ce1e9efb83116acc5b854d",
     "id": null,
     "metadata": {},
     "name": "UserServiceProviderQuery",
     "operationKind": "query",
-    "text": "query UserServiceProviderQuery {\n  helloproject {\n    ...HelloProjectFragment\n    id\n  }\n  me {\n    ...MeFragment\n    id\n  }\n}\n\nfragment HelloProjectFragment on HelloProjectQuery {\n  artists {\n    id\n    key\n    name\n    thumbnailURL\n    members {\n      id\n      key\n      artistKey\n      artistID\n      name\n      nameKana\n      thumbnailURL\n      dateOfBirth\n      bloodType\n      joinAt\n      graduateAt\n      myFollowStatus {\n        id\n        type\n      }\n    }\n  }\n}\n\nfragment MeFragment on MeQuery {\n  id\n  username\n  clientId\n  clientName\n  sortHistories(first: 1) {\n    edges {\n      node {\n        id\n        createdAt\n        sortResult {\n          records {\n            artistId\n            memberId\n            memberKey\n          }\n        }\n      }\n    }\n  }\n}\n"
+    "text": "query UserServiceProviderQuery {\n  helloproject {\n    ...HelloProjectFragment\n    id\n  }\n  me {\n    ...MeFragment\n    id\n  }\n}\n\nfragment HelloProjectFragment on HelloProjectQuery {\n  artists {\n    id\n    key\n    name\n    thumbnailURL\n    members {\n      id\n      key\n      artistKey\n      artistID\n      name\n      nameKana\n      thumbnailURL\n      dateOfBirth\n      bloodType\n      joinAt\n      graduateAt\n      myFollowStatus {\n        id\n        type\n      }\n    }\n  }\n}\n\nfragment MeFragment on MeQuery {\n  id\n  username\n  clientId\n  clientName\n  sortHistories(first: 2) {\n    edges {\n      node {\n        id\n        createdAt\n        sortResult {\n          records {\n            artistId\n            memberId\n            memberKey\n            point\n            rank\n          }\n        }\n      }\n    }\n  }\n}\n"
   }
 };
 })();

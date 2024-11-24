@@ -4,12 +4,10 @@ import { StyleSheet, View } from 'react-native';
 
 import HPSortResultListItem from './HPSortResultListItem';
 import HPSortResultListTopItem from './HPSortResultListTopItem';
+import { HPSortResultMemberRank } from './types';
 
 export type HPSortResultListViewProps = {
-  list: {
-    memberId: string;
-    previousRank?: number;
-  }[];
+  list: HPSortResultMemberRank[];
 };
 
 export default function HPSortResultListView({ list }: HPSortResultListViewProps) {
@@ -20,14 +18,24 @@ export default function HPSortResultListView({ list }: HPSortResultListViewProps
       <View style={styles.top3Row}>
         {top3.map((r, i) => {
           return (
-            <HPSortResultListTopItem key={r.memberId} memberId={r.memberId} previousRank={r.previousRank} rank={i} />
+            <HPSortResultListTopItem
+              key={r.memberId}
+              memberId={r.memberId}
+              previousRank={r.previousRank}
+              rank={r.rank ?? i}
+            />
           );
         })}
       </View>
       <Divider />
       {rest.map((r, i) => {
         return (
-          <HPSortResultListItem key={r.memberId} memberId={r.memberId} previousRank={r.previousRank} rank={i + 3} />
+          <HPSortResultListItem
+            key={r.memberId}
+            memberId={r.memberId}
+            previousRank={r.previousRank}
+            rank={r.rank ?? i + 3}
+          />
         );
       })}
     </>
