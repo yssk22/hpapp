@@ -91,6 +91,27 @@ module.exports = {
         {
           fonts: ['./assets/BIZUDGothic_400Regular.ttf', './assets/BIZUDGothic_700Bold.ttf']
         }
+      ],
+      [
+        'expo-calendar',
+        {
+          calendarPermission: '${PRODUCT_NAME} adds events to your calendar.',
+          remindersPermission: '${PRODUCT_NAME} adds events to your reminders.'
+        }
+      ],
+      [
+        'expo-media-library',
+        {
+          photosPermission: '$(PRODUCT_NAME) adds media from member contents to your library.',
+          savePhotosPermission: '$(PRODUCT_NAME) adds media from member contents to your library.',
+          isAccessMediaLocationEnabled: true
+        }
+      ],
+      [
+        'expo-av',
+        {
+          microphonePermission: 'This app does not require access to the microphone'
+        }
       ]
     ],
     updates: {

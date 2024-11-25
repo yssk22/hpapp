@@ -17,6 +17,7 @@
     "build-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh build --profile beta --non-interactive",
     "build-prod": "HPAPP_CONFIG_NAME=prod ./scripts/eas.sh build --profile prod --platform ios",
     "update-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh update --channel beta --non-interactive --auto",
+    "update-prod": "HPAPP_CONFIG_NAME=prod ./scripts/eas.sh update --channel prod --non-interactive --auto",
     "storybook-generate": "sb-rn-get-stories"
   },
   "relay": {

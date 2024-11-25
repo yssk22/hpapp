@@ -46,7 +46,7 @@ export default function HomeTabArtistBySortView() {
           />
         }
       >
-        <HPSortResultListView list={me.latestSortReult} />
+        <HPSortResultListView list={me.latestSortReult} enableMemberNavigation />
       </ScrollView>
     </>
   );

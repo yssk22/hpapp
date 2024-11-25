@@ -1,6 +1,10 @@
 {
   "CFBundleDisplayName": "Hello!Fan",
-  "NSCalendarsUsageDescription": "App uses your calendar to update event schedule.",
-  "NSPhotoLibraryUsageDescription": "App adds media from member contents to your library.",
-  "NSRemindersUsageDescription": "App reminds you of events"
+  "NSCalendarsFullAccessUsageDescription": "Hello!Fan adds events to your calendar.",
+  "NSCalendarsUsageDescription": "Hello!Fan uses your calendar to update event schedule.",
+  "NSRemindersFullAccessUsageDescription": "Hello!Fan adds events to your reminders.",
+  "NSRemindersUsageDescription": "Hello!Fan adds events to your reminders.",
+  "NSPhotoLibraryAddUsageDescription": "Hello!Fan adds media from member contents to your library.",
+  "NSPhotoLibraryUsageDescription": "Hello!Fan adds media from member contents to your library.",
+  "NSMicrophoneUsageDescription": "This app does not require access to the microphone."
 }

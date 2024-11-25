@@ -1,6 +1,10 @@
 {
   "CFBundleDisplayName": "ハロー！ファン",
-  "NSCalendarsUsageDescription": "アプリはカレンダーにイベントを追加します。",
-  "NSPhotoLibraryUsageDescription": "アプリはメンバー投稿の写真や動画をライブラリに追加します。",
-  "NSRemindersUsageDescription": "アプリはイベントのリマインドをします。"
+  "NSCalendarsFullAccessUsageDescription": "ハロー！ファンはカレンダーにイベントを追加します。",
+  "NSCalendarsUsageDescription": "ハロー！ファンはカレンダーにイベントを追加します。",
+  "NSRemindersFullAccessUsageDescription": "ハロー！ファンはリマインダーにイベントを追加します。",
+  "NSRemindersUsageDescription": "ハロー！ファンはリマインダーにイベントを追加します。",
+  "NSPhotoLibraryAddUsageDescription": "ハロー！ファンはメンバー投稿の写真や動画ライブラリに追加します。",
+  "NSPhotoLibraryUsageDescription": "ハロー！ファンはメンバー投稿の写真や動画をライブラリに追加します。",
+  "NSMicrophoneUsageDescription": "音声入力は使用しません。"
 }

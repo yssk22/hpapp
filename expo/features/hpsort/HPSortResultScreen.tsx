@@ -22,7 +22,7 @@ export default defineScreen(
 
     return (
       <ScrollView>
-        <HPSortResultListView list={list} />
+        <HPSortResultListView list={list} enableMemberNavigation />
       </ScrollView>
     );
   }
