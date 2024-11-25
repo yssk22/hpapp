@@ -67,6 +67,7 @@
     "expo-linking": "~6.3.1",
     "expo-localization": "~15.0.3",
     "expo-media-library": "~16.0.5",
+    "expo-notifications": "~0.28.19",
     "expo-secure-store": "~13.0.1",
     "expo-sqlite": "~14.0.6",
     "expo-status-bar": "~1.12.1",

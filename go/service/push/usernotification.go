@@ -2,7 +2,6 @@ package push
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/yssk22/hpapp/go/service/ent"
 	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
@@ -106,6 +105,12 @@ func UpsertNotificationSettings(ctx context.Context, uid int, token string, para
 
 // RemoveNotificationSettings removes the notification settings completely.
 // Users can opt out notification by OS settings so this function is just for cleaning up purpose.
-func RemoveNotificationSettings(ctx context.Context, uid int, token string) (*ent.UserNotificationSetting, error) {
-	panic(fmt.Errorf("not implemented yet"))
+func RemoveNotificationSettings(ctx context.Context, uid int, tokenId int) (*ent.UserNotificationSetting, error) {
+	entclient := entutil.NewClient(ctx)
+	ent, err := entclient.UserNotificationSetting.Get(ctx, tokenId)
+	if err != nil {
+		return nil, err
+	}
+	err = entclient.UserNotificationSetting.DeleteOne(ent).Exec(ctx)
+	return ent, err
 }

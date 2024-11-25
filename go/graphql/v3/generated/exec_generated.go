@@ -26,9 +26,10 @@ import (
 	"github.com/yssk22/hpapp/go/service/helloproject/feed"
 	"github.com/yssk22/hpapp/go/service/helloproject/upfc"
 	"github.com/yssk22/hpapp/go/service/helloproject/user"
+	"github.com/yssk22/hpapp/go/service/push"
 	"github.com/yssk22/hpapp/go/service/schema/enums"
 	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
-	"github.com/yssk22/hpapp/go/system/push"
+	push1 "github.com/yssk22/hpapp/go/system/push"
 )
 
 // region    ************************** generated!.gotpl **************************
@@ -428,27 +429,30 @@ type ComplexityRoot struct {
 	}
 
 	MeMutation struct {
-		Authenticate         func(childComplexity int) int
-		CreateSortHistory    func(childComplexity int, params user.HPSortHistoryCreateParams) int
-		Delete               func(childComplexity int) int
-		RemoveAuthentication func(childComplexity int) int
-		UpsertEvents         func(childComplexity int, params upfc.HPFCEventTicketApplicationUpsertParams) int
-		UpsertFollow         func(childComplexity int, params user.HPFollowUpsertParams) int
-		UpsertViewHistory    func(childComplexity int, params feed.HPViewHistoryUpsertParams) int
+		Authenticate            func(childComplexity int) int
+		CreateSortHistory       func(childComplexity int, params user.HPSortHistoryCreateParams) int
+		Delete                  func(childComplexity int) int
+		RemoveAuthentication    func(childComplexity int) int
+		RemoveNotificationToken func(childComplexity int, tokenID int) int
+		UpsertEvents            func(childComplexity int, params upfc.HPFCEventTicketApplicationUpsertParams) int
+		UpsertFollow            func(childComplexity int, params user.HPFollowUpsertParams) int
+		UpsertNotificationToken func(childComplexity int, token string, params push.NotificationSettings) int
+		UpsertViewHistory       func(childComplexity int, params feed.HPViewHistoryUpsertParams) int
 	}
 
 	MeQuery struct {
-		Authentications  func(childComplexity int) int
-		ClientID         func(childComplexity int) int
-		ClientIsVerified func(childComplexity int) int
-		ClientName       func(childComplexity int) int
-		Events           func(childComplexity int, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
-		Favorites        func(childComplexity int, params me.MeFavoriteQueryParams, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
-		Followings       func(childComplexity int) int
-		ID               func(childComplexity int) int
-		SortHistories    func(childComplexity int, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
-		UserID           func(childComplexity int) int
-		Username         func(childComplexity int) int
+		Authentications      func(childComplexity int) int
+		ClientID             func(childComplexity int) int
+		ClientIsVerified     func(childComplexity int) int
+		ClientName           func(childComplexity int) int
+		Events               func(childComplexity int, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
+		Favorites            func(childComplexity int, params me.MeFavoriteQueryParams, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
+		Followings           func(childComplexity int) int
+		ID                   func(childComplexity int) int
+		NotificationSettings func(childComplexity int, slug string) int
+		SortHistories        func(childComplexity int, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
+		UserID               func(childComplexity int) int
+		Username             func(childComplexity int) int
 	}
 
 	Media struct {
@@ -2470,6 +2474,18 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.MeMutation.RemoveAuthentication(childComplexity), true
 
+	case "MeMutation.removeNotificationToken":
+		if e.complexity.MeMutation.RemoveNotificationToken == nil {
+			break
+		}
+
+		args, err := ec.field_MeMutation_removeNotificationToken_args(context.TODO(), rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.MeMutation.RemoveNotificationToken(childComplexity, args["tokenId"].(int)), true
+
 	case "MeMutation.upsertEvents":
 		if e.complexity.MeMutation.UpsertEvents == nil {
 			break
@@ -2493,6 +2509,18 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.MeMutation.UpsertFollow(childComplexity, args["params"].(user.HPFollowUpsertParams)), true
+
+	case "MeMutation.upsertNotificationToken":
+		if e.complexity.MeMutation.UpsertNotificationToken == nil {
+			break
+		}
+
+		args, err := ec.field_MeMutation_upsertNotificationToken_args(context.TODO(), rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.MeMutation.UpsertNotificationToken(childComplexity, args["token"].(string), args["params"].(push.NotificationSettings)), true
 
 	case "MeMutation.upsertViewHistory":
 		if e.complexity.MeMutation.UpsertViewHistory == nil {
@@ -2571,6 +2599,18 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.MeQuery.ID(childComplexity), true
+
+	case "MeQuery.notificationSettings":
+		if e.complexity.MeQuery.NotificationSettings == nil {
+			break
+		}
+
+		args, err := ec.field_MeQuery_notificationSettings_args(context.TODO(), rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.MeQuery.NotificationSettings(childComplexity, args["slug"].(string)), true
 
 	case "MeQuery.sortHistories":
 		if e.complexity.MeQuery.SortHistories == nil {
@@ -3014,6 +3054,7 @@ func (e *executableSchema) Exec(ctx context.Context) graphql.ResponseHandler {
 		ec.unmarshalInputHPViewHistoryOrder,
 		ec.unmarshalInputHPViewHistoryUpsertParamsInput,
 		ec.unmarshalInputMeFavoriteQueryParamsInput,
+		ec.unmarshalInputNotificationSettingsInput,
 		ec.unmarshalInputUserNotificationSettingOrder,
 		ec.unmarshalInputUserOrder,
 	)
@@ -3277,6 +3318,21 @@ func (ec *executionContext) field_MeMutation_createSortHistory_args(ctx context.
 	return args, nil
 }
 
+func (ec *executionContext) field_MeMutation_removeNotificationToken_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
+	var err error
+	args := map[string]interface{}{}
+	var arg0 int
+	if tmp, ok := rawArgs["tokenId"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("tokenId"))
+		arg0, err = ec.unmarshalNInt2int(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["tokenId"] = arg0
+	return args, nil
+}
+
 func (ec *executionContext) field_MeMutation_upsertEvents_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
 	var err error
 	args := map[string]interface{}{}
@@ -3304,6 +3360,30 @@ func (ec *executionContext) field_MeMutation_upsertFollow_args(ctx context.Conte
 		}
 	}
 	args["params"] = arg0
+	return args, nil
+}
+
+func (ec *executionContext) field_MeMutation_upsertNotificationToken_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
+	var err error
+	args := map[string]interface{}{}
+	var arg0 string
+	if tmp, ok := rawArgs["token"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("token"))
+		arg0, err = ec.unmarshalNString2string(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["token"] = arg0
+	var arg1 push.NotificationSettings
+	if tmp, ok := rawArgs["params"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("params"))
+		arg1, err = ec.unmarshalNNotificationSettingsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋpushᚐNotificationSettings(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["params"] = arg1
 	return args, nil
 }
 
@@ -3412,6 +3492,21 @@ func (ec *executionContext) field_MeQuery_favorites_args(ctx context.Context, ra
 		}
 	}
 	args["last"] = arg4
+	return args, nil
+}
+
+func (ec *executionContext) field_MeQuery_notificationSettings_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
+	var err error
+	args := map[string]interface{}{}
+	var arg0 string
+	if tmp, ok := rawArgs["slug"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("slug"))
+		arg0, err = ec.unmarshalNString2string(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["slug"] = arg0
 	return args, nil
 }
 
@@ -3883,7 +3978,7 @@ func (ec *executionContext) _ExpoPushMessage_priority(ctx context.Context, field
 		}
 		return graphql.Null
 	}
-	res := resTmp.(push.MessagePriority)
+	res := resTmp.(push1.MessagePriority)
 	fc.Result = res
 	return ec.marshalNMessagePriority2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋsystemᚋpushᚐMessagePriority(ctx, field.Selections, res)
 }
@@ -16538,6 +16633,154 @@ func (ec *executionContext) fieldContext_MeMutation_delete(ctx context.Context, 
 	return fc, nil
 }
 
+func (ec *executionContext) _MeMutation_upsertNotificationToken(ctx context.Context, field graphql.CollectedField, obj *me.MeMutation) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_MeMutation_upsertNotificationToken(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.UpsertNotificationToken(ctx, fc.Args["token"].(string), fc.Args["params"].(push.NotificationSettings))
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*ent.UserNotificationSetting)
+	fc.Result = res
+	return ec.marshalOUserNotificationSetting2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserNotificationSetting(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_MeMutation_upsertNotificationToken(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "MeMutation",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "id":
+				return ec.fieldContext_UserNotificationSetting_id(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_UserNotificationSetting_createdAt(ctx, field)
+			case "updatedAt":
+				return ec.fieldContext_UserNotificationSetting_updatedAt(ctx, field)
+			case "token":
+				return ec.fieldContext_UserNotificationSetting_token(ctx, field)
+			case "slug":
+				return ec.fieldContext_UserNotificationSetting_slug(ctx, field)
+			case "name":
+				return ec.fieldContext_UserNotificationSetting_name(ctx, field)
+			case "enableNewPosts":
+				return ec.fieldContext_UserNotificationSetting_enableNewPosts(ctx, field)
+			case "enablePaymentStart":
+				return ec.fieldContext_UserNotificationSetting_enablePaymentStart(ctx, field)
+			case "enablePaymentDue":
+				return ec.fieldContext_UserNotificationSetting_enablePaymentDue(ctx, field)
+			case "user":
+				return ec.fieldContext_UserNotificationSetting_user(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type UserNotificationSetting", field.Name)
+		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_MeMutation_upsertNotificationToken_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _MeMutation_removeNotificationToken(ctx context.Context, field graphql.CollectedField, obj *me.MeMutation) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_MeMutation_removeNotificationToken(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.RemoveNotificationToken(ctx, fc.Args["tokenId"].(int))
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*ent.UserNotificationSetting)
+	fc.Result = res
+	return ec.marshalOUserNotificationSetting2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserNotificationSetting(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_MeMutation_removeNotificationToken(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "MeMutation",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "id":
+				return ec.fieldContext_UserNotificationSetting_id(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_UserNotificationSetting_createdAt(ctx, field)
+			case "updatedAt":
+				return ec.fieldContext_UserNotificationSetting_updatedAt(ctx, field)
+			case "token":
+				return ec.fieldContext_UserNotificationSetting_token(ctx, field)
+			case "slug":
+				return ec.fieldContext_UserNotificationSetting_slug(ctx, field)
+			case "name":
+				return ec.fieldContext_UserNotificationSetting_name(ctx, field)
+			case "enableNewPosts":
+				return ec.fieldContext_UserNotificationSetting_enableNewPosts(ctx, field)
+			case "enablePaymentStart":
+				return ec.fieldContext_UserNotificationSetting_enablePaymentStart(ctx, field)
+			case "enablePaymentDue":
+				return ec.fieldContext_UserNotificationSetting_enablePaymentDue(ctx, field)
+			case "user":
+				return ec.fieldContext_UserNotificationSetting_user(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type UserNotificationSetting", field.Name)
+		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_MeMutation_removeNotificationToken_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return
+	}
+	return fc, nil
+}
+
 func (ec *executionContext) _MeMutation_upsertFollow(ctx context.Context, field graphql.CollectedField, obj *me.MeMutation) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_MeMutation_upsertFollow(ctx, field)
 	if err != nil {
@@ -17116,6 +17359,80 @@ func (ec *executionContext) fieldContext_MeQuery_authentications(ctx context.Con
 			}
 			return nil, fmt.Errorf("no field named %q was found under type Auth", field.Name)
 		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _MeQuery_notificationSettings(ctx context.Context, field graphql.CollectedField, obj *me.MeQuery) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_MeQuery_notificationSettings(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.NotificationSettings(ctx, fc.Args["slug"].(string))
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.([]*ent.UserNotificationSetting)
+	fc.Result = res
+	return ec.marshalOUserNotificationSetting2ᚕᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserNotificationSetting(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_MeQuery_notificationSettings(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "MeQuery",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "id":
+				return ec.fieldContext_UserNotificationSetting_id(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_UserNotificationSetting_createdAt(ctx, field)
+			case "updatedAt":
+				return ec.fieldContext_UserNotificationSetting_updatedAt(ctx, field)
+			case "token":
+				return ec.fieldContext_UserNotificationSetting_token(ctx, field)
+			case "slug":
+				return ec.fieldContext_UserNotificationSetting_slug(ctx, field)
+			case "name":
+				return ec.fieldContext_UserNotificationSetting_name(ctx, field)
+			case "enableNewPosts":
+				return ec.fieldContext_UserNotificationSetting_enableNewPosts(ctx, field)
+			case "enablePaymentStart":
+				return ec.fieldContext_UserNotificationSetting_enablePaymentStart(ctx, field)
+			case "enablePaymentDue":
+				return ec.fieldContext_UserNotificationSetting_enablePaymentDue(ctx, field)
+			case "user":
+				return ec.fieldContext_UserNotificationSetting_user(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type UserNotificationSetting", field.Name)
+		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_MeQuery_notificationSettings_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return
 	}
 	return fc, nil
 }
@@ -17707,7 +18024,7 @@ func (ec *executionContext) fieldContext_Media_thumbnailHeight(ctx context.Conte
 	return fc, nil
 }
 
-func (ec *executionContext) _Message_to(ctx context.Context, field graphql.CollectedField, obj *push.Message) (ret graphql.Marshaler) {
+func (ec *executionContext) _Message_to(ctx context.Context, field graphql.CollectedField, obj *push1.Message) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_Message_to(ctx, field)
 	if err != nil {
 		return graphql.Null
@@ -17748,7 +18065,7 @@ func (ec *executionContext) fieldContext_Message_to(ctx context.Context, field g
 	return fc, nil
 }
 
-func (ec *executionContext) _Message_title(ctx context.Context, field graphql.CollectedField, obj *push.Message) (ret graphql.Marshaler) {
+func (ec *executionContext) _Message_title(ctx context.Context, field graphql.CollectedField, obj *push1.Message) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_Message_title(ctx, field)
 	if err != nil {
 		return graphql.Null
@@ -17792,7 +18109,7 @@ func (ec *executionContext) fieldContext_Message_title(ctx context.Context, fiel
 	return fc, nil
 }
 
-func (ec *executionContext) _Message_body(ctx context.Context, field graphql.CollectedField, obj *push.Message) (ret graphql.Marshaler) {
+func (ec *executionContext) _Message_body(ctx context.Context, field graphql.CollectedField, obj *push1.Message) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_Message_body(ctx, field)
 	if err != nil {
 		return graphql.Null
@@ -17836,7 +18153,7 @@ func (ec *executionContext) fieldContext_Message_body(ctx context.Context, field
 	return fc, nil
 }
 
-func (ec *executionContext) _Message_ttlSeconds(ctx context.Context, field graphql.CollectedField, obj *push.Message) (ret graphql.Marshaler) {
+func (ec *executionContext) _Message_ttlSeconds(ctx context.Context, field graphql.CollectedField, obj *push1.Message) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_Message_ttlSeconds(ctx, field)
 	if err != nil {
 		return graphql.Null
@@ -17880,7 +18197,7 @@ func (ec *executionContext) fieldContext_Message_ttlSeconds(ctx context.Context,
 	return fc, nil
 }
 
-func (ec *executionContext) _Message_priority(ctx context.Context, field graphql.CollectedField, obj *push.Message) (ret graphql.Marshaler) {
+func (ec *executionContext) _Message_priority(ctx context.Context, field graphql.CollectedField, obj *push1.Message) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_Message_priority(ctx, field)
 	if err != nil {
 		return graphql.Null
@@ -17906,7 +18223,7 @@ func (ec *executionContext) _Message_priority(ctx context.Context, field graphql
 		}
 		return graphql.Null
 	}
-	res := resTmp.(push.MessagePriority)
+	res := resTmp.(push1.MessagePriority)
 	fc.Result = res
 	return ec.marshalNMessagePriority2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋsystemᚋpushᚐMessagePriority(ctx, field.Selections, res)
 }
@@ -17924,7 +18241,7 @@ func (ec *executionContext) fieldContext_Message_priority(ctx context.Context, f
 	return fc, nil
 }
 
-func (ec *executionContext) _Message_sound(ctx context.Context, field graphql.CollectedField, obj *push.Message) (ret graphql.Marshaler) {
+func (ec *executionContext) _Message_sound(ctx context.Context, field graphql.CollectedField, obj *push1.Message) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_Message_sound(ctx, field)
 	if err != nil {
 		return graphql.Null
@@ -17968,7 +18285,7 @@ func (ec *executionContext) fieldContext_Message_sound(ctx context.Context, fiel
 	return fc, nil
 }
 
-func (ec *executionContext) _Message_badge(ctx context.Context, field graphql.CollectedField, obj *push.Message) (ret graphql.Marshaler) {
+func (ec *executionContext) _Message_badge(ctx context.Context, field graphql.CollectedField, obj *push1.Message) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_Message_badge(ctx, field)
 	if err != nil {
 		return graphql.Null
@@ -18012,7 +18329,7 @@ func (ec *executionContext) fieldContext_Message_badge(ctx context.Context, fiel
 	return fc, nil
 }
 
-func (ec *executionContext) _Message_imageUrl(ctx context.Context, field graphql.CollectedField, obj *push.Message) (ret graphql.Marshaler) {
+func (ec *executionContext) _Message_imageUrl(ctx context.Context, field graphql.CollectedField, obj *push1.Message) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_Message_imageUrl(ctx, field)
 	if err != nil {
 		return graphql.Null
@@ -18056,7 +18373,7 @@ func (ec *executionContext) fieldContext_Message_imageUrl(ctx context.Context, f
 	return fc, nil
 }
 
-func (ec *executionContext) _Message_data(ctx context.Context, field graphql.CollectedField, obj *push.Message) (ret graphql.Marshaler) {
+func (ec *executionContext) _Message_data(ctx context.Context, field graphql.CollectedField, obj *push1.Message) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_Message_data(ctx, field)
 	if err != nil {
 		return graphql.Null
@@ -18248,6 +18565,10 @@ func (ec *executionContext) fieldContext_Mutation_me(ctx context.Context, field 
 				return ec.fieldContext_MeMutation_removeAuthentication(ctx, field)
 			case "delete":
 				return ec.fieldContext_MeMutation_delete(ctx, field)
+			case "upsertNotificationToken":
+				return ec.fieldContext_MeMutation_upsertNotificationToken(ctx, field)
+			case "removeNotificationToken":
+				return ec.fieldContext_MeMutation_removeNotificationToken(ctx, field)
 			case "upsertFollow":
 				return ec.fieldContext_MeMutation_upsertFollow(ctx, field)
 			case "upsertEvents":
@@ -18647,6 +18968,8 @@ func (ec *executionContext) fieldContext_Query_me(ctx context.Context, field gra
 				return ec.fieldContext_MeQuery_clientIsVerified(ctx, field)
 			case "authentications":
 				return ec.fieldContext_MeQuery_authentications(ctx, field)
+			case "notificationSettings":
+				return ec.fieldContext_MeQuery_notificationSettings(ctx, field)
 			case "followings":
 				return ec.fieldContext_MeQuery_followings(ctx, field)
 			case "sortHistories":
@@ -18959,7 +19282,7 @@ func (ec *executionContext) _ReactNavigationPush_toPushMessage(ctx context.Conte
 	if resTmp == nil {
 		return graphql.Null
 	}
-	res := resTmp.(*push.Message)
+	res := resTmp.(*push1.Message)
 	fc.Result = res
 	return ec.marshalOMessage2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋsystemᚋpushᚐMessage(ctx, field.Selections, res)
 }
@@ -22780,6 +23103,66 @@ func (ec *executionContext) unmarshalInputMeFavoriteQueryParamsInput(ctx context
 	return it, nil
 }
 
+func (ec *executionContext) unmarshalInputNotificationSettingsInput(ctx context.Context, obj interface{}) (push.NotificationSettings, error) {
+	var it push.NotificationSettings
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	fieldsInOrder := [...]string{"name", "slug", "enableNewPosts", "enablePaymentStart", "enablePaymentDue"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "name":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("name"))
+			it.Name, err = ec.unmarshalNString2string(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "slug":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("slug"))
+			it.Slug, err = ec.unmarshalNString2string(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "enableNewPosts":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("enableNewPosts"))
+			it.EnableNewPosts, err = ec.unmarshalOBoolean2ᚖbool(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "enablePaymentStart":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("enablePaymentStart"))
+			it.EnablePaymentStart, err = ec.unmarshalOBoolean2ᚖbool(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "enablePaymentDue":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("enablePaymentDue"))
+			it.EnablePaymentDue, err = ec.unmarshalOBoolean2ᚖbool(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
 func (ec *executionContext) unmarshalInputUserNotificationSettingOrder(ctx context.Context, obj interface{}) (ent.UserNotificationSettingOrder, error) {
 	var it ent.UserNotificationSettingOrder
 	asMap := map[string]interface{}{}
@@ -25627,6 +26010,40 @@ func (ec *executionContext) _MeMutation(ctx context.Context, sel ast.SelectionSe
 				return innerFunc(ctx)
 
 			})
+		case "upsertNotificationToken":
+			field := field
+
+			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._MeMutation_upsertNotificationToken(ctx, field, obj)
+				return res
+			}
+
+			out.Concurrently(i, func() graphql.Marshaler {
+				return innerFunc(ctx)
+
+			})
+		case "removeNotificationToken":
+			field := field
+
+			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._MeMutation_removeNotificationToken(ctx, field, obj)
+				return res
+			}
+
+			out.Concurrently(i, func() graphql.Marshaler {
+				return innerFunc(ctx)
+
+			})
 		case "upsertFollow":
 			field := field
 
@@ -25831,6 +26248,23 @@ func (ec *executionContext) _MeQuery(ctx context.Context, sel ast.SelectionSet, 
 				return innerFunc(ctx)
 
 			})
+		case "notificationSettings":
+			field := field
+
+			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._MeQuery_notificationSettings(ctx, field, obj)
+				return res
+			}
+
+			out.Concurrently(i, func() graphql.Marshaler {
+				return innerFunc(ctx)
+
+			})
 		case "followings":
 			field := field
 
@@ -25989,7 +26423,7 @@ func (ec *executionContext) _Media(ctx context.Context, sel ast.SelectionSet, ob
 
 var messageImplementors = []string{"Message"}
 
-func (ec *executionContext) _Message(ctx context.Context, sel ast.SelectionSet, obj *push.Message) graphql.Marshaler {
+func (ec *executionContext) _Message(ctx context.Context, sel ast.SelectionSet, obj *push1.Message) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, messageImplementors)
 	out := graphql.NewFieldSet(fields)
 	var invalids uint32
@@ -27647,13 +28081,13 @@ func (ec *executionContext) marshalNMedia2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgo�
 	return ret
 }
 
-func (ec *executionContext) unmarshalNMessagePriority2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋsystemᚋpushᚐMessagePriority(ctx context.Context, v interface{}) (push.MessagePriority, error) {
+func (ec *executionContext) unmarshalNMessagePriority2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋsystemᚋpushᚐMessagePriority(ctx context.Context, v interface{}) (push1.MessagePriority, error) {
 	tmp, err := graphql.UnmarshalString(v)
-	res := push.MessagePriority(tmp)
+	res := push1.MessagePriority(tmp)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNMessagePriority2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋsystemᚋpushᚐMessagePriority(ctx context.Context, sel ast.SelectionSet, v push.MessagePriority) graphql.Marshaler {
+func (ec *executionContext) marshalNMessagePriority2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋsystemᚋpushᚐMessagePriority(ctx context.Context, sel ast.SelectionSet, v push1.MessagePriority) graphql.Marshaler {
 	res := graphql.MarshalString(string(v))
 	if res == graphql.Null {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -27699,6 +28133,11 @@ func (ec *executionContext) marshalNNode2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgo�
 	wg.Wait()
 
 	return ret
+}
+
+func (ec *executionContext) unmarshalNNotificationSettingsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋpushᚐNotificationSettings(ctx context.Context, v interface{}) (push.NotificationSettings, error) {
+	res, err := ec.unmarshalInputNotificationSettingsInput(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
 }
 
 func (ec *executionContext) unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx context.Context, v interface{}) (entgql.OrderDirection, error) {
@@ -29626,7 +30065,7 @@ func (ec *executionContext) marshalOMedia2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgo�
 	return ret
 }
 
-func (ec *executionContext) marshalOMessage2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋsystemᚋpushᚐMessage(ctx context.Context, sel ast.SelectionSet, v *push.Message) graphql.Marshaler {
+func (ec *executionContext) marshalOMessage2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋsystemᚋpushᚐMessage(ctx context.Context, sel ast.SelectionSet, v *push1.Message) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
@@ -29737,6 +30176,47 @@ func (ec *executionContext) marshalOUser2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgo�
 	return ec._User(ctx, sel, v)
 }
 
+func (ec *executionContext) marshalOUserNotificationSetting2ᚕᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserNotificationSetting(ctx context.Context, sel ast.SelectionSet, v []*ent.UserNotificationSetting) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	ret := make(graphql.Array, len(v))
+	var wg sync.WaitGroup
+	isLen1 := len(v) == 1
+	if !isLen1 {
+		wg.Add(len(v))
+	}
+	for i := range v {
+		i := i
+		fc := &graphql.FieldContext{
+			Index:  &i,
+			Result: &v[i],
+		}
+		ctx := graphql.WithFieldContext(ctx, fc)
+		f := func(i int) {
+			defer func() {
+				if r := recover(); r != nil {
+					ec.Error(ctx, ec.Recover(ctx, r))
+					ret = nil
+				}
+			}()
+			if !isLen1 {
+				defer wg.Done()
+			}
+			ret[i] = ec.marshalOUserNotificationSetting2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserNotificationSetting(ctx, sel, v[i])
+		}
+		if isLen1 {
+			f(i)
+		} else {
+			go f(i)
+		}
+
+	}
+	wg.Wait()
+
+	return ret
+}
+
 func (ec *executionContext) marshalOUserNotificationSetting2ᚕᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserNotificationSettingᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.UserNotificationSetting) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
@@ -29782,6 +30262,13 @@ func (ec *executionContext) marshalOUserNotificationSetting2ᚕᚖgithubᚗcom�
 	}
 
 	return ret
+}
+
+func (ec *executionContext) marshalOUserNotificationSetting2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUserNotificationSetting(ctx context.Context, sel ast.SelectionSet, v *ent.UserNotificationSetting) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._UserNotificationSetting(ctx, sel, v)
 }
 
 func (ec *executionContext) marshalO__EnumValue2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐEnumValueᚄ(ctx context.Context, sel ast.SelectionSet, v []introspection.EnumValue) graphql.Marshaler {

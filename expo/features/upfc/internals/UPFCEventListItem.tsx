@@ -53,6 +53,8 @@ export default function UPFCEventListItem({ name, venue, openAt, startAt, iconNa
 
 const styles = StyleSheet.create({
   listItem: {
+    paddingTop: 0,
+    paddingBottom: 0,
     paddingLeft: Spacing.XSmall,
     paddingRight: Spacing.XSmall
   },

@@ -1,3 +1,4 @@
+import { Spacing } from '@hpapp/features/common/constants';
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 
@@ -23,7 +24,7 @@ export default function ListItem({
   ...rest
 }: ListItemProps) {
   const content = (
-    <View style={[containerStyle, styles.container]}>
+    <View style={[styles.container, containerStyle]}>
       {leftContent && <View style={styles.left}>{leftContent}</View>}
       <View style={styles.center}>{children}</View>
       {rightContent && <View style={styles.right}>{rightContent}</View>}
@@ -38,7 +39,11 @@ export default function ListItem({
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    paddingLeft: Spacing.Small,
+    paddingRight: Spacing.Small,
+    paddingTop: Spacing.Small,
+    paddingBottom: Spacing.Small
   },
   left: {
     justifyContent: 'center',
@@ -46,6 +51,7 @@ const styles = StyleSheet.create({
     minWidth: 0
   },
   center: {
+    justifyContent: 'center',
     flexGrow: 1,
     flex: 1,
     minWidth: 0

@@ -1,32 +1,38 @@
 import AccountScreen from '@hpapp/features/account/AccountScreen';
-import { useThemeColor } from '@hpapp/features/app/theme';
-import { Text } from '@hpapp/features/common';
-import { NavigationListItem } from '@hpapp/features/common/list';
+import { ListItemSectionHeader, NavigationListItem } from '@hpapp/features/common/list';
 import ContentScreen from '@hpapp/features/content/ContentScreen';
 import DevtoolScreen from '@hpapp/features/devtool/DevtoolScreen';
 import HPSortScreen from '@hpapp/features/hpsort/HPSortScreen';
+import PushNotificationSettingsScreen from '@hpapp/features/push/PushNotiicationSettingsScreen';
 import ThemeScreen from '@hpapp/features/theme/ThemeScreen';
 import UPFCHistoryScreen from '@hpapp/features/upfc/UPFCHistoryScreen';
 import UPFCSettingsScreen from '@hpapp/features/upfc/UPFCSettingsScreen';
 import { t } from '@hpapp/system/i18n';
-import { Divider, ListItem } from '@rneui/themed';
+import { Divider } from '@rneui/themed';
 import { ScrollView } from 'react-native';
 
 import HomeTabSettingsLogoutListItem from './HomeTabMenuLogoutListItem';
 import HomeTabSettingsVersionSignature from './HomeTabMenuVersionSignature';
 
-export default function HomeTabSettings() {
-  const [sectionColor, sectionColorContrast] = useThemeColor('disabled');
-
+export default function HomeTabMenu() {
   return (
     <ScrollView>
       <NavigationListItem screen={HPSortScreen}>{t('Sort')}</NavigationListItem>
+      <Divider />
       <NavigationListItem screen={UPFCHistoryScreen}>{t('Event History')}</NavigationListItem>
-      <ListItem containerStyle={{ backgroundColor: sectionColor }}>
-        <ListItem.Title>
-          <Text style={{ color: sectionColorContrast, fontWeight: 'bold' }}>{t('Policies')}</Text>
-        </ListItem.Title>
-      </ListItem>
+      <Divider />
+      <ListItemSectionHeader label={t('Settings')} />
+      <NavigationListItem screen={ThemeScreen}>{t('Theme Settings')}</NavigationListItem>
+      <Divider />
+      <NavigationListItem screen={UPFCSettingsScreen}>{t('FC Settings')}</NavigationListItem>
+      <Divider />
+      <NavigationListItem screen={PushNotificationSettingsScreen}>{t('Push Notification Settings')}</NavigationListItem>
+      <Divider />
+      <NavigationListItem screen={AccountScreen}>{t('Account')}</NavigationListItem>
+      <Divider />
+      <NavigationListItem screen={DevtoolScreen}>{t('Developer Settings')}</NavigationListItem>
+      <Divider />
+      <ListItemSectionHeader label={t('Policies')} />
       <NavigationListItem
         screen={ContentScreen}
         params={{
@@ -36,6 +42,7 @@ export default function HomeTabSettings() {
       >
         {t('Terms of Service')}
       </NavigationListItem>
+      <Divider />
       <NavigationListItem
         screen={ContentScreen}
         params={{
@@ -45,6 +52,7 @@ export default function HomeTabSettings() {
       >
         {t('Privacy Policy')}
       </NavigationListItem>
+      <Divider />
       <NavigationListItem
         screen={ContentScreen}
         params={{
@@ -54,24 +62,8 @@ export default function HomeTabSettings() {
       >
         {t('FC Data Policy')}
       </NavigationListItem>
-      <ListItem containerStyle={{ backgroundColor: sectionColor }}>
-        <ListItem.Title>
-          <Text style={{ color: sectionColorContrast, fontWeight: 'bold' }}>{t('Settings')}</Text>
-        </ListItem.Title>
-      </ListItem>
-      <NavigationListItem screen={ThemeScreen}>{t('Theme Settings')}</NavigationListItem>
-      <Divider />
-      <NavigationListItem screen={UPFCSettingsScreen}>{t('FC Settings')}</NavigationListItem>
-      <Divider />
-      <NavigationListItem screen={AccountScreen}>{t('Account')}</NavigationListItem>
-      <Divider />
-      <NavigationListItem screen={DevtoolScreen}>{t('Developer Settings')}</NavigationListItem>
-      <Divider />
-      <ListItem containerStyle={{ backgroundColor: sectionColor }}>
-        <Text style={{ color: sectionColorContrast, fontWeight: 'bold' }}>{t('Other')}</Text>
-      </ListItem>
+      <ListItemSectionHeader label={t('Other')} />
       <HomeTabSettingsLogoutListItem />
-      <ListItem containerStyle={{ backgroundColor: sectionColor }} />
       <Divider />
       <HomeTabSettingsVersionSignature />
     </ScrollView>

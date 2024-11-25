@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import useIsMounted from './useIsMounted';
 
-type AsyncState<T> = {
+export type AsyncState<T> = {
   data?: T;
   error?: Error;
   loading: boolean;

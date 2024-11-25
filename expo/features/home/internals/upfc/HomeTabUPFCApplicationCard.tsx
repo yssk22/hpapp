@@ -10,38 +10,6 @@ import { Button, Icon } from '@rneui/themed';
 import { useMemo } from 'react';
 import { View, StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
-  card: {
-    margin: Spacing.XSmall
-  },
-  listItem: {
-    paddingTop: Spacing.XXSmall,
-    paddingBottom: Spacing.XSmall,
-    paddingLeft: Spacing.XXSmall,
-    paddingRight: Spacing.XSmall
-  },
-  listItemCenter: {
-    justifyContent: 'space-around',
-    paddingLeft: Spacing.Small,
-    paddingRight: Spacing.Small,
-    flexGrow: 1
-  },
-  listItemCenterText: {
-    fontSize: FontSize.Small
-  },
-  footer: {
-    flexGrow: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
-    marginTop: Spacing.Small,
-    paddingRight: Spacing.Small,
-    paddingBottom: Spacing.Small
-  },
-  footerButtonIcon: {
-    marginLeft: Spacing.Small
-  }
-});
-
 export type UPFCApplicationCardProps = {
   event: UPFCEventApplicationTickets;
 };
@@ -108,3 +76,34 @@ export default function UPFCApplicationCard({ event }: UPFCApplicationCardProps)
     </Card>
   );
 }
+const styles = StyleSheet.create({
+  card: {
+    margin: Spacing.XSmall
+  },
+  listItem: {
+    paddingTop: Spacing.XXSmall,
+    paddingBottom: Spacing.XXSmall,
+    paddingLeft: 0,
+    paddingRight: 0
+  },
+  listItemCenter: {
+    justifyContent: 'space-around',
+    paddingLeft: Spacing.Small,
+    paddingRight: Spacing.Small,
+    flexGrow: 1
+  },
+  listItemCenterText: {
+    fontSize: FontSize.Small
+  },
+  footer: {
+    flexGrow: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    marginTop: Spacing.Small,
+    paddingRight: Spacing.Small,
+    paddingBottom: Spacing.Small
+  },
+  footerButtonIcon: {
+    marginLeft: Spacing.Small
+  }
+});
