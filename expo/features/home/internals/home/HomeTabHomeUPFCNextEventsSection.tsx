@@ -90,6 +90,8 @@ export default class HomeTabHomeUPFCNextEventsSection implements SectionListRend
 
 const styles = StyleSheet.create({
   listItem: {
+    paddingTop: 0,
+    paddingBottom: 0,
     paddingLeft: Spacing.XSmall,
     paddingRight: Spacing.XSmall
   },

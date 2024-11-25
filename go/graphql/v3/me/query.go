@@ -19,6 +19,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/predicate"
 	"github.com/yssk22/hpapp/go/service/entutil"
 	"github.com/yssk22/hpapp/go/service/helloproject/user"
+	"github.com/yssk22/hpapp/go/service/push"
 	"github.com/yssk22/hpapp/go/service/schema/enums"
 )
 
@@ -64,6 +65,10 @@ func (h *MeQuery) ClientIsVerified(ctx context.Context) *bool {
 
 func (h *MeQuery) Authentications(ctx context.Context) ([]*ent.Auth, error) {
 	return appuser.ListAuthentication(ctx, appuser.CurrentEntUserID(ctx))
+}
+
+func (h *MeQuery) NotificationSettings(ctx context.Context, slug string) ([]*ent.UserNotificationSetting, error) {
+	return push.GetNotificationSettings(ctx, appuser.CurrentEntUserID(ctx), slug)
 }
 
 func (h *MeQuery) Followings(ctx context.Context) ([]*ent.HPFollow, error) {

@@ -8,6 +8,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/helloproject/feed"
 	"github.com/yssk22/hpapp/go/service/helloproject/upfc"
 	"github.com/yssk22/hpapp/go/service/helloproject/user"
+	"github.com/yssk22/hpapp/go/service/push"
 )
 
 type MeMutation struct{}
@@ -31,6 +32,14 @@ func (h *MeMutation) RemoveAuthentication(ctx context.Context) (*ent.Auth, error
 func (h *MeMutation) Delete(ctx context.Context) (bool, error) {
 	err := appuser.DeleteUser(ctx, appuser.CurrentUser(ctx).ID())
 	return err == nil, err
+}
+
+func (h *MeMutation) UpsertNotificationToken(ctx context.Context, token string, params push.NotificationSettings) (*ent.UserNotificationSetting, error) {
+	return push.UpsertNotificationSettings(ctx, appuser.EntID(appuser.CurrentUser(ctx)), token, params)
+}
+
+func (h *MeMutation) RemoveNotificationToken(ctx context.Context, tokenId int) (*ent.UserNotificationSetting, error) {
+	return push.RemoveNotificationSettings(ctx, appuser.EntID(appuser.CurrentUser(ctx)), tokenId)
 }
 
 func (h *MeMutation) UpsertFollow(ctx context.Context, params user.HPFollowUpsertParams) (*ent.HPFollow, error) {

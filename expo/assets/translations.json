@@ -294,5 +294,26 @@
   },
   "Retry": {
     "ja": "やり直す"
+  },
+  "Push Notification Settings": {
+    "ja": "プッシュ通知設定"
+  },
+  "Push Notification is disabled by settings.": {
+    "ja": "プッシュ通知は設定で無効になっています。"
+  },
+  "Tap to configure it.": {
+    "ja": "設定するにはタップしてください。"
+  },
+  "This Device": {
+    "ja": "このデバイス"
+  },
+  "New Posts": {
+    "ja": "新着投稿"
+  },
+  "Payment Start": {
+    "ja": "入金開始"
+  },
+  "Other Devices": {
+    "ja": "他のデバイス"
   }
 }

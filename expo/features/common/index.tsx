@@ -12,7 +12,7 @@ import RadioButtonGroup from './internals/RadioButtonGroup';
 import Text from './internals/Text';
 import WithSafeArea from './internals/WithSafeArea';
 import useAssetContent from './internals/useAssetContent';
-import useAsync from './internals/useAsync';
+import useAsync, { AsyncState } from './internals/useAsync';
 import useErrorMessage from './internals/useErrorMessage';
 import useIsMounted from './internals/useIsMounted';
 import useMutationPromise from './internals/useMutationPromise';
@@ -39,6 +39,7 @@ export {
   ReloadableAysncResult,
   useAssetContent,
   useAsync,
+  AsyncState,
   useIsMounted,
   useURICache,
   WithSafeArea

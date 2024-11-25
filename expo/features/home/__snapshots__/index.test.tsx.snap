@@ -8997,12 +8997,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   style={
                                     [
                                       {
-                                        "height": 100,
-                                        "padding": 12,
-                                      },
-                                      {
                                         "flexDirection": "row",
                                         "justifyContent": "space-between",
+                                        "paddingBottom": 12,
+                                        "paddingLeft": 12,
+                                        "paddingRight": 12,
+                                        "paddingTop": 12,
+                                      },
+                                      {
+                                        "height": 100,
+                                        "padding": 12,
                                       },
                                     ]
                                   }
@@ -9012,6 +9016,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
+                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -9294,12 +9299,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   style={
                                     [
                                       {
-                                        "height": 100,
-                                        "padding": 12,
-                                      },
-                                      {
                                         "flexDirection": "row",
                                         "justifyContent": "space-between",
+                                        "paddingBottom": 12,
+                                        "paddingLeft": 12,
+                                        "paddingRight": 12,
+                                        "paddingTop": 12,
+                                      },
+                                      {
+                                        "height": 100,
+                                        "padding": 12,
                                       },
                                     ]
                                   }
@@ -9309,6 +9318,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
+                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -9596,12 +9606,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   style={
                                     [
                                       {
-                                        "height": 100,
-                                        "padding": 12,
-                                      },
-                                      {
                                         "flexDirection": "row",
                                         "justifyContent": "space-between",
+                                        "paddingBottom": 12,
+                                        "paddingLeft": 12,
+                                        "paddingRight": 12,
+                                        "paddingTop": 12,
+                                      },
+                                      {
+                                        "height": 100,
+                                        "padding": 12,
                                       },
                                     ]
                                   }
@@ -9611,6 +9625,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
+                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -9893,12 +9908,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   style={
                                     [
                                       {
-                                        "height": 100,
-                                        "padding": 12,
-                                      },
-                                      {
                                         "flexDirection": "row",
                                         "justifyContent": "space-between",
+                                        "paddingBottom": 12,
+                                        "paddingLeft": 12,
+                                        "paddingRight": 12,
+                                        "paddingTop": 12,
+                                      },
+                                      {
+                                        "height": 100,
+                                        "padding": 12,
                                       },
                                     ]
                                   }
@@ -9908,6 +9927,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
+                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -10190,12 +10210,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   style={
                                     [
                                       {
-                                        "height": 100,
-                                        "padding": 12,
-                                      },
-                                      {
                                         "flexDirection": "row",
                                         "justifyContent": "space-between",
+                                        "paddingBottom": 12,
+                                        "paddingLeft": 12,
+                                        "paddingRight": 12,
+                                        "paddingTop": 12,
+                                      },
+                                      {
+                                        "height": 100,
+                                        "padding": 12,
                                       },
                                     ]
                                   }
@@ -10205,6 +10229,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
+                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -10492,12 +10517,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   style={
                                     [
                                       {
-                                        "height": 100,
-                                        "padding": 12,
-                                      },
-                                      {
                                         "flexDirection": "row",
                                         "justifyContent": "space-between",
+                                        "paddingBottom": 12,
+                                        "paddingLeft": 12,
+                                        "paddingRight": 12,
+                                        "paddingTop": 12,
+                                      },
+                                      {
+                                        "height": 100,
+                                        "padding": 12,
                                       },
                                     ]
                                   }
@@ -10507,6 +10536,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
+                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -10789,12 +10819,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   style={
                                     [
                                       {
-                                        "height": 100,
-                                        "padding": 12,
-                                      },
-                                      {
                                         "flexDirection": "row",
                                         "justifyContent": "space-between",
+                                        "paddingBottom": 12,
+                                        "paddingLeft": 12,
+                                        "paddingRight": 12,
+                                        "paddingTop": 12,
+                                      },
+                                      {
+                                        "height": 100,
+                                        "padding": 12,
                                       },
                                     ]
                                   }
@@ -10804,6 +10838,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
+                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -11086,12 +11121,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   style={
                                     [
                                       {
-                                        "height": 100,
-                                        "padding": 12,
-                                      },
-                                      {
                                         "flexDirection": "row",
                                         "justifyContent": "space-between",
+                                        "paddingBottom": 12,
+                                        "paddingLeft": 12,
+                                        "paddingRight": 12,
+                                        "paddingTop": 12,
+                                      },
+                                      {
+                                        "height": 100,
+                                        "padding": 12,
                                       },
                                     ]
                                   }
@@ -11101,6 +11140,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
+                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -11388,12 +11428,16 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                   style={
                                     [
                                       {
-                                        "height": 100,
-                                        "padding": 12,
-                                      },
-                                      {
                                         "flexDirection": "row",
                                         "justifyContent": "space-between",
+                                        "paddingBottom": 12,
+                                        "paddingLeft": 12,
+                                        "paddingRight": 12,
+                                        "paddingTop": 12,
+                                      },
+                                      {
+                                        "height": 100,
+                                        "padding": 12,
                                       },
                                     ]
                                   }
@@ -11403,6 +11447,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
+                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -11652,11 +11697,15 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                 style={
                                   [
                                     {
-                                      "padding": 12,
-                                    },
-                                    {
                                       "flexDirection": "row",
                                       "justifyContent": "space-between",
+                                      "paddingBottom": 12,
+                                      "paddingLeft": 12,
+                                      "paddingRight": 12,
+                                      "paddingTop": 12,
+                                    },
+                                    {
+                                      "padding": 12,
                                     },
                                   ]
                                 }
@@ -11666,6 +11715,7 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     {
                                       "flex": 1,
                                       "flexGrow": 1,
+                                      "justifyContent": "center",
                                       "minWidth": 0,
                                     }
                                   }

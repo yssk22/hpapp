@@ -610,14 +610,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -695,6 +699,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -801,14 +806,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -886,6 +895,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -1067,14 +1077,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -1152,6 +1166,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -1258,14 +1273,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -1343,6 +1362,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -1524,14 +1544,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -1609,6 +1633,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -1715,14 +1740,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -1800,6 +1829,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -1981,14 +2011,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -2066,6 +2100,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -2172,14 +2207,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -2257,6 +2296,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -2542,14 +2582,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -2627,6 +2671,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -2733,14 +2778,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -2818,6 +2867,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -3103,14 +3153,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -3188,6 +3242,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -3294,14 +3349,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -3379,6 +3438,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -3664,14 +3724,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -3749,6 +3813,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -3855,14 +3920,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -3940,6 +4009,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -4225,14 +4295,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -4310,6 +4384,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -4416,14 +4491,18 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                             style={
                               [
                                 {
-                                  "paddingBottom": 8,
-                                  "paddingLeft": 4,
-                                  "paddingRight": 8,
-                                  "paddingTop": 4,
-                                },
-                                {
                                   "flexDirection": "row",
                                   "justifyContent": "space-between",
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "paddingTop": 12,
+                                },
+                                {
+                                  "paddingBottom": 4,
+                                  "paddingLeft": 0,
+                                  "paddingRight": 0,
+                                  "paddingTop": 4,
                                 },
                               ]
                             }
@@ -4501,6 +4580,7 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
+                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }

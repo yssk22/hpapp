@@ -43,3 +43,10 @@ export function shuffle<T>(v: T[]) {
   }
   return v;
 }
+
+export function first<T>(v: T[]) {
+  if (v.length === 0) {
+    return null;
+  }
+  return v[0];
+}

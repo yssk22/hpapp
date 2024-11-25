@@ -15,11 +15,12 @@ import S7 from '@hpapp/features/hpsort/HPSortNewScreen';
 import S8 from '@hpapp/features/hpsort/HPSortResultScreen';
 import S9 from '@hpapp/features/hpsort/HPSortScreen';
 import S10 from '@hpapp/features/onboarding/OnboardingScreen';
-import S11 from '@hpapp/features/theme/ThemeColorSelectorScreen';
-import S12 from '@hpapp/features/theme/ThemeScreen';
-import S13 from '@hpapp/features/upfc/UPFCHistoryScreen';
-import S14 from '@hpapp/features/upfc/UPFCSettingsScreen';
-import S15 from '@hpapp/features/upfc/UPFCWebViewScreen';
+import S11 from '@hpapp/features/push/PushNotiicationSettingsScreen';
+import S12 from '@hpapp/features/theme/ThemeColorSelectorScreen';
+import S13 from '@hpapp/features/theme/ThemeScreen';
+import S14 from '@hpapp/features/upfc/UPFCHistoryScreen';
+import S15 from '@hpapp/features/upfc/UPFCSettingsScreen';
+import S16 from '@hpapp/features/upfc/UPFCWebViewScreen';
 
 const Screens = [
   S0,
@@ -38,5 +39,6 @@ const Screens = [
   S13,
   S14,
   S15,
+  S16,
 ];
 export default Screens;
