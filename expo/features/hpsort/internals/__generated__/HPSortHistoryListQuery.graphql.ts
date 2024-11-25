@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<a2b567d764601f440123a5cabb82a895>>
+ * @generated SignedSource<<6a44a2ec53e651367a4b20d8f1f125f2>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -169,6 +169,20 @@ return {
                                 "kind": "ScalarField",
                                 "name": "memberKey",
                                 "storageKey": null
+                              },
+                              {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "point",
+                                "storageKey": null
+                              },
+                              {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "rank",
+                                "storageKey": null
                               }
                             ],
                             "storageKey": null
@@ -240,12 +254,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "b0fd667e1cd10ca97aef78c464855b6a",
+    "cacheID": "8b29297ab34809f16a693fa4af041a64",
     "id": null,
     "metadata": {},
     "name": "HPSortHistoryListQuery",
     "operationKind": "query",
-    "text": "query HPSortHistoryListQuery(\n  $first: Int\n  $after: Cursor\n) {\n  me {\n    ...HPSortHistoryListQuery_me_query_sortHistories\n    id\n  }\n}\n\nfragment HPSortHistoryListQuery_me_query_sortHistories on MeQuery {\n  sortHistories(first: $first, after: $after) {\n    edges {\n      node {\n        id\n        createdAt\n        sortResult {\n          records {\n            artistId\n            memberId\n            memberKey\n          }\n        }\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  id\n}\n"
+    "text": "query HPSortHistoryListQuery(\n  $first: Int\n  $after: Cursor\n) {\n  me {\n    ...HPSortHistoryListQuery_me_query_sortHistories\n    id\n  }\n}\n\nfragment HPSortHistoryListQuery_me_query_sortHistories on MeQuery {\n  sortHistories(first: $first, after: $after) {\n    edges {\n      node {\n        id\n        createdAt\n        sortResult {\n          records {\n            artistId\n            memberId\n            memberKey\n            point\n            rank\n          }\n        }\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  id\n}\n"
   }
 };
 })();

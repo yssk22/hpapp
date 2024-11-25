@@ -1,4 +1,5 @@
 import { ListItemLoadMore } from '@hpapp/features/common/list';
+import { sortRecordsToMemberRank } from '@hpapp/features/hpsort/helper';
 import { FlatList } from 'react-native';
 import { graphql, useLazyLoadQuery, usePaginationFragment } from 'react-relay';
 
@@ -27,6 +28,8 @@ const HPSortHistoryListQueryFragmentGraphQL = graphql`
               artistId
               memberId
               memberKey
+              point
+              rank
             }
           }
         }
@@ -53,23 +56,17 @@ export default function HPSortHistoryList() {
         if (index === histories.data.sortHistories!.edges!.length - 1) {
           return (
             <HPSortHistoryListItem
-              current={{
-                memberIds: item!.node!.sortResult.records!.map((r) => r.memberId.toString())
-              }}
+              current={sortRecordsToMemberRank(item!.node!.sortResult.records!)}
               createdAt={item!.node!.createdAt!}
             />
           );
         }
         return (
           <HPSortHistoryListItem
-            current={{
-              memberIds: item!.node!.sortResult.records!.map((r) => r.memberId.toString())
-            }}
-            previous={{
-              memberIds: (histories.data.sortHistories!.edges![index + 1]!.node!.sortResult!.records ?? []).map((r) =>
-                r.memberId.toString()
-              )
-            }}
+            current={sortRecordsToMemberRank(item!.node!.sortResult.records!)}
+            previous={sortRecordsToMemberRank(
+              histories.data.sortHistories!.edges![index + 1]!.node!.sortResult!.records ?? []
+            )}
             createdAt={item!.node!.createdAt!}
           />
         );

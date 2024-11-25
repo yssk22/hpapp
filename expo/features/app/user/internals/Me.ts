@@ -1,4 +1,4 @@
-import { HPSortResult } from '@hpapp/features/hpsort';
+import { compareMemberRankDiff, HPSortResultMemberRank, sortRecordsToMemberRank } from '@hpapp/features/hpsort/helper';
 import { useMemo } from 'react';
 import { useFragment, graphql } from 'react-relay';
 import { FragmentRefs } from 'relay-runtime';
@@ -11,7 +11,7 @@ const meFragmentGraphQL = graphql`
     username
     clientId
     clientName
-    sortHistories(first: 1) {
+    sortHistories(first: 2) {
       edges {
         node {
           id
@@ -21,6 +21,8 @@ const meFragmentGraphQL = graphql`
               artistId
               memberId
               memberKey
+              point
+              rank
             }
           }
         }
@@ -43,7 +45,7 @@ export default class Me {
   public readonly clientId: string;
   public readonly clientName: string;
 
-  public readonly sortResult: HPSortResult | null;
+  public readonly latestSortReult: HPSortResultMemberRank[] | null;
 
   constructor(me: MeFragment$data) {
     this.id = me.id;
@@ -53,16 +55,13 @@ export default class Me {
 
     const sorts = me?.sortHistories?.edges;
     if (sorts === null || sorts === undefined || sorts.length === 0) {
-      this.sortResult = null;
+      this.latestSortReult = null;
     } else {
-      this.sortResult = sorts[0]!
-        .node!.sortResult!.records!.filter((r) => r !== null)
-        .map((r) => {
-          return {
-            memberId: r.memberId.toString(),
-            previousRank: -1
-          };
-        });
+      this.latestSortReult = sortRecordsToMemberRank(sorts[0]!.node!.sortResult!.records!);
+      if (sorts.length === 2) {
+        const previous = sortRecordsToMemberRank(sorts[1]!.node!.sortResult!.records!);
+        this.latestSortReult = compareMemberRankDiff(this.latestSortReult, previous);
+      }
     }
   }
 }

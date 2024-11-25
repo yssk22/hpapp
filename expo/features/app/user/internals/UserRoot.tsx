@@ -6,7 +6,7 @@ import { init as initURICache } from '@hpapp/system/uricache';
 import { useNavigationContainerRef } from '@react-navigation/native';
 
 import UserError from './UserError';
-import Provider from './UserServiceProvider';
+import UserServiceProvider from './UserServiceProvider';
 import UserWrapper from './UserWrapper';
 
 const Stack = createStackNavigator({
@@ -23,7 +23,7 @@ export default function UserRoot({ screens = Screens }: UserRootProps) {
   const navigation = useNavigationContainerRef<ReactNavigation.RootParamList>();
   return (
     <Initializer initializers={initializers}>
-      <Provider errorFallback={UserError} loadingFallback={<Loading testID="UserRoot.Loading" />}>
+      <UserServiceProvider errorFallback={UserError} loadingFallback={<Loading testID="UserRoot.Loading" />}>
         <Stack
           ref={navigation}
           screens={screens}
@@ -36,7 +36,7 @@ export default function UserRoot({ screens = Screens }: UserRootProps) {
             });
           }}
         />
-      </Provider>
+      </UserServiceProvider>
     </Initializer>
   );
 }

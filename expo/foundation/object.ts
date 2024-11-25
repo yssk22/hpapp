@@ -35,3 +35,11 @@ export function filterNulls<T>(v: (T | null | undefined)[]): T[] {
     return vv !== null && vv !== undefined;
   });
 }
+
+export function shuffle<T>(v: T[]) {
+  for (let i = v.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [v[i], v[j]] = [v[j], v[i]];
+  }
+  return v;
+}

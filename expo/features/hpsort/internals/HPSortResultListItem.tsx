@@ -23,7 +23,7 @@ export default function HPSortResultListItem({
     <>
       <View style={styles.container}>
         <View style={styles.rank}>
-          <Text style={styles.rankText}>{rank + 1}位</Text>
+          <Text style={styles.rankText}>{rank}位</Text>
         </View>
         <View style={styles.rankDiff}>
           <HPSortResultRankDiffIcon diff={rankDiff} />

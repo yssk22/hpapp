@@ -53,6 +53,9 @@ describe('HPSortClassicMergeSort', () => {
     const values = result.map((r) => r.value);
     const sorted = [...dataset].sort((a, b) => b - a);
     expect(values).toEqual(sorted);
+
+    const ranks = result.map((r) => r.rank);
+    expect(ranks).toEqual([1, 2, 2, 4, 5]);
   });
 
   it('random', () => {
