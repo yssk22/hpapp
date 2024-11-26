@@ -4,30 +4,10 @@ import { Spacing } from '@hpapp/features/common/constants';
 import { ListItemSwitch } from '@hpapp/features/common/list';
 import { t } from '@hpapp/system/i18n';
 import { Divider, Icon } from '@rneui/themed';
-import Constants from 'expo-constants';
-import * as Device from 'expo-device';
-import { useEffect } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
-import { graphql, useMutation } from 'react-relay';
 
 import { PushNotificationSettingsContainerQuery$data } from './__generated__/PushNotificationSettingsContainerQuery.graphql';
-import { PushNotificationSettingsFormMutation } from './__generated__/PushNotificationSettingsFormMutation.graphql';
-
-const PushNotificationSettingsFormMutationGraphQL = graphql`
-  mutation PushNotificationSettingsFormMutation($token: String!, $params: NotificationSettingsInput!) {
-    me {
-      upsertNotificationToken(token: $token, params: $params) {
-        id
-        token
-        slug
-        name
-        enableNewPosts
-        enablePaymentStart
-        enablePaymentDue
-      }
-    }
-  }
-`;
+import usePushNotificationTokenUpdator from './usePushNotificationTokenUpdator';
 
 type Settings = NonNullable<PushNotificationSettingsContainerQuery$data['me']['notificationSettings']>[number];
 
@@ -37,30 +17,9 @@ export type PushNotificationSettingsFormProps = {
 };
 
 export default function PushNotificationSettingsForm({ settings, token }: PushNotificationSettingsFormProps) {
-  const [upsertNotificationToken, isUpserting] = useMutation<PushNotificationSettingsFormMutation>(
-    PushNotificationSettingsFormMutationGraphQL
-  );
+  const [upsertNotificationToken] = usePushNotificationTokenUpdator();
   const [color] = useThemeColor('secondary');
   const [disabledColor] = useThemeColor('disabled');
-  useEffect(() => {
-    if ((settings == null || settings === undefined) && token.loading === false && token.data !== null) {
-      if (!isUpserting) {
-        const deviceName = `${Device.deviceName || 'Unknown'} (${Device.modelName})/${Constants.expoConfig!.slug}`;
-        upsertNotificationToken({
-          variables: {
-            token: token.data!,
-            params: {
-              name: deviceName,
-              slug: Constants.expoConfig!.slug,
-              enableNewPosts: true,
-              enablePaymentStart: true,
-              enablePaymentDue: true
-            }
-          }
-        });
-      }
-    }
-  }, [token.data]);
 
   if (settings === null || settings === undefined) {
     if (token.error) {
@@ -84,17 +43,10 @@ export default function PushNotificationSettingsForm({ settings, token }: PushNo
         }
         value={settings.enableNewPosts}
         onValueChange={(v) => {
-          upsertNotificationToken({
-            variables: {
-              token: token.data!,
-              params: {
-                name: settings.name,
-                slug: settings.slug,
-                enableNewPosts: v,
-                enablePaymentStart: settings.enablePaymentStart,
-                enablePaymentDue: settings.enablePaymentDue
-              }
-            }
+          upsertNotificationToken(token.data, {
+            enableNewPosts: v,
+            enablePaymentStart: settings.enablePaymentStart,
+            enablePaymentDue: settings.enablePaymentDue
           });
         }}
       />
@@ -113,17 +65,10 @@ export default function PushNotificationSettingsForm({ settings, token }: PushNo
         }
         value={settings.enablePaymentStart}
         onValueChange={(v) => {
-          upsertNotificationToken({
-            variables: {
-              token: token.data!,
-              params: {
-                name: settings.name,
-                slug: settings.slug,
-                enableNewPosts: settings.enableNewPosts,
-                enablePaymentStart: v,
-                enablePaymentDue: settings.enablePaymentDue
-              }
-            }
+          upsertNotificationToken(token.data, {
+            enableNewPosts: settings.enableNewPosts,
+            enablePaymentStart: v,
+            enablePaymentDue: settings.enablePaymentDue
           });
         }}
       />
@@ -142,17 +87,10 @@ export default function PushNotificationSettingsForm({ settings, token }: PushNo
         }
         value={settings.enablePaymentDue}
         onValueChange={(v) => {
-          upsertNotificationToken({
-            variables: {
-              token: token.data!,
-              params: {
-                name: settings.name,
-                slug: settings.slug,
-                enableNewPosts: settings.enableNewPosts,
-                enablePaymentStart: settings.enablePaymentStart,
-                enablePaymentDue: v
-              }
-            }
+          upsertNotificationToken(token.data, {
+            enableNewPosts: settings.enableNewPosts,
+            enablePaymentStart: settings.enablePaymentStart,
+            enablePaymentDue: v
           });
         }}
       />

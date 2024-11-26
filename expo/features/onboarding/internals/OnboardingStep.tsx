@@ -4,7 +4,7 @@ import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { t } from '@hpapp/system/i18n';
 import { Button } from '@rneui/themed';
 import { StyleSheet, View, ScrollView } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context/src/SafeAreaContext';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export type OnboardingStepProps = {
   title: string;

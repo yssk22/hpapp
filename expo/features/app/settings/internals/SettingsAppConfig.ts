@@ -28,7 +28,7 @@ export const SettingsAppConfigDefault: AppConfig = {
   useCustomGraphQLEndpoint: false,
   graphQLEndpoint: config.graphQLEndpoint!,
   useLocalAuth: config.useLocalAuth!,
-  useUPFCDemoScraper: true,
+  useUPFCDemoScraper: false,
   firebaseIOSClientID: config.firebaseIOSClientID,
   firebaseAndroidClientID: config.firebaseAndroidClientID
 };

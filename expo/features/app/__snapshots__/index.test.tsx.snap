@@ -44,11 +44,11 @@ exports[`app AppUpdateBanner show banner 1`] = `
             "alignItems": "center",
             "flexDirection": "column",
             "justifyContent": "center",
-            "marginBottom": 2,
             "padding": 12,
           },
           {
             "backgroundColor": "#faad14",
+            "paddingTop": 0,
           },
         ]
       }

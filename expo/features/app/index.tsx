@@ -1,5 +1,6 @@
 import { maybeDev } from '@hpapp/foundation/environment';
 import { LocalMediaManagerProvider } from '@hpapp/system/media';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import AppRelayProvider from './internals/AppRelayProvider';
 import { default as Root, AppRootProps as RootProps } from './internals/AppRoot';
@@ -10,13 +11,15 @@ export type AppRootProps = RootProps & ThemeProviderProps;
 
 export function AppRoot({ screens, ...props }: AppRootProps) {
   return (
-    <ThemeProvider {...props}>
-      <AppRelayProvider>
-        <LocalMediaManagerProvider name={maybeDev() ? 'hellofanapp-dev' : 'hellofanapp'}>
-          <AppUpdateBanner />
-          <Root screens={screens} />
-        </LocalMediaManagerProvider>
-      </AppRelayProvider>
-    </ThemeProvider>
+    <SafeAreaProvider testID="app.SafeAreaProvider">
+      <ThemeProvider {...props}>
+        <AppRelayProvider>
+          <LocalMediaManagerProvider name={maybeDev() ? 'hellofanapp-dev' : 'hellofanapp'}>
+            <AppUpdateBanner />
+            <Root screens={screens} />
+          </LocalMediaManagerProvider>
+        </AppRelayProvider>
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
