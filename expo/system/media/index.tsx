@@ -24,7 +24,7 @@ function LocalMediaManagerProvider({ name, children }: { name: string; children:
         mounted = false;
       };
     })();
-  }, [lmm, setLMM]);
+  }, [name, setLMM]);
   if (lmm === null) {
     return null;
   }

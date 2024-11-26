@@ -268,8 +268,8 @@
   "Choose the number of members one round shows.": {
     "ja": "1ラウンドで表示するメンバーの数を選択してください。"
   },
-  "You can complete sorting faster when it shows more members.": {
-    "ja": "表示するメンバーの数が多いほど、ソートを早く完了できます。"
+  "With choosing 4, it's an experiemntal sort feature, where you can complete faster but you may not sort all members.": {
+    "ja": "4を選択した場合、試用版のソート機能が使え、早くソートを完了する場合がありますが、全てのメンバーをソートできない場合があります。"
   },
   "%{num} members": {
     "ja": "%{num}人"

@@ -1,3 +1,4 @@
+import analytics from '@react-native-firebase/analytics';
 import appcheck from '@react-native-firebase/app-check';
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import { Platform } from 'react-native';
@@ -30,4 +31,8 @@ export function getCurrentUser() {
 
 export async function signInWithCredential(credential: FirebaseAuthTypes.AuthCredential) {
   return await auth().signInWithCredential(credential);
+}
+
+export async function logEvent(name: string, properties?: Record<string, any>): Promise<void> {
+  return analytics().logEvent(name, properties);
 }

@@ -63,6 +63,14 @@ jest.mock('@react-native-firebase/app-check', () => {
   });
 });
 
+jest.mock('@react-native-firebase/analytics', () => () => {
+  return {
+    logEvent: jest.fn(),
+    logLogin: jest.fn(),
+    setUserId: jest.fn()
+  };
+});
+
 jest.mock('expo-constants', () => {
   return {
     expoConfig: {

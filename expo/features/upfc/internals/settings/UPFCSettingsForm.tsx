@@ -11,6 +11,7 @@ import { t } from '@hpapp/system/i18n';
 import { Button } from '@rneui/themed';
 import { useCallback, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Toast from 'react-native-root-toast';
 
 import UPFCSettingsFormInputs from './UPFCSettingsFormInputs';
@@ -56,13 +57,14 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
         const scraper = appConfig.useUPFCDemoScraper
           ? new UPFCDemoScraper()
           : new UPFC2SiteScraper(new UPFC2HttpFetcher());
-        if (hpUsername !== '') {
+
+        if (hpUsername !== '' && hpUsername !== UPFCDemoScraper.Username) {
           const ok = await scraper.authenticate(hpUsername, hpPassword, 'helloproject');
           if (!ok) {
             throw new ErrUPFCAuthentication();
           }
         }
-        if (mlUsername !== '') {
+        if (mlUsername !== '' && mlUsername !== UPFCDemoScraper.Username) {
           const ok = await scraper.authenticate(mlUsername, mlPassword, 'm-line');
           if (!ok) {
             throw new ErrUPFCAuthentication();
@@ -93,7 +95,7 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
     })();
   }, [updateConfig, hpUsername, hpPassword, mlUsername, mlPassword, calendarId, eventPrefix]);
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView style={styles.container}>
       <UPFCSettingsFormInputs
         isSaving={isSaving}
         lastError={lastError}
@@ -118,7 +120,7 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
           {t('Save')}
         </Button>
       </View>
-    </View>
+    </KeyboardAwareScrollView>
   );
 }
 
