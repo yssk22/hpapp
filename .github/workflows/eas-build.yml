@@ -41,7 +41,7 @@ jobs:
           HPAPP_CONFIG_NAME: ${{inputs.config}}
           HPAPP_CONFIG_PLATFORM: ${{inputs.platform}}
   submit:
-    if: ${{inputs.platform}} == 'prod'
+    if: ${{inputs.config == 'prod' }}
     needs: [build]
     runs-on: ubuntu-latest
     environment:

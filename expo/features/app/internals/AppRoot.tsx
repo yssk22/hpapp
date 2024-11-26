@@ -2,7 +2,6 @@ import { useAppConfig, useCurrentUser, useUserConfig, useUserConfigUpdator } fro
 import Storybook from '@hpapp/features/app/storybook';
 import { UserRoot, UserRootProps } from '@hpapp/features/app/user';
 import { ConsentGate } from '@hpapp/features/common';
-import { usePushNotificationToken, usePushNotificationTokenUpdator } from '@hpapp/features/push';
 import { t } from '@hpapp/system/i18n';
 import { registerDevMenuItems } from 'expo-dev-menu';
 import { useEffect, useState } from 'react';
@@ -25,14 +24,6 @@ export default function AppRoot(props?: UserRootProps) {
       }
     ]);
   }, [showAppConfigModal, setShowAppConfigModal]);
-
-  const token = usePushNotificationToken();
-  const [tokenUpdator] = usePushNotificationTokenUpdator();
-  useEffect(() => {
-    if (token.data) {
-      tokenUpdator(token.data);
-    }
-  }, [token.data]);
 
   const component = appConfig.useStorybook ? <Storybook /> : currentUser ? <UserRoot {...props} /> : <AppRootGuest />;
   const userConfig = useUserConfig()!;

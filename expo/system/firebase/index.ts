@@ -1,6 +1,7 @@
 import analytics from '@react-native-firebase/analytics';
 import appcheck from '@react-native-firebase/app-check';
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
+import { useEffect } from 'react';
 import { Platform } from 'react-native';
 
 if (Platform.OS !== 'web') {
@@ -35,4 +36,30 @@ export async function signInWithCredential(credential: FirebaseAuthTypes.AuthCre
 
 export async function logEvent(name: string, properties?: Record<string, any>): Promise<void> {
   return analytics().logEvent(name, properties);
+}
+
+export async function logLogin(method: string, userId: string): Promise<void> {
+  analytics().logLogin({
+    method
+  });
+  analytics().setUserId(userId);
+}
+
+export async function logLogout(): Promise<void> {
+  analytics().setUserId(null);
+}
+
+export async function useSetUserId(userId: string | null) {
+  useEffect(() => {
+    analytics().setUserId(userId);
+  }, [userId]);
+}
+
+export async function useLogScreenView(screen: string) {
+  useEffect(() => {
+    analytics().logScreenView({
+      screen_name: screen,
+      screen_class: screen
+    });
+  }, [screen]);
 }
