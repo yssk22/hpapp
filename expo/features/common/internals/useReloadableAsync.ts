@@ -39,22 +39,34 @@ export default function useReloadableAsync<T, V>(
       setError(null);
       try {
         const data = await asyncFn(p);
+        if (mounted) {
+          setData(data);
+          if (options.cache !== undefined) {
+            const cache = new FileSystemCache(options.cache);
+            await cache.save(data);
+          }
+        }
         if (options.logEventName) {
           logging.Info(options.logEventName, 'async hook completed', {
             params: p
           });
         }
-        mounted && setData(data);
-        return data;
       } catch (e: any) {
         options.onError?.(e);
+        if (mounted) {
+          setData(null);
+          setError(e);
+          if (options.cache !== undefined) {
+            const cache = new FileSystemCache(options.cache);
+            await cache.clear();
+          }
+        }
         if (options.logEventName) {
           logging.Info(options.logEventName, 'async hook failed', {
             params: p,
-            error: e
+            error: e.toString()
           });
         }
-        setError(e);
         return null;
       } finally {
         mounted && setIsLoading(false);
@@ -65,11 +77,7 @@ export default function useReloadableAsync<T, V>(
 
   const reload = useCallback(
     async (p: T = initialParams) => {
-      const data = await loadFn(p);
-      if (options.cache !== undefined && data !== null) {
-        const cache = new FileSystemCache(options.cache);
-        await cache.save(data);
-      }
+      await loadFn(p);
     },
     [loadFn]
   );
@@ -86,7 +94,7 @@ export default function useReloadableAsync<T, V>(
       loadCache();
     }
     reload(initialParams);
-  }, [initialParams, setData, setIsLoading]);
+  }, [initialParams, reload, setData, setIsLoading, options.cache]);
   return {
     data,
     error,

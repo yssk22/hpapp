@@ -106,13 +106,6 @@ function createFeedContext(): [(props: FeedContextProviderProps) => React.JSX.El
     const reload = () => {
       setFetchCount(fetchCount + 1);
     };
-    if (data === null) {
-      return (
-        <FeedContextRenderer data={null} isLoading={isLoading} reload={reload}>
-          {children}
-        </FeedContextRenderer>
-      );
-    }
     return (
       <FeedContextPaginationRenderer fragment={data} isLoading={isLoading} reload={reload}>
         {children}
@@ -128,11 +121,11 @@ function createFeedContext(): [(props: FeedContextProviderProps) => React.JSX.El
     children: React.ReactElement;
     isLoading: boolean;
     reload: () => void;
-    fragment: FeedContextQuery$data;
+    fragment: FeedContextQuery$data | null;
   }) {
     const data = usePaginationFragment<FeedContextQueryFragmentQuery, FeedContextQuery_helloproject_query_feed$key>(
       FeedContextQueryFragmentGraphQL,
-      fragment.helloproject!
+      fragment?.helloproject ?? null
     );
     return (
       <FeedContextRenderer data={data} isLoading={isLoading} reload={reload}>
@@ -153,12 +146,12 @@ function createFeedContext(): [(props: FeedContextProviderProps) => React.JSX.El
     data: usePaginationFragmentHookType<
       FeedContextQueryFragmentQuery,
       FeedContextQuery_helloproject_query_feed$key,
-      FeedContextQuery_helloproject_query_feed$data
-    > | null;
+      FeedContextQuery_helloproject_query_feed$data | undefined | null
+    >;
   }) {
     const ctxValue = useMemo(() => {
       return {
-        data: data?.data.feed?.edges?.map((e) => e!.node!) ?? null,
+        data: data?.data?.feed?.edges?.map((e) => e!.node!) ?? null,
         isLoading,
         hasNext: data?.hasNext ?? false,
         reload,
