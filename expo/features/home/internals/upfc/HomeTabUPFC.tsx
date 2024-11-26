@@ -1,11 +1,11 @@
 import { View, StyleSheet } from 'react-native';
 
-import UPFCCurentApplicationList from './HomeTabUPFCCurrentApplicationList';
+import HomeTabUPFCCurrentApplicationList from './HomeTabUPFCCurrentApplicationList';
 
 export default function HomeTabUPFC() {
   return (
     <View style={styles.container}>
-      <UPFCCurentApplicationList />
+      <HomeTabUPFCCurrentApplicationList />
     </View>
   );
 }

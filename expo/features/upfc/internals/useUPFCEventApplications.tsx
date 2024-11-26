@@ -87,37 +87,27 @@ export default function useUPFCEventApplications(): ReloadableAysncResult<
     upfcConfig?.mlPassword,
     appConfig.useUPFCDemoScraper
   ]);
-
-  return useReloadableAsync(fetchApplications, params, {
+  const cacheKey = [
+    isEmpty(upfcConfig?.calendarId) ? 'none' : upfcConfig?.calendarId,
+    isEmpty(upfcConfig?.eventPrefix) ? 'none' : upfcConfig?.eventPrefix,
+    isEmpty(upfcConfig?.hpUsername) ? 'none' : upfcConfig?.hpUsername,
+    isEmpty(upfcConfig?.mlUsername) ? 'none' : upfcConfig?.mlUsername,
+    appConfig.useUPFCDemoScraper ? 'demo' : 'prod'
+  ].join('-');
+  const cache = useMemo(() => {
+    return {
+      dynamicCacheKey: async (): Promise<string> => {
+        const hash = await Crypto.digestStringAsync(Crypto.CryptoDigestAlgorithm.SHA256, cacheKey);
+        return `useUPFCEventApplications.${hash}`;
+      },
+      loadFn: cacheLoadFn
+    };
+  }, [cacheKey]);
+  const data = useReloadableAsync(fetchApplications, params, {
     logEventName: 'features.upfc.hooks.useUPFCEventApplications',
-    cache: {
-      key: 'useUPFCEventApplications',
-      loadFn: async (value: string) => {
-        const result = JSON.parse(value) as UPFCEventApplicationsResult;
-        return {
-          applications: result.applications.map((a) => {
-            return {
-              ...a,
-              applicationDueDate: dateOrUndefined(a.applicationDueDate),
-              applicationStartDate: dateOrUndefined(a.applicationStartDate),
-              paymentOpenDate: dateOrUndefined(a.paymentOpenDate),
-              paymentDueDate: dateOrUndefined(a.paymentDueDate),
-              tickets: a.tickets.map((t) => {
-                return {
-                  ...t,
-                  startAt: dateOrUndefined(t.startAt)!,
-                  openAt: dateOrUndefined(t.openAt)
-                };
-              })
-            };
-          }),
-          hpError: result.hpError ? new Error(result.hpError.message) : undefined,
-          mlError: result.mlError ? new Error(result.mlError.message) : undefined,
-          useDemo: result.useDemo
-        };
-      }
-    }
+    cache
   });
+  return data;
 }
 
 const demoScraper = new UPFCDemoScraper();
@@ -137,11 +127,11 @@ async function fetchApplications({
   if (isEmpty(helloproject?.username) && isEmpty(mline?.username)) {
     throw new ErrUPFCNoCredential();
   }
-  const result = await Promise.all([
-    fetchApplicationsFromSite(helloproject.username, helloproject.password, 'helloproject', useDemo),
-    fetchApplicationsFromSite(mline.username, mline.password, 'm-line', useDemo)
-  ]);
+  // DO NOT call in parallel as cookies are shared between sites and it may cause unexpected results.
+  const hp = await fetchApplicationsFromSite(helloproject.username, helloproject.password, 'helloproject', useDemo);
+  const ml = await fetchApplicationsFromSite(mline.username, mline.password, 'm-line', useDemo);
   // optionally sync calendar and server in background.
+  const result = [hp, ml];
   const applications = result.flatMap((r) => r.applications);
   if (!useDemo) {
     if (!isEmpty(calendarId)) {
@@ -151,7 +141,7 @@ async function fetchApplications({
   }
 
   return {
-    applications: result.flatMap((r) => r.applications),
+    applications,
     hpError: result[0].error,
     mlError: result[1].error,
     useDemo
@@ -192,13 +182,6 @@ async function fetchApplicationsFromSite(
       applications: []
     };
   }
-}
-
-function dateOrUndefined(d: Date | undefined): Date | undefined {
-  if (d) {
-    return new Date(d);
-  }
-  return undefined;
 }
 
 type SyncParam = [UPFCEventTicket, string];
@@ -388,16 +371,23 @@ async function syncToServer(
       },
       onCompleted: (response, errors) => {
         if (errors) {
-          reject(errors);
+          logging.Info('features.upfc.internals.useUPFCEventApplications.syncToServer', 'failued', {
+            numApplications: tickets.length,
+            error: errors.map((e) => e.message).join(',')
+          });
         } else {
           logging.Info('features.upfc.internals.useUPFCEventApplications.syncToServer', 'completed', {
             numApplications: tickets.length
           });
-          resolve();
         }
+        resolve();
       },
       onError: (error) => {
-        reject(error);
+        logging.Info('features.upfc.internals.useUPFCEventApplications.syncToServer', 'failued', {
+          numApplications: tickets.length,
+          error: error.message
+        });
+        resolve();
       }
     });
   });
@@ -427,4 +417,36 @@ function getApplicationSiteEnumValue(site: UPFCSite): HPFCEventTicketApplication
     return 'm_line';
   }
   return 'hello_project';
+}
+
+async function cacheLoadFn(value: string) {
+  const result = JSON.parse(value) as UPFCEventApplicationsResult;
+  return {
+    applications: result.applications.map((a) => {
+      return {
+        ...a,
+        applicationDueDate: dateOrUndefined(a.applicationDueDate),
+        applicationStartDate: dateOrUndefined(a.applicationStartDate),
+        paymentOpenDate: dateOrUndefined(a.paymentOpenDate),
+        paymentDueDate: dateOrUndefined(a.paymentDueDate),
+        tickets: a.tickets.map((t) => {
+          return {
+            ...t,
+            startAt: dateOrUndefined(t.startAt)!,
+            openAt: dateOrUndefined(t.openAt)
+          };
+        })
+      };
+    }),
+    hpError: result.hpError ? new Error(result.hpError.message) : undefined,
+    mlError: result.mlError ? new Error(result.mlError.message) : undefined,
+    useDemo: result.useDemo
+  };
+}
+
+function dateOrUndefined(d: Date | undefined): Date | undefined {
+  if (d) {
+    return new Date(d);
+  }
+  return undefined;
 }
