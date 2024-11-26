@@ -1,3 +1,4 @@
+import { logLogin, logLogout } from '@hpapp/system/firebase';
 import * as logging from '@hpapp/system/logging';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Platform } from 'react-native';
@@ -148,12 +149,15 @@ export function useCurrentUserUpdator() {
           logging.Info('features.auth.logout', 'logout', {
             userid: currentUser.id
           });
+          logLogout();
         }
       } else {
         if (update) {
           logging.Info('features.auth.login', 'login', {
             userid: update.id
           });
+          // TODO: we should have a way to know the login method
+          logLogin('default', update.id);
         }
       }
       return updator(update);

@@ -55,11 +55,9 @@ export async function useSetUserId(userId: string | null) {
   }, [userId]);
 }
 
-export async function useLogScreenView(screen: string) {
-  useEffect(() => {
-    analytics().logScreenView({
-      screen_name: screen,
-      screen_class: screen
-    });
-  }, [screen]);
+export async function logScreenView(screen: string) {
+  analytics().logScreenView({
+    screen_name: screen,
+    screen_class: screen
+  });
 }

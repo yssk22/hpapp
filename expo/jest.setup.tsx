@@ -67,6 +67,7 @@ jest.mock('@react-native-firebase/analytics', () => () => {
   return {
     logEvent: jest.fn(),
     logLogin: jest.fn(),
+    logScreenView: jest.fn(),
     setUserId: jest.fn()
   };
 });
@@ -76,7 +77,6 @@ jest.mock('expo-constants', () => {
     expoConfig: {
       extra: {
         hpapp: {
-          useLocalAppConfig: false,
           useLocalAuth: true,
           graphQLEndpoint: 'http://localhost:8080/graphql/v3',
           auth: {

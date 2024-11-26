@@ -12,7 +12,6 @@ const config = Constants.expoConfig?.extra?.hpapp ?? {
 
 export type AppConfig = {
   readonly useStorybook: boolean;
-  readonly useLocalAppConfig: boolean;
   readonly useCustomGraphQLEndpoint: boolean;
   readonly graphQLEndpoint: string;
   readonly useLocalAuth: boolean;
@@ -24,7 +23,6 @@ export type AppConfig = {
 
 export const SettingsAppConfigDefault: AppConfig = {
   useStorybook: false,
-  useLocalAppConfig: false,
   useCustomGraphQLEndpoint: false,
   graphQLEndpoint: config.graphQLEndpoint!,
   useLocalAuth: config.useLocalAuth!,

@@ -2,6 +2,7 @@ import { useHelloProject } from '@hpapp/features/app/user';
 import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { useNavigation } from '@hpapp/features/common/stack';
 import * as object from '@hpapp/foundation/object';
+import { logEvent } from '@hpapp/system/firebase';
 import { useMemo, useState } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -24,6 +25,9 @@ export default function HPSortNewRoundContainer({ config }: HPSortNewRoundContai
   const hp = useHelloProject();
   const members = hp.useMembers(false);
   const list = useMemo(() => {
+    logEvent('hpsort_start', {
+      num_members_to_select: config.numMembersToSelect
+    });
     return object.shuffle([...members]).map((m) => new HPSortMemberNode(m));
   }, [members]);
   const [sorter, setSorter] = useState<HPSortBase<HPSortMemberNode>>(
@@ -43,6 +47,9 @@ export default function HPSortNewRoundContainer({ config }: HPSortNewRoundContai
         <HPSortNewResult
           sorter={sorter}
           onRetryPress={() => {
+            logEvent('hpsort_retry', {
+              num_members_to_select: config.numMembersToSelect
+            });
             setSorter(
               config.numMembersToSelect === 2
                 ? new HPSortClassicMergeSort(list)
@@ -55,6 +62,9 @@ export default function HPSortNewRoundContainer({ config }: HPSortNewRoundContai
             });
           }}
           onSave={() => {
+            logEvent('hpsort_saved', {
+              num_members_to_select: config.numMembersToSelect
+            });
             navigation.goBack();
           }}
         />
@@ -72,6 +82,9 @@ export default function HPSortNewRoundContainer({ config }: HPSortNewRoundContai
             onSelect={(selections) => {
               sorter.select(...selections);
               const endTime = sorter.getComparable() === null ? new Date() : null;
+              logEvent('hpsort_complete', {
+                num_members_to_select: config.numMembersToSelect
+              });
               setStats({
                 ...stats,
                 endTime,

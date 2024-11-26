@@ -19,7 +19,6 @@ export default function AppConfigModal({ isVisible, onClose }: AppConfigModalPro
   const appConfig = useAppConfig();
   const appConfigUpdate = useAppConfigUpdator();
   const [useStorybook, setUseStorybook] = useState(appConfig.useStorybook ?? false);
-  const [useLocalAppConfig, setUseLocalAppConfig] = useState(appConfig.useLocalAppConfig ?? false);
   const [useCustomGraphQLEndpoint, setUseCustomGraphQLEndpoint] = useState(appConfig.useCustomGraphQLEndpoint ?? false);
   const [graphQLEndpoint, setGraphQLEndpoint] = useState(appConfig.graphQLEndpoint ?? '');
   const [useLocalAuth, setUseLocalAuth] = useState(appConfig.useLocalAuth ?? false);
@@ -27,7 +26,6 @@ export default function AppConfigModal({ isVisible, onClose }: AppConfigModalPro
   const onSave = () => {
     appConfigUpdate({
       useStorybook,
-      useLocalAppConfig,
       useCustomGraphQLEndpoint,
       graphQLEndpoint,
       useLocalAuth,
@@ -46,16 +44,6 @@ export default function AppConfigModal({ isVisible, onClose }: AppConfigModalPro
               value={useStorybook}
               onValueChange={() => {
                 setUseStorybook(!useStorybook);
-              }}
-            />
-          </View>
-
-          <View style={[styles.inputGroup, styles.switchContainer]}>
-            <Text style={styles.label}>Use Local AppConfig</Text>
-            <Switch
-              value={useLocalAppConfig}
-              onValueChange={() => {
-                setUseLocalAppConfig(!useLocalAppConfig);
               }}
             />
           </View>
@@ -80,7 +68,6 @@ export default function AppConfigModal({ isVisible, onClose }: AppConfigModalPro
           <View style={!styles.inputGroup}>
             <Text style={styles.label}>GraphQL Endpoint</Text>
             <Input
-              disabled={!useLocalAppConfig}
               keyboardType="url"
               containerStyle={styles.input}
               errorStyle={styles.inputError}
