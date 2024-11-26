@@ -3,10 +3,9 @@ import { Text } from '@hpapp/features/common';
 import { Spacing } from '@hpapp/features/common/constants';
 import { NavigationListItem } from '@hpapp/features/common/list';
 import HPSortResultScreen from '@hpapp/features/hpsort/HPSortResultScreen';
+import { HPSortResultMemberRank } from '@hpapp/features/hpsort/helper';
 import { toDateTimeString } from '@hpapp/foundation/date';
 import { StyleSheet, View } from 'react-native';
-
-import { HPSortResultMemberRank } from './types';
 
 export type HPSortHistoryListItemProps = {
   createdAt: string;

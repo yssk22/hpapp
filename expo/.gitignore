@@ -18,3 +18,7 @@ web-build/
 
 # do not commit eas.json
 /eas.json
+
+# prebuild files
+/ios
+/android

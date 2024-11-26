@@ -18,5 +18,6 @@ module.exports = (config) => {
   config.extra.hpapp.firebaseIOSClientID = '265427540400-um42nfj6a2d2i59u7j01pmgpijmqk1oc.apps.googleusercontent.com';
   config.extra.hpapp.firebaseAndroidClientID =
     '265427540400-83oj9vqhc5o3srj9pvh5d9e9hkfmnmdg.apps.googleusercontent.com';
+  config.updates.url = 'https://u.expo.dev/a76e7e46-e508-43cf-93a8-1ae32871d4f7';
   return config;
 };
