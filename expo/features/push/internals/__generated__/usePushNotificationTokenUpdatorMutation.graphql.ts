@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<640e458d65716845684e0f2d3c991977>>
+ * @generated SignedSource<<8f882067fd372e3a9363af2224c193ae>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -16,11 +16,11 @@ export type NotificationSettingsInput = {
   name: string;
   slug: string;
 };
-export type PushNotificationSettingsFormMutation$variables = {
+export type usePushNotificationTokenUpdatorMutation$variables = {
   params: NotificationSettingsInput;
   token: string;
 };
-export type PushNotificationSettingsFormMutation$data = {
+export type usePushNotificationTokenUpdatorMutation$data = {
   readonly me: {
     readonly upsertNotificationToken: {
       readonly enableNewPosts: boolean;
@@ -33,9 +33,9 @@ export type PushNotificationSettingsFormMutation$data = {
     } | null | undefined;
   } | null | undefined;
 };
-export type PushNotificationSettingsFormMutation = {
-  response: PushNotificationSettingsFormMutation$data;
-  variables: PushNotificationSettingsFormMutation$variables;
+export type usePushNotificationTokenUpdatorMutation = {
+  response: usePushNotificationTokenUpdatorMutation$data;
+  variables: usePushNotificationTokenUpdatorMutation$variables;
 };
 
 const node: ConcreteRequest = (function(){
@@ -141,7 +141,7 @@ return {
     ],
     "kind": "Fragment",
     "metadata": null,
-    "name": "PushNotificationSettingsFormMutation",
+    "name": "usePushNotificationTokenUpdatorMutation",
     "selections": (v2/*: any*/),
     "type": "Mutation",
     "abstractKey": null
@@ -153,20 +153,20 @@ return {
       (v0/*: any*/)
     ],
     "kind": "Operation",
-    "name": "PushNotificationSettingsFormMutation",
+    "name": "usePushNotificationTokenUpdatorMutation",
     "selections": (v2/*: any*/)
   },
   "params": {
-    "cacheID": "cd6e42c2b07cd9a1fa343c779aa51d81",
+    "cacheID": "2d278943b20b92a5a15fbb5791f5a1c8",
     "id": null,
     "metadata": {},
-    "name": "PushNotificationSettingsFormMutation",
+    "name": "usePushNotificationTokenUpdatorMutation",
     "operationKind": "mutation",
-    "text": "mutation PushNotificationSettingsFormMutation(\n  $token: String!\n  $params: NotificationSettingsInput!\n) {\n  me {\n    upsertNotificationToken(token: $token, params: $params) {\n      id\n      token\n      slug\n      name\n      enableNewPosts\n      enablePaymentStart\n      enablePaymentDue\n    }\n  }\n}\n"
+    "text": "mutation usePushNotificationTokenUpdatorMutation(\n  $token: String!\n  $params: NotificationSettingsInput!\n) {\n  me {\n    upsertNotificationToken(token: $token, params: $params) {\n      id\n      token\n      slug\n      name\n      enableNewPosts\n      enablePaymentStart\n      enablePaymentDue\n    }\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "9b17b4c67fe84ca90fe383db651a4a81";
+(node as any).hash = "9d5f8ba9d7c4166a5c7e4a1b83d906c9";
 
 export default node;

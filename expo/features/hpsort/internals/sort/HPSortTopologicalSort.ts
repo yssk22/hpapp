@@ -174,7 +174,7 @@ export default class HPSortTopologicalSort<T extends HPSortTopologicalSortNode> 
     }
     for (const edges of this.graph.values()) {
       for (const edge of edges) {
-        inDegree.set(edge, (inDegree.get(edge) || 0) + 1);
+        inDegree.set(edge, (inDegree.get(edge) ?? 0) + 1);
       }
     }
 

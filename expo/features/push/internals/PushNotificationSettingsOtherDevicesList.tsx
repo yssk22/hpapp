@@ -1,4 +1,5 @@
 import { Divider } from '@rneui/themed';
+import React from 'react';
 
 import PushNotificationSettingsOtherDevicesListItem from './PushNotificationSettingsOtherDevicesListItem';
 import { PushNotificationSettingsContainerQuery$data } from './__generated__/PushNotificationSettingsContainerQuery.graphql';
@@ -14,10 +15,10 @@ export default function PushNotificationSettingsOtherDevicesList({
 }: PushNotificationSettingsOtherDevicesListProps) {
   return settingsList.map((settings) => {
     return (
-      <>
-        <PushNotificationSettingsOtherDevicesListItem key={settings!.id} settings={settings} />
+      <React.Fragment key={settings!.id}>
+        <PushNotificationSettingsOtherDevicesListItem settings={settings} />
         <Divider />
-      </>
+      </React.Fragment>
     );
   });
 }

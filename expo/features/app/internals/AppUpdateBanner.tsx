@@ -5,6 +5,7 @@ import Constants from 'expo-constants';
 import * as Updates from 'expo-updates';
 import { useState, useEffect } from 'react';
 import { AppState, AppStateStatus, TouchableOpacity, StyleSheet, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as logging from 'system/logging';
 
 const UPDATE_INTERVAL_MS = 60 * 1000;
@@ -22,6 +23,7 @@ export default function AppUpdateBanner({
   updateAvaiableText?: string;
   updateInProgressText?: string;
 }) {
+  const insets = useSafeAreaInsets();
   const [color, contrast] = useThemeColor('warning');
   const [state, setState] = useState<BannerAppUpdateState>({
     updateAvailable: false,
@@ -103,7 +105,7 @@ export default function AppUpdateBanner({
         }
       }}
     >
-      <View style={[styles.container, { backgroundColor: color }]}>
+      <View style={[styles.container, { backgroundColor: color, paddingTop: insets.top }]}>
         <Text style={[styles.text, { color: contrast }]}>{text}</Text>
       </View>
     </TouchableOpacity>
@@ -115,8 +117,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: Spacing.Small,
-    marginBottom: 2
+    padding: Spacing.Small
   },
   text: {
     fontSize: FontSize.Medium,
