@@ -1,7 +1,6 @@
 import { HPArtist, HPMember } from '@hpapp/features/app/user';
-import { Text } from '@hpapp/features/common';
+import { Card, CardBody } from '@hpapp/features/common/card';
 import { Spacing } from '@hpapp/features/common/constants';
-import { Card } from '@rneui/themed';
 import { useCallback, useMemo, useState } from 'react';
 import { View, StyleSheet, LayoutChangeEvent } from 'react-native';
 
@@ -46,37 +45,33 @@ export default function ArtistCard({
     return new Array(numPadding).fill(0);
   }, [componentWidth, members]);
   return (
-    <Card key={artist.key}>
-      <Card.Title>
-        <Text bold style={{ textAlign: 'left' }}>
-          {artist.name}
-        </Text>
-      </Card.Title>
-      <Card.Divider />
-      <View style={styles.membersContainer} onLayout={handleLayout}>
-        {members.map((m) => {
-          return (
-            <View style={styles.memberIcon} key={m.key}>
-              <ArtistMemberIcon
-                member={m}
-                size={ArtistMemberIconSize.Medium}
-                circle={memberIconCircle}
-                showFollowIcon={memberIconShowFollow}
-                onPress={
-                  onMemberIconPress
-                    ? () => {
-                        onMemberIconPress(m);
-                      }
-                    : undefined
-                }
-              />
-            </View>
-          );
-        })}
-        {paddings.map((_, i) => {
-          return <View style={[styles.padding, styles.memberIcon]} key={`padding_${i}`} />;
-        })}
-      </View>
+    <Card key={artist.key} containerStyle={styles.card} headerText={artist.name}>
+      <CardBody>
+        <View style={styles.membersContainer} onLayout={handleLayout}>
+          {members.map((m) => {
+            return (
+              <View style={styles.memberIcon} key={m.key}>
+                <ArtistMemberIcon
+                  member={m}
+                  size={ArtistMemberIconSize.Medium}
+                  circle={memberIconCircle}
+                  showFollowIcon={memberIconShowFollow}
+                  onPress={
+                    onMemberIconPress
+                      ? () => {
+                          onMemberIconPress(m);
+                        }
+                      : undefined
+                  }
+                />
+              </View>
+            );
+          })}
+          {paddings.map((_, i) => {
+            return <View style={[styles.padding, styles.memberIcon]} key={`padding_${i}`} />;
+          })}
+        </View>
+      </CardBody>
     </Card>
   );
 }
@@ -87,6 +82,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around'
+  },
+  card: {
+    padding: 0
+  },
+  cardTitle: {
+    paddingTop: Spacing.Small,
+    paddingLeft: Spacing.Medium,
+    paddingRight: Spacing.Medium
   },
   memberIcon: {
     marginRight: MemberIconMargin,

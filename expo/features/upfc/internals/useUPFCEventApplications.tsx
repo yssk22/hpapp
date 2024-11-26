@@ -139,7 +139,6 @@ async function fetchApplications({
     }
     syncToServer(env, userId, applications);
   }
-
   return {
     applications,
     hpError: result[0].error,
@@ -157,7 +156,7 @@ async function fetchApplicationsFromSite(
   error: Error | undefined;
   applications: UPFCEventApplicationTickets[];
 }> {
-  const scraper = useDemo ? demoScraper : combinedScraper;
+  const scraper = useDemo || username === UPFCDemoScraper.Username ? demoScraper : combinedScraper;
   if (isEmpty(username)) {
     return {
       error: new ErrUPFCNoCredential(),

@@ -1,5 +1,6 @@
 import AmebloIcon from './internals/AmebloIcon';
 import AssetIcon from './internals/AssetIcon';
+import BetaIcon from './internals/BetaIcon';
 import CalendarDateIcon from './internals/CalendarDateIcon';
 import ConsentGate from './internals/ConsentGate';
 import ErrorBoundary, { FallbackComponent } from './internals/ErrorBoundary';
@@ -22,6 +23,7 @@ import useURICache from './internals/useURICache';
 export {
   AmebloIcon,
   AssetIcon,
+  BetaIcon,
   CalendarDateIcon,
   ConsentGate,
   ErrorBoundary,
