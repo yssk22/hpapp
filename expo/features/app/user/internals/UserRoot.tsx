@@ -2,7 +2,7 @@ import { useCurrentUser, useUserConfig } from '@hpapp/features/app/settings';
 import { Initializer, Loading } from '@hpapp/features/common';
 import { Screen, ScreenParams, createStackNavigator } from '@hpapp/features/common/stack';
 import { usePushNotificationToken, usePushNotificationTokenUpdator } from '@hpapp/features/push';
-import { useSetUserId } from '@hpapp/system/firebase';
+import { logScreenView, useSetUserId } from '@hpapp/system/firebase';
 import * as logging from '@hpapp/system/logging';
 import { init as initURICache } from '@hpapp/system/uricache';
 import { useNavigationContainerRef } from '@react-navigation/native';
@@ -41,6 +41,7 @@ export default function UserRoot({ screens = Screens }: UserRootProps) {
           screens={screens}
           initialRouteName={userConfig?.completeOnboarding ? '/' : '/onboarding/'}
           onStateChange={(state) => {
+            logScreenView(state.screen.name);
             logging.Info('features.app.user.onStateChagne', `to ${state.screen.name}`, {
               name: state.screen.name,
               path: state.screen.path,

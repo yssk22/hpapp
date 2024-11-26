@@ -29,7 +29,7 @@ export default function AppRelayProvider({ children }: { children: React.ReactNo
     });
     env.configName = `${httpConfig.Endpoint}-${new Date().getTime()}`;
     return env;
-  }, [appConfig.graphQLEndpoint, appConfig.useLocalAppConfig, user?.accessToken]);
+  }, [appConfig.graphQLEndpoint, user?.accessToken]);
   // NOTE:
   // RelayEnvironmentProvider SOMEHOW does not rerender even environment is updated
   // so we explicitly update key to force rerender.

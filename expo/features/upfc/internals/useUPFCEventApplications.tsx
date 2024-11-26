@@ -16,6 +16,7 @@ import {
 } from '@hpapp/features/upfc/scraper';
 import * as date from '@hpapp/foundation/date';
 import { isEmpty } from '@hpapp/foundation/string';
+import { logEvent } from '@hpapp/system/firebase';
 import * as logging from '@hpapp/system/logging';
 import * as Calendar from 'expo-calendar';
 import * as Crypto from 'expo-crypto';
@@ -171,9 +172,11 @@ async function fetchApplicationsFromSite(
     };
   }
   try {
+    const applications = await scraper.getEventApplications();
+    logEvent('upfc_authenticated', { site, num_apps: applications.length });
     return {
       error: undefined,
-      applications: await scraper.getEventApplications()
+      applications
     };
   } catch (e) {
     return {
