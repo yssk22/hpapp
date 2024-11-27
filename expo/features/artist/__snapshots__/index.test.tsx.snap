@@ -531,7 +531,7 @@ exports[`artist ArtistMemberIcon icon with press 1`] = `
               testID="ArtistMemberIcon"
             >
               <ViewManagerAdapter_ExpoImage
-                cachePolicy="disk"
+                cachePolicy="memory-disk"
                 containerViewRef={"[React.ref]"}
                 contentFit="cover"
                 contentPosition={

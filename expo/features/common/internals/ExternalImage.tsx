@@ -23,7 +23,7 @@ export type ExternalImageProps = Omit<ComponentProps<typeof Image>, 'source'> & 
 export default function ExternalImage({
   uri,
   cachePolicy = 'memory',
-  maxRetries = 5,
+  maxRetries = 10,
   spinnerStyle,
   height,
   width,

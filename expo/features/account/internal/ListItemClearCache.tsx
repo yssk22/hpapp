@@ -8,7 +8,7 @@ export default function ListItemClearCache() {
   return (
     <ListItem
       onPress={async () => {
-        await Promise.all([Image.clearDiskCache(), clearCacheDir()]);
+        await Promise.all([Image.clearDiskCache(), Image.clearMemoryCache(), clearCacheDir()]);
         Toast.show('Cache cleared', { duration: Toast.durations.SHORT });
       }}
     >

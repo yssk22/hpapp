@@ -15625,7 +15625,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -15719,7 +15719,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -15813,7 +15813,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -15929,7 +15929,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -16023,7 +16023,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -16117,7 +16117,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -16211,7 +16211,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -16327,7 +16327,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -16421,7 +16421,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -16515,7 +16515,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -16631,7 +16631,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -16725,7 +16725,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -16819,7 +16819,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -17022,7 +17022,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -17116,7 +17116,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -17210,7 +17210,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -17304,7 +17304,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -17398,7 +17398,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -17492,7 +17492,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -17586,7 +17586,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -17680,7 +17680,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -17774,7 +17774,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -17890,7 +17890,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -18071,7 +18071,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -18187,7 +18187,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -18303,7 +18303,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -18419,7 +18419,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -18513,7 +18513,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -18629,7 +18629,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -18745,7 +18745,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -18861,7 +18861,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -18977,7 +18977,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -19093,7 +19093,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -19296,7 +19296,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -19390,7 +19390,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -19484,7 +19484,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -19578,7 +19578,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -19672,7 +19672,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -19766,7 +19766,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -19860,7 +19860,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -19954,7 +19954,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -20048,7 +20048,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -20142,7 +20142,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -20236,7 +20236,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -20417,7 +20417,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -20533,7 +20533,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -20627,7 +20627,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -20721,7 +20721,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -20815,7 +20815,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -20909,7 +20909,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -21003,7 +21003,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -21097,7 +21097,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -21191,7 +21191,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -21285,7 +21285,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -21466,7 +21466,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -21560,7 +21560,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -21654,7 +21654,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -21748,7 +21748,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -21842,7 +21842,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -21936,7 +21936,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -22030,7 +22030,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -22124,7 +22124,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -22218,7 +22218,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -22312,7 +22312,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -22493,7 +22493,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -22609,7 +22609,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -22703,7 +22703,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -22797,7 +22797,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -22891,7 +22891,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -22985,7 +22985,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -23079,7 +23079,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -23173,7 +23173,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
@@ -23267,7 +23267,7 @@ exports[`HomeTabArtist tab 1`] = `
                                       testID="ArtistMemberIcon"
                                     >
                                       <ViewManagerAdapter_ExpoImage
-                                        cachePolicy="disk"
+                                        cachePolicy="memory-disk"
                                         containerViewRef={"[React.ref]"}
                                         contentFit="cover"
                                         contentPosition={
