@@ -1,7 +1,4 @@
 {
-    "cli": {
-        "version": ">=13.4.2"
-    },
     "build": {
         "prod": {
             "env": {
