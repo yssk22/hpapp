@@ -4,7 +4,7 @@ import { Spacing } from '@hpapp/features/common/constants';
 import { ListItemKeyValue } from '@hpapp/features/common/list';
 import { defineScreen, useScreenTitle } from '@hpapp/features/common/stack';
 import { t } from '@hpapp/system/i18n';
-import { Divider } from '@rneui/base';
+import { Divider } from '@rneui/themed';
 import { ScrollView, StyleSheet, View } from 'react-native';
 
 import AccountDeletionButton from './internal/AccountDeletionButton';
@@ -14,7 +14,6 @@ export default defineScreen('/account/', function AccountScreen() {
   useScreenTitle(t('Account'));
   const user = useCurrentUser();
   const roles = useUserRoles();
-
   return (
     <ScrollView>
       <ListItemKeyValue name={t('User ID')} value={user!.id} />

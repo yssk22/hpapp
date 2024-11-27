@@ -21,7 +21,6 @@ type UPFCSettingsFormProps = {
 };
 
 export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
-  //   const upfc = useHomeUPFCModel();
   const appConfig = useAppConfig();
   const [successColor, succsesContrast] = useThemeColor('success');
   const [isSaving, setIsSaving] = useState(false);
@@ -54,6 +53,7 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
     setIsSaving(true);
     (async () => {
       try {
+        let lastAuthenticatedAt = null;
         const scraper = appConfig.useUPFCDemoScraper
           ? new UPFCDemoScraper()
           : new UPFC2SiteScraper(new UPFC2HttpFetcher());
@@ -63,12 +63,14 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
           if (!ok) {
             throw new ErrUPFCAuthentication();
           }
+          lastAuthenticatedAt = new Date().getTime() / 1000;
         }
         if (mlUsername !== '' && mlUsername !== UPFCDemoScraper.Username) {
           const ok = await scraper.authenticate(mlUsername, mlPassword, 'm-line');
           if (!ok) {
             throw new ErrUPFCAuthentication();
           }
+          lastAuthenticatedAt = new Date().getTime() / 1000;
         }
         Toast.show(t('Saved Successfully!'), {
           position: Toast.positions.BOTTOM,
@@ -82,9 +84,9 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
           mlUsername,
           mlPassword,
           calendarId,
-          eventPrefix
+          eventPrefix,
+          lastAuthenticatedAt
         });
-        // upfc.reload();
       } catch (e) {
         setLastError(e as Error);
         return;

@@ -1,13 +1,14 @@
-import { useCurrentUser, User } from '@hpapp/features/app/settings';
+import { useCurrentUser, User, useUPFCConfig } from '@hpapp/features/app/settings';
 import { useMemo } from 'react';
 
 import { UserRole } from './types';
 
-const adminId = '42949672973'; // TODO: move it to secrets.json
-const developerId = '42949672973'; // TODO: move it to secrets.json
+const adminId = '42949672973';
+const developerId = '42949672973';
 
 export default function useUserRoles(user?: User): UserRole[] {
   const current = useCurrentUser();
+  const config = useUPFCConfig();
   user = useMemo(() => {
     return user ?? current;
   }, [user, current]);
@@ -22,10 +23,12 @@ export default function useUserRoles(user?: User): UserRole[] {
     if (typeof user?.id === 'string') {
       roles.push('user');
     }
-    // TODO: fcmember
+    if ((config?.lastAuthenticatedAt ?? 0) > 0) {
+      roles.push('fcmember');
+    }
     if (roles.length === 0) {
       roles.push('guest');
     }
     return roles;
-  }, [user]);
+  }, [user?.id, config?.lastAuthenticatedAt]);
 }
