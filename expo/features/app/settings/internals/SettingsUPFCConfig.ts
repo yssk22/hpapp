@@ -18,6 +18,8 @@ export type UPFCConfig = {
   // common settings
   calendarId?: string | null;
   eventPrefix?: string | null;
+
+  lastAuthenticatedAt?: number | null;
 };
 
 export default SettingsStore.register<UPFCConfig>(

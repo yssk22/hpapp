@@ -1,3 +1,4 @@
+import { useUserRoles } from '@hpapp/features/auth';
 import { AmebloIcon } from '@hpapp/features/common';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
 import { useNavigation } from '@hpapp/features/common/stack';
@@ -41,6 +42,7 @@ export type FeedItemProps = {
 };
 
 export default function FeedItem({ feedId }: FeedItemProps) {
+  const roles = useUserRoles();
   const data = useLazyLoadQuery<FeedItemQuery>(FeedItemQueryGraphQL, { feedId });
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();
@@ -50,12 +52,13 @@ export default function FeedItem({ feedId }: FeedItemProps) {
   const ownerName = data.node!.ownerMember?.name ?? 'unknown';
   const urls = data.node!.media?.map((m) => m.url) ?? [];
   const albumName = `hellofanapp.${ownerName}`;
+  const optimize = roles.includes('fcmember');
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        {data.node?.assetType === 'ameblo' && <FeedItemAmeblo url={data.node!.sourceURL!} optimize />}
+        {data.node?.assetType === 'ameblo' && <FeedItemAmeblo url={data.node!.sourceURL!} optimize={optimize} />}
         {data.node?.assetType === 'instagram' && (
-          <FeedItemInstagram url={data.node!.sourceURL!} sourceId={data.node.sourceID!} optimize />
+          <FeedItemInstagram url={data.node!.sourceURL!} sourceId={data.node.sourceID!} optimize={optimize} />
         )}
       </View>
       <View style={[styles.ctaContainer, { marginBottom: insets.bottom }]}>
