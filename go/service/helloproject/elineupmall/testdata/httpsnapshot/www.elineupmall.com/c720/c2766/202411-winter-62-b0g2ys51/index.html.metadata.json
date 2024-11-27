@@ -1,0 +1,49 @@
+{
+	"status_code": 200,
+	"status": "200 OK",
+	"header": {
+		"Access-Control-Allow-Credentials": [
+			"true"
+		],
+		"Access-Control-Allow-Headers": [
+			"Origin, Authorization, Accept"
+		],
+		"Access-Control-Allow-Methods": [
+			"POST, GET, OPTIONS"
+		],
+		"Access-Control-Allow-Origin": [
+			"*"
+		],
+		"Cache-Control": [
+			"no-store, no-cache, must-revalidate"
+		],
+		"Connection": [
+			"keep-alive"
+		],
+		"Content-Type": [
+			"text/html; charset=utf-8"
+		],
+		"Date": [
+			"Wed, 27 Nov 2024 03:54:01 GMT"
+		],
+		"Expires": [
+			"Thu, 19 Nov 1981 08:52:00 GMT"
+		],
+		"Pragma": [
+			"no-cache"
+		],
+		"Server": [
+			"nginx"
+		],
+		"Set-Cookie": [
+			"sid_customer_b4300=72964b9f98b9b88e2efa29d1cf460078-C; expires=Wed, 11-Dec-2024 03:54:01 GMT; Max-Age=1209600; path=/; domain=.elineupmall.com; secure"
+		],
+		"Vary": [
+			"Accept-Encoding"
+		],
+		"X-Frame-Options": [
+			"SAMEORIGIN"
+		]
+	},
+	"content_path": "testdata/httpsnapshot/www.elineupmall.com/c720/c2766/202411-winter-62-b0g2ys51/index.html"
+}

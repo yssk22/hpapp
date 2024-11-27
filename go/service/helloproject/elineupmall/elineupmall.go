@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"sync"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/spf13/cobra"
@@ -113,7 +114,9 @@ func (s *elineupmallService) Command() *cobra.Command {
 // The crawl always crawl the item list page of "ハロー！プロジェクト" (https://www.elineupmall.com/c671/c181/c197/),
 // which would have 4000+ items and the page is actually split into multiple pages.
 // `ListItemsPerPage` parameter is used to crawl all pages of the artist, which shows the links of item pages. If you set the lower number,
-//  you will have more http tasks to crawl all item list pages. And if you set the higher number, you may likely to have a timeout or 5xx error.
+//
+//	you will have more http tasks to crawl all item list pages. And if you set the higher number, you may likely to have a timeout or 5xx error.
+//
 // we recommend not to set the number too high and should keep the lower than 1000.
 // Then once the crawler gets the item links, it will crawl these links up to MaxItemsPerList **per each item list page**, not all links since
 // most of items shouldn't have any changes - the change would be only in `IsOutOfStock` (or rarely in name and description).
@@ -280,11 +283,13 @@ func (s *elineupmallService) CrawlItemPagesTask() *task.TaskSpec[CrawlItemPagesA
 
 func (s *elineupmallService) crawlItemPagesFunc(ctx context.Context, args CrawlItemPagesArgs) error {
 	entclient := entutil.NewClient(ctx) // .Debug()
+	itemPages := sync.Map{}
 	creates, err := slice.MapAsync(args.Urls, func(i int, permalink string) (*ent.HPElineupMallItemCreate, error) {
 		p, err := scraping.Scrape(ctx, scraping.NewHTTPFetcher(ctx, permalink), itemPageScraper)
 		if err != nil {
 			return nil, err
 		}
+		itemPages.Store(permalink, p)
 		return s.prepareCreate(ctx, entclient, permalink, p), nil
 	})
 	if err != nil {
@@ -308,11 +313,40 @@ func (s *elineupmallService) crawlItemPagesFunc(ctx context.Context, args CrawlI
 		return err
 	}
 	// update m2m
+	allArtists := member.GetAllArtists(ctx, true)
+	allMembers := member.GetAllMembers(ctx, true)
 	items := entclient.HPElineupMallItem.Query().WithTaggedArtists().WithTaggedMembers().Where(hpelineupmallitem.PermalinkIn(args.Urls...)).AllX(ctx)
 	_, err = slice.Map(items, func(i int, p *ent.HPElineupMallItem) (any, error) {
-		content := fmt.Sprintf("%s %s", p.Name, p.Description)
-		artists := s.tagger.GetTaggedArtists(ctx, bytes.NewBufferString(content))
-		members := s.tagger.GetTaggedMembers(ctx, bytes.NewBufferString(content))
+		itemPage, ok := itemPages.Load(p.Permalink)
+		if !ok {
+			return nil, fmt.Errorf("item page not found for %s", p.Permalink)
+		}
+		artists := []*ent.HPArtist{}
+		members := []*ent.HPMember{}
+		for _, artist := range allArtists {
+			if itemPage.(*ItemPage).Options[artist.Name] {
+				artists = append(artists, artist)
+			}
+		}
+		if len(artists) == 0 {
+			artists = s.tagger.GetTaggedArtists(ctx, bytes.NewBufferString(p.Name))
+			if len(artists) == 0 {
+				artists = s.tagger.GetTaggedArtists(ctx, bytes.NewBufferString(p.Description))
+			}
+		}
+		for _, member := range allMembers {
+			if itemPage.(*ItemPage).Options[member.Name] {
+				members = append(members, member)
+			}
+		}
+		if len(members) == 0 {
+			// only use tagged members from content if option is available
+			members = s.tagger.GetTaggedMembers(ctx, bytes.NewBufferString(p.Name))
+			if len(members) == 0 {
+				members = s.tagger.GetTaggedMembers(ctx, bytes.NewBufferString(p.Description))
+			}
+		}
+
 		update := p.Update().ClearTaggedArtists().ClearTaggedMembers()
 		if len(artists) > 0 {
 			update.AddTaggedArtists(artists...)
