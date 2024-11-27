@@ -1,6 +1,6 @@
 {
     "cli": {
-        "version": "5.4.0"
+        "version": ">=13.4.2"
     },
     "build": {
         "prod": {

@@ -1,11 +1,8 @@
 {
-  "cli": {
-    "version": "5.4.0"
-  },
   "build": {
     "dev": {
       "env": {
-        "HPAPP_CONFIG_NAME":"dev"
+        "HPAPP_CONFIG_NAME": "dev"
       },
       "developmentClient": true,
       "distribution": "internal",

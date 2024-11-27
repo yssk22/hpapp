@@ -7,8 +7,6 @@ ENV ANDROID_HOME /opt/android-sdk
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 
-## remove fastai as it is currently not developed
-## COPY --from=fastai /opt/conda /opt/conda
 COPY --from=gce-proxy /cloud_sql_proxy /usr/local/bin/cloud_sql_proxy
 COPY --from=go /usr/local/go /usr/local/go
 COPY --from=node /usr/local/bin/ /usr/local/bin/
@@ -25,14 +23,10 @@ ENV PATH $PATH:/usr/local/bin:/usr/local/go/bin:$GOPATH/bin:/usr/local/node_modu
 RUN apt-get install -y bash procps default-mysql-client vim sqlite3
 
 ## yarn
-RUN /usr/local/bin/yarn global add prettier expo-cli eas-cli
+RUN /usr/local/bin/yarn global add prettier expo-cli eas-cli expo-doctor
 
 ### python
 ### See onCreateCommand.sh 
-
-
-### For application setup
-env FACE_DETECTION_SCRIPT_PATH /workspaces/sites/py/yssk22.dev/run/detect_faces.py
 
 USER root
 CMD ["/bin/bash"]
