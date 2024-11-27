@@ -16,7 +16,7 @@ export default function AppRootGuest() {
       <View style={styles.container}>
         <Image
           source={{
-            uri: icon.uri!,
+            uri: icon.localUri ?? icon.uri,
             height: icon.height!,
             width: icon.width!
           }}
