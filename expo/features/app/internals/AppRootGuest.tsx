@@ -6,7 +6,7 @@ import { View, StyleSheet, Image } from 'react-native';
 export default function AppRootGuest() {
   const appConfig = useAppConfig();
   const LoginContainer = appConfig.useLocalAuth ? AuthLocalLoginContainer : AuthFirebaseLoginContainer;
-  const [loaded] = useAssets([require('@hpapp/assets/icon.png'), require('@hpapp/assets/splash.png')]);
+  const [loaded] = useAssets([require('assets/icon.png'), require('assets/splash.png')]);
   if (!loaded) {
     return <></>;
   }
