@@ -5,6 +5,7 @@ import { useMemo } from 'react';
 import { FlatList, ListRenderItemInfo, RefreshControl, View } from 'react-native';
 
 import UPFCApplicationCard from './HomeTabUPFCApplicationCard';
+import HomeTabUPFCStatusHeader from './HomeTabUPFCStatusHeader';
 import { useHomeTabContext } from '../HomeTabProvider';
 
 function keyExtractor(event: UPFCEventApplicationTickets) {
@@ -36,18 +37,22 @@ export default function HomeTabUPFCCurrentApplicationList() {
   }
   if (applications === null) {
     return (
-      <View testID="HomeTabUPFCCurrentApplicationList.Skelton">
-        <CardSkelton />
-        <CardSkelton />
-        <CardSkelton />
-        <CardSkelton />
-        <CardSkelton />
-      </View>
+      <>
+        <HomeTabUPFCStatusHeader upfc={upfc} />
+        <View testID="HomeTabUPFCCurrentApplicationList.Skelton">
+          <CardSkelton />
+          <CardSkelton />
+          <CardSkelton />
+          <CardSkelton />
+          <CardSkelton />
+        </View>
+      </>
     );
   }
   // TODO: we may want to show a message when there is an error in hellorpoject or mline data.
   return (
     <>
+      <HomeTabUPFCStatusHeader upfc={upfc} />
       <FlatList
         testID="HomeTabUPFCCurrentApplicationList.Flatlist"
         data={applications}

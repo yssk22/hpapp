@@ -9016,7 +9016,6 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
-                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -9318,7 +9317,6 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
-                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -9625,7 +9623,6 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
-                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -9927,7 +9924,6 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
-                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -10229,7 +10225,6 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
-                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -10536,7 +10531,6 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
-                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -10838,7 +10832,6 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
-                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -11140,7 +11133,6 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
-                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -11447,7 +11439,6 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                       {
                                         "flex": 1,
                                         "flexGrow": 1,
-                                        "justifyContent": "center",
                                         "minWidth": 0,
                                       }
                                     }
@@ -11715,7 +11706,6 @@ fragment FeedListItemViewHistoryIconFragment on HPFeedItem {
                                     {
                                       "flex": 1,
                                       "flexGrow": 1,
-                                      "justifyContent": "center",
                                       "minWidth": 0,
                                     }
                                   }

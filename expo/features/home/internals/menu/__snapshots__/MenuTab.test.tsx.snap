@@ -470,7 +470,6 @@ exports[`SettingsTab render 1`] = `
                       {
                         "flex": 1,
                         "flexGrow": 1,
-                        "justifyContent": "center",
                         "minWidth": 0,
                       }
                     }
@@ -1388,7 +1387,6 @@ exports[`SettingsTab render 1`] = `
                       {
                         "flex": 1,
                         "flexGrow": 1,
-                        "justifyContent": "center",
                         "minWidth": 0,
                       }
                     }
@@ -1877,7 +1875,6 @@ exports[`SettingsTab render 1`] = `
                       {
                         "flex": 1,
                         "flexGrow": 1,
-                        "justifyContent": "center",
                         "minWidth": 0,
                       }
                     }

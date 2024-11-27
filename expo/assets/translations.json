@@ -204,6 +204,15 @@
   "authenticatoin failed.": {
     "ja": "認証に失敗しました。"
   },
+  "via @hellofanapp": {
+    "ja": "@hellofanapp より"
+  },
+  "Open Ameblo": {
+    "ja": "アメブロを開く"
+  },
+  "Open Instagram": {
+    "ja": "インスタを開く"
+  },
   "Download": {
     "ja": "ダウンロード"
   },

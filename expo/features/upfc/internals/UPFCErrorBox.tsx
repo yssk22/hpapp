@@ -12,6 +12,7 @@ export default function UPFCErrorBox({ error }: { error: Error }) {
     return (
       <View style={styles.container}>
         <Button
+          color="secondary"
           testID="UPFCErrorBox.ConfigureButton"
           onPress={() => {
             navigation.push(UPFCSettingsScreen);
