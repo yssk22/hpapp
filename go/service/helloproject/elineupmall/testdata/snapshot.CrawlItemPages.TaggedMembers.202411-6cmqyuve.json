@@ -1,0 +1,45 @@
+{
+  "value": {
+    "id": 21474836482,
+    "crawled_at": "2020-10-30T00:00:00+09:00",
+    "last_error_message": "",
+    "created_at": "2020-10-30T00:00:00+09:00",
+    "updated_at": "2020-10-30T00:00:00+09:00",
+    "permalink": "https://www.elineupmall.com/c720/c2766/202411-6cmqyuve/",
+    "name": "2024年11月通信販売 特大アクリルスタンドフィギア 野中美希",
+    "description": "商品お届け予定:2025年1月下旬予定「Morning Musume。'24 Miki Nonaka Birthday Event」グッズアザーカットを使用した全長約30cmの特大アクリルスタンドフィギアです。本体:約W120×H290mm＊商品の仕様、デザイン、写真はイメージのため、実際と異なる場合がございます。予めご了承下さい。         カテゴリ:2024年11月通信販売   受付締切日:2024年11月28日(木)23:59   商品お届け予定:2025年1月下旬予定      ＜郵便局でのお支払いに関して＞   2023年8月1日(火)より郵便振込でのお支払いを廃止し、e-Line UP! Mallのみでのご利用とさせていただきます。   2023年8月1日(火)以降、郵便局でお手続きいただいた場合は、手数料を差し引いて返金させていただきますのでご了承ください。   11月通信販売を合計￥8,000以上お買い上げの方の中から抽選で合計60名様に直筆サイン入りスタンド付L判生写真を抽選でプレゼント！今回は・・・・弓桁朱琴、松本わかな、井上玲音、福田真琳、石井泉羽、小林萌花です！※厳正なる抽選の上、当選者の発表は発送をもってかえさせて頂きます。※こちらの商品は受注商品となります。 ご入金頂いてから発送までにお時間を頂いてしまいますので、予めご了承ください。※複数商品を一度にご注文の場合は、発送予定日が最も遅い商品に合わせてまとめて発送致します。",
+    "supplier": "Hello! Projectオフィシャルファンクラブショップ",
+    "price": 3200,
+    "is_limited_to_fc": true,
+    "images": [
+      {
+        "url": "https://cdn.elineupmall.com/images/thumbnails/280/280/detailed/266/7a8e5ab08b0d0a5cc5aff3a443efab73.jpg"
+      }
+    ],
+    "category": "Other",
+    "order_end_at": "2024-11-28T00:00:00+09:00",
+    "edges": {
+      "tagged_members": [
+        {
+          "id": 8589934597,
+          "crawled_at": "2023-04-14T01:30:00Z",
+          "error_count": 1,
+          "last_error_message": "not crawled",
+          "created_at": "2019-11-28T03:01:28Z",
+          "updated_at": "2023-04-14T01:31:12Z",
+          "key": "miki_nonaka",
+          "artist_key": "morningmusume",
+          "name": "野中美希",
+          "name_kana": "ノナカミキ",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/0604ef2be9e0edcc2386a555cbfd4da4a830c803.jpg",
+          "date_of_birth": "1999-10-06T15:00:00Z",
+          "blood_type": "A",
+          "hometown": "静岡県(幼少期はアラバマ州イリノイ州)",
+          "join_at": "2014-09-29T15:00:00Z",
+          "artist_id": 1,
+          "edges": {}
+        }
+      ]
+    }
+  }
+}

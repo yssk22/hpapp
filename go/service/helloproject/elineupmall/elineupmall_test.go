@@ -113,7 +113,7 @@ func TestElineupmall(t *testing.T) {
 		a.Equals(itemPageTask.Path(), calls[5].Key)
 	})
 
-	t.Run("CrawoItemPages", func(t *testing.T) {
+	t.Run("CrawItemPages", func(t *testing.T) {
 		test.New(
 			"SalesPeriod",
 			test.WithHPMaster(),
@@ -285,6 +285,46 @@ func TestElineupmall(t *testing.T) {
 				name := filepath.Base(permalink)
 				a.Equals(want, item.Category, permalink)
 				a.Snapshot(fmt.Sprintf("CrawlItemPages..Category.%s", name), item)
+			}
+		})
+
+		test.New(
+			"MemberTagging",
+			test.WithHPMaster(),
+			test.WithFixedTimestamp(),
+		).Run(t, func(ctx context.Context, t *testing.T) {
+			var links = []struct {
+				link             string
+				numTaggedMembers int
+			}{
+				{
+					link:             "https://www.elineupmall.com/c720/c2766/202411-winter-62-b0g2ys51/",
+					numTaggedMembers: 55,
+				},
+				{
+					link:             "https://www.elineupmall.com/c720/c2766/202411-6cmqyuve/",
+					numTaggedMembers: 1,
+				},
+			}
+			a := assert.NewTestAssert(t)
+			for _, obj := range links {
+				permalink := obj.link
+				want := obj.numTaggedMembers
+				a.Nil(s.crawlItemPagesFunc(ctx, CrawlItemPagesArgs{
+					Urls: []string{permalink},
+				}))
+				item := entutil.NewClient(ctx).HPElineupMallItem.Query().Where(hpelineupmallitem.PermalinkEQ(permalink)).
+					WithTaggedArtists(func(q *ent.HPArtistQuery) {
+						q.Order(ent.Asc(hpartist.FieldID))
+					}).
+					WithTaggedMembers(func(q *ent.HPMemberQuery) {
+						q.Order(ent.Asc(hpmember.FieldID))
+					}).
+					OnlyX(ctx)
+				name := filepath.Base(permalink)
+				members, _ := item.TaggedMembers(ctx)
+				a.Equals(want, len(members), permalink)
+				a.Snapshot(fmt.Sprintf("CrawlItemPages.TaggedMembers.%s", name), item)
 			}
 		})
 
