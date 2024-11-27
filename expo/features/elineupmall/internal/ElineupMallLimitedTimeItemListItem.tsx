@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
   nameAndMetadata: {
     flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'flex-start',
     marginRight: Spacing.Medium
   },
   name: {

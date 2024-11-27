@@ -1,7 +1,9 @@
 import { AmebloIcon } from '@hpapp/features/common';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
 import { useNavigation } from '@hpapp/features/common/stack';
-import { StyleSheet, View } from 'react-native';
+import { t } from '@hpapp/system/i18n';
+import { Icon } from '@rneui/themed';
+import { Linking, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { graphql, useLazyLoadQuery } from 'react-relay';
 
@@ -57,7 +59,24 @@ export default function FeedItem({ feedId }: FeedItemProps) {
         )}
       </View>
       <View style={[styles.ctaContainer, { marginBottom: insets.bottom }]}>
-        {data.node!.assetType === 'ameblo' && <FeedItemCTA label="Open" icon={<AmebloIcon size={IconSize.Medium} />} />}
+        {data.node!.assetType === 'ameblo' && (
+          <FeedItemCTA
+            label={t('Open Ameblo')}
+            icon={<AmebloIcon size={IconSize.Medium} />}
+            onPress={() => {
+              Linking.openURL(data.node!.sourceURL!);
+            }}
+          />
+        )}
+        {data.node!.assetType === 'instagram' && (
+          <FeedItemCTA
+            label={t('Open Instagram')}
+            icon={<Icon type="ionicon" name="logo-instagram" size={IconSize.Medium} />}
+            onPress={() => {
+              Linking.openURL(data.node!.sourceURL!);
+            }}
+          />
+        )}
         <FeedItemCTAShare url={data.node!.sourceURL!} />
         {urls.length > 0 && <FeedItemCTADownload albumName={albumName} urls={urls} />}
         <FeedItemCTALove fragment={data.node!} />

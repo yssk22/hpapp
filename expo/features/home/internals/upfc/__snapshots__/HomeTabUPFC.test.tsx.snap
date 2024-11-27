@@ -163,7 +163,7 @@ exports[`HomeTabUPFC render UPFCErrorBox if settings is not configured 1`] = `
                       style={
                         {
                           "alignItems": "center",
-                          "backgroundColor": "#0075c2",
+                          "backgroundColor": "#e5007f",
                           "borderColor": "#0075c2",
                           "borderRadius": 2,
                           "borderWidth": 0,
@@ -313,6 +313,202 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                 }
               }
             >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "justifyContent": "flex-end",
+                    "padding": 4,
+                  }
+                }
+              >
+                <View
+                  style={
+                    [
+                      {
+                        "overflow": "hidden",
+                      },
+                      {
+                        "borderRadius": 2,
+                      },
+                      {
+                        "marginRight": 8,
+                      },
+                      false,
+                    ]
+                  }
+                  testID="RNE_BUTTON_WRAPPER"
+                >
+                  <View
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": false,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      {
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "borderColor": "#0075c2",
+                          "borderRadius": 2,
+                          "borderWidth": 0.5,
+                          "flexDirection": "row",
+                          "justifyContent": "center",
+                          "padding": 4,
+                          "paddingHorizontal": 6,
+                        }
+                      }
+                    >
+                      <Icon
+                        color="#52c41a"
+                        containerStyle={
+                          {
+                            "marginRight": 4,
+                          }
+                        }
+                        name="check-circle"
+                        size={16}
+                        type="fontawesome"
+                      />
+                      <Text
+                        style={
+                          {
+                            "color": "#0075c2",
+                            "fontSize": 18,
+                            "paddingVertical": 1,
+                            "textAlign": "center",
+                          }
+                        }
+                      >
+                        Hello! Project
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    [
+                      {
+                        "overflow": "hidden",
+                      },
+                      {
+                        "borderRadius": 2,
+                      },
+                      {
+                        "marginRight": 8,
+                      },
+                      false,
+                    ]
+                  }
+                  testID="RNE_BUTTON_WRAPPER"
+                >
+                  <View
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": false,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      {
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "borderColor": "#0075c2",
+                          "borderRadius": 2,
+                          "borderWidth": 0.5,
+                          "flexDirection": "row",
+                          "justifyContent": "center",
+                          "padding": 4,
+                          "paddingHorizontal": 6,
+                        }
+                      }
+                    >
+                      <Icon
+                        color="hsl(208, 8%, 90%)"
+                        containerStyle={
+                          {
+                            "marginRight": 4,
+                          }
+                        }
+                        name="settings"
+                        size={16}
+                        type="ionicons"
+                      />
+                      <Text
+                        style={
+                          {
+                            "color": "#0075c2",
+                            "fontSize": 18,
+                            "paddingVertical": 1,
+                            "textAlign": "center",
+                          }
+                        }
+                      >
+                        M-Line
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
               <RCTScrollView
                 data={
                   [
@@ -699,7 +895,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -895,7 +1090,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -1166,7 +1360,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -1362,7 +1555,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -1633,7 +1825,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -1829,7 +2020,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -2100,7 +2290,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -2296,7 +2485,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -2671,7 +2859,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -2867,7 +3054,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -3242,7 +3428,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -3438,7 +3623,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -3813,7 +3997,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -4009,7 +4192,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -4384,7 +4566,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }
@@ -4580,7 +4761,6 @@ exports[`HomeTabUPFC render list if settings is configured 1`] = `
                                 {
                                   "flex": 1,
                                   "flexGrow": 1,
-                                  "justifyContent": "center",
                                   "minWidth": 0,
                                 }
                               }

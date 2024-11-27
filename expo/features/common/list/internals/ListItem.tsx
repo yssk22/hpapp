@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
     minWidth: 0
   },
   center: {
-    justifyContent: 'center',
     flexGrow: 1,
     flex: 1,
     minWidth: 0
