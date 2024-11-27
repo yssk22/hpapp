@@ -1,10 +1,11 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
 import { Text } from '@hpapp/features/common';
 import { FontSize, Spacing } from '@hpapp/features/common/constants';
+import { t } from '@hpapp/system/i18n';
 import Constants from 'expo-constants';
 import * as Updates from 'expo-updates';
 import { useState, useEffect } from 'react';
-import { AppState, AppStateStatus, TouchableOpacity, StyleSheet, View } from 'react-native';
+import { AppState, AppStateStatus, TouchableOpacity, StyleSheet, View, Dimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as logging from 'system/logging';
 
@@ -83,7 +84,7 @@ export default function AppUpdateBanner({
     return null;
   }
 
-  const text = state.isUpdating ? updateInProgressText : updateAvaiableText;
+  const text = state.isUpdating ? t('Updating...') : t('Update is available - Tap to install.');
   return (
     <TouchableOpacity
       testID="AppUpdateBanner"
@@ -112,8 +113,13 @@ export default function AppUpdateBanner({
   );
 }
 
+const height = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
   container: {
+    position: 'absolute',
+    top: -1 * height,
+    width: '100%',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',

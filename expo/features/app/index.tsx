@@ -15,8 +15,8 @@ export function AppRoot({ screens, ...props }: AppRootProps) {
       <ThemeProvider {...props}>
         <AppRelayProvider>
           <LocalMediaManagerProvider name={maybeDev() ? 'hellofanapp-dev' : 'hellofanapp'}>
-            <AppUpdateBanner />
             <Root screens={screens} />
+            <AppUpdateBanner />
           </LocalMediaManagerProvider>
         </AppRelayProvider>
       </ThemeProvider>

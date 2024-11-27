@@ -3,82 +3,6 @@
 exports[`app AppUpdateBanner show banner 1`] = `
 [
   <View
-    accessibilityState={
-      {
-        "busy": undefined,
-        "checked": undefined,
-        "disabled": false,
-        "expanded": undefined,
-        "selected": undefined,
-      }
-    }
-    accessibilityValue={
-      {
-        "max": undefined,
-        "min": undefined,
-        "now": undefined,
-        "text": undefined,
-      }
-    }
-    accessible={true}
-    collapsable={false}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      {
-        "opacity": 1,
-      }
-    }
-    testID="AppUpdateBanner"
-  >
-    <View
-      style={
-        [
-          {
-            "alignItems": "center",
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "padding": 12,
-          },
-          {
-            "backgroundColor": "#faad14",
-            "paddingTop": 0,
-          },
-        ]
-      }
-    >
-      <Text
-        style={
-          [
-            {
-              "color": "black",
-            },
-            {
-              "fontSize": 14,
-            },
-            [
-              {
-                "fontSize": 14,
-                "textAlign": "center",
-              },
-              {
-                "color": "#ffffff",
-              },
-            ],
-          ]
-        }
-      >
-        Update is available. Tap to install.
-      </Text>
-    </View>
-  </View>,
-  <View
     style={
       [
         {
@@ -193,6 +117,85 @@ exports[`app AppUpdateBanner show banner 1`] = `
         />
       </RNSScreen>
     </RNSScreenStack>
+  </View>,
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "opacity": 1,
+      }
+    }
+    testID="AppUpdateBanner"
+  >
+    <View
+      style={
+        [
+          {
+            "alignItems": "center",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "padding": 12,
+            "position": "absolute",
+            "top": -1334,
+            "width": "100%",
+          },
+          {
+            "backgroundColor": "#faad14",
+            "paddingTop": 0,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "black",
+            },
+            {
+              "fontSize": 14,
+            },
+            [
+              {
+                "fontSize": 14,
+                "textAlign": "center",
+              },
+              {
+                "color": "#ffffff",
+              },
+            ],
+          ]
+        }
+      >
+        アップデートが利用可能です。タップしてインストール。
+      </Text>
+    </View>
   </View>,
 ]
 `;
