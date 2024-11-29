@@ -8,6 +8,7 @@ import (
 
 	"github.com/yssk22/hpapp/go/foundation/slice"
 	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/usernotificationlog"
 	"github.com/yssk22/hpapp/go/service/ent/usernotificationsetting"
 	"github.com/yssk22/hpapp/go/service/entutil"
 	"github.com/yssk22/hpapp/go/service/schema/enums"
@@ -133,20 +134,28 @@ func Deliver(ctx context.Context, notif Notification, options ...DeliveryOption)
 	fmt.Println(receivers)
 
 	entclient := entutil.NewClient(ctx)
+	isTest := len(o.TestTokens) > 0
 	record, err := entclient.UserNotificationLog.Create().
 		SetKey(key).
 		SetTrigger(trigger).
 		SetReactNavigationMessage(*message).
-		SetIsTest(len(o.TestTokens) > 0).
+		SetIsTest(isTest).
 		SetStatus(enums.UserNotificationStatusPrepared).
 		SetExpectedDeliveryTime(expectedTime).
 		AddReceivers(receivers...).
 		Save(ctx)
 	if err != nil {
-		if ent.IsConstraintError(err) {
+		if !ent.IsConstraintError(err) {
+			return nil, err
+		}
+		// ignore duplicate notification if it's test
+		if !isTest {
 			return nil, ErrDuplicateNotification
 		}
-		return nil, err
+		record, err = entclient.UserNotificationLog.Query().Where(usernotificationlog.KeyEQ(key), usernotificationlog.TriggerEQ(trigger)).WithReceivers().First(ctx)
+		if err != nil {
+			return nil, err
+		}
 	}
 	messages, err := buildPushMessage(ctx, record)
 	var status enums.UserNotificationStatus
