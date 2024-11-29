@@ -75,7 +75,7 @@ func (s *amebloService) Command() *cobra.Command {
 		Use:   "ameblo",
 		Short: "operate ameblo posts",
 	}
-	cmd.AddCommand(&cobra.Command{
+	crawlUrls := &cobra.Command{
 		Use:   "crawl-urls",
 		Short: "crawl urls locally",
 		Args:  cobra.MinimumNArgs(1),
@@ -95,7 +95,30 @@ func (s *amebloService) Command() *cobra.Command {
 			w.Flush()
 			return nil
 		},
-	})
+	}
+	testNotif := &cobra.Command{
+		Use:   "test-notify",
+		Short: "send test notification",
+		Args:  cobra.ExactArgs(1),
+		RunE: func(cmd *cobra.Command, args []string) error {
+			ctx := cmd.Context()
+			path := args[0]
+			entclient := entutil.NewClient(ctx)
+			post := entclient.HPAmebloPost.Query().Where(hpameblopost.PathEQ(path)).FirstX(ctx)
+			notif := &amebloPostNotification{
+				record: post,
+			}
+			token := assert.X(cmd.Flags().GetString("token"))
+			log, err := push.Deliver(ctx, notif, push.TestTokens(token))
+			if err != nil {
+				return err
+			}
+			fmt.Println("sent notification - status", log.Status)
+			return nil
+		},
+	}
+	testNotif.Flags().StringP("token", "t", "", "token to send a notification")
+	cmd.AddCommand(crawlUrls, testNotif)
 	return cmd
 }
 

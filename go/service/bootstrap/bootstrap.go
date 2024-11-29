@@ -19,6 +19,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/helloproject/ig/apify"
 	"github.com/yssk22/hpapp/go/service/helloproject/member"
 	"github.com/yssk22/hpapp/go/service/helloproject/upfc"
+	"github.com/yssk22/hpapp/go/service/push"
 	"github.com/yssk22/hpapp/go/system/environment"
 	"github.com/yssk22/hpapp/go/system/environment/devcontainer"
 	"github.com/yssk22/hpapp/go/system/environment/gcp"
@@ -79,6 +80,7 @@ func newProduction() *bootstrap {
 				client.NewFirebaseAppCheck(env.GCPProjectID),
 				client.NewGCPServiceToServiceAuth(env.GCPProjectID),
 			),
+			push.NewService(),
 			member.NewMemberService(),
 			ameblo.NewService(
 				blobCrawler,
