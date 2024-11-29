@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { fetchQuery, graphql, usePaginationFragment, useRelayEnvironment } from 'react-relay';
 import { usePaginationFragmentHookType } from 'react-relay/relay-hooks/usePaginationFragment';
 
@@ -79,37 +79,32 @@ function createFeedContext(): [(props: FeedContextProviderProps) => React.JSX.El
     // We intentionally use fetchQuery() with 'isLoading' state control for "Pull To Refresh".
     const env = useRelayEnvironment();
     const [isLoading, setIsLoading] = useState(true);
+    const [fetchCount, setFetchCount] = useState(0);
     const [data, setData] = useState<FeedContextQuery$data | null>(null);
-    const fetch = useCallback(
-      (fetchPolicy: 'store-or-network' | 'network-only') => {
-        (async () => {
-          setIsLoading(true);
-          const result = await fetchQuery<FeedContextQuery>(
-            env,
-            FeedContextQueryGraphQL,
-            {
-              first: NUM_FEED_ITEMS_PER_LOAD,
-              params: {
-                assetTypes,
-                memberIDs,
-                useMemberTaggings
-              }
-            },
-            {
-              fetchPolicy
-            }
-          ).toPromise();
-          setData(result!);
-          setIsLoading(false);
-        })();
-      },
-      [env, assetTypes, memberIDs, useMemberTaggings]
-    );
     useEffect(() => {
-      fetch('store-or-network');
-    }, [fetch]);
+      (async () => {
+        setIsLoading(true);
+        const result = await fetchQuery<FeedContextQuery>(
+          env,
+          FeedContextQueryGraphQL,
+          {
+            first: NUM_FEED_ITEMS_PER_LOAD,
+            params: {
+              assetTypes,
+              memberIDs,
+              useMemberTaggings
+            }
+          },
+          {
+            fetchPolicy: 'store-or-network'
+          }
+        ).toPromise();
+        setData(result!);
+        setIsLoading(false);
+      })();
+    }, [fetchCount, assetTypes, memberIDs, useMemberTaggings, env]);
     const reload = () => {
-      fetch('network-only');
+      setFetchCount(fetchCount + 1);
     };
     return (
       <FeedContextPaginationRenderer fragment={data} isLoading={isLoading} reload={reload}>
