@@ -4,6 +4,7 @@ import { useThemeColor } from '@hpapp/features/app/theme';
 import { AuthGateByRole } from '@hpapp/features/auth';
 import { Text } from '@hpapp/features/common';
 import { defineScreen } from '@hpapp/features/common/stack';
+import { usePushNotificationToken } from '@hpapp/features/push';
 import { getAppCheckToken } from '@hpapp/system/firebase';
 import { t } from '@hpapp/system/i18n';
 import { Divider, ListItem } from '@rneui/themed';
@@ -19,6 +20,8 @@ export default defineScreen('/devtool/', function DevtoolScreen() {
   const appConfig = useAppConfig();
   const userConfig = useUserConfig();
   const [appCheckToken, setAppCheckToken] = useState<string | null>(null);
+  const pushToken = usePushNotificationToken();
+
   useEffect(() => {
     (async () => {
       setAppCheckToken((await getAppCheckToken()).token);
@@ -49,6 +52,15 @@ export default defineScreen('/devtool/', function DevtoolScreen() {
         displayValue={(appCheckToken ?? '').substring(0, 20) + '****'}
       />
       <Divider />
+      <DevtoolListItem
+        name="Push Token"
+        value={pushToken.error !== undefined ? pushToken.error.toString() : (pushToken.data ?? '')}
+        displayValue={
+          pushToken.error !== undefined ? pushToken.error.toString() : (pushToken.data ?? '').substring(0, 20) + '****'
+        }
+      />
+      <Divider />
+
       <ListItemClearCache />
       <Divider />
       <DevtoolUserConfigForm />
