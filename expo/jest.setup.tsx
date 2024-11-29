@@ -218,5 +218,4 @@ jest.mock('@hpapp/features/app/storybook', () => {
     }
   };
 });
-
 jest.setTimeout(30000);

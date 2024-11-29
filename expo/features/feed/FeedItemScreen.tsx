@@ -9,7 +9,7 @@ export type FeedItemScreenProps = {
   feedId: string;
 };
 
-export default defineScreen('/feed/item/', function FeedItemScreen(props: FeedItemScreenProps) {
+export default defineScreen('/feed/', function FeedItemScreen(props: FeedItemScreenProps) {
   return (
     <View style={styles.container}>
       <Suspense fallback={<Loading />}>
