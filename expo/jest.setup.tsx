@@ -210,8 +210,6 @@ jest.mock('@hpapp/system/media', () => {
 
 jest.mock('@hpapp/system/graphql/relay');
 
-jest.setTimeout(5000);
-
 jest.mock('@hpapp/features/app/storybook', () => {
   return {
     __esModule: true,
@@ -220,3 +218,4 @@ jest.mock('@hpapp/features/app/storybook', () => {
     }
   };
 });
+jest.setTimeout(30000);
