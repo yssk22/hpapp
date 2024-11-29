@@ -194,24 +194,22 @@ func TestNotification(t *testing.T) {
 				},
 			},
 		}
-		a.Nil(settings.Set(ctx, TestTokens, []string{"foo"}))
 		_, err := Deliver(ctx, &testNotification{
 			key:       "notify",
 			trigger:   "trigger",
 			receivers: []*ent.UserNotificationSetting{notifs},
 			message:   message,
-		}, TestOnly(true))
+		}, TestTokens("foo"))
 		a.NotNil(err)
-		a.Equals(ErrNoReceivers, err)
+		a.Equals(ErrInvalidTestTokens, err)
 
 		// update settings
-		a.Nil(settings.Set(ctx, TestTokens, []string{"ExponentPushToken[follower1-token]"}))
 		_, err = Deliver(ctx, &testNotification{
 			key:       "notify",
 			trigger:   "trigger2",
 			receivers: []*ent.UserNotificationSetting{notifs},
 			message:   message,
-		}, TestOnly(true))
+		}, TestTokens("ExponentPushToken[follower1-token]"))
 		a.Nil(err)
 	})
 

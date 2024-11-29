@@ -3,11 +3,12 @@ package push
 import (
 	"context"
 	"fmt"
+	"log"
 	"time"
 
-	"github.com/yssk22/hpapp/go/foundation/assert"
 	"github.com/yssk22/hpapp/go/foundation/slice"
 	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/usernotificationsetting"
 	"github.com/yssk22/hpapp/go/service/entutil"
 	"github.com/yssk22/hpapp/go/service/schema/enums"
 	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
@@ -22,8 +23,6 @@ var (
 	KillNotification = settings.NewBool("service.push.kill_notification", false)
 	// KillNotificationLogByKeys kills the notifications by the specific keys.
 	KillNotificationByKeys = settings.NewStringArray("service.push.kill_notification_by_keys", []string{})
-	// TestTokens is a comma seperated list of Expo tokens to send test notifications.
-	TestTokens = settings.NewStringArray("service.push.test_tokens", []string{})
 
 	// DeliveryDelayThresholdHours is a threshold to send a notification. The clock.Now(ctx) is compared with ExpectedDeliveryTime and if the diff exceeds this threshold,
 	// then the notification is not sent.
@@ -33,6 +32,7 @@ var (
 // errors
 var (
 	ErrNoReceivers                 = fmt.Errorf("no receivers to send a notification")
+	ErrInvalidTestTokens           = fmt.Errorf("invalid test tokens")
 	ErrDuplicateNotification       = fmt.Errorf("duplicate notification")
 	ErrExceedDeliveryTimeThreshold = fmt.Errorf("time to deliver exceeded with the threshold")
 	ErrKilledNotificationGlobally  = fmt.Errorf("notification is killed globally")
@@ -40,22 +40,43 @@ var (
 )
 
 type option struct {
-	TestOnly bool
+	TestOnly   bool
+	TestTokens []string
 }
 
 type DeliveryOption func(*option)
 
+/**
+ * TestOnly sets notification as test only. This is useful to test the notification in production environment.
+ * It uses tokens from `service.push.test_tokens` settings.
+ */
 func TestOnly(value bool) DeliveryOption {
 	return func(o *option) {
 		o.TestOnly = value
 	}
 }
 
+func TestTokens(values ...string) DeliveryOption {
+	return func(o *option) {
+		o.TestTokens = values
+		o.TestOnly = true
+	}
+}
+
 type Notification interface {
+	// Key returns a unique group key for the notification
 	Key() string
+
+	// Trigger returns a unique trigger string for the notification
 	Trigger(context.Context) (string, error)
+
+	// Receivers returns a list of token receivers
 	Receivers(context.Context) ([]*ent.UserNotificationSetting, error)
+
+	// Message returns a message to send
 	Message(context.Context) (*jsonfields.ReactNavigationPush, error)
+
+	// ExpectedDeliveryTime returns a time when the notification is expected to be delivered
 	ExpectedDeliveryTime(context.Context) (time.Time, error)
 }
 
@@ -86,12 +107,37 @@ func Deliver(ctx context.Context, notif Notification, options ...DeliveryOption)
 		return nil, ErrNoReceivers
 	}
 
+	if len(o.TestTokens) > 0 {
+		// need to override receivers with test tokens.
+		entclient := entutil.NewClient(ctx)
+		testReceivers, err := entclient.UserNotificationSetting.Query().Where(usernotificationsetting.TokenIn(o.TestTokens...)).All(ctx)
+		if err != nil {
+			return nil, err
+		}
+		if len(testReceivers) != len(o.TestTokens) {
+			log.Println("receivers", len(receivers), "test tokens", len(o.TestTokens))
+			return nil, ErrInvalidTestTokens
+		}
+		testTrigger := fmt.Sprintf("%s.test", trigger)
+		slog.Info(ctx, "sending test notiications",
+			slog.Name("service.push.notification.Deliver(test)"),
+			slog.A("key", key),
+			slog.A("receivers", len(testReceivers)),
+			slog.A("trigger", testTrigger),
+			slog.A("original_receivers", len(receivers)),
+			slog.A("original_trigger", trigger),
+		)
+		receivers = testReceivers
+		trigger = testTrigger
+	}
+	fmt.Println(receivers)
+
 	entclient := entutil.NewClient(ctx)
 	record, err := entclient.UserNotificationLog.Create().
 		SetKey(key).
 		SetTrigger(trigger).
 		SetReactNavigationMessage(*message).
-		SetIsTest(o.TestOnly).
+		SetIsTest(len(o.TestTokens) > 0).
 		SetStatus(enums.UserNotificationStatusPrepared).
 		SetExpectedDeliveryTime(expectedTime).
 		AddReceivers(receivers...).
@@ -182,26 +228,6 @@ func getTokenSets(ctx context.Context, r *ent.UserNotificationLog) ([][]string, 
 		if err != nil {
 			return nil, err
 		}
-	}
-	if r.IsTest {
-		// If test flag is on, then we restrict receivers who have a token that matches with one of test tokens.
-		origReceivers := len(receivers)
-		testTokens := settings.GetX(ctx, TestTokens)
-		receivers = assert.X(slice.Filter(receivers, func(i int, settings *ent.UserNotificationSetting) (bool, error) {
-			for _, token := range testTokens {
-				if settings.Token == token {
-					return true, nil
-				}
-			}
-			return false, nil
-		}))
-		restrictedReceivers := len(receivers)
-		slog.Warning(ctx, "trying to send a test notification so restrict receivers defined in service.push.test-tokens",
-			slog.Name("service.push.Deliver"),
-			slog.Attribute("record_id", r.ID),
-			slog.Attribute("num_original_receivers", origReceivers),
-			slog.Attribute("num_restricted_receivers", restrictedReceivers),
-		)
 	}
 	if len(receivers) == 0 {
 		return nil, ErrNoReceivers
