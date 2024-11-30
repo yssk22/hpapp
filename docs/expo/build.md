@@ -32,10 +32,15 @@ $ cp -r ./config/dev ./config/$HPAPP_CONFIG_NAME
 
 Edit `./config/$HPAPP_CONFIG_NAME/app.config.js`. It's important to update the following configurations to adjust your Expo project.
 
-- `config.slug`
-- `config.extra.eas.projectId`
-- `config.ios.bundleIdentifier`
-- `config.android.package`
+- `config.slug` - your Expo project slug.
+- `config.extra.eas.projectId` - your EAS project id.
+- `config.ios.bundleIdentifier` - bundle identifier for iOS. should be dev.yssk22.hpapp.{env}.
+- `config.android.package` - package name for Android. should be dev.yssk22.hpapp.{env}
+- `config.extra.hpapp.env` - environnment name. should be same as $HPAPP_CONFIG_NAME.
+- `config.extra.hpapp.isBeta` - boolean value to indicate the build to be submitted to app store _review_ or not while the client is submitted to testflight.
+- `config.extra.hpapp.isDev` - boolean value to indicate the development build or not.
+- `config.extra.hpapp.firebaseIOSClientID` - The value should be same as `CLIENT_ID` in GoogleService-Info.plist
+- `config.extra.hpapp.firebaseAndroidClientID` - The value should be same as `client_id` field in oauth_client where the pacakge name matches with `config.android.package` in google-services.json
 
 ### eas.json
 
@@ -48,8 +53,8 @@ You need to obtain `GoogleService-Info.plist` and `google-services.json` from yo
 Once you get these files, put them in `./config/$HPAPP_CONFIG_NAME/` directory and upload them as EAS credential.
 
 ```text
-$ yarn eas secret:create --scope project --name DEV_GOOGLE_SERVICES_JSON --type file --value ./config/dev/google-services.json
-$ yarn eas secret:create --scope project --name DEV_GOOGLE_SERVICES_INFO_PLIST --type file --value ./config/dev/GoogleService-Info.plist
+$ eas secret:create --scope project --name DEV_GOOGLE_SERVICES_JSON --type file --value ./config/dev/google-services.json
+$ eas secret:create --scope project --name DEV_GOOGLE_SERVICES_INFO_PLIST --type file --value ./config/dev/GoogleService-Info.plist
 ```
 
 ### Firebase AppCheck Configuration
@@ -64,13 +69,7 @@ If you use Firebase Authentication with AppCheck, you need to configure AppCheck
 {
   "extra": {
     "hpapp": {
-      "graphQLEndpoint": "https://your-graphql-endpoint",
-      "auth": {
-        "google": {
-          "iosClientId": "your Firebase clientId for iOS",
-          "androidClientId": "your Firebase clientId for iOS"
-        }
-      }
+      "graphQLEndpoint": "https://your-graphql-endpoint"
     }
   }
 }
@@ -79,7 +78,7 @@ If you use Firebase Authentication with AppCheck, you need to configure AppCheck
 then upload it to the EAS server as a file secret.
 
 ```shell
-$ yarn eas secret:create --scope project --name DEV_SECRETS_JSON --type file --value ./config/dev/secrets.json
+$ eas secret:create --scope project --name DEV_SECRETS_JSON --type file --value ./config/dev/secrets.json
 ```
 
 ## Create a development build on EAS
