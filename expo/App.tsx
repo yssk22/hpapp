@@ -1,7 +1,7 @@
-import { AppRoot } from './features/app';
+import { App } from './features/app';
 import { ScreenList } from './features/common/stack';
 import Screens from './generated/Screens';
 
-export default function App() {
-  return <AppRoot screens={Screens as ScreenList} />;
+export default function HPApp() {
+  return <App screens={Screens as ScreenList} />;
 }

@@ -1,0 +1,33 @@
+name: EAS - OTA Update (Manual)
+on:
+  workflow_dispatch:
+    inputs:
+      config:
+        description: "HPAPP_CONFIG_NAME set"
+        required: true
+        default: "beta"
+        type: choice
+        options:
+          - beta
+          - prod
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: eas
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "22"
+          cache: "yarn"
+          cache-dependency-path: "expo/package.json"
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: 13.4.2
+          token: ${{ secrets.EXPO_TOKEN }}
+      - run: cd expo && yarn install
+      - run: cd expo && ./scripts/eas.sh update --channel ${{inputs.config}} --non-interactive --auto
+        env:
+          HPAPP_CONFIG_NAME: ${{inputs.config}}

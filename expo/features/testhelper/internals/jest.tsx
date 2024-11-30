@@ -2,7 +2,7 @@ import { SettingsProviderProps, SettingsUserConfigDefault } from '@hpapp/feature
 import { renderThemeProvider } from '@hpapp/features/app/theme/testhelper';
 import * as Stack from '@hpapp/features/common/stack';
 import { screen, act, waitForElementToBeRemoved } from '@testing-library/react-native';
-import { AppRoot } from 'features/app';
+import { App } from 'features/app';
 import React from 'react';
 import { Text } from 'react-native';
 
@@ -15,7 +15,7 @@ const userConfig = {
 };
 
 export async function renderUserScreen(screen: Stack.Screen<Stack.ScreenParams>, props: SettingsProviderProps = {}) {
-  const content = await renderThemeProvider(<AppRoot screens={[screen]} />, {
+  const content = await renderThemeProvider(<App screens={[screen]} />, {
     currentUser: {
       id: '1',
       username: 'risa',
@@ -45,7 +45,7 @@ export async function renderGuestComponent(component: React.ReactElement, props:
   const screen = Stack.defineScreen('/', function TestComponent() {
     return <Text>DummyUserRoot</Text>;
   });
-  const content = await renderThemeProvider(<AppRoot screens={[screen]} />, {
+  const content = await renderThemeProvider(<App screens={[screen]} />, {
     userConfig,
     ...props,
     currentUser: undefined

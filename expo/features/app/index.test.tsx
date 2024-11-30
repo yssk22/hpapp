@@ -5,7 +5,7 @@ import { act, fireEvent, render, waitFor, waitForElementToBeRemoved } from '@tes
 import * as Updates from 'expo-updates';
 import { Text } from 'react-native';
 
-import { AppRoot } from './';
+import { App } from './';
 import AppConfigModal from './internals/AppConfigModal';
 import { SettingsUserConfigDefault, useAppConfig } from './settings';
 import { clearSettings } from './settings/testhelper';
@@ -112,7 +112,7 @@ describe('app', () => {
   describe('AppRoot', () => {
     test('user', async () => {
       const content = await render(
-        <AppRoot
+        <App
           screens={[TestScreen]}
           currentUser={{
             id: '1',
@@ -130,7 +130,7 @@ describe('app', () => {
     });
 
     test('guest', async () => {
-      const content = await render(<AppRoot screens={[TestScreen]} userConfig={userConfig} />);
+      const content = await render(<App screens={[TestScreen]} userConfig={userConfig} />);
       await act(() => {});
       expect(content.queryByTestId('UserRoot.Loading')).toBeNull();
       expect(content.getByTestId('AppRootGuest')).toBeTruthy();
