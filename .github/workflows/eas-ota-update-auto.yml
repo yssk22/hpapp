@@ -24,6 +24,9 @@ jobs:
         with:
           eas-version: 13.4.2
           token: ${{ secrets.EXPO_TOKEN }}
+      - run: cd expo && envsubst < config/beta/secrets.json.env > config/beta/secrets.json
+        env:
+          SECRETS_JSON: ${{ secrets.SECRETS_JSON }}
       - run: cd expo && yarn install
       - run: cd expo && ./scripts/eas.sh update --channel beta --non-interactive --auto
         env:
