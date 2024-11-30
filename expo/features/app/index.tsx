@@ -1,7 +1,9 @@
+import { ErrorBoundary } from '@hpapp/features/common';
 import { maybeDev } from '@hpapp/foundation/environment';
 import { LocalMediaManagerProvider } from '@hpapp/system/media';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import AppGlobalErrorFallback from './internals/AppGlobalErrorFallback';
 import AppRelayProvider from './internals/AppRelayProvider';
 import { default as Root, AppRootProps as RootProps } from './internals/AppRoot';
 import AppUpdateBanner from './internals/AppUpdateBanner';
@@ -15,7 +17,9 @@ export function AppRoot({ screens, ...props }: AppRootProps) {
       <ThemeProvider {...props}>
         <AppRelayProvider>
           <LocalMediaManagerProvider name={maybeDev() ? 'hellofanapp-dev' : 'hellofanapp'}>
-            <Root screens={screens} />
+            <ErrorBoundary fallback={AppGlobalErrorFallback}>
+              <Root screens={screens} />
+            </ErrorBoundary>
             <AppUpdateBanner />
           </LocalMediaManagerProvider>
         </AppRelayProvider>

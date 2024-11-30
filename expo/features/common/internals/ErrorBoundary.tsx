@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ErrorInfo } from 'react';
 
 export type FallbackComponent = React.ComponentType<{ error: Error; errorInfo: any }>;
 
@@ -10,7 +10,7 @@ export type ErrorBoundaryProps = {
 
 export type ErrorParams = {
   error: Error | null;
-  errorInfo: any | null;
+  errorInfo: ErrorInfo | null;
 };
 
 export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorParams> {
@@ -19,7 +19,7 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, E
     this.state = { error: null, errorInfo: null };
   }
 
-  componentDidCatch(error: Error, errorInfo: any) {
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     if (this.props.catch) {
       this.props.catch(error, errorInfo);
     }

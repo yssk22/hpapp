@@ -44,8 +44,20 @@
   "Update is available - Tap to install.": {
     "ja": "アップデートが利用可能です。タップしてインストール。"
   },
-  "Updating...": {
-    "ja": "アップデート中..."
+  "Updating": {
+    "ja": "アップデート中"
+  },
+  "Unexpected error occurred.": {
+    "ja": "予期しないエラーが発生しました。"
+  },
+  "Please confirm your network connection and restart the app.": {
+    "ja": "ネットワーク接続を確認しアプリを再起動してください。"
+  },
+  "Please try to reinstall the app if you continue to see this error.": {
+    "ja": "このエラーが続く場合は、アプリを再インストールしてみてください。"
+  },
+  "Restart": {
+    "ja": "再起動"
   },
   "Home": {
     "ja": "ホーム"

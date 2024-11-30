@@ -17,13 +17,7 @@ type BannerAppUpdateState = {
   lastUpdateTimestamp: Date | null;
 };
 
-export default function AppUpdateBanner({
-  updateAvaiableText = 'Update is available. Tap to install.',
-  updateInProgressText = 'Updating...'
-}: {
-  updateAvaiableText?: string;
-  updateInProgressText?: string;
-}) {
+export default function AppUpdateBanner() {
   const insets = useSafeAreaInsets();
   const [color, contrast] = useThemeColor('warning');
   const [state, setState] = useState<BannerAppUpdateState>({
@@ -84,7 +78,7 @@ export default function AppUpdateBanner({
     return null;
   }
 
-  const text = state.isUpdating ? t('Updating...') : t('Update is available - Tap to install.');
+  const text = state.isUpdating ? `${t('Updating')}...` : t('Update is available - Tap to install.');
   return (
     <TouchableOpacity
       testID="AppUpdateBanner"
