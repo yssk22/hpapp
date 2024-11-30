@@ -27,13 +27,28 @@ module.exports = (_) => {
 
   if (fs.existsSync(iosGoogleServicesFilePath)) {
     config.ios.googleServicesFile = iosGoogleServicesFilePath;
+  } else {
+    if (isEAS) {
+      throw new Error('GoogleService-Info.plist file does not found in ' + iosGoogleServicesFilePath);
+    }
   }
   if (fs.existsSync(androidGoogleServicesFilePath)) {
     config.android.googleServicesFile = androidGoogleServicesFilePath;
+  } else {
+    if (isEAS) {
+      throw new Error('google-services.json file does not found in ' + androidGoogleServicesFilePath);
+    }
   }
   if (fs.existsSync(secretsJsonPath)) {
     const secretsJson = JSON.parse(fs.readFileSync(secretsJsonPath).toString());
     config.extra.hpapp.graphQLEndpoint = secretsJson.extra.hpapp.graphQLEndpoint;
+  } else {
+    throw new Error(
+      [
+        'secrets.json file does not found in ' + secretsJsonPath,
+        'see https://github.com/yssk22/hpapp/blob/main/docs/expo/build.md#secretsjson section for the format'
+      ].join('\n')
+    );
   }
 
   // finally load the environment specific app.config.js
