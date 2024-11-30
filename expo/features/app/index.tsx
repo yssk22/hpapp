@@ -5,20 +5,20 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import AppGlobalErrorFallback from './internals/AppGlobalErrorFallback';
 import AppRelayProvider from './internals/AppRelayProvider';
-import { default as Root, AppRootProps as RootProps } from './internals/AppRoot';
+import AppRoot, { AppRootProps } from './internals/AppRoot';
 import AppUpdateBanner from './internals/AppUpdateBanner';
 import { ThemeProvider, ThemeProviderProps } from './theme';
 
-export type AppRootProps = RootProps & ThemeProviderProps;
+export type AppProps = AppRootProps & ThemeProviderProps;
 
-export function AppRoot({ screens, ...props }: AppRootProps) {
+export function App({ screens, ...props }: AppProps) {
   return (
     <SafeAreaProvider testID="app.SafeAreaProvider">
       <ThemeProvider {...props}>
         <AppRelayProvider>
           <LocalMediaManagerProvider name={maybeDev() ? 'hellofanapp-dev' : 'hellofanapp'}>
             <ErrorBoundary fallback={AppGlobalErrorFallback}>
-              <Root screens={screens} />
+              <AppRoot screens={screens} />
             </ErrorBoundary>
             <AppUpdateBanner />
           </LocalMediaManagerProvider>

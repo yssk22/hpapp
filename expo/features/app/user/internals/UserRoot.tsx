@@ -13,7 +13,6 @@ import { init as initURICache } from '@hpapp/system/uricache';
 import { useNavigationContainerRef } from '@react-navigation/native';
 import { useCallback, useEffect } from 'react';
 
-import UserError from './UserError';
 import UserServiceProvider from './UserServiceProvider';
 import UserWrapper from './UserWrapper';
 
@@ -73,7 +72,7 @@ export default function UserRoot({ screens = Screens }: UserRootProps) {
   }, []);
   return (
     <Initializer initializers={initializers}>
-      <UserServiceProvider errorFallback={UserError} loadingFallback={<Loading testID="UserRoot.Loading" />}>
+      <UserServiceProvider loadingFallback={<Loading testID="UserRoot.Loading" />}>
         <PushNotificationHandler onData={onData}>
           <Stack
             ref={navigation}
