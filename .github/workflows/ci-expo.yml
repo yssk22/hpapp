@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
-          node-version: "22"
+          node-version: "22.3.0"
           cache: "yarn"
           cache-dependency-path: "expo/package.json"
       - run: cd expo && cp config/dev/icon.png assets/

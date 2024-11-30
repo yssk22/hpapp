@@ -23,12 +23,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment:
-      name: eas
+      name: eas-submission
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "22"
+          node-version: "22.3.0"
           cache: "yarn"
           cache-dependency-path: "expo/package.json"
       - uses: expo/expo-github-action@v8
@@ -50,7 +50,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "22"
+          node-version: "22.3.0"
           cache: "yarn"
           cache-dependency-path: "expo/package.json"
       - uses: expo/expo-github-action@v8
