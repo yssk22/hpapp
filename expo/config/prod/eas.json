@@ -8,5 +8,21 @@
             "ios": {},
             "android": {}
         }
+    },
+    "submit": {
+        "beta": {
+            "ios": {
+                "ascAppId": "1498031184",
+                "appleTeamId": "UEB32EXF7A",
+                "ascApiKeyId": "6756FWW9QP",
+                "ascApiKeyIssuerId": "69a6de80-feb9-47e3-e053-5b8c7c11a4d1",
+                "ascApiKeyPath": "./config/prod/AppStoreKey.p8",
+                "sku": "dev.yssk22.hpapp",
+                "language": "ja-JP"
+            },
+            "android": {
+                "serviceAccountKeyPath": "./config/prod/PlayStoreKey.json"
+            }
+        }
     }
 }

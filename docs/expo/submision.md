@@ -8,15 +8,11 @@ Before submitting the app, you have to build the app with `prod` from [Github Ac
 
 [Github Actions / EAS - submit](https://github.com/yssk22/hpapp/actions/workflows/eas-submission.yml) simply do as follows:
 
-1. generate `config/prod/AppStoreKey.p8` from `APPLE_APP_STORE_KEY_P8` secret stored in this reporsitroy.
+1. Add `submist` section in your config/{env}/eas.json
 
-This is the p8 file fetched from App Store Connect.
+if you want to submit the app to App Store Connect, you have to add the following section in your `eas.json` file.
 
-2. generate `eas.json` from `EAS_JSON` secret stored in this reporsitroy.
-
-This is the eas.json file with `submit` configuration as follows.
-
-```json
+```
 {
   "submit": {
     "prod": {
@@ -37,10 +33,13 @@ This is the eas.json file with `submit` configuration as follows.
 }
 ```
 
-3. `yarn eas submit --platform ios --profile prod --latest --non-interactive`
+2. generate `config/prod/AppStoreKey.p8` from `APPLE_APP_STORE_KEY_P8` secret stored in this reporsitroy.
+
+This is the p8 file fetched from App Store Connect.
+
+3. `./scripts/eas.sh submit --platform ios --profile prod --latest --non-interactive`
 
 This command uses EXPO_APPLE_APP_SPECIFIC_PASSWORD secret in this repository though environment variable to authenticate with App Store Connect.
-
 Once your submission is completed successfully, the app gets available via Testflight. Do test carefully before the submission.
 
 ## 2. Prepare screenshots.
