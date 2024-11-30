@@ -13,6 +13,7 @@
     "lint": "yarn eslint ./",
     "genscreen": "node ./scripts/genscreen.js",
     "build-dev": "HPAPP_CONFIG_NAME=dev ./scripts/eas.sh build --profile dev --platform ios --non-interactive",
+    "update-beta": "HPAPP_CONFIG_NAME=beta ./scripts/eas.sh update --channel beta --message 'testing' --non-interactive",
     "storybook-generate": "sb-rn-get-stories"
   },
   "relay": {

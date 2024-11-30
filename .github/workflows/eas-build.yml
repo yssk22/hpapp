@@ -62,7 +62,7 @@ jobs:
         env:
           APPLE_APP_STORE_KEY_P8: ${{ secrets.APPLE_APP_STORE_KEY_P8 }}
       - run: cd expo && yarn install
-      - run: cd expo && ./scripts/eas submit --platform ios --profile prod --latest --non-interactive
+      - run: cd expo && ./scripts/eas.sh submit --platform ios --profile prod --latest --non-interactive
         env:
           EXPO_APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.EXPO_APPLE_APP_SPECIFIC_PASSWORD }}
           HPAPP_CONFIG_NAME: ${{inputs.config}}
