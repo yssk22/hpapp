@@ -15,7 +15,7 @@ type HPSortResultScreenProps = {
 export default defineScreen(
   '/hpsort/result/',
   function HPSortResultScreen({ current, previous }: HPSortResultScreenProps) {
-    useScreenTitle(t('Sort'));
+    useScreenTitle(t('Sort Result'));
     const list = useMemo(() => {
       return compareMemberRankDiff(current, previous);
     }, [current, previous]);

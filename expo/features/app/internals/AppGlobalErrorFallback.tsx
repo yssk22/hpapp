@@ -11,16 +11,17 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 export default function AppGlobalErrorFallback({ error, errorInfo }: { error: Error; errorInfo: ErrorInfo }) {
   const [color] = useThemeColor('error');
   const insets = useSafeAreaInsets();
+  const hintText = getHintText(error);
   return (
     <ScrollView>
       <View style={[styles.container, { marginTop: insets.top, marginBottom: insets.bottom }]}>
         <Text style={styles.title}>{t('Unexpected error occurred.')}</Text>
         <Text style={[styles.message, { color }]}>{error.message}</Text>
-        <Text style={styles.stack}>{errorInfo.componentStack}</Text>
         <Text style={styles.notice}>
-          {t('Please confirm your network connection and restart the app.')}
+          {hintText}
           {t('Please try to reinstall the app if you continue to see this error.')}
         </Text>
+        <Text style={styles.stack}>{errorInfo.componentStack}</Text>
         <Button
           containerStyle={styles.button}
           onPress={() => {
@@ -55,6 +56,8 @@ const styles = StyleSheet.create({
   },
   notice: {
     fontSize: FontSize.Medium,
+    marginTop: Spacing.Medium,
+    marginBottom: Spacing.Medium,
     marginLeft: Spacing.XLarge,
     marginRight: Spacing.XLarge
   },
@@ -63,3 +66,13 @@ const styles = StyleSheet.create({
     width: '50%'
   }
 });
+
+function getHintText(err: Error): string | undefined {
+  if (err.message.includes('Unexpected HTTP status error')) {
+    return t('Please confirm your network connection and restart the app.');
+  }
+  if (err.message === 'timeout') {
+    return t('Please confirm your network connection and restart the app.');
+  }
+  return err.message;
+}

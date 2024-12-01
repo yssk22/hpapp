@@ -1,6 +1,7 @@
 import { ListItemLoadMore } from '@hpapp/features/common/list';
-import { FlatList } from 'react-native';
-import { graphql, useLazyLoadQuery, usePaginationFragment } from 'react-relay';
+import { useLazyReloadableQuery } from '@hpapp/system/graphql/hooks';
+import { FlatList, RefreshControl } from 'react-native';
+import { graphql, usePaginationFragment } from 'react-relay';
 
 import { ElineupMallLimitedTimeItemListItem } from './ElineupMallLimitedTimeItemListItem';
 import { ElineupMallLimitedTimeItemListQuery } from './__generated__/ElineupMallLimitedTimeItemListQuery.graphql';
@@ -36,18 +37,22 @@ export type ElineupMallLimitedTimeItemListProps = {
 };
 
 export default function ElineupMallLimitedTimeItemList({ memberIds }: ElineupMallLimitedTimeItemListProps) {
-  const data = useLazyLoadQuery<ElineupMallLimitedTimeItemListQuery>(ElineupMallLimitedTimeItemListQueryGraphQL, {
-    first: numPerFetch,
-    params: {
-      memberIDs: memberIds
+  const { data, isReloading, reload } = useLazyReloadableQuery<ElineupMallLimitedTimeItemListQuery>(
+    ElineupMallLimitedTimeItemListQueryGraphQL,
+    {
+      first: numPerFetch,
+      params: {
+        memberIDs: memberIds
+      }
     }
-  });
+  );
   const histories = usePaginationFragment<
     ElineupMallLimitedTimeItemListQuery,
     ElineupMallLimitedTimeItemListQuery_helloproject_query_elineupmall_items$key
   >(ElineupMallLimitedTimeItemListQueryFragmentGraphQL, data.helloproject);
   return (
     <FlatList
+      refreshControl={<RefreshControl refreshing={isReloading} onRefresh={reload} />}
       keyExtractor={(item) => item!.node!.id}
       data={histories.data.elineupMallItems!.edges}
       renderItem={({ item, index }) => {

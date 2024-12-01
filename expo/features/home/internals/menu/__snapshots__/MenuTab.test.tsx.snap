@@ -160,7 +160,7 @@ exports[`SettingsTab render 1`] = `
                           ]
                         }
                       >
-                        ソート
+                        ソート履歴
                       </Text>
                     </View>
                     <View
