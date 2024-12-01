@@ -1,7 +1,8 @@
 import { ListItemLoadMore } from '@hpapp/features/common/list';
 import { sortRecordsToMemberRank } from '@hpapp/features/hpsort/helper';
-import { FlatList } from 'react-native';
-import { graphql, useLazyLoadQuery, usePaginationFragment } from 'react-relay';
+import { useLazyReloadableQuery } from '@hpapp/system/graphql/hooks';
+import { FlatList, RefreshControl } from 'react-native';
+import { graphql, usePaginationFragment } from 'react-relay';
 
 import HPSortHistoryListItem from './HPSortHistoryListItem';
 import { HPSortHistoryListQuery } from './__generated__/HPSortHistoryListQuery.graphql';
@@ -41,7 +42,7 @@ const HPSortHistoryListQueryFragmentGraphQL = graphql`
 const numPerFetch = 10;
 
 export default function HPSortHistoryList() {
-  const data = useLazyLoadQuery<HPSortHistoryListQuery>(HPSortHistoryListQueryGraphQL, {
+  const { data, isReloading, reload } = useLazyReloadableQuery<HPSortHistoryListQuery>(HPSortHistoryListQueryGraphQL, {
     first: numPerFetch
   });
   const histories = usePaginationFragment<HPSortHistoryListQuery, HPSortHistoryListQuery_me_query_sortHistories$key>(
@@ -50,6 +51,7 @@ export default function HPSortHistoryList() {
   );
   return (
     <FlatList
+      refreshControl={<RefreshControl refreshing={isReloading} onRefresh={reload} />}
       keyExtractor={(item) => item!.node!.id}
       data={histories.data.sortHistories!.edges}
       renderItem={({ item, index }) => {

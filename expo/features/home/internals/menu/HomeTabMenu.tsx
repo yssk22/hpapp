@@ -17,7 +17,7 @@ import HomeTabSettingsVersionSignature from './HomeTabMenuVersionSignature';
 export default function HomeTabMenu() {
   return (
     <ScrollView>
-      <NavigationListItem screen={HPSortScreen}>{t('Sort')}</NavigationListItem>
+      <NavigationListItem screen={HPSortScreen}>{t('Sort History')}</NavigationListItem>
       <Divider />
       <NavigationListItem screen={UPFCHistoryScreen}>{t('Event History')}</NavigationListItem>
       <Divider />

@@ -116,8 +116,11 @@
   "Settings": {
     "ja": "設定"
   },
-  "Sort": {
-    "ja": "ソート"
+  "Sort History": {
+    "ja": "ソート履歴"
+  },
+  "Sort Result": {
+    "ja": "ソート結果"
   },
   "By Sort": {
     "ja": "ソート順"

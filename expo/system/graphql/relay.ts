@@ -1,4 +1,3 @@
-import { wrapRenderable } from '@hpapp/foundation/errors';
 import { withTimeout } from '@hpapp/foundation/function';
 import { isIn } from '@hpapp/foundation/object';
 import * as logging from '@hpapp/system/logging';
@@ -51,6 +50,9 @@ export function createEnvironment(config: HttpClientConfig, tokenFactory: Reques
           });
         })()
       );
+      if (resp.status >= 300) {
+        throw new Error(`Unexpected HTTP status error: ${resp.status}`);
+      }
       const json = await resp.json();
       const benchmark = new Date().getTime() - start.getTime();
       logging.Info(eventName, 'GraphQL success', {
@@ -76,7 +78,7 @@ export function createEnvironment(config: HttpClientConfig, tokenFactory: Reques
         });
       }
       return json;
-    } catch (err) {
+    } catch (err: unknown) {
       const benchmark = new Date().getTime() - start.getTime();
       logging.Error(eventName, `GraphQL error: ${(err as Error).message}`, {
         request: {
@@ -87,12 +89,12 @@ export function createEnvironment(config: HttpClientConfig, tokenFactory: Reques
           }
         },
         // TODO: capture response text here
-        error: err,
+        error: (err as Error).message,
         benchmark
       });
       // wrapRenderable always returns an Error object
       // eslint-disable-next-line @typescript-eslint/no-throw-literal
-      throw wrapRenderable(err);
+      throw err;
     }
   });
   const store = new Store(new RecordSource());
