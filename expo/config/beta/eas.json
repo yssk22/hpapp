@@ -6,7 +6,9 @@
       },
       "channel": "beta",
       "ios": {},
-      "android": {}
+      "android": {
+        "buildType": "apk"
+      }
     }
   },
   "submit": {
