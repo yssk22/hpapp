@@ -57,7 +57,7 @@ module.exports = {
       package: 'app.helloproject.hpapp',
       versionCode: ANDROID_VERSION_CODE,
       adaptiveIcon: {
-        foregroundImage: './assets/adaptive-icon.png',
+        foregroundImage: './assets/icon.png',
         backgroundColor: '#ffffff'
       }
     },

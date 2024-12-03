@@ -9,9 +9,11 @@ if (Platform.OS !== 'web') {
   provider.configure({
     apple: {
       provider: 'deviceCheck'
+    },
+    android: {
+      provider: 'playIntegrity'
     }
   });
-
   appcheck().initializeAppCheck({
     provider,
     isTokenAutoRefreshEnabled: true

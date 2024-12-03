@@ -13,7 +13,7 @@ COPY --from=node /usr/local/bin/ /usr/local/bin/
 COPY --from=node /usr/local/lib/node_modules/ /usr/local/lib/node_modules/
 COPY --from=node /opt/ /opt/
 
-RUN apt-get update && apt-get install -y make wget curl sudo
+RUN apt-get update && apt-get install -y make wget curl sudo android-sdk
 ENV GOROOT /usr/local/go
 RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.52.2
 
