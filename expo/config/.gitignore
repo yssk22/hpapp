@@ -2,4 +2,9 @@
 !/dev
 !/beta
 !/prod
+!eas.json.env
+!google-services.json.env
+!GoogleService-Info.plist.env
+!secrets.json.env
+!AppStoreKey.p8.env
 !.gitignore
