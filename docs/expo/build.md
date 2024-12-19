@@ -34,8 +34,8 @@ Edit `./config/$HPAPP_CONFIG_NAME/app.config.js`. It's important to update the f
 
 - `config.slug` - your Expo project slug.
 - `config.extra.eas.projectId` - your EAS project id.
-- `config.ios.bundleIdentifier` - bundle identifier for iOS. should be dev.yssk22.hpapp.{env}.
-- `config.android.package` - package name for Android. should be dev.yssk22.hpapp.{env}
+- `config.ios.bundleIdentifier` - bundle identifier for iOS. should be `dev.yssk22.hpapp.{env}`.
+- `config.android.package` - package name for Android. should be `dev.yssk22.hpapp.{env}.android`.
 - `config.extra.hpapp.env` - environnment name. should be same as $HPAPP_CONFIG_NAME.
 - `config.extra.hpapp.isBeta` - boolean value to indicate the build to be submitted to app store _review_ or not while the client is submitted to testflight.
 - `config.extra.hpapp.isDev` - boolean value to indicate the development build or not.

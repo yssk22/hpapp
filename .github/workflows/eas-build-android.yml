@@ -1,0 +1,40 @@
+name: EAS - Build - Android
+on:
+  workflow_dispatch:
+    inputs:
+      config:
+        description: "HPAPP_CONFIG_NAME set"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - beta
+          - prod
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: eas-${{inputs.platform}}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "22.3.0"
+          cache: "yarn"
+          cache-dependency-path: "expo/package.json"
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: 13.4.2
+          token: ${{ secrets.EXPO_TOKEN }}
+      - run: cd expo && yarn install
+      - if: ${{ ((inputs.config == 'prod') || (inputs.config == 'beta')) }}
+        run: cd expo && ./scripts/eas.sh build --profile ${{inputs.config}} --platform android --local --output ./build/hpapp-${{inputs.config}}.aab
+        env:
+          HPAPP_CONFIG_NAME: ${{inputs.config}}
+          HPAPP_CONFIG_PLATFORM: ${{inputs.platform}}
+      - if: ${{ ((inputs.config != 'prod') && (inputs.config != 'beta')) }}
+        run: cd expo && ./scripts/eas.sh build --profile dev --platform android --local --output ./build/hpapp-${{inputs.config}}.apk
+        env:
+          HPAPP_CONFIG_NAME: dev
+          HPAPP_CONFIG_PLATFORM: ${{ inputs.platform }}
