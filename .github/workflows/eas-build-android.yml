@@ -1,40 +1,80 @@
-name: EAS - Build - Android
+name: EAS - Build Android
 on:
   workflow_dispatch:
     inputs:
-      config:
-        description: "HPAPP_CONFIG_NAME set"
-        required: true
-        default: "dev"
-        type: choice
-        options:
-          - dev
-          - beta
-          - prod
+      dev:
+        description: "HPAPP_CONFIG_NAME=dev"
+        required: false
+        type: boolean
+        default: false
+      beta:
+        description: "HPAPP_CONFIG_NAME=beta"
+        required: false
+        type: boolean
+        default: false
+      prod:
+        description: "HPAPP_CONFIG_NAME=prod"
+        required: false
+        type: boolean
+        default: false
+env:
+  NODE_VERSION: 22.3.0
+  EAS_VERSION: 13.4.2
+  JAVA_VERSION: 17
 jobs:
+  generate-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      target: ${{ steps.generatematrix.outputs.target }}
+    steps:
+      - id: generatematrix
+        run: |
+          inputs='${{ toJson(github.event.inputs) }}'
+          targets=()
+          for key in $(echo "$inputs" | jq -r 'keys[]'); do
+            if [ "$(echo "$inputs" | jq -r ".\"$key\"")" == "true" ]; then
+              targets+=("$key")
+            fi
+          done
+          targets_str=$(printf ',"%s"' "${targets[@]}")
+          targets_str="[${targets_str:1}]"
+          echo "target=$targets_str" >> $GITHUB_OUTPUT
   build:
+    needs: generate-matrix
+    strategy:
+      matrix:
+        target: ${{ fromJson(needs.generate-matrix.outputs.target) }}
     runs-on: ubuntu-latest
     environment:
-      name: eas-${{inputs.platform}}
+      name: eas-${{ matrix.target }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "22.3.0"
+          node-version: ${{ env.NODE_VERSION }}
           cache: "yarn"
           cache-dependency-path: "expo/package.json"
       - uses: expo/expo-github-action@v8
         with:
-          eas-version: 13.4.2
+          eas-version: ${{ env.EAS_VERSION }}
           token: ${{ secrets.EXPO_TOKEN }}
+      - uses: actions/setup-java@v3
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: "temurin"
+      - uses: android-actions/setup-android@v3
+      - run: cd expo && ./scripts/eas-githubaction-pre.sh
+        env:
+          HPAPP_CONFIG_NAME: ${{ matrix.target }}
+          SECRETS_JSON: ${{ secrets.SECRETS_JSON }}
+          GOOGLE_SERVICES_INFO_PLIST: ${{ secrets.GOOGLE_SERVICES_INFO_PLIST }}
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
       - run: cd expo && yarn install
-      - if: ${{ ((inputs.config == 'prod') || (inputs.config == 'beta')) }}
-        run: cd expo && ./scripts/eas.sh build --profile ${{inputs.config}} --platform android --local --output ./build/hpapp-${{inputs.config}}.aab
+      - run: cd expo && ./scripts/eas.sh build --profile ${{ matrix.target }} --platform android --local --output ./build/hpapp-${{ matrix.target }}.apk
+        if: ${{ matrix.target == 'dev' }}
         env:
-          HPAPP_CONFIG_NAME: ${{inputs.config}}
-          HPAPP_CONFIG_PLATFORM: ${{inputs.platform}}
-      - if: ${{ ((inputs.config != 'prod') && (inputs.config != 'beta')) }}
-        run: cd expo && ./scripts/eas.sh build --profile dev --platform android --local --output ./build/hpapp-${{inputs.config}}.apk
+          HPAPP_CONFIG_NAME: ${{ matrix.target }}
+      - run: cd expo && ./scripts/eas.sh build --profile ${{ matrix.target }} --platform android --local --output ./build/hpapp-${{ matrix.target }}.aab
+        if: ${{ matrix.target != 'dev' }}
         env:
-          HPAPP_CONFIG_NAME: dev
-          HPAPP_CONFIG_PLATFORM: ${{ inputs.platform }}
+          HPAPP_CONFIG_NAME: ${{ matrix.target }}
