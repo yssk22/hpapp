@@ -7,7 +7,7 @@
       "channel": "beta",
       "ios": {},
       "android": {
-        "buildType": "apk"
+        "buildType": "app-bundle"
       }
     }
   },
