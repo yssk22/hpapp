@@ -27,10 +27,10 @@ jobs:
         with:
           eas-version: 13.4.2
           token: ${{ secrets.EXPO_TOKEN }}
-      - run: cd expo && envsubst < config/${{inputs.config}}/secrets.json.env > config/${{inputs.config}}/secrets.json
-        env:
-          SECRETS_JSON: ${{ secrets.SECRETS_JSON }}
       - run: cd expo && yarn install
       - run: cd expo && ./scripts/eas.sh update --channel ${{inputs.config}} --non-interactive --auto
         env:
           HPAPP_CONFIG_NAME: ${{inputs.config}}
+          SECRETS_JSON: ${{ secrets.SECRETS_JSON }}
+          GOOGLE_SERVICES_INFO_PLIST: ${{ secrets.GOOGLE_SERVICES_INFO_PLIST }}
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
