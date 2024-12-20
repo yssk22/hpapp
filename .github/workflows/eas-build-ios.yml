@@ -1,4 +1,4 @@
-name: EAS - Build Android
+name: EAS - Build iOS
 on:
   workflow_dispatch:
     inputs:
@@ -44,7 +44,7 @@ jobs:
     strategy:
       matrix:
         target: ${{ fromJson(needs.generate-matrix.outputs.target) }}
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     environment:
       name: eas-${{ matrix.target }}
     steps:
@@ -58,35 +58,31 @@ jobs:
         with:
           eas-version: ${{ env.EAS_VERSION }}
           token: ${{ secrets.EXPO_TOKEN }}
-      - uses: actions/setup-java@v3
-        with:
-          java-version: ${{ env.JAVA_VERSION }}
-          distribution: "temurin"
-      - uses: android-actions/setup-android@v3
       - run: cd expo && rm ./config/${{ matrix.target }}/.gitignore
       - run: cd expo && yarn install
-      - run: cd expo && ./scripts/eas.sh build --profile ${{ matrix.target }} --platform android --local --output ./build/hpapp-${{ matrix.target }}.apk
-        if: ${{ matrix.target == 'dev' }}
+      - run: cd expo && ./scripts/eas.sh build --profile ${{ matrix.target }} --platform ios --non-interactive --local --output ./build/hpapp-${{ matrix.target }}.ipa
         env:
           HPAPP_CONFIG_NAME: ${{ matrix.target }}
           SECRETS_JSON: ${{ secrets.SECRETS_JSON }}
           GOOGLE_SERVICES_INFO_PLIST: ${{ secrets.GOOGLE_SERVICES_INFO_PLIST }}
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
-      - run: cd expo && ./scripts/eas.sh build --profile ${{ matrix.target }} --platform android --local --output ./build/hpapp-${{ matrix.target }}.aab
-        if: ${{ matrix.target != 'dev' }}
-        env:
-          HPAPP_CONFIG_NAME: ${{ matrix.target }}
-          SECRETS_JSON: ${{ secrets.SECRETS_JSON }}
-          GOOGLE_SERVICES_INFO_PLIST: ${{ secrets.GOOGLE_SERVICES_INFO_PLIST }}
-          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
-      # [dev] upload artifacts
+      # upload artifacts if dev else submit
       - uses: actions/upload-artifact@v4
         if: ${{ matrix.target == 'dev' }}
         with:
-          name: hpapp-${{ matrix.target }}.apk
-          path: ${{ github.workspace }}/expo/build/hpapp-${{ matrix.target }}.apk
+          name: hpapp-${{ matrix.target }}.ipa
+          path: ${{ github.workspace }}/expo/build/hpapp-${{ matrix.target }}.ipa
       # [beta/prod] upload artifacts
       - run: cd expo && envsubst < ./config/eas.json.env > ./eas.json
         if: ${{ matrix.target != 'dev' }}
         env:
           EAS_SUBMIT: ${{ secrets.EAS_SUBMIT }}
+      - run: cd expo && envsubst < ./config/AppStoreKey.p8.env > ./config/AppStoreKey.p8
+        if: ${{ matrix.target != 'dev' }}
+        env:
+          EAS_SUBMIT: ${{ secrets.EAS_SUBMIT }}
+          APP_STORE_KEY: ${{ secrets.APP_STORE_KEY }}
+      - run: cd expo && ./scripts/eas.sh submit --profile ${{ matrix.target }} --platform ios --non-interactive --path ./build/hpapp-${{ matrix.target }}.ipa
+        if: ${{ matrix.target != 'dev' }}
+        env:
+          HPAPP_CONFIG_NAME: ${{ matrix.target }}
