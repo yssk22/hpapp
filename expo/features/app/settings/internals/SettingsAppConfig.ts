@@ -2,7 +2,6 @@ import { SettingsStore, AsyncStorage } from '@hpapp/system/kvs';
 import Constants from 'expo-constants';
 
 const config = Constants.expoConfig?.extra?.hpapp ?? {
-  graphQLEndpoint: 'http://localhost:8080/graphql/v3',
   useLocalAuth: false,
   firebaseIOSClientID: '',
   firebaseAndroidClientID: '',
@@ -12,8 +11,6 @@ const config = Constants.expoConfig?.extra?.hpapp ?? {
 
 export type AppConfig = {
   readonly useStorybook: boolean;
-  readonly useCustomGraphQLEndpoint: boolean;
-  readonly graphQLEndpoint: string;
   readonly useLocalAuth: boolean;
   readonly useUPFCDemoScraper: boolean;
 
@@ -23,8 +20,6 @@ export type AppConfig = {
 
 export const SettingsAppConfigDefault: AppConfig = {
   useStorybook: false,
-  useCustomGraphQLEndpoint: false,
-  graphQLEndpoint: config.graphQLEndpoint!,
   useLocalAuth: config.useLocalAuth!,
   useUPFCDemoScraper: false,
   firebaseIOSClientID: config.firebaseIOSClientID,

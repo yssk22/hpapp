@@ -3,8 +3,6 @@ import { Button, Text } from 'react-native';
 
 import {
   SettingsProvider,
-  useAppConfig,
-  useAppConfigUpdator,
   useCurrentUser,
   useCurrentUserUpdator,
   useUPFCConfigUpdator,
@@ -24,18 +22,15 @@ describe('settings', () => {
     );
     await act(async () => {});
 
-    expect(content.getByTestId('settings.test.appConfig').props.children).toBe('http://localhost:8080/graphql/v3');
     expect(content.getByTestId('settings.test.userConfig').props.children).toBe('hpofficial');
     expect(content.getByTestId('settings.test.upfcConfig.hpUsername').props.children).toBe('empty');
     expect(content.getByTestId('settings.test.upfcConfig.mlUsername').props.children).toBe('empty');
     expect(content.getByTestId('settings.test.currentUser').props.children).toBe('empty');
 
-    await act(async () => fireEvent(content.getByTestId('settings.test.appConfigUpdate'), 'press'));
     await act(async () => fireEvent(content.getByTestId('settings.test.userConfigUpdate'), 'press'));
     await act(async () => fireEvent(content.getByTestId('settings.test.upfcConfigUpdate'), 'press'));
     await act(async () => fireEvent(content.getByTestId('settings.test.currentUserUpdate'), 'press'));
 
-    expect(content.getByTestId('settings.test.appConfig').props.children).toBe('http://example.com');
     expect(content.getByTestId('settings.test.userConfig').props.children).toBe('hotpink');
     expect(content.getByTestId('settings.test.upfcConfig.hpUsername').props.children).toBe('risa');
     expect(content.getByTestId('settings.test.upfcConfig.mlUsername').props.children).toBe('mizuki');
@@ -46,8 +41,7 @@ describe('settings', () => {
     const content = await render(
       <SettingsProvider
         appConfig={{
-          ...SettingsAppConfigDefault,
-          graphQLEndpoint: 'http://example.com'
+          ...SettingsAppConfigDefault
         }}
         userConfig={{
           ...SettingsUserConfigDefault,
@@ -68,7 +62,6 @@ describe('settings', () => {
     );
     await act(async () => {});
 
-    expect(content.getByTestId('settings.test.appConfig').props.children).toBe('http://example.com');
     expect(content.getByTestId('settings.test.userConfig').props.children).toBe('hotpink');
     expect(content.getByTestId('settings.test.upfcConfig.hpUsername').props.children).toBe('risa');
     expect(content.getByTestId('settings.test.upfcConfig.mlUsername').props.children).toBe('empty');
@@ -76,8 +69,6 @@ describe('settings', () => {
   });
 
   function TestComponent() {
-    const appConfig = useAppConfig();
-    const updateAppConfig = useAppConfigUpdator();
     const userConfig = useUserConfig();
     const updateUserConfig = useUserConfigUpdator();
     const upfcConfig = useUPFCConfig();
@@ -86,17 +77,6 @@ describe('settings', () => {
     const updateCurrentUser = useCurrentUserUpdator();
     return (
       <>
-        <Text testID="settings.test.appConfig">{appConfig!.graphQLEndpoint}</Text>
-        <Button
-          title="appConfigUpdate"
-          testID="settings.test.appConfigUpdate"
-          onPress={() => {
-            updateAppConfig({
-              ...appConfig!,
-              graphQLEndpoint: 'http://example.com'
-            });
-          }}
-        />
         <Text testID="settings.test.userConfig">{userConfig!.themeColorKeyPrimary}</Text>
         <Button
           title="userConfigUpdate"

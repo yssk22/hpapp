@@ -65,20 +65,22 @@ jobs:
       - uses: android-actions/setup-android@v3
       - run: cd expo && rm ./config/${{ matrix.target }}/.gitignore
       - run: cd expo && yarn install
+      - run: cd expo && envsubst < ./.env > ./.env.local
+        with:
+          APP_CHECK_DEBUG_TOKEN: ${{ secrets.APP_CHECK_DEBUG_TOKEN }}
+          GRAPHQL_ENDPOINT: ${{ secrets.GRAPHQL_ENDPOINT }}
       - run: cd expo && ./scripts/eas.sh build --profile ${{ matrix.target }} --platform android --local --output ./build/hpapp-${{ matrix.target }}.apk
         if: ${{ matrix.target == 'dev' }}
         env:
           HPAPP_CONFIG_NAME: ${{ matrix.target }}
           SECRETS_JSON: ${{ secrets.SECRETS_JSON }}
           GOOGLE_SERVICES_INFO_PLIST: ${{ secrets.GOOGLE_SERVICES_INFO_PLIST }}
-          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
       - run: cd expo && ./scripts/eas.sh build --profile ${{ matrix.target }} --platform android --local --output ./build/hpapp-${{ matrix.target }}.aab
         if: ${{ matrix.target != 'dev' }}
         env:
           HPAPP_CONFIG_NAME: ${{ matrix.target }}
           SECRETS_JSON: ${{ secrets.SECRETS_JSON }}
           GOOGLE_SERVICES_INFO_PLIST: ${{ secrets.GOOGLE_SERVICES_INFO_PLIST }}
-          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
       # [dev] upload artifacts
       - uses: actions/upload-artifact@v4
         if: ${{ matrix.target == 'dev' }}

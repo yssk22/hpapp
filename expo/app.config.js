@@ -21,9 +21,6 @@ module.exports = (_) => {
   const androidGoogleServicesFilePath = isEAS
     ? process.env[easEnvvarPrefix + 'GOOGLE_SERVICES_JSON']
     : path.join('config', cfgName, 'google-services.json');
-  const secretsJsonPath = isEAS
-    ? process.env[easEnvvarPrefix + 'SECRETS_JSON']
-    : path.join('config', cfgName, 'secrets.json');
 
   if (fs.existsSync(iosGoogleServicesFilePath)) {
     config.ios.googleServicesFile = iosGoogleServicesFilePath;
@@ -38,17 +35,6 @@ module.exports = (_) => {
     if (isEAS) {
       throw new Error('google-services.json file does not found in ' + androidGoogleServicesFilePath);
     }
-  }
-  if (fs.existsSync(secretsJsonPath)) {
-    const secretsJson = JSON.parse(fs.readFileSync(secretsJsonPath).toString());
-    config.extra.hpapp.graphQLEndpoint = secretsJson.extra.hpapp.graphQLEndpoint;
-  } else {
-    throw new Error(
-      [
-        'secrets.json file does not found in ' + secretsJsonPath,
-        'see https://github.com/yssk22/hpapp/blob/main/docs/expo/build.md#secretsjson section for the format'
-      ].join('\n')
-    );
   }
 
   // finally load the environment specific app.config.js

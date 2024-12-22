@@ -78,7 +78,6 @@ jest.mock('expo-constants', () => {
       extra: {
         hpapp: {
           useLocalAuth: true,
-          graphQLEndpoint: 'http://localhost:8080/graphql/v3',
           auth: {
             google: {
               iosClientId: 'iosClientId',
