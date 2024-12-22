@@ -1,54 +1,52 @@
 # Submission
 
-The submission has to be done via [Github Actions / EAS - submit](https://github.com/yssk22/hpapp/actions/workflows/eas-submission.yml). This doc describes how it works.
+The submission can be done as a part of Build workflow in Github Action ([Android](https://github.com/yssk22/hpapp/actions/workflows/eas-build-android.yml), [ioS](https://github.com/yssk22/hpapp/actions/workflows/eas-build-ios.yml)). What you need to setup for the submission are:
 
-## 1. Build the production app
+- config/eas.json
+- config/AppStoreKey.p8
+- config/PlayStoreKey.json
 
-Before submitting the app, you have to build the app with `prod` from [Github Actions / EAS - build](https://github.com/yssk22/hpapp/actions/workflows/eas-build.yml). Once done, you'll have the latest build on EAS.
+Those files are generated via environment secrets. So once you get the files, you can configure environment secrets.
 
-[Github Actions / EAS - submit](https://github.com/yssk22/hpapp/actions/workflows/eas-submission.yml) simply do as follows:
+- `EAS_SUBMIT` generates ./config/eas.json
+- `APP_STORE_KEY` generates ./config/AppStoreKey.p8
+- `PLAY_STORE_KEY` generates ./config/AppStoreKey.p8
 
-1. Add `submist` section in your config/{env}/eas.json
+## EAS_SUBMIT
 
-if you want to submit the app to App Store Connect, you have to add the following section in your `eas.json` file.
+This environment secret is a eas.json file only for submission, not build and should be the following format.
 
 ```
 {
   "submit": {
     "prod": {
       "ios": {
-        "ascAppId": "{app_id}}",
         "appleTeamId": "{team_id}",
+        "appleId": "{apple_id}",
+        "ascAppId": "{app_id}",
         "ascApiKeyId": "{api_key}",
         "ascApiKeyIssuerId": "{api_key_issuer_id}",
-        "ascApiKeyPath": "./config/prod/AppStoreKey.p8",
+        "ascApiKeyPath": "./config/AppStoreKey.p8",
         "sku": "dev.yssk22.hpapp",
         "language": "ja-JP"
       },
       "android": {
-        "serviceAccountKeyPath": "./config/prod/PlayStoreKey.json"
+        "track": "internal",
+        "releaseStatus": "draft",
+        "serviceAccountKeyPath": "./config/PlayStoreKey.json"
       }
     }
   }
 }
 ```
 
-2. generate `config/prod/AppStoreKey.p8` from `APPLE_APP_STORE_KEY_P8` secret stored in this reporsitroy.
-
-This is the p8 file fetched from App Store Connect.
-
-3. `./scripts/eas.sh submit --platform ios --profile prod --latest --non-interactive`
-
-This command uses EXPO_APPLE_APP_SPECIFIC_PASSWORD secret in this repository though environment variable to authenticate with App Store Connect.
-Once your submission is completed successfully, the app gets available via Testflight. Do test carefully before the submission.
-
-## 2. Prepare screenshots.
+## Screenshots.
 
 Once your test is done, you now have to prepare screenshots for the app.
 
 Download ]the mockup file](https://drive.google.com/file/d/1e1GQOTkazB1WE-dbJbU0Eogrb-vULb7Y/view), load it at [app-mockup](https://studio.app-mockup.com/), then customize the screenshots for your version, then export it.
 
-## 3. Submit for review.
+## 3. Submit for review (iOS)
 
 Now you are ready to submit the app for review. Here is a sample description for the submission.
 

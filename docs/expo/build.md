@@ -1,6 +1,6 @@
 # Build - iOS/Android development
 
-You need a IPA/APK for development purpose (a.k.a adhoc build). This document describes how to build IPA/APK for development.
+This document describes how to build IPA/APK for development.
 
 ## Prerequisites
 
@@ -75,6 +75,15 @@ The `./scripts/eas.sh` simply copy `eas.json` from the config directory to the r
 Once the build is completed, you can download and install the build on your device.
 
 ## Starting a development build
+
+### .env.local
+
+Finally, you also need to setup the following environment variables ant put them in `.env.local` file.
+
+```
+EXPO_PUBLIC_APP_CHECK_DEBUG_TOKEN={Your AppCheck Debug Token}
+EXPO_PUBLIC_GRAPHQL_ENDPOINT={your GraphQL server}
+```
 
 when you develop the app inside your container while the development app is deployed on iOS/Android outside the container (e.g. physical deviecs),
 your development build still need to connect react native packager to get the source code from your container. To do this, you need to set `REACT_NATIVE_PACKAGER_HOSTNAME`
