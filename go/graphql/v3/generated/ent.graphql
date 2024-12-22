@@ -392,6 +392,30 @@ type HPFollow implements Node {
   createdAt: Time
   updatedAt: Time
   type: HPFollowHPFollowType!
+  elineupmallOther: HPFollowHPFollowType!
+  elineupmallPhotoDaily: HPFollowHPFollowType!
+  elineupmallPhotoA4: HPFollowHPFollowType!
+  elineupmallPhotoA5: HPFollowHPFollowType!
+  elineupmallPhoto2l: HPFollowHPFollowType!
+  elineupmallPhotoOther: HPFollowHPFollowType!
+  elineupmallPhotoAlbum: HPFollowHPFollowType!
+  elineupmallPhotoAlbumOther: HPFollowHPFollowType!
+  elineupmallPhotoBook: HPFollowHPFollowType!
+  elineupmallPhotoBookOther: HPFollowHPFollowType!
+  elineupmallDvd: HPFollowHPFollowType!
+  elineupmallDvdMagazine: HPFollowHPFollowType!
+  elineupmallDvdMagazineOther: HPFollowHPFollowType!
+  elineupmallBlueray: HPFollowHPFollowType!
+  elineupmallPenlight: HPFollowHPFollowType!
+  elineupmallCollectionPinnapPoster: HPFollowHPFollowType!
+  elineupmallCollectionPhoto: HPFollowHPFollowType!
+  elineupmallCollectionOther: HPFollowHPFollowType!
+  elineupmallTshirt: HPFollowHPFollowType!
+  elineupmallMicrofiberTowel: HPFollowHPFollowType!
+  elineupmallMufflerTowel: HPFollowHPFollowType!
+  elineupmallFsk: HPFollowHPFollowType!
+  elineupmallKeyringOther: HPFollowHPFollowType!
+  elineupmallClearFile: HPFollowHPFollowType!
   user: User!
   member: HPMember!
 }

@@ -23,6 +23,54 @@ const (
 	FieldUpdatedAt = "updated_at"
 	// FieldType holds the string denoting the type field in the database.
 	FieldType = "type"
+	// FieldElineupmallOther holds the string denoting the elineupmall_other field in the database.
+	FieldElineupmallOther = "elineupmall_other"
+	// FieldElineupmallPhotoDaily holds the string denoting the elineupmall_photo_daily field in the database.
+	FieldElineupmallPhotoDaily = "elineupmall_photo_daily"
+	// FieldElineupmallPhotoA4 holds the string denoting the elineupmall_photo_a4 field in the database.
+	FieldElineupmallPhotoA4 = "elineupmall_photo_a4"
+	// FieldElineupmallPhotoA5 holds the string denoting the elineupmall_photo_a5 field in the database.
+	FieldElineupmallPhotoA5 = "elineupmall_photo_a5"
+	// FieldElineupmallPhoto2l holds the string denoting the elineupmall_photo_2l field in the database.
+	FieldElineupmallPhoto2l = "elineupmall_photo_2l"
+	// FieldElineupmallPhotoOther holds the string denoting the elineupmall_photo_other field in the database.
+	FieldElineupmallPhotoOther = "elineupmall_photo_other"
+	// FieldElineupmallPhotoAlbum holds the string denoting the elineupmall_photo_album field in the database.
+	FieldElineupmallPhotoAlbum = "elineupmall_photo_album"
+	// FieldElineupmallPhotoAlbumOther holds the string denoting the elineupmall_photo_album_other field in the database.
+	FieldElineupmallPhotoAlbumOther = "elineupmall_photo_album_other"
+	// FieldElineupmallPhotoBook holds the string denoting the elineupmall_photo_book field in the database.
+	FieldElineupmallPhotoBook = "elineupmall_photo_book"
+	// FieldElineupmallPhotoBookOther holds the string denoting the elineupmall_photo_book_other field in the database.
+	FieldElineupmallPhotoBookOther = "elineupmall_photo_book_other"
+	// FieldElineupmallDvd holds the string denoting the elineupmall_dvd field in the database.
+	FieldElineupmallDvd = "elineupmall_dvd"
+	// FieldElineupmallDvdMagazine holds the string denoting the elineupmall_dvd_magazine field in the database.
+	FieldElineupmallDvdMagazine = "elineupmall_dvd_magazine"
+	// FieldElineupmallDvdMagazineOther holds the string denoting the elineupmall_dvd_magazine_other field in the database.
+	FieldElineupmallDvdMagazineOther = "elineupmall_dvd_magazine_other"
+	// FieldElineupmallBlueray holds the string denoting the elineupmall_blueray field in the database.
+	FieldElineupmallBlueray = "elineupmall_blueray"
+	// FieldElineupmallPenlight holds the string denoting the elineupmall_penlight field in the database.
+	FieldElineupmallPenlight = "elineupmall_penlight"
+	// FieldElineupmallCollectionPinnapPoster holds the string denoting the elineupmall_collection_pinnap_poster field in the database.
+	FieldElineupmallCollectionPinnapPoster = "elineupmall_collection_pinnap_poster"
+	// FieldElineupmallCollectionPhoto holds the string denoting the elineupmall_collection_photo field in the database.
+	FieldElineupmallCollectionPhoto = "elineupmall_collection_photo"
+	// FieldElineupmallCollectionOther holds the string denoting the elineupmall_collection_other field in the database.
+	FieldElineupmallCollectionOther = "elineupmall_collection_other"
+	// FieldElineupmallTshirt holds the string denoting the elineupmall_tshirt field in the database.
+	FieldElineupmallTshirt = "elineupmall_tshirt"
+	// FieldElineupmallMicrofiberTowel holds the string denoting the elineupmall_microfiber_towel field in the database.
+	FieldElineupmallMicrofiberTowel = "elineupmall_microfiber_towel"
+	// FieldElineupmallMufflerTowel holds the string denoting the elineupmall_muffler_towel field in the database.
+	FieldElineupmallMufflerTowel = "elineupmall_muffler_towel"
+	// FieldElineupmallFsk holds the string denoting the elineupmall_fsk field in the database.
+	FieldElineupmallFsk = "elineupmall_fsk"
+	// FieldElineupmallKeyringOther holds the string denoting the elineupmall_keyring_other field in the database.
+	FieldElineupmallKeyringOther = "elineupmall_keyring_other"
+	// FieldElineupmallClearFile holds the string denoting the elineupmall_clear_file field in the database.
+	FieldElineupmallClearFile = "elineupmall_clear_file"
 	// EdgeUser holds the string denoting the user edge name in mutations.
 	EdgeUser = "user"
 	// EdgeMember holds the string denoting the member edge name in mutations.
@@ -51,6 +99,30 @@ var Columns = []string{
 	FieldCreatedAt,
 	FieldUpdatedAt,
 	FieldType,
+	FieldElineupmallOther,
+	FieldElineupmallPhotoDaily,
+	FieldElineupmallPhotoA4,
+	FieldElineupmallPhotoA5,
+	FieldElineupmallPhoto2l,
+	FieldElineupmallPhotoOther,
+	FieldElineupmallPhotoAlbum,
+	FieldElineupmallPhotoAlbumOther,
+	FieldElineupmallPhotoBook,
+	FieldElineupmallPhotoBookOther,
+	FieldElineupmallDvd,
+	FieldElineupmallDvdMagazine,
+	FieldElineupmallDvdMagazineOther,
+	FieldElineupmallBlueray,
+	FieldElineupmallPenlight,
+	FieldElineupmallCollectionPinnapPoster,
+	FieldElineupmallCollectionPhoto,
+	FieldElineupmallCollectionOther,
+	FieldElineupmallTshirt,
+	FieldElineupmallMicrofiberTowel,
+	FieldElineupmallMufflerTowel,
+	FieldElineupmallFsk,
+	FieldElineupmallKeyringOther,
+	FieldElineupmallClearFile,
 }
 
 // ForeignKeys holds the SQL foreign-keys that are owned by the "hp_follows"
@@ -96,6 +168,294 @@ func TypeValidator(_type enums.HPFollowType) error {
 	}
 }
 
+const DefaultElineupmallOther enums.HPFollowType = "unknown"
+
+// ElineupmallOtherValidator is a validator for the "elineupmall_other" field enum values. It is called by the builders before save.
+func ElineupmallOtherValidator(eo enums.HPFollowType) error {
+	switch eo {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_other field: %q", eo)
+	}
+}
+
+const DefaultElineupmallPhotoDaily enums.HPFollowType = "unknown"
+
+// ElineupmallPhotoDailyValidator is a validator for the "elineupmall_photo_daily" field enum values. It is called by the builders before save.
+func ElineupmallPhotoDailyValidator(epd enums.HPFollowType) error {
+	switch epd {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_photo_daily field: %q", epd)
+	}
+}
+
+const DefaultElineupmallPhotoA4 enums.HPFollowType = "unknown"
+
+// ElineupmallPhotoA4Validator is a validator for the "elineupmall_photo_a4" field enum values. It is called by the builders before save.
+func ElineupmallPhotoA4Validator(elineupmall_photo_a enums.HPFollowType) error {
+	switch elineupmall_photo_a {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_photo_a4 field: %q", elineupmall_photo_a)
+	}
+}
+
+const DefaultElineupmallPhotoA5 enums.HPFollowType = "unknown"
+
+// ElineupmallPhotoA5Validator is a validator for the "elineupmall_photo_a5" field enum values. It is called by the builders before save.
+func ElineupmallPhotoA5Validator(elineupmall_photo_a enums.HPFollowType) error {
+	switch elineupmall_photo_a {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_photo_a5 field: %q", elineupmall_photo_a)
+	}
+}
+
+const DefaultElineupmallPhoto2l enums.HPFollowType = "unknown"
+
+// ElineupmallPhoto2lValidator is a validator for the "elineupmall_photo_2l" field enum values. It is called by the builders before save.
+func ElineupmallPhoto2lValidator(ep2 enums.HPFollowType) error {
+	switch ep2 {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_photo_2l field: %q", ep2)
+	}
+}
+
+const DefaultElineupmallPhotoOther enums.HPFollowType = "unknown"
+
+// ElineupmallPhotoOtherValidator is a validator for the "elineupmall_photo_other" field enum values. It is called by the builders before save.
+func ElineupmallPhotoOtherValidator(epo enums.HPFollowType) error {
+	switch epo {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_photo_other field: %q", epo)
+	}
+}
+
+const DefaultElineupmallPhotoAlbum enums.HPFollowType = "unknown"
+
+// ElineupmallPhotoAlbumValidator is a validator for the "elineupmall_photo_album" field enum values. It is called by the builders before save.
+func ElineupmallPhotoAlbumValidator(epa enums.HPFollowType) error {
+	switch epa {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_photo_album field: %q", epa)
+	}
+}
+
+const DefaultElineupmallPhotoAlbumOther enums.HPFollowType = "unknown"
+
+// ElineupmallPhotoAlbumOtherValidator is a validator for the "elineupmall_photo_album_other" field enum values. It is called by the builders before save.
+func ElineupmallPhotoAlbumOtherValidator(epao enums.HPFollowType) error {
+	switch epao {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_photo_album_other field: %q", epao)
+	}
+}
+
+const DefaultElineupmallPhotoBook enums.HPFollowType = "unknown"
+
+// ElineupmallPhotoBookValidator is a validator for the "elineupmall_photo_book" field enum values. It is called by the builders before save.
+func ElineupmallPhotoBookValidator(epb enums.HPFollowType) error {
+	switch epb {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_photo_book field: %q", epb)
+	}
+}
+
+const DefaultElineupmallPhotoBookOther enums.HPFollowType = "unknown"
+
+// ElineupmallPhotoBookOtherValidator is a validator for the "elineupmall_photo_book_other" field enum values. It is called by the builders before save.
+func ElineupmallPhotoBookOtherValidator(epbo enums.HPFollowType) error {
+	switch epbo {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_photo_book_other field: %q", epbo)
+	}
+}
+
+const DefaultElineupmallDvd enums.HPFollowType = "unknown"
+
+// ElineupmallDvdValidator is a validator for the "elineupmall_dvd" field enum values. It is called by the builders before save.
+func ElineupmallDvdValidator(ed enums.HPFollowType) error {
+	switch ed {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_dvd field: %q", ed)
+	}
+}
+
+const DefaultElineupmallDvdMagazine enums.HPFollowType = "unknown"
+
+// ElineupmallDvdMagazineValidator is a validator for the "elineupmall_dvd_magazine" field enum values. It is called by the builders before save.
+func ElineupmallDvdMagazineValidator(edm enums.HPFollowType) error {
+	switch edm {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_dvd_magazine field: %q", edm)
+	}
+}
+
+const DefaultElineupmallDvdMagazineOther enums.HPFollowType = "unknown"
+
+// ElineupmallDvdMagazineOtherValidator is a validator for the "elineupmall_dvd_magazine_other" field enum values. It is called by the builders before save.
+func ElineupmallDvdMagazineOtherValidator(edmo enums.HPFollowType) error {
+	switch edmo {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_dvd_magazine_other field: %q", edmo)
+	}
+}
+
+const DefaultElineupmallBlueray enums.HPFollowType = "unknown"
+
+// ElineupmallBluerayValidator is a validator for the "elineupmall_blueray" field enum values. It is called by the builders before save.
+func ElineupmallBluerayValidator(eb enums.HPFollowType) error {
+	switch eb {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_blueray field: %q", eb)
+	}
+}
+
+const DefaultElineupmallPenlight enums.HPFollowType = "unknown"
+
+// ElineupmallPenlightValidator is a validator for the "elineupmall_penlight" field enum values. It is called by the builders before save.
+func ElineupmallPenlightValidator(ep enums.HPFollowType) error {
+	switch ep {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_penlight field: %q", ep)
+	}
+}
+
+const DefaultElineupmallCollectionPinnapPoster enums.HPFollowType = "unknown"
+
+// ElineupmallCollectionPinnapPosterValidator is a validator for the "elineupmall_collection_pinnap_poster" field enum values. It is called by the builders before save.
+func ElineupmallCollectionPinnapPosterValidator(ecpp enums.HPFollowType) error {
+	switch ecpp {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_collection_pinnap_poster field: %q", ecpp)
+	}
+}
+
+const DefaultElineupmallCollectionPhoto enums.HPFollowType = "unknown"
+
+// ElineupmallCollectionPhotoValidator is a validator for the "elineupmall_collection_photo" field enum values. It is called by the builders before save.
+func ElineupmallCollectionPhotoValidator(ecp enums.HPFollowType) error {
+	switch ecp {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_collection_photo field: %q", ecp)
+	}
+}
+
+const DefaultElineupmallCollectionOther enums.HPFollowType = "unknown"
+
+// ElineupmallCollectionOtherValidator is a validator for the "elineupmall_collection_other" field enum values. It is called by the builders before save.
+func ElineupmallCollectionOtherValidator(eco enums.HPFollowType) error {
+	switch eco {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_collection_other field: %q", eco)
+	}
+}
+
+const DefaultElineupmallTshirt enums.HPFollowType = "unknown"
+
+// ElineupmallTshirtValidator is a validator for the "elineupmall_tshirt" field enum values. It is called by the builders before save.
+func ElineupmallTshirtValidator(et enums.HPFollowType) error {
+	switch et {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_tshirt field: %q", et)
+	}
+}
+
+const DefaultElineupmallMicrofiberTowel enums.HPFollowType = "unknown"
+
+// ElineupmallMicrofiberTowelValidator is a validator for the "elineupmall_microfiber_towel" field enum values. It is called by the builders before save.
+func ElineupmallMicrofiberTowelValidator(emt enums.HPFollowType) error {
+	switch emt {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_microfiber_towel field: %q", emt)
+	}
+}
+
+const DefaultElineupmallMufflerTowel enums.HPFollowType = "unknown"
+
+// ElineupmallMufflerTowelValidator is a validator for the "elineupmall_muffler_towel" field enum values. It is called by the builders before save.
+func ElineupmallMufflerTowelValidator(emt enums.HPFollowType) error {
+	switch emt {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_muffler_towel field: %q", emt)
+	}
+}
+
+const DefaultElineupmallFsk enums.HPFollowType = "unknown"
+
+// ElineupmallFskValidator is a validator for the "elineupmall_fsk" field enum values. It is called by the builders before save.
+func ElineupmallFskValidator(ef enums.HPFollowType) error {
+	switch ef {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_fsk field: %q", ef)
+	}
+}
+
+const DefaultElineupmallKeyringOther enums.HPFollowType = "unknown"
+
+// ElineupmallKeyringOtherValidator is a validator for the "elineupmall_keyring_other" field enum values. It is called by the builders before save.
+func ElineupmallKeyringOtherValidator(eko enums.HPFollowType) error {
+	switch eko {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_keyring_other field: %q", eko)
+	}
+}
+
+const DefaultElineupmallClearFile enums.HPFollowType = "unknown"
+
+// ElineupmallClearFileValidator is a validator for the "elineupmall_clear_file" field enum values. It is called by the builders before save.
+func ElineupmallClearFileValidator(ecf enums.HPFollowType) error {
+	switch ecf {
+	case "follow", "follow_with_notification", "unfollow", "unknown":
+		return nil
+	default:
+		return fmt.Errorf("hpfollow: invalid enum value for elineupmall_clear_file field: %q", ecf)
+	}
+}
+
 // Order defines the ordering method for the HPFollow queries.
 type Order func(*sql.Selector)
 
@@ -117,6 +477,126 @@ func ByUpdatedAt(opts ...sql.OrderTermOption) Order {
 // ByType orders the results by the type field.
 func ByType(opts ...sql.OrderTermOption) Order {
 	return sql.OrderByField(FieldType, opts...).ToFunc()
+}
+
+// ByElineupmallOther orders the results by the elineupmall_other field.
+func ByElineupmallOther(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallOther, opts...).ToFunc()
+}
+
+// ByElineupmallPhotoDaily orders the results by the elineupmall_photo_daily field.
+func ByElineupmallPhotoDaily(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallPhotoDaily, opts...).ToFunc()
+}
+
+// ByElineupmallPhotoA4 orders the results by the elineupmall_photo_a4 field.
+func ByElineupmallPhotoA4(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallPhotoA4, opts...).ToFunc()
+}
+
+// ByElineupmallPhotoA5 orders the results by the elineupmall_photo_a5 field.
+func ByElineupmallPhotoA5(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallPhotoA5, opts...).ToFunc()
+}
+
+// ByElineupmallPhoto2l orders the results by the elineupmall_photo_2l field.
+func ByElineupmallPhoto2l(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallPhoto2l, opts...).ToFunc()
+}
+
+// ByElineupmallPhotoOther orders the results by the elineupmall_photo_other field.
+func ByElineupmallPhotoOther(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallPhotoOther, opts...).ToFunc()
+}
+
+// ByElineupmallPhotoAlbum orders the results by the elineupmall_photo_album field.
+func ByElineupmallPhotoAlbum(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallPhotoAlbum, opts...).ToFunc()
+}
+
+// ByElineupmallPhotoAlbumOther orders the results by the elineupmall_photo_album_other field.
+func ByElineupmallPhotoAlbumOther(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallPhotoAlbumOther, opts...).ToFunc()
+}
+
+// ByElineupmallPhotoBook orders the results by the elineupmall_photo_book field.
+func ByElineupmallPhotoBook(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallPhotoBook, opts...).ToFunc()
+}
+
+// ByElineupmallPhotoBookOther orders the results by the elineupmall_photo_book_other field.
+func ByElineupmallPhotoBookOther(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallPhotoBookOther, opts...).ToFunc()
+}
+
+// ByElineupmallDvd orders the results by the elineupmall_dvd field.
+func ByElineupmallDvd(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallDvd, opts...).ToFunc()
+}
+
+// ByElineupmallDvdMagazine orders the results by the elineupmall_dvd_magazine field.
+func ByElineupmallDvdMagazine(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallDvdMagazine, opts...).ToFunc()
+}
+
+// ByElineupmallDvdMagazineOther orders the results by the elineupmall_dvd_magazine_other field.
+func ByElineupmallDvdMagazineOther(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallDvdMagazineOther, opts...).ToFunc()
+}
+
+// ByElineupmallBlueray orders the results by the elineupmall_blueray field.
+func ByElineupmallBlueray(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallBlueray, opts...).ToFunc()
+}
+
+// ByElineupmallPenlight orders the results by the elineupmall_penlight field.
+func ByElineupmallPenlight(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallPenlight, opts...).ToFunc()
+}
+
+// ByElineupmallCollectionPinnapPoster orders the results by the elineupmall_collection_pinnap_poster field.
+func ByElineupmallCollectionPinnapPoster(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallCollectionPinnapPoster, opts...).ToFunc()
+}
+
+// ByElineupmallCollectionPhoto orders the results by the elineupmall_collection_photo field.
+func ByElineupmallCollectionPhoto(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallCollectionPhoto, opts...).ToFunc()
+}
+
+// ByElineupmallCollectionOther orders the results by the elineupmall_collection_other field.
+func ByElineupmallCollectionOther(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallCollectionOther, opts...).ToFunc()
+}
+
+// ByElineupmallTshirt orders the results by the elineupmall_tshirt field.
+func ByElineupmallTshirt(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallTshirt, opts...).ToFunc()
+}
+
+// ByElineupmallMicrofiberTowel orders the results by the elineupmall_microfiber_towel field.
+func ByElineupmallMicrofiberTowel(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallMicrofiberTowel, opts...).ToFunc()
+}
+
+// ByElineupmallMufflerTowel orders the results by the elineupmall_muffler_towel field.
+func ByElineupmallMufflerTowel(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallMufflerTowel, opts...).ToFunc()
+}
+
+// ByElineupmallFsk orders the results by the elineupmall_fsk field.
+func ByElineupmallFsk(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallFsk, opts...).ToFunc()
+}
+
+// ByElineupmallKeyringOther orders the results by the elineupmall_keyring_other field.
+func ByElineupmallKeyringOther(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallKeyringOther, opts...).ToFunc()
+}
+
+// ByElineupmallClearFile orders the results by the elineupmall_clear_file field.
+func ByElineupmallClearFile(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldElineupmallClearFile, opts...).ToFunc()
 }
 
 // ByUserField orders the results by user field.
@@ -146,6 +626,174 @@ func newMemberStep() *sqlgraph.Step {
 		sqlgraph.Edge(sqlgraph.M2O, false, MemberTable, MemberColumn),
 	)
 }
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
+
+var (
+	// enums.HPFollowType must implement graphql.Marshaler.
+	_ graphql.Marshaler = (*enums.HPFollowType)(nil)
+	// enums.HPFollowType must implement graphql.Unmarshaler.
+	_ graphql.Unmarshaler = (*enums.HPFollowType)(nil)
+)
 
 var (
 	// enums.HPFollowType must implement graphql.Marshaler.

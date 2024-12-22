@@ -65,6 +65,342 @@ func (hfu *HPFollowUpdate) SetNillableType(eft *enums.HPFollowType) *HPFollowUpd
 	return hfu
 }
 
+// SetElineupmallOther sets the "elineupmall_other" field.
+func (hfu *HPFollowUpdate) SetElineupmallOther(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallOther(eft)
+	return hfu
+}
+
+// SetNillableElineupmallOther sets the "elineupmall_other" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallOther(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallOther(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallPhotoDaily sets the "elineupmall_photo_daily" field.
+func (hfu *HPFollowUpdate) SetElineupmallPhotoDaily(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallPhotoDaily(eft)
+	return hfu
+}
+
+// SetNillableElineupmallPhotoDaily sets the "elineupmall_photo_daily" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallPhotoDaily(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallPhotoDaily(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallPhotoA4 sets the "elineupmall_photo_a4" field.
+func (hfu *HPFollowUpdate) SetElineupmallPhotoA4(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallPhotoA4(eft)
+	return hfu
+}
+
+// SetNillableElineupmallPhotoA4 sets the "elineupmall_photo_a4" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallPhotoA4(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallPhotoA4(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallPhotoA5 sets the "elineupmall_photo_a5" field.
+func (hfu *HPFollowUpdate) SetElineupmallPhotoA5(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallPhotoA5(eft)
+	return hfu
+}
+
+// SetNillableElineupmallPhotoA5 sets the "elineupmall_photo_a5" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallPhotoA5(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallPhotoA5(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallPhoto2l sets the "elineupmall_photo_2l" field.
+func (hfu *HPFollowUpdate) SetElineupmallPhoto2l(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallPhoto2l(eft)
+	return hfu
+}
+
+// SetNillableElineupmallPhoto2l sets the "elineupmall_photo_2l" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallPhoto2l(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallPhoto2l(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallPhotoOther sets the "elineupmall_photo_other" field.
+func (hfu *HPFollowUpdate) SetElineupmallPhotoOther(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallPhotoOther(eft)
+	return hfu
+}
+
+// SetNillableElineupmallPhotoOther sets the "elineupmall_photo_other" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallPhotoOther(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallPhotoOther(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallPhotoAlbum sets the "elineupmall_photo_album" field.
+func (hfu *HPFollowUpdate) SetElineupmallPhotoAlbum(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallPhotoAlbum(eft)
+	return hfu
+}
+
+// SetNillableElineupmallPhotoAlbum sets the "elineupmall_photo_album" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallPhotoAlbum(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallPhotoAlbum(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallPhotoAlbumOther sets the "elineupmall_photo_album_other" field.
+func (hfu *HPFollowUpdate) SetElineupmallPhotoAlbumOther(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallPhotoAlbumOther(eft)
+	return hfu
+}
+
+// SetNillableElineupmallPhotoAlbumOther sets the "elineupmall_photo_album_other" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallPhotoAlbumOther(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallPhotoAlbumOther(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallPhotoBook sets the "elineupmall_photo_book" field.
+func (hfu *HPFollowUpdate) SetElineupmallPhotoBook(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallPhotoBook(eft)
+	return hfu
+}
+
+// SetNillableElineupmallPhotoBook sets the "elineupmall_photo_book" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallPhotoBook(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallPhotoBook(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallPhotoBookOther sets the "elineupmall_photo_book_other" field.
+func (hfu *HPFollowUpdate) SetElineupmallPhotoBookOther(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallPhotoBookOther(eft)
+	return hfu
+}
+
+// SetNillableElineupmallPhotoBookOther sets the "elineupmall_photo_book_other" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallPhotoBookOther(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallPhotoBookOther(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallDvd sets the "elineupmall_dvd" field.
+func (hfu *HPFollowUpdate) SetElineupmallDvd(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallDvd(eft)
+	return hfu
+}
+
+// SetNillableElineupmallDvd sets the "elineupmall_dvd" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallDvd(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallDvd(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallDvdMagazine sets the "elineupmall_dvd_magazine" field.
+func (hfu *HPFollowUpdate) SetElineupmallDvdMagazine(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallDvdMagazine(eft)
+	return hfu
+}
+
+// SetNillableElineupmallDvdMagazine sets the "elineupmall_dvd_magazine" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallDvdMagazine(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallDvdMagazine(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallDvdMagazineOther sets the "elineupmall_dvd_magazine_other" field.
+func (hfu *HPFollowUpdate) SetElineupmallDvdMagazineOther(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallDvdMagazineOther(eft)
+	return hfu
+}
+
+// SetNillableElineupmallDvdMagazineOther sets the "elineupmall_dvd_magazine_other" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallDvdMagazineOther(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallDvdMagazineOther(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallBlueray sets the "elineupmall_blueray" field.
+func (hfu *HPFollowUpdate) SetElineupmallBlueray(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallBlueray(eft)
+	return hfu
+}
+
+// SetNillableElineupmallBlueray sets the "elineupmall_blueray" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallBlueray(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallBlueray(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallPenlight sets the "elineupmall_penlight" field.
+func (hfu *HPFollowUpdate) SetElineupmallPenlight(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallPenlight(eft)
+	return hfu
+}
+
+// SetNillableElineupmallPenlight sets the "elineupmall_penlight" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallPenlight(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallPenlight(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallCollectionPinnapPoster sets the "elineupmall_collection_pinnap_poster" field.
+func (hfu *HPFollowUpdate) SetElineupmallCollectionPinnapPoster(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallCollectionPinnapPoster(eft)
+	return hfu
+}
+
+// SetNillableElineupmallCollectionPinnapPoster sets the "elineupmall_collection_pinnap_poster" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallCollectionPinnapPoster(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallCollectionPinnapPoster(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallCollectionPhoto sets the "elineupmall_collection_photo" field.
+func (hfu *HPFollowUpdate) SetElineupmallCollectionPhoto(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallCollectionPhoto(eft)
+	return hfu
+}
+
+// SetNillableElineupmallCollectionPhoto sets the "elineupmall_collection_photo" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallCollectionPhoto(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallCollectionPhoto(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallCollectionOther sets the "elineupmall_collection_other" field.
+func (hfu *HPFollowUpdate) SetElineupmallCollectionOther(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallCollectionOther(eft)
+	return hfu
+}
+
+// SetNillableElineupmallCollectionOther sets the "elineupmall_collection_other" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallCollectionOther(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallCollectionOther(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallTshirt sets the "elineupmall_tshirt" field.
+func (hfu *HPFollowUpdate) SetElineupmallTshirt(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallTshirt(eft)
+	return hfu
+}
+
+// SetNillableElineupmallTshirt sets the "elineupmall_tshirt" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallTshirt(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallTshirt(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallMicrofiberTowel sets the "elineupmall_microfiber_towel" field.
+func (hfu *HPFollowUpdate) SetElineupmallMicrofiberTowel(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallMicrofiberTowel(eft)
+	return hfu
+}
+
+// SetNillableElineupmallMicrofiberTowel sets the "elineupmall_microfiber_towel" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallMicrofiberTowel(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallMicrofiberTowel(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallMufflerTowel sets the "elineupmall_muffler_towel" field.
+func (hfu *HPFollowUpdate) SetElineupmallMufflerTowel(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallMufflerTowel(eft)
+	return hfu
+}
+
+// SetNillableElineupmallMufflerTowel sets the "elineupmall_muffler_towel" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallMufflerTowel(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallMufflerTowel(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallFsk sets the "elineupmall_fsk" field.
+func (hfu *HPFollowUpdate) SetElineupmallFsk(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallFsk(eft)
+	return hfu
+}
+
+// SetNillableElineupmallFsk sets the "elineupmall_fsk" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallFsk(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallFsk(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallKeyringOther sets the "elineupmall_keyring_other" field.
+func (hfu *HPFollowUpdate) SetElineupmallKeyringOther(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallKeyringOther(eft)
+	return hfu
+}
+
+// SetNillableElineupmallKeyringOther sets the "elineupmall_keyring_other" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallKeyringOther(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallKeyringOther(*eft)
+	}
+	return hfu
+}
+
+// SetElineupmallClearFile sets the "elineupmall_clear_file" field.
+func (hfu *HPFollowUpdate) SetElineupmallClearFile(eft enums.HPFollowType) *HPFollowUpdate {
+	hfu.mutation.SetElineupmallClearFile(eft)
+	return hfu
+}
+
+// SetNillableElineupmallClearFile sets the "elineupmall_clear_file" field if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableElineupmallClearFile(eft *enums.HPFollowType) *HPFollowUpdate {
+	if eft != nil {
+		hfu.SetElineupmallClearFile(*eft)
+	}
+	return hfu
+}
+
 // SetUserID sets the "user" edge to the User entity by ID.
 func (hfu *HPFollowUpdate) SetUserID(id int) *HPFollowUpdate {
 	hfu.mutation.SetUserID(id)
@@ -138,6 +474,126 @@ func (hfu *HPFollowUpdate) check() error {
 			return &ValidationError{Name: "type", err: fmt.Errorf(`ent: validator failed for field "HPFollow.type": %w`, err)}
 		}
 	}
+	if v, ok := hfu.mutation.ElineupmallOther(); ok {
+		if err := hpfollow.ElineupmallOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_other": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallPhotoDaily(); ok {
+		if err := hpfollow.ElineupmallPhotoDailyValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_daily", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_daily": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallPhotoA4(); ok {
+		if err := hpfollow.ElineupmallPhotoA4Validator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_a4", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_a4": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallPhotoA5(); ok {
+		if err := hpfollow.ElineupmallPhotoA5Validator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_a5", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_a5": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallPhoto2l(); ok {
+		if err := hpfollow.ElineupmallPhoto2lValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_2l", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_2l": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallPhotoOther(); ok {
+		if err := hpfollow.ElineupmallPhotoOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_other": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallPhotoAlbum(); ok {
+		if err := hpfollow.ElineupmallPhotoAlbumValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_album", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_album": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallPhotoAlbumOther(); ok {
+		if err := hpfollow.ElineupmallPhotoAlbumOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_album_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_album_other": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallPhotoBook(); ok {
+		if err := hpfollow.ElineupmallPhotoBookValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_book", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_book": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallPhotoBookOther(); ok {
+		if err := hpfollow.ElineupmallPhotoBookOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_book_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_book_other": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallDvd(); ok {
+		if err := hpfollow.ElineupmallDvdValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_dvd", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_dvd": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallDvdMagazine(); ok {
+		if err := hpfollow.ElineupmallDvdMagazineValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_dvd_magazine", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_dvd_magazine": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallDvdMagazineOther(); ok {
+		if err := hpfollow.ElineupmallDvdMagazineOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_dvd_magazine_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_dvd_magazine_other": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallBlueray(); ok {
+		if err := hpfollow.ElineupmallBluerayValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_blueray", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_blueray": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallPenlight(); ok {
+		if err := hpfollow.ElineupmallPenlightValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_penlight", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_penlight": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallCollectionPinnapPoster(); ok {
+		if err := hpfollow.ElineupmallCollectionPinnapPosterValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_collection_pinnap_poster", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_collection_pinnap_poster": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallCollectionPhoto(); ok {
+		if err := hpfollow.ElineupmallCollectionPhotoValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_collection_photo", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_collection_photo": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallCollectionOther(); ok {
+		if err := hpfollow.ElineupmallCollectionOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_collection_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_collection_other": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallTshirt(); ok {
+		if err := hpfollow.ElineupmallTshirtValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_tshirt", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_tshirt": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallMicrofiberTowel(); ok {
+		if err := hpfollow.ElineupmallMicrofiberTowelValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_microfiber_towel", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_microfiber_towel": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallMufflerTowel(); ok {
+		if err := hpfollow.ElineupmallMufflerTowelValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_muffler_towel", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_muffler_towel": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallFsk(); ok {
+		if err := hpfollow.ElineupmallFskValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_fsk", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_fsk": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallKeyringOther(); ok {
+		if err := hpfollow.ElineupmallKeyringOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_keyring_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_keyring_other": %w`, err)}
+		}
+	}
+	if v, ok := hfu.mutation.ElineupmallClearFile(); ok {
+		if err := hpfollow.ElineupmallClearFileValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_clear_file", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_clear_file": %w`, err)}
+		}
+	}
 	if _, ok := hfu.mutation.UserID(); hfu.mutation.UserCleared() && !ok {
 		return errors.New(`ent: clearing a required unique edge "HPFollow.user"`)
 	}
@@ -170,6 +626,78 @@ func (hfu *HPFollowUpdate) sqlSave(ctx context.Context) (n int, err error) {
 	}
 	if value, ok := hfu.mutation.GetType(); ok {
 		_spec.SetField(hpfollow.FieldType, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallOther, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallPhotoDaily(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoDaily, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallPhotoA4(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoA4, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallPhotoA5(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoA5, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallPhoto2l(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhoto2l, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallPhotoOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoOther, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallPhotoAlbum(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoAlbum, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallPhotoAlbumOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoAlbumOther, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallPhotoBook(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoBook, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallPhotoBookOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoBookOther, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallDvd(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallDvd, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallDvdMagazine(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallDvdMagazine, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallDvdMagazineOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallDvdMagazineOther, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallBlueray(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallBlueray, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallPenlight(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPenlight, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallCollectionPinnapPoster(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallCollectionPinnapPoster, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallCollectionPhoto(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallCollectionPhoto, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallCollectionOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallCollectionOther, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallTshirt(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallTshirt, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallMicrofiberTowel(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallMicrofiberTowel, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallMufflerTowel(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallMufflerTowel, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallFsk(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallFsk, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallKeyringOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallKeyringOther, field.TypeEnum, value)
+	}
+	if value, ok := hfu.mutation.ElineupmallClearFile(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallClearFile, field.TypeEnum, value)
 	}
 	if hfu.mutation.UserCleared() {
 		edge := &sqlgraph.EdgeSpec{
@@ -283,6 +811,342 @@ func (hfuo *HPFollowUpdateOne) SetNillableType(eft *enums.HPFollowType) *HPFollo
 	return hfuo
 }
 
+// SetElineupmallOther sets the "elineupmall_other" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallOther(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallOther(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallOther sets the "elineupmall_other" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallOther(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallOther(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallPhotoDaily sets the "elineupmall_photo_daily" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallPhotoDaily(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallPhotoDaily(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallPhotoDaily sets the "elineupmall_photo_daily" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallPhotoDaily(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallPhotoDaily(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallPhotoA4 sets the "elineupmall_photo_a4" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallPhotoA4(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallPhotoA4(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallPhotoA4 sets the "elineupmall_photo_a4" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallPhotoA4(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallPhotoA4(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallPhotoA5 sets the "elineupmall_photo_a5" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallPhotoA5(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallPhotoA5(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallPhotoA5 sets the "elineupmall_photo_a5" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallPhotoA5(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallPhotoA5(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallPhoto2l sets the "elineupmall_photo_2l" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallPhoto2l(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallPhoto2l(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallPhoto2l sets the "elineupmall_photo_2l" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallPhoto2l(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallPhoto2l(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallPhotoOther sets the "elineupmall_photo_other" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallPhotoOther(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallPhotoOther(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallPhotoOther sets the "elineupmall_photo_other" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallPhotoOther(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallPhotoOther(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallPhotoAlbum sets the "elineupmall_photo_album" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallPhotoAlbum(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallPhotoAlbum(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallPhotoAlbum sets the "elineupmall_photo_album" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallPhotoAlbum(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallPhotoAlbum(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallPhotoAlbumOther sets the "elineupmall_photo_album_other" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallPhotoAlbumOther(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallPhotoAlbumOther(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallPhotoAlbumOther sets the "elineupmall_photo_album_other" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallPhotoAlbumOther(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallPhotoAlbumOther(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallPhotoBook sets the "elineupmall_photo_book" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallPhotoBook(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallPhotoBook(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallPhotoBook sets the "elineupmall_photo_book" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallPhotoBook(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallPhotoBook(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallPhotoBookOther sets the "elineupmall_photo_book_other" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallPhotoBookOther(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallPhotoBookOther(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallPhotoBookOther sets the "elineupmall_photo_book_other" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallPhotoBookOther(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallPhotoBookOther(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallDvd sets the "elineupmall_dvd" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallDvd(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallDvd(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallDvd sets the "elineupmall_dvd" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallDvd(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallDvd(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallDvdMagazine sets the "elineupmall_dvd_magazine" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallDvdMagazine(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallDvdMagazine(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallDvdMagazine sets the "elineupmall_dvd_magazine" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallDvdMagazine(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallDvdMagazine(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallDvdMagazineOther sets the "elineupmall_dvd_magazine_other" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallDvdMagazineOther(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallDvdMagazineOther(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallDvdMagazineOther sets the "elineupmall_dvd_magazine_other" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallDvdMagazineOther(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallDvdMagazineOther(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallBlueray sets the "elineupmall_blueray" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallBlueray(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallBlueray(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallBlueray sets the "elineupmall_blueray" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallBlueray(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallBlueray(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallPenlight sets the "elineupmall_penlight" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallPenlight(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallPenlight(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallPenlight sets the "elineupmall_penlight" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallPenlight(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallPenlight(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallCollectionPinnapPoster sets the "elineupmall_collection_pinnap_poster" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallCollectionPinnapPoster(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallCollectionPinnapPoster(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallCollectionPinnapPoster sets the "elineupmall_collection_pinnap_poster" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallCollectionPinnapPoster(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallCollectionPinnapPoster(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallCollectionPhoto sets the "elineupmall_collection_photo" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallCollectionPhoto(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallCollectionPhoto(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallCollectionPhoto sets the "elineupmall_collection_photo" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallCollectionPhoto(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallCollectionPhoto(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallCollectionOther sets the "elineupmall_collection_other" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallCollectionOther(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallCollectionOther(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallCollectionOther sets the "elineupmall_collection_other" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallCollectionOther(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallCollectionOther(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallTshirt sets the "elineupmall_tshirt" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallTshirt(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallTshirt(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallTshirt sets the "elineupmall_tshirt" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallTshirt(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallTshirt(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallMicrofiberTowel sets the "elineupmall_microfiber_towel" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallMicrofiberTowel(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallMicrofiberTowel(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallMicrofiberTowel sets the "elineupmall_microfiber_towel" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallMicrofiberTowel(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallMicrofiberTowel(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallMufflerTowel sets the "elineupmall_muffler_towel" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallMufflerTowel(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallMufflerTowel(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallMufflerTowel sets the "elineupmall_muffler_towel" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallMufflerTowel(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallMufflerTowel(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallFsk sets the "elineupmall_fsk" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallFsk(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallFsk(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallFsk sets the "elineupmall_fsk" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallFsk(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallFsk(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallKeyringOther sets the "elineupmall_keyring_other" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallKeyringOther(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallKeyringOther(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallKeyringOther sets the "elineupmall_keyring_other" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallKeyringOther(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallKeyringOther(*eft)
+	}
+	return hfuo
+}
+
+// SetElineupmallClearFile sets the "elineupmall_clear_file" field.
+func (hfuo *HPFollowUpdateOne) SetElineupmallClearFile(eft enums.HPFollowType) *HPFollowUpdateOne {
+	hfuo.mutation.SetElineupmallClearFile(eft)
+	return hfuo
+}
+
+// SetNillableElineupmallClearFile sets the "elineupmall_clear_file" field if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableElineupmallClearFile(eft *enums.HPFollowType) *HPFollowUpdateOne {
+	if eft != nil {
+		hfuo.SetElineupmallClearFile(*eft)
+	}
+	return hfuo
+}
+
 // SetUserID sets the "user" edge to the User entity by ID.
 func (hfuo *HPFollowUpdateOne) SetUserID(id int) *HPFollowUpdateOne {
 	hfuo.mutation.SetUserID(id)
@@ -369,6 +1233,126 @@ func (hfuo *HPFollowUpdateOne) check() error {
 			return &ValidationError{Name: "type", err: fmt.Errorf(`ent: validator failed for field "HPFollow.type": %w`, err)}
 		}
 	}
+	if v, ok := hfuo.mutation.ElineupmallOther(); ok {
+		if err := hpfollow.ElineupmallOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_other": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallPhotoDaily(); ok {
+		if err := hpfollow.ElineupmallPhotoDailyValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_daily", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_daily": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallPhotoA4(); ok {
+		if err := hpfollow.ElineupmallPhotoA4Validator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_a4", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_a4": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallPhotoA5(); ok {
+		if err := hpfollow.ElineupmallPhotoA5Validator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_a5", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_a5": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallPhoto2l(); ok {
+		if err := hpfollow.ElineupmallPhoto2lValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_2l", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_2l": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallPhotoOther(); ok {
+		if err := hpfollow.ElineupmallPhotoOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_other": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallPhotoAlbum(); ok {
+		if err := hpfollow.ElineupmallPhotoAlbumValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_album", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_album": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallPhotoAlbumOther(); ok {
+		if err := hpfollow.ElineupmallPhotoAlbumOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_album_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_album_other": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallPhotoBook(); ok {
+		if err := hpfollow.ElineupmallPhotoBookValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_book", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_book": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallPhotoBookOther(); ok {
+		if err := hpfollow.ElineupmallPhotoBookOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_photo_book_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_photo_book_other": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallDvd(); ok {
+		if err := hpfollow.ElineupmallDvdValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_dvd", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_dvd": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallDvdMagazine(); ok {
+		if err := hpfollow.ElineupmallDvdMagazineValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_dvd_magazine", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_dvd_magazine": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallDvdMagazineOther(); ok {
+		if err := hpfollow.ElineupmallDvdMagazineOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_dvd_magazine_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_dvd_magazine_other": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallBlueray(); ok {
+		if err := hpfollow.ElineupmallBluerayValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_blueray", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_blueray": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallPenlight(); ok {
+		if err := hpfollow.ElineupmallPenlightValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_penlight", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_penlight": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallCollectionPinnapPoster(); ok {
+		if err := hpfollow.ElineupmallCollectionPinnapPosterValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_collection_pinnap_poster", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_collection_pinnap_poster": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallCollectionPhoto(); ok {
+		if err := hpfollow.ElineupmallCollectionPhotoValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_collection_photo", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_collection_photo": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallCollectionOther(); ok {
+		if err := hpfollow.ElineupmallCollectionOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_collection_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_collection_other": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallTshirt(); ok {
+		if err := hpfollow.ElineupmallTshirtValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_tshirt", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_tshirt": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallMicrofiberTowel(); ok {
+		if err := hpfollow.ElineupmallMicrofiberTowelValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_microfiber_towel", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_microfiber_towel": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallMufflerTowel(); ok {
+		if err := hpfollow.ElineupmallMufflerTowelValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_muffler_towel", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_muffler_towel": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallFsk(); ok {
+		if err := hpfollow.ElineupmallFskValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_fsk", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_fsk": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallKeyringOther(); ok {
+		if err := hpfollow.ElineupmallKeyringOtherValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_keyring_other", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_keyring_other": %w`, err)}
+		}
+	}
+	if v, ok := hfuo.mutation.ElineupmallClearFile(); ok {
+		if err := hpfollow.ElineupmallClearFileValidator(v); err != nil {
+			return &ValidationError{Name: "elineupmall_clear_file", err: fmt.Errorf(`ent: validator failed for field "HPFollow.elineupmall_clear_file": %w`, err)}
+		}
+	}
 	if _, ok := hfuo.mutation.UserID(); hfuo.mutation.UserCleared() && !ok {
 		return errors.New(`ent: clearing a required unique edge "HPFollow.user"`)
 	}
@@ -418,6 +1402,78 @@ func (hfuo *HPFollowUpdateOne) sqlSave(ctx context.Context) (_node *HPFollow, er
 	}
 	if value, ok := hfuo.mutation.GetType(); ok {
 		_spec.SetField(hpfollow.FieldType, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallOther, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallPhotoDaily(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoDaily, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallPhotoA4(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoA4, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallPhotoA5(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoA5, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallPhoto2l(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhoto2l, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallPhotoOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoOther, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallPhotoAlbum(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoAlbum, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallPhotoAlbumOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoAlbumOther, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallPhotoBook(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoBook, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallPhotoBookOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPhotoBookOther, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallDvd(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallDvd, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallDvdMagazine(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallDvdMagazine, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallDvdMagazineOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallDvdMagazineOther, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallBlueray(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallBlueray, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallPenlight(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallPenlight, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallCollectionPinnapPoster(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallCollectionPinnapPoster, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallCollectionPhoto(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallCollectionPhoto, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallCollectionOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallCollectionOther, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallTshirt(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallTshirt, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallMicrofiberTowel(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallMicrofiberTowel, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallMufflerTowel(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallMufflerTowel, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallFsk(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallFsk, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallKeyringOther(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallKeyringOther, field.TypeEnum, value)
+	}
+	if value, ok := hfuo.mutation.ElineupmallClearFile(); ok {
+		_spec.SetField(hpfollow.FieldElineupmallClearFile, field.TypeEnum, value)
 	}
 	if hfuo.mutation.UserCleared() {
 		edge := &sqlgraph.EdgeSpec{

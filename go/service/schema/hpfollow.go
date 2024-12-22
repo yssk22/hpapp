@@ -35,90 +35,90 @@ func (HPFollow) Fields() []ent.Field {
 			Default(string(enums.HPFollowTypeFollowWithNotification)),
 
 		// follow types for elineupmall
-		// field.Enum("elineupmall_other").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_other").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 
-		// field.Enum("elineupmall_photo_daily").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
-		// field.Enum("elineupmall_photo_a4").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
-		// field.Enum("elineupmall_photo_a5").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
-		// field.Enum("elineupmall_photo_2l").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
-		// field.Enum("elineupmall_photo_other").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_photo_daily").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_photo_a4").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_photo_a5").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_photo_2l").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_photo_other").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 
-		// field.Enum("elineupmall_photo_album").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
-		// field.Enum("elineupmall_photo_album_other").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_photo_album").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_photo_album_other").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 
-		// field.Enum("elineupmall_photo_book").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_photo_book").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 
-		// field.Enum("elineupmall_photo_book_other").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_photo_book_other").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 
-		// field.Enum("elineupmall_dvd").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
-		// field.Enum("elineupmall_dvd_magazine").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
-		// field.Enum("elineupmall_dvd_magazine_other").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
-		// field.Enum("elineupmall_blueray").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_dvd").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_dvd_magazine").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_dvd_magazine_other").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_blueray").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 
-		// field.Enum("elineupmall_penlight").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_penlight").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 
-		// field.Enum("elineupmall_collection_pinnap_poster").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
-		// field.Enum("elineupmall_collection_photo").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
-		// field.Enum("elineupmall_collection_other").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_collection_pinnap_poster").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_collection_photo").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_collection_other").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 
-		// field.Enum("elineupmall_tshirt").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_tshirt").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 
-		// field.Enum("elineupmall_microfiber_towel").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
-		// field.Enum("elineupmall_muffler_towel").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_microfiber_towel").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_muffler_towel").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 
-		// field.Enum("elineupmall_fsk").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_fsk").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 
-		// field.Enum("elineupmall_keyring_other").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_keyring_other").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 
-		// field.Enum("elineupmall_clear_file").
-		// 	GoType(enums.HPFollowTypeFollowWithNotification).
-		// 	Default(string(enums.HPFollowTypeUnknown)),
+		field.Enum("elineupmall_clear_file").
+			GoType(enums.HPFollowTypeFollowWithNotification).
+			Default(string(enums.HPFollowTypeUnknown)),
 	}
 }
 

@@ -13401,20 +13401,44 @@ func (m *HPFeedItemMutation) ResetEdge(name string) error {
 // HPFollowMutation represents an operation that mutates the HPFollow nodes in the graph.
 type HPFollowMutation struct {
 	config
-	op            Op
-	typ           string
-	id            *int
-	created_at    *time.Time
-	updated_at    *time.Time
-	_type         *enums.HPFollowType
-	clearedFields map[string]struct{}
-	user          *int
-	cleareduser   bool
-	member        *int
-	clearedmember bool
-	done          bool
-	oldValue      func(context.Context) (*HPFollow, error)
-	predicates    []predicate.HPFollow
+	op                                   Op
+	typ                                  string
+	id                                   *int
+	created_at                           *time.Time
+	updated_at                           *time.Time
+	_type                                *enums.HPFollowType
+	elineupmall_other                    *enums.HPFollowType
+	elineupmall_photo_daily              *enums.HPFollowType
+	elineupmall_photo_a4                 *enums.HPFollowType
+	elineupmall_photo_a5                 *enums.HPFollowType
+	elineupmall_photo_2l                 *enums.HPFollowType
+	elineupmall_photo_other              *enums.HPFollowType
+	elineupmall_photo_album              *enums.HPFollowType
+	elineupmall_photo_album_other        *enums.HPFollowType
+	elineupmall_photo_book               *enums.HPFollowType
+	elineupmall_photo_book_other         *enums.HPFollowType
+	elineupmall_dvd                      *enums.HPFollowType
+	elineupmall_dvd_magazine             *enums.HPFollowType
+	elineupmall_dvd_magazine_other       *enums.HPFollowType
+	elineupmall_blueray                  *enums.HPFollowType
+	elineupmall_penlight                 *enums.HPFollowType
+	elineupmall_collection_pinnap_poster *enums.HPFollowType
+	elineupmall_collection_photo         *enums.HPFollowType
+	elineupmall_collection_other         *enums.HPFollowType
+	elineupmall_tshirt                   *enums.HPFollowType
+	elineupmall_microfiber_towel         *enums.HPFollowType
+	elineupmall_muffler_towel            *enums.HPFollowType
+	elineupmall_fsk                      *enums.HPFollowType
+	elineupmall_keyring_other            *enums.HPFollowType
+	elineupmall_clear_file               *enums.HPFollowType
+	clearedFields                        map[string]struct{}
+	user                                 *int
+	cleareduser                          bool
+	member                               *int
+	clearedmember                        bool
+	done                                 bool
+	oldValue                             func(context.Context) (*HPFollow, error)
+	predicates                           []predicate.HPFollow
 }
 
 var _ ent.Mutation = (*HPFollowMutation)(nil)
@@ -13649,6 +13673,870 @@ func (m *HPFollowMutation) ResetType() {
 	m._type = nil
 }
 
+// SetElineupmallOther sets the "elineupmall_other" field.
+func (m *HPFollowMutation) SetElineupmallOther(eft enums.HPFollowType) {
+	m.elineupmall_other = &eft
+}
+
+// ElineupmallOther returns the value of the "elineupmall_other" field in the mutation.
+func (m *HPFollowMutation) ElineupmallOther() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_other
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallOther returns the old "elineupmall_other" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallOther(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallOther is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallOther requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallOther: %w", err)
+	}
+	return oldValue.ElineupmallOther, nil
+}
+
+// ResetElineupmallOther resets all changes to the "elineupmall_other" field.
+func (m *HPFollowMutation) ResetElineupmallOther() {
+	m.elineupmall_other = nil
+}
+
+// SetElineupmallPhotoDaily sets the "elineupmall_photo_daily" field.
+func (m *HPFollowMutation) SetElineupmallPhotoDaily(eft enums.HPFollowType) {
+	m.elineupmall_photo_daily = &eft
+}
+
+// ElineupmallPhotoDaily returns the value of the "elineupmall_photo_daily" field in the mutation.
+func (m *HPFollowMutation) ElineupmallPhotoDaily() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_photo_daily
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallPhotoDaily returns the old "elineupmall_photo_daily" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallPhotoDaily(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallPhotoDaily is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallPhotoDaily requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallPhotoDaily: %w", err)
+	}
+	return oldValue.ElineupmallPhotoDaily, nil
+}
+
+// ResetElineupmallPhotoDaily resets all changes to the "elineupmall_photo_daily" field.
+func (m *HPFollowMutation) ResetElineupmallPhotoDaily() {
+	m.elineupmall_photo_daily = nil
+}
+
+// SetElineupmallPhotoA4 sets the "elineupmall_photo_a4" field.
+func (m *HPFollowMutation) SetElineupmallPhotoA4(eft enums.HPFollowType) {
+	m.elineupmall_photo_a4 = &eft
+}
+
+// ElineupmallPhotoA4 returns the value of the "elineupmall_photo_a4" field in the mutation.
+func (m *HPFollowMutation) ElineupmallPhotoA4() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_photo_a4
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallPhotoA4 returns the old "elineupmall_photo_a4" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallPhotoA4(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallPhotoA4 is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallPhotoA4 requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallPhotoA4: %w", err)
+	}
+	return oldValue.ElineupmallPhotoA4, nil
+}
+
+// ResetElineupmallPhotoA4 resets all changes to the "elineupmall_photo_a4" field.
+func (m *HPFollowMutation) ResetElineupmallPhotoA4() {
+	m.elineupmall_photo_a4 = nil
+}
+
+// SetElineupmallPhotoA5 sets the "elineupmall_photo_a5" field.
+func (m *HPFollowMutation) SetElineupmallPhotoA5(eft enums.HPFollowType) {
+	m.elineupmall_photo_a5 = &eft
+}
+
+// ElineupmallPhotoA5 returns the value of the "elineupmall_photo_a5" field in the mutation.
+func (m *HPFollowMutation) ElineupmallPhotoA5() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_photo_a5
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallPhotoA5 returns the old "elineupmall_photo_a5" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallPhotoA5(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallPhotoA5 is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallPhotoA5 requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallPhotoA5: %w", err)
+	}
+	return oldValue.ElineupmallPhotoA5, nil
+}
+
+// ResetElineupmallPhotoA5 resets all changes to the "elineupmall_photo_a5" field.
+func (m *HPFollowMutation) ResetElineupmallPhotoA5() {
+	m.elineupmall_photo_a5 = nil
+}
+
+// SetElineupmallPhoto2l sets the "elineupmall_photo_2l" field.
+func (m *HPFollowMutation) SetElineupmallPhoto2l(eft enums.HPFollowType) {
+	m.elineupmall_photo_2l = &eft
+}
+
+// ElineupmallPhoto2l returns the value of the "elineupmall_photo_2l" field in the mutation.
+func (m *HPFollowMutation) ElineupmallPhoto2l() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_photo_2l
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallPhoto2l returns the old "elineupmall_photo_2l" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallPhoto2l(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallPhoto2l is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallPhoto2l requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallPhoto2l: %w", err)
+	}
+	return oldValue.ElineupmallPhoto2l, nil
+}
+
+// ResetElineupmallPhoto2l resets all changes to the "elineupmall_photo_2l" field.
+func (m *HPFollowMutation) ResetElineupmallPhoto2l() {
+	m.elineupmall_photo_2l = nil
+}
+
+// SetElineupmallPhotoOther sets the "elineupmall_photo_other" field.
+func (m *HPFollowMutation) SetElineupmallPhotoOther(eft enums.HPFollowType) {
+	m.elineupmall_photo_other = &eft
+}
+
+// ElineupmallPhotoOther returns the value of the "elineupmall_photo_other" field in the mutation.
+func (m *HPFollowMutation) ElineupmallPhotoOther() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_photo_other
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallPhotoOther returns the old "elineupmall_photo_other" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallPhotoOther(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallPhotoOther is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallPhotoOther requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallPhotoOther: %w", err)
+	}
+	return oldValue.ElineupmallPhotoOther, nil
+}
+
+// ResetElineupmallPhotoOther resets all changes to the "elineupmall_photo_other" field.
+func (m *HPFollowMutation) ResetElineupmallPhotoOther() {
+	m.elineupmall_photo_other = nil
+}
+
+// SetElineupmallPhotoAlbum sets the "elineupmall_photo_album" field.
+func (m *HPFollowMutation) SetElineupmallPhotoAlbum(eft enums.HPFollowType) {
+	m.elineupmall_photo_album = &eft
+}
+
+// ElineupmallPhotoAlbum returns the value of the "elineupmall_photo_album" field in the mutation.
+func (m *HPFollowMutation) ElineupmallPhotoAlbum() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_photo_album
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallPhotoAlbum returns the old "elineupmall_photo_album" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallPhotoAlbum(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallPhotoAlbum is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallPhotoAlbum requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallPhotoAlbum: %w", err)
+	}
+	return oldValue.ElineupmallPhotoAlbum, nil
+}
+
+// ResetElineupmallPhotoAlbum resets all changes to the "elineupmall_photo_album" field.
+func (m *HPFollowMutation) ResetElineupmallPhotoAlbum() {
+	m.elineupmall_photo_album = nil
+}
+
+// SetElineupmallPhotoAlbumOther sets the "elineupmall_photo_album_other" field.
+func (m *HPFollowMutation) SetElineupmallPhotoAlbumOther(eft enums.HPFollowType) {
+	m.elineupmall_photo_album_other = &eft
+}
+
+// ElineupmallPhotoAlbumOther returns the value of the "elineupmall_photo_album_other" field in the mutation.
+func (m *HPFollowMutation) ElineupmallPhotoAlbumOther() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_photo_album_other
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallPhotoAlbumOther returns the old "elineupmall_photo_album_other" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallPhotoAlbumOther(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallPhotoAlbumOther is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallPhotoAlbumOther requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallPhotoAlbumOther: %w", err)
+	}
+	return oldValue.ElineupmallPhotoAlbumOther, nil
+}
+
+// ResetElineupmallPhotoAlbumOther resets all changes to the "elineupmall_photo_album_other" field.
+func (m *HPFollowMutation) ResetElineupmallPhotoAlbumOther() {
+	m.elineupmall_photo_album_other = nil
+}
+
+// SetElineupmallPhotoBook sets the "elineupmall_photo_book" field.
+func (m *HPFollowMutation) SetElineupmallPhotoBook(eft enums.HPFollowType) {
+	m.elineupmall_photo_book = &eft
+}
+
+// ElineupmallPhotoBook returns the value of the "elineupmall_photo_book" field in the mutation.
+func (m *HPFollowMutation) ElineupmallPhotoBook() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_photo_book
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallPhotoBook returns the old "elineupmall_photo_book" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallPhotoBook(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallPhotoBook is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallPhotoBook requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallPhotoBook: %w", err)
+	}
+	return oldValue.ElineupmallPhotoBook, nil
+}
+
+// ResetElineupmallPhotoBook resets all changes to the "elineupmall_photo_book" field.
+func (m *HPFollowMutation) ResetElineupmallPhotoBook() {
+	m.elineupmall_photo_book = nil
+}
+
+// SetElineupmallPhotoBookOther sets the "elineupmall_photo_book_other" field.
+func (m *HPFollowMutation) SetElineupmallPhotoBookOther(eft enums.HPFollowType) {
+	m.elineupmall_photo_book_other = &eft
+}
+
+// ElineupmallPhotoBookOther returns the value of the "elineupmall_photo_book_other" field in the mutation.
+func (m *HPFollowMutation) ElineupmallPhotoBookOther() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_photo_book_other
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallPhotoBookOther returns the old "elineupmall_photo_book_other" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallPhotoBookOther(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallPhotoBookOther is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallPhotoBookOther requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallPhotoBookOther: %w", err)
+	}
+	return oldValue.ElineupmallPhotoBookOther, nil
+}
+
+// ResetElineupmallPhotoBookOther resets all changes to the "elineupmall_photo_book_other" field.
+func (m *HPFollowMutation) ResetElineupmallPhotoBookOther() {
+	m.elineupmall_photo_book_other = nil
+}
+
+// SetElineupmallDvd sets the "elineupmall_dvd" field.
+func (m *HPFollowMutation) SetElineupmallDvd(eft enums.HPFollowType) {
+	m.elineupmall_dvd = &eft
+}
+
+// ElineupmallDvd returns the value of the "elineupmall_dvd" field in the mutation.
+func (m *HPFollowMutation) ElineupmallDvd() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_dvd
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallDvd returns the old "elineupmall_dvd" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallDvd(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallDvd is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallDvd requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallDvd: %w", err)
+	}
+	return oldValue.ElineupmallDvd, nil
+}
+
+// ResetElineupmallDvd resets all changes to the "elineupmall_dvd" field.
+func (m *HPFollowMutation) ResetElineupmallDvd() {
+	m.elineupmall_dvd = nil
+}
+
+// SetElineupmallDvdMagazine sets the "elineupmall_dvd_magazine" field.
+func (m *HPFollowMutation) SetElineupmallDvdMagazine(eft enums.HPFollowType) {
+	m.elineupmall_dvd_magazine = &eft
+}
+
+// ElineupmallDvdMagazine returns the value of the "elineupmall_dvd_magazine" field in the mutation.
+func (m *HPFollowMutation) ElineupmallDvdMagazine() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_dvd_magazine
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallDvdMagazine returns the old "elineupmall_dvd_magazine" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallDvdMagazine(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallDvdMagazine is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallDvdMagazine requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallDvdMagazine: %w", err)
+	}
+	return oldValue.ElineupmallDvdMagazine, nil
+}
+
+// ResetElineupmallDvdMagazine resets all changes to the "elineupmall_dvd_magazine" field.
+func (m *HPFollowMutation) ResetElineupmallDvdMagazine() {
+	m.elineupmall_dvd_magazine = nil
+}
+
+// SetElineupmallDvdMagazineOther sets the "elineupmall_dvd_magazine_other" field.
+func (m *HPFollowMutation) SetElineupmallDvdMagazineOther(eft enums.HPFollowType) {
+	m.elineupmall_dvd_magazine_other = &eft
+}
+
+// ElineupmallDvdMagazineOther returns the value of the "elineupmall_dvd_magazine_other" field in the mutation.
+func (m *HPFollowMutation) ElineupmallDvdMagazineOther() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_dvd_magazine_other
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallDvdMagazineOther returns the old "elineupmall_dvd_magazine_other" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallDvdMagazineOther(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallDvdMagazineOther is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallDvdMagazineOther requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallDvdMagazineOther: %w", err)
+	}
+	return oldValue.ElineupmallDvdMagazineOther, nil
+}
+
+// ResetElineupmallDvdMagazineOther resets all changes to the "elineupmall_dvd_magazine_other" field.
+func (m *HPFollowMutation) ResetElineupmallDvdMagazineOther() {
+	m.elineupmall_dvd_magazine_other = nil
+}
+
+// SetElineupmallBlueray sets the "elineupmall_blueray" field.
+func (m *HPFollowMutation) SetElineupmallBlueray(eft enums.HPFollowType) {
+	m.elineupmall_blueray = &eft
+}
+
+// ElineupmallBlueray returns the value of the "elineupmall_blueray" field in the mutation.
+func (m *HPFollowMutation) ElineupmallBlueray() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_blueray
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallBlueray returns the old "elineupmall_blueray" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallBlueray(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallBlueray is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallBlueray requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallBlueray: %w", err)
+	}
+	return oldValue.ElineupmallBlueray, nil
+}
+
+// ResetElineupmallBlueray resets all changes to the "elineupmall_blueray" field.
+func (m *HPFollowMutation) ResetElineupmallBlueray() {
+	m.elineupmall_blueray = nil
+}
+
+// SetElineupmallPenlight sets the "elineupmall_penlight" field.
+func (m *HPFollowMutation) SetElineupmallPenlight(eft enums.HPFollowType) {
+	m.elineupmall_penlight = &eft
+}
+
+// ElineupmallPenlight returns the value of the "elineupmall_penlight" field in the mutation.
+func (m *HPFollowMutation) ElineupmallPenlight() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_penlight
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallPenlight returns the old "elineupmall_penlight" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallPenlight(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallPenlight is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallPenlight requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallPenlight: %w", err)
+	}
+	return oldValue.ElineupmallPenlight, nil
+}
+
+// ResetElineupmallPenlight resets all changes to the "elineupmall_penlight" field.
+func (m *HPFollowMutation) ResetElineupmallPenlight() {
+	m.elineupmall_penlight = nil
+}
+
+// SetElineupmallCollectionPinnapPoster sets the "elineupmall_collection_pinnap_poster" field.
+func (m *HPFollowMutation) SetElineupmallCollectionPinnapPoster(eft enums.HPFollowType) {
+	m.elineupmall_collection_pinnap_poster = &eft
+}
+
+// ElineupmallCollectionPinnapPoster returns the value of the "elineupmall_collection_pinnap_poster" field in the mutation.
+func (m *HPFollowMutation) ElineupmallCollectionPinnapPoster() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_collection_pinnap_poster
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallCollectionPinnapPoster returns the old "elineupmall_collection_pinnap_poster" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallCollectionPinnapPoster(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallCollectionPinnapPoster is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallCollectionPinnapPoster requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallCollectionPinnapPoster: %w", err)
+	}
+	return oldValue.ElineupmallCollectionPinnapPoster, nil
+}
+
+// ResetElineupmallCollectionPinnapPoster resets all changes to the "elineupmall_collection_pinnap_poster" field.
+func (m *HPFollowMutation) ResetElineupmallCollectionPinnapPoster() {
+	m.elineupmall_collection_pinnap_poster = nil
+}
+
+// SetElineupmallCollectionPhoto sets the "elineupmall_collection_photo" field.
+func (m *HPFollowMutation) SetElineupmallCollectionPhoto(eft enums.HPFollowType) {
+	m.elineupmall_collection_photo = &eft
+}
+
+// ElineupmallCollectionPhoto returns the value of the "elineupmall_collection_photo" field in the mutation.
+func (m *HPFollowMutation) ElineupmallCollectionPhoto() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_collection_photo
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallCollectionPhoto returns the old "elineupmall_collection_photo" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallCollectionPhoto(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallCollectionPhoto is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallCollectionPhoto requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallCollectionPhoto: %w", err)
+	}
+	return oldValue.ElineupmallCollectionPhoto, nil
+}
+
+// ResetElineupmallCollectionPhoto resets all changes to the "elineupmall_collection_photo" field.
+func (m *HPFollowMutation) ResetElineupmallCollectionPhoto() {
+	m.elineupmall_collection_photo = nil
+}
+
+// SetElineupmallCollectionOther sets the "elineupmall_collection_other" field.
+func (m *HPFollowMutation) SetElineupmallCollectionOther(eft enums.HPFollowType) {
+	m.elineupmall_collection_other = &eft
+}
+
+// ElineupmallCollectionOther returns the value of the "elineupmall_collection_other" field in the mutation.
+func (m *HPFollowMutation) ElineupmallCollectionOther() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_collection_other
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallCollectionOther returns the old "elineupmall_collection_other" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallCollectionOther(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallCollectionOther is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallCollectionOther requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallCollectionOther: %w", err)
+	}
+	return oldValue.ElineupmallCollectionOther, nil
+}
+
+// ResetElineupmallCollectionOther resets all changes to the "elineupmall_collection_other" field.
+func (m *HPFollowMutation) ResetElineupmallCollectionOther() {
+	m.elineupmall_collection_other = nil
+}
+
+// SetElineupmallTshirt sets the "elineupmall_tshirt" field.
+func (m *HPFollowMutation) SetElineupmallTshirt(eft enums.HPFollowType) {
+	m.elineupmall_tshirt = &eft
+}
+
+// ElineupmallTshirt returns the value of the "elineupmall_tshirt" field in the mutation.
+func (m *HPFollowMutation) ElineupmallTshirt() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_tshirt
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallTshirt returns the old "elineupmall_tshirt" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallTshirt(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallTshirt is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallTshirt requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallTshirt: %w", err)
+	}
+	return oldValue.ElineupmallTshirt, nil
+}
+
+// ResetElineupmallTshirt resets all changes to the "elineupmall_tshirt" field.
+func (m *HPFollowMutation) ResetElineupmallTshirt() {
+	m.elineupmall_tshirt = nil
+}
+
+// SetElineupmallMicrofiberTowel sets the "elineupmall_microfiber_towel" field.
+func (m *HPFollowMutation) SetElineupmallMicrofiberTowel(eft enums.HPFollowType) {
+	m.elineupmall_microfiber_towel = &eft
+}
+
+// ElineupmallMicrofiberTowel returns the value of the "elineupmall_microfiber_towel" field in the mutation.
+func (m *HPFollowMutation) ElineupmallMicrofiberTowel() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_microfiber_towel
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallMicrofiberTowel returns the old "elineupmall_microfiber_towel" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallMicrofiberTowel(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallMicrofiberTowel is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallMicrofiberTowel requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallMicrofiberTowel: %w", err)
+	}
+	return oldValue.ElineupmallMicrofiberTowel, nil
+}
+
+// ResetElineupmallMicrofiberTowel resets all changes to the "elineupmall_microfiber_towel" field.
+func (m *HPFollowMutation) ResetElineupmallMicrofiberTowel() {
+	m.elineupmall_microfiber_towel = nil
+}
+
+// SetElineupmallMufflerTowel sets the "elineupmall_muffler_towel" field.
+func (m *HPFollowMutation) SetElineupmallMufflerTowel(eft enums.HPFollowType) {
+	m.elineupmall_muffler_towel = &eft
+}
+
+// ElineupmallMufflerTowel returns the value of the "elineupmall_muffler_towel" field in the mutation.
+func (m *HPFollowMutation) ElineupmallMufflerTowel() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_muffler_towel
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallMufflerTowel returns the old "elineupmall_muffler_towel" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallMufflerTowel(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallMufflerTowel is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallMufflerTowel requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallMufflerTowel: %w", err)
+	}
+	return oldValue.ElineupmallMufflerTowel, nil
+}
+
+// ResetElineupmallMufflerTowel resets all changes to the "elineupmall_muffler_towel" field.
+func (m *HPFollowMutation) ResetElineupmallMufflerTowel() {
+	m.elineupmall_muffler_towel = nil
+}
+
+// SetElineupmallFsk sets the "elineupmall_fsk" field.
+func (m *HPFollowMutation) SetElineupmallFsk(eft enums.HPFollowType) {
+	m.elineupmall_fsk = &eft
+}
+
+// ElineupmallFsk returns the value of the "elineupmall_fsk" field in the mutation.
+func (m *HPFollowMutation) ElineupmallFsk() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_fsk
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallFsk returns the old "elineupmall_fsk" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallFsk(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallFsk is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallFsk requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallFsk: %w", err)
+	}
+	return oldValue.ElineupmallFsk, nil
+}
+
+// ResetElineupmallFsk resets all changes to the "elineupmall_fsk" field.
+func (m *HPFollowMutation) ResetElineupmallFsk() {
+	m.elineupmall_fsk = nil
+}
+
+// SetElineupmallKeyringOther sets the "elineupmall_keyring_other" field.
+func (m *HPFollowMutation) SetElineupmallKeyringOther(eft enums.HPFollowType) {
+	m.elineupmall_keyring_other = &eft
+}
+
+// ElineupmallKeyringOther returns the value of the "elineupmall_keyring_other" field in the mutation.
+func (m *HPFollowMutation) ElineupmallKeyringOther() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_keyring_other
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallKeyringOther returns the old "elineupmall_keyring_other" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallKeyringOther(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallKeyringOther is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallKeyringOther requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallKeyringOther: %w", err)
+	}
+	return oldValue.ElineupmallKeyringOther, nil
+}
+
+// ResetElineupmallKeyringOther resets all changes to the "elineupmall_keyring_other" field.
+func (m *HPFollowMutation) ResetElineupmallKeyringOther() {
+	m.elineupmall_keyring_other = nil
+}
+
+// SetElineupmallClearFile sets the "elineupmall_clear_file" field.
+func (m *HPFollowMutation) SetElineupmallClearFile(eft enums.HPFollowType) {
+	m.elineupmall_clear_file = &eft
+}
+
+// ElineupmallClearFile returns the value of the "elineupmall_clear_file" field in the mutation.
+func (m *HPFollowMutation) ElineupmallClearFile() (r enums.HPFollowType, exists bool) {
+	v := m.elineupmall_clear_file
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldElineupmallClearFile returns the old "elineupmall_clear_file" field's value of the HPFollow entity.
+// If the HPFollow object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPFollowMutation) OldElineupmallClearFile(ctx context.Context) (v enums.HPFollowType, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldElineupmallClearFile is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldElineupmallClearFile requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldElineupmallClearFile: %w", err)
+	}
+	return oldValue.ElineupmallClearFile, nil
+}
+
+// ResetElineupmallClearFile resets all changes to the "elineupmall_clear_file" field.
+func (m *HPFollowMutation) ResetElineupmallClearFile() {
+	m.elineupmall_clear_file = nil
+}
+
 // SetUserID sets the "user" edge to the User entity by id.
 func (m *HPFollowMutation) SetUserID(id int) {
 	m.user = &id
@@ -13761,7 +14649,7 @@ func (m *HPFollowMutation) Type() string {
 // order to get all numeric fields that were incremented/decremented, call
 // AddedFields().
 func (m *HPFollowMutation) Fields() []string {
-	fields := make([]string, 0, 3)
+	fields := make([]string, 0, 27)
 	if m.created_at != nil {
 		fields = append(fields, hpfollow.FieldCreatedAt)
 	}
@@ -13770,6 +14658,78 @@ func (m *HPFollowMutation) Fields() []string {
 	}
 	if m._type != nil {
 		fields = append(fields, hpfollow.FieldType)
+	}
+	if m.elineupmall_other != nil {
+		fields = append(fields, hpfollow.FieldElineupmallOther)
+	}
+	if m.elineupmall_photo_daily != nil {
+		fields = append(fields, hpfollow.FieldElineupmallPhotoDaily)
+	}
+	if m.elineupmall_photo_a4 != nil {
+		fields = append(fields, hpfollow.FieldElineupmallPhotoA4)
+	}
+	if m.elineupmall_photo_a5 != nil {
+		fields = append(fields, hpfollow.FieldElineupmallPhotoA5)
+	}
+	if m.elineupmall_photo_2l != nil {
+		fields = append(fields, hpfollow.FieldElineupmallPhoto2l)
+	}
+	if m.elineupmall_photo_other != nil {
+		fields = append(fields, hpfollow.FieldElineupmallPhotoOther)
+	}
+	if m.elineupmall_photo_album != nil {
+		fields = append(fields, hpfollow.FieldElineupmallPhotoAlbum)
+	}
+	if m.elineupmall_photo_album_other != nil {
+		fields = append(fields, hpfollow.FieldElineupmallPhotoAlbumOther)
+	}
+	if m.elineupmall_photo_book != nil {
+		fields = append(fields, hpfollow.FieldElineupmallPhotoBook)
+	}
+	if m.elineupmall_photo_book_other != nil {
+		fields = append(fields, hpfollow.FieldElineupmallPhotoBookOther)
+	}
+	if m.elineupmall_dvd != nil {
+		fields = append(fields, hpfollow.FieldElineupmallDvd)
+	}
+	if m.elineupmall_dvd_magazine != nil {
+		fields = append(fields, hpfollow.FieldElineupmallDvdMagazine)
+	}
+	if m.elineupmall_dvd_magazine_other != nil {
+		fields = append(fields, hpfollow.FieldElineupmallDvdMagazineOther)
+	}
+	if m.elineupmall_blueray != nil {
+		fields = append(fields, hpfollow.FieldElineupmallBlueray)
+	}
+	if m.elineupmall_penlight != nil {
+		fields = append(fields, hpfollow.FieldElineupmallPenlight)
+	}
+	if m.elineupmall_collection_pinnap_poster != nil {
+		fields = append(fields, hpfollow.FieldElineupmallCollectionPinnapPoster)
+	}
+	if m.elineupmall_collection_photo != nil {
+		fields = append(fields, hpfollow.FieldElineupmallCollectionPhoto)
+	}
+	if m.elineupmall_collection_other != nil {
+		fields = append(fields, hpfollow.FieldElineupmallCollectionOther)
+	}
+	if m.elineupmall_tshirt != nil {
+		fields = append(fields, hpfollow.FieldElineupmallTshirt)
+	}
+	if m.elineupmall_microfiber_towel != nil {
+		fields = append(fields, hpfollow.FieldElineupmallMicrofiberTowel)
+	}
+	if m.elineupmall_muffler_towel != nil {
+		fields = append(fields, hpfollow.FieldElineupmallMufflerTowel)
+	}
+	if m.elineupmall_fsk != nil {
+		fields = append(fields, hpfollow.FieldElineupmallFsk)
+	}
+	if m.elineupmall_keyring_other != nil {
+		fields = append(fields, hpfollow.FieldElineupmallKeyringOther)
+	}
+	if m.elineupmall_clear_file != nil {
+		fields = append(fields, hpfollow.FieldElineupmallClearFile)
 	}
 	return fields
 }
@@ -13785,6 +14745,54 @@ func (m *HPFollowMutation) Field(name string) (ent.Value, bool) {
 		return m.UpdatedAt()
 	case hpfollow.FieldType:
 		return m.GetType()
+	case hpfollow.FieldElineupmallOther:
+		return m.ElineupmallOther()
+	case hpfollow.FieldElineupmallPhotoDaily:
+		return m.ElineupmallPhotoDaily()
+	case hpfollow.FieldElineupmallPhotoA4:
+		return m.ElineupmallPhotoA4()
+	case hpfollow.FieldElineupmallPhotoA5:
+		return m.ElineupmallPhotoA5()
+	case hpfollow.FieldElineupmallPhoto2l:
+		return m.ElineupmallPhoto2l()
+	case hpfollow.FieldElineupmallPhotoOther:
+		return m.ElineupmallPhotoOther()
+	case hpfollow.FieldElineupmallPhotoAlbum:
+		return m.ElineupmallPhotoAlbum()
+	case hpfollow.FieldElineupmallPhotoAlbumOther:
+		return m.ElineupmallPhotoAlbumOther()
+	case hpfollow.FieldElineupmallPhotoBook:
+		return m.ElineupmallPhotoBook()
+	case hpfollow.FieldElineupmallPhotoBookOther:
+		return m.ElineupmallPhotoBookOther()
+	case hpfollow.FieldElineupmallDvd:
+		return m.ElineupmallDvd()
+	case hpfollow.FieldElineupmallDvdMagazine:
+		return m.ElineupmallDvdMagazine()
+	case hpfollow.FieldElineupmallDvdMagazineOther:
+		return m.ElineupmallDvdMagazineOther()
+	case hpfollow.FieldElineupmallBlueray:
+		return m.ElineupmallBlueray()
+	case hpfollow.FieldElineupmallPenlight:
+		return m.ElineupmallPenlight()
+	case hpfollow.FieldElineupmallCollectionPinnapPoster:
+		return m.ElineupmallCollectionPinnapPoster()
+	case hpfollow.FieldElineupmallCollectionPhoto:
+		return m.ElineupmallCollectionPhoto()
+	case hpfollow.FieldElineupmallCollectionOther:
+		return m.ElineupmallCollectionOther()
+	case hpfollow.FieldElineupmallTshirt:
+		return m.ElineupmallTshirt()
+	case hpfollow.FieldElineupmallMicrofiberTowel:
+		return m.ElineupmallMicrofiberTowel()
+	case hpfollow.FieldElineupmallMufflerTowel:
+		return m.ElineupmallMufflerTowel()
+	case hpfollow.FieldElineupmallFsk:
+		return m.ElineupmallFsk()
+	case hpfollow.FieldElineupmallKeyringOther:
+		return m.ElineupmallKeyringOther()
+	case hpfollow.FieldElineupmallClearFile:
+		return m.ElineupmallClearFile()
 	}
 	return nil, false
 }
@@ -13800,6 +14808,54 @@ func (m *HPFollowMutation) OldField(ctx context.Context, name string) (ent.Value
 		return m.OldUpdatedAt(ctx)
 	case hpfollow.FieldType:
 		return m.OldType(ctx)
+	case hpfollow.FieldElineupmallOther:
+		return m.OldElineupmallOther(ctx)
+	case hpfollow.FieldElineupmallPhotoDaily:
+		return m.OldElineupmallPhotoDaily(ctx)
+	case hpfollow.FieldElineupmallPhotoA4:
+		return m.OldElineupmallPhotoA4(ctx)
+	case hpfollow.FieldElineupmallPhotoA5:
+		return m.OldElineupmallPhotoA5(ctx)
+	case hpfollow.FieldElineupmallPhoto2l:
+		return m.OldElineupmallPhoto2l(ctx)
+	case hpfollow.FieldElineupmallPhotoOther:
+		return m.OldElineupmallPhotoOther(ctx)
+	case hpfollow.FieldElineupmallPhotoAlbum:
+		return m.OldElineupmallPhotoAlbum(ctx)
+	case hpfollow.FieldElineupmallPhotoAlbumOther:
+		return m.OldElineupmallPhotoAlbumOther(ctx)
+	case hpfollow.FieldElineupmallPhotoBook:
+		return m.OldElineupmallPhotoBook(ctx)
+	case hpfollow.FieldElineupmallPhotoBookOther:
+		return m.OldElineupmallPhotoBookOther(ctx)
+	case hpfollow.FieldElineupmallDvd:
+		return m.OldElineupmallDvd(ctx)
+	case hpfollow.FieldElineupmallDvdMagazine:
+		return m.OldElineupmallDvdMagazine(ctx)
+	case hpfollow.FieldElineupmallDvdMagazineOther:
+		return m.OldElineupmallDvdMagazineOther(ctx)
+	case hpfollow.FieldElineupmallBlueray:
+		return m.OldElineupmallBlueray(ctx)
+	case hpfollow.FieldElineupmallPenlight:
+		return m.OldElineupmallPenlight(ctx)
+	case hpfollow.FieldElineupmallCollectionPinnapPoster:
+		return m.OldElineupmallCollectionPinnapPoster(ctx)
+	case hpfollow.FieldElineupmallCollectionPhoto:
+		return m.OldElineupmallCollectionPhoto(ctx)
+	case hpfollow.FieldElineupmallCollectionOther:
+		return m.OldElineupmallCollectionOther(ctx)
+	case hpfollow.FieldElineupmallTshirt:
+		return m.OldElineupmallTshirt(ctx)
+	case hpfollow.FieldElineupmallMicrofiberTowel:
+		return m.OldElineupmallMicrofiberTowel(ctx)
+	case hpfollow.FieldElineupmallMufflerTowel:
+		return m.OldElineupmallMufflerTowel(ctx)
+	case hpfollow.FieldElineupmallFsk:
+		return m.OldElineupmallFsk(ctx)
+	case hpfollow.FieldElineupmallKeyringOther:
+		return m.OldElineupmallKeyringOther(ctx)
+	case hpfollow.FieldElineupmallClearFile:
+		return m.OldElineupmallClearFile(ctx)
 	}
 	return nil, fmt.Errorf("unknown HPFollow field %s", name)
 }
@@ -13829,6 +14885,174 @@ func (m *HPFollowMutation) SetField(name string, value ent.Value) error {
 			return fmt.Errorf("unexpected type %T for field %s", value, name)
 		}
 		m.SetType(v)
+		return nil
+	case hpfollow.FieldElineupmallOther:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallOther(v)
+		return nil
+	case hpfollow.FieldElineupmallPhotoDaily:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallPhotoDaily(v)
+		return nil
+	case hpfollow.FieldElineupmallPhotoA4:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallPhotoA4(v)
+		return nil
+	case hpfollow.FieldElineupmallPhotoA5:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallPhotoA5(v)
+		return nil
+	case hpfollow.FieldElineupmallPhoto2l:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallPhoto2l(v)
+		return nil
+	case hpfollow.FieldElineupmallPhotoOther:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallPhotoOther(v)
+		return nil
+	case hpfollow.FieldElineupmallPhotoAlbum:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallPhotoAlbum(v)
+		return nil
+	case hpfollow.FieldElineupmallPhotoAlbumOther:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallPhotoAlbumOther(v)
+		return nil
+	case hpfollow.FieldElineupmallPhotoBook:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallPhotoBook(v)
+		return nil
+	case hpfollow.FieldElineupmallPhotoBookOther:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallPhotoBookOther(v)
+		return nil
+	case hpfollow.FieldElineupmallDvd:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallDvd(v)
+		return nil
+	case hpfollow.FieldElineupmallDvdMagazine:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallDvdMagazine(v)
+		return nil
+	case hpfollow.FieldElineupmallDvdMagazineOther:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallDvdMagazineOther(v)
+		return nil
+	case hpfollow.FieldElineupmallBlueray:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallBlueray(v)
+		return nil
+	case hpfollow.FieldElineupmallPenlight:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallPenlight(v)
+		return nil
+	case hpfollow.FieldElineupmallCollectionPinnapPoster:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallCollectionPinnapPoster(v)
+		return nil
+	case hpfollow.FieldElineupmallCollectionPhoto:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallCollectionPhoto(v)
+		return nil
+	case hpfollow.FieldElineupmallCollectionOther:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallCollectionOther(v)
+		return nil
+	case hpfollow.FieldElineupmallTshirt:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallTshirt(v)
+		return nil
+	case hpfollow.FieldElineupmallMicrofiberTowel:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallMicrofiberTowel(v)
+		return nil
+	case hpfollow.FieldElineupmallMufflerTowel:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallMufflerTowel(v)
+		return nil
+	case hpfollow.FieldElineupmallFsk:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallFsk(v)
+		return nil
+	case hpfollow.FieldElineupmallKeyringOther:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallKeyringOther(v)
+		return nil
+	case hpfollow.FieldElineupmallClearFile:
+		v, ok := value.(enums.HPFollowType)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetElineupmallClearFile(v)
 		return nil
 	}
 	return fmt.Errorf("unknown HPFollow field %s", name)
@@ -13902,6 +15126,78 @@ func (m *HPFollowMutation) ResetField(name string) error {
 		return nil
 	case hpfollow.FieldType:
 		m.ResetType()
+		return nil
+	case hpfollow.FieldElineupmallOther:
+		m.ResetElineupmallOther()
+		return nil
+	case hpfollow.FieldElineupmallPhotoDaily:
+		m.ResetElineupmallPhotoDaily()
+		return nil
+	case hpfollow.FieldElineupmallPhotoA4:
+		m.ResetElineupmallPhotoA4()
+		return nil
+	case hpfollow.FieldElineupmallPhotoA5:
+		m.ResetElineupmallPhotoA5()
+		return nil
+	case hpfollow.FieldElineupmallPhoto2l:
+		m.ResetElineupmallPhoto2l()
+		return nil
+	case hpfollow.FieldElineupmallPhotoOther:
+		m.ResetElineupmallPhotoOther()
+		return nil
+	case hpfollow.FieldElineupmallPhotoAlbum:
+		m.ResetElineupmallPhotoAlbum()
+		return nil
+	case hpfollow.FieldElineupmallPhotoAlbumOther:
+		m.ResetElineupmallPhotoAlbumOther()
+		return nil
+	case hpfollow.FieldElineupmallPhotoBook:
+		m.ResetElineupmallPhotoBook()
+		return nil
+	case hpfollow.FieldElineupmallPhotoBookOther:
+		m.ResetElineupmallPhotoBookOther()
+		return nil
+	case hpfollow.FieldElineupmallDvd:
+		m.ResetElineupmallDvd()
+		return nil
+	case hpfollow.FieldElineupmallDvdMagazine:
+		m.ResetElineupmallDvdMagazine()
+		return nil
+	case hpfollow.FieldElineupmallDvdMagazineOther:
+		m.ResetElineupmallDvdMagazineOther()
+		return nil
+	case hpfollow.FieldElineupmallBlueray:
+		m.ResetElineupmallBlueray()
+		return nil
+	case hpfollow.FieldElineupmallPenlight:
+		m.ResetElineupmallPenlight()
+		return nil
+	case hpfollow.FieldElineupmallCollectionPinnapPoster:
+		m.ResetElineupmallCollectionPinnapPoster()
+		return nil
+	case hpfollow.FieldElineupmallCollectionPhoto:
+		m.ResetElineupmallCollectionPhoto()
+		return nil
+	case hpfollow.FieldElineupmallCollectionOther:
+		m.ResetElineupmallCollectionOther()
+		return nil
+	case hpfollow.FieldElineupmallTshirt:
+		m.ResetElineupmallTshirt()
+		return nil
+	case hpfollow.FieldElineupmallMicrofiberTowel:
+		m.ResetElineupmallMicrofiberTowel()
+		return nil
+	case hpfollow.FieldElineupmallMufflerTowel:
+		m.ResetElineupmallMufflerTowel()
+		return nil
+	case hpfollow.FieldElineupmallFsk:
+		m.ResetElineupmallFsk()
+		return nil
+	case hpfollow.FieldElineupmallKeyringOther:
+		m.ResetElineupmallKeyringOther()
+		return nil
+	case hpfollow.FieldElineupmallClearFile:
+		m.ResetElineupmallClearFile()
 		return nil
 	}
 	return fmt.Errorf("unknown HPFollow field %s", name)
