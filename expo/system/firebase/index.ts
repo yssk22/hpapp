@@ -1,23 +1,41 @@
 import analytics from '@react-native-firebase/analytics';
 import appcheck from '@react-native-firebase/app-check';
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
+import Constants from 'expo-constants';
 import { useEffect } from 'react';
 import { Platform } from 'react-native';
 
 if (Platform.OS !== 'web') {
   const provider = appcheck().newReactNativeFirebaseAppCheckProvider();
-  provider.configure({
-    apple: {
-      provider: 'deviceCheck'
-    },
-    android: {
-      provider: 'playIntegrity'
-    }
-  });
-  appcheck().initializeAppCheck({
-    provider,
-    isTokenAutoRefreshEnabled: true
-  });
+  if (Constants.executionEnvironment === 'bare') {
+    // development build is not distributed through the app store so AppCheck provider has to be 'debug'
+    provider.configure({
+      apple: {
+        provider: 'deviceCheck'
+      },
+      android: {
+        provider: 'debug',
+        debugToken: process.env.EXPO_PUBLIC_APP_CHECK_DEBUG_TOKEN
+      }
+    });
+    appcheck().initializeAppCheck({
+      provider,
+      isTokenAutoRefreshEnabled: true
+    });
+  } else {
+    provider.configure({
+      apple: {
+        provider: 'deviceCheck'
+      },
+      android: {
+        provider: 'playIntegrity'
+      }
+    });
+    appcheck().initializeAppCheck({
+      provider,
+      isTokenAutoRefreshEnabled: true
+    });
+  }
 }
 
 export async function getAppCheckToken() {

@@ -124,9 +124,9 @@ module.exports = {
       eas: {},
       hpapp: {
         useLocalAuth: false,
-        graphQLEndpoint: 'http://localhost:8080/graphql/v3',
         firebaseIOSClientID: null,
-        firebaseAndroidClientID: null
+        firebaseAndroidClientID: null,
+        appCheckDebugToken: null
       }
     }
   }

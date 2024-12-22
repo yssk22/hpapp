@@ -28,13 +28,6 @@ else
     envsubst < $BASEDIR/config/GoogleService-Info.plist.env > $BASEDIR/config/$HPAPP_CONFIG_NAME/GoogleService-Info.plist
 fi
 
-if [ -z $GOOGLE_SERVICES_JSON ]; then
-    echo "no GOOGLE_SERVICES_JSON found"
-else
-    echo "generating $BASEDIR/config/$HPAPP_CONFIG_NAME/google-services.json from environment variable."
-    envsubst < $BASEDIR/config/google-services.json.env > $BASEDIR/config/$HPAPP_CONFIG_NAME/google-services.json
-fi
-
 if [ "$1" == "build" ]; then
     EAS_JSON=$BASEDIR/config/$HPAPP_CONFIG_NAME/eas.json
 elif [ "$1" == "submit" ]; then

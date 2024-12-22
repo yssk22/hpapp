@@ -1,5 +1,5 @@
 import { defineScreen } from '@hpapp/features/common/stack';
-import { renderUserComponent, renderUserScreen, waitForUserRootRerendered } from '@hpapp/features/testhelper';
+import { renderUserComponent, renderUserScreen } from '@hpapp/features/testhelper';
 import { sleep } from '@hpapp/foundation/globals';
 import { act, fireEvent, render, waitFor, waitForElementToBeRemoved } from '@testing-library/react-native';
 import * as Updates from 'expo-updates';
@@ -7,7 +7,7 @@ import { Text } from 'react-native';
 
 import { App } from './';
 import AppConfigModal from './internals/AppConfigModal';
-import { SettingsUserConfigDefault, useAppConfig } from './settings';
+import { SettingsUserConfigDefault } from './settings';
 import { clearSettings } from './settings/testhelper';
 
 const userConfig = {
@@ -37,35 +37,6 @@ describe('app', () => {
         fireEvent.press(content.getByTestId('AppConfigModal.btnClose'));
       });
       expect(onClose).toHaveBeenCalled();
-    });
-
-    test('render and save', async () => {
-      function AppConfigTestComponent() {
-        const appConfig = useAppConfig();
-        return <Text testID="app.test">{appConfig.graphQLEndpoint}</Text>;
-      }
-
-      const onClose = jest.fn();
-      const content = await renderUserComponent(
-        <>
-          <AppConfigTestComponent />
-          <AppConfigModal isVisible onClose={onClose} />
-        </>
-      );
-      await act(() => {});
-      const input = content.getByTestId('AppConfigModal.graphQLEndpoint');
-      expect(input).toBeTruthy();
-      await act(async () => {
-        // fireEvent.changeText(input, 'https://risa.example.com:8080/graphql/v3'); // This line is not working
-        input.props.onChangeText('https://risa.example.com:8080/graphql/v3');
-      });
-      await act(async () => {
-        fireEvent.press(content.getByTestId('AppConfigModal.btnSave'));
-      });
-      // change is reflected in AppConfigSettings
-      await waitForUserRootRerendered();
-      expect(onClose).toHaveBeenCalled();
-      expect(content.getByTestId('app.test').props.children).toEqual('https://risa.example.com:8080/graphql/v3');
     });
   });
 

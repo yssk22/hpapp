@@ -3,7 +3,7 @@
  */
 export interface HttpClientConfig {
   /**
-   * GraphQL Endpoint. If undefined, it will use the default endpoint configured in `extra.hpapp.graphQLEndpoint` in appc.config.
+   * GraphQL Endpoint. If undefined, it will use the default endpoint from process.env.GRAPHQL_ENDPOINT
    */
   Endpoint: string;
   /**

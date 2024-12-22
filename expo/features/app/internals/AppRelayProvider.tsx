@@ -2,7 +2,6 @@ import { useAppConfig, useCurrentUser } from '@hpapp/features/app/settings';
 import { getAppCheckToken, getIdToken } from '@hpapp/system/firebase';
 import { createEnvironment } from '@hpapp/system/graphql/relay';
 import { RequestTokenSet } from '@hpapp/system/graphql/types';
-import Constants from 'expo-constants';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Platform } from 'react-native';
 import { RelayEnvironmentProvider } from 'react-relay';
@@ -12,9 +11,7 @@ export default function AppRelayProvider({ children }: { children: React.ReactNo
   const appConfig = useAppConfig();
   const environment = useMemo(() => {
     const httpConfig = {
-      Endpoint: appConfig.useCustomGraphQLEndpoint
-        ? appConfig.graphQLEndpoint
-        : Constants.expoConfig?.extra?.hpapp.graphQLEndpoint,
+      Endpoint: `${process.env.EXPO_PUBLIC_GRAPHQL_ENDPOINT}/graphql/v3`,
       NetworkTimeoutSecond: 60
     };
     const env = createEnvironment(httpConfig, async () => {
@@ -29,7 +26,7 @@ export default function AppRelayProvider({ children }: { children: React.ReactNo
     });
     env.configName = `${httpConfig.Endpoint}-${new Date().getTime()}`;
     return env;
-  }, [appConfig.graphQLEndpoint, user?.accessToken]);
+  }, [user?.accessToken]);
   // NOTE:
   // RelayEnvironmentProvider SOMEHOW does not rerender even environment is updated
   // so we explicitly update key to force rerender.

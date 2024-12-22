@@ -1,7 +1,7 @@
 import { useAppConfig, useAppConfigUpdator } from '@hpapp/features/app/settings';
 // import { Text } from '@hpapp/features/common';
 import { FontSize, Spacing } from '@hpapp/features/common/constants';
-import { Button, Dialog, Input, Switch } from '@rneui/themed';
+import { Button, Dialog, Switch } from '@rneui/themed';
 import { useState } from 'react';
 import { StyleSheet, View, Dimensions, Text } from 'react-native';
 
@@ -19,15 +19,12 @@ export default function AppConfigModal({ isVisible, onClose }: AppConfigModalPro
   const appConfig = useAppConfig();
   const appConfigUpdate = useAppConfigUpdator();
   const [useStorybook, setUseStorybook] = useState(appConfig.useStorybook ?? false);
-  const [useCustomGraphQLEndpoint, setUseCustomGraphQLEndpoint] = useState(appConfig.useCustomGraphQLEndpoint ?? false);
-  const [graphQLEndpoint, setGraphQLEndpoint] = useState(appConfig.graphQLEndpoint ?? '');
+
   const [useLocalAuth, setUseLocalAuth] = useState(appConfig.useLocalAuth ?? false);
   const [useUPFCDemoScraper, setUseUPFCDemoScraper] = useState(appConfig.useUPFCDemoScraper ?? false);
   const onSave = () => {
     appConfigUpdate({
       useStorybook,
-      useCustomGraphQLEndpoint,
-      graphQLEndpoint,
       useLocalAuth,
       useUPFCDemoScraper
     });
@@ -54,29 +51,6 @@ export default function AppConfigModal({ isVisible, onClose }: AppConfigModalPro
               onValueChange={() => {
                 setUseLocalAuth(!useLocalAuth);
               }}
-            />
-          </View>
-          <View style={[styles.inputGroup, styles.switchContainer]}>
-            <Text style={styles.label}>Use Custom GraphQL Endpoint</Text>
-            <Switch
-              value={useCustomGraphQLEndpoint}
-              onValueChange={() => {
-                setUseCustomGraphQLEndpoint(!useCustomGraphQLEndpoint);
-              }}
-            />
-          </View>
-          <View style={!styles.inputGroup}>
-            <Text style={styles.label}>GraphQL Endpoint</Text>
-            <Input
-              keyboardType="url"
-              containerStyle={styles.input}
-              errorStyle={styles.inputError}
-              placeholder="http://localhost:8080/graphql/v3"
-              value={graphQLEndpoint}
-              onChangeText={(text) => {
-                setGraphQLEndpoint(text);
-              }}
-              testID="AppConfigModal.graphQLEndpoint"
             />
           </View>
           <View style={[styles.inputGroup, styles.switchContainer]}>
