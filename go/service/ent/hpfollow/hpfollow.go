@@ -89,7 +89,7 @@ const DefaultType enums.HPFollowType = "follow_with_notification"
 // TypeValidator is a validator for the "type" field enum values. It is called by the builders before save.
 func TypeValidator(_type enums.HPFollowType) error {
 	switch _type {
-	case "follow", "follow_with_notification", "unfollow":
+	case "follow", "follow_with_notification", "unfollow", "unknown":
 		return nil
 	default:
 		return fmt.Errorf("hpfollow: invalid enum value for type field: %q", _type)

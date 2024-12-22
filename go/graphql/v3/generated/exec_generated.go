@@ -3037,6 +3037,7 @@ func (e *executableSchema) Exec(ctx context.Context) graphql.ResponseHandler {
 		ec.unmarshalInputHPArtistOrder,
 		ec.unmarshalInputHPBlobOrder,
 		ec.unmarshalInputHPElineumpMallItemsParamsInput,
+		ec.unmarshalInputHPElineumpMallItemsParamsMemberCategoriesInput,
 		ec.unmarshalInputHPElineupMallItemOrder,
 		ec.unmarshalInputHPEventOrder,
 		ec.unmarshalInputHPFCEventTicketApplicationInput,
@@ -22290,7 +22291,7 @@ func (ec *executionContext) unmarshalInputHPElineumpMallItemsParamsInput(ctx con
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"memberIDs", "categories"}
+	fieldsInOrder := [...]string{"memberIDs", "categories", "memberCategories"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
@@ -22302,6 +22303,50 @@ func (ec *executionContext) unmarshalInputHPElineumpMallItemsParamsInput(ctx con
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("memberIDs"))
 			it.MemberIDs, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "categories":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("categories"))
+			it.Categories, err = ec.unmarshalOHPElineupMallItemCategory2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPElineupMallItemCategoryᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "memberCategories":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("memberCategories"))
+			it.MemberCategories, err = ec.unmarshalOHPElineumpMallItemsParamsMemberCategoriesInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParamsMemberCategoriesᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputHPElineumpMallItemsParamsMemberCategoriesInput(ctx context.Context, obj interface{}) (helloproject.HPElineumpMallItemsParamsMemberCategories, error) {
+	var it helloproject.HPElineumpMallItemsParamsMemberCategories
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	fieldsInOrder := [...]string{"memberId", "categories"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "memberId":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("memberId"))
+			it.MemberID, err = ec.unmarshalNString2string(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -27562,6 +27607,11 @@ func (ec *executionContext) unmarshalNHPElineumpMallItemsParamsInput2githubᚗco
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
+func (ec *executionContext) unmarshalNHPElineumpMallItemsParamsMemberCategoriesInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParamsMemberCategories(ctx context.Context, v interface{}) (helloproject.HPElineumpMallItemsParamsMemberCategories, error) {
+	res, err := ec.unmarshalInputHPElineumpMallItemsParamsMemberCategoriesInput(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
 func (ec *executionContext) unmarshalNHPElineupMallItemCategory2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPElineupMallItemCategory(ctx context.Context, v interface{}) (enums.HPElineupMallItemCategory, error) {
 	var res enums.HPElineupMallItemCategory
 	err := res.UnmarshalGQL(v)
@@ -28939,6 +28989,26 @@ func (ec *executionContext) marshalOHPBlobThumbnail2ᚖgithubᚗcomᚋyssk22ᚋh
 		return graphql.Null
 	}
 	return ec._HPBlobThumbnail(ctx, sel, v)
+}
+
+func (ec *executionContext) unmarshalOHPElineumpMallItemsParamsMemberCategoriesInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParamsMemberCategoriesᚄ(ctx context.Context, v interface{}) ([]helloproject.HPElineumpMallItemsParamsMemberCategories, error) {
+	if v == nil {
+		return nil, nil
+	}
+	var vSlice []interface{}
+	if v != nil {
+		vSlice = graphql.CoerceList(v)
+	}
+	var err error
+	res := make([]helloproject.HPElineumpMallItemsParamsMemberCategories, len(vSlice))
+	for i := range vSlice {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithIndex(i))
+		res[i], err = ec.unmarshalNHPElineumpMallItemsParamsMemberCategoriesInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParamsMemberCategories(ctx, vSlice[i])
+		if err != nil {
+			return nil, err
+		}
+	}
+	return res, nil
 }
 
 func (ec *executionContext) marshalOHPElineupMallItem2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItem(ctx context.Context, sel ast.SelectionSet, v *ent.HPElineupMallItem) graphql.Marshaler {

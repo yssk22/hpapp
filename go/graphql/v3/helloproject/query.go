@@ -2,6 +2,7 @@ package helloproject
 
 import (
 	"context"
+	"strconv"
 	"time"
 
 	"github.com/yssk22/hpapp/go/foundation/assert"
@@ -11,6 +12,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
+	"github.com/yssk22/hpapp/go/service/ent/predicate"
 	"github.com/yssk22/hpapp/go/service/entutil"
 	"github.com/yssk22/hpapp/go/service/schema/enums"
 	"github.com/yssk22/hpapp/go/system/clock"
@@ -61,7 +63,13 @@ func (h *HelloProjectQuery) Feed(ctx context.Context, params HPFeedQueryParams, 
 }
 
 type HPElineumpMallItemsParams struct {
-	MemberIDs  []string
+	MemberIDs        []string
+	Categories       []enums.HPElineupMallItemCategory
+	MemberCategories []HPElineumpMallItemsParamsMemberCategories
+}
+
+type HPElineumpMallItemsParamsMemberCategories struct {
+	MemberID   string
 	Categories []enums.HPElineupMallItemCategory
 }
 
@@ -69,9 +77,26 @@ func (h *HelloProjectQuery) ElineupMallItems(ctx context.Context, params HPEline
 	client := entutil.NewClient(ctx)
 	now := clock.Now(ctx)
 	first = common.First(first, 20)
+	conditions := []predicate.HPElineupMallItem{}
 	memberIds := assert.X(slice.MapStringToInt(params.MemberIDs))
+	for _, id := range memberIds {
+		conditions = append(conditions,
+			hpelineupmallitem.And(
+				hpelineupmallitem.HasTaggedMembersWith(hpmember.ID(id)),
+			),
+		)
+	}
+	for _, mc := range params.MemberCategories {
+		memberId := assert.X(strconv.Atoi(mc.MemberID))
+		conditions = append(conditions,
+			hpelineupmallitem.And(
+				hpelineupmallitem.HasTaggedMembersWith(hpmember.ID(memberId)),
+				hpelineupmallitem.CategoryIn(mc.Categories...),
+			),
+		)
+	}
 	q := client.HPElineupMallItem.Query().Where(
-		hpelineupmallitem.HasTaggedMembersWith(hpmember.IDIn(memberIds...)),
+		hpelineupmallitem.Or(conditions...),
 		hpelineupmallitem.OrderEndAtGTE(now),
 	)
 	if len(params.Categories) > 0 {
