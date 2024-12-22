@@ -13,7 +13,6 @@ import HPSortNewRoundMemberSelector from './HPSortNewRoundMemberSelector';
 import { HPSortMemberNode, HPSortNewConfig, HPSortNewRoundState } from './types';
 import HPSortBase from '../sort/HPSortBase';
 import HPSortClassicMergeSort from '../sort/HPSortClassicMergeSort';
-import HPSortTopologicalSort from '../sort/HPSortTopologicalSort';
 
 export type HPSortNewRoundContainerProps = {
   config: HPSortNewConfig;
@@ -30,11 +29,7 @@ export default function HPSortNewRoundContainer({ config }: HPSortNewRoundContai
     });
     return object.shuffle([...members]).map((m) => new HPSortMemberNode(m));
   }, [members]);
-  const [sorter, setSorter] = useState<HPSortBase<HPSortMemberNode>>(
-    config.numMembersToSelect === 2
-      ? new HPSortClassicMergeSort(list)
-      : new HPSortTopologicalSort(list, config.numMembersToSelect, true)
-  );
+  const [sorter, setSorter] = useState<HPSortBase<HPSortMemberNode>>(new HPSortClassicMergeSort(list));
   const comparable = sorter.getComparable();
   const [stats, setStats] = useState<HPSortNewRoundState>({
     numCompared: 0,
@@ -50,11 +45,7 @@ export default function HPSortNewRoundContainer({ config }: HPSortNewRoundContai
             logEvent('hpsort_retry', {
               num_members_to_select: config.numMembersToSelect
             });
-            setSorter(
-              config.numMembersToSelect === 2
-                ? new HPSortClassicMergeSort(list)
-                : new HPSortTopologicalSort(list, config.numMembersToSelect)
-            );
+            setSorter(new HPSortClassicMergeSort(list));
             setStats({
               numCompared: 0,
               startTime: new Date(),
