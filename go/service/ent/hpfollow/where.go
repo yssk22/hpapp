@@ -196,6 +196,726 @@ func TypeNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
 	return predicate.HPFollow(sql.FieldNotIn(FieldType, v...))
 }
 
+// ElineupmallOtherEQ applies the EQ predicate on the "elineupmall_other" field.
+func ElineupmallOtherEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallOther, vc))
+}
+
+// ElineupmallOtherNEQ applies the NEQ predicate on the "elineupmall_other" field.
+func ElineupmallOtherNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallOther, vc))
+}
+
+// ElineupmallOtherIn applies the In predicate on the "elineupmall_other" field.
+func ElineupmallOtherIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallOther, v...))
+}
+
+// ElineupmallOtherNotIn applies the NotIn predicate on the "elineupmall_other" field.
+func ElineupmallOtherNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallOther, v...))
+}
+
+// ElineupmallPhotoDailyEQ applies the EQ predicate on the "elineupmall_photo_daily" field.
+func ElineupmallPhotoDailyEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallPhotoDaily, vc))
+}
+
+// ElineupmallPhotoDailyNEQ applies the NEQ predicate on the "elineupmall_photo_daily" field.
+func ElineupmallPhotoDailyNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallPhotoDaily, vc))
+}
+
+// ElineupmallPhotoDailyIn applies the In predicate on the "elineupmall_photo_daily" field.
+func ElineupmallPhotoDailyIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallPhotoDaily, v...))
+}
+
+// ElineupmallPhotoDailyNotIn applies the NotIn predicate on the "elineupmall_photo_daily" field.
+func ElineupmallPhotoDailyNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallPhotoDaily, v...))
+}
+
+// ElineupmallPhotoA4EQ applies the EQ predicate on the "elineupmall_photo_a4" field.
+func ElineupmallPhotoA4EQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallPhotoA4, vc))
+}
+
+// ElineupmallPhotoA4NEQ applies the NEQ predicate on the "elineupmall_photo_a4" field.
+func ElineupmallPhotoA4NEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallPhotoA4, vc))
+}
+
+// ElineupmallPhotoA4In applies the In predicate on the "elineupmall_photo_a4" field.
+func ElineupmallPhotoA4In(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallPhotoA4, v...))
+}
+
+// ElineupmallPhotoA4NotIn applies the NotIn predicate on the "elineupmall_photo_a4" field.
+func ElineupmallPhotoA4NotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallPhotoA4, v...))
+}
+
+// ElineupmallPhotoA5EQ applies the EQ predicate on the "elineupmall_photo_a5" field.
+func ElineupmallPhotoA5EQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallPhotoA5, vc))
+}
+
+// ElineupmallPhotoA5NEQ applies the NEQ predicate on the "elineupmall_photo_a5" field.
+func ElineupmallPhotoA5NEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallPhotoA5, vc))
+}
+
+// ElineupmallPhotoA5In applies the In predicate on the "elineupmall_photo_a5" field.
+func ElineupmallPhotoA5In(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallPhotoA5, v...))
+}
+
+// ElineupmallPhotoA5NotIn applies the NotIn predicate on the "elineupmall_photo_a5" field.
+func ElineupmallPhotoA5NotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallPhotoA5, v...))
+}
+
+// ElineupmallPhoto2lEQ applies the EQ predicate on the "elineupmall_photo_2l" field.
+func ElineupmallPhoto2lEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallPhoto2l, vc))
+}
+
+// ElineupmallPhoto2lNEQ applies the NEQ predicate on the "elineupmall_photo_2l" field.
+func ElineupmallPhoto2lNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallPhoto2l, vc))
+}
+
+// ElineupmallPhoto2lIn applies the In predicate on the "elineupmall_photo_2l" field.
+func ElineupmallPhoto2lIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallPhoto2l, v...))
+}
+
+// ElineupmallPhoto2lNotIn applies the NotIn predicate on the "elineupmall_photo_2l" field.
+func ElineupmallPhoto2lNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallPhoto2l, v...))
+}
+
+// ElineupmallPhotoOtherEQ applies the EQ predicate on the "elineupmall_photo_other" field.
+func ElineupmallPhotoOtherEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallPhotoOther, vc))
+}
+
+// ElineupmallPhotoOtherNEQ applies the NEQ predicate on the "elineupmall_photo_other" field.
+func ElineupmallPhotoOtherNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallPhotoOther, vc))
+}
+
+// ElineupmallPhotoOtherIn applies the In predicate on the "elineupmall_photo_other" field.
+func ElineupmallPhotoOtherIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallPhotoOther, v...))
+}
+
+// ElineupmallPhotoOtherNotIn applies the NotIn predicate on the "elineupmall_photo_other" field.
+func ElineupmallPhotoOtherNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallPhotoOther, v...))
+}
+
+// ElineupmallPhotoAlbumEQ applies the EQ predicate on the "elineupmall_photo_album" field.
+func ElineupmallPhotoAlbumEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallPhotoAlbum, vc))
+}
+
+// ElineupmallPhotoAlbumNEQ applies the NEQ predicate on the "elineupmall_photo_album" field.
+func ElineupmallPhotoAlbumNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallPhotoAlbum, vc))
+}
+
+// ElineupmallPhotoAlbumIn applies the In predicate on the "elineupmall_photo_album" field.
+func ElineupmallPhotoAlbumIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallPhotoAlbum, v...))
+}
+
+// ElineupmallPhotoAlbumNotIn applies the NotIn predicate on the "elineupmall_photo_album" field.
+func ElineupmallPhotoAlbumNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallPhotoAlbum, v...))
+}
+
+// ElineupmallPhotoAlbumOtherEQ applies the EQ predicate on the "elineupmall_photo_album_other" field.
+func ElineupmallPhotoAlbumOtherEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallPhotoAlbumOther, vc))
+}
+
+// ElineupmallPhotoAlbumOtherNEQ applies the NEQ predicate on the "elineupmall_photo_album_other" field.
+func ElineupmallPhotoAlbumOtherNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallPhotoAlbumOther, vc))
+}
+
+// ElineupmallPhotoAlbumOtherIn applies the In predicate on the "elineupmall_photo_album_other" field.
+func ElineupmallPhotoAlbumOtherIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallPhotoAlbumOther, v...))
+}
+
+// ElineupmallPhotoAlbumOtherNotIn applies the NotIn predicate on the "elineupmall_photo_album_other" field.
+func ElineupmallPhotoAlbumOtherNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallPhotoAlbumOther, v...))
+}
+
+// ElineupmallPhotoBookEQ applies the EQ predicate on the "elineupmall_photo_book" field.
+func ElineupmallPhotoBookEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallPhotoBook, vc))
+}
+
+// ElineupmallPhotoBookNEQ applies the NEQ predicate on the "elineupmall_photo_book" field.
+func ElineupmallPhotoBookNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallPhotoBook, vc))
+}
+
+// ElineupmallPhotoBookIn applies the In predicate on the "elineupmall_photo_book" field.
+func ElineupmallPhotoBookIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallPhotoBook, v...))
+}
+
+// ElineupmallPhotoBookNotIn applies the NotIn predicate on the "elineupmall_photo_book" field.
+func ElineupmallPhotoBookNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallPhotoBook, v...))
+}
+
+// ElineupmallPhotoBookOtherEQ applies the EQ predicate on the "elineupmall_photo_book_other" field.
+func ElineupmallPhotoBookOtherEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallPhotoBookOther, vc))
+}
+
+// ElineupmallPhotoBookOtherNEQ applies the NEQ predicate on the "elineupmall_photo_book_other" field.
+func ElineupmallPhotoBookOtherNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallPhotoBookOther, vc))
+}
+
+// ElineupmallPhotoBookOtherIn applies the In predicate on the "elineupmall_photo_book_other" field.
+func ElineupmallPhotoBookOtherIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallPhotoBookOther, v...))
+}
+
+// ElineupmallPhotoBookOtherNotIn applies the NotIn predicate on the "elineupmall_photo_book_other" field.
+func ElineupmallPhotoBookOtherNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallPhotoBookOther, v...))
+}
+
+// ElineupmallDvdEQ applies the EQ predicate on the "elineupmall_dvd" field.
+func ElineupmallDvdEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallDvd, vc))
+}
+
+// ElineupmallDvdNEQ applies the NEQ predicate on the "elineupmall_dvd" field.
+func ElineupmallDvdNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallDvd, vc))
+}
+
+// ElineupmallDvdIn applies the In predicate on the "elineupmall_dvd" field.
+func ElineupmallDvdIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallDvd, v...))
+}
+
+// ElineupmallDvdNotIn applies the NotIn predicate on the "elineupmall_dvd" field.
+func ElineupmallDvdNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallDvd, v...))
+}
+
+// ElineupmallDvdMagazineEQ applies the EQ predicate on the "elineupmall_dvd_magazine" field.
+func ElineupmallDvdMagazineEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallDvdMagazine, vc))
+}
+
+// ElineupmallDvdMagazineNEQ applies the NEQ predicate on the "elineupmall_dvd_magazine" field.
+func ElineupmallDvdMagazineNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallDvdMagazine, vc))
+}
+
+// ElineupmallDvdMagazineIn applies the In predicate on the "elineupmall_dvd_magazine" field.
+func ElineupmallDvdMagazineIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallDvdMagazine, v...))
+}
+
+// ElineupmallDvdMagazineNotIn applies the NotIn predicate on the "elineupmall_dvd_magazine" field.
+func ElineupmallDvdMagazineNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallDvdMagazine, v...))
+}
+
+// ElineupmallDvdMagazineOtherEQ applies the EQ predicate on the "elineupmall_dvd_magazine_other" field.
+func ElineupmallDvdMagazineOtherEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallDvdMagazineOther, vc))
+}
+
+// ElineupmallDvdMagazineOtherNEQ applies the NEQ predicate on the "elineupmall_dvd_magazine_other" field.
+func ElineupmallDvdMagazineOtherNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallDvdMagazineOther, vc))
+}
+
+// ElineupmallDvdMagazineOtherIn applies the In predicate on the "elineupmall_dvd_magazine_other" field.
+func ElineupmallDvdMagazineOtherIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallDvdMagazineOther, v...))
+}
+
+// ElineupmallDvdMagazineOtherNotIn applies the NotIn predicate on the "elineupmall_dvd_magazine_other" field.
+func ElineupmallDvdMagazineOtherNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallDvdMagazineOther, v...))
+}
+
+// ElineupmallBluerayEQ applies the EQ predicate on the "elineupmall_blueray" field.
+func ElineupmallBluerayEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallBlueray, vc))
+}
+
+// ElineupmallBluerayNEQ applies the NEQ predicate on the "elineupmall_blueray" field.
+func ElineupmallBluerayNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallBlueray, vc))
+}
+
+// ElineupmallBluerayIn applies the In predicate on the "elineupmall_blueray" field.
+func ElineupmallBluerayIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallBlueray, v...))
+}
+
+// ElineupmallBluerayNotIn applies the NotIn predicate on the "elineupmall_blueray" field.
+func ElineupmallBluerayNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallBlueray, v...))
+}
+
+// ElineupmallPenlightEQ applies the EQ predicate on the "elineupmall_penlight" field.
+func ElineupmallPenlightEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallPenlight, vc))
+}
+
+// ElineupmallPenlightNEQ applies the NEQ predicate on the "elineupmall_penlight" field.
+func ElineupmallPenlightNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallPenlight, vc))
+}
+
+// ElineupmallPenlightIn applies the In predicate on the "elineupmall_penlight" field.
+func ElineupmallPenlightIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallPenlight, v...))
+}
+
+// ElineupmallPenlightNotIn applies the NotIn predicate on the "elineupmall_penlight" field.
+func ElineupmallPenlightNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallPenlight, v...))
+}
+
+// ElineupmallCollectionPinnapPosterEQ applies the EQ predicate on the "elineupmall_collection_pinnap_poster" field.
+func ElineupmallCollectionPinnapPosterEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallCollectionPinnapPoster, vc))
+}
+
+// ElineupmallCollectionPinnapPosterNEQ applies the NEQ predicate on the "elineupmall_collection_pinnap_poster" field.
+func ElineupmallCollectionPinnapPosterNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallCollectionPinnapPoster, vc))
+}
+
+// ElineupmallCollectionPinnapPosterIn applies the In predicate on the "elineupmall_collection_pinnap_poster" field.
+func ElineupmallCollectionPinnapPosterIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallCollectionPinnapPoster, v...))
+}
+
+// ElineupmallCollectionPinnapPosterNotIn applies the NotIn predicate on the "elineupmall_collection_pinnap_poster" field.
+func ElineupmallCollectionPinnapPosterNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallCollectionPinnapPoster, v...))
+}
+
+// ElineupmallCollectionPhotoEQ applies the EQ predicate on the "elineupmall_collection_photo" field.
+func ElineupmallCollectionPhotoEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallCollectionPhoto, vc))
+}
+
+// ElineupmallCollectionPhotoNEQ applies the NEQ predicate on the "elineupmall_collection_photo" field.
+func ElineupmallCollectionPhotoNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallCollectionPhoto, vc))
+}
+
+// ElineupmallCollectionPhotoIn applies the In predicate on the "elineupmall_collection_photo" field.
+func ElineupmallCollectionPhotoIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallCollectionPhoto, v...))
+}
+
+// ElineupmallCollectionPhotoNotIn applies the NotIn predicate on the "elineupmall_collection_photo" field.
+func ElineupmallCollectionPhotoNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallCollectionPhoto, v...))
+}
+
+// ElineupmallCollectionOtherEQ applies the EQ predicate on the "elineupmall_collection_other" field.
+func ElineupmallCollectionOtherEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallCollectionOther, vc))
+}
+
+// ElineupmallCollectionOtherNEQ applies the NEQ predicate on the "elineupmall_collection_other" field.
+func ElineupmallCollectionOtherNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallCollectionOther, vc))
+}
+
+// ElineupmallCollectionOtherIn applies the In predicate on the "elineupmall_collection_other" field.
+func ElineupmallCollectionOtherIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallCollectionOther, v...))
+}
+
+// ElineupmallCollectionOtherNotIn applies the NotIn predicate on the "elineupmall_collection_other" field.
+func ElineupmallCollectionOtherNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallCollectionOther, v...))
+}
+
+// ElineupmallTshirtEQ applies the EQ predicate on the "elineupmall_tshirt" field.
+func ElineupmallTshirtEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallTshirt, vc))
+}
+
+// ElineupmallTshirtNEQ applies the NEQ predicate on the "elineupmall_tshirt" field.
+func ElineupmallTshirtNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallTshirt, vc))
+}
+
+// ElineupmallTshirtIn applies the In predicate on the "elineupmall_tshirt" field.
+func ElineupmallTshirtIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallTshirt, v...))
+}
+
+// ElineupmallTshirtNotIn applies the NotIn predicate on the "elineupmall_tshirt" field.
+func ElineupmallTshirtNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallTshirt, v...))
+}
+
+// ElineupmallMicrofiberTowelEQ applies the EQ predicate on the "elineupmall_microfiber_towel" field.
+func ElineupmallMicrofiberTowelEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallMicrofiberTowel, vc))
+}
+
+// ElineupmallMicrofiberTowelNEQ applies the NEQ predicate on the "elineupmall_microfiber_towel" field.
+func ElineupmallMicrofiberTowelNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallMicrofiberTowel, vc))
+}
+
+// ElineupmallMicrofiberTowelIn applies the In predicate on the "elineupmall_microfiber_towel" field.
+func ElineupmallMicrofiberTowelIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallMicrofiberTowel, v...))
+}
+
+// ElineupmallMicrofiberTowelNotIn applies the NotIn predicate on the "elineupmall_microfiber_towel" field.
+func ElineupmallMicrofiberTowelNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallMicrofiberTowel, v...))
+}
+
+// ElineupmallMufflerTowelEQ applies the EQ predicate on the "elineupmall_muffler_towel" field.
+func ElineupmallMufflerTowelEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallMufflerTowel, vc))
+}
+
+// ElineupmallMufflerTowelNEQ applies the NEQ predicate on the "elineupmall_muffler_towel" field.
+func ElineupmallMufflerTowelNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallMufflerTowel, vc))
+}
+
+// ElineupmallMufflerTowelIn applies the In predicate on the "elineupmall_muffler_towel" field.
+func ElineupmallMufflerTowelIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallMufflerTowel, v...))
+}
+
+// ElineupmallMufflerTowelNotIn applies the NotIn predicate on the "elineupmall_muffler_towel" field.
+func ElineupmallMufflerTowelNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallMufflerTowel, v...))
+}
+
+// ElineupmallFskEQ applies the EQ predicate on the "elineupmall_fsk" field.
+func ElineupmallFskEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallFsk, vc))
+}
+
+// ElineupmallFskNEQ applies the NEQ predicate on the "elineupmall_fsk" field.
+func ElineupmallFskNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallFsk, vc))
+}
+
+// ElineupmallFskIn applies the In predicate on the "elineupmall_fsk" field.
+func ElineupmallFskIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallFsk, v...))
+}
+
+// ElineupmallFskNotIn applies the NotIn predicate on the "elineupmall_fsk" field.
+func ElineupmallFskNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallFsk, v...))
+}
+
+// ElineupmallKeyringOtherEQ applies the EQ predicate on the "elineupmall_keyring_other" field.
+func ElineupmallKeyringOtherEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallKeyringOther, vc))
+}
+
+// ElineupmallKeyringOtherNEQ applies the NEQ predicate on the "elineupmall_keyring_other" field.
+func ElineupmallKeyringOtherNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallKeyringOther, vc))
+}
+
+// ElineupmallKeyringOtherIn applies the In predicate on the "elineupmall_keyring_other" field.
+func ElineupmallKeyringOtherIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallKeyringOther, v...))
+}
+
+// ElineupmallKeyringOtherNotIn applies the NotIn predicate on the "elineupmall_keyring_other" field.
+func ElineupmallKeyringOtherNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallKeyringOther, v...))
+}
+
+// ElineupmallClearFileEQ applies the EQ predicate on the "elineupmall_clear_file" field.
+func ElineupmallClearFileEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldEQ(FieldElineupmallClearFile, vc))
+}
+
+// ElineupmallClearFileNEQ applies the NEQ predicate on the "elineupmall_clear_file" field.
+func ElineupmallClearFileNEQ(v enums.HPFollowType) predicate.HPFollow {
+	vc := v
+	return predicate.HPFollow(sql.FieldNEQ(FieldElineupmallClearFile, vc))
+}
+
+// ElineupmallClearFileIn applies the In predicate on the "elineupmall_clear_file" field.
+func ElineupmallClearFileIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldIn(FieldElineupmallClearFile, v...))
+}
+
+// ElineupmallClearFileNotIn applies the NotIn predicate on the "elineupmall_clear_file" field.
+func ElineupmallClearFileNotIn(vs ...enums.HPFollowType) predicate.HPFollow {
+	v := make([]any, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.HPFollow(sql.FieldNotIn(FieldElineupmallClearFile, v...))
+}
+
 // HasUser applies the HasEdge predicate on the "user" edge.
 func HasUser() predicate.HPFollow {
 	return predicate.HPFollow(func(s *sql.Selector) {

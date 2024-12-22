@@ -265,12 +265,36 @@ type ComplexityRoot struct {
 	}
 
 	HPFollow struct {
-		CreatedAt func(childComplexity int) int
-		ID        func(childComplexity int) int
-		Member    func(childComplexity int) int
-		Type      func(childComplexity int) int
-		UpdatedAt func(childComplexity int) int
-		User      func(childComplexity int) int
+		CreatedAt                         func(childComplexity int) int
+		ElineupmallBlueray                func(childComplexity int) int
+		ElineupmallClearFile              func(childComplexity int) int
+		ElineupmallCollectionOther        func(childComplexity int) int
+		ElineupmallCollectionPhoto        func(childComplexity int) int
+		ElineupmallCollectionPinnapPoster func(childComplexity int) int
+		ElineupmallDvd                    func(childComplexity int) int
+		ElineupmallDvdMagazine            func(childComplexity int) int
+		ElineupmallDvdMagazineOther       func(childComplexity int) int
+		ElineupmallFsk                    func(childComplexity int) int
+		ElineupmallKeyringOther           func(childComplexity int) int
+		ElineupmallMicrofiberTowel        func(childComplexity int) int
+		ElineupmallMufflerTowel           func(childComplexity int) int
+		ElineupmallOther                  func(childComplexity int) int
+		ElineupmallPenlight               func(childComplexity int) int
+		ElineupmallPhoto2l                func(childComplexity int) int
+		ElineupmallPhotoA4                func(childComplexity int) int
+		ElineupmallPhotoA5                func(childComplexity int) int
+		ElineupmallPhotoAlbum             func(childComplexity int) int
+		ElineupmallPhotoAlbumOther        func(childComplexity int) int
+		ElineupmallPhotoBook              func(childComplexity int) int
+		ElineupmallPhotoBookOther         func(childComplexity int) int
+		ElineupmallPhotoDaily             func(childComplexity int) int
+		ElineupmallPhotoOther             func(childComplexity int) int
+		ElineupmallTshirt                 func(childComplexity int) int
+		ID                                func(childComplexity int) int
+		Member                            func(childComplexity int) int
+		Type                              func(childComplexity int) int
+		UpdatedAt                         func(childComplexity int) int
+		User                              func(childComplexity int) int
 	}
 
 	HPIgCrawlArgs struct {
@@ -1662,6 +1686,174 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.HPFollow.CreatedAt(childComplexity), true
+
+	case "HPFollow.elineupmallBlueray":
+		if e.complexity.HPFollow.ElineupmallBlueray == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallBlueray(childComplexity), true
+
+	case "HPFollow.elineupmallClearFile":
+		if e.complexity.HPFollow.ElineupmallClearFile == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallClearFile(childComplexity), true
+
+	case "HPFollow.elineupmallCollectionOther":
+		if e.complexity.HPFollow.ElineupmallCollectionOther == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallCollectionOther(childComplexity), true
+
+	case "HPFollow.elineupmallCollectionPhoto":
+		if e.complexity.HPFollow.ElineupmallCollectionPhoto == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallCollectionPhoto(childComplexity), true
+
+	case "HPFollow.elineupmallCollectionPinnapPoster":
+		if e.complexity.HPFollow.ElineupmallCollectionPinnapPoster == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallCollectionPinnapPoster(childComplexity), true
+
+	case "HPFollow.elineupmallDvd":
+		if e.complexity.HPFollow.ElineupmallDvd == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallDvd(childComplexity), true
+
+	case "HPFollow.elineupmallDvdMagazine":
+		if e.complexity.HPFollow.ElineupmallDvdMagazine == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallDvdMagazine(childComplexity), true
+
+	case "HPFollow.elineupmallDvdMagazineOther":
+		if e.complexity.HPFollow.ElineupmallDvdMagazineOther == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallDvdMagazineOther(childComplexity), true
+
+	case "HPFollow.elineupmallFsk":
+		if e.complexity.HPFollow.ElineupmallFsk == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallFsk(childComplexity), true
+
+	case "HPFollow.elineupmallKeyringOther":
+		if e.complexity.HPFollow.ElineupmallKeyringOther == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallKeyringOther(childComplexity), true
+
+	case "HPFollow.elineupmallMicrofiberTowel":
+		if e.complexity.HPFollow.ElineupmallMicrofiberTowel == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallMicrofiberTowel(childComplexity), true
+
+	case "HPFollow.elineupmallMufflerTowel":
+		if e.complexity.HPFollow.ElineupmallMufflerTowel == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallMufflerTowel(childComplexity), true
+
+	case "HPFollow.elineupmallOther":
+		if e.complexity.HPFollow.ElineupmallOther == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallOther(childComplexity), true
+
+	case "HPFollow.elineupmallPenlight":
+		if e.complexity.HPFollow.ElineupmallPenlight == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallPenlight(childComplexity), true
+
+	case "HPFollow.elineupmallPhoto2l":
+		if e.complexity.HPFollow.ElineupmallPhoto2l == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallPhoto2l(childComplexity), true
+
+	case "HPFollow.elineupmallPhotoA4":
+		if e.complexity.HPFollow.ElineupmallPhotoA4 == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallPhotoA4(childComplexity), true
+
+	case "HPFollow.elineupmallPhotoA5":
+		if e.complexity.HPFollow.ElineupmallPhotoA5 == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallPhotoA5(childComplexity), true
+
+	case "HPFollow.elineupmallPhotoAlbum":
+		if e.complexity.HPFollow.ElineupmallPhotoAlbum == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallPhotoAlbum(childComplexity), true
+
+	case "HPFollow.elineupmallPhotoAlbumOther":
+		if e.complexity.HPFollow.ElineupmallPhotoAlbumOther == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallPhotoAlbumOther(childComplexity), true
+
+	case "HPFollow.elineupmallPhotoBook":
+		if e.complexity.HPFollow.ElineupmallPhotoBook == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallPhotoBook(childComplexity), true
+
+	case "HPFollow.elineupmallPhotoBookOther":
+		if e.complexity.HPFollow.ElineupmallPhotoBookOther == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallPhotoBookOther(childComplexity), true
+
+	case "HPFollow.elineupmallPhotoDaily":
+		if e.complexity.HPFollow.ElineupmallPhotoDaily == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallPhotoDaily(childComplexity), true
+
+	case "HPFollow.elineupmallPhotoOther":
+		if e.complexity.HPFollow.ElineupmallPhotoOther == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallPhotoOther(childComplexity), true
+
+	case "HPFollow.elineupmallTshirt":
+		if e.complexity.HPFollow.ElineupmallTshirt == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.ElineupmallTshirt(childComplexity), true
 
 	case "HPFollow.id":
 		if e.complexity.HPFollow.ID == nil {
@@ -11260,6 +11452,1062 @@ func (ec *executionContext) fieldContext_HPFollow_type(ctx context.Context, fiel
 	return fc, nil
 }
 
+func (ec *executionContext) _HPFollow_elineupmallOther(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallOther(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallOther, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallOther(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallPhotoDaily(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallPhotoDaily(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallPhotoDaily, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallPhotoDaily(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallPhotoA4(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallPhotoA4(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallPhotoA4, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallPhotoA4(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallPhotoA5(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallPhotoA5(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallPhotoA5, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallPhotoA5(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallPhoto2l(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallPhoto2l(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallPhoto2l, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallPhoto2l(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallPhotoOther(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallPhotoOther(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallPhotoOther, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallPhotoOther(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallPhotoAlbum(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallPhotoAlbum(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallPhotoAlbum, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallPhotoAlbum(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallPhotoAlbumOther(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallPhotoAlbumOther(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallPhotoAlbumOther, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallPhotoAlbumOther(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallPhotoBook(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallPhotoBook(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallPhotoBook, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallPhotoBook(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallPhotoBookOther(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallPhotoBookOther(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallPhotoBookOther, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallPhotoBookOther(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallDvd(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallDvd(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallDvd, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallDvd(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallDvdMagazine(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallDvdMagazine(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallDvdMagazine, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallDvdMagazine(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallDvdMagazineOther(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallDvdMagazineOther(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallDvdMagazineOther, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallDvdMagazineOther(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallBlueray(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallBlueray(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallBlueray, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallBlueray(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallPenlight(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallPenlight(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallPenlight, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallPenlight(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallCollectionPinnapPoster(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallCollectionPinnapPoster(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallCollectionPinnapPoster, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallCollectionPinnapPoster(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallCollectionPhoto(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallCollectionPhoto(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallCollectionPhoto, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallCollectionPhoto(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallCollectionOther(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallCollectionOther(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallCollectionOther, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallCollectionOther(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallTshirt(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallTshirt(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallTshirt, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallTshirt(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallMicrofiberTowel(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallMicrofiberTowel(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallMicrofiberTowel, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallMicrofiberTowel(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallMufflerTowel(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallMufflerTowel(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallMufflerTowel, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallMufflerTowel(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallFsk(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallFsk(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallFsk, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallFsk(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallKeyringOther(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallKeyringOther(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallKeyringOther, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallKeyringOther(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_elineupmallClearFile(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_elineupmallClearFile(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupmallClearFile, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(enums.HPFollowType)
+	fc.Result = res
+	return ec.marshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_elineupmallClearFile(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type HPFollowHPFollowType does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
 func (ec *executionContext) _HPFollow_user(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_HPFollow_user(ctx, field)
 	if err != nil {
@@ -14528,6 +15776,54 @@ func (ec *executionContext) fieldContext_HPMember_myFollowStatus(ctx context.Con
 				return ec.fieldContext_HPFollow_updatedAt(ctx, field)
 			case "type":
 				return ec.fieldContext_HPFollow_type(ctx, field)
+			case "elineupmallOther":
+				return ec.fieldContext_HPFollow_elineupmallOther(ctx, field)
+			case "elineupmallPhotoDaily":
+				return ec.fieldContext_HPFollow_elineupmallPhotoDaily(ctx, field)
+			case "elineupmallPhotoA4":
+				return ec.fieldContext_HPFollow_elineupmallPhotoA4(ctx, field)
+			case "elineupmallPhotoA5":
+				return ec.fieldContext_HPFollow_elineupmallPhotoA5(ctx, field)
+			case "elineupmallPhoto2l":
+				return ec.fieldContext_HPFollow_elineupmallPhoto2l(ctx, field)
+			case "elineupmallPhotoOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoOther(ctx, field)
+			case "elineupmallPhotoAlbum":
+				return ec.fieldContext_HPFollow_elineupmallPhotoAlbum(ctx, field)
+			case "elineupmallPhotoAlbumOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoAlbumOther(ctx, field)
+			case "elineupmallPhotoBook":
+				return ec.fieldContext_HPFollow_elineupmallPhotoBook(ctx, field)
+			case "elineupmallPhotoBookOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoBookOther(ctx, field)
+			case "elineupmallDvd":
+				return ec.fieldContext_HPFollow_elineupmallDvd(ctx, field)
+			case "elineupmallDvdMagazine":
+				return ec.fieldContext_HPFollow_elineupmallDvdMagazine(ctx, field)
+			case "elineupmallDvdMagazineOther":
+				return ec.fieldContext_HPFollow_elineupmallDvdMagazineOther(ctx, field)
+			case "elineupmallBlueray":
+				return ec.fieldContext_HPFollow_elineupmallBlueray(ctx, field)
+			case "elineupmallPenlight":
+				return ec.fieldContext_HPFollow_elineupmallPenlight(ctx, field)
+			case "elineupmallCollectionPinnapPoster":
+				return ec.fieldContext_HPFollow_elineupmallCollectionPinnapPoster(ctx, field)
+			case "elineupmallCollectionPhoto":
+				return ec.fieldContext_HPFollow_elineupmallCollectionPhoto(ctx, field)
+			case "elineupmallCollectionOther":
+				return ec.fieldContext_HPFollow_elineupmallCollectionOther(ctx, field)
+			case "elineupmallTshirt":
+				return ec.fieldContext_HPFollow_elineupmallTshirt(ctx, field)
+			case "elineupmallMicrofiberTowel":
+				return ec.fieldContext_HPFollow_elineupmallMicrofiberTowel(ctx, field)
+			case "elineupmallMufflerTowel":
+				return ec.fieldContext_HPFollow_elineupmallMufflerTowel(ctx, field)
+			case "elineupmallFsk":
+				return ec.fieldContext_HPFollow_elineupmallFsk(ctx, field)
+			case "elineupmallKeyringOther":
+				return ec.fieldContext_HPFollow_elineupmallKeyringOther(ctx, field)
+			case "elineupmallClearFile":
+				return ec.fieldContext_HPFollow_elineupmallClearFile(ctx, field)
 			case "user":
 				return ec.fieldContext_HPFollow_user(ctx, field)
 			case "member":
@@ -16826,6 +18122,54 @@ func (ec *executionContext) fieldContext_MeMutation_upsertFollow(ctx context.Con
 				return ec.fieldContext_HPFollow_updatedAt(ctx, field)
 			case "type":
 				return ec.fieldContext_HPFollow_type(ctx, field)
+			case "elineupmallOther":
+				return ec.fieldContext_HPFollow_elineupmallOther(ctx, field)
+			case "elineupmallPhotoDaily":
+				return ec.fieldContext_HPFollow_elineupmallPhotoDaily(ctx, field)
+			case "elineupmallPhotoA4":
+				return ec.fieldContext_HPFollow_elineupmallPhotoA4(ctx, field)
+			case "elineupmallPhotoA5":
+				return ec.fieldContext_HPFollow_elineupmallPhotoA5(ctx, field)
+			case "elineupmallPhoto2l":
+				return ec.fieldContext_HPFollow_elineupmallPhoto2l(ctx, field)
+			case "elineupmallPhotoOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoOther(ctx, field)
+			case "elineupmallPhotoAlbum":
+				return ec.fieldContext_HPFollow_elineupmallPhotoAlbum(ctx, field)
+			case "elineupmallPhotoAlbumOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoAlbumOther(ctx, field)
+			case "elineupmallPhotoBook":
+				return ec.fieldContext_HPFollow_elineupmallPhotoBook(ctx, field)
+			case "elineupmallPhotoBookOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoBookOther(ctx, field)
+			case "elineupmallDvd":
+				return ec.fieldContext_HPFollow_elineupmallDvd(ctx, field)
+			case "elineupmallDvdMagazine":
+				return ec.fieldContext_HPFollow_elineupmallDvdMagazine(ctx, field)
+			case "elineupmallDvdMagazineOther":
+				return ec.fieldContext_HPFollow_elineupmallDvdMagazineOther(ctx, field)
+			case "elineupmallBlueray":
+				return ec.fieldContext_HPFollow_elineupmallBlueray(ctx, field)
+			case "elineupmallPenlight":
+				return ec.fieldContext_HPFollow_elineupmallPenlight(ctx, field)
+			case "elineupmallCollectionPinnapPoster":
+				return ec.fieldContext_HPFollow_elineupmallCollectionPinnapPoster(ctx, field)
+			case "elineupmallCollectionPhoto":
+				return ec.fieldContext_HPFollow_elineupmallCollectionPhoto(ctx, field)
+			case "elineupmallCollectionOther":
+				return ec.fieldContext_HPFollow_elineupmallCollectionOther(ctx, field)
+			case "elineupmallTshirt":
+				return ec.fieldContext_HPFollow_elineupmallTshirt(ctx, field)
+			case "elineupmallMicrofiberTowel":
+				return ec.fieldContext_HPFollow_elineupmallMicrofiberTowel(ctx, field)
+			case "elineupmallMufflerTowel":
+				return ec.fieldContext_HPFollow_elineupmallMufflerTowel(ctx, field)
+			case "elineupmallFsk":
+				return ec.fieldContext_HPFollow_elineupmallFsk(ctx, field)
+			case "elineupmallKeyringOther":
+				return ec.fieldContext_HPFollow_elineupmallKeyringOther(ctx, field)
+			case "elineupmallClearFile":
+				return ec.fieldContext_HPFollow_elineupmallClearFile(ctx, field)
 			case "user":
 				return ec.fieldContext_HPFollow_user(ctx, field)
 			case "member":
@@ -17482,6 +18826,54 @@ func (ec *executionContext) fieldContext_MeQuery_followings(ctx context.Context,
 				return ec.fieldContext_HPFollow_updatedAt(ctx, field)
 			case "type":
 				return ec.fieldContext_HPFollow_type(ctx, field)
+			case "elineupmallOther":
+				return ec.fieldContext_HPFollow_elineupmallOther(ctx, field)
+			case "elineupmallPhotoDaily":
+				return ec.fieldContext_HPFollow_elineupmallPhotoDaily(ctx, field)
+			case "elineupmallPhotoA4":
+				return ec.fieldContext_HPFollow_elineupmallPhotoA4(ctx, field)
+			case "elineupmallPhotoA5":
+				return ec.fieldContext_HPFollow_elineupmallPhotoA5(ctx, field)
+			case "elineupmallPhoto2l":
+				return ec.fieldContext_HPFollow_elineupmallPhoto2l(ctx, field)
+			case "elineupmallPhotoOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoOther(ctx, field)
+			case "elineupmallPhotoAlbum":
+				return ec.fieldContext_HPFollow_elineupmallPhotoAlbum(ctx, field)
+			case "elineupmallPhotoAlbumOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoAlbumOther(ctx, field)
+			case "elineupmallPhotoBook":
+				return ec.fieldContext_HPFollow_elineupmallPhotoBook(ctx, field)
+			case "elineupmallPhotoBookOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoBookOther(ctx, field)
+			case "elineupmallDvd":
+				return ec.fieldContext_HPFollow_elineupmallDvd(ctx, field)
+			case "elineupmallDvdMagazine":
+				return ec.fieldContext_HPFollow_elineupmallDvdMagazine(ctx, field)
+			case "elineupmallDvdMagazineOther":
+				return ec.fieldContext_HPFollow_elineupmallDvdMagazineOther(ctx, field)
+			case "elineupmallBlueray":
+				return ec.fieldContext_HPFollow_elineupmallBlueray(ctx, field)
+			case "elineupmallPenlight":
+				return ec.fieldContext_HPFollow_elineupmallPenlight(ctx, field)
+			case "elineupmallCollectionPinnapPoster":
+				return ec.fieldContext_HPFollow_elineupmallCollectionPinnapPoster(ctx, field)
+			case "elineupmallCollectionPhoto":
+				return ec.fieldContext_HPFollow_elineupmallCollectionPhoto(ctx, field)
+			case "elineupmallCollectionOther":
+				return ec.fieldContext_HPFollow_elineupmallCollectionOther(ctx, field)
+			case "elineupmallTshirt":
+				return ec.fieldContext_HPFollow_elineupmallTshirt(ctx, field)
+			case "elineupmallMicrofiberTowel":
+				return ec.fieldContext_HPFollow_elineupmallMicrofiberTowel(ctx, field)
+			case "elineupmallMufflerTowel":
+				return ec.fieldContext_HPFollow_elineupmallMufflerTowel(ctx, field)
+			case "elineupmallFsk":
+				return ec.fieldContext_HPFollow_elineupmallFsk(ctx, field)
+			case "elineupmallKeyringOther":
+				return ec.fieldContext_HPFollow_elineupmallKeyringOther(ctx, field)
+			case "elineupmallClearFile":
+				return ec.fieldContext_HPFollow_elineupmallClearFile(ctx, field)
 			case "user":
 				return ec.fieldContext_HPFollow_user(ctx, field)
 			case "member":
@@ -19763,6 +21155,54 @@ func (ec *executionContext) fieldContext_User_hpmemberFollowing(ctx context.Cont
 				return ec.fieldContext_HPFollow_updatedAt(ctx, field)
 			case "type":
 				return ec.fieldContext_HPFollow_type(ctx, field)
+			case "elineupmallOther":
+				return ec.fieldContext_HPFollow_elineupmallOther(ctx, field)
+			case "elineupmallPhotoDaily":
+				return ec.fieldContext_HPFollow_elineupmallPhotoDaily(ctx, field)
+			case "elineupmallPhotoA4":
+				return ec.fieldContext_HPFollow_elineupmallPhotoA4(ctx, field)
+			case "elineupmallPhotoA5":
+				return ec.fieldContext_HPFollow_elineupmallPhotoA5(ctx, field)
+			case "elineupmallPhoto2l":
+				return ec.fieldContext_HPFollow_elineupmallPhoto2l(ctx, field)
+			case "elineupmallPhotoOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoOther(ctx, field)
+			case "elineupmallPhotoAlbum":
+				return ec.fieldContext_HPFollow_elineupmallPhotoAlbum(ctx, field)
+			case "elineupmallPhotoAlbumOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoAlbumOther(ctx, field)
+			case "elineupmallPhotoBook":
+				return ec.fieldContext_HPFollow_elineupmallPhotoBook(ctx, field)
+			case "elineupmallPhotoBookOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoBookOther(ctx, field)
+			case "elineupmallDvd":
+				return ec.fieldContext_HPFollow_elineupmallDvd(ctx, field)
+			case "elineupmallDvdMagazine":
+				return ec.fieldContext_HPFollow_elineupmallDvdMagazine(ctx, field)
+			case "elineupmallDvdMagazineOther":
+				return ec.fieldContext_HPFollow_elineupmallDvdMagazineOther(ctx, field)
+			case "elineupmallBlueray":
+				return ec.fieldContext_HPFollow_elineupmallBlueray(ctx, field)
+			case "elineupmallPenlight":
+				return ec.fieldContext_HPFollow_elineupmallPenlight(ctx, field)
+			case "elineupmallCollectionPinnapPoster":
+				return ec.fieldContext_HPFollow_elineupmallCollectionPinnapPoster(ctx, field)
+			case "elineupmallCollectionPhoto":
+				return ec.fieldContext_HPFollow_elineupmallCollectionPhoto(ctx, field)
+			case "elineupmallCollectionOther":
+				return ec.fieldContext_HPFollow_elineupmallCollectionOther(ctx, field)
+			case "elineupmallTshirt":
+				return ec.fieldContext_HPFollow_elineupmallTshirt(ctx, field)
+			case "elineupmallMicrofiberTowel":
+				return ec.fieldContext_HPFollow_elineupmallMicrofiberTowel(ctx, field)
+			case "elineupmallMufflerTowel":
+				return ec.fieldContext_HPFollow_elineupmallMufflerTowel(ctx, field)
+			case "elineupmallFsk":
+				return ec.fieldContext_HPFollow_elineupmallFsk(ctx, field)
+			case "elineupmallKeyringOther":
+				return ec.fieldContext_HPFollow_elineupmallKeyringOther(ctx, field)
+			case "elineupmallClearFile":
+				return ec.fieldContext_HPFollow_elineupmallClearFile(ctx, field)
 			case "user":
 				return ec.fieldContext_HPFollow_user(ctx, field)
 			case "member":
@@ -24830,6 +26270,174 @@ func (ec *executionContext) _HPFollow(ctx context.Context, sel ast.SelectionSet,
 		case "type":
 
 			out.Values[i] = ec._HPFollow_type(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallOther":
+
+			out.Values[i] = ec._HPFollow_elineupmallOther(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallPhotoDaily":
+
+			out.Values[i] = ec._HPFollow_elineupmallPhotoDaily(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallPhotoA4":
+
+			out.Values[i] = ec._HPFollow_elineupmallPhotoA4(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallPhotoA5":
+
+			out.Values[i] = ec._HPFollow_elineupmallPhotoA5(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallPhoto2l":
+
+			out.Values[i] = ec._HPFollow_elineupmallPhoto2l(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallPhotoOther":
+
+			out.Values[i] = ec._HPFollow_elineupmallPhotoOther(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallPhotoAlbum":
+
+			out.Values[i] = ec._HPFollow_elineupmallPhotoAlbum(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallPhotoAlbumOther":
+
+			out.Values[i] = ec._HPFollow_elineupmallPhotoAlbumOther(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallPhotoBook":
+
+			out.Values[i] = ec._HPFollow_elineupmallPhotoBook(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallPhotoBookOther":
+
+			out.Values[i] = ec._HPFollow_elineupmallPhotoBookOther(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallDvd":
+
+			out.Values[i] = ec._HPFollow_elineupmallDvd(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallDvdMagazine":
+
+			out.Values[i] = ec._HPFollow_elineupmallDvdMagazine(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallDvdMagazineOther":
+
+			out.Values[i] = ec._HPFollow_elineupmallDvdMagazineOther(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallBlueray":
+
+			out.Values[i] = ec._HPFollow_elineupmallBlueray(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallPenlight":
+
+			out.Values[i] = ec._HPFollow_elineupmallPenlight(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallCollectionPinnapPoster":
+
+			out.Values[i] = ec._HPFollow_elineupmallCollectionPinnapPoster(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallCollectionPhoto":
+
+			out.Values[i] = ec._HPFollow_elineupmallCollectionPhoto(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallCollectionOther":
+
+			out.Values[i] = ec._HPFollow_elineupmallCollectionOther(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallTshirt":
+
+			out.Values[i] = ec._HPFollow_elineupmallTshirt(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallMicrofiberTowel":
+
+			out.Values[i] = ec._HPFollow_elineupmallMicrofiberTowel(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallMufflerTowel":
+
+			out.Values[i] = ec._HPFollow_elineupmallMufflerTowel(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallFsk":
+
+			out.Values[i] = ec._HPFollow_elineupmallFsk(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallKeyringOther":
+
+			out.Values[i] = ec._HPFollow_elineupmallKeyringOther(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "elineupmallClearFile":
+
+			out.Values[i] = ec._HPFollow_elineupmallClearFile(ctx, field, obj)
 
 			if out.Values[i] == graphql.Null {
 				atomic.AddUint32(&invalids, 1)

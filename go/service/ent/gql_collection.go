@@ -1432,6 +1432,126 @@ func (hf *HPFollowQuery) collectField(ctx context.Context, opCtx *graphql.Operat
 				selectedFields = append(selectedFields, hpfollow.FieldType)
 				fieldSeen[hpfollow.FieldType] = struct{}{}
 			}
+		case "elineupmallOther":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallOther]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallOther)
+				fieldSeen[hpfollow.FieldElineupmallOther] = struct{}{}
+			}
+		case "elineupmallPhotoDaily":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallPhotoDaily]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallPhotoDaily)
+				fieldSeen[hpfollow.FieldElineupmallPhotoDaily] = struct{}{}
+			}
+		case "elineupmallPhotoA4":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallPhotoA4]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallPhotoA4)
+				fieldSeen[hpfollow.FieldElineupmallPhotoA4] = struct{}{}
+			}
+		case "elineupmallPhotoA5":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallPhotoA5]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallPhotoA5)
+				fieldSeen[hpfollow.FieldElineupmallPhotoA5] = struct{}{}
+			}
+		case "elineupmallPhoto2l":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallPhoto2l]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallPhoto2l)
+				fieldSeen[hpfollow.FieldElineupmallPhoto2l] = struct{}{}
+			}
+		case "elineupmallPhotoOther":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallPhotoOther]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallPhotoOther)
+				fieldSeen[hpfollow.FieldElineupmallPhotoOther] = struct{}{}
+			}
+		case "elineupmallPhotoAlbum":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallPhotoAlbum]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallPhotoAlbum)
+				fieldSeen[hpfollow.FieldElineupmallPhotoAlbum] = struct{}{}
+			}
+		case "elineupmallPhotoAlbumOther":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallPhotoAlbumOther]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallPhotoAlbumOther)
+				fieldSeen[hpfollow.FieldElineupmallPhotoAlbumOther] = struct{}{}
+			}
+		case "elineupmallPhotoBook":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallPhotoBook]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallPhotoBook)
+				fieldSeen[hpfollow.FieldElineupmallPhotoBook] = struct{}{}
+			}
+		case "elineupmallPhotoBookOther":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallPhotoBookOther]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallPhotoBookOther)
+				fieldSeen[hpfollow.FieldElineupmallPhotoBookOther] = struct{}{}
+			}
+		case "elineupmallDvd":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallDvd]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallDvd)
+				fieldSeen[hpfollow.FieldElineupmallDvd] = struct{}{}
+			}
+		case "elineupmallDvdMagazine":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallDvdMagazine]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallDvdMagazine)
+				fieldSeen[hpfollow.FieldElineupmallDvdMagazine] = struct{}{}
+			}
+		case "elineupmallDvdMagazineOther":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallDvdMagazineOther]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallDvdMagazineOther)
+				fieldSeen[hpfollow.FieldElineupmallDvdMagazineOther] = struct{}{}
+			}
+		case "elineupmallBlueray":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallBlueray]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallBlueray)
+				fieldSeen[hpfollow.FieldElineupmallBlueray] = struct{}{}
+			}
+		case "elineupmallPenlight":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallPenlight]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallPenlight)
+				fieldSeen[hpfollow.FieldElineupmallPenlight] = struct{}{}
+			}
+		case "elineupmallCollectionPinnapPoster":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallCollectionPinnapPoster]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallCollectionPinnapPoster)
+				fieldSeen[hpfollow.FieldElineupmallCollectionPinnapPoster] = struct{}{}
+			}
+		case "elineupmallCollectionPhoto":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallCollectionPhoto]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallCollectionPhoto)
+				fieldSeen[hpfollow.FieldElineupmallCollectionPhoto] = struct{}{}
+			}
+		case "elineupmallCollectionOther":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallCollectionOther]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallCollectionOther)
+				fieldSeen[hpfollow.FieldElineupmallCollectionOther] = struct{}{}
+			}
+		case "elineupmallTshirt":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallTshirt]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallTshirt)
+				fieldSeen[hpfollow.FieldElineupmallTshirt] = struct{}{}
+			}
+		case "elineupmallMicrofiberTowel":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallMicrofiberTowel]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallMicrofiberTowel)
+				fieldSeen[hpfollow.FieldElineupmallMicrofiberTowel] = struct{}{}
+			}
+		case "elineupmallMufflerTowel":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallMufflerTowel]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallMufflerTowel)
+				fieldSeen[hpfollow.FieldElineupmallMufflerTowel] = struct{}{}
+			}
+		case "elineupmallFsk":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallFsk]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallFsk)
+				fieldSeen[hpfollow.FieldElineupmallFsk] = struct{}{}
+			}
+		case "elineupmallKeyringOther":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallKeyringOther]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallKeyringOther)
+				fieldSeen[hpfollow.FieldElineupmallKeyringOther] = struct{}{}
+			}
+		case "elineupmallClearFile":
+			if _, ok := fieldSeen[hpfollow.FieldElineupmallClearFile]; !ok {
+				selectedFields = append(selectedFields, hpfollow.FieldElineupmallClearFile)
+				fieldSeen[hpfollow.FieldElineupmallClearFile] = struct{}{}
+			}
 		default:
 			unknownSeen = true
 		}

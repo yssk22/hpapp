@@ -26,6 +26,54 @@ type HPFollow struct {
 	UpdatedAt time.Time `json:"updated_at,omitempty"`
 	// Type holds the value of the "type" field.
 	Type enums.HPFollowType `json:"type,omitempty"`
+	// ElineupmallOther holds the value of the "elineupmall_other" field.
+	ElineupmallOther enums.HPFollowType `json:"elineupmall_other,omitempty"`
+	// ElineupmallPhotoDaily holds the value of the "elineupmall_photo_daily" field.
+	ElineupmallPhotoDaily enums.HPFollowType `json:"elineupmall_photo_daily,omitempty"`
+	// ElineupmallPhotoA4 holds the value of the "elineupmall_photo_a4" field.
+	ElineupmallPhotoA4 enums.HPFollowType `json:"elineupmall_photo_a4,omitempty"`
+	// ElineupmallPhotoA5 holds the value of the "elineupmall_photo_a5" field.
+	ElineupmallPhotoA5 enums.HPFollowType `json:"elineupmall_photo_a5,omitempty"`
+	// ElineupmallPhoto2l holds the value of the "elineupmall_photo_2l" field.
+	ElineupmallPhoto2l enums.HPFollowType `json:"elineupmall_photo_2l,omitempty"`
+	// ElineupmallPhotoOther holds the value of the "elineupmall_photo_other" field.
+	ElineupmallPhotoOther enums.HPFollowType `json:"elineupmall_photo_other,omitempty"`
+	// ElineupmallPhotoAlbum holds the value of the "elineupmall_photo_album" field.
+	ElineupmallPhotoAlbum enums.HPFollowType `json:"elineupmall_photo_album,omitempty"`
+	// ElineupmallPhotoAlbumOther holds the value of the "elineupmall_photo_album_other" field.
+	ElineupmallPhotoAlbumOther enums.HPFollowType `json:"elineupmall_photo_album_other,omitempty"`
+	// ElineupmallPhotoBook holds the value of the "elineupmall_photo_book" field.
+	ElineupmallPhotoBook enums.HPFollowType `json:"elineupmall_photo_book,omitempty"`
+	// ElineupmallPhotoBookOther holds the value of the "elineupmall_photo_book_other" field.
+	ElineupmallPhotoBookOther enums.HPFollowType `json:"elineupmall_photo_book_other,omitempty"`
+	// ElineupmallDvd holds the value of the "elineupmall_dvd" field.
+	ElineupmallDvd enums.HPFollowType `json:"elineupmall_dvd,omitempty"`
+	// ElineupmallDvdMagazine holds the value of the "elineupmall_dvd_magazine" field.
+	ElineupmallDvdMagazine enums.HPFollowType `json:"elineupmall_dvd_magazine,omitempty"`
+	// ElineupmallDvdMagazineOther holds the value of the "elineupmall_dvd_magazine_other" field.
+	ElineupmallDvdMagazineOther enums.HPFollowType `json:"elineupmall_dvd_magazine_other,omitempty"`
+	// ElineupmallBlueray holds the value of the "elineupmall_blueray" field.
+	ElineupmallBlueray enums.HPFollowType `json:"elineupmall_blueray,omitempty"`
+	// ElineupmallPenlight holds the value of the "elineupmall_penlight" field.
+	ElineupmallPenlight enums.HPFollowType `json:"elineupmall_penlight,omitempty"`
+	// ElineupmallCollectionPinnapPoster holds the value of the "elineupmall_collection_pinnap_poster" field.
+	ElineupmallCollectionPinnapPoster enums.HPFollowType `json:"elineupmall_collection_pinnap_poster,omitempty"`
+	// ElineupmallCollectionPhoto holds the value of the "elineupmall_collection_photo" field.
+	ElineupmallCollectionPhoto enums.HPFollowType `json:"elineupmall_collection_photo,omitempty"`
+	// ElineupmallCollectionOther holds the value of the "elineupmall_collection_other" field.
+	ElineupmallCollectionOther enums.HPFollowType `json:"elineupmall_collection_other,omitempty"`
+	// ElineupmallTshirt holds the value of the "elineupmall_tshirt" field.
+	ElineupmallTshirt enums.HPFollowType `json:"elineupmall_tshirt,omitempty"`
+	// ElineupmallMicrofiberTowel holds the value of the "elineupmall_microfiber_towel" field.
+	ElineupmallMicrofiberTowel enums.HPFollowType `json:"elineupmall_microfiber_towel,omitempty"`
+	// ElineupmallMufflerTowel holds the value of the "elineupmall_muffler_towel" field.
+	ElineupmallMufflerTowel enums.HPFollowType `json:"elineupmall_muffler_towel,omitempty"`
+	// ElineupmallFsk holds the value of the "elineupmall_fsk" field.
+	ElineupmallFsk enums.HPFollowType `json:"elineupmall_fsk,omitempty"`
+	// ElineupmallKeyringOther holds the value of the "elineupmall_keyring_other" field.
+	ElineupmallKeyringOther enums.HPFollowType `json:"elineupmall_keyring_other,omitempty"`
+	// ElineupmallClearFile holds the value of the "elineupmall_clear_file" field.
+	ElineupmallClearFile enums.HPFollowType `json:"elineupmall_clear_file,omitempty"`
 	// Edges holds the relations/edges for other nodes in the graph.
 	// The values are being populated by the HPFollowQuery when eager-loading is set.
 	Edges                   HPFollowEdges `json:"edges"`
@@ -80,7 +128,7 @@ func (*HPFollow) scanValues(columns []string) ([]any, error) {
 		switch columns[i] {
 		case hpfollow.FieldID:
 			values[i] = new(sql.NullInt64)
-		case hpfollow.FieldType:
+		case hpfollow.FieldType, hpfollow.FieldElineupmallOther, hpfollow.FieldElineupmallPhotoDaily, hpfollow.FieldElineupmallPhotoA4, hpfollow.FieldElineupmallPhotoA5, hpfollow.FieldElineupmallPhoto2l, hpfollow.FieldElineupmallPhotoOther, hpfollow.FieldElineupmallPhotoAlbum, hpfollow.FieldElineupmallPhotoAlbumOther, hpfollow.FieldElineupmallPhotoBook, hpfollow.FieldElineupmallPhotoBookOther, hpfollow.FieldElineupmallDvd, hpfollow.FieldElineupmallDvdMagazine, hpfollow.FieldElineupmallDvdMagazineOther, hpfollow.FieldElineupmallBlueray, hpfollow.FieldElineupmallPenlight, hpfollow.FieldElineupmallCollectionPinnapPoster, hpfollow.FieldElineupmallCollectionPhoto, hpfollow.FieldElineupmallCollectionOther, hpfollow.FieldElineupmallTshirt, hpfollow.FieldElineupmallMicrofiberTowel, hpfollow.FieldElineupmallMufflerTowel, hpfollow.FieldElineupmallFsk, hpfollow.FieldElineupmallKeyringOther, hpfollow.FieldElineupmallClearFile:
 			values[i] = new(sql.NullString)
 		case hpfollow.FieldCreatedAt, hpfollow.FieldUpdatedAt:
 			values[i] = new(sql.NullTime)
@@ -126,6 +174,150 @@ func (hf *HPFollow) assignValues(columns []string, values []any) error {
 				return fmt.Errorf("unexpected type %T for field type", values[i])
 			} else if value.Valid {
 				hf.Type = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallOther:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_other", values[i])
+			} else if value.Valid {
+				hf.ElineupmallOther = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallPhotoDaily:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_photo_daily", values[i])
+			} else if value.Valid {
+				hf.ElineupmallPhotoDaily = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallPhotoA4:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_photo_a4", values[i])
+			} else if value.Valid {
+				hf.ElineupmallPhotoA4 = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallPhotoA5:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_photo_a5", values[i])
+			} else if value.Valid {
+				hf.ElineupmallPhotoA5 = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallPhoto2l:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_photo_2l", values[i])
+			} else if value.Valid {
+				hf.ElineupmallPhoto2l = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallPhotoOther:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_photo_other", values[i])
+			} else if value.Valid {
+				hf.ElineupmallPhotoOther = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallPhotoAlbum:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_photo_album", values[i])
+			} else if value.Valid {
+				hf.ElineupmallPhotoAlbum = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallPhotoAlbumOther:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_photo_album_other", values[i])
+			} else if value.Valid {
+				hf.ElineupmallPhotoAlbumOther = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallPhotoBook:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_photo_book", values[i])
+			} else if value.Valid {
+				hf.ElineupmallPhotoBook = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallPhotoBookOther:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_photo_book_other", values[i])
+			} else if value.Valid {
+				hf.ElineupmallPhotoBookOther = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallDvd:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_dvd", values[i])
+			} else if value.Valid {
+				hf.ElineupmallDvd = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallDvdMagazine:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_dvd_magazine", values[i])
+			} else if value.Valid {
+				hf.ElineupmallDvdMagazine = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallDvdMagazineOther:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_dvd_magazine_other", values[i])
+			} else if value.Valid {
+				hf.ElineupmallDvdMagazineOther = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallBlueray:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_blueray", values[i])
+			} else if value.Valid {
+				hf.ElineupmallBlueray = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallPenlight:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_penlight", values[i])
+			} else if value.Valid {
+				hf.ElineupmallPenlight = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallCollectionPinnapPoster:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_collection_pinnap_poster", values[i])
+			} else if value.Valid {
+				hf.ElineupmallCollectionPinnapPoster = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallCollectionPhoto:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_collection_photo", values[i])
+			} else if value.Valid {
+				hf.ElineupmallCollectionPhoto = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallCollectionOther:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_collection_other", values[i])
+			} else if value.Valid {
+				hf.ElineupmallCollectionOther = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallTshirt:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_tshirt", values[i])
+			} else if value.Valid {
+				hf.ElineupmallTshirt = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallMicrofiberTowel:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_microfiber_towel", values[i])
+			} else if value.Valid {
+				hf.ElineupmallMicrofiberTowel = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallMufflerTowel:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_muffler_towel", values[i])
+			} else if value.Valid {
+				hf.ElineupmallMufflerTowel = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallFsk:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_fsk", values[i])
+			} else if value.Valid {
+				hf.ElineupmallFsk = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallKeyringOther:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_keyring_other", values[i])
+			} else if value.Valid {
+				hf.ElineupmallKeyringOther = enums.HPFollowType(value.String)
+			}
+		case hpfollow.FieldElineupmallClearFile:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field elineupmall_clear_file", values[i])
+			} else if value.Valid {
+				hf.ElineupmallClearFile = enums.HPFollowType(value.String)
 			}
 		case hpfollow.ForeignKeys[0]:
 			if value, ok := values[i].(*sql.NullInt64); !ok {
@@ -195,6 +387,78 @@ func (hf *HPFollow) String() string {
 	builder.WriteString(", ")
 	builder.WriteString("type=")
 	builder.WriteString(fmt.Sprintf("%v", hf.Type))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_other=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallOther))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_photo_daily=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallPhotoDaily))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_photo_a4=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallPhotoA4))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_photo_a5=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallPhotoA5))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_photo_2l=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallPhoto2l))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_photo_other=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallPhotoOther))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_photo_album=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallPhotoAlbum))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_photo_album_other=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallPhotoAlbumOther))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_photo_book=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallPhotoBook))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_photo_book_other=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallPhotoBookOther))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_dvd=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallDvd))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_dvd_magazine=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallDvdMagazine))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_dvd_magazine_other=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallDvdMagazineOther))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_blueray=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallBlueray))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_penlight=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallPenlight))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_collection_pinnap_poster=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallCollectionPinnapPoster))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_collection_photo=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallCollectionPhoto))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_collection_other=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallCollectionOther))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_tshirt=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallTshirt))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_microfiber_towel=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallMicrofiberTowel))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_muffler_towel=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallMufflerTowel))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_fsk=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallFsk))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_keyring_other=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallKeyringOther))
+	builder.WriteString(", ")
+	builder.WriteString("elineupmall_clear_file=")
+	builder.WriteString(fmt.Sprintf("%v", hf.ElineupmallClearFile))
 	builder.WriteByte(')')
 	return builder.String()
 }

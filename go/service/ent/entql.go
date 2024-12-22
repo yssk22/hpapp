@@ -276,9 +276,33 @@ var schemaGraph = func() *sqlgraph.Schema {
 		},
 		Type: "HPFollow",
 		Fields: map[string]*sqlgraph.FieldSpec{
-			hpfollow.FieldCreatedAt: {Type: field.TypeTime, Column: hpfollow.FieldCreatedAt},
-			hpfollow.FieldUpdatedAt: {Type: field.TypeTime, Column: hpfollow.FieldUpdatedAt},
-			hpfollow.FieldType:      {Type: field.TypeEnum, Column: hpfollow.FieldType},
+			hpfollow.FieldCreatedAt:                         {Type: field.TypeTime, Column: hpfollow.FieldCreatedAt},
+			hpfollow.FieldUpdatedAt:                         {Type: field.TypeTime, Column: hpfollow.FieldUpdatedAt},
+			hpfollow.FieldType:                              {Type: field.TypeEnum, Column: hpfollow.FieldType},
+			hpfollow.FieldElineupmallOther:                  {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallOther},
+			hpfollow.FieldElineupmallPhotoDaily:             {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallPhotoDaily},
+			hpfollow.FieldElineupmallPhotoA4:                {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallPhotoA4},
+			hpfollow.FieldElineupmallPhotoA5:                {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallPhotoA5},
+			hpfollow.FieldElineupmallPhoto2l:                {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallPhoto2l},
+			hpfollow.FieldElineupmallPhotoOther:             {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallPhotoOther},
+			hpfollow.FieldElineupmallPhotoAlbum:             {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallPhotoAlbum},
+			hpfollow.FieldElineupmallPhotoAlbumOther:        {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallPhotoAlbumOther},
+			hpfollow.FieldElineupmallPhotoBook:              {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallPhotoBook},
+			hpfollow.FieldElineupmallPhotoBookOther:         {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallPhotoBookOther},
+			hpfollow.FieldElineupmallDvd:                    {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallDvd},
+			hpfollow.FieldElineupmallDvdMagazine:            {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallDvdMagazine},
+			hpfollow.FieldElineupmallDvdMagazineOther:       {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallDvdMagazineOther},
+			hpfollow.FieldElineupmallBlueray:                {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallBlueray},
+			hpfollow.FieldElineupmallPenlight:               {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallPenlight},
+			hpfollow.FieldElineupmallCollectionPinnapPoster: {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallCollectionPinnapPoster},
+			hpfollow.FieldElineupmallCollectionPhoto:        {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallCollectionPhoto},
+			hpfollow.FieldElineupmallCollectionOther:        {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallCollectionOther},
+			hpfollow.FieldElineupmallTshirt:                 {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallTshirt},
+			hpfollow.FieldElineupmallMicrofiberTowel:        {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallMicrofiberTowel},
+			hpfollow.FieldElineupmallMufflerTowel:           {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallMufflerTowel},
+			hpfollow.FieldElineupmallFsk:                    {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallFsk},
+			hpfollow.FieldElineupmallKeyringOther:           {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallKeyringOther},
+			hpfollow.FieldElineupmallClearFile:              {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallClearFile},
 		},
 	}
 	graph.Nodes[10] = &sqlgraph.Node{
@@ -2760,6 +2784,126 @@ func (f *HPFollowFilter) WhereUpdatedAt(p entql.TimeP) {
 // WhereType applies the entql string predicate on the type field.
 func (f *HPFollowFilter) WhereType(p entql.StringP) {
 	f.Where(p.Field(hpfollow.FieldType))
+}
+
+// WhereElineupmallOther applies the entql string predicate on the elineupmall_other field.
+func (f *HPFollowFilter) WhereElineupmallOther(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallOther))
+}
+
+// WhereElineupmallPhotoDaily applies the entql string predicate on the elineupmall_photo_daily field.
+func (f *HPFollowFilter) WhereElineupmallPhotoDaily(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallPhotoDaily))
+}
+
+// WhereElineupmallPhotoA4 applies the entql string predicate on the elineupmall_photo_a4 field.
+func (f *HPFollowFilter) WhereElineupmallPhotoA4(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallPhotoA4))
+}
+
+// WhereElineupmallPhotoA5 applies the entql string predicate on the elineupmall_photo_a5 field.
+func (f *HPFollowFilter) WhereElineupmallPhotoA5(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallPhotoA5))
+}
+
+// WhereElineupmallPhoto2l applies the entql string predicate on the elineupmall_photo_2l field.
+func (f *HPFollowFilter) WhereElineupmallPhoto2l(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallPhoto2l))
+}
+
+// WhereElineupmallPhotoOther applies the entql string predicate on the elineupmall_photo_other field.
+func (f *HPFollowFilter) WhereElineupmallPhotoOther(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallPhotoOther))
+}
+
+// WhereElineupmallPhotoAlbum applies the entql string predicate on the elineupmall_photo_album field.
+func (f *HPFollowFilter) WhereElineupmallPhotoAlbum(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallPhotoAlbum))
+}
+
+// WhereElineupmallPhotoAlbumOther applies the entql string predicate on the elineupmall_photo_album_other field.
+func (f *HPFollowFilter) WhereElineupmallPhotoAlbumOther(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallPhotoAlbumOther))
+}
+
+// WhereElineupmallPhotoBook applies the entql string predicate on the elineupmall_photo_book field.
+func (f *HPFollowFilter) WhereElineupmallPhotoBook(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallPhotoBook))
+}
+
+// WhereElineupmallPhotoBookOther applies the entql string predicate on the elineupmall_photo_book_other field.
+func (f *HPFollowFilter) WhereElineupmallPhotoBookOther(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallPhotoBookOther))
+}
+
+// WhereElineupmallDvd applies the entql string predicate on the elineupmall_dvd field.
+func (f *HPFollowFilter) WhereElineupmallDvd(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallDvd))
+}
+
+// WhereElineupmallDvdMagazine applies the entql string predicate on the elineupmall_dvd_magazine field.
+func (f *HPFollowFilter) WhereElineupmallDvdMagazine(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallDvdMagazine))
+}
+
+// WhereElineupmallDvdMagazineOther applies the entql string predicate on the elineupmall_dvd_magazine_other field.
+func (f *HPFollowFilter) WhereElineupmallDvdMagazineOther(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallDvdMagazineOther))
+}
+
+// WhereElineupmallBlueray applies the entql string predicate on the elineupmall_blueray field.
+func (f *HPFollowFilter) WhereElineupmallBlueray(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallBlueray))
+}
+
+// WhereElineupmallPenlight applies the entql string predicate on the elineupmall_penlight field.
+func (f *HPFollowFilter) WhereElineupmallPenlight(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallPenlight))
+}
+
+// WhereElineupmallCollectionPinnapPoster applies the entql string predicate on the elineupmall_collection_pinnap_poster field.
+func (f *HPFollowFilter) WhereElineupmallCollectionPinnapPoster(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallCollectionPinnapPoster))
+}
+
+// WhereElineupmallCollectionPhoto applies the entql string predicate on the elineupmall_collection_photo field.
+func (f *HPFollowFilter) WhereElineupmallCollectionPhoto(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallCollectionPhoto))
+}
+
+// WhereElineupmallCollectionOther applies the entql string predicate on the elineupmall_collection_other field.
+func (f *HPFollowFilter) WhereElineupmallCollectionOther(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallCollectionOther))
+}
+
+// WhereElineupmallTshirt applies the entql string predicate on the elineupmall_tshirt field.
+func (f *HPFollowFilter) WhereElineupmallTshirt(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallTshirt))
+}
+
+// WhereElineupmallMicrofiberTowel applies the entql string predicate on the elineupmall_microfiber_towel field.
+func (f *HPFollowFilter) WhereElineupmallMicrofiberTowel(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallMicrofiberTowel))
+}
+
+// WhereElineupmallMufflerTowel applies the entql string predicate on the elineupmall_muffler_towel field.
+func (f *HPFollowFilter) WhereElineupmallMufflerTowel(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallMufflerTowel))
+}
+
+// WhereElineupmallFsk applies the entql string predicate on the elineupmall_fsk field.
+func (f *HPFollowFilter) WhereElineupmallFsk(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallFsk))
+}
+
+// WhereElineupmallKeyringOther applies the entql string predicate on the elineupmall_keyring_other field.
+func (f *HPFollowFilter) WhereElineupmallKeyringOther(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallKeyringOther))
+}
+
+// WhereElineupmallClearFile applies the entql string predicate on the elineupmall_clear_file field.
+func (f *HPFollowFilter) WhereElineupmallClearFile(p entql.StringP) {
+	f.Where(p.Field(hpfollow.FieldElineupmallClearFile))
 }
 
 // WhereHasUser applies a predicate to check if query has an edge user.
