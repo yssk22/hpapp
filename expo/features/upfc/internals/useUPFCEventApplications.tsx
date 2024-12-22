@@ -7,10 +7,7 @@ import {
   UPFC2SiteScraper,
   UPFCDemoScraper,
   UPFCEventApplicationTickets,
-  UPFCHttpFetcher,
   UPFCSite,
-  UPFCSiteScraper,
-  UPFCCombiedSiteScraper,
   UPFCEventTicket,
   UPFCTicketApplicationStatus
 } from '@hpapp/features/upfc/scraper';
@@ -112,9 +109,7 @@ export default function useUPFCEventApplications(): ReloadableAysncResult<
 }
 
 const demoScraper = new UPFCDemoScraper();
-const siteScraper = new UPFCSiteScraper(new UPFCHttpFetcher());
 const siteScraper2 = new UPFC2SiteScraper(new UPFC2HttpFetcher());
-const combinedScraper = new UPFCCombiedSiteScraper([siteScraper2, siteScraper]);
 
 async function fetchApplications({
   helloproject,
@@ -157,7 +152,7 @@ async function fetchApplicationsFromSite(
   error: Error | undefined;
   applications: UPFCEventApplicationTickets[];
 }> {
-  const scraper = useDemo || username === UPFCDemoScraper.Username ? demoScraper : combinedScraper;
+  const scraper = useDemo || username === UPFCDemoScraper.Username ? demoScraper : siteScraper2;
   if (isEmpty(username)) {
     return {
       error: new ErrUPFCNoCredential(),
