@@ -400,6 +400,7 @@ enum HPFollowHPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/sc
   follow
   follow_with_notification
   unfollow
+  unknown
 }
 """Ordering options for HPFollow connections"""
 input HPFollowOrder {

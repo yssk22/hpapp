@@ -146,6 +146,7 @@ func (HPFollowType) Values() (types []string) {
 		HPFollowTypeFollow,
 		HPFollowTypeFollowWithNotification,
 		HPFollowTypeUnfollow,
+		HPFollowTypeUnknown,
 	} {
 		types = append(types, string(r))
 	}

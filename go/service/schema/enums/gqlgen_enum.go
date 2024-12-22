@@ -341,6 +341,8 @@ func (e HPFollowType) MarshalGQL(w io.Writer) {
 		fmt.Fprint(w, strconv.Quote("follow_with_notification"))
 	case HPFollowTypeUnfollow:
 		fmt.Fprint(w, strconv.Quote("unfollow"))
+	case HPFollowTypeUnknown:
+		fmt.Fprint(w, strconv.Quote("unknown"))
 	}
 }
 
@@ -352,6 +354,8 @@ func (e *HPFollowType) UnmarshalGQL(v interface{}) error {
 		*e = HPFollowTypeFollowWithNotification
 	case "unfollow":
 		*e = HPFollowTypeUnfollow
+	case "unknown":
+		*e = HPFollowTypeUnknown
 	}
 	return nil
 }

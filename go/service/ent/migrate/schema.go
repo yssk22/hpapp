@@ -467,7 +467,7 @@ var (
 		{Name: "id", Type: field.TypeInt, Increment: true},
 		{Name: "created_at", Type: field.TypeTime, Nullable: true},
 		{Name: "updated_at", Type: field.TypeTime, Nullable: true},
-		{Name: "type", Type: field.TypeEnum, Enums: []string{"follow", "follow_with_notification", "unfollow"}, Default: "follow_with_notification"},
+		{Name: "type", Type: field.TypeEnum, Enums: []string{"follow", "follow_with_notification", "unfollow", "unknown"}, Default: "follow_with_notification"},
 		{Name: "hp_follow_member", Type: field.TypeInt},
 		{Name: "user_hpmember_following", Type: field.TypeInt},
 	}

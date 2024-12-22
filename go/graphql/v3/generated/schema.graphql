@@ -15,6 +15,7 @@ input HPFeedQueryParamsInput @goModel(model: "github.com/yssk22/hpapp/go/graphql
 input HPElineumpMallItemsParamsInput @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HPElineumpMallItemsParams") {
   memberIDs: [String!]
   categories: [HPElineupMallItemCategory!]
+  memberCategories: [HPElineumpMallItemsParamsMemberCategoriesInput!]
 }
 
 enum HPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPAssetType") {
@@ -51,6 +52,11 @@ enum HPElineupMallItemCategory @goModel(model: "github.com/yssk22/hpapp/go/servi
   photo_daily
   photo_other
   t_shirt
+}
+
+input HPElineumpMallItemsParamsMemberCategoriesInput @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HPElineumpMallItemsParamsMemberCategories") {
+  memberId: String!
+  categories: [HPElineupMallItemCategory!]
 }
 
 type MeQuery implements Node @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeQuery") {
@@ -126,6 +132,7 @@ enum HPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enu
   follow
   follow_with_notification
   unfollow
+  unknown
 }
 
 input HPFCEventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPFCEventTicketApplication") {
