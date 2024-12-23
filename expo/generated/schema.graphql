@@ -491,6 +491,30 @@ type HPFollow implements Node {
   createdAt: Time
   updatedAt: Time
   type: HPFollowHPFollowType!
+  elineupmallOther: HPFollowHPFollowType!
+  elineupmallPhotoDaily: HPFollowHPFollowType!
+  elineupmallPhotoA4: HPFollowHPFollowType!
+  elineupmallPhotoA5: HPFollowHPFollowType!
+  elineupmallPhoto2l: HPFollowHPFollowType!
+  elineupmallPhotoOther: HPFollowHPFollowType!
+  elineupmallPhotoAlbum: HPFollowHPFollowType!
+  elineupmallPhotoAlbumOther: HPFollowHPFollowType!
+  elineupmallPhotoBook: HPFollowHPFollowType!
+  elineupmallPhotoBookOther: HPFollowHPFollowType!
+  elineupmallDvd: HPFollowHPFollowType!
+  elineupmallDvdMagazine: HPFollowHPFollowType!
+  elineupmallDvdMagazineOther: HPFollowHPFollowType!
+  elineupmallBlueray: HPFollowHPFollowType!
+  elineupmallPenlight: HPFollowHPFollowType!
+  elineupmallCollectionPinnapPoster: HPFollowHPFollowType!
+  elineupmallCollectionPhoto: HPFollowHPFollowType!
+  elineupmallCollectionOther: HPFollowHPFollowType!
+  elineupmallTshirt: HPFollowHPFollowType!
+  elineupmallMicrofiberTowel: HPFollowHPFollowType!
+  elineupmallMufflerTowel: HPFollowHPFollowType!
+  elineupmallFsk: HPFollowHPFollowType!
+  elineupmallKeyringOther: HPFollowHPFollowType!
+  elineupmallClearFile: HPFollowHPFollowType!
   user: User!
   member: HPMember!
 }
@@ -500,6 +524,7 @@ enum HPFollowHPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/sc
   follow
   follow_with_notification
   unfollow
+  unknown
 }
 
 """Ordering options for HPFollow connections"""
@@ -814,6 +839,7 @@ input HPFeedQueryParamsInput @goModel(model: "github.com/yssk22/hpapp/go/graphql
 input HPElineumpMallItemsParamsInput @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HPElineumpMallItemsParams") {
   memberIDs: [String!]
   categories: [HPElineupMallItemCategory!]
+  memberCategories: [HPElineumpMallItemsParamsMemberCategoriesInput!]
 }
 
 enum HPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPAssetType") {
@@ -850,6 +876,11 @@ enum HPElineupMallItemCategory @goModel(model: "github.com/yssk22/hpapp/go/servi
   photo_daily
   photo_other
   t_shirt
+}
+
+input HPElineumpMallItemsParamsMemberCategoriesInput @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HPElineumpMallItemsParamsMemberCategories") {
+  memberId: String!
+  categories: [HPElineupMallItemCategory!]
 }
 
 type MeQuery implements Node @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/me.MeQuery") {
@@ -904,6 +935,7 @@ input NotificationSettingsInput @goModel(model: "github.com/yssk22/hpapp/go/serv
 input HPFollowUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/user.HPFollowUpsertParams") {
   memberId: Int!
   followType: HPFollowType!
+  elineupMallFollowParams: [HPFollowElineupMallParamsInput!]
 }
 
 input HPFCEventTicketApplicationUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPFCEventTicketApplicationUpsertParams") {
@@ -925,6 +957,12 @@ enum HPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enu
   follow
   follow_with_notification
   unfollow
+  unknown
+}
+
+input HPFollowElineupMallParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/user.HPFollowElineupMallParams") {
+  category: HPElineupMallItemCategory!
+  followType: HPFollowType!
 }
 
 input HPFCEventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPFCEventTicketApplication") {

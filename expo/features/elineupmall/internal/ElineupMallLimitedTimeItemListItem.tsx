@@ -1,5 +1,7 @@
+/* eslint-disable local-rules/no-translation-entry */
+import { useThemeColor } from '@hpapp/features/app/theme';
 import { ExternalImage, Text } from '@hpapp/features/common';
-import { Spacing } from '@hpapp/features/common/constants';
+import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { ListItem } from '@hpapp/features/common/list';
 import { useNavigation } from '@hpapp/features/common/stack';
 import ElineupMallWebViewScreen from '@hpapp/features/elineupmall/ElineupMallWebViewScreen';
@@ -30,6 +32,7 @@ const ElineupMallLimitedTimeItemListItemFragmentGraphQL = graphql`
 `;
 
 export function ElineupMallLimitedTimeItemListItem({ data }: { data: ElineupMallLimitedTimeItemListItemFragment$key }) {
+  const [color, contrast] = useThemeColor('primary');
   const navigation = useNavigation();
   const item = useFragment<ElineupMallLimitedTimeItemListItemFragment$key>(
     ElineupMallLimitedTimeItemListItemFragmentGraphQL,
@@ -56,6 +59,9 @@ export function ElineupMallLimitedTimeItemListItem({ data }: { data: ElineupMall
         }}
       >
         <View style={styles.nameAndMetadata}>
+          <View style={styles.metadataRowCategory}>
+            <Text style={[styles.categoryText, { color, backgroundColor: contrast }]}>{t(item.category)}</Text>
+          </View>
           <Text style={styles.name}>{item.name}</Text>
           <View style={styles.metadata}>
             <View style={styles.metadataRow}>
@@ -85,7 +91,7 @@ const imageSize = 160;
 
 const styles = StyleSheet.create({
   container: {
-    height: 180,
+    minHeight: 180,
     padding: Spacing.Small
   },
   image: {
@@ -94,26 +100,33 @@ const styles = StyleSheet.create({
   },
   nameAndMetadata: {
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    marginRight: Spacing.Medium
+    marginRight: Spacing.Medium,
+    flexGrow: 1
   },
   name: {
     flexGrow: 1,
-    fontWeight: 'bold',
-    marginBottom: Spacing.XSmall
+    fontWeight: 'bold'
   },
   metadata: {
-    flexDirection: 'column',
-    alignItems: 'flex-start'
+    flexGrow: 1
   },
   metadataRow: {
     flexDirection: 'row'
   },
+  metadataRowCategory: {
+    alignItems: 'flex-start'
+  },
   metadataLabel: {
     width: 80,
-    marginRight: Spacing.Small
+    marginRight: Spacing.Small,
+    fontSize: FontSize.Small
   },
   metadataValue: {},
-  dateString: {}
+  dateString: {},
+  categoryText: {
+    fontSize: FontSize.Small,
+    fontWeight: 'bold',
+    textAlign: 'right',
+    marginBottom: Spacing.XSmall
+  }
 });

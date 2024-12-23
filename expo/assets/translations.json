@@ -101,6 +101,105 @@
   "Goods": {
     "ja": "グッズ"
   },
+  "blueray": {
+    "en": "Blue-ray",
+    "ja": "ブルーレイ"
+  },
+  "clear_file": {
+    "en": "Clear file",
+    "ja": "クリアファイル"
+  },
+  "colllection_other": {
+    "en": "Collection items (other)",
+    "ja": "コレクション商品(その他)"
+  },
+  "colllection_photo": {
+    "en": "Collection items (Photo)",
+    "ja": "コレクション商品(写真)"
+  },
+  "colllection_pinnap_poster": {
+    "en": "Collection items (Pinnap Poster)",
+    "ja": "コレクション商品(ピンポス)"
+  },
+  "dvd": {
+    "en": "DVD",
+    "ja": "DVD"
+  },
+  "dvd_magazine": {
+    "en": "DVD magazine",
+    "ja": "DVDマガジン"
+  },
+  "dvd_magazine_other": {
+    "en": "DVD magazine (other)",
+    "ja": "DVDマガジン(その他)"
+  },
+  "fsk": {
+    "en": "FSK",
+    "ja": "FSK"
+  },
+  "keyring_other": {
+    "en": "Other Keyrings",
+    "ja": "その他のキーホルダー"
+  },
+  "microfiber_towel": {
+    "en": "Microfiber towel",
+    "ja": "マイクロファイバータオル"
+  },
+  "muffler_towel": {
+    "en": "Muffler towel",
+    "ja": "マフラータオル"
+  },
+  "other": {
+    "en": "Other",
+    "ja": "その他"
+  },
+  "penlight": {
+    "en": "Penlight",
+    "ja": "ペンライト"
+  },
+  "photo2_l": {
+    "en": "Photo 2L",
+    "ja": "2L 写真"
+  },
+  "photo_a4": {
+    "en": "Photo A4",
+    "ja": "A4 写真"
+  },
+  "photo_a5": {
+    "en": "Photo A5",
+    "ja": "A5写真"
+  },
+  "photo_album": {
+    "en": "Photo Album",
+    "ja": "フォトアルバム"
+  },
+  "photo_album_other": {
+    "en": "Photo Album",
+    "ja": "フォトアルバム(その他)"
+  },
+  "photo_book": {
+    "en": "Photo Book",
+    "ja": "写真集"
+  },
+  "photo_book_other": {
+    "en": "Photo Book (Other)",
+    "ja": "写真集(その他)"
+  },
+  "photo_daily": {
+    "en": "Daily Photo",
+    "ja": "日替わり写真"
+  },
+  "photo_other": {
+    "en": "Photo (Other)",
+    "ja": "写真(その他)"
+  },
+  "t_shirt": {
+    "en": "T Shirt",
+    "ja": "Tシャツ"
+  },
+  "Elineup Mall Settings": {
+    "ja": "イーラインナップモールの設定"
+  },
   "Order End At": {
     "ja": "販売終了日時"
   },

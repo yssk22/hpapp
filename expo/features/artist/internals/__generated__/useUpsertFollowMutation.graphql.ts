@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<2150c1899edd3606279aaa7f84411bc9>>
+ * @generated SignedSource<<a71fa034cff49f7ec389dac45a3da9ce>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -9,11 +9,17 @@
 // @ts-nocheck
 
 import { ConcreteRequest } from 'relay-runtime';
-export type HPFollowHPFollowType = "follow" | "follow_with_notification" | "unfollow" | "%future added value";
-export type HPFollowType = "follow" | "follow_with_notification" | "unfollow" | "%future added value";
+export type HPElineupMallItemCategory = "blueray" | "clear_file" | "colllection_other" | "colllection_photo" | "colllection_pinnap_poster" | "dvd" | "dvd_magazine" | "dvd_magazine_other" | "fsk" | "keyring_other" | "microfiber_towel" | "muffler_towel" | "other" | "penlight" | "photo2_l" | "photo_a4" | "photo_a5" | "photo_album" | "photo_album_other" | "photo_book" | "photo_book_other" | "photo_daily" | "photo_other" | "t_shirt" | "%future added value";
+export type HPFollowHPFollowType = "follow" | "follow_with_notification" | "unfollow" | "unknown" | "%future added value";
+export type HPFollowType = "follow" | "follow_with_notification" | "unfollow" | "unknown" | "%future added value";
 export type HPFollowUpsertParamsInput = {
+  elineupMallFollowParams?: ReadonlyArray<HPFollowElineupMallParamsInput> | null | undefined;
   followType: HPFollowType;
   memberId: number;
+};
+export type HPFollowElineupMallParamsInput = {
+  category: HPElineupMallItemCategory;
+  followType: HPFollowType;
 };
 export type useUpsertFollowMutation$variables = {
   params: HPFollowUpsertParamsInput;
@@ -21,6 +27,30 @@ export type useUpsertFollowMutation$variables = {
 export type useUpsertFollowMutation$data = {
   readonly me: {
     readonly upsertFollow: {
+      readonly elineupmallBlueray: HPFollowHPFollowType;
+      readonly elineupmallClearFile: HPFollowHPFollowType;
+      readonly elineupmallCollectionOther: HPFollowHPFollowType;
+      readonly elineupmallCollectionPhoto: HPFollowHPFollowType;
+      readonly elineupmallCollectionPinnapPoster: HPFollowHPFollowType;
+      readonly elineupmallDvd: HPFollowHPFollowType;
+      readonly elineupmallDvdMagazine: HPFollowHPFollowType;
+      readonly elineupmallDvdMagazineOther: HPFollowHPFollowType;
+      readonly elineupmallFsk: HPFollowHPFollowType;
+      readonly elineupmallKeyringOther: HPFollowHPFollowType;
+      readonly elineupmallMicrofiberTowel: HPFollowHPFollowType;
+      readonly elineupmallMufflerTowel: HPFollowHPFollowType;
+      readonly elineupmallOther: HPFollowHPFollowType;
+      readonly elineupmallPenlight: HPFollowHPFollowType;
+      readonly elineupmallPhoto2l: HPFollowHPFollowType;
+      readonly elineupmallPhotoA4: HPFollowHPFollowType;
+      readonly elineupmallPhotoA5: HPFollowHPFollowType;
+      readonly elineupmallPhotoAlbum: HPFollowHPFollowType;
+      readonly elineupmallPhotoAlbumOther: HPFollowHPFollowType;
+      readonly elineupmallPhotoBook: HPFollowHPFollowType;
+      readonly elineupmallPhotoBookOther: HPFollowHPFollowType;
+      readonly elineupmallPhotoDaily: HPFollowHPFollowType;
+      readonly elineupmallPhotoOther: HPFollowHPFollowType;
+      readonly elineupmallTshirt: HPFollowHPFollowType;
       readonly id: string;
       readonly member: {
         readonly id: string;
@@ -91,6 +121,174 @@ v2 = [
               (v1/*: any*/)
             ],
             "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallOther",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallPhotoDaily",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallPhotoA4",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallPhotoA5",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallPhoto2l",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallPhotoOther",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallPhotoAlbum",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallPhotoAlbumOther",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallPhotoBook",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallPhotoBookOther",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallDvd",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallDvdMagazine",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallDvdMagazineOther",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallBlueray",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallPenlight",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallCollectionPinnapPoster",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallCollectionPhoto",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallCollectionOther",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallTshirt",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallMicrofiberTowel",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallMufflerTowel",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallFsk",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallKeyringOther",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallClearFile",
+            "storageKey": null
           }
         ],
         "storageKey": null
@@ -117,16 +315,16 @@ return {
     "selections": (v2/*: any*/)
   },
   "params": {
-    "cacheID": "229e234f263ac9f8907abff58f736125",
+    "cacheID": "27074257b53a091a6263918e35e685cd",
     "id": null,
     "metadata": {},
     "name": "useUpsertFollowMutation",
     "operationKind": "mutation",
-    "text": "mutation useUpsertFollowMutation(\n  $params: HPFollowUpsertParamsInput!\n) {\n  me {\n    upsertFollow(params: $params) {\n      id\n      type\n      member {\n        id\n      }\n    }\n  }\n}\n"
+    "text": "mutation useUpsertFollowMutation(\n  $params: HPFollowUpsertParamsInput!\n) {\n  me {\n    upsertFollow(params: $params) {\n      id\n      type\n      member {\n        id\n      }\n      elineupmallOther\n      elineupmallPhotoDaily\n      elineupmallPhotoA4\n      elineupmallPhotoA5\n      elineupmallPhoto2l\n      elineupmallPhotoOther\n      elineupmallPhotoAlbum\n      elineupmallPhotoAlbumOther\n      elineupmallPhotoBook\n      elineupmallPhotoBookOther\n      elineupmallDvd\n      elineupmallDvdMagazine\n      elineupmallDvdMagazineOther\n      elineupmallBlueray\n      elineupmallPenlight\n      elineupmallCollectionPinnapPoster\n      elineupmallCollectionPhoto\n      elineupmallCollectionOther\n      elineupmallTshirt\n      elineupmallMicrofiberTowel\n      elineupmallMufflerTowel\n      elineupmallFsk\n      elineupmallKeyringOther\n      elineupmallClearFile\n    }\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "b7f6845140f00007d85f77814a46eb86";
+(node as any).hash = "8529051710ad55463849cc0462b835a8";
 
 export default node;
