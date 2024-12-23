@@ -14,27 +14,18 @@ module.exports = (_) => {
   config.splash.image = path.join('config', cfgName, 'splash.png');
 
   const isEAS = process.env.EAS_BUILD === 'true';
-  const easEnvvarPrefix = cfgName.toUpperCase() + '_';
-  const iosGoogleServicesFilePath = isEAS
-    ? process.env[easEnvvarPrefix + 'GOOGLE_SERVICES_INFO_PLIST']
-    : path.join('config', cfgName, 'GoogleService-Info.plist');
-  const androidGoogleServicesFilePath = isEAS
-    ? process.env[easEnvvarPrefix + 'GOOGLE_SERVICES_JSON']
-    : path.join('config', cfgName, 'google-services.json');
+  const iosGoogleServicesFilePath = path.join('config', cfgName, 'GoogleService-Info.plist');
+  const androidGoogleServicesFilePath = path.join('config', cfgName, 'google-services.json');
 
   if (fs.existsSync(iosGoogleServicesFilePath)) {
     config.ios.googleServicesFile = iosGoogleServicesFilePath;
   } else {
-    if (isEAS) {
-      throw new Error('GoogleService-Info.plist file does not found in ' + iosGoogleServicesFilePath);
-    }
+    throw new Error('GoogleService-Info.plist file does not found in ' + iosGoogleServicesFilePath);
   }
   if (fs.existsSync(androidGoogleServicesFilePath)) {
     config.android.googleServicesFile = androidGoogleServicesFilePath;
   } else {
-    if (isEAS) {
-      throw new Error('google-services.json file does not found in ' + androidGoogleServicesFilePath);
-    }
+    throw new Error('google-services.json file does not found in ' + androidGoogleServicesFilePath);
   }
 
   // finally load the environment specific app.config.js
