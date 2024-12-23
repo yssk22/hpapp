@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<8a5c46eea336900240bbb899363b8466>>
+ * @generated SignedSource<<fff5b9277bc80b260305bb1325534f9f>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -13,7 +13,12 @@ import { FragmentRefs } from "relay-runtime";
 export type HPElineupMallItemCategory = "blueray" | "clear_file" | "colllection_other" | "colllection_photo" | "colllection_pinnap_poster" | "dvd" | "dvd_magazine" | "dvd_magazine_other" | "fsk" | "keyring_other" | "microfiber_towel" | "muffler_towel" | "other" | "penlight" | "photo2_l" | "photo_a4" | "photo_a5" | "photo_album" | "photo_album_other" | "photo_book" | "photo_book_other" | "photo_daily" | "photo_other" | "t_shirt" | "%future added value";
 export type HPElineumpMallItemsParamsInput = {
   categories?: ReadonlyArray<HPElineupMallItemCategory> | null | undefined;
+  memberCategories?: ReadonlyArray<HPElineumpMallItemsParamsMemberCategoriesInput> | null | undefined;
   memberIDs?: ReadonlyArray<string> | null | undefined;
+};
+export type HPElineumpMallItemsParamsMemberCategoriesInput = {
+  categories?: ReadonlyArray<HPElineupMallItemCategory> | null | undefined;
+  memberId: string;
 };
 export type ElineupMallLimitedTimeItemListQuery$variables = {
   after?: any | null | undefined;

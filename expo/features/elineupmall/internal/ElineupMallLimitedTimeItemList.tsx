@@ -4,7 +4,10 @@ import { FlatList, RefreshControl } from 'react-native';
 import { graphql, usePaginationFragment } from 'react-relay';
 
 import { ElineupMallLimitedTimeItemListItem } from './ElineupMallLimitedTimeItemListItem';
-import { ElineupMallLimitedTimeItemListQuery } from './__generated__/ElineupMallLimitedTimeItemListQuery.graphql';
+import {
+  ElineupMallLimitedTimeItemListQuery,
+  HPElineupMallItemCategory
+} from './__generated__/ElineupMallLimitedTimeItemListQuery.graphql';
 import { ElineupMallLimitedTimeItemListQuery_helloproject_query_elineupmall_items$key } from './__generated__/ElineupMallLimitedTimeItemListQuery_helloproject_query_elineupmall_items.graphql';
 
 const ElineupMallLimitedTimeItemListQueryGraphQL = graphql`
@@ -32,17 +35,30 @@ const ElineupMallLimitedTimeItemListQueryFragmentGraphQL = graphql`
 
 const numPerFetch = 20;
 
+export type ElineupMallItemCategory = HPElineupMallItemCategory;
+
 export type ElineupMallLimitedTimeItemListProps = {
+  memberCategories: {
+    memberId: string;
+    categories: ElineupMallItemCategory[];
+  }[];
   memberIds: string[];
+  categories: ElineupMallItemCategory[];
 };
 
-export default function ElineupMallLimitedTimeItemList({ memberIds }: ElineupMallLimitedTimeItemListProps) {
+export default function ElineupMallLimitedTimeItemList({
+  memberCategories,
+  memberIds,
+  categories
+}: ElineupMallLimitedTimeItemListProps) {
   const { data, isReloading, reload } = useLazyReloadableQuery<ElineupMallLimitedTimeItemListQuery>(
     ElineupMallLimitedTimeItemListQueryGraphQL,
     {
       first: numPerFetch,
       params: {
-        memberIDs: memberIds
+        memberIDs: memberIds,
+        categories,
+        memberCategories
       }
     }
   );

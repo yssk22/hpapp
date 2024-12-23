@@ -30,6 +30,30 @@ const helloProjectFragmentGraphQL = graphql`
         myFollowStatus {
           id
           type
+          elineupmallOther
+          elineupmallPhotoDaily
+          elineupmallPhotoA4
+          elineupmallPhotoA5
+          elineupmallPhoto2l
+          elineupmallPhotoOther
+          elineupmallPhotoAlbum
+          elineupmallPhotoAlbumOther
+          elineupmallPhotoBook
+          elineupmallPhotoBookOther
+          elineupmallDvd
+          elineupmallDvdMagazine
+          elineupmallDvdMagazineOther
+          elineupmallBlueray
+          elineupmallPenlight
+          elineupmallCollectionPinnapPoster
+          elineupmallCollectionPhoto
+          elineupmallCollectionOther
+          elineupmallTshirt
+          elineupmallMicrofiberTowel
+          elineupmallMufflerTowel
+          elineupmallFsk
+          elineupmallKeyringOther
+          elineupmallClearFile
         }
       }
     }

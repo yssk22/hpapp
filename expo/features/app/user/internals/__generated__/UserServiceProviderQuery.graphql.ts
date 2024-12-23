@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<3bee21e7750fdc8ef26ceeffec999039>>
+ * @generated SignedSource<<4bcbad703b8245e66eaa157ac7101fa0>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -198,6 +198,174 @@ return {
                         "kind": "ScalarField",
                         "name": "type",
                         "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallOther",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallPhotoDaily",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallPhotoA4",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallPhotoA5",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallPhoto2l",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallPhotoOther",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallPhotoAlbum",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallPhotoAlbumOther",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallPhotoBook",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallPhotoBookOther",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallDvd",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallDvdMagazine",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallDvdMagazineOther",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallBlueray",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallPenlight",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallCollectionPinnapPoster",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallCollectionPhoto",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallCollectionOther",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallTshirt",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallMicrofiberTowel",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallMufflerTowel",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallFsk",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallKeyringOther",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "elineupmallClearFile",
+                        "storageKey": null
                       }
                     ],
                     "storageKey": null
@@ -352,12 +520,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "7752f697c6ce1e9efb83116acc5b854d",
+    "cacheID": "655b875b72da3af617e8f4f2c4a5b7d1",
     "id": null,
     "metadata": {},
     "name": "UserServiceProviderQuery",
     "operationKind": "query",
-    "text": "query UserServiceProviderQuery {\n  helloproject {\n    ...HelloProjectFragment\n    id\n  }\n  me {\n    ...MeFragment\n    id\n  }\n}\n\nfragment HelloProjectFragment on HelloProjectQuery {\n  artists {\n    id\n    key\n    name\n    thumbnailURL\n    members {\n      id\n      key\n      artistKey\n      artistID\n      name\n      nameKana\n      thumbnailURL\n      dateOfBirth\n      bloodType\n      joinAt\n      graduateAt\n      myFollowStatus {\n        id\n        type\n      }\n    }\n  }\n}\n\nfragment MeFragment on MeQuery {\n  id\n  username\n  clientId\n  clientName\n  sortHistories(first: 2) {\n    edges {\n      node {\n        id\n        createdAt\n        sortResult {\n          records {\n            artistId\n            memberId\n            memberKey\n            point\n            rank\n          }\n        }\n      }\n    }\n  }\n}\n"
+    "text": "query UserServiceProviderQuery {\n  helloproject {\n    ...HelloProjectFragment\n    id\n  }\n  me {\n    ...MeFragment\n    id\n  }\n}\n\nfragment HelloProjectFragment on HelloProjectQuery {\n  artists {\n    id\n    key\n    name\n    thumbnailURL\n    members {\n      id\n      key\n      artistKey\n      artistID\n      name\n      nameKana\n      thumbnailURL\n      dateOfBirth\n      bloodType\n      joinAt\n      graduateAt\n      myFollowStatus {\n        id\n        type\n        elineupmallOther\n        elineupmallPhotoDaily\n        elineupmallPhotoA4\n        elineupmallPhotoA5\n        elineupmallPhoto2l\n        elineupmallPhotoOther\n        elineupmallPhotoAlbum\n        elineupmallPhotoAlbumOther\n        elineupmallPhotoBook\n        elineupmallPhotoBookOther\n        elineupmallDvd\n        elineupmallDvdMagazine\n        elineupmallDvdMagazineOther\n        elineupmallBlueray\n        elineupmallPenlight\n        elineupmallCollectionPinnapPoster\n        elineupmallCollectionPhoto\n        elineupmallCollectionOther\n        elineupmallTshirt\n        elineupmallMicrofiberTowel\n        elineupmallMufflerTowel\n        elineupmallFsk\n        elineupmallKeyringOther\n        elineupmallClearFile\n      }\n    }\n  }\n}\n\nfragment MeFragment on MeQuery {\n  id\n  username\n  clientId\n  clientName\n  sortHistories(first: 2) {\n    edges {\n      node {\n        id\n        createdAt\n        sortResult {\n          records {\n            artistId\n            memberId\n            memberKey\n            point\n            rank\n          }\n        }\n      }\n    }\n  }\n}\n"
   }
 };
 })();

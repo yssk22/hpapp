@@ -2,6 +2,7 @@ import AccountScreen from '@hpapp/features/account/AccountScreen';
 import { ListItemSectionHeader, NavigationListItem } from '@hpapp/features/common/list';
 import ContentScreen from '@hpapp/features/content/ContentScreen';
 import DevtoolScreen from '@hpapp/features/devtool/DevtoolScreen';
+import ElineupMallSettingsScreen from '@hpapp/features/elineupmall/ElineupMallSettingsScreen';
 import HPSortScreen from '@hpapp/features/hpsort/HPSortScreen';
 import PushNotificationSettingsScreen from '@hpapp/features/push/PushNotiicationSettingsScreen';
 import ThemeScreen from '@hpapp/features/theme/ThemeScreen';
@@ -25,6 +26,8 @@ export default function HomeTabMenu() {
       <NavigationListItem screen={ThemeScreen}>{t('Theme Settings')}</NavigationListItem>
       <Divider />
       <NavigationListItem screen={UPFCSettingsScreen}>{t('FC Settings')}</NavigationListItem>
+      <Divider />
+      <NavigationListItem screen={ElineupMallSettingsScreen}>{t('Elineup Mall Settings')}</NavigationListItem>
       <Divider />
       <NavigationListItem screen={PushNotificationSettingsScreen}>{t('Push Notification Settings')}</NavigationListItem>
       <Divider />
