@@ -89,3 +89,4 @@ jobs:
         if: ${{ matrix.target != 'dev' }}
         env:
           HPAPP_CONFIG_NAME: ${{ matrix.target }}
+          EXPO_APPLE_APP_SPECIFIC_PASSWORD: ${{ secret.EXPO_APPLE_APP_SPECIFIC_PASSWORD }}
