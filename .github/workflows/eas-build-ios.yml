@@ -61,7 +61,7 @@ jobs:
       - run: cd expo && rm ./config/${{ matrix.target }}/.gitignore
       - run: cd expo && yarn install
       - run: cd expo && envsubst < ./.env > ./.env.local
-        with:
+        env:
           APP_CHECK_DEBUG_TOKEN: ${{ secrets.APP_CHECK_DEBUG_TOKEN }}
           GRAPHQL_ENDPOINT: ${{ secrets.GRAPHQL_ENDPOINT }}
       - run: cd expo && ./scripts/eas.sh build --profile ${{ matrix.target }} --platform ios --non-interactive --local --output ./build/hpapp-${{ matrix.target }}.ipa
