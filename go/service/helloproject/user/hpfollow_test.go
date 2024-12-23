@@ -87,5 +87,65 @@ func TestHPFollow(t *testing.T) {
 		follow = mizuki.QueryFollowedBy().WithUser().FirstX(ctx)
 		a.Equals(enums.HPFollowTypeFollow, follow.Type)
 		a.Equals(myId, follow.Edges.User.ID)
+
+		// elineupall
+		a.Equals(enums.HPFollowTypeUnknown, follow.ElineupmallBlueray)
+		_, err = UpsertFollow(ctx, myId, HPFollowUpsertParams{
+			MemberId:   mizuki.ID,
+			FollowType: enums.HPFollowTypeFollow,
+			ElineupMallFollowParams: []HPFollowElineupMallParams{
+				{Category: enums.HPElineupMallItemCategoryBlueray, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryClearFile, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryColllectionOther, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryColllectionPhoto, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryColllectionPinnapPoster, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryDVD, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryDVDMagazine, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryDVDMagazineOther, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryFSK, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryKeyringOther, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryMicrofiberTowel, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryMufflerTowel, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryOther, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryPenlight, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryPhoto2L, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryPhotoA4, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryPhotoA5, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryPhotoAlbum, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryPhotoAlbumOther, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryPhotoBook, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryPhotoBookOther, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryPhotoDaily, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryPhotoOther, FollowType: enums.HPFollowTypeFollowWithNotification},
+				{Category: enums.HPElineupMallItemCategoryTShirt, FollowType: enums.HPFollowTypeFollowWithNotification},
+			},
+		})
+		follow = mizuki.QueryFollowedBy().WithUser().FirstX(ctx)
+		a.Equals(enums.HPFollowTypeFollow, follow.Type)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallBlueray)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallClearFile)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallCollectionOther)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallCollectionPhoto)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallCollectionPinnapPoster)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallDvd)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallDvdMagazine)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallDvdMagazineOther)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallFsk)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallKeyringOther)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallMicrofiberTowel)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallMufflerTowel)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallOther)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallPenlight)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallPhoto2l)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallPhotoA4)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallPhotoA5)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallPhotoAlbum)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallPhotoAlbumOther)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallPhotoBook)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallPhotoBookOther)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallPhotoDaily)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallPhotoOther)
+		a.Equals(enums.HPFollowTypeFollowWithNotification, follow.ElineupmallTshirt)
+		a.Equals(myId, follow.Edges.User.ID)
 	})
 }

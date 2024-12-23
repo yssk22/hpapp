@@ -3237,6 +3237,7 @@ func (e *executableSchema) Exec(ctx context.Context) graphql.ResponseHandler {
 		ec.unmarshalInputHPFCEventTicketOrder,
 		ec.unmarshalInputHPFeedItemOrder,
 		ec.unmarshalInputHPFeedQueryParamsInput,
+		ec.unmarshalInputHPFollowElineupMallParamsInput,
 		ec.unmarshalInputHPFollowOrder,
 		ec.unmarshalInputHPFollowUpsertParamsInput,
 		ec.unmarshalInputHPIgPostOrder,
@@ -24176,6 +24177,42 @@ func (ec *executionContext) unmarshalInputHPFeedQueryParamsInput(ctx context.Con
 	return it, nil
 }
 
+func (ec *executionContext) unmarshalInputHPFollowElineupMallParamsInput(ctx context.Context, obj interface{}) (user.HPFollowElineupMallParams, error) {
+	var it user.HPFollowElineupMallParams
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	fieldsInOrder := [...]string{"category", "followType"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "category":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("category"))
+			it.Category, err = ec.unmarshalNHPElineupMallItemCategory2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPElineupMallItemCategory(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "followType":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("followType"))
+			it.FollowType, err = ec.unmarshalNHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
 func (ec *executionContext) unmarshalInputHPFollowOrder(ctx context.Context, obj interface{}) (ent.HPFollowOrder, error) {
 	var it ent.HPFollowOrder
 	asMap := map[string]interface{}{}
@@ -24223,7 +24260,7 @@ func (ec *executionContext) unmarshalInputHPFollowUpsertParamsInput(ctx context.
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"memberId", "followType"}
+	fieldsInOrder := [...]string{"memberId", "followType", "elineupMallFollowParams"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
@@ -24243,6 +24280,14 @@ func (ec *executionContext) unmarshalInputHPFollowUpsertParamsInput(ctx context.
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("followType"))
 			it.FollowType, err = ec.unmarshalNHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "elineupMallFollowParams":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("elineupMallFollowParams"))
+			it.ElineupMallFollowParams, err = ec.unmarshalOHPFollowElineupMallParamsInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋuserᚐHPFollowElineupMallParamsᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -29399,6 +29444,11 @@ func (ec *executionContext) marshalNHPFollow2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋ
 	return ec._HPFollow(ctx, sel, v)
 }
 
+func (ec *executionContext) unmarshalNHPFollowElineupMallParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋuserᚐHPFollowElineupMallParams(ctx context.Context, v interface{}) (user.HPFollowElineupMallParams, error) {
+	res, err := ec.unmarshalInputHPFollowElineupMallParamsInput(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
 func (ec *executionContext) unmarshalNHPFollowHPFollowType2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPFollowType(ctx context.Context, v interface{}) (enums.HPFollowType, error) {
 	var res enums.HPFollowType
 	err := res.UnmarshalGQL(v)
@@ -31073,6 +31123,26 @@ func (ec *executionContext) marshalOHPFollow2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋ
 		return graphql.Null
 	}
 	return ec._HPFollow(ctx, sel, v)
+}
+
+func (ec *executionContext) unmarshalOHPFollowElineupMallParamsInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋuserᚐHPFollowElineupMallParamsᚄ(ctx context.Context, v interface{}) ([]user.HPFollowElineupMallParams, error) {
+	if v == nil {
+		return nil, nil
+	}
+	var vSlice []interface{}
+	if v != nil {
+		vSlice = graphql.CoerceList(v)
+	}
+	var err error
+	res := make([]user.HPFollowElineupMallParams, len(vSlice))
+	for i := range vSlice {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithIndex(i))
+		res[i], err = ec.unmarshalNHPFollowElineupMallParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋhelloprojectᚋuserᚐHPFollowElineupMallParams(ctx, vSlice[i])
+		if err != nil {
+			return nil, err
+		}
+	}
+	return res, nil
 }
 
 func (ec *executionContext) marshalOHPIgCrawlArgs2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋjsonfieldsᚐHPIgCrawlArgs(ctx context.Context, sel ast.SelectionSet, v *jsonfields.HPIgCrawlArgs) graphql.Marshaler {

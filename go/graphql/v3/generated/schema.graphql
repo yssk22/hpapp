@@ -111,6 +111,7 @@ input NotificationSettingsInput @goModel(model: "github.com/yssk22/hpapp/go/serv
 input HPFollowUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/user.HPFollowUpsertParams") {
   memberId: Int!
   followType: HPFollowType!
+  elineupMallFollowParams: [HPFollowElineupMallParamsInput!]
 }
 
 input HPFCEventTicketApplicationUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPFCEventTicketApplicationUpsertParams") {
@@ -133,6 +134,11 @@ enum HPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enu
   follow_with_notification
   unfollow
   unknown
+}
+
+input HPFollowElineupMallParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/user.HPFollowElineupMallParams") {
+  category: HPElineupMallItemCategory!
+  followType: HPFollowType!
 }
 
 input HPFCEventTicketApplicationInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/upfc.HPFCEventTicketApplication") {
