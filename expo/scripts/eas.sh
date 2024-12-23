@@ -8,19 +8,7 @@ if [ -z $HPAPP_CONFIG_NAME ]; then
     exit 1
 fi
 
-if [ -z $HPAPP_CONFIG_NAME ]; then
-    echo "HPAPP_CONFIG_NAME is not defined."
-    exit 1
-fi
-
 ## extract environment secrets if exists
-if [ -z $SECRETS_JSON ]; then
-    echo "no SECRETS_JSON found"
-else
-    echo "generating $BASEDIR/config/$HPAPP_CONFIG_NAME/secrets.json from environment variable."
-    envsubst < $BASEDIR/config/secrets.json.env > $BASEDIR/config/$HPAPP_CONFIG_NAME/secrets.json
-fi
-
 if [ -z $GOOGLE_SERVICES_INFO_PLIST ]; then
     echo "no GOOGLE_SERVICES_INFO_PLIST found"
 else
@@ -35,9 +23,9 @@ else
     envsubst < $BASEDIR/config/google-services.json.env > $BASEDIR/config/$HPAPP_CONFIG_NAME/google-services.json
 fi
 
-if [ "$1" == "build" ]; then
+if [ "$1" = "build" -o "$1" = "update" ]; then
     EAS_JSON=$BASEDIR/config/$HPAPP_CONFIG_NAME/eas.json
-elif [ "$1" == "submit" ]; then
+elif [ "$1" = "submit" ]; then
     EAS_JSON=$BASEDIR/config/eas.json
 else
     echo "only build or submit is allowed."
