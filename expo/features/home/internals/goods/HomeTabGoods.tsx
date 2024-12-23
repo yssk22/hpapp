@@ -5,6 +5,9 @@ import {
   ElineupMallNoFollowingsBox
 } from '@hpapp/features/elineupmall';
 
+import HomeTabGoodsElineupMallStatusHeader from './HomeTabGoodsElineupMallStatusHeader';
+import { useHomeTabElineupMall } from '../HomeTabElineupMallProvider';
+
 export default function HomeTabGoods() {
   const memberCategories = useHelloProject()!
     .useFollowingMembers(true)
@@ -88,10 +91,21 @@ export default function HomeTabGoods() {
       };
     })
     .filter((v) => v.categories.length > 0);
+  const [historyMap, status] = useHomeTabElineupMall();
   if (memberCategories.length === 0) {
     return <ElineupMallNoFollowingsBox />;
   }
-  return <ElineupMallLimitedTimeItemList memberCategories={memberCategories} memberIds={[]} categories={[]} />;
+  return (
+    <>
+      <HomeTabGoodsElineupMallStatusHeader status={status} />
+      <ElineupMallLimitedTimeItemList
+        memberCategories={memberCategories}
+        memberIds={[]}
+        categories={[]}
+        historyMap={historyMap}
+      />
+    </>
+  );
 }
 
 function isFollwoingCategory(value: HPFollowType | undefined) {

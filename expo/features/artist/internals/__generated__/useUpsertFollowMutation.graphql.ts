@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<a71fa034cff49f7ec389dac45a3da9ce>>
+ * @generated SignedSource<<6869002b4daf4e1f7d845fb5c73fcb25>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -126,7 +126,98 @@ v2 = [
             "alias": null,
             "args": null,
             "kind": "ScalarField",
+            "name": "elineupmallBlueray",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallClearFile",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallCollectionOther",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallCollectionPinnapPoster",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallCollectionPhoto",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallDvd",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallDvdMagazine",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallDvdMagazineOther",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallFsk",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallKeyringOther",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallMicrofiberTowel",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallMufflerTowel",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
             "name": "elineupmallOther",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "elineupmallPenlight",
             "storageKey": null
           },
           {
@@ -196,98 +287,7 @@ v2 = [
             "alias": null,
             "args": null,
             "kind": "ScalarField",
-            "name": "elineupmallDvd",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "elineupmallDvdMagazine",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "elineupmallDvdMagazineOther",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "elineupmallBlueray",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "elineupmallPenlight",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "elineupmallCollectionPinnapPoster",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "elineupmallCollectionPhoto",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "elineupmallCollectionOther",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
             "name": "elineupmallTshirt",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "elineupmallMicrofiberTowel",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "elineupmallMufflerTowel",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "elineupmallFsk",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "elineupmallKeyringOther",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "elineupmallClearFile",
             "storageKey": null
           }
         ],
@@ -315,16 +315,16 @@ return {
     "selections": (v2/*: any*/)
   },
   "params": {
-    "cacheID": "27074257b53a091a6263918e35e685cd",
+    "cacheID": "357754e0f499a9fcc492f37e71ef1677",
     "id": null,
     "metadata": {},
     "name": "useUpsertFollowMutation",
     "operationKind": "mutation",
-    "text": "mutation useUpsertFollowMutation(\n  $params: HPFollowUpsertParamsInput!\n) {\n  me {\n    upsertFollow(params: $params) {\n      id\n      type\n      member {\n        id\n      }\n      elineupmallOther\n      elineupmallPhotoDaily\n      elineupmallPhotoA4\n      elineupmallPhotoA5\n      elineupmallPhoto2l\n      elineupmallPhotoOther\n      elineupmallPhotoAlbum\n      elineupmallPhotoAlbumOther\n      elineupmallPhotoBook\n      elineupmallPhotoBookOther\n      elineupmallDvd\n      elineupmallDvdMagazine\n      elineupmallDvdMagazineOther\n      elineupmallBlueray\n      elineupmallPenlight\n      elineupmallCollectionPinnapPoster\n      elineupmallCollectionPhoto\n      elineupmallCollectionOther\n      elineupmallTshirt\n      elineupmallMicrofiberTowel\n      elineupmallMufflerTowel\n      elineupmallFsk\n      elineupmallKeyringOther\n      elineupmallClearFile\n    }\n  }\n}\n"
+    "text": "mutation useUpsertFollowMutation(\n  $params: HPFollowUpsertParamsInput!\n) {\n  me {\n    upsertFollow(params: $params) {\n      id\n      type\n      member {\n        id\n      }\n      elineupmallBlueray\n      elineupmallClearFile\n      elineupmallCollectionOther\n      elineupmallCollectionPinnapPoster\n      elineupmallCollectionPhoto\n      elineupmallDvd\n      elineupmallDvdMagazine\n      elineupmallDvdMagazineOther\n      elineupmallFsk\n      elineupmallKeyringOther\n      elineupmallMicrofiberTowel\n      elineupmallMufflerTowel\n      elineupmallOther\n      elineupmallPenlight\n      elineupmallPhotoDaily\n      elineupmallPhotoA4\n      elineupmallPhotoA5\n      elineupmallPhoto2l\n      elineupmallPhotoOther\n      elineupmallPhotoAlbum\n      elineupmallPhotoAlbumOther\n      elineupmallPhotoBook\n      elineupmallPhotoBookOther\n      elineupmallTshirt\n    }\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "8529051710ad55463849cc0462b835a8";
+(node as any).hash = "494dba2fd4a8389f13bc1168905e4855";
 
 export default node;

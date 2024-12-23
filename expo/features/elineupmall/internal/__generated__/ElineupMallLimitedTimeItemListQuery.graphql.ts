@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<fff5b9277bc80b260305bb1325534f9f>>
+ * @generated SignedSource<<dbb002ec406eef5b75b369fdd30ca29f>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -153,14 +153,14 @@ return {
                         "alias": null,
                         "args": null,
                         "kind": "ScalarField",
-                        "name": "name",
+                        "name": "permalink",
                         "storageKey": null
                       },
                       {
                         "alias": null,
                         "args": null,
                         "kind": "ScalarField",
-                        "name": "permalink",
+                        "name": "name",
                         "storageKey": null
                       },
                       {
@@ -296,12 +296,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "be25bc7b64118ca4dea7c73715acf882",
+    "cacheID": "6230e7307cd9db4e0eb95921d7dcf662",
     "id": null,
     "metadata": {},
     "name": "ElineupMallLimitedTimeItemListQuery",
     "operationKind": "query",
-    "text": "query ElineupMallLimitedTimeItemListQuery(\n  $first: Int\n  $after: Cursor\n  $params: HPElineumpMallItemsParamsInput!\n) {\n  helloproject {\n    ...ElineupMallLimitedTimeItemListQuery_helloproject_query_elineupmall_items\n    id\n  }\n}\n\nfragment ElineupMallLimitedTimeItemListItemFragment on HPElineupMallItem {\n  id\n  name\n  permalink\n  description\n  price\n  isLimitedToFc\n  isOutOfStock\n  images {\n    url\n  }\n  category\n  orderStartAt\n  orderEndAt\n}\n\nfragment ElineupMallLimitedTimeItemListQuery_helloproject_query_elineupmall_items on HelloProjectQuery {\n  elineupMallItems(first: $first, after: $after, params: $params) {\n    edges {\n      node {\n        id\n        ...ElineupMallLimitedTimeItemListItemFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  id\n}\n"
+    "text": "query ElineupMallLimitedTimeItemListQuery(\n  $first: Int\n  $after: Cursor\n  $params: HPElineumpMallItemsParamsInput!\n) {\n  helloproject {\n    ...ElineupMallLimitedTimeItemListQuery_helloproject_query_elineupmall_items\n    id\n  }\n}\n\nfragment ElineupMallLimitedTimeItemListItemFragment on HPElineupMallItem {\n  id\n  name\n  permalink\n  description\n  price\n  isLimitedToFc\n  isOutOfStock\n  images {\n    url\n  }\n  category\n  orderStartAt\n  orderEndAt\n}\n\nfragment ElineupMallLimitedTimeItemListQuery_helloproject_query_elineupmall_items on HelloProjectQuery {\n  elineupMallItems(first: $first, after: $after, params: $params) {\n    edges {\n      node {\n        id\n        permalink\n        ...ElineupMallLimitedTimeItemListItemFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  id\n}\n"
   }
 };
 })();
