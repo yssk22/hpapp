@@ -198,10 +198,22 @@
     "ja": "Tシャツ"
   },
   "Elineup Mall Settings": {
-    "ja": "イーラインナップモールの設定"
+    "ja": "Elineup!Mallの設定"
   },
-  "Order End At": {
-    "ja": "販売終了日時"
+  "Fetch Elnieup Mall Purchase History": {
+    "ja": "Elineup!Mallの購入履歴を取得"
+  },
+  "Ordered On": {
+    "ja": "注文日"
+  },
+  "FC credentials will be used to fetch your purchase history from elineupmall.": {
+    "ja": "ファンクラブの認証情報を使用して、Elineup!Mallから購入履歴を取得します。"
+  },
+  "Following settings per a member per a category": {
+    "ja": "メンバーごとのカテゴリごとのフォロー設定"
+  },
+  "Order End On": {
+    "ja": "販売終了日"
   },
   "Price": {
     "ja": "価格"

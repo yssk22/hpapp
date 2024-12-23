@@ -1,4 +1,5 @@
 import { ListItemLoadMore } from '@hpapp/features/common/list';
+import { ElineupMallPurchaseHistoryItem } from '@hpapp/features/elineupmall/scraper';
 import { useLazyReloadableQuery } from '@hpapp/system/graphql/hooks';
 import { FlatList, RefreshControl } from 'react-native';
 import { graphql, usePaginationFragment } from 'react-relay';
@@ -26,6 +27,7 @@ const ElineupMallLimitedTimeItemListQueryFragmentGraphQL = graphql`
       edges {
         node {
           id
+          permalink
           ...ElineupMallLimitedTimeItemListItemFragment
         }
       }
@@ -44,12 +46,14 @@ export type ElineupMallLimitedTimeItemListProps = {
   }[];
   memberIds: string[];
   categories: ElineupMallItemCategory[];
+  historyMap?: Map<string, ElineupMallPurchaseHistoryItem>;
 };
 
 export default function ElineupMallLimitedTimeItemList({
   memberCategories,
   memberIds,
-  categories
+  categories,
+  historyMap
 }: ElineupMallLimitedTimeItemListProps) {
   const { data, isReloading, reload } = useLazyReloadableQuery<ElineupMallLimitedTimeItemListQuery>(
     ElineupMallLimitedTimeItemListQueryGraphQL,
@@ -72,7 +76,8 @@ export default function ElineupMallLimitedTimeItemList({
       keyExtractor={(item) => item!.node!.id}
       data={histories.data.elineupMallItems!.edges}
       renderItem={({ item, index }) => {
-        return <ElineupMallLimitedTimeItemListItem data={item!.node!} />;
+        const historyItem = historyMap?.get(item?.node?.permalink ?? '');
+        return <ElineupMallLimitedTimeItemListItem data={item!.node!} purchaseHistoryItem={historyItem} />;
       }}
       onEndReachedThreshold={0.01}
       onEndReached={() => {

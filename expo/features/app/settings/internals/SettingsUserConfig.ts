@@ -12,6 +12,9 @@ export type UserConfig = {
   consentOnToS?: boolean;
   consentOnUPFCDataPolicy?: boolean;
 
+  elineupmallFetchPurchaseHistory: boolean;
+
+  // deprecated
   amebloOptimizedView: boolean;
   feedUseMemberTaggings: boolean;
 
@@ -26,6 +29,8 @@ export const SettingsUserConfigDefault: UserConfig = {
   consentOnPrivacy: false,
   consentOnToS: false,
   consentOnUPFCDataPolicy: false,
+
+  elineupmallFetchPurchaseHistory: false,
 
   amebloOptimizedView: false,
   feedUseMemberTaggings: true,

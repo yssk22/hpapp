@@ -5,6 +5,7 @@ import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { ListItem } from '@hpapp/features/common/list';
 import { useNavigation } from '@hpapp/features/common/stack';
 import ElineupMallWebViewScreen from '@hpapp/features/elineupmall/ElineupMallWebViewScreen';
+import { ElineupMallPurchaseHistoryItem } from '@hpapp/features/elineupmall/scraper';
 import * as date from '@hpapp/foundation/date';
 import { t } from '@hpapp/system/i18n';
 import { Divider } from '@rneui/base';
@@ -31,7 +32,13 @@ const ElineupMallLimitedTimeItemListItemFragmentGraphQL = graphql`
   }
 `;
 
-export function ElineupMallLimitedTimeItemListItem({ data }: { data: ElineupMallLimitedTimeItemListItemFragment$key }) {
+export function ElineupMallLimitedTimeItemListItem({
+  data,
+  purchaseHistoryItem
+}: {
+  data: ElineupMallLimitedTimeItemListItemFragment$key;
+  purchaseHistoryItem?: ElineupMallPurchaseHistoryItem;
+}) {
   const [color, contrast] = useThemeColor('primary');
   const navigation = useNavigation();
   const item = useFragment<ElineupMallLimitedTimeItemListItemFragment$key>(
@@ -39,6 +46,8 @@ export function ElineupMallLimitedTimeItemListItem({ data }: { data: ElineupMall
     data
   );
   const dateString = date.toDateString(item.orderEndAt);
+  const orderedAt =
+    purchaseHistoryItem !== undefined ? date.toDateString(purchaseHistoryItem!.order.orderedAt) : undefined;
   const imageUrl = item.images[0].url;
   return (
     <>
@@ -66,7 +75,7 @@ export function ElineupMallLimitedTimeItemListItem({ data }: { data: ElineupMall
           <View style={styles.metadata}>
             <View style={styles.metadataRow}>
               <Text style={styles.metadataLabel} numberOfLines={1} ellipsizeMode="tail">
-                {t('Order End At')}
+                {t('Order End On')}
               </Text>
               <Text style={styles.metadataValue} numberOfLines={1} ellipsizeMode="tail">
                 {dateString}
@@ -80,6 +89,24 @@ export function ElineupMallLimitedTimeItemListItem({ data }: { data: ElineupMall
                 {t('%{price} JPY', { price: item.price })}
               </Text>
             </View>
+            {orderedAt && (
+              <View style={styles.metadataRow}>
+                <Text
+                  style={[styles.metadataLabel, { fontWeight: 'bold', color, backgroundColor: contrast }]}
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  {t('Ordered On')}
+                </Text>
+                <Text
+                  style={[styles.metadataValue, { fontWeight: 'bold', color, backgroundColor: contrast }]}
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  {orderedAt}
+                </Text>
+              </View>
+            )}
           </View>
         </View>
       </ListItem>

@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<71b338e3ace4d6b1a3f3b11341ab34b7>>
+ * @generated SignedSource<<ac1f336b836fa2fec068f6c2b3df724c>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -15,6 +15,7 @@ export type ElineupMallLimitedTimeItemListQuery_helloproject_query_elineupmall_i
     readonly edges: ReadonlyArray<{
       readonly node: {
         readonly id: string;
+        readonly permalink: string;
         readonly " $fragmentSpreads": FragmentRefs<"ElineupMallLimitedTimeItemListItemFragment">;
       } | null | undefined;
     } | null | undefined> | null | undefined;
@@ -116,6 +117,13 @@ return {
               "selections": [
                 (v1/*: any*/),
                 {
+                  "alias": null,
+                  "args": null,
+                  "kind": "ScalarField",
+                  "name": "permalink",
+                  "storageKey": null
+                },
+                {
                   "args": null,
                   "kind": "FragmentSpread",
                   "name": "ElineupMallLimitedTimeItemListItemFragment"
@@ -175,6 +183,6 @@ return {
 };
 })();
 
-(node as any).hash = "f2e59726532c2bac145a183dbedebed4";
+(node as any).hash = "51b8104b42d9cf3b86c217b2478fc028";
 
 export default node;
