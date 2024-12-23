@@ -14,7 +14,7 @@ module.exports = (config) => {
   config.extra.hpapp.env = 'dev';
   config.extra.hpapp.isBeta = false;
   config.extra.hpapp.isDev = true;
-  // those id can be easily found in the URL in the browser in development build so we don't necessary put them into secrets.json
+  // those id can be easily found in the URL in the browser in development
   config.extra.hpapp.firebaseIOSClientID = '265427540400-pq3vj6jg3p1pcrk55odp2v8k98l3jiir.apps.googleusercontent.com';
   config.extra.hpapp.firebaseAndroidClientID =
     '265427540400-uomdcbi3g35i3242t7pkua8fhtvppnmq.apps.googleusercontent.com';

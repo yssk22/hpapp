@@ -67,7 +67,6 @@ jobs:
       - run: cd expo && ./scripts/eas.sh build --profile ${{ matrix.target }} --platform ios --non-interactive --local --output ./build/hpapp-${{ matrix.target }}.ipa
         env:
           HPAPP_CONFIG_NAME: ${{ matrix.target }}
-          SECRETS_JSON: ${{ secrets.SECRETS_JSON }}
           GOOGLE_SERVICES_INFO_PLIST: ${{ secrets.GOOGLE_SERVICES_INFO_PLIST }}
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
       # upload artifacts

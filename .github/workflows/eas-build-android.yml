@@ -79,7 +79,7 @@ jobs:
         if: ${{ matrix.target != 'dev' }}
         env:
           HPAPP_CONFIG_NAME: ${{ matrix.target }}
-          SECRETS_JSON: ${{ secrets.SECRETS_JSON }}
+          GOOGLE_SERVICES_INFO_PLIST: ${{ secrets.GOOGLE_SERVICES_INFO_PLIST }}
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
       # [dev] upload artifacts
       - uses: actions/upload-artifact@v4
