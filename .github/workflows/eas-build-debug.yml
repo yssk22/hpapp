@@ -1,0 +1,75 @@
+name: Debug
+on:
+  workflow_dispatch:
+    inputs:
+      dev:
+        description: "HPAPP_CONFIG_NAME=dev"
+        required: false
+        type: boolean
+        default: false
+      beta:
+        description: "HPAPP_CONFIG_NAME=beta"
+        required: false
+        type: boolean
+        default: false
+      prod:
+        description: "HPAPP_CONFIG_NAME=prod"
+        required: false
+        type: boolean
+        default: false
+env:
+  NODE_VERSION: 22.3.0
+  EAS_VERSION: 13.4.2
+  JAVA_VERSION: 17
+jobs:
+  generate-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      target: ${{ steps.generatematrix.outputs.target }}
+    steps:
+      - id: generatematrix
+        run: |
+          inputs='${{ toJson(github.event.inputs) }}'
+          targets=()
+          for key in $(echo "$inputs" | jq -r 'keys[]'); do
+            if [ "$(echo "$inputs" | jq -r ".\"$key\"")" == "true" ]; then
+              targets+=("$key")
+            fi
+          done
+          targets_str=$(printf ',"%s"' "${targets[@]}")
+          targets_str="[${targets_str:1}]"
+          echo "target=$targets_str" >> $GITHUB_OUTPUT
+  build:
+    needs: generate-matrix
+    strategy:
+      matrix:
+        target: ${{ fromJson(needs.generate-matrix.outputs.target) }}
+    runs-on: macos-latest
+    environment:
+      name: eas-${{ matrix.target }}
+    steps:
+      - run: echo ${{ matrix.target }}
+  submit:
+    if: ${{ github.event.inputs.beta == 'true' || github.event.inputs.prod == 'true' }}
+    needs: [generate-matrix, build]
+    strategy:
+      matrix:
+        target: ${{ fromJson(needs.generate-matrix.outputs.target) }}
+        exclude:
+          - target: dev
+    runs-on: ubuntu-latest
+    environment:
+      name: eas-${{ matrix.target }}
+    steps:
+      - run: echo ${{ matrix.target }}
+  upload-cloud-storage:
+    if: ${{ github.event.inputs.dev == 'true' }}
+    needs: [generate-matrix, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+      id-token: "write"
+    environment:
+      name: gcp-go
+    steps:
+      - run: echo dev

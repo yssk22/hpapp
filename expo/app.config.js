@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 
 const config = require('./app.config.default').expo;
@@ -12,26 +11,12 @@ module.exports = (_) => {
   // set resources located in config/{name}/ directory
   config.icon = path.join('config', cfgName, 'icon.png');
   config.splash.image = path.join('config', cfgName, 'splash.png');
-
-  const isEAS = process.env.EAS_BUILD === 'true';
-  const iosGoogleServicesFilePath = path.join('config', cfgName, 'GoogleService-Info.plist');
-  const androidGoogleServicesFilePath = path.join('config', cfgName, 'google-services.json');
-
-  if (fs.existsSync(iosGoogleServicesFilePath)) {
-    config.ios.googleServicesFile = iosGoogleServicesFilePath;
-  } else {
-    throw new Error('GoogleService-Info.plist file does not found in ' + iosGoogleServicesFilePath);
-  }
-  if (fs.existsSync(androidGoogleServicesFilePath)) {
-    config.android.googleServicesFile = androidGoogleServicesFilePath;
-  } else {
-    throw new Error('google-services.json file does not found in ' + androidGoogleServicesFilePath);
-  }
+  config.ios.googleServicesFile = path.join('config', cfgName, 'GoogleService-Info.plist');
+  config.android.googleServicesFile = path.join('config', cfgName, 'google-services.json');
 
   // finally load the environment specific app.config.js
   const configure = require('./' + path.join('config', cfgName, 'app.config.js'));
 
   // reserverd extra configurations
-  config.extra.hpapp.isEAS = isEAS;
   return configure(config);
 };

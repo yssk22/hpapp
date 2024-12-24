@@ -59,33 +59,86 @@ jobs:
           eas-version: ${{ env.EAS_VERSION }}
           token: ${{ secrets.EXPO_TOKEN }}
       - run: cd expo && rm ./config/${{ matrix.target }}/.gitignore
+      - run: cd expo && rm ./.gitignore
       - run: cd expo && yarn install
       - run: cd expo && envsubst < ./.env > ./.env.local
         env:
           APP_CHECK_DEBUG_TOKEN: ${{ secrets.APP_CHECK_DEBUG_TOKEN }}
           GRAPHQL_ENDPOINT: ${{ secrets.GRAPHQL_ENDPOINT }}
-      - run: cd expo && ./scripts/eas.sh build --profile ${{ matrix.target }} --platform ios --non-interactive --local --output ./build/hpapp-${{ matrix.target }}.ipa
+      - run: cd expo && ./scripts/eas.sh build --profile ${{ matrix.target }} --platform ios --non-interactive --local --output ${{ github.workspace }}/expo/build/hpapp-${{ matrix.target }}.ipa
         env:
           HPAPP_CONFIG_NAME: ${{ matrix.target }}
           GOOGLE_SERVICES_INFO_PLIST: ${{ secrets.GOOGLE_SERVICES_INFO_PLIST }}
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
-      # upload artifacts
       - uses: actions/upload-artifact@v4
         with:
           name: hpapp-${{ matrix.target }}.ipa
           path: ${{ github.workspace }}/expo/build/hpapp-${{ matrix.target }}.ipa
-      # [beta/prod] submit
+  submit:
+    if: ${{ github.event.inputs.beta == 'true' || github.event.inputs.prod == 'true' }}
+    needs: [generate-matrix, build]
+    strategy:
+      matrix:
+        target: ${{ fromJson(needs.generate-matrix.outputs.target) }}
+        exclude:
+          - target: dev
+    runs-on: ubuntu-latest
+    environment:
+      name: eas-${{ matrix.target }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "yarn"
+          cache-dependency-path: "expo/package.json"
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: ${{ env.EAS_VERSION }}
+          token: ${{ secrets.EXPO_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: hpapp-${{ matrix.target }}.ipa
+          path: ${{ github.workspace }}/expo/build/
+      - run: cd expo && yarn install
+      - run: cd expo && rm ./config/${{ matrix.target }}/.gitignore
+      - run: cd expo && rm ./.gitignore
       - run: cd expo && envsubst < ./config/eas.json.env > ./config/eas.json
-        if: ${{ matrix.target != 'dev' }}
         env:
           EAS_SUBMIT: ${{ secrets.EAS_SUBMIT }}
       - run: cd expo && envsubst < ./config/AppStoreKey.p8.env > ./config/AppStoreKey.p8
-        if: ${{ matrix.target != 'dev' }}
         env:
           EAS_SUBMIT: ${{ secrets.EAS_SUBMIT }}
           APP_STORE_KEY: ${{ secrets.APP_STORE_KEY }}
-      - run: cd expo && ./scripts/eas.sh submit --profile ${{ matrix.target }} --platform ios --non-interactive --path ./build/hpapp-${{ matrix.target }}.ipa
+      - run: cd expo && ./scripts/eas.sh submit --profile ${{ matrix.target }} --platform ios --non-interactive --path ${{ github.workspace }}/expo/build/hpapp-${{ matrix.target }}.ipa
         if: ${{ matrix.target != 'dev' }}
         env:
           HPAPP_CONFIG_NAME: ${{ matrix.target }}
-          EXPO_APPLE_APP_SPECIFIC_PASSWORD: ${{ secret.EXPO_APPLE_APP_SPECIFIC_PASSWORD }}
+          EXPO_APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.EXPO_APPLE_APP_SPECIFIC_PASSWORD }}
+  upload-cloud-storage:
+    if: ${{ github.event.inputs.dev == 'true' }}
+    needs: [generate-matrix, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+      id-token: "write"
+    environment:
+      name: gcp-go
+    steps:
+      - uses: actions/checkout@v3
+      - uses: "google-github-actions/auth@v2"
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCLOUD_USER }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: hpapp-dev.ipa
+          path: ${{ github.workspace }}/expo/build/
+      - uses: "google-github-actions/upload-cloud-storage@v2"
+        with:
+          path: ${{ github.workspace }}/expo/config/dev/hpapp-dev.plist
+          destination: "hpapp.yssk22.dev/artifacts"
+      - uses: "google-github-actions/upload-cloud-storage@v2"
+        with:
+          path: ${{ github.workspace }}/expo/build/hpapp-dev.ipa
+          destination: "hpapp.yssk22.dev/artifacts"
