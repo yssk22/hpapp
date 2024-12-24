@@ -6,4 +6,5 @@
 !google-services.json.env
 !GoogleService-Info.plist.env
 !AppStoreKey.p8.env
+!PlayStoreKey.json.env
 !.gitignore

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  This is a file for iOS devices to install ipa without App Storre. 
+
+  - Upload this plist file to https://storage.googleapis.com/hpapp.yssk22.dev/artifacts/hpapp-dev.plist
+  - Upload the dev build (.ipa) to https://storage.googleapis.com/hpapp.yssk22.dev/artifacts/hpapp-dev.ipa
+  - Upload the icon.png to https://storage.googleapis.com/hpapp.yssk22.dev/artifacts/hpapp-dev.png
+  - Open `itms-services://?action=download-manifest;url=https://storage.googleapis.com/hpapp.yssk22.dev/artifacts/hpapp-dev.plist` in Safari to download and install. 
+
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>items</key>
+    <array>
+      <dict>
+        <key>assets</key>
+        <array>
+          <dict>
+            <key>kind</key>
+            <string>software-package</string>
+            <key>url</key>
+            <string>https://storage.googleapis.com/hpapp.yssk22.dev/artifacts/hpapp-dev.ipa</string>
+          </dict>
+          <dict>
+            <key>kind</key>
+            <string>display-image</string>
+            <key>url</key>
+            <string>https://storage.googleapis.com/hpapp.yssk22.dev/artifacts/hpapp-dev.png</string>
+          </dict>
+          <dict>
+            <key>kind</key>
+            <string>full-size-image</string>
+            <key>url</key>
+            <string>https://storage.googleapis.com/hpapp.yssk22.dev/artifacts/hpapp-dev.png</string>
+          </dict>
+        </array>
+        <key>metadata</key>
+        <dict>
+          <key>bundle-identifier</key>
+          <string>dev.yssk22.hpapp.dev</string>
+          <key>bundle-version</key>
+          <string>1.0</string>
+          <key>kind</key>
+          <string>software</string>
+          <key>title</key>
+          <string>HELLO!FAN (DEV)</string>
+        </dict>
+      </dict>
+    </array>
+  </dict>
+</plist>
