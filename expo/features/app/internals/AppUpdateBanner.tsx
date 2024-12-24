@@ -5,7 +5,7 @@ import { t } from '@hpapp/system/i18n';
 import Constants from 'expo-constants';
 import * as Updates from 'expo-updates';
 import { useState, useEffect } from 'react';
-import { AppState, AppStateStatus, TouchableOpacity, StyleSheet, View, Dimensions } from 'react-native';
+import { Alert, AppState, AppStateStatus, TouchableOpacity, StyleSheet, View, Dimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as logging from 'system/logging';
 
@@ -89,10 +89,12 @@ export default function AppUpdateBanner() {
           isUpdating: true
         });
         try {
+          Alert.alert('fetchUpdateAsync');
           await Updates.fetchUpdateAsync();
+          Alert.alert('reloadAsync');
           await Updates.reloadAsync();
         } catch (e) {
-          alert(e?.toString() ?? 'Unknown error occurrs');
+          Alert.alert(e?.toString() ?? 'Unknown error occurrs');
           setState({
             ...state,
             isUpdating: false
