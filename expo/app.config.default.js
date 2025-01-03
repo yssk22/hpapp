@@ -115,7 +115,8 @@ module.exports = {
       ]
     ],
     updates: {
-      url: 'https://u.expo.dev/{eas-project-id}'
+      url: 'https://u.expo.dev/{eas-project-id}',
+      checkAutomatically: 'NEVER'
     },
     runtimeVersion: {
       policy: 'appVersion'

@@ -123,7 +123,7 @@ exports[`app AppUpdateBanner show banner 1`] = `
       {
         "busy": undefined,
         "checked": undefined,
-        "disabled": false,
+        "disabled": undefined,
         "expanded": undefined,
         "selected": undefined,
       }
@@ -148,54 +148,44 @@ exports[`app AppUpdateBanner show banner 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       {
+        "alignItems": "center",
+        "backgroundColor": "#faad14",
+        "flexDirection": "column",
+        "justifyContent": "center",
         "opacity": 1,
+        "padding": 12,
+        "paddingBottom": 8,
+        "paddingTop": 8,
+        "position": "absolute",
+        "top": 0,
+        "width": "100%",
       }
     }
     testID="AppUpdateBanner"
   >
-    <View
+    <Text
       style={
         [
           {
-            "alignItems": "center",
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "padding": 12,
-            "position": "absolute",
-            "top": -1334,
-            "width": "100%",
+            "color": "black",
           },
           {
-            "backgroundColor": "#faad14",
-            "paddingTop": 0,
+            "fontSize": 14,
           },
+          [
+            {
+              "fontSize": 14,
+              "textAlign": "center",
+            },
+            {
+              "color": "#ffffff",
+            },
+          ],
         ]
       }
     >
-      <Text
-        style={
-          [
-            {
-              "color": "black",
-            },
-            {
-              "fontSize": 14,
-            },
-            [
-              {
-                "fontSize": 14,
-                "textAlign": "center",
-              },
-              {
-                "color": "#ffffff",
-              },
-            ],
-          ]
-        }
-      >
-        アップデートが利用可能です。タップしてインストール。
-      </Text>
-    </View>
+      アップデートが利用可能です。タップしてインストール。
+    </Text>
   </View>,
 ]
 `;

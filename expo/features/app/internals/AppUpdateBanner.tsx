@@ -4,15 +4,16 @@ import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { t } from '@hpapp/system/i18n';
 import Constants from 'expo-constants';
 import * as Updates from 'expo-updates';
-import { useState, useEffect } from 'react';
-import { Alert, AppState, AppStateStatus, TouchableOpacity, StyleSheet, View, Dimensions } from 'react-native';
+import { useState, useEffect, useCallback } from 'react';
+import { AppState, AppStateStatus, TouchableOpacity, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as logging from 'system/logging';
 
 const UPDATE_INTERVAL_MS = 60 * 1000;
 
 type BannerAppUpdateState = {
-  updateAvailable: boolean;
+  bannerText: string | null;
+  debugText: string | null;
   isUpdating: boolean;
   lastUpdateTimestamp: Date | null;
 };
@@ -21,7 +22,8 @@ export default function AppUpdateBanner() {
   const insets = useSafeAreaInsets();
   const [color, contrast] = useThemeColor('warning');
   const [state, setState] = useState<BannerAppUpdateState>({
-    updateAvailable: false,
+    bannerText: null,
+    debugText: null,
     isUpdating: false,
     lastUpdateTimestamp: null
   });
@@ -43,20 +45,22 @@ export default function AppUpdateBanner() {
         if (!unmounted) {
           setState({
             ...state,
-            updateAvailable: update.isAvailable,
+            debugText: JSON.stringify(update),
+            bannerText: update.isAvailable ? t('Update is available - Tap to install.') : null,
             lastUpdateTimestamp: new Date()
           });
         }
       } catch (e: any) {
         if (Constants.expoConfig?.extra?.hpapp?.isDev !== true) {
-          logging.Error('features.app.AppUpdateBanner', 'failed to check update', {
+          logging.Error('features.app.AppUpdateBanner', 'failed to aa check update', {
             error: e.toString()
           });
         }
         if (!unmounted) {
           setState({
             ...state,
-            updateAvailable: false,
+            bannerText: `failed to check update`,
+            debugText: e.toString(),
             lastUpdateTimestamp: new Date()
           });
         }
@@ -73,48 +77,51 @@ export default function AppUpdateBanner() {
       unmounted = true;
     };
   });
-
-  if (!state.updateAvailable) {
+  const updateApp = useCallback(async () => {
+    setState({
+      ...state,
+      bannerText: `${t('Updating')}...`,
+      isUpdating: true
+    });
+    try {
+      const result = await Updates.fetchUpdateAsync();
+      await Updates.reloadAsync();
+      setState({
+        ...state,
+        bannerText: null,
+        debugText: JSON.stringify(result),
+        isUpdating: false
+      });
+    } catch (e: any) {
+      setState({
+        ...state,
+        bannerText: `Failed to update: ${e.toString()}`,
+        debugText: e.toString(),
+        isUpdating: false
+      });
+    }
+  }, []);
+  if (state.bannerText === null) {
     return null;
   }
-
-  const text = state.isUpdating ? `${t('Updating')}...` : t('Update is available - Tap to install.');
   return (
     <TouchableOpacity
       testID="AppUpdateBanner"
-      disabled={state.isUpdating}
-      onPress={async () => {
-        setState({
-          ...state,
-          isUpdating: true
-        });
-        try {
-          Alert.alert('fetchUpdateAsync');
-          await Updates.fetchUpdateAsync();
-          Alert.alert('reloadAsync');
-          await Updates.reloadAsync();
-        } catch (e) {
-          Alert.alert(e?.toString() ?? 'Unknown error occurrs');
-          setState({
-            ...state,
-            isUpdating: false
-          });
-        }
-      }}
+      style={[
+        styles.container,
+        { backgroundColor: color, paddingTop: insets.top + Spacing.XSmall, paddingBottom: Spacing.XSmall }
+      ]}
+      onPress={updateApp}
     >
-      <View style={[styles.container, { backgroundColor: color, paddingTop: insets.top }]}>
-        <Text style={[styles.text, { color: contrast }]}>{text}</Text>
-      </View>
+      <Text style={[styles.text, { color: contrast }]}>{state.bannerText}</Text>
     </TouchableOpacity>
   );
 }
 
-const height = Dimensions.get('window').height;
-
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    top: -1 * height,
+    top: 0,
     width: '100%',
     flexDirection: 'column',
     justifyContent: 'center',
