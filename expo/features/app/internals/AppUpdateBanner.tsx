@@ -52,15 +52,15 @@ export default function AppUpdateBanner() {
         }
       } catch (e: any) {
         if (Constants.expoConfig?.extra?.hpapp?.isDev !== true) {
-          logging.Error('features.app.AppUpdateBanner', 'failed to aa check update', {
+          logging.Error('features.app.AppUpdateBanner', 'failed to check update', {
             error: e.toString()
           });
         }
         if (!unmounted) {
           setState({
             ...state,
-            bannerText: `failed to check update`,
-            debugText: e.toString(),
+            bannerText: null,
+            debugText: `Failed to check update: ${e.toString()}`,
             lastUpdateTimestamp: new Date()
           });
         }

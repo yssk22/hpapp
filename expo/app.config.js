@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 
 const config = require('./app.config.default').expo;
@@ -11,6 +12,11 @@ module.exports = (_) => {
   // set resources located in config/{name}/ directory
   config.icon = path.join('config', cfgName, 'icon.png');
   config.splash.image = path.join('config', cfgName, 'splash.png');
+  const adaptiveIcon = path.join('config', cfgName, 'icon-adaptive.png');
+  if (fs.existsSync(adaptiveIcon)) {
+    config.android.adaptiveIcon.foregroundImage = adaptiveIcon;
+  }
+
   config.ios.googleServicesFile = path.join('config', cfgName, 'GoogleService-Info.plist');
   config.android.googleServicesFile = path.join('config', cfgName, 'google-services.json');
 
