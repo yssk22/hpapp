@@ -10,9 +10,15 @@ export default class ElineupMallFileFetcher implements ElineupMallFetcher {
     authResultHTMLPath: string;
     orderListHTMLPath: string;
     orderDetailHTMLPath: string;
+    cartHTMLPath: string;
   };
 
-  constructor(paths: { authResultHTMLPath: string; orderListHTMLPath: string; orderDetailHTMLPath: string }) {
+  constructor(paths: {
+    authResultHTMLPath: string;
+    orderListHTMLPath: string;
+    orderDetailHTMLPath: string;
+    cartHTMLPath: string;
+  }) {
     this.paths = paths;
   }
 
@@ -26,6 +32,10 @@ export default class ElineupMallFileFetcher implements ElineupMallFetcher {
 
   async fetchOrderDetailHtml(id: string): Promise<string> {
     return await this.readFile(this.paths.orderDetailHTMLPath);
+  }
+
+  async fetchCartHtml(): Promise<string> {
+    return await this.readFile(this.paths.cartHTMLPath);
   }
 
   async readFile(path: string): Promise<string> {

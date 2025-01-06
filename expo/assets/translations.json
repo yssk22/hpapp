@@ -206,6 +206,9 @@
   "Ordered On": {
     "ja": "注文日"
   },
+  "Already In Your Cart": {
+    "ja": "すでにカートに入っています"
+  },
   "FC credentials will be used to fetch your purchase history from elineupmall.": {
     "ja": "ファンクラブの認証情報を使用して、Elineup!Mallから購入履歴を取得します。"
   },

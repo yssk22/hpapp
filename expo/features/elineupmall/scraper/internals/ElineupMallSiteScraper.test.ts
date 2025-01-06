@@ -10,7 +10,8 @@ describe('ElineupMallSiteScraper', () => {
         new ElineupMallFileFetcher({
           authResultHTMLPath: path.join(__dirname, './testdata/auth_success.html'),
           orderListHTMLPath: '',
-          orderDetailHTMLPath: ''
+          orderDetailHTMLPath: '',
+          cartHTMLPath: ''
         })
       );
       const ok = await scraper.authenticate('mizuki', 'fukumura');
@@ -22,7 +23,8 @@ describe('ElineupMallSiteScraper', () => {
         new ElineupMallFileFetcher({
           authResultHTMLPath: path.join(__dirname, './testdata/auth_error.html'),
           orderListHTMLPath: '',
-          orderDetailHTMLPath: ''
+          orderDetailHTMLPath: '',
+          cartHTMLPath: ''
         })
       );
       const ok = await scraper.authenticate('mizuki', 'fukumura');
@@ -35,7 +37,8 @@ describe('ElineupMallSiteScraper', () => {
       new ElineupMallFileFetcher({
         authResultHTMLPath: '',
         orderListHTMLPath: path.join(__dirname, './testdata/order_list.html'),
-        orderDetailHTMLPath: path.join(__dirname, './testdata/order_detail.html')
+        orderDetailHTMLPath: path.join(__dirname, './testdata/order_detail.html'),
+        cartHTMLPath: ''
       })
     );
     const list = await scraper.getOrderList(new Date('2024-08-04T00:00:00+09:00'));
@@ -64,5 +67,30 @@ describe('ElineupMallSiteScraper', () => {
     expect(list[0].details[0].link).toBe(
       'https://www.elineupmall.com/c720/c2784/202412-dvdjuicejuice-2024-juicejuice-fc2024-alp84jmu/'
     );
+  });
+
+  it('cart', async () => {
+    const scraper = new ElineupMallSiteScraper(
+      new ElineupMallFileFetcher({
+        authResultHTMLPath: '',
+        orderListHTMLPath: '',
+        orderDetailHTMLPath: '',
+        cartHTMLPath: path.join(__dirname, './testdata/cart.html')
+      })
+    );
+    const cart = await scraper.getCart();
+    expect(cart.details.length).toBe(2);
+    expect(cart.details[0].link).toBe('https://www.elineupmall.com/c671/c181/c197/c199/25-t-f6pdtyr4/');
+    expect(cart.details[0].code).toBe('134585');
+    expect(cart.details[0].num).toBe(1);
+    expect(cart.details[0].unitPrice).toBe(4500);
+    expect(cart.details[0].totalPrice).toBe(4500);
+    expect(cart.details[1].link).toBe(
+      'https://www.elineupmall.com/c671/c181/c197/c201/juicejuice-shop-2024-hp-color1l-11128-0224-cxwz7rmy/'
+    );
+    expect(cart.details[1].code).toBe('403661');
+    expect(cart.details[1].num).toBe(1);
+    expect(cart.details[1].unitPrice).toBe(160);
+    expect(cart.details[1].totalPrice).toBe(160);
   });
 });
