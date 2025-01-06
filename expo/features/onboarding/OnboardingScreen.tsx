@@ -1,16 +1,13 @@
-import { useUserConfig, useUserConfigUpdator } from '@hpapp/features/app/settings';
-import { defineScreen, useNavigation } from '@hpapp/features/common/stack';
-import HomeScreen from '@hpapp/features/home/HomeScreen';
+import { defineScreen } from '@hpapp/features/common/stack';
 import { t } from '@hpapp/system/i18n';
 
 import OnboardingStepFollowMembers from './internals/OnboardingStepFollowMembers';
 import OnboardingStepProvider from './internals/OnboardingStepProvider';
-import OnboardinStepUPCSettings from './internals/OnboardingStepUPFCSettings';
+import OnboardingStepUPCSettings from './internals/OnboardingStepUPFCSettings';
+import useCompleteOnboarding from './internals/useCompleteOnboarding';
 
 export default defineScreen('/onboarding/', function OnboardingScreen() {
-  const navigation = useNavigation();
-  const userConfig = useUserConfig();
-  const userConfigUpdate = useUserConfigUpdator();
+  const completeOnboarding = useCompleteOnboarding();
   return (
     <OnboardingStepProvider
       firstStep="followMembers"
@@ -35,10 +32,11 @@ export default defineScreen('/onboarding/', function OnboardingScreen() {
               t('You can skip this step to complete the initial settings.')
             ].join(' '),
             element: (
-              <OnboardinStepUPCSettings
+              <OnboardingStepUPCSettings
                 onSave={() => {
-                  userConfigUpdate({ ...userConfig!, completeOnboarding: true });
-                  navigation.replace(HomeScreen);
+                  completeOnboarding({
+                    set_upfc: true
+                  });
                 }}
               />
             )

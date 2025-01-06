@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import { ScrollView } from 'react-native';
 
 import DevtoolListItem from './internals/DevtoolListItem';
+import DevtoolListItemResetOnboardingFlow from './internals/DevtoolListItemResetOnboardingFlow';
 import DevtoolUserConfigForm from './internals/DevtoolUserConfigForm';
 
 export default defineScreen('/devtool/', function DevtoolScreen() {
@@ -60,7 +61,8 @@ export default defineScreen('/devtool/', function DevtoolScreen() {
         }
       />
       <Divider />
-
+      <DevtoolListItemResetOnboardingFlow />
+      <Divider />
       <ListItemClearCache />
       <Divider />
       <DevtoolUserConfigForm />

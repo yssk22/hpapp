@@ -72,13 +72,7 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
           }
           lastAuthenticatedAt = new Date().getTime() / 1000;
         }
-        Toast.show(t('Saved Successfully!'), {
-          position: Toast.positions.BOTTOM,
-          duration: Toast.durations.SHORT,
-          textColor: succsesContrast,
-          backgroundColor: successColor
-        });
-        updateConfig({
+        await updateConfig({
           hpUsername,
           hpPassword,
           mlUsername,
@@ -87,13 +81,19 @@ export default function UPFCSettingsForm({ onSave }: UPFCSettingsFormProps) {
           eventPrefix,
           lastAuthenticatedAt
         });
+        Toast.show(t('Saved Successfully!'), {
+          position: Toast.positions.BOTTOM,
+          duration: Toast.durations.SHORT,
+          textColor: succsesContrast,
+          backgroundColor: successColor
+        });
+        onSave && onSave();
       } catch (e) {
         setLastError(e as Error);
         return;
       } finally {
         setIsSaving(false);
       }
-      onSave && onSave();
     })();
   }, [updateConfig, hpUsername, hpPassword, mlUsername, mlPassword, calendarId, eventPrefix]);
   return (
