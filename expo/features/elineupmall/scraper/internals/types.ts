@@ -1,4 +1,5 @@
 export type ElineupMallOrderStatus =
+  | 'cart'
   | 'payment_confirmed'
   | 'shipped'
   | 'ordered'
@@ -34,4 +35,5 @@ export interface ElineupMallFetcher {
   postCredential(username: string, password: string): Promise<string>;
   fetchOrderListHtml(pageNum: number): Promise<string>;
   fetchOrderDetailHtml(id: string): Promise<string>;
+  fetchCartHtml(): Promise<string>;
 }

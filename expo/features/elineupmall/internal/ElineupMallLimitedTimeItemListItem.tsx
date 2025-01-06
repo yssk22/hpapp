@@ -47,7 +47,10 @@ export function ElineupMallLimitedTimeItemListItem({
   );
   const dateString = date.toDateString(item.orderEndAt);
   const orderedAt =
-    purchaseHistoryItem !== undefined ? date.toDateString(purchaseHistoryItem!.order.orderedAt) : undefined;
+    purchaseHistoryItem !== undefined && purchaseHistoryItem.order.status !== 'cart'
+      ? date.toDateString(purchaseHistoryItem!.order.orderedAt)
+      : undefined;
+  const isInCart = purchaseHistoryItem !== undefined && purchaseHistoryItem.order.status === 'cart';
   const imageUrl = item.images[0].url;
   return (
     <>
@@ -104,6 +107,17 @@ export function ElineupMallLimitedTimeItemListItem({
                   ellipsizeMode="tail"
                 >
                   {orderedAt}
+                </Text>
+              </View>
+            )}
+            {isInCart && (
+              <View style={styles.metadataRow}>
+                <Text
+                  style={[styles.metadataValue, { fontWeight: 'bold', color, backgroundColor: contrast }]}
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  {t('Already In Your Cart')}
                 </Text>
               </View>
             )}

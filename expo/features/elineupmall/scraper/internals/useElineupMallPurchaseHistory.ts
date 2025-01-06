@@ -20,7 +20,7 @@ export type ElineupMallPurchaseHistoryLoadingStatus =
 const scraper = new ElineupMallSiteScraper(new ElineupMallHttpFetcher());
 
 export default function useElineupMallPurchaseHistory(): [
-  Map<string, ElineupMallOrderDetail>,
+  Map<string, ElineupMallPurchaseHistoryItem>,
   ElineupMallPurchaseHistoryLoadingStatus
 ] {
   const [history, setHistory] = useState<ElineupMallOrder[]>([]);
@@ -38,13 +38,14 @@ export default function useElineupMallPurchaseHistory(): [
     setStatus('loading');
     (async () => {
       try {
-        scraper.authenticate(upfcConfig!.hpUsername!, upfcConfig!.hpPassword!);
+        await scraper.authenticate(upfcConfig!.hpUsername!, upfcConfig!.hpPassword!);
         const from = date.addDate(date.getToday(), -180, 'day');
-        const orderList = await scraper.getOrderList(from);
+        const [orderList, cart] = await Promise.all([scraper.getOrderList(from), scraper.getCart()]);
         logging.Info('features.elineupmall.scraper.internals.useElineupMallPurshaseHistory', 'completed', {
           num: orderList.length
         });
         // TODO: sync with server
+        orderList.push(cart);
         setHistory(orderList);
         setStatus('loaded');
       } catch (e: unknown) {

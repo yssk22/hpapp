@@ -40,6 +40,10 @@ export default class ElineupMallHttpFetcher implements ElineupMallFetcher {
     return await this.fetch(`https://www.elineupmall.com/index.php?dispatch=orders.details&order_id=${id}`);
   }
 
+  async fetchCartHtml(): Promise<string> {
+    return await this.fetch(`https://www.elineupmall.com/cart/`);
+  }
+
   async fetch(url: string): Promise<string> {
     const resp = await fetch(url, {
       credentials: 'include'

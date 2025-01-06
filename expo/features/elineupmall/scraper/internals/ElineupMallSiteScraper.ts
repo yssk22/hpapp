@@ -102,6 +102,48 @@ export default class ElineupMallSiteScraper implements ElineupMallScraper {
       return d.name !== '' && d.num > 0 && d.unitPrice > 0;
     });
   }
+
+  public async getCart(): Promise<ElineupMallOrder> {
+    const html = await this.fetcher.fetchCartHtml();
+    const root = parse(html);
+    const details: ElineupMallOrderDetail[] = root.querySelectorAll('table.ty-cart-content > tbody > tr').map((row) => {
+      const description = row.querySelector('td.ty-cart-content__description');
+      const a = description?.querySelector('a.ty-cart-content__product-title');
+      if (a === null || a === undefined) {
+        return {
+          name: '',
+          num: 0,
+          link: '',
+          code: '',
+          unitPrice: 0,
+          totalPrice: 0
+        };
+      }
+      const name = a.innerHTML.trim();
+      const link = a.getAttribute('href') ?? '';
+      const code =
+        description?.querySelector('div.ty-cart-content__sku > span')?.text.replaceAll('&nbsp;', '').trim() ?? '';
+      const unitPriceText = row.querySelector('td.ty-cart-content__price > span')?.text.replaceAll(',', '');
+      const unitPrice = parseInt(unitPriceText ?? '0', 10);
+      const qtyInput = row.querySelector('td.ty-cart-content__qty input.ty-value-changer__input');
+      const num = parseInt(qtyInput?.getAttribute('value') ?? '0', 10);
+      return {
+        name,
+        num,
+        link,
+        code,
+        unitPrice,
+        totalPrice: unitPrice * num
+      };
+    });
+
+    return {
+      id: 'cart',
+      status: 'cart',
+      orderedAt: new Date(),
+      details
+    };
+  }
 }
 
 function toOrderStatus(statusString: string | undefined): ElineupMallOrderStatus {
