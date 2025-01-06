@@ -16,8 +16,8 @@
       }
     ],
     "category": "Other",
-    "order_start_at": "2023-05-12T00:00:00+09:00",
-    "order_end_at": "2023-07-31T00:00:00+09:00",
+    "order_start_at": "2023-05-12T18:00:00+09:00",
+    "order_end_at": "2023-07-31T23:59:00+09:00",
     "edges": {
       "tagged_artists": [
         {
