@@ -1,10 +1,9 @@
-import { useUserConfig, useUserConfigUpdator } from '@hpapp/features/app/settings';
-import { useNavigation, useScreenTitle } from '@hpapp/features/common/stack';
-import HomeScreen from '@hpapp/features/home/HomeScreen';
+import { useScreenTitle } from '@hpapp/features/common/stack';
 import { t } from '@hpapp/system/i18n';
 import { useState } from 'react';
 
 import OnboardingStep, { OnboardingStepProps } from './OnboardingStep';
+import useCompleteOnboarding from './useCompleteOnboarding';
 
 export type OnboardingStepContainerProps = {
   firstStep: string;
@@ -18,9 +17,7 @@ export type OnboardingStepContainerProps = {
 
 export default function OnboardingStepContainer({ firstStep, steps }: OnboardingStepContainerProps) {
   useScreenTitle(t('Welcome to Hello!Fan App!'));
-  const navigation = useNavigation();
-  const userConfig = useUserConfig();
-  const userConfigUpdate = useUserConfigUpdator();
+  const completeOnboarding = useCompleteOnboarding();
   const [stack, setStack] = useState([firstStep]);
   return (
     <>
@@ -35,8 +32,7 @@ export default function OnboardingStepContainer({ firstStep, steps }: Onboarding
                 setStack((prev) => [next, ...prev]);
               }
             : () => {
-                userConfigUpdate({ ...userConfig!, completeOnboarding: true });
-                navigation.replace(HomeScreen);
+                completeOnboarding();
               };
           const onBackPress = stack.length > 1 ? () => setStack((prev) => prev.slice(1)) : undefined;
           const nextText = next ? t('Next') : t('Complete');

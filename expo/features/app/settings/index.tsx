@@ -166,4 +166,4 @@ export function useCurrentUserUpdator() {
   );
 }
 
-export { SettingsUserConfigDefault };
+export { SettingsUserConfigDefault, SettingsAppConfig, SettingsUPFCConfig, SettingsUserConfig };

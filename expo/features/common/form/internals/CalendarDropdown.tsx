@@ -25,22 +25,22 @@ export default function CalendarDropdown({
   const [calendars, setCalendars] = useState<Calendar.Calendar[]>([]);
   useEffect(() => {
     (async () => {
-      let reminderGranted = true;
       const { granted } = await Calendar.requestCalendarPermissionsAsync();
-      if (Platform.OS === 'ios') {
-        const { granted } = await Calendar.requestRemindersPermissionsAsync();
-        reminderGranted = granted;
-      }
-      if (granted && reminderGranted) {
-        const calendars = await Calendar.getCalendarsAsync(Calendar.EntityTypes.EVENT);
-        // for Android, getEventsAsync return nothing if the calender is not visible so
-        // users have to select from only visible calendars.
-        if (Platform.OS === 'android') {
+      if (granted) {
+        if (Platform.OS === 'ios') {
+          const reminderPermission = await Calendar.requestRemindersPermissionsAsync();
+          if (reminderPermission.granted) {
+            const calendars = await Calendar.getCalendarsAsync(Calendar.EntityTypes.EVENT);
+            setCalendars(calendars.filter((c) => c.allowsModifications));
+            setIsRequsetingPermission(false);
+          }
+        } else if (Platform.OS === 'android') {
+          const calendars = await Calendar.getCalendarsAsync();
           setCalendars(calendars.filter((c) => c.isVisible === true && c.allowsModifications));
+          setIsRequsetingPermission(false);
         } else {
-          setCalendars(calendars.filter((c) => c.allowsModifications));
+          // no calendar support
         }
-        setIsRequsetingPermission(false);
       }
     })();
   }, []);

@@ -1,4 +1,5 @@
 import { Platform } from 'react-native';
+import * as logging from 'system/logging';
 
 import JSONStore from './JSONStore';
 import LocalStorage from './LocalStorage';
@@ -93,6 +94,7 @@ export default class SettingsStore<T> {
       },
       value: data
     });
+    this.data = data;
     this.loaded = true;
   }
 
@@ -100,5 +102,18 @@ export default class SettingsStore<T> {
     this.storage.delete(this.storageKey);
     this.data = undefined;
     this.loaded = true;
+  }
+
+  get current(): T | undefined {
+    if (!this.loaded) {
+      logging.Error(
+        'system.kvs.SettingsStore.current',
+        'SettingsStore is not loaded yet, fallback to undefined or defaultValue',
+        {
+          key: this.storageKey
+        }
+      );
+    }
+    return this.data ?? this.options?.defaultValue;
   }
 }
