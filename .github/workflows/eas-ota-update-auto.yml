@@ -32,6 +32,8 @@ jobs:
       - run: cd expo && rm ./.gitignore
       - run: cd expo && yarn install
       - run: cd expo && envsubst < ./.env > ./.env.local
+        env:
+          GRAPHQL_ENDPOINT: ${{ secrets.GRAPHQL_ENDPOINT }}
       - run: cd expo && ./scripts/eas.sh update --channel beta --non-interactive --auto
         env:
           HPAPP_CONFIG_NAME: beta
