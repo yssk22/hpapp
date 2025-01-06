@@ -1,4 +1,4 @@
-name: Expo - OTA Update Auto
+name: EAS - OTA Update Auto
 on:
   workflow_dispatch:
   push:
@@ -8,6 +8,10 @@ on:
       - "expo/**"
       - ".github/workflows/eas-ota-update-auto.yml"
 
+env:
+  NODE_VERSION: 22.3.0
+  EAS_VERSION: 13.4.2
+  JAVA_VERSION: 17
 jobs:
   update:
     runs-on: ubuntu-latest
