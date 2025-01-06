@@ -1,15 +1,6 @@
-name: EAS - OTA Update (Manual)
+name: EAS - OTA Update (Prod)
 on:
   workflow_dispatch:
-    inputs:
-      config:
-        description: "HPAPP_CONFIG_NAME set"
-        required: true
-        default: "beta"
-        type: choice
-        options:
-          - beta
-          - prod
 
 env:
   NODE_VERSION: 22.3.0
@@ -19,7 +10,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     environment:
-      name: eas-submission
+      name: eas-prod
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -36,8 +27,8 @@ jobs:
       - run: cd expo && rm ./.gitignore
       - run: cd expo && yarn install
       - run: cd expo && envsubst < ./.env > ./.env.local
-      - run: cd expo && ./scripts/eas.sh update --channel ${{inputs.config}} --non-interactive --auto
+      - run: cd expo && ./scripts/eas.sh update --channel prod --non-interactive --auto
         env:
-          HPAPP_CONFIG_NAME: ${{inputs.config}}
+          HPAPP_CONFIG_NAME: prod
           GOOGLE_SERVICES_INFO_PLIST: ${{ secrets.GOOGLE_SERVICES_INFO_PLIST }}
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
