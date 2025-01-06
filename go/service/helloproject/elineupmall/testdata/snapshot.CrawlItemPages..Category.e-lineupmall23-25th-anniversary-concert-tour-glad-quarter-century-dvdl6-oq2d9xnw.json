@@ -16,8 +16,8 @@
       }
     ],
     "category": "DVDMagazineOther",
-    "order_start_at": "2023-03-19T00:00:00+09:00",
-    "order_end_at": "2023-07-11T00:00:00+09:00",
+    "order_start_at": "2023-03-19T13:30:00+09:00",
+    "order_end_at": "2023-07-11T23:59:00+09:00",
     "edges": {
       "tagged_artists": [
         {

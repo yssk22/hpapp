@@ -32,32 +32,37 @@ var (
 	// 		通信販売受付期間：2021年10月16日(土)14:00～2022年1月13日(木)23:59
 	// 		【第2回受注期間】2021年10月16日(土)14:00～2021年11月1日(月)23:59
 	// 		［WebStore販売期間］2021年10月24日（日）18：00～2021年10月30日（土）23：59
-	itemSaleTermRegExp1 = regexp.MustCompile(`(\d{4})年(\d{1,2})月(\d{1,2})日\(.+\)\d{1,2}:\d{1,2}\s*～\s*(\d{4})年(\d{1,2})月(\d{1,2})日\(.+\)\d{1,2}:\d{1,2}`)
+	itemSaleTermRegExp1 = regexp.MustCompile(`(\d{4})年(\d{1,2})月(\d{1,2})日\(.+\)(\d{1,2}):(\d{1,2})\s*～\s*(\d{4})年(\d{1,2})月(\d{1,2})日\(.+\)(\d{1,2}):(\d{1,2})`)
 	// itemSaleTermRegExp2 covers:
 	// 		受付締切日：2021年11月12日（金）23：59
-	itemSaleTermRegExp2 = regexp.MustCompile(`受付締切日:(\d{4})年(\d{1,2})月(\d{1,2})日\(.+\)\d{1,2}:\d{1,2}`)
+	itemSaleTermRegExp2 = regexp.MustCompile(`受付締切日:(\d{4})年(\d{1,2})月(\d{1,2})日\(.+\)(\d{1,2}):(\d{1,2})`)
 )
 
 // DefaultSalesTermExtractor is the default implementation of SalesTermExtractor using regexp.
 // This supports the following formats:
-//   a) explicit date range
-// 		【期間限定受注】2021年10月24日(日)13:30～2021年11月6日(土)23:59
-// 		通信販売受付期間：2021年10月16日(土)14:00～2022年1月13日(木)23:59
-// 		【第2回受注期間】2021年10月16日(土)14:00～2021年11月1日(月)23:59
-// 		［WebStore販売期間］2021年10月24日（日）18：00～2021年10月30日（土）23：59
-//   b) no start date but only end date
-// 		受付締切日：2021年11月12日（金）23：59
+//
+//	  a) explicit date range
+//			【期間限定受注】2021年10月24日(日)13:30～2021年11月6日(土)23:59
+//			通信販売受付期間：2021年10月16日(土)14:00～2022年1月13日(木)23:59
+//			【第2回受注期間】2021年10月16日(土)14:00～2021年11月1日(月)23:59
+//			［WebStore販売期間］2021年10月24日（日）18：00～2021年10月30日（土）23：59
+//	  b) no start date but only end date
+//			受付締切日：2021年11月12日（金）23：59
 var DefaultSalesPeriodExtractor = SalesPeriodExtractorFunc(func(ctx context.Context, p *ItemPage) *SalesPeriod {
 	found := itemSaleTermRegExp1.FindStringSubmatch(p.Description)
 	if len(found) > 0 {
 		fyy, _ := strconv.Atoi(found[1])
 		fmm, _ := strconv.Atoi(found[2])
 		fdd, _ := strconv.Atoi(found[3])
-		tyy, _ := strconv.Atoi(found[4])
-		tmm, _ := strconv.Atoi(found[5])
-		tdd, _ := strconv.Atoi(found[6])
-		f := time.Date(fyy, time.Month(fmm), fdd, 0, 0, 0, 0, timeutil.JST)
-		t := time.Date(tyy, time.Month(tmm), tdd, 0, 0, 0, 0, timeutil.JST)
+		fh, _ := strconv.Atoi(found[4])
+		fm, _ := strconv.Atoi(found[5])
+		tyy, _ := strconv.Atoi(found[6])
+		tmm, _ := strconv.Atoi(found[7])
+		tdd, _ := strconv.Atoi(found[8])
+		th, _ := strconv.Atoi(found[9])
+		tm, _ := strconv.Atoi(found[10])
+		f := time.Date(fyy, time.Month(fmm), fdd, fh, fm, 0, 0, timeutil.JST)
+		t := time.Date(tyy, time.Month(tmm), tdd, th, tm, 0, 0, timeutil.JST)
 		return &SalesPeriod{
 			From: &f,
 			To:   &t,
@@ -68,7 +73,9 @@ var DefaultSalesPeriodExtractor = SalesPeriodExtractorFunc(func(ctx context.Cont
 		tyy, _ := strconv.Atoi(found[1])
 		tmm, _ := strconv.Atoi(found[2])
 		tdd, _ := strconv.Atoi(found[3])
-		e := time.Date(tyy, time.Month(tmm), tdd, 0, 0, 0, 0, timeutil.JST)
+		th, _ := strconv.Atoi(found[4])
+		tm, _ := strconv.Atoi(found[5])
+		e := time.Date(tyy, time.Month(tmm), tdd, th, tm, 0, 0, timeutil.JST)
 		return &SalesPeriod{
 			From: nil,
 			To:   &e,

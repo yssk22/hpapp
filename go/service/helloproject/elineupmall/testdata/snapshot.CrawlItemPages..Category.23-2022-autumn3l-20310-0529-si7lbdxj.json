@@ -16,8 +16,8 @@
       }
     ],
     "category": "PhotoBookOther",
-    "order_start_at": "2023-03-10T00:00:00+09:00",
-    "order_end_at": "2023-05-29T00:00:00+09:00",
+    "order_start_at": "2023-03-10T18:00:00+09:00",
+    "order_end_at": "2023-05-29T23:59:00+09:00",
     "edges": {
       "tagged_artists": [
         {

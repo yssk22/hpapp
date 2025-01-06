@@ -16,8 +16,8 @@
       }
     ],
     "category": "PhotoAlbumOther",
-    "order_start_at": "2023-04-21T00:00:00+09:00",
-    "order_end_at": "2023-06-26T00:00:00+09:00",
+    "order_start_at": "2023-04-21T18:00:00+09:00",
+    "order_end_at": "2023-06-26T23:59:00+09:00",
     "edges": {
       "tagged_artists": [
         {
