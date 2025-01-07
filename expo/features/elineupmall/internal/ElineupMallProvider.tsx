@@ -133,6 +133,7 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
   };
   const addToCart = async (link: string) => {
     try {
+      setStatus('adding_to_cart');
       await scraper.addToCart(link);
       await fetchCart('ready');
       logging.Info('features.elineupmall.scraper.internals.ElineupMallScraperProvider.addToCart', 'completed', {
@@ -149,6 +150,7 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
   };
   const removeFromCart = async (orderDetail: ElineupMallOrderDetail) => {
     try {
+      setStatus('adding_to_cart');
       await scraper.removeFromCart(orderDetail);
       await fetchCart('ready');
       logging.Info('features.elineupmall.scraper.internals.ElineupMallScraperProvider.removeFromCart', 'completed', {
