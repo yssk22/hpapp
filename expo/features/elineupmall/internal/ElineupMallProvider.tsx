@@ -1,10 +1,16 @@
 import { useUPFCConfig, useUserConfig } from '@hpapp/features/app/settings';
+import {
+  ElineupMallSiteScraper,
+  ElineupMallHttpFetcher,
+  ElineupMallOrder,
+  ElineupMallOrderDetail,
+  ElineupMallSiteAuthError
+} from '@hpapp/features/elineupmall/scraper/';
 import * as date from '@hpapp/foundation/date';
 import { isEmpty } from '@hpapp/foundation/string';
 import * as logging from '@hpapp/system/logging';
-import { createContext, useContext, useEffect, useState } from 'react';
-
-import { ElineupMallSiteScraper, ElineupMallHttpFetcher, ElineupMallOrder, ElineupMallOrderDetail } from '../scraper/';
+import CookieManager from '@react-native-cookies/cookies';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 export type ElineupMallPurchaseHistoryItem = ElineupMallOrderDetail & { order: ElineupMallOrder };
 
@@ -14,7 +20,6 @@ export type ElineupMallPurchaseHistoryItem = ElineupMallOrderDetail & { order: E
 export type ElineupMallStatus =
   | 'initialized'
   | 'ready'
-  | 'authenticating'
   | 'loading_purchase_history'
   | 'loading_cart'
   | 'adding_to_cart'
@@ -24,11 +29,8 @@ export type ElineupMallStatus =
   | 'error_authenticate'
   | 'error_unknown';
 
-const scraper = new ElineupMallSiteScraper(new ElineupMallHttpFetcher());
-
 export interface ElineupMallContext {
   status: ElineupMallStatus;
-  lastAuthenticationTimestamp: Date | null;
   purchaseHistory: Map<string, ElineupMallPurchaseHistoryItem> | null;
   cart: Map<string, ElineupMallOrderDetail> | null;
   reload: () => void;
@@ -38,7 +40,6 @@ export interface ElineupMallContext {
 
 const contextObj = createContext<ElineupMallContext>({
   status: 'initialized',
-  lastAuthenticationTimestamp: null,
   purchaseHistory: null,
   cart: null,
   reload: () => {},
@@ -50,42 +51,35 @@ const contextObj = createContext<ElineupMallContext>({
   }
 });
 
-const AUTHENTICATE_INTERVAL_MS = 5 * 60 * 1000; // 5 minutes to reauth
-
 export default function ElineupMallScraperProvider({ children }: { children: React.ReactElement }) {
   const Provider = contextObj.Provider;
   const [status, setStatus] = useState<ElineupMallStatus>('initialized');
-  const [lastAuthenticationTimestamp, setLastAuthenticationTimestamp] = useState<Date | null>(null);
   const [purchaseHistory, setPurchaseHistory] = useState<Map<string, ElineupMallPurchaseHistoryItem> | null>(null);
   const [cart, setCart] = useState<Map<string, ElineupMallOrderDetail> | null>(null);
   const userConfig = useUserConfig();
   const upfcConfig = useUPFCConfig();
-  const authenticate = async (nextStatus: ElineupMallStatus = 'ready') => {
-    const now = new Date();
-    if (lastAuthenticationTimestamp !== null) {
-      const diff = now.getTime() - lastAuthenticationTimestamp.getTime();
-      if (diff < AUTHENTICATE_INTERVAL_MS) {
-        setStatus(nextStatus);
-        return true;
-      }
-    }
-    setStatus('authenticating');
-    const ok = await scraper.authenticate(upfcConfig!.hpUsername!, upfcConfig!.hpPassword!);
-    if (!ok) {
-      setStatus('error_authenticate');
-      return false;
-    }
-    logging.Info('features.elineupmall.scraper.internals.ElineupMallScraperProvider.authnticate', 'completed', {});
-    setLastAuthenticationTimestamp(new Date());
-    setStatus(nextStatus);
-    return true;
-  };
+  const scraper = useMemo(() => {
+    return new ElineupMallSiteScraper(
+      upfcConfig?.hpUsername ?? '',
+      upfcConfig?.hpPassword ?? '',
+      new ElineupMallHttpFetcher()
+    );
+  }, [upfcConfig?.hpUsername, upfcConfig?.hpPassword]);
+
   const fetchPurchaseHistory = async (nextStatus: ElineupMallStatus = 'ready') => {
     try {
       const from = date.addDate(date.getToday(), -180, 'day');
-      const orderList = await scraper.getOrderList(from);
+      const [orderList, err] = await scraper.getOrderList(from);
+      if (orderList === undefined) {
+        if (err instanceof ElineupMallSiteAuthError) {
+          setStatus('error_authenticate');
+        } else {
+          setStatus('error_unknown');
+        }
+        return false;
+      }
       const map = new Map<string, ElineupMallPurchaseHistoryItem>();
-      for (const order of orderList) {
+      for (const order of orderList!) {
         for (const detail of order.details) {
           map.set(detail.link, { ...detail, order });
         }
@@ -95,7 +89,7 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
         'features.elineupmall.scraper.internals.ElineupMallScraperProvider.fetchPurchaseHistory',
         'completed',
         {
-          num: orderList.length
+          num: orderList!.length
         }
       );
     } catch (e) {
@@ -110,7 +104,15 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
   };
   const fetchCart = async (nextStatus: ElineupMallStatus = 'ready') => {
     try {
-      const cart = await scraper.getCart();
+      const [cart, err] = await scraper.getCart();
+      if (cart === undefined) {
+        if (err instanceof ElineupMallSiteAuthError) {
+          setStatus('error_authenticate');
+        } else {
+          setStatus('error_unknown');
+        }
+        return false;
+      }
       const map = new Map<string, ElineupMallOrderDetail>();
       for (const detail of cart.details) {
         map.set(detail.link, detail);
@@ -130,10 +132,6 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
     return true;
   };
   const addToCart = async (link: string) => {
-    const ok = await authenticate('adding_to_cart');
-    if (!ok) {
-      return false;
-    }
     try {
       await scraper.addToCart(link);
       await fetchCart('ready');
@@ -150,10 +148,6 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
     return true;
   };
   const removeFromCart = async (orderDetail: ElineupMallOrderDetail) => {
-    const ok = await authenticate('removing_from_cart');
-    if (!ok) {
-      return false;
-    }
     try {
       await scraper.removeFromCart(orderDetail);
       await fetchCart('ready');
@@ -177,12 +171,12 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
       }
       if (isEmpty(upfcConfig?.hpUsername) || isEmpty(upfcConfig?.hpPassword)) {
         setStatus('error_upfc_is_empty');
+        return;
       }
-      let ok = await authenticate('loading_purchase_history');
-      if (!ok) {
-        return false;
-      }
-      ok = await fetchPurchaseHistory('loading_cart');
+      // TODO: clear cookies only for elineupmall.com
+      setStatus('loading_purchase_history');
+      await CookieManager.clearAll();
+      const ok = await fetchPurchaseHistory('loading_cart');
       if (!ok) {
         return false;
       }
@@ -192,11 +186,7 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
   useEffect(() => {
     reload();
   }, [userConfig?.elineupmallFetchPurchaseHistory, upfcConfig?.hpUsername, upfcConfig?.hpPassword]);
-  return (
-    <Provider value={{ status, lastAuthenticationTimestamp, purchaseHistory, cart, reload, addToCart, removeFromCart }}>
-      {children}
-    </Provider>
-  );
+  return <Provider value={{ status, purchaseHistory, cart, reload, addToCart, removeFromCart }}>{children}</Provider>;
 }
 
 export function useElineupMall() {

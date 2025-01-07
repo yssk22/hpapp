@@ -4,6 +4,7 @@ import { FlatList, RefreshControl } from 'react-native';
 import { graphql, usePaginationFragment } from 'react-relay';
 
 import { ElineupMallLimitedTimeItemListItem } from './ElineupMallLimitedTimeItemListItem';
+import { useElineupMall } from './ElineupMallProvider';
 import {
   ElineupMallLimitedTimeItemListQuery,
   HPElineupMallItemCategory
@@ -50,9 +51,9 @@ export type ElineupMallLimitedTimeItemListProps = {
 export default function ElineupMallLimitedTimeItemList({
   memberCategories,
   memberIds,
-  categories,
-  historyMap
+  categories
 }: ElineupMallLimitedTimeItemListProps) {
+  const elineupmall = useElineupMall();
   const { data, isReloading, reload } = useLazyReloadableQuery<ElineupMallLimitedTimeItemListQuery>(
     ElineupMallLimitedTimeItemListQueryGraphQL,
     {
@@ -70,7 +71,15 @@ export default function ElineupMallLimitedTimeItemList({
   >(ElineupMallLimitedTimeItemListQueryFragmentGraphQL, data.helloproject);
   return (
     <FlatList
-      refreshControl={<RefreshControl refreshing={isReloading} onRefresh={reload} />}
+      refreshControl={
+        <RefreshControl
+          refreshing={isReloading}
+          onRefresh={() => {
+            elineupmall.reload();
+            reload();
+          }}
+        />
+      }
       keyExtractor={(item) => item!.node!.id}
       data={histories.data.elineupMallItems!.edges}
       renderItem={({ item, index }) => {

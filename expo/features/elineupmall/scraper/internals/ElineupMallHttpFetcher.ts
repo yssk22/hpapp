@@ -12,8 +12,6 @@ export default class ElineupMallHttpFetcher implements ElineupMallFetcher {
    */
   async postCredential(username: string, password: string): Promise<string> {
     const url = `https://www.elineupmall.com/`;
-
-    await this.fetch(url); // dummy request to generate session
     const params = new URLSearchParams();
     params.append('return_url', 'index.php');
     params.append('redirect_url', 'index.php');
@@ -30,6 +28,10 @@ export default class ElineupMallHttpFetcher implements ElineupMallFetcher {
       credentials: 'include'
     });
     return await resp.text();
+  }
+
+  async fetchTop(): Promise<string> {
+    return await this.fetch(`https://www.elineupmall.com/`);
   }
 
   async fetchOrderListHtml(page: number): Promise<string> {

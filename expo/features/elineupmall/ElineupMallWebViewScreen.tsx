@@ -31,7 +31,6 @@ export default defineScreen(
       })();
 `);
     }, [uri, username, password, webview]);
-
     return (
       <>
         <View style={styles.webviewConainer}>

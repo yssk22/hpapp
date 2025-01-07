@@ -2,6 +2,7 @@ import { useThemeColor } from '@hpapp/features/app/theme';
 import { Spacing } from '@hpapp/features/common/constants';
 import { useNavigation } from '@hpapp/features/common/stack';
 import ElineupMallWebViewScreen from '@hpapp/features/elineupmall/ElineupMallWebViewScreen';
+import CookieManager from '@react-native-cookies/cookies';
 import { Button, Icon } from '@rneui/themed';
 import { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
@@ -16,6 +17,9 @@ export default function ElineupMallOpenCartButton() {
   const numberOfItems = elineupmall.cart?.size ?? 0;
   const text = `(${numberOfItems})`;
   const onPress = useCallback(() => {
+    // clean the cookie.
+    // TODO: clear cookies only for elineupmall.com
+    CookieManager.clearAll();
     switch (elineupmall.status) {
       case 'error_not_opted_in':
       case 'error_upfc_is_empty':
