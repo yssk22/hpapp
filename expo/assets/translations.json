@@ -203,11 +203,17 @@
   "Fetch Elnieup Mall Purchase History": {
     "ja": "Elineup!Mallの購入履歴を取得"
   },
-  "Ordered On": {
-    "ja": "注文日"
-  },
-  "Already In Your Cart": {
+  "Already In Cart": {
     "ja": "すでにカートに入っています"
+  },
+  "Add To Cart": {
+    "ja": "カートに追加"
+  },
+  "Purchased on %{date}": {
+    "ja": "%{date}に購入済み"
+  },
+  "Remove From Cart": {
+    "ja": "カートから削除"
   },
   "FC credentials will be used to fetch your purchase history from elineupmall.": {
     "ja": "ファンクラブの認証情報を使用して、Elineup!Mallから購入履歴を取得します。"

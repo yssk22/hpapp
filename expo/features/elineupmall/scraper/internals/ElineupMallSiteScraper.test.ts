@@ -85,6 +85,10 @@ describe('ElineupMallSiteScraper', () => {
     expect(cart.details[0].num).toBe(1);
     expect(cart.details[0].unitPrice).toBe(4500);
     expect(cart.details[0].totalPrice).toBe(4500);
+    expect(cart.details[0].deleteLink).toBe(
+      'https://www.elineupmall.com/index.php?dispatch=checkout.delete&cart_id=3000325925&redirect_mode=cart'
+    );
+
     expect(cart.details[1].link).toBe(
       'https://www.elineupmall.com/c671/c181/c197/c201/juicejuice-shop-2024-hp-color1l-11128-0224-cxwz7rmy/'
     );
@@ -92,5 +96,8 @@ describe('ElineupMallSiteScraper', () => {
     expect(cart.details[1].num).toBe(1);
     expect(cart.details[1].unitPrice).toBe(160);
     expect(cart.details[1].totalPrice).toBe(160);
+    expect(cart.details[1].deleteLink).toBe(
+      'https://www.elineupmall.com/index.php?dispatch=checkout.delete&cart_id=910172466&redirect_mode=cart'
+    );
   });
 });

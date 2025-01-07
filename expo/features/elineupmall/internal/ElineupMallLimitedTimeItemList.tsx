@@ -1,5 +1,4 @@
 import { ListItemLoadMore } from '@hpapp/features/common/list';
-import { ElineupMallPurchaseHistoryItem } from '@hpapp/features/elineupmall/scraper';
 import { useLazyReloadableQuery } from '@hpapp/system/graphql/hooks';
 import { FlatList, RefreshControl } from 'react-native';
 import { graphql, usePaginationFragment } from 'react-relay';
@@ -46,7 +45,6 @@ export type ElineupMallLimitedTimeItemListProps = {
   }[];
   memberIds: string[];
   categories: ElineupMallItemCategory[];
-  historyMap?: Map<string, ElineupMallPurchaseHistoryItem>;
 };
 
 export default function ElineupMallLimitedTimeItemList({
@@ -76,8 +74,7 @@ export default function ElineupMallLimitedTimeItemList({
       keyExtractor={(item) => item!.node!.id}
       data={histories.data.elineupMallItems!.edges}
       renderItem={({ item, index }) => {
-        const historyItem = historyMap?.get(item?.node?.permalink ?? '');
-        return <ElineupMallLimitedTimeItemListItem data={item!.node!} purchaseHistoryItem={historyItem} />;
+        return <ElineupMallLimitedTimeItemListItem data={item!.node!} />;
       }}
       onEndReachedThreshold={0.01}
       onEndReached={() => {

@@ -1,12 +1,12 @@
 import { HPFollowType, useHelloProject } from '@hpapp/features/app/user';
+import { Spacing } from '@hpapp/features/common/constants';
 import {
+  ElineupMallOpenCartButton,
   ElineupMallLimitedTimeItemList,
   ElineupMallItemCategory,
   ElineupMallNoFollowingsBox
 } from '@hpapp/features/elineupmall';
-
-import HomeTabGoodsElineupMallStatusHeader from './HomeTabGoodsElineupMallStatusHeader';
-import { useHomeTabElineupMall } from '../HomeTabElineupMallProvider';
+import { StyleSheet, View } from 'react-native';
 
 export default function HomeTabGoods() {
   const memberCategories = useHelloProject()!
@@ -91,19 +91,15 @@ export default function HomeTabGoods() {
       };
     })
     .filter((v) => v.categories.length > 0);
-  const [historyMap, status] = useHomeTabElineupMall();
   if (memberCategories.length === 0) {
     return <ElineupMallNoFollowingsBox />;
   }
   return (
     <>
-      <HomeTabGoodsElineupMallStatusHeader status={status} />
-      <ElineupMallLimitedTimeItemList
-        memberCategories={memberCategories}
-        memberIds={[]}
-        categories={[]}
-        historyMap={historyMap}
-      />
+      <View style={styles.container}>
+        <ElineupMallOpenCartButton />
+      </View>
+      <ElineupMallLimitedTimeItemList memberCategories={memberCategories} memberIds={[]} categories={[]} />
     </>
   );
 }
@@ -111,3 +107,11 @@ export default function HomeTabGoods() {
 function isFollwoingCategory(value: HPFollowType | undefined) {
   return value === 'follow' || value === 'follow_with_notification';
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    padding: Spacing.XXSmall,
+    justifyContent: 'flex-end'
+  }
+});

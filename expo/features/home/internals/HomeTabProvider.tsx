@@ -1,8 +1,8 @@
 import { useHelloProject } from '@hpapp/features/app/user';
+import { ElineupMallProvider, useElineupMall } from '@hpapp/features/elineupmall';
 import { createFeedContext } from '@hpapp/features/feed';
 import { useMemo } from 'react';
 
-import HomeTabElineupMallProvider, { useHomeTabElineupMall } from './HomeTabElineupMallProvider';
 import HomeTabUPFCProvider, { useHomeTabUPFC } from './HomeTabUPFCProvider';
 
 const [HomeTabFeedProvider, useHomeTabFeed] = createFeedContext();
@@ -14,7 +14,7 @@ export default function HomeTabProvider({ children }: { children: React.ReactEle
   return (
     <HomeTabFeedProvider assetTypes={['ameblo', 'instagram', 'tiktok', 'twitter']} memberIDs={followings}>
       <HomeTabUPFCProvider>
-        <HomeTabElineupMallProvider>{children}</HomeTabElineupMallProvider>
+        <ElineupMallProvider>{children}</ElineupMallProvider>
       </HomeTabUPFCProvider>
     </HomeTabFeedProvider>
   );
@@ -23,7 +23,7 @@ export default function HomeTabProvider({ children }: { children: React.ReactEle
 export function useHomeTabContext() {
   const feed = useHomeTabFeed();
   const upfc = useHomeTabUPFC();
-  const elineupMall = useHomeTabElineupMall;
+  const elineupMall = useElineupMall();
   return useMemo(() => {
     return {
       feed,

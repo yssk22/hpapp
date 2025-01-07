@@ -21,6 +21,7 @@ export type ElineupMallOrderDetail = {
   name: string;
   num: number;
   link: string;
+  deleteLink?: string; // only available for cart
   code: string;
   unitPrice: number;
   totalPrice: number;
@@ -33,6 +34,7 @@ export interface ElineupMallScraper {
 
 export interface ElineupMallFetcher {
   postCredential(username: string, password: string): Promise<string>;
+  fetch(url: string): Promise<string>;
   fetchOrderListHtml(pageNum: number): Promise<string>;
   fetchOrderDetailHtml(id: string): Promise<string>;
   fetchCartHtml(): Promise<string>;
