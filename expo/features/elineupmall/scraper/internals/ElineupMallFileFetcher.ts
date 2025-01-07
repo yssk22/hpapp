@@ -7,6 +7,7 @@ import { ElineupMallFetcher } from './types';
  */
 export default class ElineupMallFileFetcher implements ElineupMallFetcher {
   private paths: {
+    topHTMLPath: string;
     authResultHTMLPath: string;
     orderListHTMLPath: string;
     orderDetailHTMLPath: string;
@@ -14,6 +15,7 @@ export default class ElineupMallFileFetcher implements ElineupMallFetcher {
   };
 
   constructor(paths: {
+    topHTMLPath: string;
     authResultHTMLPath: string;
     orderListHTMLPath: string;
     orderDetailHTMLPath: string;
@@ -24,6 +26,10 @@ export default class ElineupMallFileFetcher implements ElineupMallFetcher {
 
   async postCredential(username: string, password: string): Promise<string> {
     return await this.readFile(this.paths.authResultHTMLPath);
+  }
+
+  async fetchTop(): Promise<string> {
+    return await this.readFile(this.paths.topHTMLPath);
   }
 
   async fetchOrderListHtml(page: number): Promise<string> {

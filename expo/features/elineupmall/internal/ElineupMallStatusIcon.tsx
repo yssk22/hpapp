@@ -10,6 +10,7 @@ export default function ElineupMallStatusIcon() {
   const [successColor] = useThemeColor('success');
   const [errorColor] = useThemeColor('error');
   const [disabledColor] = useThemeColor('disabled');
+
   switch (elineupmall.status) {
     case 'ready':
       return <Icon color={successColor} name="check-circle" type="fontawesome" size={IconSize.Small} />;
@@ -20,7 +21,7 @@ export default function ElineupMallStatusIcon() {
     case 'error_unknown':
       return <Icon color={errorColor} name="error" type="material-icons" size={IconSize.Small} />;
     case 'error_authenticate':
-      return <Icon color={errorColor} name="error" type="material-icons" size={IconSize.Small} />;
+      return <Icon color={errorColor} name="account-alert" type="material-community" size={IconSize.Small} />;
     default:
       return <ActivityIndicator color={successColor} size="small" />;
   }

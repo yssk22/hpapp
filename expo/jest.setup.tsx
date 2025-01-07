@@ -185,6 +185,12 @@ jest.mock('expo-sqlite', () => ({
   openDatabaseSync: jest.fn()
 }));
 
+jest.mock('@react-native-cookies/cookies', () => ({
+  set: jest.fn(),
+  get: jest.fn(),
+  clearAll: jest.fn()
+}));
+
 jest.mock('@hpapp/system/media', () => {
   const OriginalModule = jest.requireActual('@hpapp/system/media');
   const Mock = {

@@ -27,14 +27,10 @@ export type ElineupMallOrderDetail = {
   totalPrice: number;
 };
 
-export interface ElineupMallScraper {
-  authenticate(username: string, password: string): Promise<boolean>;
-  getOrderList(from: Date): Promise<ElineupMallOrder[]>;
-}
-
 export interface ElineupMallFetcher {
   postCredential(username: string, password: string): Promise<string>;
   fetch(url: string): Promise<string>;
+  fetchTop(): Promise<string>;
   fetchOrderListHtml(pageNum: number): Promise<string>;
   fetchOrderDetailHtml(id: string): Promise<string>;
   fetchCartHtml(): Promise<string>;
