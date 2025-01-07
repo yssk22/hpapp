@@ -1,6 +1,6 @@
 {
   "name": "@yssk22/hpapp",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
@@ -39,6 +39,7 @@
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
     "@react-native-async-storage/async-storage": "1.23.1",
+    "@react-native-cookies/cookies": "^6.2.1",
     "@react-native-firebase/analytics": "17.5.0",
     "@react-native-firebase/app": "17.5.0",
     "@react-native-firebase/app-check": "17.5.0",
