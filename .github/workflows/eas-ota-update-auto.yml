@@ -16,7 +16,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     environment:
-      name: eas-submission
+      name: eas-beta
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
