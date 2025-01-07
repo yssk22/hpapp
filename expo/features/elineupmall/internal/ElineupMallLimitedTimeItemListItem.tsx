@@ -3,15 +3,13 @@ import { useThemeColor } from '@hpapp/features/app/theme';
 import { ExternalImage, Text } from '@hpapp/features/common';
 import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { ListItem } from '@hpapp/features/common/list';
-import { useNavigation } from '@hpapp/features/common/stack';
-import ElineupMallWebViewScreen from '@hpapp/features/elineupmall/ElineupMallWebViewScreen';
-import { ElineupMallPurchaseHistoryItem } from '@hpapp/features/elineupmall/scraper';
 import * as date from '@hpapp/foundation/date';
 import { t } from '@hpapp/system/i18n';
 import { Divider } from '@rneui/base';
 import { StyleSheet, View } from 'react-native';
 import { graphql, useFragment } from 'react-relay';
 
+import ElineupMallCartMutationButton from './ElineupMallCartMutationButton';
 import { ElineupMallLimitedTimeItemListItemFragment$key } from './__generated__/ElineupMallLimitedTimeItemListItemFragment.graphql';
 
 const ElineupMallLimitedTimeItemListItemFragmentGraphQL = graphql`
@@ -32,25 +30,13 @@ const ElineupMallLimitedTimeItemListItemFragmentGraphQL = graphql`
   }
 `;
 
-export function ElineupMallLimitedTimeItemListItem({
-  data,
-  purchaseHistoryItem
-}: {
-  data: ElineupMallLimitedTimeItemListItemFragment$key;
-  purchaseHistoryItem?: ElineupMallPurchaseHistoryItem;
-}) {
+export function ElineupMallLimitedTimeItemListItem({ data }: { data: ElineupMallLimitedTimeItemListItemFragment$key }) {
   const [color, contrast] = useThemeColor('primary');
-  const navigation = useNavigation();
   const item = useFragment<ElineupMallLimitedTimeItemListItemFragment$key>(
     ElineupMallLimitedTimeItemListItemFragmentGraphQL,
     data
   );
   const dateString = date.toDateString(item.orderEndAt);
-  const orderedAt =
-    purchaseHistoryItem !== undefined && purchaseHistoryItem.order.status !== 'cart'
-      ? date.toDateString(purchaseHistoryItem!.order.orderedAt)
-      : undefined;
-  const isInCart = purchaseHistoryItem !== undefined && purchaseHistoryItem.order.status === 'cart';
   const imageUrl = item.images[0].url;
   return (
     <>
@@ -58,17 +44,17 @@ export function ElineupMallLimitedTimeItemListItem({
       <ListItem
         containerStyle={styles.container}
         rightContent={
-          <ExternalImage
-            uri={imageUrl}
-            style={styles.image}
-            width={imageSize}
-            height={imageSize}
-            cachePolicy="memory-disk"
-          />
+          <View style={styles.right}>
+            <ExternalImage
+              uri={imageUrl}
+              style={styles.image}
+              width={imageSize}
+              height={imageSize}
+              cachePolicy="memory-disk"
+            />
+            <ElineupMallCartMutationButton link={item.permalink} />
+          </View>
         }
-        onPress={() => {
-          navigation.navigate(ElineupMallWebViewScreen, { uri: item.permalink });
-        }}
       >
         <View style={styles.nameAndMetadata}>
           <View style={styles.metadataRowCategory}>
@@ -92,35 +78,6 @@ export function ElineupMallLimitedTimeItemListItem({
                 {t('%{price} JPY', { price: item.price })}
               </Text>
             </View>
-            {orderedAt && (
-              <View style={styles.metadataRow}>
-                <Text
-                  style={[styles.metadataLabel, { fontWeight: 'bold', color, backgroundColor: contrast }]}
-                  numberOfLines={1}
-                  ellipsizeMode="tail"
-                >
-                  {t('Ordered On')}
-                </Text>
-                <Text
-                  style={[styles.metadataValue, { fontWeight: 'bold', color, backgroundColor: contrast }]}
-                  numberOfLines={1}
-                  ellipsizeMode="tail"
-                >
-                  {orderedAt}
-                </Text>
-              </View>
-            )}
-            {isInCart && (
-              <View style={styles.metadataRow}>
-                <Text
-                  style={[styles.metadataValue, { fontWeight: 'bold', color, backgroundColor: contrast }]}
-                  numberOfLines={1}
-                  ellipsizeMode="tail"
-                >
-                  {t('Already In Your Cart')}
-                </Text>
-              </View>
-            )}
           </View>
         </View>
       </ListItem>
@@ -135,6 +92,7 @@ const styles = StyleSheet.create({
     minHeight: 180,
     padding: Spacing.Small
   },
+  right: {},
   image: {
     width: imageSize,
     height: imageSize

@@ -108,8 +108,9 @@ export default class ElineupMallSiteScraper implements ElineupMallScraper {
     const root = parse(html);
     const details: ElineupMallOrderDetail[] = root.querySelectorAll('table.ty-cart-content > tbody > tr').map((row) => {
       const description = row.querySelector('td.ty-cart-content__description');
-      const a = description?.querySelector('a.ty-cart-content__product-title');
-      if (a === null || a === undefined) {
+      const a = description?.querySelector('a.ty-cart-content__product-title') ?? null;
+      const deleteA = description?.querySelector('a.ty-cart-content__product-delete') ?? null;
+      if (a === null || deleteA === null) {
         return {
           name: '',
           num: 0,
@@ -121,6 +122,7 @@ export default class ElineupMallSiteScraper implements ElineupMallScraper {
       }
       const name = a.innerHTML.trim();
       const link = a.getAttribute('href') ?? '';
+      const deleteLink = deleteA.getAttribute('href') ?? '';
       const code =
         description?.querySelector('div.ty-cart-content__sku > span')?.text.replaceAll('&nbsp;', '').trim() ?? '';
       const unitPriceText = row.querySelector('td.ty-cart-content__price > span')?.text.replaceAll(',', '');
@@ -131,6 +133,7 @@ export default class ElineupMallSiteScraper implements ElineupMallScraper {
         name,
         num,
         link,
+        deleteLink,
         code,
         unitPrice,
         totalPrice: unitPrice * num
@@ -143,6 +146,45 @@ export default class ElineupMallSiteScraper implements ElineupMallScraper {
       orderedAt: new Date(),
       details
     };
+  }
+
+  public async addToCart(link: string): Promise<void> {
+    const params = new URLSearchParams();
+    const html = await this.fetcher.fetch(link);
+    const root = parse(html);
+    const form = root.querySelector('div.ty-product-block__left > form');
+    form?.querySelectorAll('input').forEach((input) => {
+      params.set(input.attributes.name, input.attributes.value);
+    });
+    form?.querySelectorAll('select').forEach((select) => {
+      params.set(select.attributes.name, select.attributes.value);
+    });
+    form?.querySelectorAll('button').forEach((button) => {
+      params.set(button.attributes.name, '');
+    });
+    const resp = await fetch('https://www.elineupmall.com/', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      },
+      body: params.toString(),
+      credentials: 'include'
+    });
+    if (resp.status >= 400) {
+      throw new Error('invalid response code: ' + resp.status);
+    }
+  }
+
+  public async removeFromCart(detail: ElineupMallOrderDetail): Promise<void> {
+    if (detail.deleteLink === undefined) {
+      throw new Error('delete link is not available');
+    }
+    const resp = await fetch(detail.deleteLink, {
+      credentials: 'include'
+    });
+    if (resp.status >= 400) {
+      throw new Error('invalid response code: ' + resp.status);
+    }
   }
 }
 

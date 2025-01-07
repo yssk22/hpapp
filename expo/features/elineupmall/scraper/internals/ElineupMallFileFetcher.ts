@@ -38,6 +38,11 @@ export default class ElineupMallFileFetcher implements ElineupMallFetcher {
     return await this.readFile(this.paths.cartHTMLPath);
   }
 
+  async fetch(link: string): Promise<string> {
+    // we do not mock this since testing on UI.
+    throw new Error('not implemented');
+  }
+
   async readFile(path: string): Promise<string> {
     try {
       return await readFile(path);
