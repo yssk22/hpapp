@@ -7,6 +7,8 @@ on:
     paths:
       - "go/**"
       - ".github/workflows/gcp-go.yml"
+env:
+  GCLOUD_VERSION: "504.0.0"
 jobs:
   build-and-publish-image:
     runs-on: ubuntu-latest
@@ -19,7 +21,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: google-github-actions/setup-gcloud@v1
         with:
-          version: "504.0.0"
+          version: ${{ env.GCLOUD_VERSION }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
       - id: "auth"
         name: "Authenticate to Google Cloud"
@@ -74,7 +76,7 @@ jobs:
             refs/head/main
       - uses: google-github-actions/setup-gcloud@v1
         with:
-          version: "392.0.0"
+          version: ${{ env.GCLOUD_VERSION }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
       - id: "auth"
         name: "Authenticate to Google Cloud"
