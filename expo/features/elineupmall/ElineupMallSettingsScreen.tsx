@@ -6,7 +6,7 @@ import { t } from '@hpapp/system/i18n';
 import { Divider } from '@rneui/themed';
 import { ScrollView, StyleSheet, Text } from 'react-native';
 
-import ElineupMallSettingsFollowings from './internal/settings/ElineupMallSettingsFollowings';
+import ElineupMallSettingsFollowings from './internals/settings/ElineupMallSettingsFollowings';
 
 export default defineScreen('/elineupmall/settings/', function ElineupMallSettingsScreen() {
   useScreenTitle(t('Elineup Mall Settings'));

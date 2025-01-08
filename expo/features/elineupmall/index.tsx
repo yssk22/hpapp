@@ -1,10 +1,10 @@
 import ElineupMallLimitedTimeItemList, {
   ElineupMallLimitedTimeItemListProps,
   ElineupMallItemCategory
-} from './internal/ElineupMallLimitedTimeItemList';
-import ElineupMallNoFollowingsBox from './internal/ElineupMallNoFollowingsBox';
-import ElineupMallOpenCartButton from './internal/ElineupMallOpenCartButton';
-import ElineupMallProvider, { useElineupMall } from './internal/ElineupMallProvider';
+} from './internals/ElineupMallLimitedTimeItemList';
+import ElineupMallNoFollowingsBox from './internals/ElineupMallNoFollowingsBox';
+import ElineupMallOpenCartButton from './internals/ElineupMallOpenCartButton';
+import ElineupMallProvider, { useElineupMall } from './internals/ElineupMallProvider';
 
 export {
   ElineupMallLimitedTimeItemList,
