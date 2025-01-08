@@ -9,6 +9,7 @@ import Initializer from './internals/Initializer';
 import Link from './internals/Link';
 import Loading from './internals/Loading';
 import Media from './internals/Media';
+import NoImage from './internals/NoImage';
 import RadioButtonGroup from './internals/RadioButtonGroup';
 import Text from './internals/Text';
 import WithSafeArea from './internals/WithSafeArea';
@@ -33,6 +34,7 @@ export {
   Link,
   Loading,
   Media,
+  NoImage,
   RadioButtonGroup,
   Text,
   useErrorMessage,

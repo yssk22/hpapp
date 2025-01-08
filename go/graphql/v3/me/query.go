@@ -10,6 +10,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/auth/appuser"
 	"github.com/yssk22/hpapp/go/service/auth/client"
 	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpevent"
 	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
@@ -83,6 +84,17 @@ func (h *MeQuery) SortHistories(ctx context.Context, after *ent.Cursor, first *i
 			Direction: "DESC",
 			Field:     ent.HPSortHistoryOrderFieldCreatedAt,
 		}))
+}
+
+func (h *MeQuery) ElineupMallPurchaseHistories(ctx context.Context, after *ent.Cursor, first *int, before *ent.Cursor, last *int) (*ent.HPElineupMallItemPurchaseHistoryConnection, error) {
+	client := entutil.NewClient(ctx)
+	return client.HPElineupMallItemPurchaseHistory.Query().
+		Where(hpelineupmallitempurchasehistory.OwnerUserIDEQ(appuser.CurrentEntUserID(ctx))).
+		Paginate(ctx, after, first, before, last,
+			ent.WithHPElineupMallItemPurchaseHistoryOrder(&ent.HPElineupMallItemPurchaseHistoryOrder{
+				Direction: "DESC",
+				Field:     ent.HPElineupMallItemPurchaseHistoryOrderFieldOrderedAt,
+			}))
 }
 
 type HPEventQueryParams struct {

@@ -148,6 +148,22 @@ func (hemi *HPElineupMallItem) PurchaseHistories(ctx context.Context) (result []
 	return result, err
 }
 
+func (hemiph *HPElineupMallItemPurchaseHistory) ElineupMallItem(ctx context.Context) (*HPElineupMallItem, error) {
+	result, err := hemiph.Edges.ElineupMallItemOrErr()
+	if IsNotLoaded(err) {
+		result, err = hemiph.QueryElineupMallItem().Only(ctx)
+	}
+	return result, MaskNotFound(err)
+}
+
+func (hemiph *HPElineupMallItemPurchaseHistory) Owner(ctx context.Context) (*User, error) {
+	result, err := hemiph.Edges.OwnerOrErr()
+	if IsNotLoaded(err) {
+		result, err = hemiph.QueryOwner().Only(ctx)
+	}
+	return result, err
+}
+
 func (hfi *HPFeedItem) OwnerArtist(ctx context.Context) (*HPArtist, error) {
 	result, err := hfi.Edges.OwnerArtistOrErr()
 	if IsNotLoaded(err) {

@@ -1,15 +1,9 @@
 /* eslint-disable local-rules/no-translation-entry */
-import { useThemeColor } from '@hpapp/features/app/theme';
-import { ExternalImage, Text } from '@hpapp/features/common';
-import { FontSize, Spacing } from '@hpapp/features/common/constants';
-import { ListItem } from '@hpapp/features/common/list';
 import * as date from '@hpapp/foundation/date';
 import { t } from '@hpapp/system/i18n';
-import { Divider } from '@rneui/base';
-import { StyleSheet, View } from 'react-native';
 import { graphql, useFragment } from 'react-relay';
 
-import ElineupMallCartMutationButton from './ElineupMallCartMutationButton';
+import ElineupMallListItem from './ElineupMallListItem';
 import { ElineupMallLimitedTimeItemListItemFragment$key } from './__generated__/ElineupMallLimitedTimeItemListItemFragment.graphql';
 
 const ElineupMallLimitedTimeItemListItemFragmentGraphQL = graphql`
@@ -31,101 +25,28 @@ const ElineupMallLimitedTimeItemListItemFragmentGraphQL = graphql`
 `;
 
 export function ElineupMallLimitedTimeItemListItem({ data }: { data: ElineupMallLimitedTimeItemListItemFragment$key }) {
-  const [color, contrast] = useThemeColor('primary');
   const item = useFragment<ElineupMallLimitedTimeItemListItemFragment$key>(
     ElineupMallLimitedTimeItemListItemFragmentGraphQL,
     data
   );
   const dateString = date.toDateString(item.orderEndAt);
-  const imageUrl = item.images[0].url;
   return (
-    <>
-      <Divider />
-      <ListItem
-        containerStyle={styles.container}
-        rightContent={
-          <View style={styles.right}>
-            <ExternalImage
-              uri={imageUrl}
-              style={styles.image}
-              width={imageSize}
-              height={imageSize}
-              cachePolicy="memory-disk"
-            />
-            <ElineupMallCartMutationButton link={item.permalink} />
-          </View>
+    <ElineupMallListItem
+      permalink={item.permalink}
+      category={t(item.category)}
+      name={item.name}
+      imageUrl={item.images[0].url}
+      enableCartMutation
+      metadata={[
+        {
+          name: t('Order End On'),
+          value: dateString
+        },
+        {
+          name: t('Price'),
+          value: t('%{price} JPY', { price: item.price })
         }
-      >
-        <View style={styles.nameAndMetadata}>
-          <View style={styles.metadataRowCategory}>
-            <Text style={[styles.categoryText, { color, backgroundColor: contrast }]}>{t(item.category)}</Text>
-          </View>
-          <Text style={styles.name}>{item.name}</Text>
-          <View style={styles.metadata}>
-            <View style={styles.metadataRow}>
-              <Text style={styles.metadataLabel} numberOfLines={1} ellipsizeMode="tail">
-                {t('Order End On')}
-              </Text>
-              <Text style={styles.metadataValue} numberOfLines={1} ellipsizeMode="tail">
-                {dateString}
-              </Text>
-            </View>
-            <View style={styles.metadataRow}>
-              <Text style={styles.metadataLabel} numberOfLines={1} ellipsizeMode="tail">
-                {t('Price')}
-              </Text>
-              <Text style={styles.metadataValue} numberOfLines={1} ellipsizeMode="tail">
-                {t('%{price} JPY', { price: item.price })}
-              </Text>
-            </View>
-          </View>
-        </View>
-      </ListItem>
-    </>
+      ]}
+    />
   );
 }
-
-const imageSize = 160;
-
-const styles = StyleSheet.create({
-  container: {
-    minHeight: 180,
-    padding: Spacing.Small
-  },
-  right: {},
-  image: {
-    width: imageSize,
-    height: imageSize
-  },
-  nameAndMetadata: {
-    flexDirection: 'column',
-    marginRight: Spacing.Medium,
-    flexGrow: 1
-  },
-  name: {
-    flexGrow: 1,
-    fontWeight: 'bold'
-  },
-  metadata: {
-    flexGrow: 1
-  },
-  metadataRow: {
-    flexDirection: 'row'
-  },
-  metadataRowCategory: {
-    alignItems: 'flex-start'
-  },
-  metadataLabel: {
-    width: 80,
-    marginRight: Spacing.Small,
-    fontSize: FontSize.Small
-  },
-  metadataValue: {},
-  dateString: {},
-  categoryText: {
-    fontSize: FontSize.Small,
-    fontWeight: 'bold',
-    textAlign: 'right',
-    marginBottom: Spacing.XSmall
-  }
-});

@@ -961,6 +961,34 @@ func (hemiph *HPElineupMallItemPurchaseHistoryQuery) collectField(ctx context.Co
 	)
 	for _, field := range graphql.CollectFields(opCtx, collected.Selections, satisfies) {
 		switch field.Name {
+		case "elineupMallItem":
+			var (
+				alias = field.Alias
+				path  = append(path, alias)
+				query = (&HPElineupMallItemClient{config: hemiph.config}).Query()
+			)
+			if err := query.collectField(ctx, opCtx, field, path, satisfies...); err != nil {
+				return err
+			}
+			hemiph.withElineupMallItem = query
+			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldPurchasedItemID]; !ok {
+				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldPurchasedItemID)
+				fieldSeen[hpelineupmallitempurchasehistory.FieldPurchasedItemID] = struct{}{}
+			}
+		case "owner":
+			var (
+				alias = field.Alias
+				path  = append(path, alias)
+				query = (&UserClient{config: hemiph.config}).Query()
+			)
+			if err := query.collectField(ctx, opCtx, field, path, satisfies...); err != nil {
+				return err
+			}
+			hemiph.withOwner = query
+			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldOwnerUserID]; !ok {
+				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldOwnerUserID)
+				fieldSeen[hpelineupmallitempurchasehistory.FieldOwnerUserID] = struct{}{}
+			}
 		case "createdAt":
 			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldCreatedAt]; !ok {
 				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldCreatedAt)

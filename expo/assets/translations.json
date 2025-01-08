@@ -197,6 +197,24 @@
     "en": "T Shirt",
     "ja": "Tシャツ"
   },
+  "Elineup Mall Purchase History": {
+    "ja": "e-Lineup!Mall購入履歴"
+  },
+  "Purchased On": {
+    "ja": "購入日"
+  },
+  "Unit Price": {
+    "ja": "単価"
+  },
+  "Num Purchased": {
+    "ja": "購入数"
+  },
+  "Total Price": {
+    "ja": "合計金額"
+  },
+  "%{val} JPY": {
+    "ja": "%{val}円"
+  },
   "Elineup Mall Settings": {
     "ja": "e-Lineup!Mallの設定"
   },
@@ -215,8 +233,11 @@
   "Remove From Cart": {
     "ja": "カートから削除"
   },
-  "FC credentials will be used to fetch your purchase history from elineupmall.": {
-    "ja": "ファンクラブの認証情報を使用して、e-Lineup!Mallから購入履歴を取得します。"
+  "Hello!Project FC credentials will be used to fetch your purchase history from elineupmall to check duplicate purchases per an item.": {
+    "ja": "ハロー!プロジェクトファンクラブの認証情報を使用して、e-Lineup!Mallから購入履歴を取得し、商品毎に重複購入を確認することができます。"
+  },
+  "When you enable this, your purchase history will also be automatically uploaded to our server.": {
+    "ja": "これを有効にすると、購入履歴は自動的にサーバーにアップロードされます。"
   },
   "Following settings per a member per a category": {
     "ja": "メンバーごとのカテゴリごとのフォロー設定"

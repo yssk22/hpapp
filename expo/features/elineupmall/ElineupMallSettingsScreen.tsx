@@ -19,7 +19,10 @@ export default defineScreen('/elineupmall/settings/', function ElineupMallSettin
           <>
             <Text>{t('Fetch Elnieup Mall Purchase History')}</Text>
             <Text style={styles.sublabel}>
-              {t('FC credentials will be used to fetch your purchase history from elineupmall.')}
+              {t(
+                'Hello!Project FC credentials will be used to fetch your purchase history from elineupmall to check duplicate purchases per an item.'
+              )}
+              {t('When you enable this, your purchase history will also be automatically uploaded to our server.')}
             </Text>
           </>
         }
@@ -42,6 +45,7 @@ export default defineScreen('/elineupmall/settings/', function ElineupMallSettin
 
 const styles = StyleSheet.create({
   sublabel: {
-    fontSize: FontSize.Small
+    fontSize: FontSize.Small,
+    color: 'gray'
   }
 });
