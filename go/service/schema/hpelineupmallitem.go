@@ -57,6 +57,8 @@ func (HPElineupMallItem) Edges() []ent.Edge {
 	return []ent.Edge{
 		edge.From("tagged_artists", HPArtist.Type).Ref("tagged_elineup_mall_items"),
 		edge.From("tagged_members", HPMember.Type).Ref("tagged_elineup_mall_items"),
+
+		edge.To("purchase_histories", HPElineupMallItemPurchaseHistory.Type),
 	}
 }
 

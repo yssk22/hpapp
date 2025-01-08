@@ -17,6 +17,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpasset"
 	"github.com/yssk22/hpapp/go/service/ent/hpblob"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpevent"
 	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
@@ -43,24 +44,25 @@ const (
 	OpUpdateOne = ent.OpUpdateOne
 
 	// Node types.
-	TypeAuth                    = "Auth"
-	TypeHPAmebloPost            = "HPAmebloPost"
-	TypeHPArtist                = "HPArtist"
-	TypeHPAsset                 = "HPAsset"
-	TypeHPBlob                  = "HPBlob"
-	TypeHPElineupMallItem       = "HPElineupMallItem"
-	TypeHPEvent                 = "HPEvent"
-	TypeHPFCEventTicket         = "HPFCEventTicket"
-	TypeHPFeedItem              = "HPFeedItem"
-	TypeHPFollow                = "HPFollow"
-	TypeHPIgPost                = "HPIgPost"
-	TypeHPMember                = "HPMember"
-	TypeHPSortHistory           = "HPSortHistory"
-	TypeHPViewHistory           = "HPViewHistory"
-	TypeTestEnt                 = "TestEnt"
-	TypeUser                    = "User"
-	TypeUserNotificationLog     = "UserNotificationLog"
-	TypeUserNotificationSetting = "UserNotificationSetting"
+	TypeAuth                             = "Auth"
+	TypeHPAmebloPost                     = "HPAmebloPost"
+	TypeHPArtist                         = "HPArtist"
+	TypeHPAsset                          = "HPAsset"
+	TypeHPBlob                           = "HPBlob"
+	TypeHPElineupMallItem                = "HPElineupMallItem"
+	TypeHPElineupMallItemPurchaseHistory = "HPElineupMallItemPurchaseHistory"
+	TypeHPEvent                          = "HPEvent"
+	TypeHPFCEventTicket                  = "HPFCEventTicket"
+	TypeHPFeedItem                       = "HPFeedItem"
+	TypeHPFollow                         = "HPFollow"
+	TypeHPIgPost                         = "HPIgPost"
+	TypeHPMember                         = "HPMember"
+	TypeHPSortHistory                    = "HPSortHistory"
+	TypeHPViewHistory                    = "HPViewHistory"
+	TypeTestEnt                          = "TestEnt"
+	TypeUser                             = "User"
+	TypeUserNotificationLog              = "UserNotificationLog"
+	TypeUserNotificationSetting          = "UserNotificationSetting"
 )
 
 // AuthMutation represents an operation that mutates the Auth nodes in the graph.
@@ -8012,40 +8014,43 @@ func (m *HPBlobMutation) ResetEdge(name string) error {
 // HPElineupMallItemMutation represents an operation that mutates the HPElineupMallItem nodes in the graph.
 type HPElineupMallItemMutation struct {
 	config
-	op                    Op
-	typ                   string
-	id                    *int
-	crawled_at            *time.Time
-	error_count           *int
-	adderror_count        *int
-	manually_modified     **jsonfields.ManuallyModified
-	last_error_message    *string
-	recrawl_required      *bool
-	created_at            *time.Time
-	updated_at            *time.Time
-	permalink             *string
-	name                  *string
-	description           *string
-	supplier              *string
-	price                 *int
-	addprice              *int
-	is_limited_to_fc      *bool
-	is_out_of_stock       *bool
-	images                *[]jsonfields.Media
-	appendimages          []jsonfields.Media
-	category              *enums.HPElineupMallItemCategory
-	order_start_at        *time.Time
-	order_end_at          *time.Time
-	clearedFields         map[string]struct{}
-	tagged_artists        map[int]struct{}
-	removedtagged_artists map[int]struct{}
-	clearedtagged_artists bool
-	tagged_members        map[int]struct{}
-	removedtagged_members map[int]struct{}
-	clearedtagged_members bool
-	done                  bool
-	oldValue              func(context.Context) (*HPElineupMallItem, error)
-	predicates            []predicate.HPElineupMallItem
+	op                        Op
+	typ                       string
+	id                        *int
+	crawled_at                *time.Time
+	error_count               *int
+	adderror_count            *int
+	manually_modified         **jsonfields.ManuallyModified
+	last_error_message        *string
+	recrawl_required          *bool
+	created_at                *time.Time
+	updated_at                *time.Time
+	permalink                 *string
+	name                      *string
+	description               *string
+	supplier                  *string
+	price                     *int
+	addprice                  *int
+	is_limited_to_fc          *bool
+	is_out_of_stock           *bool
+	images                    *[]jsonfields.Media
+	appendimages              []jsonfields.Media
+	category                  *enums.HPElineupMallItemCategory
+	order_start_at            *time.Time
+	order_end_at              *time.Time
+	clearedFields             map[string]struct{}
+	tagged_artists            map[int]struct{}
+	removedtagged_artists     map[int]struct{}
+	clearedtagged_artists     bool
+	tagged_members            map[int]struct{}
+	removedtagged_members     map[int]struct{}
+	clearedtagged_members     bool
+	purchase_histories        map[int]struct{}
+	removedpurchase_histories map[int]struct{}
+	clearedpurchase_histories bool
+	done                      bool
+	oldValue                  func(context.Context) (*HPElineupMallItem, error)
+	predicates                []predicate.HPElineupMallItem
 }
 
 var _ ent.Mutation = (*HPElineupMallItemMutation)(nil)
@@ -9061,6 +9066,60 @@ func (m *HPElineupMallItemMutation) ResetTaggedMembers() {
 	m.removedtagged_members = nil
 }
 
+// AddPurchaseHistoryIDs adds the "purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity by ids.
+func (m *HPElineupMallItemMutation) AddPurchaseHistoryIDs(ids ...int) {
+	if m.purchase_histories == nil {
+		m.purchase_histories = make(map[int]struct{})
+	}
+	for i := range ids {
+		m.purchase_histories[ids[i]] = struct{}{}
+	}
+}
+
+// ClearPurchaseHistories clears the "purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity.
+func (m *HPElineupMallItemMutation) ClearPurchaseHistories() {
+	m.clearedpurchase_histories = true
+}
+
+// PurchaseHistoriesCleared reports if the "purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity was cleared.
+func (m *HPElineupMallItemMutation) PurchaseHistoriesCleared() bool {
+	return m.clearedpurchase_histories
+}
+
+// RemovePurchaseHistoryIDs removes the "purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity by IDs.
+func (m *HPElineupMallItemMutation) RemovePurchaseHistoryIDs(ids ...int) {
+	if m.removedpurchase_histories == nil {
+		m.removedpurchase_histories = make(map[int]struct{})
+	}
+	for i := range ids {
+		delete(m.purchase_histories, ids[i])
+		m.removedpurchase_histories[ids[i]] = struct{}{}
+	}
+}
+
+// RemovedPurchaseHistories returns the removed IDs of the "purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity.
+func (m *HPElineupMallItemMutation) RemovedPurchaseHistoriesIDs() (ids []int) {
+	for id := range m.removedpurchase_histories {
+		ids = append(ids, id)
+	}
+	return
+}
+
+// PurchaseHistoriesIDs returns the "purchase_histories" edge IDs in the mutation.
+func (m *HPElineupMallItemMutation) PurchaseHistoriesIDs() (ids []int) {
+	for id := range m.purchase_histories {
+		ids = append(ids, id)
+	}
+	return
+}
+
+// ResetPurchaseHistories resets all changes to the "purchase_histories" edge.
+func (m *HPElineupMallItemMutation) ResetPurchaseHistories() {
+	m.purchase_histories = nil
+	m.clearedpurchase_histories = false
+	m.removedpurchase_histories = nil
+}
+
 // Where appends a list predicates to the HPElineupMallItemMutation builder.
 func (m *HPElineupMallItemMutation) Where(ps ...predicate.HPElineupMallItem) {
 	m.predicates = append(m.predicates, ps...)
@@ -9561,12 +9620,15 @@ func (m *HPElineupMallItemMutation) ResetField(name string) error {
 
 // AddedEdges returns all edge names that were set/added in this mutation.
 func (m *HPElineupMallItemMutation) AddedEdges() []string {
-	edges := make([]string, 0, 2)
+	edges := make([]string, 0, 3)
 	if m.tagged_artists != nil {
 		edges = append(edges, hpelineupmallitem.EdgeTaggedArtists)
 	}
 	if m.tagged_members != nil {
 		edges = append(edges, hpelineupmallitem.EdgeTaggedMembers)
+	}
+	if m.purchase_histories != nil {
+		edges = append(edges, hpelineupmallitem.EdgePurchaseHistories)
 	}
 	return edges
 }
@@ -9587,18 +9649,27 @@ func (m *HPElineupMallItemMutation) AddedIDs(name string) []ent.Value {
 			ids = append(ids, id)
 		}
 		return ids
+	case hpelineupmallitem.EdgePurchaseHistories:
+		ids := make([]ent.Value, 0, len(m.purchase_histories))
+		for id := range m.purchase_histories {
+			ids = append(ids, id)
+		}
+		return ids
 	}
 	return nil
 }
 
 // RemovedEdges returns all edge names that were removed in this mutation.
 func (m *HPElineupMallItemMutation) RemovedEdges() []string {
-	edges := make([]string, 0, 2)
+	edges := make([]string, 0, 3)
 	if m.removedtagged_artists != nil {
 		edges = append(edges, hpelineupmallitem.EdgeTaggedArtists)
 	}
 	if m.removedtagged_members != nil {
 		edges = append(edges, hpelineupmallitem.EdgeTaggedMembers)
+	}
+	if m.removedpurchase_histories != nil {
+		edges = append(edges, hpelineupmallitem.EdgePurchaseHistories)
 	}
 	return edges
 }
@@ -9619,18 +9690,27 @@ func (m *HPElineupMallItemMutation) RemovedIDs(name string) []ent.Value {
 			ids = append(ids, id)
 		}
 		return ids
+	case hpelineupmallitem.EdgePurchaseHistories:
+		ids := make([]ent.Value, 0, len(m.removedpurchase_histories))
+		for id := range m.removedpurchase_histories {
+			ids = append(ids, id)
+		}
+		return ids
 	}
 	return nil
 }
 
 // ClearedEdges returns all edge names that were cleared in this mutation.
 func (m *HPElineupMallItemMutation) ClearedEdges() []string {
-	edges := make([]string, 0, 2)
+	edges := make([]string, 0, 3)
 	if m.clearedtagged_artists {
 		edges = append(edges, hpelineupmallitem.EdgeTaggedArtists)
 	}
 	if m.clearedtagged_members {
 		edges = append(edges, hpelineupmallitem.EdgeTaggedMembers)
+	}
+	if m.clearedpurchase_histories {
+		edges = append(edges, hpelineupmallitem.EdgePurchaseHistories)
 	}
 	return edges
 }
@@ -9643,6 +9723,8 @@ func (m *HPElineupMallItemMutation) EdgeCleared(name string) bool {
 		return m.clearedtagged_artists
 	case hpelineupmallitem.EdgeTaggedMembers:
 		return m.clearedtagged_members
+	case hpelineupmallitem.EdgePurchaseHistories:
+		return m.clearedpurchase_histories
 	}
 	return false
 }
@@ -9665,8 +9747,1076 @@ func (m *HPElineupMallItemMutation) ResetEdge(name string) error {
 	case hpelineupmallitem.EdgeTaggedMembers:
 		m.ResetTaggedMembers()
 		return nil
+	case hpelineupmallitem.EdgePurchaseHistories:
+		m.ResetPurchaseHistories()
+		return nil
 	}
 	return fmt.Errorf("unknown HPElineupMallItem edge %s", name)
+}
+
+// HPElineupMallItemPurchaseHistoryMutation represents an operation that mutates the HPElineupMallItemPurchaseHistory nodes in the graph.
+type HPElineupMallItemPurchaseHistoryMutation struct {
+	config
+	op                       Op
+	typ                      string
+	id                       *int
+	created_at               *time.Time
+	updated_at               *time.Time
+	order_id                 *string
+	num                      *int
+	addnum                   *int
+	price                    *int
+	addprice                 *int
+	ordered_at               *time.Time
+	permalink                *string
+	name                     *string
+	clearedFields            map[string]struct{}
+	elineup_mall_item        *int
+	clearedelineup_mall_item bool
+	owner                    *int
+	clearedowner             bool
+	done                     bool
+	oldValue                 func(context.Context) (*HPElineupMallItemPurchaseHistory, error)
+	predicates               []predicate.HPElineupMallItemPurchaseHistory
+}
+
+var _ ent.Mutation = (*HPElineupMallItemPurchaseHistoryMutation)(nil)
+
+// hpelineupmallitempurchasehistoryOption allows management of the mutation configuration using functional options.
+type hpelineupmallitempurchasehistoryOption func(*HPElineupMallItemPurchaseHistoryMutation)
+
+// newHPElineupMallItemPurchaseHistoryMutation creates new mutation for the HPElineupMallItemPurchaseHistory entity.
+func newHPElineupMallItemPurchaseHistoryMutation(c config, op Op, opts ...hpelineupmallitempurchasehistoryOption) *HPElineupMallItemPurchaseHistoryMutation {
+	m := &HPElineupMallItemPurchaseHistoryMutation{
+		config:        c,
+		op:            op,
+		typ:           TypeHPElineupMallItemPurchaseHistory,
+		clearedFields: make(map[string]struct{}),
+	}
+	for _, opt := range opts {
+		opt(m)
+	}
+	return m
+}
+
+// withHPElineupMallItemPurchaseHistoryID sets the ID field of the mutation.
+func withHPElineupMallItemPurchaseHistoryID(id int) hpelineupmallitempurchasehistoryOption {
+	return func(m *HPElineupMallItemPurchaseHistoryMutation) {
+		var (
+			err   error
+			once  sync.Once
+			value *HPElineupMallItemPurchaseHistory
+		)
+		m.oldValue = func(ctx context.Context) (*HPElineupMallItemPurchaseHistory, error) {
+			once.Do(func() {
+				if m.done {
+					err = errors.New("querying old values post mutation is not allowed")
+				} else {
+					value, err = m.Client().HPElineupMallItemPurchaseHistory.Get(ctx, id)
+				}
+			})
+			return value, err
+		}
+		m.id = &id
+	}
+}
+
+// withHPElineupMallItemPurchaseHistory sets the old HPElineupMallItemPurchaseHistory of the mutation.
+func withHPElineupMallItemPurchaseHistory(node *HPElineupMallItemPurchaseHistory) hpelineupmallitempurchasehistoryOption {
+	return func(m *HPElineupMallItemPurchaseHistoryMutation) {
+		m.oldValue = func(context.Context) (*HPElineupMallItemPurchaseHistory, error) {
+			return node, nil
+		}
+		m.id = &node.ID
+	}
+}
+
+// Client returns a new `ent.Client` from the mutation. If the mutation was
+// executed in a transaction (ent.Tx), a transactional client is returned.
+func (m HPElineupMallItemPurchaseHistoryMutation) Client() *Client {
+	client := &Client{config: m.config}
+	client.init()
+	return client
+}
+
+// Tx returns an `ent.Tx` for mutations that were executed in transactions;
+// it returns an error otherwise.
+func (m HPElineupMallItemPurchaseHistoryMutation) Tx() (*Tx, error) {
+	if _, ok := m.driver.(*txDriver); !ok {
+		return nil, errors.New("ent: mutation is not running in a transaction")
+	}
+	tx := &Tx{config: m.config}
+	tx.init()
+	return tx, nil
+}
+
+// ID returns the ID value in the mutation. Note that the ID is only available
+// if it was provided to the builder or after it was returned from the database.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ID() (id int, exists bool) {
+	if m.id == nil {
+		return
+	}
+	return *m.id, true
+}
+
+// IDs queries the database and returns the entity ids that match the mutation's predicate.
+// That means, if the mutation is applied within a transaction with an isolation level such
+// as sql.LevelSerializable, the returned ids match the ids of the rows that will be updated
+// or updated by the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) IDs(ctx context.Context) ([]int, error) {
+	switch {
+	case m.op.Is(OpUpdateOne | OpDeleteOne):
+		id, exists := m.ID()
+		if exists {
+			return []int{id}, nil
+		}
+		fallthrough
+	case m.op.Is(OpUpdate | OpDelete):
+		return m.Client().HPElineupMallItemPurchaseHistory.Query().Where(m.predicates...).IDs(ctx)
+	default:
+		return nil, fmt.Errorf("IDs is not allowed on %s operations", m.op)
+	}
+}
+
+// SetCreatedAt sets the "created_at" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetCreatedAt(t time.Time) {
+	m.created_at = &t
+}
+
+// CreatedAt returns the value of the "created_at" field in the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) CreatedAt() (r time.Time, exists bool) {
+	v := m.created_at
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldCreatedAt returns the old "created_at" field's value of the HPElineupMallItemPurchaseHistory entity.
+// If the HPElineupMallItemPurchaseHistory object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OldCreatedAt(ctx context.Context) (v time.Time, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldCreatedAt is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldCreatedAt requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldCreatedAt: %w", err)
+	}
+	return oldValue.CreatedAt, nil
+}
+
+// ClearCreatedAt clears the value of the "created_at" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ClearCreatedAt() {
+	m.created_at = nil
+	m.clearedFields[hpelineupmallitempurchasehistory.FieldCreatedAt] = struct{}{}
+}
+
+// CreatedAtCleared returns if the "created_at" field was cleared in this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) CreatedAtCleared() bool {
+	_, ok := m.clearedFields[hpelineupmallitempurchasehistory.FieldCreatedAt]
+	return ok
+}
+
+// ResetCreatedAt resets all changes to the "created_at" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetCreatedAt() {
+	m.created_at = nil
+	delete(m.clearedFields, hpelineupmallitempurchasehistory.FieldCreatedAt)
+}
+
+// SetUpdatedAt sets the "updated_at" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetUpdatedAt(t time.Time) {
+	m.updated_at = &t
+}
+
+// UpdatedAt returns the value of the "updated_at" field in the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) UpdatedAt() (r time.Time, exists bool) {
+	v := m.updated_at
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldUpdatedAt returns the old "updated_at" field's value of the HPElineupMallItemPurchaseHistory entity.
+// If the HPElineupMallItemPurchaseHistory object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OldUpdatedAt(ctx context.Context) (v time.Time, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldUpdatedAt is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldUpdatedAt requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldUpdatedAt: %w", err)
+	}
+	return oldValue.UpdatedAt, nil
+}
+
+// ClearUpdatedAt clears the value of the "updated_at" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ClearUpdatedAt() {
+	m.updated_at = nil
+	m.clearedFields[hpelineupmallitempurchasehistory.FieldUpdatedAt] = struct{}{}
+}
+
+// UpdatedAtCleared returns if the "updated_at" field was cleared in this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) UpdatedAtCleared() bool {
+	_, ok := m.clearedFields[hpelineupmallitempurchasehistory.FieldUpdatedAt]
+	return ok
+}
+
+// ResetUpdatedAt resets all changes to the "updated_at" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetUpdatedAt() {
+	m.updated_at = nil
+	delete(m.clearedFields, hpelineupmallitempurchasehistory.FieldUpdatedAt)
+}
+
+// SetOrderID sets the "order_id" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetOrderID(s string) {
+	m.order_id = &s
+}
+
+// OrderID returns the value of the "order_id" field in the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OrderID() (r string, exists bool) {
+	v := m.order_id
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldOrderID returns the old "order_id" field's value of the HPElineupMallItemPurchaseHistory entity.
+// If the HPElineupMallItemPurchaseHistory object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OldOrderID(ctx context.Context) (v string, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldOrderID is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldOrderID requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldOrderID: %w", err)
+	}
+	return oldValue.OrderID, nil
+}
+
+// ResetOrderID resets all changes to the "order_id" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetOrderID() {
+	m.order_id = nil
+}
+
+// SetNum sets the "num" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetNum(i int) {
+	m.num = &i
+	m.addnum = nil
+}
+
+// Num returns the value of the "num" field in the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) Num() (r int, exists bool) {
+	v := m.num
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldNum returns the old "num" field's value of the HPElineupMallItemPurchaseHistory entity.
+// If the HPElineupMallItemPurchaseHistory object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OldNum(ctx context.Context) (v int, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldNum is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldNum requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldNum: %w", err)
+	}
+	return oldValue.Num, nil
+}
+
+// AddNum adds i to the "num" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) AddNum(i int) {
+	if m.addnum != nil {
+		*m.addnum += i
+	} else {
+		m.addnum = &i
+	}
+}
+
+// AddedNum returns the value that was added to the "num" field in this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) AddedNum() (r int, exists bool) {
+	v := m.addnum
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// ResetNum resets all changes to the "num" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetNum() {
+	m.num = nil
+	m.addnum = nil
+}
+
+// SetPrice sets the "price" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetPrice(i int) {
+	m.price = &i
+	m.addprice = nil
+}
+
+// Price returns the value of the "price" field in the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) Price() (r int, exists bool) {
+	v := m.price
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldPrice returns the old "price" field's value of the HPElineupMallItemPurchaseHistory entity.
+// If the HPElineupMallItemPurchaseHistory object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OldPrice(ctx context.Context) (v int, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldPrice is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldPrice requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldPrice: %w", err)
+	}
+	return oldValue.Price, nil
+}
+
+// AddPrice adds i to the "price" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) AddPrice(i int) {
+	if m.addprice != nil {
+		*m.addprice += i
+	} else {
+		m.addprice = &i
+	}
+}
+
+// AddedPrice returns the value that was added to the "price" field in this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) AddedPrice() (r int, exists bool) {
+	v := m.addprice
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// ResetPrice resets all changes to the "price" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetPrice() {
+	m.price = nil
+	m.addprice = nil
+}
+
+// SetOrderedAt sets the "ordered_at" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetOrderedAt(t time.Time) {
+	m.ordered_at = &t
+}
+
+// OrderedAt returns the value of the "ordered_at" field in the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OrderedAt() (r time.Time, exists bool) {
+	v := m.ordered_at
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldOrderedAt returns the old "ordered_at" field's value of the HPElineupMallItemPurchaseHistory entity.
+// If the HPElineupMallItemPurchaseHistory object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OldOrderedAt(ctx context.Context) (v time.Time, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldOrderedAt is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldOrderedAt requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldOrderedAt: %w", err)
+	}
+	return oldValue.OrderedAt, nil
+}
+
+// ResetOrderedAt resets all changes to the "ordered_at" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetOrderedAt() {
+	m.ordered_at = nil
+}
+
+// SetPermalink sets the "permalink" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetPermalink(s string) {
+	m.permalink = &s
+}
+
+// Permalink returns the value of the "permalink" field in the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) Permalink() (r string, exists bool) {
+	v := m.permalink
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldPermalink returns the old "permalink" field's value of the HPElineupMallItemPurchaseHistory entity.
+// If the HPElineupMallItemPurchaseHistory object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OldPermalink(ctx context.Context) (v string, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldPermalink is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldPermalink requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldPermalink: %w", err)
+	}
+	return oldValue.Permalink, nil
+}
+
+// ResetPermalink resets all changes to the "permalink" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetPermalink() {
+	m.permalink = nil
+}
+
+// SetName sets the "name" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetName(s string) {
+	m.name = &s
+}
+
+// Name returns the value of the "name" field in the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) Name() (r string, exists bool) {
+	v := m.name
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldName returns the old "name" field's value of the HPElineupMallItemPurchaseHistory entity.
+// If the HPElineupMallItemPurchaseHistory object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OldName(ctx context.Context) (v string, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldName is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldName requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldName: %w", err)
+	}
+	return oldValue.Name, nil
+}
+
+// ResetName resets all changes to the "name" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetName() {
+	m.name = nil
+}
+
+// SetPurchasedItemID sets the "purchased_item_id" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetPurchasedItemID(i int) {
+	m.elineup_mall_item = &i
+}
+
+// PurchasedItemID returns the value of the "purchased_item_id" field in the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) PurchasedItemID() (r int, exists bool) {
+	v := m.elineup_mall_item
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldPurchasedItemID returns the old "purchased_item_id" field's value of the HPElineupMallItemPurchaseHistory entity.
+// If the HPElineupMallItemPurchaseHistory object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OldPurchasedItemID(ctx context.Context) (v *int, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldPurchasedItemID is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldPurchasedItemID requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldPurchasedItemID: %w", err)
+	}
+	return oldValue.PurchasedItemID, nil
+}
+
+// ClearPurchasedItemID clears the value of the "purchased_item_id" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ClearPurchasedItemID() {
+	m.elineup_mall_item = nil
+	m.clearedFields[hpelineupmallitempurchasehistory.FieldPurchasedItemID] = struct{}{}
+}
+
+// PurchasedItemIDCleared returns if the "purchased_item_id" field was cleared in this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) PurchasedItemIDCleared() bool {
+	_, ok := m.clearedFields[hpelineupmallitempurchasehistory.FieldPurchasedItemID]
+	return ok
+}
+
+// ResetPurchasedItemID resets all changes to the "purchased_item_id" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetPurchasedItemID() {
+	m.elineup_mall_item = nil
+	delete(m.clearedFields, hpelineupmallitempurchasehistory.FieldPurchasedItemID)
+}
+
+// SetOwnerUserID sets the "owner_user_id" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetOwnerUserID(i int) {
+	m.owner = &i
+}
+
+// OwnerUserID returns the value of the "owner_user_id" field in the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OwnerUserID() (r int, exists bool) {
+	v := m.owner
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldOwnerUserID returns the old "owner_user_id" field's value of the HPElineupMallItemPurchaseHistory entity.
+// If the HPElineupMallItemPurchaseHistory object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OldOwnerUserID(ctx context.Context) (v int, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldOwnerUserID is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldOwnerUserID requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldOwnerUserID: %w", err)
+	}
+	return oldValue.OwnerUserID, nil
+}
+
+// ResetOwnerUserID resets all changes to the "owner_user_id" field.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetOwnerUserID() {
+	m.owner = nil
+}
+
+// SetElineupMallItemID sets the "elineup_mall_item" edge to the HPElineupMallItem entity by id.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetElineupMallItemID(id int) {
+	m.elineup_mall_item = &id
+}
+
+// ClearElineupMallItem clears the "elineup_mall_item" edge to the HPElineupMallItem entity.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ClearElineupMallItem() {
+	m.clearedelineup_mall_item = true
+}
+
+// ElineupMallItemCleared reports if the "elineup_mall_item" edge to the HPElineupMallItem entity was cleared.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ElineupMallItemCleared() bool {
+	return m.PurchasedItemIDCleared() || m.clearedelineup_mall_item
+}
+
+// ElineupMallItemID returns the "elineup_mall_item" edge ID in the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ElineupMallItemID() (id int, exists bool) {
+	if m.elineup_mall_item != nil {
+		return *m.elineup_mall_item, true
+	}
+	return
+}
+
+// ElineupMallItemIDs returns the "elineup_mall_item" edge IDs in the mutation.
+// Note that IDs always returns len(IDs) <= 1 for unique edges, and you should use
+// ElineupMallItemID instead. It exists only for internal usage by the builders.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ElineupMallItemIDs() (ids []int) {
+	if id := m.elineup_mall_item; id != nil {
+		ids = append(ids, *id)
+	}
+	return
+}
+
+// ResetElineupMallItem resets all changes to the "elineup_mall_item" edge.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetElineupMallItem() {
+	m.elineup_mall_item = nil
+	m.clearedelineup_mall_item = false
+}
+
+// SetOwnerID sets the "owner" edge to the User entity by id.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetOwnerID(id int) {
+	m.owner = &id
+}
+
+// ClearOwner clears the "owner" edge to the User entity.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ClearOwner() {
+	m.clearedowner = true
+}
+
+// OwnerCleared reports if the "owner" edge to the User entity was cleared.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OwnerCleared() bool {
+	return m.clearedowner
+}
+
+// OwnerID returns the "owner" edge ID in the mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OwnerID() (id int, exists bool) {
+	if m.owner != nil {
+		return *m.owner, true
+	}
+	return
+}
+
+// OwnerIDs returns the "owner" edge IDs in the mutation.
+// Note that IDs always returns len(IDs) <= 1 for unique edges, and you should use
+// OwnerID instead. It exists only for internal usage by the builders.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OwnerIDs() (ids []int) {
+	if id := m.owner; id != nil {
+		ids = append(ids, *id)
+	}
+	return
+}
+
+// ResetOwner resets all changes to the "owner" edge.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetOwner() {
+	m.owner = nil
+	m.clearedowner = false
+}
+
+// Where appends a list predicates to the HPElineupMallItemPurchaseHistoryMutation builder.
+func (m *HPElineupMallItemPurchaseHistoryMutation) Where(ps ...predicate.HPElineupMallItemPurchaseHistory) {
+	m.predicates = append(m.predicates, ps...)
+}
+
+// WhereP appends storage-level predicates to the HPElineupMallItemPurchaseHistoryMutation builder. Using this method,
+// users can use type-assertion to append predicates that do not depend on any generated package.
+func (m *HPElineupMallItemPurchaseHistoryMutation) WhereP(ps ...func(*sql.Selector)) {
+	p := make([]predicate.HPElineupMallItemPurchaseHistory, len(ps))
+	for i := range ps {
+		p[i] = ps[i]
+	}
+	m.Where(p...)
+}
+
+// Op returns the operation name.
+func (m *HPElineupMallItemPurchaseHistoryMutation) Op() Op {
+	return m.op
+}
+
+// SetOp allows setting the mutation operation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetOp(op Op) {
+	m.op = op
+}
+
+// Type returns the node type of this mutation (HPElineupMallItemPurchaseHistory).
+func (m *HPElineupMallItemPurchaseHistoryMutation) Type() string {
+	return m.typ
+}
+
+// Fields returns all fields that were changed during this mutation. Note that in
+// order to get all numeric fields that were incremented/decremented, call
+// AddedFields().
+func (m *HPElineupMallItemPurchaseHistoryMutation) Fields() []string {
+	fields := make([]string, 0, 10)
+	if m.created_at != nil {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldCreatedAt)
+	}
+	if m.updated_at != nil {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldUpdatedAt)
+	}
+	if m.order_id != nil {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldOrderID)
+	}
+	if m.num != nil {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldNum)
+	}
+	if m.price != nil {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldPrice)
+	}
+	if m.ordered_at != nil {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldOrderedAt)
+	}
+	if m.permalink != nil {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldPermalink)
+	}
+	if m.name != nil {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldName)
+	}
+	if m.elineup_mall_item != nil {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldPurchasedItemID)
+	}
+	if m.owner != nil {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldOwnerUserID)
+	}
+	return fields
+}
+
+// Field returns the value of a field with the given name. The second boolean
+// return value indicates that this field was not set, or was not defined in the
+// schema.
+func (m *HPElineupMallItemPurchaseHistoryMutation) Field(name string) (ent.Value, bool) {
+	switch name {
+	case hpelineupmallitempurchasehistory.FieldCreatedAt:
+		return m.CreatedAt()
+	case hpelineupmallitempurchasehistory.FieldUpdatedAt:
+		return m.UpdatedAt()
+	case hpelineupmallitempurchasehistory.FieldOrderID:
+		return m.OrderID()
+	case hpelineupmallitempurchasehistory.FieldNum:
+		return m.Num()
+	case hpelineupmallitempurchasehistory.FieldPrice:
+		return m.Price()
+	case hpelineupmallitempurchasehistory.FieldOrderedAt:
+		return m.OrderedAt()
+	case hpelineupmallitempurchasehistory.FieldPermalink:
+		return m.Permalink()
+	case hpelineupmallitempurchasehistory.FieldName:
+		return m.Name()
+	case hpelineupmallitempurchasehistory.FieldPurchasedItemID:
+		return m.PurchasedItemID()
+	case hpelineupmallitempurchasehistory.FieldOwnerUserID:
+		return m.OwnerUserID()
+	}
+	return nil, false
+}
+
+// OldField returns the old value of the field from the database. An error is
+// returned if the mutation operation is not UpdateOne, or the query to the
+// database failed.
+func (m *HPElineupMallItemPurchaseHistoryMutation) OldField(ctx context.Context, name string) (ent.Value, error) {
+	switch name {
+	case hpelineupmallitempurchasehistory.FieldCreatedAt:
+		return m.OldCreatedAt(ctx)
+	case hpelineupmallitempurchasehistory.FieldUpdatedAt:
+		return m.OldUpdatedAt(ctx)
+	case hpelineupmallitempurchasehistory.FieldOrderID:
+		return m.OldOrderID(ctx)
+	case hpelineupmallitempurchasehistory.FieldNum:
+		return m.OldNum(ctx)
+	case hpelineupmallitempurchasehistory.FieldPrice:
+		return m.OldPrice(ctx)
+	case hpelineupmallitempurchasehistory.FieldOrderedAt:
+		return m.OldOrderedAt(ctx)
+	case hpelineupmallitempurchasehistory.FieldPermalink:
+		return m.OldPermalink(ctx)
+	case hpelineupmallitempurchasehistory.FieldName:
+		return m.OldName(ctx)
+	case hpelineupmallitempurchasehistory.FieldPurchasedItemID:
+		return m.OldPurchasedItemID(ctx)
+	case hpelineupmallitempurchasehistory.FieldOwnerUserID:
+		return m.OldOwnerUserID(ctx)
+	}
+	return nil, fmt.Errorf("unknown HPElineupMallItemPurchaseHistory field %s", name)
+}
+
+// SetField sets the value of a field with the given name. It returns an error if
+// the field is not defined in the schema, or if the type mismatched the field
+// type.
+func (m *HPElineupMallItemPurchaseHistoryMutation) SetField(name string, value ent.Value) error {
+	switch name {
+	case hpelineupmallitempurchasehistory.FieldCreatedAt:
+		v, ok := value.(time.Time)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetCreatedAt(v)
+		return nil
+	case hpelineupmallitempurchasehistory.FieldUpdatedAt:
+		v, ok := value.(time.Time)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetUpdatedAt(v)
+		return nil
+	case hpelineupmallitempurchasehistory.FieldOrderID:
+		v, ok := value.(string)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetOrderID(v)
+		return nil
+	case hpelineupmallitempurchasehistory.FieldNum:
+		v, ok := value.(int)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetNum(v)
+		return nil
+	case hpelineupmallitempurchasehistory.FieldPrice:
+		v, ok := value.(int)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetPrice(v)
+		return nil
+	case hpelineupmallitempurchasehistory.FieldOrderedAt:
+		v, ok := value.(time.Time)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetOrderedAt(v)
+		return nil
+	case hpelineupmallitempurchasehistory.FieldPermalink:
+		v, ok := value.(string)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetPermalink(v)
+		return nil
+	case hpelineupmallitempurchasehistory.FieldName:
+		v, ok := value.(string)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetName(v)
+		return nil
+	case hpelineupmallitempurchasehistory.FieldPurchasedItemID:
+		v, ok := value.(int)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetPurchasedItemID(v)
+		return nil
+	case hpelineupmallitempurchasehistory.FieldOwnerUserID:
+		v, ok := value.(int)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetOwnerUserID(v)
+		return nil
+	}
+	return fmt.Errorf("unknown HPElineupMallItemPurchaseHistory field %s", name)
+}
+
+// AddedFields returns all numeric fields that were incremented/decremented during
+// this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) AddedFields() []string {
+	var fields []string
+	if m.addnum != nil {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldNum)
+	}
+	if m.addprice != nil {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldPrice)
+	}
+	return fields
+}
+
+// AddedField returns the numeric value that was incremented/decremented on a field
+// with the given name. The second boolean return value indicates that this field
+// was not set, or was not defined in the schema.
+func (m *HPElineupMallItemPurchaseHistoryMutation) AddedField(name string) (ent.Value, bool) {
+	switch name {
+	case hpelineupmallitempurchasehistory.FieldNum:
+		return m.AddedNum()
+	case hpelineupmallitempurchasehistory.FieldPrice:
+		return m.AddedPrice()
+	}
+	return nil, false
+}
+
+// AddField adds the value to the field with the given name. It returns an error if
+// the field is not defined in the schema, or if the type mismatched the field
+// type.
+func (m *HPElineupMallItemPurchaseHistoryMutation) AddField(name string, value ent.Value) error {
+	switch name {
+	case hpelineupmallitempurchasehistory.FieldNum:
+		v, ok := value.(int)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.AddNum(v)
+		return nil
+	case hpelineupmallitempurchasehistory.FieldPrice:
+		v, ok := value.(int)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.AddPrice(v)
+		return nil
+	}
+	return fmt.Errorf("unknown HPElineupMallItemPurchaseHistory numeric field %s", name)
+}
+
+// ClearedFields returns all nullable fields that were cleared during this
+// mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ClearedFields() []string {
+	var fields []string
+	if m.FieldCleared(hpelineupmallitempurchasehistory.FieldCreatedAt) {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldCreatedAt)
+	}
+	if m.FieldCleared(hpelineupmallitempurchasehistory.FieldUpdatedAt) {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldUpdatedAt)
+	}
+	if m.FieldCleared(hpelineupmallitempurchasehistory.FieldPurchasedItemID) {
+		fields = append(fields, hpelineupmallitempurchasehistory.FieldPurchasedItemID)
+	}
+	return fields
+}
+
+// FieldCleared returns a boolean indicating if a field with the given name was
+// cleared in this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) FieldCleared(name string) bool {
+	_, ok := m.clearedFields[name]
+	return ok
+}
+
+// ClearField clears the value of the field with the given name. It returns an
+// error if the field is not defined in the schema.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ClearField(name string) error {
+	switch name {
+	case hpelineupmallitempurchasehistory.FieldCreatedAt:
+		m.ClearCreatedAt()
+		return nil
+	case hpelineupmallitempurchasehistory.FieldUpdatedAt:
+		m.ClearUpdatedAt()
+		return nil
+	case hpelineupmallitempurchasehistory.FieldPurchasedItemID:
+		m.ClearPurchasedItemID()
+		return nil
+	}
+	return fmt.Errorf("unknown HPElineupMallItemPurchaseHistory nullable field %s", name)
+}
+
+// ResetField resets all changes in the mutation for the field with the given name.
+// It returns an error if the field is not defined in the schema.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetField(name string) error {
+	switch name {
+	case hpelineupmallitempurchasehistory.FieldCreatedAt:
+		m.ResetCreatedAt()
+		return nil
+	case hpelineupmallitempurchasehistory.FieldUpdatedAt:
+		m.ResetUpdatedAt()
+		return nil
+	case hpelineupmallitempurchasehistory.FieldOrderID:
+		m.ResetOrderID()
+		return nil
+	case hpelineupmallitempurchasehistory.FieldNum:
+		m.ResetNum()
+		return nil
+	case hpelineupmallitempurchasehistory.FieldPrice:
+		m.ResetPrice()
+		return nil
+	case hpelineupmallitempurchasehistory.FieldOrderedAt:
+		m.ResetOrderedAt()
+		return nil
+	case hpelineupmallitempurchasehistory.FieldPermalink:
+		m.ResetPermalink()
+		return nil
+	case hpelineupmallitempurchasehistory.FieldName:
+		m.ResetName()
+		return nil
+	case hpelineupmallitempurchasehistory.FieldPurchasedItemID:
+		m.ResetPurchasedItemID()
+		return nil
+	case hpelineupmallitempurchasehistory.FieldOwnerUserID:
+		m.ResetOwnerUserID()
+		return nil
+	}
+	return fmt.Errorf("unknown HPElineupMallItemPurchaseHistory field %s", name)
+}
+
+// AddedEdges returns all edge names that were set/added in this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) AddedEdges() []string {
+	edges := make([]string, 0, 2)
+	if m.elineup_mall_item != nil {
+		edges = append(edges, hpelineupmallitempurchasehistory.EdgeElineupMallItem)
+	}
+	if m.owner != nil {
+		edges = append(edges, hpelineupmallitempurchasehistory.EdgeOwner)
+	}
+	return edges
+}
+
+// AddedIDs returns all IDs (to other nodes) that were added for the given edge
+// name in this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) AddedIDs(name string) []ent.Value {
+	switch name {
+	case hpelineupmallitempurchasehistory.EdgeElineupMallItem:
+		if id := m.elineup_mall_item; id != nil {
+			return []ent.Value{*id}
+		}
+	case hpelineupmallitempurchasehistory.EdgeOwner:
+		if id := m.owner; id != nil {
+			return []ent.Value{*id}
+		}
+	}
+	return nil
+}
+
+// RemovedEdges returns all edge names that were removed in this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) RemovedEdges() []string {
+	edges := make([]string, 0, 2)
+	return edges
+}
+
+// RemovedIDs returns all IDs (to other nodes) that were removed for the edge with
+// the given name in this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) RemovedIDs(name string) []ent.Value {
+	return nil
+}
+
+// ClearedEdges returns all edge names that were cleared in this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ClearedEdges() []string {
+	edges := make([]string, 0, 2)
+	if m.clearedelineup_mall_item {
+		edges = append(edges, hpelineupmallitempurchasehistory.EdgeElineupMallItem)
+	}
+	if m.clearedowner {
+		edges = append(edges, hpelineupmallitempurchasehistory.EdgeOwner)
+	}
+	return edges
+}
+
+// EdgeCleared returns a boolean which indicates if the edge with the given name
+// was cleared in this mutation.
+func (m *HPElineupMallItemPurchaseHistoryMutation) EdgeCleared(name string) bool {
+	switch name {
+	case hpelineupmallitempurchasehistory.EdgeElineupMallItem:
+		return m.clearedelineup_mall_item
+	case hpelineupmallitempurchasehistory.EdgeOwner:
+		return m.clearedowner
+	}
+	return false
+}
+
+// ClearEdge clears the value of the edge with the given name. It returns an error
+// if that edge is not defined in the schema.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ClearEdge(name string) error {
+	switch name {
+	case hpelineupmallitempurchasehistory.EdgeElineupMallItem:
+		m.ClearElineupMallItem()
+		return nil
+	case hpelineupmallitempurchasehistory.EdgeOwner:
+		m.ClearOwner()
+		return nil
+	}
+	return fmt.Errorf("unknown HPElineupMallItemPurchaseHistory unique edge %s", name)
+}
+
+// ResetEdge resets all changes to the edge with the given name in this mutation.
+// It returns an error if the edge is not defined in the schema.
+func (m *HPElineupMallItemPurchaseHistoryMutation) ResetEdge(name string) error {
+	switch name {
+	case hpelineupmallitempurchasehistory.EdgeElineupMallItem:
+		m.ResetElineupMallItem()
+		return nil
+	case hpelineupmallitempurchasehistory.EdgeOwner:
+		m.ResetOwner()
+		return nil
+	}
+	return fmt.Errorf("unknown HPElineupMallItemPurchaseHistory edge %s", name)
 }
 
 // HPEventMutation represents an operation that mutates the HPEvent nodes in the graph.
@@ -21969,35 +23119,38 @@ func (m *TestEntMutation) ResetEdge(name string) error {
 // UserMutation represents an operation that mutates the User nodes in the graph.
 type UserMutation struct {
 	config
-	op                           Op
-	typ                          string
-	id                           *int
-	created_at                   *time.Time
-	updated_at                   *time.Time
-	username                     *string
-	access_token                 *string
-	clearedFields                map[string]struct{}
-	auth                         map[int]struct{}
-	removedauth                  map[int]struct{}
-	clearedauth                  bool
-	notification_settings        map[int]struct{}
-	removednotification_settings map[int]struct{}
-	clearednotification_settings bool
-	hpview_history               map[int]struct{}
-	removedhpview_history        map[int]struct{}
-	clearedhpview_history        bool
-	hpmember_following           map[int]struct{}
-	removedhpmember_following    map[int]struct{}
-	clearedhpmember_following    bool
-	hpsort_history               map[int]struct{}
-	removedhpsort_history        map[int]struct{}
-	clearedhpsort_history        bool
-	hpfc_event_tickets           map[int]struct{}
-	removedhpfc_event_tickets    map[int]struct{}
-	clearedhpfc_event_tickets    bool
-	done                         bool
-	oldValue                     func(context.Context) (*User, error)
-	predicates                   []predicate.User
+	op                                     Op
+	typ                                    string
+	id                                     *int
+	created_at                             *time.Time
+	updated_at                             *time.Time
+	username                               *string
+	access_token                           *string
+	clearedFields                          map[string]struct{}
+	auth                                   map[int]struct{}
+	removedauth                            map[int]struct{}
+	clearedauth                            bool
+	notification_settings                  map[int]struct{}
+	removednotification_settings           map[int]struct{}
+	clearednotification_settings           bool
+	hpview_history                         map[int]struct{}
+	removedhpview_history                  map[int]struct{}
+	clearedhpview_history                  bool
+	hpmember_following                     map[int]struct{}
+	removedhpmember_following              map[int]struct{}
+	clearedhpmember_following              bool
+	hpsort_history                         map[int]struct{}
+	removedhpsort_history                  map[int]struct{}
+	clearedhpsort_history                  bool
+	hpfc_event_tickets                     map[int]struct{}
+	removedhpfc_event_tickets              map[int]struct{}
+	clearedhpfc_event_tickets              bool
+	elineup_mall_purchase_histories        map[int]struct{}
+	removedelineup_mall_purchase_histories map[int]struct{}
+	clearedelineup_mall_purchase_histories bool
+	done                                   bool
+	oldValue                               func(context.Context) (*User, error)
+	predicates                             []predicate.User
 }
 
 var _ ent.Mutation = (*UserMutation)(nil)
@@ -22592,6 +23745,60 @@ func (m *UserMutation) ResetHpfcEventTickets() {
 	m.removedhpfc_event_tickets = nil
 }
 
+// AddElineupMallPurchaseHistoryIDs adds the "elineup_mall_purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity by ids.
+func (m *UserMutation) AddElineupMallPurchaseHistoryIDs(ids ...int) {
+	if m.elineup_mall_purchase_histories == nil {
+		m.elineup_mall_purchase_histories = make(map[int]struct{})
+	}
+	for i := range ids {
+		m.elineup_mall_purchase_histories[ids[i]] = struct{}{}
+	}
+}
+
+// ClearElineupMallPurchaseHistories clears the "elineup_mall_purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity.
+func (m *UserMutation) ClearElineupMallPurchaseHistories() {
+	m.clearedelineup_mall_purchase_histories = true
+}
+
+// ElineupMallPurchaseHistoriesCleared reports if the "elineup_mall_purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity was cleared.
+func (m *UserMutation) ElineupMallPurchaseHistoriesCleared() bool {
+	return m.clearedelineup_mall_purchase_histories
+}
+
+// RemoveElineupMallPurchaseHistoryIDs removes the "elineup_mall_purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity by IDs.
+func (m *UserMutation) RemoveElineupMallPurchaseHistoryIDs(ids ...int) {
+	if m.removedelineup_mall_purchase_histories == nil {
+		m.removedelineup_mall_purchase_histories = make(map[int]struct{})
+	}
+	for i := range ids {
+		delete(m.elineup_mall_purchase_histories, ids[i])
+		m.removedelineup_mall_purchase_histories[ids[i]] = struct{}{}
+	}
+}
+
+// RemovedElineupMallPurchaseHistories returns the removed IDs of the "elineup_mall_purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity.
+func (m *UserMutation) RemovedElineupMallPurchaseHistoriesIDs() (ids []int) {
+	for id := range m.removedelineup_mall_purchase_histories {
+		ids = append(ids, id)
+	}
+	return
+}
+
+// ElineupMallPurchaseHistoriesIDs returns the "elineup_mall_purchase_histories" edge IDs in the mutation.
+func (m *UserMutation) ElineupMallPurchaseHistoriesIDs() (ids []int) {
+	for id := range m.elineup_mall_purchase_histories {
+		ids = append(ids, id)
+	}
+	return
+}
+
+// ResetElineupMallPurchaseHistories resets all changes to the "elineup_mall_purchase_histories" edge.
+func (m *UserMutation) ResetElineupMallPurchaseHistories() {
+	m.elineup_mall_purchase_histories = nil
+	m.clearedelineup_mall_purchase_histories = false
+	m.removedelineup_mall_purchase_histories = nil
+}
+
 // Where appends a list predicates to the UserMutation builder.
 func (m *UserMutation) Where(ps ...predicate.User) {
 	m.predicates = append(m.predicates, ps...)
@@ -22791,7 +23998,7 @@ func (m *UserMutation) ResetField(name string) error {
 
 // AddedEdges returns all edge names that were set/added in this mutation.
 func (m *UserMutation) AddedEdges() []string {
-	edges := make([]string, 0, 6)
+	edges := make([]string, 0, 7)
 	if m.auth != nil {
 		edges = append(edges, user.EdgeAuth)
 	}
@@ -22809,6 +24016,9 @@ func (m *UserMutation) AddedEdges() []string {
 	}
 	if m.hpfc_event_tickets != nil {
 		edges = append(edges, user.EdgeHpfcEventTickets)
+	}
+	if m.elineup_mall_purchase_histories != nil {
+		edges = append(edges, user.EdgeElineupMallPurchaseHistories)
 	}
 	return edges
 }
@@ -22853,13 +24063,19 @@ func (m *UserMutation) AddedIDs(name string) []ent.Value {
 			ids = append(ids, id)
 		}
 		return ids
+	case user.EdgeElineupMallPurchaseHistories:
+		ids := make([]ent.Value, 0, len(m.elineup_mall_purchase_histories))
+		for id := range m.elineup_mall_purchase_histories {
+			ids = append(ids, id)
+		}
+		return ids
 	}
 	return nil
 }
 
 // RemovedEdges returns all edge names that were removed in this mutation.
 func (m *UserMutation) RemovedEdges() []string {
-	edges := make([]string, 0, 6)
+	edges := make([]string, 0, 7)
 	if m.removedauth != nil {
 		edges = append(edges, user.EdgeAuth)
 	}
@@ -22877,6 +24093,9 @@ func (m *UserMutation) RemovedEdges() []string {
 	}
 	if m.removedhpfc_event_tickets != nil {
 		edges = append(edges, user.EdgeHpfcEventTickets)
+	}
+	if m.removedelineup_mall_purchase_histories != nil {
+		edges = append(edges, user.EdgeElineupMallPurchaseHistories)
 	}
 	return edges
 }
@@ -22921,13 +24140,19 @@ func (m *UserMutation) RemovedIDs(name string) []ent.Value {
 			ids = append(ids, id)
 		}
 		return ids
+	case user.EdgeElineupMallPurchaseHistories:
+		ids := make([]ent.Value, 0, len(m.removedelineup_mall_purchase_histories))
+		for id := range m.removedelineup_mall_purchase_histories {
+			ids = append(ids, id)
+		}
+		return ids
 	}
 	return nil
 }
 
 // ClearedEdges returns all edge names that were cleared in this mutation.
 func (m *UserMutation) ClearedEdges() []string {
-	edges := make([]string, 0, 6)
+	edges := make([]string, 0, 7)
 	if m.clearedauth {
 		edges = append(edges, user.EdgeAuth)
 	}
@@ -22945,6 +24170,9 @@ func (m *UserMutation) ClearedEdges() []string {
 	}
 	if m.clearedhpfc_event_tickets {
 		edges = append(edges, user.EdgeHpfcEventTickets)
+	}
+	if m.clearedelineup_mall_purchase_histories {
+		edges = append(edges, user.EdgeElineupMallPurchaseHistories)
 	}
 	return edges
 }
@@ -22965,6 +24193,8 @@ func (m *UserMutation) EdgeCleared(name string) bool {
 		return m.clearedhpsort_history
 	case user.EdgeHpfcEventTickets:
 		return m.clearedhpfc_event_tickets
+	case user.EdgeElineupMallPurchaseHistories:
+		return m.clearedelineup_mall_purchase_histories
 	}
 	return false
 }
@@ -22998,6 +24228,9 @@ func (m *UserMutation) ResetEdge(name string) error {
 		return nil
 	case user.EdgeHpfcEventTickets:
 		m.ResetHpfcEventTickets()
+		return nil
+	case user.EdgeElineupMallPurchaseHistories:
+		m.ResetElineupMallPurchaseHistories()
 		return nil
 	}
 	return fmt.Errorf("unknown User edge %s", name)

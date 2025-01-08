@@ -18,6 +18,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpasset"
 	"github.com/yssk22/hpapp/go/service/ent/hpblob"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpevent"
 	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
@@ -90,24 +91,25 @@ var (
 func checkColumn(table, column string) error {
 	initCheck.Do(func() {
 		columnCheck = sql.NewColumnCheck(map[string]func(string) bool{
-			auth.Table:                    auth.ValidColumn,
-			hpameblopost.Table:            hpameblopost.ValidColumn,
-			hpartist.Table:                hpartist.ValidColumn,
-			hpasset.Table:                 hpasset.ValidColumn,
-			hpblob.Table:                  hpblob.ValidColumn,
-			hpelineupmallitem.Table:       hpelineupmallitem.ValidColumn,
-			hpevent.Table:                 hpevent.ValidColumn,
-			hpfceventticket.Table:         hpfceventticket.ValidColumn,
-			hpfeeditem.Table:              hpfeeditem.ValidColumn,
-			hpfollow.Table:                hpfollow.ValidColumn,
-			hpigpost.Table:                hpigpost.ValidColumn,
-			hpmember.Table:                hpmember.ValidColumn,
-			hpsorthistory.Table:           hpsorthistory.ValidColumn,
-			hpviewhistory.Table:           hpviewhistory.ValidColumn,
-			testent.Table:                 testent.ValidColumn,
-			user.Table:                    user.ValidColumn,
-			usernotificationlog.Table:     usernotificationlog.ValidColumn,
-			usernotificationsetting.Table: usernotificationsetting.ValidColumn,
+			auth.Table:                             auth.ValidColumn,
+			hpameblopost.Table:                     hpameblopost.ValidColumn,
+			hpartist.Table:                         hpartist.ValidColumn,
+			hpasset.Table:                          hpasset.ValidColumn,
+			hpblob.Table:                           hpblob.ValidColumn,
+			hpelineupmallitem.Table:                hpelineupmallitem.ValidColumn,
+			hpelineupmallitempurchasehistory.Table: hpelineupmallitempurchasehistory.ValidColumn,
+			hpevent.Table:                          hpevent.ValidColumn,
+			hpfceventticket.Table:                  hpfceventticket.ValidColumn,
+			hpfeeditem.Table:                       hpfeeditem.ValidColumn,
+			hpfollow.Table:                         hpfollow.ValidColumn,
+			hpigpost.Table:                         hpigpost.ValidColumn,
+			hpmember.Table:                         hpmember.ValidColumn,
+			hpsorthistory.Table:                    hpsorthistory.ValidColumn,
+			hpviewhistory.Table:                    hpviewhistory.ValidColumn,
+			testent.Table:                          testent.ValidColumn,
+			user.Table:                             user.ValidColumn,
+			usernotificationlog.Table:              usernotificationlog.ValidColumn,
+			usernotificationsetting.Table:          usernotificationsetting.ValidColumn,
 		})
 	})
 	return columnCheck(table, column)

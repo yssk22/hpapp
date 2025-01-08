@@ -13,6 +13,7 @@ import (
 	"entgo.io/ent/schema/field"
 	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/schema/enums"
 	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
@@ -244,6 +245,21 @@ func (hemic *HPElineupMallItemCreate) AddTaggedMembers(h ...*HPMember) *HPElineu
 	return hemic.AddTaggedMemberIDs(ids...)
 }
 
+// AddPurchaseHistoryIDs adds the "purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity by IDs.
+func (hemic *HPElineupMallItemCreate) AddPurchaseHistoryIDs(ids ...int) *HPElineupMallItemCreate {
+	hemic.mutation.AddPurchaseHistoryIDs(ids...)
+	return hemic
+}
+
+// AddPurchaseHistories adds the "purchase_histories" edges to the HPElineupMallItemPurchaseHistory entity.
+func (hemic *HPElineupMallItemCreate) AddPurchaseHistories(h ...*HPElineupMallItemPurchaseHistory) *HPElineupMallItemCreate {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return hemic.AddPurchaseHistoryIDs(ids...)
+}
+
 // Mutation returns the HPElineupMallItemMutation object of the builder.
 func (hemic *HPElineupMallItemCreate) Mutation() *HPElineupMallItemMutation {
 	return hemic.mutation
@@ -461,6 +477,22 @@ func (hemic *HPElineupMallItemCreate) createSpec() (*HPElineupMallItem, *sqlgrap
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpmember.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges = append(_spec.Edges, edge)
+	}
+	if nodes := hemic.mutation.PurchaseHistoriesIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpelineupmallitem.PurchaseHistoriesTable,
+			Columns: []string{hpelineupmallitem.PurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
 			},
 		}
 		for _, k := range nodes {

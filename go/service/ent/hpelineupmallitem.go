@@ -68,14 +68,17 @@ type HPElineupMallItemEdges struct {
 	TaggedArtists []*HPArtist `json:"tagged_artists,omitempty"`
 	// TaggedMembers holds the value of the tagged_members edge.
 	TaggedMembers []*HPMember `json:"tagged_members,omitempty"`
+	// PurchaseHistories holds the value of the purchase_histories edge.
+	PurchaseHistories []*HPElineupMallItemPurchaseHistory `json:"purchase_histories,omitempty"`
 	// loadedTypes holds the information for reporting if a
 	// type was loaded (or requested) in eager-loading or not.
-	loadedTypes [2]bool
+	loadedTypes [3]bool
 	// totalCount holds the count of the edges above.
-	totalCount [2]map[string]int
+	totalCount [3]map[string]int
 
-	namedTaggedArtists map[string][]*HPArtist
-	namedTaggedMembers map[string][]*HPMember
+	namedTaggedArtists     map[string][]*HPArtist
+	namedTaggedMembers     map[string][]*HPMember
+	namedPurchaseHistories map[string][]*HPElineupMallItemPurchaseHistory
 }
 
 // TaggedArtistsOrErr returns the TaggedArtists value or an error if the edge
@@ -94,6 +97,15 @@ func (e HPElineupMallItemEdges) TaggedMembersOrErr() ([]*HPMember, error) {
 		return e.TaggedMembers, nil
 	}
 	return nil, &NotLoadedError{edge: "tagged_members"}
+}
+
+// PurchaseHistoriesOrErr returns the PurchaseHistories value or an error if the edge
+// was not loaded in eager-loading.
+func (e HPElineupMallItemEdges) PurchaseHistoriesOrErr() ([]*HPElineupMallItemPurchaseHistory, error) {
+	if e.loadedTypes[2] {
+		return e.PurchaseHistories, nil
+	}
+	return nil, &NotLoadedError{edge: "purchase_histories"}
 }
 
 // scanValues returns the types for scanning values from sql.Rows.
@@ -271,6 +283,11 @@ func (hemi *HPElineupMallItem) QueryTaggedMembers() *HPMemberQuery {
 	return NewHPElineupMallItemClient(hemi.config).QueryTaggedMembers(hemi)
 }
 
+// QueryPurchaseHistories queries the "purchase_histories" edge of the HPElineupMallItem entity.
+func (hemi *HPElineupMallItem) QueryPurchaseHistories() *HPElineupMallItemPurchaseHistoryQuery {
+	return NewHPElineupMallItemClient(hemi.config).QueryPurchaseHistories(hemi)
+}
+
 // Update returns a builder for updating this HPElineupMallItem.
 // Note that you need to call HPElineupMallItem.Unwrap() before calling this method if this HPElineupMallItem
 // was returned from a transaction, and the transaction was committed or rolled back.
@@ -404,6 +421,30 @@ func (hemi *HPElineupMallItem) appendNamedTaggedMembers(name string, edges ...*H
 		hemi.Edges.namedTaggedMembers[name] = []*HPMember{}
 	} else {
 		hemi.Edges.namedTaggedMembers[name] = append(hemi.Edges.namedTaggedMembers[name], edges...)
+	}
+}
+
+// NamedPurchaseHistories returns the PurchaseHistories named value or an error if the edge was not
+// loaded in eager-loading with this name.
+func (hemi *HPElineupMallItem) NamedPurchaseHistories(name string) ([]*HPElineupMallItemPurchaseHistory, error) {
+	if hemi.Edges.namedPurchaseHistories == nil {
+		return nil, &NotLoadedError{edge: name}
+	}
+	nodes, ok := hemi.Edges.namedPurchaseHistories[name]
+	if !ok {
+		return nil, &NotLoadedError{edge: name}
+	}
+	return nodes, nil
+}
+
+func (hemi *HPElineupMallItem) appendNamedPurchaseHistories(name string, edges ...*HPElineupMallItemPurchaseHistory) {
+	if hemi.Edges.namedPurchaseHistories == nil {
+		hemi.Edges.namedPurchaseHistories = make(map[string][]*HPElineupMallItemPurchaseHistory)
+	}
+	if len(edges) == 0 {
+		hemi.Edges.namedPurchaseHistories[name] = []*HPElineupMallItemPurchaseHistory{}
+	} else {
+		hemi.Edges.namedPurchaseHistories[name] = append(hemi.Edges.namedPurchaseHistories[name], edges...)
 	}
 }
 

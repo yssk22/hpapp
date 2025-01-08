@@ -81,6 +81,18 @@ func (f HPElineupMallItemFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.
 	return nil, fmt.Errorf("unexpected mutation type %T. expect *ent.HPElineupMallItemMutation", m)
 }
 
+// The HPElineupMallItemPurchaseHistoryFunc type is an adapter to allow the use of ordinary
+// function as HPElineupMallItemPurchaseHistory mutator.
+type HPElineupMallItemPurchaseHistoryFunc func(context.Context, *ent.HPElineupMallItemPurchaseHistoryMutation) (ent.Value, error)
+
+// Mutate calls f(ctx, m).
+func (f HPElineupMallItemPurchaseHistoryFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error) {
+	if mv, ok := m.(*ent.HPElineupMallItemPurchaseHistoryMutation); ok {
+		return f(ctx, mv)
+	}
+	return nil, fmt.Errorf("unexpected mutation type %T. expect *ent.HPElineupMallItemPurchaseHistoryMutation", m)
+}
+
 // The HPEventFunc type is an adapter to allow the use of ordinary
 // function as HPEvent mutator.
 type HPEventFunc func(context.Context, *ent.HPEventMutation) (ent.Value, error)

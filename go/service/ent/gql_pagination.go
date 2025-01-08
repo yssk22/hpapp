@@ -19,6 +19,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpblob"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpevent"
 	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
@@ -1596,6 +1597,312 @@ func (hemi *HPElineupMallItem) ToEdge(order *HPElineupMallItemOrder) *HPElineupM
 	return &HPElineupMallItemEdge{
 		Node:   hemi,
 		Cursor: order.Field.toCursor(hemi),
+	}
+}
+
+// HPElineupMallItemPurchaseHistoryEdge is the edge representation of HPElineupMallItemPurchaseHistory.
+type HPElineupMallItemPurchaseHistoryEdge struct {
+	Node   *HPElineupMallItemPurchaseHistory `json:"node"`
+	Cursor Cursor                            `json:"cursor"`
+}
+
+// HPElineupMallItemPurchaseHistoryConnection is the connection containing edges to HPElineupMallItemPurchaseHistory.
+type HPElineupMallItemPurchaseHistoryConnection struct {
+	Edges      []*HPElineupMallItemPurchaseHistoryEdge `json:"edges"`
+	PageInfo   PageInfo                                `json:"pageInfo"`
+	TotalCount int                                     `json:"totalCount"`
+}
+
+func (c *HPElineupMallItemPurchaseHistoryConnection) build(nodes []*HPElineupMallItemPurchaseHistory, pager *hpelineupmallitempurchasehistoryPager, after *Cursor, first *int, before *Cursor, last *int) {
+	c.PageInfo.HasNextPage = before != nil
+	c.PageInfo.HasPreviousPage = after != nil
+	if first != nil && *first+1 == len(nodes) {
+		c.PageInfo.HasNextPage = true
+		nodes = nodes[:len(nodes)-1]
+	} else if last != nil && *last+1 == len(nodes) {
+		c.PageInfo.HasPreviousPage = true
+		nodes = nodes[:len(nodes)-1]
+	}
+	var nodeAt func(int) *HPElineupMallItemPurchaseHistory
+	if last != nil {
+		n := len(nodes) - 1
+		nodeAt = func(i int) *HPElineupMallItemPurchaseHistory {
+			return nodes[n-i]
+		}
+	} else {
+		nodeAt = func(i int) *HPElineupMallItemPurchaseHistory {
+			return nodes[i]
+		}
+	}
+	c.Edges = make([]*HPElineupMallItemPurchaseHistoryEdge, len(nodes))
+	for i := range nodes {
+		node := nodeAt(i)
+		c.Edges[i] = &HPElineupMallItemPurchaseHistoryEdge{
+			Node:   node,
+			Cursor: pager.toCursor(node),
+		}
+	}
+	if l := len(c.Edges); l > 0 {
+		c.PageInfo.StartCursor = &c.Edges[0].Cursor
+		c.PageInfo.EndCursor = &c.Edges[l-1].Cursor
+	}
+	if c.TotalCount == 0 {
+		c.TotalCount = len(nodes)
+	}
+}
+
+// HPElineupMallItemPurchaseHistoryPaginateOption enables pagination customization.
+type HPElineupMallItemPurchaseHistoryPaginateOption func(*hpelineupmallitempurchasehistoryPager) error
+
+// WithHPElineupMallItemPurchaseHistoryOrder configures pagination ordering.
+func WithHPElineupMallItemPurchaseHistoryOrder(order *HPElineupMallItemPurchaseHistoryOrder) HPElineupMallItemPurchaseHistoryPaginateOption {
+	if order == nil {
+		order = DefaultHPElineupMallItemPurchaseHistoryOrder
+	}
+	o := *order
+	return func(pager *hpelineupmallitempurchasehistoryPager) error {
+		if err := o.Direction.Validate(); err != nil {
+			return err
+		}
+		if o.Field == nil {
+			o.Field = DefaultHPElineupMallItemPurchaseHistoryOrder.Field
+		}
+		pager.order = &o
+		return nil
+	}
+}
+
+// WithHPElineupMallItemPurchaseHistoryFilter configures pagination filter.
+func WithHPElineupMallItemPurchaseHistoryFilter(filter func(*HPElineupMallItemPurchaseHistoryQuery) (*HPElineupMallItemPurchaseHistoryQuery, error)) HPElineupMallItemPurchaseHistoryPaginateOption {
+	return func(pager *hpelineupmallitempurchasehistoryPager) error {
+		if filter == nil {
+			return errors.New("HPElineupMallItemPurchaseHistoryQuery filter cannot be nil")
+		}
+		pager.filter = filter
+		return nil
+	}
+}
+
+type hpelineupmallitempurchasehistoryPager struct {
+	reverse bool
+	order   *HPElineupMallItemPurchaseHistoryOrder
+	filter  func(*HPElineupMallItemPurchaseHistoryQuery) (*HPElineupMallItemPurchaseHistoryQuery, error)
+}
+
+func newHPElineupMallItemPurchaseHistoryPager(opts []HPElineupMallItemPurchaseHistoryPaginateOption, reverse bool) (*hpelineupmallitempurchasehistoryPager, error) {
+	pager := &hpelineupmallitempurchasehistoryPager{reverse: reverse}
+	for _, opt := range opts {
+		if err := opt(pager); err != nil {
+			return nil, err
+		}
+	}
+	if pager.order == nil {
+		pager.order = DefaultHPElineupMallItemPurchaseHistoryOrder
+	}
+	return pager, nil
+}
+
+func (p *hpelineupmallitempurchasehistoryPager) applyFilter(query *HPElineupMallItemPurchaseHistoryQuery) (*HPElineupMallItemPurchaseHistoryQuery, error) {
+	if p.filter != nil {
+		return p.filter(query)
+	}
+	return query, nil
+}
+
+func (p *hpelineupmallitempurchasehistoryPager) toCursor(hemiph *HPElineupMallItemPurchaseHistory) Cursor {
+	return p.order.Field.toCursor(hemiph)
+}
+
+func (p *hpelineupmallitempurchasehistoryPager) applyCursors(query *HPElineupMallItemPurchaseHistoryQuery, after, before *Cursor) (*HPElineupMallItemPurchaseHistoryQuery, error) {
+	direction := p.order.Direction
+	if p.reverse {
+		direction = direction.Reverse()
+	}
+	for _, predicate := range entgql.CursorsPredicate(after, before, DefaultHPElineupMallItemPurchaseHistoryOrder.Field.field, p.order.Field.field, direction) {
+		query = query.Where(predicate)
+	}
+	return query, nil
+}
+
+func (p *hpelineupmallitempurchasehistoryPager) applyOrder(query *HPElineupMallItemPurchaseHistoryQuery) *HPElineupMallItemPurchaseHistoryQuery {
+	direction := p.order.Direction
+	if p.reverse {
+		direction = direction.Reverse()
+	}
+	query = query.Order(orderFunc(direction, p.order.Field.field))
+	if p.order.Field != DefaultHPElineupMallItemPurchaseHistoryOrder.Field {
+		query = query.Order(orderFunc(direction, DefaultHPElineupMallItemPurchaseHistoryOrder.Field.field))
+	}
+	return query
+}
+
+func (p *hpelineupmallitempurchasehistoryPager) orderExpr() sql.Querier {
+	direction := p.order.Direction
+	if p.reverse {
+		direction = direction.Reverse()
+	}
+	return sql.ExprFunc(func(b *sql.Builder) {
+		b.Ident(p.order.Field.field).Pad().WriteString(string(direction))
+		if p.order.Field != DefaultHPElineupMallItemPurchaseHistoryOrder.Field {
+			b.Comma().Ident(DefaultHPElineupMallItemPurchaseHistoryOrder.Field.field).Pad().WriteString(string(direction))
+		}
+	})
+}
+
+// Paginate executes the query and returns a relay based cursor connection to HPElineupMallItemPurchaseHistory.
+func (hemiph *HPElineupMallItemPurchaseHistoryQuery) Paginate(
+	ctx context.Context, after *Cursor, first *int,
+	before *Cursor, last *int, opts ...HPElineupMallItemPurchaseHistoryPaginateOption,
+) (*HPElineupMallItemPurchaseHistoryConnection, error) {
+	if err := validateFirstLast(first, last); err != nil {
+		return nil, err
+	}
+	pager, err := newHPElineupMallItemPurchaseHistoryPager(opts, last != nil)
+	if err != nil {
+		return nil, err
+	}
+	if hemiph, err = pager.applyFilter(hemiph); err != nil {
+		return nil, err
+	}
+	conn := &HPElineupMallItemPurchaseHistoryConnection{Edges: []*HPElineupMallItemPurchaseHistoryEdge{}}
+	ignoredEdges := !hasCollectedField(ctx, edgesField)
+	if hasCollectedField(ctx, totalCountField) || hasCollectedField(ctx, pageInfoField) {
+		hasPagination := after != nil || first != nil || before != nil || last != nil
+		if hasPagination || ignoredEdges {
+			if conn.TotalCount, err = hemiph.Clone().Count(ctx); err != nil {
+				return nil, err
+			}
+			conn.PageInfo.HasNextPage = first != nil && conn.TotalCount > 0
+			conn.PageInfo.HasPreviousPage = last != nil && conn.TotalCount > 0
+		}
+	}
+	if ignoredEdges || (first != nil && *first == 0) || (last != nil && *last == 0) {
+		return conn, nil
+	}
+
+	if hemiph, err = pager.applyCursors(hemiph, after, before); err != nil {
+		return nil, err
+	}
+	hemiph = pager.applyOrder(hemiph)
+	if limit := paginateLimit(first, last); limit != 0 {
+		hemiph.Limit(limit)
+	}
+	if field := collectedField(ctx, edgesField, nodeField); field != nil {
+		if err := hemiph.collectField(ctx, graphql.GetOperationContext(ctx), *field, []string{edgesField, nodeField}); err != nil {
+			return nil, err
+		}
+	}
+
+	nodes, err := hemiph.All(ctx)
+	if err != nil {
+		return nil, err
+	}
+	conn.build(nodes, pager, after, first, before, last)
+	return conn, nil
+}
+
+var (
+	// HPElineupMallItemPurchaseHistoryOrderFieldCreatedAt orders HPElineupMallItemPurchaseHistory by created_at.
+	HPElineupMallItemPurchaseHistoryOrderFieldCreatedAt = &HPElineupMallItemPurchaseHistoryOrderField{
+		field: hpelineupmallitempurchasehistory.FieldCreatedAt,
+		toCursor: func(hemiph *HPElineupMallItemPurchaseHistory) Cursor {
+			return Cursor{
+				ID:    hemiph.ID,
+				Value: hemiph.CreatedAt,
+			}
+		},
+	}
+	// HPElineupMallItemPurchaseHistoryOrderFieldUpdatedAt orders HPElineupMallItemPurchaseHistory by updated_at.
+	HPElineupMallItemPurchaseHistoryOrderFieldUpdatedAt = &HPElineupMallItemPurchaseHistoryOrderField{
+		field: hpelineupmallitempurchasehistory.FieldUpdatedAt,
+		toCursor: func(hemiph *HPElineupMallItemPurchaseHistory) Cursor {
+			return Cursor{
+				ID:    hemiph.ID,
+				Value: hemiph.UpdatedAt,
+			}
+		},
+	}
+	// HPElineupMallItemPurchaseHistoryOrderFieldOrderedAt orders HPElineupMallItemPurchaseHistory by ordered_at.
+	HPElineupMallItemPurchaseHistoryOrderFieldOrderedAt = &HPElineupMallItemPurchaseHistoryOrderField{
+		field: hpelineupmallitempurchasehistory.FieldOrderedAt,
+		toCursor: func(hemiph *HPElineupMallItemPurchaseHistory) Cursor {
+			return Cursor{
+				ID:    hemiph.ID,
+				Value: hemiph.OrderedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f HPElineupMallItemPurchaseHistoryOrderField) String() string {
+	var str string
+	switch f.field {
+	case hpelineupmallitempurchasehistory.FieldCreatedAt:
+		str = "createdAt"
+	case hpelineupmallitempurchasehistory.FieldUpdatedAt:
+		str = "updatedAt"
+	case hpelineupmallitempurchasehistory.FieldOrderedAt:
+		str = "orderedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f HPElineupMallItemPurchaseHistoryOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *HPElineupMallItemPurchaseHistoryOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("HPElineupMallItemPurchaseHistoryOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *HPElineupMallItemPurchaseHistoryOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *HPElineupMallItemPurchaseHistoryOrderFieldUpdatedAt
+	case "orderedAt":
+		*f = *HPElineupMallItemPurchaseHistoryOrderFieldOrderedAt
+	default:
+		return fmt.Errorf("%s is not a valid HPElineupMallItemPurchaseHistoryOrderField", str)
+	}
+	return nil
+}
+
+// HPElineupMallItemPurchaseHistoryOrderField defines the ordering field of HPElineupMallItemPurchaseHistory.
+type HPElineupMallItemPurchaseHistoryOrderField struct {
+	field    string
+	toCursor func(*HPElineupMallItemPurchaseHistory) Cursor
+}
+
+// HPElineupMallItemPurchaseHistoryOrder defines the ordering of HPElineupMallItemPurchaseHistory.
+type HPElineupMallItemPurchaseHistoryOrder struct {
+	Direction OrderDirection                              `json:"direction"`
+	Field     *HPElineupMallItemPurchaseHistoryOrderField `json:"field"`
+}
+
+// DefaultHPElineupMallItemPurchaseHistoryOrder is the default ordering of HPElineupMallItemPurchaseHistory.
+var DefaultHPElineupMallItemPurchaseHistoryOrder = &HPElineupMallItemPurchaseHistoryOrder{
+	Direction: entgql.OrderDirectionAsc,
+	Field: &HPElineupMallItemPurchaseHistoryOrderField{
+		field: hpelineupmallitempurchasehistory.FieldID,
+		toCursor: func(hemiph *HPElineupMallItemPurchaseHistory) Cursor {
+			return Cursor{ID: hemiph.ID}
+		},
+	},
+}
+
+// ToEdge converts HPElineupMallItemPurchaseHistory into HPElineupMallItemPurchaseHistoryEdge.
+func (hemiph *HPElineupMallItemPurchaseHistory) ToEdge(order *HPElineupMallItemPurchaseHistoryOrder) *HPElineupMallItemPurchaseHistoryEdge {
+	if order == nil {
+		order = DefaultHPElineupMallItemPurchaseHistoryOrder
+	}
+	return &HPElineupMallItemPurchaseHistoryEdge{
+		Node:   hemiph,
+		Cursor: order.Field.toCursor(hemiph),
 	}
 }
 

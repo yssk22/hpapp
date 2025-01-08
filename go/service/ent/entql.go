@@ -9,6 +9,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpasset"
 	"github.com/yssk22/hpapp/go/service/ent/hpblob"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpevent"
 	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
@@ -31,7 +32,7 @@ import (
 
 // schemaGraph holds a representation of ent/schema at runtime.
 var schemaGraph = func() *sqlgraph.Schema {
-	graph := &sqlgraph.Schema{Nodes: make([]*sqlgraph.Node, 18)}
+	graph := &sqlgraph.Schema{Nodes: make([]*sqlgraph.Node, 19)}
 	graph.Nodes[0] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   auth.Table,
@@ -195,6 +196,29 @@ var schemaGraph = func() *sqlgraph.Schema {
 	}
 	graph.Nodes[6] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
+			Table:   hpelineupmallitempurchasehistory.Table,
+			Columns: hpelineupmallitempurchasehistory.Columns,
+			ID: &sqlgraph.FieldSpec{
+				Type:   field.TypeInt,
+				Column: hpelineupmallitempurchasehistory.FieldID,
+			},
+		},
+		Type: "HPElineupMallItemPurchaseHistory",
+		Fields: map[string]*sqlgraph.FieldSpec{
+			hpelineupmallitempurchasehistory.FieldCreatedAt:       {Type: field.TypeTime, Column: hpelineupmallitempurchasehistory.FieldCreatedAt},
+			hpelineupmallitempurchasehistory.FieldUpdatedAt:       {Type: field.TypeTime, Column: hpelineupmallitempurchasehistory.FieldUpdatedAt},
+			hpelineupmallitempurchasehistory.FieldOrderID:         {Type: field.TypeString, Column: hpelineupmallitempurchasehistory.FieldOrderID},
+			hpelineupmallitempurchasehistory.FieldNum:             {Type: field.TypeInt, Column: hpelineupmallitempurchasehistory.FieldNum},
+			hpelineupmallitempurchasehistory.FieldPrice:           {Type: field.TypeInt, Column: hpelineupmallitempurchasehistory.FieldPrice},
+			hpelineupmallitempurchasehistory.FieldOrderedAt:       {Type: field.TypeTime, Column: hpelineupmallitempurchasehistory.FieldOrderedAt},
+			hpelineupmallitempurchasehistory.FieldPermalink:       {Type: field.TypeString, Column: hpelineupmallitempurchasehistory.FieldPermalink},
+			hpelineupmallitempurchasehistory.FieldName:            {Type: field.TypeString, Column: hpelineupmallitempurchasehistory.FieldName},
+			hpelineupmallitempurchasehistory.FieldPurchasedItemID: {Type: field.TypeInt, Column: hpelineupmallitempurchasehistory.FieldPurchasedItemID},
+			hpelineupmallitempurchasehistory.FieldOwnerUserID:     {Type: field.TypeInt, Column: hpelineupmallitempurchasehistory.FieldOwnerUserID},
+		},
+	}
+	graph.Nodes[7] = &sqlgraph.Node{
+		NodeSpec: sqlgraph.NodeSpec{
 			Table:   hpevent.Table,
 			Columns: hpevent.Columns,
 			ID: &sqlgraph.FieldSpec{
@@ -215,7 +239,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			hpevent.FieldSource:        {Type: field.TypeEnum, Column: hpevent.FieldSource},
 		},
 	}
-	graph.Nodes[7] = &sqlgraph.Node{
+	graph.Nodes[8] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   hpfceventticket.Table,
 			Columns: hpfceventticket.Columns,
@@ -241,7 +265,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			hpfceventticket.FieldOwnerUserID:          {Type: field.TypeInt, Column: hpfceventticket.FieldOwnerUserID},
 		},
 	}
-	graph.Nodes[8] = &sqlgraph.Node{
+	graph.Nodes[9] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   hpfeeditem.Table,
 			Columns: hpfeeditem.Columns,
@@ -265,7 +289,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			hpfeeditem.FieldOwnerMemberID: {Type: field.TypeInt, Column: hpfeeditem.FieldOwnerMemberID},
 		},
 	}
-	graph.Nodes[9] = &sqlgraph.Node{
+	graph.Nodes[10] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   hpfollow.Table,
 			Columns: hpfollow.Columns,
@@ -305,7 +329,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			hpfollow.FieldElineupmallClearFile:              {Type: field.TypeEnum, Column: hpfollow.FieldElineupmallClearFile},
 		},
 	}
-	graph.Nodes[10] = &sqlgraph.Node{
+	graph.Nodes[11] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   hpigpost.Table,
 			Columns: hpigpost.Columns,
@@ -334,7 +358,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			hpigpost.FieldOwnerMemberID:    {Type: field.TypeInt, Column: hpigpost.FieldOwnerMemberID},
 		},
 	}
-	graph.Nodes[11] = &sqlgraph.Node{
+	graph.Nodes[12] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   hpmember.Table,
 			Columns: hpmember.Columns,
@@ -365,7 +389,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			hpmember.FieldArtistID:         {Type: field.TypeInt, Column: hpmember.FieldArtistID},
 		},
 	}
-	graph.Nodes[12] = &sqlgraph.Node{
+	graph.Nodes[13] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   hpsorthistory.Table,
 			Columns: hpsorthistory.Columns,
@@ -382,7 +406,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			hpsorthistory.FieldOwnerUserID: {Type: field.TypeInt, Column: hpsorthistory.FieldOwnerUserID},
 		},
 	}
-	graph.Nodes[13] = &sqlgraph.Node{
+	graph.Nodes[14] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   hpviewhistory.Table,
 			Columns: hpviewhistory.Columns,
@@ -402,7 +426,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			hpviewhistory.FieldOwnerUserID:   {Type: field.TypeInt, Column: hpviewhistory.FieldOwnerUserID},
 		},
 	}
-	graph.Nodes[14] = &sqlgraph.Node{
+	graph.Nodes[15] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   testent.Table,
 			Columns: testent.Columns,
@@ -425,7 +449,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			testent.FieldEnumField:   {Type: field.TypeEnum, Column: testent.FieldEnumField},
 		},
 	}
-	graph.Nodes[15] = &sqlgraph.Node{
+	graph.Nodes[16] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   user.Table,
 			Columns: user.Columns,
@@ -442,7 +466,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			user.FieldAccessToken: {Type: field.TypeString, Column: user.FieldAccessToken},
 		},
 	}
-	graph.Nodes[16] = &sqlgraph.Node{
+	graph.Nodes[17] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   usernotificationlog.Table,
 			Columns: usernotificationlog.Columns,
@@ -464,7 +488,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			usernotificationlog.FieldStatusMessage:          {Type: field.TypeString, Column: usernotificationlog.FieldStatusMessage},
 		},
 	}
-	graph.Nodes[17] = &sqlgraph.Node{
+	graph.Nodes[18] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   usernotificationsetting.Table,
 			Columns: usernotificationsetting.Columns,
@@ -797,6 +821,42 @@ var schemaGraph = func() *sqlgraph.Schema {
 		},
 		"HPElineupMallItem",
 		"HPMember",
+	)
+	graph.MustAddE(
+		"purchase_histories",
+		&sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpelineupmallitem.PurchaseHistoriesTable,
+			Columns: []string{hpelineupmallitem.PurchaseHistoriesColumn},
+			Bidi:    false,
+		},
+		"HPElineupMallItem",
+		"HPElineupMallItemPurchaseHistory",
+	)
+	graph.MustAddE(
+		"elineup_mall_item",
+		&sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   hpelineupmallitempurchasehistory.ElineupMallItemTable,
+			Columns: []string{hpelineupmallitempurchasehistory.ElineupMallItemColumn},
+			Bidi:    false,
+		},
+		"HPElineupMallItemPurchaseHistory",
+		"HPElineupMallItem",
+	)
+	graph.MustAddE(
+		"owner",
+		&sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   hpelineupmallitempurchasehistory.OwnerTable,
+			Columns: []string{hpelineupmallitempurchasehistory.OwnerColumn},
+			Bidi:    false,
+		},
+		"HPElineupMallItemPurchaseHistory",
+		"User",
 	)
 	graph.MustAddE(
 		"members",
@@ -1241,6 +1301,18 @@ var schemaGraph = func() *sqlgraph.Schema {
 		},
 		"User",
 		"HPFCEventTicket",
+	)
+	graph.MustAddE(
+		"elineup_mall_purchase_histories",
+		&sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.ElineupMallPurchaseHistoriesTable,
+			Columns: []string{user.ElineupMallPurchaseHistoriesColumn},
+			Bidi:    false,
+		},
+		"User",
+		"HPElineupMallItemPurchaseHistory",
 	)
 	graph.MustAddE(
 		"receivers",
@@ -2306,6 +2378,138 @@ func (f *HPElineupMallItemFilter) WhereHasTaggedMembersWith(preds ...predicate.H
 	})))
 }
 
+// WhereHasPurchaseHistories applies a predicate to check if query has an edge purchase_histories.
+func (f *HPElineupMallItemFilter) WhereHasPurchaseHistories() {
+	f.Where(entql.HasEdge("purchase_histories"))
+}
+
+// WhereHasPurchaseHistoriesWith applies a predicate to check if query has an edge purchase_histories with a given conditions (other predicates).
+func (f *HPElineupMallItemFilter) WhereHasPurchaseHistoriesWith(preds ...predicate.HPElineupMallItemPurchaseHistory) {
+	f.Where(entql.HasEdgeWith("purchase_histories", sqlgraph.WrapFunc(func(s *sql.Selector) {
+		for _, p := range preds {
+			p(s)
+		}
+	})))
+}
+
+// addPredicate implements the predicateAdder interface.
+func (hemiphq *HPElineupMallItemPurchaseHistoryQuery) addPredicate(pred func(s *sql.Selector)) {
+	hemiphq.predicates = append(hemiphq.predicates, pred)
+}
+
+// Filter returns a Filter implementation to apply filters on the HPElineupMallItemPurchaseHistoryQuery builder.
+func (hemiphq *HPElineupMallItemPurchaseHistoryQuery) Filter() *HPElineupMallItemPurchaseHistoryFilter {
+	return &HPElineupMallItemPurchaseHistoryFilter{config: hemiphq.config, predicateAdder: hemiphq}
+}
+
+// addPredicate implements the predicateAdder interface.
+func (m *HPElineupMallItemPurchaseHistoryMutation) addPredicate(pred func(s *sql.Selector)) {
+	m.predicates = append(m.predicates, pred)
+}
+
+// Filter returns an entql.Where implementation to apply filters on the HPElineupMallItemPurchaseHistoryMutation builder.
+func (m *HPElineupMallItemPurchaseHistoryMutation) Filter() *HPElineupMallItemPurchaseHistoryFilter {
+	return &HPElineupMallItemPurchaseHistoryFilter{config: m.config, predicateAdder: m}
+}
+
+// HPElineupMallItemPurchaseHistoryFilter provides a generic filtering capability at runtime for HPElineupMallItemPurchaseHistoryQuery.
+type HPElineupMallItemPurchaseHistoryFilter struct {
+	predicateAdder
+	config
+}
+
+// Where applies the entql predicate on the query filter.
+func (f *HPElineupMallItemPurchaseHistoryFilter) Where(p entql.P) {
+	f.addPredicate(func(s *sql.Selector) {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[6].Type, p, s); err != nil {
+			s.AddError(err)
+		}
+	})
+}
+
+// WhereID applies the entql int predicate on the id field.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WhereID(p entql.IntP) {
+	f.Where(p.Field(hpelineupmallitempurchasehistory.FieldID))
+}
+
+// WhereCreatedAt applies the entql time.Time predicate on the created_at field.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WhereCreatedAt(p entql.TimeP) {
+	f.Where(p.Field(hpelineupmallitempurchasehistory.FieldCreatedAt))
+}
+
+// WhereUpdatedAt applies the entql time.Time predicate on the updated_at field.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WhereUpdatedAt(p entql.TimeP) {
+	f.Where(p.Field(hpelineupmallitempurchasehistory.FieldUpdatedAt))
+}
+
+// WhereOrderID applies the entql string predicate on the order_id field.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WhereOrderID(p entql.StringP) {
+	f.Where(p.Field(hpelineupmallitempurchasehistory.FieldOrderID))
+}
+
+// WhereNum applies the entql int predicate on the num field.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WhereNum(p entql.IntP) {
+	f.Where(p.Field(hpelineupmallitempurchasehistory.FieldNum))
+}
+
+// WherePrice applies the entql int predicate on the price field.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WherePrice(p entql.IntP) {
+	f.Where(p.Field(hpelineupmallitempurchasehistory.FieldPrice))
+}
+
+// WhereOrderedAt applies the entql time.Time predicate on the ordered_at field.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WhereOrderedAt(p entql.TimeP) {
+	f.Where(p.Field(hpelineupmallitempurchasehistory.FieldOrderedAt))
+}
+
+// WherePermalink applies the entql string predicate on the permalink field.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WherePermalink(p entql.StringP) {
+	f.Where(p.Field(hpelineupmallitempurchasehistory.FieldPermalink))
+}
+
+// WhereName applies the entql string predicate on the name field.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WhereName(p entql.StringP) {
+	f.Where(p.Field(hpelineupmallitempurchasehistory.FieldName))
+}
+
+// WherePurchasedItemID applies the entql int predicate on the purchased_item_id field.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WherePurchasedItemID(p entql.IntP) {
+	f.Where(p.Field(hpelineupmallitempurchasehistory.FieldPurchasedItemID))
+}
+
+// WhereOwnerUserID applies the entql int predicate on the owner_user_id field.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WhereOwnerUserID(p entql.IntP) {
+	f.Where(p.Field(hpelineupmallitempurchasehistory.FieldOwnerUserID))
+}
+
+// WhereHasElineupMallItem applies a predicate to check if query has an edge elineup_mall_item.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WhereHasElineupMallItem() {
+	f.Where(entql.HasEdge("elineup_mall_item"))
+}
+
+// WhereHasElineupMallItemWith applies a predicate to check if query has an edge elineup_mall_item with a given conditions (other predicates).
+func (f *HPElineupMallItemPurchaseHistoryFilter) WhereHasElineupMallItemWith(preds ...predicate.HPElineupMallItem) {
+	f.Where(entql.HasEdgeWith("elineup_mall_item", sqlgraph.WrapFunc(func(s *sql.Selector) {
+		for _, p := range preds {
+			p(s)
+		}
+	})))
+}
+
+// WhereHasOwner applies a predicate to check if query has an edge owner.
+func (f *HPElineupMallItemPurchaseHistoryFilter) WhereHasOwner() {
+	f.Where(entql.HasEdge("owner"))
+}
+
+// WhereHasOwnerWith applies a predicate to check if query has an edge owner with a given conditions (other predicates).
+func (f *HPElineupMallItemPurchaseHistoryFilter) WhereHasOwnerWith(preds ...predicate.User) {
+	f.Where(entql.HasEdgeWith("owner", sqlgraph.WrapFunc(func(s *sql.Selector) {
+		for _, p := range preds {
+			p(s)
+		}
+	})))
+}
+
 // addPredicate implements the predicateAdder interface.
 func (heq *HPEventQuery) addPredicate(pred func(s *sql.Selector)) {
 	heq.predicates = append(heq.predicates, pred)
@@ -2335,7 +2539,7 @@ type HPEventFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *HPEventFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[6].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[7].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -2462,7 +2666,7 @@ type HPFCEventTicketFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *HPFCEventTicketFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[7].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[8].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -2595,7 +2799,7 @@ type HPFeedItemFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *HPFeedItemFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[8].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[9].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -2760,7 +2964,7 @@ type HPFollowFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *HPFollowFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[9].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[10].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -2963,7 +3167,7 @@ type HPIgPostFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *HPIgPostFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[10].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[11].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -3167,7 +3371,7 @@ type HPMemberFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *HPMemberFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[11].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[12].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -3437,7 +3641,7 @@ type HPSortHistoryFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *HPSortHistoryFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[12].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[13].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -3511,7 +3715,7 @@ type HPViewHistoryFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *HPViewHistoryFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[13].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[14].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -3614,7 +3818,7 @@ type TestEntFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *TestEntFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[14].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[15].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -3704,7 +3908,7 @@ type UserFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *UserFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[15].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[16].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -3819,6 +4023,20 @@ func (f *UserFilter) WhereHasHpfcEventTicketsWith(preds ...predicate.HPFCEventTi
 	})))
 }
 
+// WhereHasElineupMallPurchaseHistories applies a predicate to check if query has an edge elineup_mall_purchase_histories.
+func (f *UserFilter) WhereHasElineupMallPurchaseHistories() {
+	f.Where(entql.HasEdge("elineup_mall_purchase_histories"))
+}
+
+// WhereHasElineupMallPurchaseHistoriesWith applies a predicate to check if query has an edge elineup_mall_purchase_histories with a given conditions (other predicates).
+func (f *UserFilter) WhereHasElineupMallPurchaseHistoriesWith(preds ...predicate.HPElineupMallItemPurchaseHistory) {
+	f.Where(entql.HasEdgeWith("elineup_mall_purchase_histories", sqlgraph.WrapFunc(func(s *sql.Selector) {
+		for _, p := range preds {
+			p(s)
+		}
+	})))
+}
+
 // addPredicate implements the predicateAdder interface.
 func (unlq *UserNotificationLogQuery) addPredicate(pred func(s *sql.Selector)) {
 	unlq.predicates = append(unlq.predicates, pred)
@@ -3848,7 +4066,7 @@ type UserNotificationLogFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *UserNotificationLogFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[16].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[17].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -3947,7 +4165,7 @@ type UserNotificationSettingFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *UserNotificationSettingFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[17].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[18].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})

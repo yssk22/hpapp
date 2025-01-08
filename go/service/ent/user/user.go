@@ -33,6 +33,8 @@ const (
 	EdgeHpsortHistory = "hpsort_history"
 	// EdgeHpfcEventTickets holds the string denoting the hpfc_event_tickets edge name in mutations.
 	EdgeHpfcEventTickets = "hpfc_event_tickets"
+	// EdgeElineupMallPurchaseHistories holds the string denoting the elineup_mall_purchase_histories edge name in mutations.
+	EdgeElineupMallPurchaseHistories = "elineup_mall_purchase_histories"
 	// Table holds the table name of the user in the database.
 	Table = "users"
 	// AuthTable is the table that holds the auth relation/edge.
@@ -77,6 +79,13 @@ const (
 	HpfcEventTicketsInverseTable = "hpfc_event_tickets"
 	// HpfcEventTicketsColumn is the table column denoting the hpfc_event_tickets relation/edge.
 	HpfcEventTicketsColumn = "user_hpfc_event_tickets"
+	// ElineupMallPurchaseHistoriesTable is the table that holds the elineup_mall_purchase_histories relation/edge.
+	ElineupMallPurchaseHistoriesTable = "hp_elineup_mall_item_purchase_histories"
+	// ElineupMallPurchaseHistoriesInverseTable is the table name for the HPElineupMallItemPurchaseHistory entity.
+	// It exists in this package in order to avoid circular dependency with the "hpelineupmallitempurchasehistory" package.
+	ElineupMallPurchaseHistoriesInverseTable = "hp_elineup_mall_item_purchase_histories"
+	// ElineupMallPurchaseHistoriesColumn is the table column denoting the elineup_mall_purchase_histories relation/edge.
+	ElineupMallPurchaseHistoriesColumn = "owner_user_id"
 )
 
 // Columns holds all SQL columns for user fields.
@@ -219,6 +228,20 @@ func ByHpfcEventTickets(term sql.OrderTerm, terms ...sql.OrderTerm) Order {
 		sqlgraph.OrderByNeighborTerms(s, newHpfcEventTicketsStep(), append([]sql.OrderTerm{term}, terms...)...)
 	}
 }
+
+// ByElineupMallPurchaseHistoriesCount orders the results by elineup_mall_purchase_histories count.
+func ByElineupMallPurchaseHistoriesCount(opts ...sql.OrderTermOption) Order {
+	return func(s *sql.Selector) {
+		sqlgraph.OrderByNeighborsCount(s, newElineupMallPurchaseHistoriesStep(), opts...)
+	}
+}
+
+// ByElineupMallPurchaseHistories orders the results by elineup_mall_purchase_histories terms.
+func ByElineupMallPurchaseHistories(term sql.OrderTerm, terms ...sql.OrderTerm) Order {
+	return func(s *sql.Selector) {
+		sqlgraph.OrderByNeighborTerms(s, newElineupMallPurchaseHistoriesStep(), append([]sql.OrderTerm{term}, terms...)...)
+	}
+}
 func newAuthStep() *sqlgraph.Step {
 	return sqlgraph.NewStep(
 		sqlgraph.From(Table, FieldID),
@@ -259,5 +282,12 @@ func newHpfcEventTicketsStep() *sqlgraph.Step {
 		sqlgraph.From(Table, FieldID),
 		sqlgraph.To(HpfcEventTicketsInverseTable, FieldID),
 		sqlgraph.Edge(sqlgraph.O2M, false, HpfcEventTicketsTable, HpfcEventTicketsColumn),
+	)
+}
+func newElineupMallPurchaseHistoriesStep() *sqlgraph.Step {
+	return sqlgraph.NewStep(
+		sqlgraph.From(Table, FieldID),
+		sqlgraph.To(ElineupMallPurchaseHistoriesInverseTable, FieldID),
+		sqlgraph.Edge(sqlgraph.O2M, false, ElineupMallPurchaseHistoriesTable, ElineupMallPurchaseHistoriesColumn),
 	)
 }

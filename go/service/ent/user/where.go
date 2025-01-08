@@ -443,6 +443,29 @@ func HasHpfcEventTicketsWith(preds ...predicate.HPFCEventTicket) predicate.User 
 	})
 }
 
+// HasElineupMallPurchaseHistories applies the HasEdge predicate on the "elineup_mall_purchase_histories" edge.
+func HasElineupMallPurchaseHistories() predicate.User {
+	return predicate.User(func(s *sql.Selector) {
+		step := sqlgraph.NewStep(
+			sqlgraph.From(Table, FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, ElineupMallPurchaseHistoriesTable, ElineupMallPurchaseHistoriesColumn),
+		)
+		sqlgraph.HasNeighbors(s, step)
+	})
+}
+
+// HasElineupMallPurchaseHistoriesWith applies the HasEdge predicate on the "elineup_mall_purchase_histories" edge with a given conditions (other predicates).
+func HasElineupMallPurchaseHistoriesWith(preds ...predicate.HPElineupMallItemPurchaseHistory) predicate.User {
+	return predicate.User(func(s *sql.Selector) {
+		step := newElineupMallPurchaseHistoriesStep()
+		sqlgraph.HasNeighborsWith(s, step, func(s *sql.Selector) {
+			for _, p := range preds {
+				p(s)
+			}
+		})
+	})
+}
+
 // And groups predicates with the AND operator between them.
 func And(predicates ...predicate.User) predicate.User {
 	return predicate.User(func(s *sql.Selector) {

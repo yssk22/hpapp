@@ -13,6 +13,7 @@ import (
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/yssk22/hpapp/go/service/ent/auth"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
@@ -25,24 +26,26 @@ import (
 // UserQuery is the builder for querying User entities.
 type UserQuery struct {
 	config
-	ctx                           *QueryContext
-	order                         []user.Order
-	inters                        []Interceptor
-	predicates                    []predicate.User
-	withAuth                      *AuthQuery
-	withNotificationSettings      *UserNotificationSettingQuery
-	withHpviewHistory             *HPViewHistoryQuery
-	withHpmemberFollowing         *HPFollowQuery
-	withHpsortHistory             *HPSortHistoryQuery
-	withHpfcEventTickets          *HPFCEventTicketQuery
-	modifiers                     []func(*sql.Selector)
-	loadTotal                     []func(context.Context, []*User) error
-	withNamedAuth                 map[string]*AuthQuery
-	withNamedNotificationSettings map[string]*UserNotificationSettingQuery
-	withNamedHpviewHistory        map[string]*HPViewHistoryQuery
-	withNamedHpmemberFollowing    map[string]*HPFollowQuery
-	withNamedHpsortHistory        map[string]*HPSortHistoryQuery
-	withNamedHpfcEventTickets     map[string]*HPFCEventTicketQuery
+	ctx                                   *QueryContext
+	order                                 []user.Order
+	inters                                []Interceptor
+	predicates                            []predicate.User
+	withAuth                              *AuthQuery
+	withNotificationSettings              *UserNotificationSettingQuery
+	withHpviewHistory                     *HPViewHistoryQuery
+	withHpmemberFollowing                 *HPFollowQuery
+	withHpsortHistory                     *HPSortHistoryQuery
+	withHpfcEventTickets                  *HPFCEventTicketQuery
+	withElineupMallPurchaseHistories      *HPElineupMallItemPurchaseHistoryQuery
+	modifiers                             []func(*sql.Selector)
+	loadTotal                             []func(context.Context, []*User) error
+	withNamedAuth                         map[string]*AuthQuery
+	withNamedNotificationSettings         map[string]*UserNotificationSettingQuery
+	withNamedHpviewHistory                map[string]*HPViewHistoryQuery
+	withNamedHpmemberFollowing            map[string]*HPFollowQuery
+	withNamedHpsortHistory                map[string]*HPSortHistoryQuery
+	withNamedHpfcEventTickets             map[string]*HPFCEventTicketQuery
+	withNamedElineupMallPurchaseHistories map[string]*HPElineupMallItemPurchaseHistoryQuery
 	// intermediate query (i.e. traversal path).
 	sql  *sql.Selector
 	path func(context.Context) (*sql.Selector, error)
@@ -204,6 +207,28 @@ func (uq *UserQuery) QueryHpfcEventTickets() *HPFCEventTicketQuery {
 			sqlgraph.From(user.Table, user.FieldID, selector),
 			sqlgraph.To(hpfceventticket.Table, hpfceventticket.FieldID),
 			sqlgraph.Edge(sqlgraph.O2M, false, user.HpfcEventTicketsTable, user.HpfcEventTicketsColumn),
+		)
+		fromU = sqlgraph.SetNeighbors(uq.driver.Dialect(), step)
+		return fromU, nil
+	}
+	return query
+}
+
+// QueryElineupMallPurchaseHistories chains the current query on the "elineup_mall_purchase_histories" edge.
+func (uq *UserQuery) QueryElineupMallPurchaseHistories() *HPElineupMallItemPurchaseHistoryQuery {
+	query := (&HPElineupMallItemPurchaseHistoryClient{config: uq.config}).Query()
+	query.path = func(ctx context.Context) (fromU *sql.Selector, err error) {
+		if err := uq.prepareQuery(ctx); err != nil {
+			return nil, err
+		}
+		selector := uq.sqlQuery(ctx)
+		if err := selector.Err(); err != nil {
+			return nil, err
+		}
+		step := sqlgraph.NewStep(
+			sqlgraph.From(user.Table, user.FieldID, selector),
+			sqlgraph.To(hpelineupmallitempurchasehistory.Table, hpelineupmallitempurchasehistory.FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, user.ElineupMallPurchaseHistoriesTable, user.ElineupMallPurchaseHistoriesColumn),
 		)
 		fromU = sqlgraph.SetNeighbors(uq.driver.Dialect(), step)
 		return fromU, nil
@@ -398,17 +423,18 @@ func (uq *UserQuery) Clone() *UserQuery {
 		return nil
 	}
 	return &UserQuery{
-		config:                   uq.config,
-		ctx:                      uq.ctx.Clone(),
-		order:                    append([]user.Order{}, uq.order...),
-		inters:                   append([]Interceptor{}, uq.inters...),
-		predicates:               append([]predicate.User{}, uq.predicates...),
-		withAuth:                 uq.withAuth.Clone(),
-		withNotificationSettings: uq.withNotificationSettings.Clone(),
-		withHpviewHistory:        uq.withHpviewHistory.Clone(),
-		withHpmemberFollowing:    uq.withHpmemberFollowing.Clone(),
-		withHpsortHistory:        uq.withHpsortHistory.Clone(),
-		withHpfcEventTickets:     uq.withHpfcEventTickets.Clone(),
+		config:                           uq.config,
+		ctx:                              uq.ctx.Clone(),
+		order:                            append([]user.Order{}, uq.order...),
+		inters:                           append([]Interceptor{}, uq.inters...),
+		predicates:                       append([]predicate.User{}, uq.predicates...),
+		withAuth:                         uq.withAuth.Clone(),
+		withNotificationSettings:         uq.withNotificationSettings.Clone(),
+		withHpviewHistory:                uq.withHpviewHistory.Clone(),
+		withHpmemberFollowing:            uq.withHpmemberFollowing.Clone(),
+		withHpsortHistory:                uq.withHpsortHistory.Clone(),
+		withHpfcEventTickets:             uq.withHpfcEventTickets.Clone(),
+		withElineupMallPurchaseHistories: uq.withElineupMallPurchaseHistories.Clone(),
 		// clone intermediate query.
 		sql:  uq.sql.Clone(),
 		path: uq.path,
@@ -478,6 +504,17 @@ func (uq *UserQuery) WithHpfcEventTickets(opts ...func(*HPFCEventTicketQuery)) *
 		opt(query)
 	}
 	uq.withHpfcEventTickets = query
+	return uq
+}
+
+// WithElineupMallPurchaseHistories tells the query-builder to eager-load the nodes that are connected to
+// the "elineup_mall_purchase_histories" edge. The optional arguments are used to configure the query builder of the edge.
+func (uq *UserQuery) WithElineupMallPurchaseHistories(opts ...func(*HPElineupMallItemPurchaseHistoryQuery)) *UserQuery {
+	query := (&HPElineupMallItemPurchaseHistoryClient{config: uq.config}).Query()
+	for _, opt := range opts {
+		opt(query)
+	}
+	uq.withElineupMallPurchaseHistories = query
 	return uq
 }
 
@@ -565,13 +602,14 @@ func (uq *UserQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*User, e
 	var (
 		nodes       = []*User{}
 		_spec       = uq.querySpec()
-		loadedTypes = [6]bool{
+		loadedTypes = [7]bool{
 			uq.withAuth != nil,
 			uq.withNotificationSettings != nil,
 			uq.withHpviewHistory != nil,
 			uq.withHpmemberFollowing != nil,
 			uq.withHpsortHistory != nil,
 			uq.withHpfcEventTickets != nil,
+			uq.withElineupMallPurchaseHistories != nil,
 		}
 	)
 	_spec.ScanValues = func(columns []string) ([]any, error) {
@@ -639,6 +677,15 @@ func (uq *UserQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*User, e
 			return nil, err
 		}
 	}
+	if query := uq.withElineupMallPurchaseHistories; query != nil {
+		if err := uq.loadElineupMallPurchaseHistories(ctx, query, nodes,
+			func(n *User) { n.Edges.ElineupMallPurchaseHistories = []*HPElineupMallItemPurchaseHistory{} },
+			func(n *User, e *HPElineupMallItemPurchaseHistory) {
+				n.Edges.ElineupMallPurchaseHistories = append(n.Edges.ElineupMallPurchaseHistories, e)
+			}); err != nil {
+			return nil, err
+		}
+	}
 	for name, query := range uq.withNamedAuth {
 		if err := uq.loadAuth(ctx, query, nodes,
 			func(n *User) { n.appendNamedAuth(name) },
@@ -678,6 +725,13 @@ func (uq *UserQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*User, e
 		if err := uq.loadHpfcEventTickets(ctx, query, nodes,
 			func(n *User) { n.appendNamedHpfcEventTickets(name) },
 			func(n *User, e *HPFCEventTicket) { n.appendNamedHpfcEventTickets(name, e) }); err != nil {
+			return nil, err
+		}
+	}
+	for name, query := range uq.withNamedElineupMallPurchaseHistories {
+		if err := uq.loadElineupMallPurchaseHistories(ctx, query, nodes,
+			func(n *User) { n.appendNamedElineupMallPurchaseHistories(name) },
+			func(n *User, e *HPElineupMallItemPurchaseHistory) { n.appendNamedElineupMallPurchaseHistories(name, e) }); err != nil {
 			return nil, err
 		}
 	}
@@ -863,6 +917,33 @@ func (uq *UserQuery) loadHpfcEventTickets(ctx context.Context, query *HPFCEventT
 	}
 	return nil
 }
+func (uq *UserQuery) loadElineupMallPurchaseHistories(ctx context.Context, query *HPElineupMallItemPurchaseHistoryQuery, nodes []*User, init func(*User), assign func(*User, *HPElineupMallItemPurchaseHistory)) error {
+	fks := make([]driver.Value, 0, len(nodes))
+	nodeids := make(map[int]*User)
+	for i := range nodes {
+		fks = append(fks, nodes[i].ID)
+		nodeids[nodes[i].ID] = nodes[i]
+		if init != nil {
+			init(nodes[i])
+		}
+	}
+	query.Where(predicate.HPElineupMallItemPurchaseHistory(func(s *sql.Selector) {
+		s.Where(sql.InValues(user.ElineupMallPurchaseHistoriesColumn, fks...))
+	}))
+	neighbors, err := query.All(ctx)
+	if err != nil {
+		return err
+	}
+	for _, n := range neighbors {
+		fk := n.OwnerUserID
+		node, ok := nodeids[fk]
+		if !ok {
+			return fmt.Errorf(`unexpected foreign-key "owner_user_id" returned %v for node %v`, fk, n.ID)
+		}
+		assign(node, n)
+	}
+	return nil
+}
 
 func (uq *UserQuery) sqlCount(ctx context.Context) (int, error) {
 	_spec := uq.querySpec()
@@ -1029,6 +1110,20 @@ func (uq *UserQuery) WithNamedHpfcEventTickets(name string, opts ...func(*HPFCEv
 		uq.withNamedHpfcEventTickets = make(map[string]*HPFCEventTicketQuery)
 	}
 	uq.withNamedHpfcEventTickets[name] = query
+	return uq
+}
+
+// WithNamedElineupMallPurchaseHistories tells the query-builder to eager-load the nodes that are connected to the "elineup_mall_purchase_histories"
+// edge with the given name. The optional arguments are used to configure the query builder of the edge.
+func (uq *UserQuery) WithNamedElineupMallPurchaseHistories(name string, opts ...func(*HPElineupMallItemPurchaseHistoryQuery)) *UserQuery {
+	query := (&HPElineupMallItemPurchaseHistoryClient{config: uq.config}).Query()
+	for _, opt := range opts {
+		opt(query)
+	}
+	if uq.withNamedElineupMallPurchaseHistories == nil {
+		uq.withNamedElineupMallPurchaseHistories = make(map[string]*HPElineupMallItemPurchaseHistoryQuery)
+	}
+	uq.withNamedElineupMallPurchaseHistories[name] = query
 	return uq
 }
 

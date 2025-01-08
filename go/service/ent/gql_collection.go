@@ -13,6 +13,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpblob"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpevent"
 	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
@@ -784,6 +785,18 @@ func (hemi *HPElineupMallItemQuery) collectField(ctx context.Context, opCtx *gra
 			hemi.WithNamedTaggedMembers(alias, func(wq *HPMemberQuery) {
 				*wq = *query
 			})
+		case "purchaseHistories":
+			var (
+				alias = field.Alias
+				path  = append(path, alias)
+				query = (&HPElineupMallItemPurchaseHistoryClient{config: hemi.config}).Query()
+			)
+			if err := query.collectField(ctx, opCtx, field, path, satisfies...); err != nil {
+				return err
+			}
+			hemi.WithNamedPurchaseHistories(alias, func(wq *HPElineupMallItemPurchaseHistoryQuery) {
+				*wq = *query
+			})
 		case "crawledAt":
 			if _, ok := fieldSeen[hpelineupmallitem.FieldCrawledAt]; !ok {
 				selectedFields = append(selectedFields, hpelineupmallitem.FieldCrawledAt)
@@ -921,6 +934,135 @@ func newHPElineupMallItemPaginateArgs(rv map[string]interface{}) *hpelineupmalli
 		case *HPElineupMallItemOrder:
 			if v != nil {
 				args.opts = append(args.opts, WithHPElineupMallItemOrder(v))
+			}
+		}
+	}
+	return args
+}
+
+// CollectFields tells the query-builder to eagerly load connected nodes by resolver context.
+func (hemiph *HPElineupMallItemPurchaseHistoryQuery) CollectFields(ctx context.Context, satisfies ...string) (*HPElineupMallItemPurchaseHistoryQuery, error) {
+	fc := graphql.GetFieldContext(ctx)
+	if fc == nil {
+		return hemiph, nil
+	}
+	if err := hemiph.collectField(ctx, graphql.GetOperationContext(ctx), fc.Field, nil, satisfies...); err != nil {
+		return nil, err
+	}
+	return hemiph, nil
+}
+
+func (hemiph *HPElineupMallItemPurchaseHistoryQuery) collectField(ctx context.Context, opCtx *graphql.OperationContext, collected graphql.CollectedField, path []string, satisfies ...string) error {
+	path = append([]string(nil), path...)
+	var (
+		unknownSeen    bool
+		fieldSeen      = make(map[string]struct{}, len(hpelineupmallitempurchasehistory.Columns))
+		selectedFields = []string{hpelineupmallitempurchasehistory.FieldID}
+	)
+	for _, field := range graphql.CollectFields(opCtx, collected.Selections, satisfies) {
+		switch field.Name {
+		case "createdAt":
+			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldCreatedAt]; !ok {
+				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldCreatedAt)
+				fieldSeen[hpelineupmallitempurchasehistory.FieldCreatedAt] = struct{}{}
+			}
+		case "updatedAt":
+			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldUpdatedAt]; !ok {
+				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldUpdatedAt)
+				fieldSeen[hpelineupmallitempurchasehistory.FieldUpdatedAt] = struct{}{}
+			}
+		case "orderID":
+			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldOrderID]; !ok {
+				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldOrderID)
+				fieldSeen[hpelineupmallitempurchasehistory.FieldOrderID] = struct{}{}
+			}
+		case "num":
+			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldNum]; !ok {
+				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldNum)
+				fieldSeen[hpelineupmallitempurchasehistory.FieldNum] = struct{}{}
+			}
+		case "price":
+			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldPrice]; !ok {
+				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldPrice)
+				fieldSeen[hpelineupmallitempurchasehistory.FieldPrice] = struct{}{}
+			}
+		case "orderedAt":
+			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldOrderedAt]; !ok {
+				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldOrderedAt)
+				fieldSeen[hpelineupmallitempurchasehistory.FieldOrderedAt] = struct{}{}
+			}
+		case "permalink":
+			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldPermalink]; !ok {
+				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldPermalink)
+				fieldSeen[hpelineupmallitempurchasehistory.FieldPermalink] = struct{}{}
+			}
+		case "name":
+			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldName]; !ok {
+				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldName)
+				fieldSeen[hpelineupmallitempurchasehistory.FieldName] = struct{}{}
+			}
+		case "purchasedItemID":
+			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldPurchasedItemID]; !ok {
+				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldPurchasedItemID)
+				fieldSeen[hpelineupmallitempurchasehistory.FieldPurchasedItemID] = struct{}{}
+			}
+		case "ownerUserID":
+			if _, ok := fieldSeen[hpelineupmallitempurchasehistory.FieldOwnerUserID]; !ok {
+				selectedFields = append(selectedFields, hpelineupmallitempurchasehistory.FieldOwnerUserID)
+				fieldSeen[hpelineupmallitempurchasehistory.FieldOwnerUserID] = struct{}{}
+			}
+		default:
+			unknownSeen = true
+		}
+	}
+	if !unknownSeen {
+		hemiph.Select(selectedFields...)
+	}
+	return nil
+}
+
+type hpelineupmallitempurchasehistoryPaginateArgs struct {
+	first, last   *int
+	after, before *Cursor
+	opts          []HPElineupMallItemPurchaseHistoryPaginateOption
+}
+
+func newHPElineupMallItemPurchaseHistoryPaginateArgs(rv map[string]interface{}) *hpelineupmallitempurchasehistoryPaginateArgs {
+	args := &hpelineupmallitempurchasehistoryPaginateArgs{}
+	if rv == nil {
+		return args
+	}
+	if v := rv[firstField]; v != nil {
+		args.first = v.(*int)
+	}
+	if v := rv[lastField]; v != nil {
+		args.last = v.(*int)
+	}
+	if v := rv[afterField]; v != nil {
+		args.after = v.(*Cursor)
+	}
+	if v := rv[beforeField]; v != nil {
+		args.before = v.(*Cursor)
+	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &HPElineupMallItemPurchaseHistoryOrder{Field: &HPElineupMallItemPurchaseHistoryOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithHPElineupMallItemPurchaseHistoryOrder(order))
+			}
+		case *HPElineupMallItemPurchaseHistoryOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithHPElineupMallItemPurchaseHistoryOrder(v))
 			}
 		}
 	}
@@ -2324,6 +2466,18 @@ func (u *UserQuery) collectField(ctx context.Context, opCtx *graphql.OperationCo
 				return err
 			}
 			u.WithNamedHpfcEventTickets(alias, func(wq *HPFCEventTicketQuery) {
+				*wq = *query
+			})
+		case "elineupMallPurchaseHistories":
+			var (
+				alias = field.Alias
+				path  = append(path, alias)
+				query = (&HPElineupMallItemPurchaseHistoryClient{config: u.config}).Query()
+			)
+			if err := query.collectField(ctx, opCtx, field, path, satisfies...); err != nil {
+				return err
+			}
+			u.WithNamedElineupMallPurchaseHistories(alias, func(wq *HPElineupMallItemPurchaseHistoryQuery) {
 				*wq = *query
 			})
 		case "createdAt":

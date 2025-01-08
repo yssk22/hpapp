@@ -11,6 +11,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpblob"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpevent"
 	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
@@ -123,6 +124,19 @@ func init() {
 	hpelineupmallitemDescDescription := hpelineupmallitemFields[2].Descriptor()
 	// hpelineupmallitem.DefaultDescription holds the default value on creation for the description field.
 	hpelineupmallitem.DefaultDescription = hpelineupmallitemDescDescription.Default.(string)
+	hpelineupmallitempurchasehistoryMixin := schema.HPElineupMallItemPurchaseHistory{}.Mixin()
+	hpelineupmallitempurchasehistory.Policy = privacy.NewPolicies(schema.HPElineupMallItemPurchaseHistory{})
+	hpelineupmallitempurchasehistory.Hooks[0] = func(next ent.Mutator) ent.Mutator {
+		return ent.MutateFunc(func(ctx context.Context, m ent.Mutation) (ent.Value, error) {
+			if err := hpelineupmallitempurchasehistory.Policy.EvalMutation(ctx, m); err != nil {
+				return nil, err
+			}
+			return next.Mutate(ctx, m)
+		})
+	}
+	hpelineupmallitempurchasehistoryMixinHooks0 := hpelineupmallitempurchasehistoryMixin[0].Hooks()
+
+	hpelineupmallitempurchasehistory.Hooks[1] = hpelineupmallitempurchasehistoryMixinHooks0[0]
 	hpeventMixin := schema.HPEvent{}.Mixin()
 	hpeventMixinHooks0 := hpeventMixin[0].Hooks()
 	hpevent.Hooks[0] = hpeventMixinHooks0[0]

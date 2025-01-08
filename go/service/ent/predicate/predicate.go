@@ -24,6 +24,9 @@ type HPBlob func(*sql.Selector)
 // HPElineupMallItem is the predicate function for hpelineupmallitem builders.
 type HPElineupMallItem func(*sql.Selector)
 
+// HPElineupMallItemPurchaseHistory is the predicate function for hpelineupmallitempurchasehistory builders.
+type HPElineupMallItemPurchaseHistory func(*sql.Selector)
+
 // HPEvent is the predicate function for hpevent builders.
 type HPEvent func(*sql.Selector)
 

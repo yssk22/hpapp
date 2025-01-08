@@ -12,6 +12,7 @@ import (
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/yssk22/hpapp/go/service/ent/auth"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
@@ -156,6 +157,21 @@ func (uu *UserUpdate) AddHpfcEventTickets(h ...*HPFCEventTicket) *UserUpdate {
 	return uu.AddHpfcEventTicketIDs(ids...)
 }
 
+// AddElineupMallPurchaseHistoryIDs adds the "elineup_mall_purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity by IDs.
+func (uu *UserUpdate) AddElineupMallPurchaseHistoryIDs(ids ...int) *UserUpdate {
+	uu.mutation.AddElineupMallPurchaseHistoryIDs(ids...)
+	return uu
+}
+
+// AddElineupMallPurchaseHistories adds the "elineup_mall_purchase_histories" edges to the HPElineupMallItemPurchaseHistory entity.
+func (uu *UserUpdate) AddElineupMallPurchaseHistories(h ...*HPElineupMallItemPurchaseHistory) *UserUpdate {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return uu.AddElineupMallPurchaseHistoryIDs(ids...)
+}
+
 // Mutation returns the UserMutation object of the builder.
 func (uu *UserUpdate) Mutation() *UserMutation {
 	return uu.mutation
@@ -285,6 +301,27 @@ func (uu *UserUpdate) RemoveHpfcEventTickets(h ...*HPFCEventTicket) *UserUpdate 
 		ids[i] = h[i].ID
 	}
 	return uu.RemoveHpfcEventTicketIDs(ids...)
+}
+
+// ClearElineupMallPurchaseHistories clears all "elineup_mall_purchase_histories" edges to the HPElineupMallItemPurchaseHistory entity.
+func (uu *UserUpdate) ClearElineupMallPurchaseHistories() *UserUpdate {
+	uu.mutation.ClearElineupMallPurchaseHistories()
+	return uu
+}
+
+// RemoveElineupMallPurchaseHistoryIDs removes the "elineup_mall_purchase_histories" edge to HPElineupMallItemPurchaseHistory entities by IDs.
+func (uu *UserUpdate) RemoveElineupMallPurchaseHistoryIDs(ids ...int) *UserUpdate {
+	uu.mutation.RemoveElineupMallPurchaseHistoryIDs(ids...)
+	return uu
+}
+
+// RemoveElineupMallPurchaseHistories removes "elineup_mall_purchase_histories" edges to HPElineupMallItemPurchaseHistory entities.
+func (uu *UserUpdate) RemoveElineupMallPurchaseHistories(h ...*HPElineupMallItemPurchaseHistory) *UserUpdate {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return uu.RemoveElineupMallPurchaseHistoryIDs(ids...)
 }
 
 // Save executes the query and returns the number of nodes affected by the update operation.
@@ -608,6 +645,51 @@ func (uu *UserUpdate) sqlSave(ctx context.Context) (n int, err error) {
 		}
 		_spec.Edges.Add = append(_spec.Edges.Add, edge)
 	}
+	if uu.mutation.ElineupMallPurchaseHistoriesCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.ElineupMallPurchaseHistoriesTable,
+			Columns: []string{user.ElineupMallPurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := uu.mutation.RemovedElineupMallPurchaseHistoriesIDs(); len(nodes) > 0 && !uu.mutation.ElineupMallPurchaseHistoriesCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.ElineupMallPurchaseHistoriesTable,
+			Columns: []string{user.ElineupMallPurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := uu.mutation.ElineupMallPurchaseHistoriesIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.ElineupMallPurchaseHistoriesTable,
+			Columns: []string{user.ElineupMallPurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
 	if n, err = sqlgraph.UpdateNodes(ctx, uu.driver, _spec); err != nil {
 		if _, ok := err.(*sqlgraph.NotFoundError); ok {
 			err = &NotFoundError{user.Label}
@@ -750,6 +832,21 @@ func (uuo *UserUpdateOne) AddHpfcEventTickets(h ...*HPFCEventTicket) *UserUpdate
 	return uuo.AddHpfcEventTicketIDs(ids...)
 }
 
+// AddElineupMallPurchaseHistoryIDs adds the "elineup_mall_purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity by IDs.
+func (uuo *UserUpdateOne) AddElineupMallPurchaseHistoryIDs(ids ...int) *UserUpdateOne {
+	uuo.mutation.AddElineupMallPurchaseHistoryIDs(ids...)
+	return uuo
+}
+
+// AddElineupMallPurchaseHistories adds the "elineup_mall_purchase_histories" edges to the HPElineupMallItemPurchaseHistory entity.
+func (uuo *UserUpdateOne) AddElineupMallPurchaseHistories(h ...*HPElineupMallItemPurchaseHistory) *UserUpdateOne {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return uuo.AddElineupMallPurchaseHistoryIDs(ids...)
+}
+
 // Mutation returns the UserMutation object of the builder.
 func (uuo *UserUpdateOne) Mutation() *UserMutation {
 	return uuo.mutation
@@ -879,6 +976,27 @@ func (uuo *UserUpdateOne) RemoveHpfcEventTickets(h ...*HPFCEventTicket) *UserUpd
 		ids[i] = h[i].ID
 	}
 	return uuo.RemoveHpfcEventTicketIDs(ids...)
+}
+
+// ClearElineupMallPurchaseHistories clears all "elineup_mall_purchase_histories" edges to the HPElineupMallItemPurchaseHistory entity.
+func (uuo *UserUpdateOne) ClearElineupMallPurchaseHistories() *UserUpdateOne {
+	uuo.mutation.ClearElineupMallPurchaseHistories()
+	return uuo
+}
+
+// RemoveElineupMallPurchaseHistoryIDs removes the "elineup_mall_purchase_histories" edge to HPElineupMallItemPurchaseHistory entities by IDs.
+func (uuo *UserUpdateOne) RemoveElineupMallPurchaseHistoryIDs(ids ...int) *UserUpdateOne {
+	uuo.mutation.RemoveElineupMallPurchaseHistoryIDs(ids...)
+	return uuo
+}
+
+// RemoveElineupMallPurchaseHistories removes "elineup_mall_purchase_histories" edges to HPElineupMallItemPurchaseHistory entities.
+func (uuo *UserUpdateOne) RemoveElineupMallPurchaseHistories(h ...*HPElineupMallItemPurchaseHistory) *UserUpdateOne {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return uuo.RemoveElineupMallPurchaseHistoryIDs(ids...)
 }
 
 // Where appends a list predicates to the UserUpdate builder.
@@ -1225,6 +1343,51 @@ func (uuo *UserUpdateOne) sqlSave(ctx context.Context) (_node *User, err error) 
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpfceventticket.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
+	if uuo.mutation.ElineupMallPurchaseHistoriesCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.ElineupMallPurchaseHistoriesTable,
+			Columns: []string{user.ElineupMallPurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := uuo.mutation.RemovedElineupMallPurchaseHistoriesIDs(); len(nodes) > 0 && !uuo.mutation.ElineupMallPurchaseHistoriesCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.ElineupMallPurchaseHistoriesTable,
+			Columns: []string{user.ElineupMallPurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := uuo.mutation.ElineupMallPurchaseHistoriesIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.ElineupMallPurchaseHistoriesTable,
+			Columns: []string{user.ElineupMallPurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
 			},
 		}
 		for _, k := range nodes {
