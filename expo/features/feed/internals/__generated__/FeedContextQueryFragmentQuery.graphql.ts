@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<d7a4446a7889377fbec18362b7a9950f>>
+ * @generated SignedSource<<a8c917811a20cf8d6d6ab77102067c8b>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -187,6 +187,32 @@ return {
                             "alias": null,
                             "args": null,
                             "kind": "ScalarField",
+                            "name": "postAt",
+                            "storageKey": null
+                          },
+                          {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "HPViewHistory",
+                            "kind": "LinkedField",
+                            "name": "myViewHistory",
+                            "plural": false,
+                            "selections": [
+                              (v6/*: any*/),
+                              {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "isFavorite",
+                                "storageKey": null
+                              }
+                            ],
+                            "storageKey": null
+                          },
+                          {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
                             "name": "title",
                             "storageKey": null
                           },
@@ -221,13 +247,6 @@ return {
                           {
                             "alias": null,
                             "args": null,
-                            "kind": "ScalarField",
-                            "name": "postAt",
-                            "storageKey": null
-                          },
-                          {
-                            "alias": null,
-                            "args": null,
                             "concreteType": "HPMember",
                             "kind": "LinkedField",
                             "name": "ownerMember",
@@ -243,25 +262,6 @@ return {
                             "name": "taggedMembers",
                             "plural": true,
                             "selections": (v8/*: any*/),
-                            "storageKey": null
-                          },
-                          {
-                            "alias": null,
-                            "args": null,
-                            "concreteType": "HPViewHistory",
-                            "kind": "LinkedField",
-                            "name": "myViewHistory",
-                            "plural": false,
-                            "selections": [
-                              (v6/*: any*/),
-                              {
-                                "alias": null,
-                                "args": null,
-                                "kind": "ScalarField",
-                                "name": "isFavorite",
-                                "storageKey": null
-                              }
-                            ],
                             "storageKey": null
                           },
                           (v5/*: any*/)
@@ -327,16 +327,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "b8f9d84b43935a019ada7da8ab130469",
+    "cacheID": "113dde3389b25cf6ef8ae8b2f29d90a8",
     "id": null,
     "metadata": {},
     "name": "FeedContextQueryFragmentQuery",
     "operationKind": "query",
-    "text": "query FeedContextQueryFragmentQuery(\n  $after: Cursor\n  $first: Int\n  $params: HPFeedQueryParamsInput!\n  $id: ID!\n) {\n  node(id: $id) {\n    __typename\n    ...FeedContextQuery_helloproject_query_feed\n    id\n  }\n}\n\nfragment FeedContextQuery_helloproject_query_feed on HelloProjectQuery {\n  feed(params: $params, first: $first, after: $after) {\n    edges {\n      node {\n        id\n        ...FeedListItemFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  id\n}\n\nfragment FeedListItemFragment on HPFeedItem {\n  id\n  title\n  sourceID\n  sourceURL\n  imageURL\n  assetType\n  postAt\n  ownerMember {\n    id\n    key\n  }\n  taggedMembers {\n    id\n    key\n  }\n  ...FeedListItemViewHistoryIconFragment\n}\n\nfragment FeedListItemViewHistoryIconFragment on HPFeedItem {\n  myViewHistory {\n    id\n    isFavorite\n  }\n}\n"
+    "text": "query FeedContextQueryFragmentQuery(\n  $after: Cursor\n  $first: Int\n  $params: HPFeedQueryParamsInput!\n  $id: ID!\n) {\n  node(id: $id) {\n    __typename\n    ...FeedContextQuery_helloproject_query_feed\n    id\n  }\n}\n\nfragment FeedContextQuery_helloproject_query_feed on HelloProjectQuery {\n  feed(params: $params, first: $first, after: $after) {\n    edges {\n      node {\n        id\n        postAt\n        myViewHistory {\n          id\n        }\n        ...FeedListItemFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  id\n}\n\nfragment FeedListItemFragment on HPFeedItem {\n  id\n  title\n  sourceID\n  sourceURL\n  imageURL\n  assetType\n  postAt\n  ownerMember {\n    id\n    key\n  }\n  taggedMembers {\n    id\n    key\n  }\n  ...FeedListItemViewHistoryIconFragment\n}\n\nfragment FeedListItemViewHistoryIconFragment on HPFeedItem {\n  myViewHistory {\n    id\n    isFavorite\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "8086d44e7fab8a475bc632ea014a3594";
+(node as any).hash = "09e75fce56813c31599288536dca7c20";
 
 export default node;

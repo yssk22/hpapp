@@ -1,0 +1,592 @@
+{
+  "operation": "FeedContextQuery",
+  "response": {
+    "data": {
+      "helloproject": {
+        "feed": {
+          "edges": [
+            {
+              "node": {
+                "id": "94489513295",
+                "postAt": "2025-01-08T14:00:23Z",
+                "myViewHistory": {
+                  "id": "68719691050",
+                  "isFavorite": false
+                },
+                "title": "楽しかった♡川嶋美楓",
+                "sourceID": 12889973845,
+                "sourceURL": "https://ameblo.jp/juicejuice-official/entry-12881707682.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250108/21/juicejuice-official/29/41/j/o1080143915531062706.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8590783744",
+                  "key": "mifu_kawashima"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8590783744",
+                    "key": "mifu_kawashima"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA41PoXbW/2d+hPc"
+            },
+            {
+              "node": {
+                "id": "94489513292",
+                "postAt": "2025-01-08T13:15:07Z",
+                "myViewHistory": {
+                  "id": "68719690996",
+                  "isFavorite": false
+                },
+                "title": "よく食べた 段原瑠々",
+                "sourceID": 12889973842,
+                "sourceURL": "https://ameblo.jp/juicejuice-official/entry-12881707551.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250108/22/juicejuice-official/c1/15/j/o1080108015531066286.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8589934621",
+                  "key": "ruru_dambara"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934621",
+                    "key": "ruru_dambara"
+                  },
+                  {
+                    "id": "8589934655",
+                    "key": "riho_sayashi"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA41MoXbW/2d+els"
+            },
+            {
+              "node": {
+                "id": "94489513289",
+                "postAt": "2025-01-08T13:12:24Z",
+                "myViewHistory": {
+                  "id": "68719691052",
+                  "isFavorite": false
+                },
+                "title": "タコタコタコ　工藤由愛",
+                "sourceID": 12889973839,
+                "sourceURL": "https://ameblo.jp/juicejuice-official/entry-12881631902.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250108/22/juicejuice-official/c0/45/j/o1000133215531064556.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8589934623",
+                  "key": "yume_kudou"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934623",
+                    "key": "yume_kudou"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA41JoXbW/2d+ebg"
+            },
+            {
+              "node": {
+                "id": "94489513268",
+                "postAt": "2025-01-08T12:56:41Z",
+                "myViewHistory": null,
+                "title": "ハナスゾ 島倉りか",
+                "sourceID": 12889973826,
+                "sourceURL": "https://ameblo.jp/beyooooonds-chicatetsu/entry-12881706276.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250108/21/beyooooonds-chicatetsu/11/b0/j/o1000133215531062458.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8589934644",
+                  "key": "rika_shimakura"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934644",
+                    "key": "rika_shimakura"
+                  },
+                  {
+                    "id": "8589934615",
+                    "key": "layla_ise"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA400oXbW/2d+dgk"
+            },
+            {
+              "node": {
+                "id": "94489513290",
+                "postAt": "2025-01-08T12:56:40Z",
+                "myViewHistory": null,
+                "title": "バーイベ決定！！    石山咲良",
+                "sourceID": 12889973840,
+                "sourceURL": "https://ameblo.jp/juicejuice-official/entry-12881706274.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250108/21/juicejuice-official/b9/8b/j/o1080144015531062456.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8590222529",
+                  "key": "sakura_ishiyama"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8590222529",
+                    "key": "sakura_ishiyama"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA41KoXbW/2d+dgg"
+            },
+            {
+              "node": {
+                "id": "94489513291",
+                "postAt": "2025-01-08T12:56:30Z",
+                "myViewHistory": null,
+                "title": "まる！ 遠藤彩加里",
+                "sourceID": 12889973841,
+                "sourceURL": "https://ameblo.jp/juicejuice-official/entry-12881706251.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250108/21/juicejuice-official/21/28/j/o1080143915531062408.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8590222530",
+                  "key": "akari_endo"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8590222530",
+                    "key": "akari_endo"
+                  },
+                  {
+                    "id": "8590222529",
+                    "key": "sakura_ishiyama"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA41LoXbW/2d+df4"
+            },
+            {
+              "node": {
+                "id": "94489513262",
+                "postAt": "2025-01-08T12:30:19Z",
+                "myViewHistory": null,
+                "title": "♛︎まよってます　　江端妃咲",
+                "sourceID": 12889973820,
+                "sourceURL": "https://ameblo.jp/juicejuice-official/entry-12881695752.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250108/21/juicejuice-official/51/f5/j/o1080078315531052443.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8589934674",
+                  "key": "kisaki_ebata"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934674",
+                    "key": "kisaki_ebata"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA40uoXbW/2d+b9s"
+            },
+            {
+              "node": {
+                "id": "94489513247",
+                "postAt": "2025-01-08T12:19:52Z",
+                "myViewHistory": null,
+                "title": "きゃらめる!!!⚾   橋田歩果",
+                "sourceID": 12889973805,
+                "sourceURL": "https://ameblo.jp/rosychronicle/entry-12881665444.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250108/21/rosychronicle/72/d4/j/o0810108015531047143.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8590977222",
+                  "key": "honoka_hashida"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934619",
+                    "key": "karin_miyamoto"
+                  },
+                  {
+                    "id": "8590977222",
+                    "key": "honoka_hashida"
+                  },
+                  {
+                    "id": "8590977226",
+                    "key": "hasumi_uemura"
+                  },
+                  {
+                    "id": "8590977227",
+                    "key": "yulia_matsubara"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA40foXbW/2d+bWg"
+            },
+            {
+              "node": {
+                "id": "94489513241",
+                "postAt": "2025-01-08T11:13:25Z",
+                "myViewHistory": null,
+                "title": "No.1941   メイボンソワ   山﨑愛生",
+                "sourceID": 12889973799,
+                "sourceURL": "https://ameblo.jp/morningmusume15ki/entry-12881693330.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250108/20/morningmusume15ki/49/f0/j/o1080081015531023881.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8589934605",
+                  "key": "mei_yamazaki"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934594",
+                    "key": "ayumi_ishida"
+                  },
+                  {
+                    "id": "8589934605",
+                    "key": "mei_yamazaki"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA40ZoXbW/2d+XdU"
+            },
+            {
+              "node": {
+                "id": "94489513235",
+                "postAt": "2025-01-08T10:23:40Z",
+                "myViewHistory": {
+                  "id": "68719690968",
+                  "isFavorite": true
+                },
+                "title": "レッスン！　入江里咲",
+                "sourceID": 12889973793,
+                "sourceURL": "https://ameblo.jp/juicejuice-official/entry-12881687767.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250108/19/juicejuice-official/f7/b8/j/o1080144015531006624.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8589934673",
+                  "key": "risa_irie"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934673",
+                    "key": "risa_irie"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA40ToXbW/2d+Uiw"
+            },
+            {
+              "node": {
+                "id": "94489513233",
+                "postAt": "2025-01-08T07:36:14Z",
+                "myViewHistory": null,
+                "title": "うえむらさん　有澤一華",
+                "sourceID": 12889973791,
+                "sourceURL": "https://ameblo.jp/juicejuice-official/entry-12881669230.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250108/16/juicejuice-official/45/ac/j/o1080143915530952115.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8589934672",
+                  "key": "ichika_arisawa"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934672",
+                    "key": "ichika_arisawa"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA40RoXbW/2d+Ku4"
+            },
+            {
+              "node": {
+                "id": "94489513279",
+                "postAt": "2025-01-08T05:36:38Z",
+                "myViewHistory": null,
+                "title": "ABEMA『限界オタクション』 本日21時〜放送です♡♡♡  ゲスト @watwing_official さん全員集合🫧 みてね🪽  👗 @shiroma_official 💍👂  @_yuma.jp",
+                "sourceID": 64424545962,
+                "sourceURL": "https://instagram.com/p/DEjZg2aT8pW/",
+                "imageURL": "https://storage.googleapis.com/hpblob.yssk22.dev/www.instagram.com/p/DEjZg2aT8pW/0/image.jpg",
+                "assetType": "instagram",
+                "ownerMember": {
+                  "id": "8589934592",
+                  "key": "mizuki_fukumura"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934592",
+                    "key": "mizuki_fukumura"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA40/oXbW/2d+DuY"
+            },
+            {
+              "node": {
+                "id": "94489513280",
+                "postAt": "2025-01-07T13:37:57Z",
+                "myViewHistory": null,
+                "title": "ガレット・デ・ロワという食べ物がある事を今年初めて知りました👑  1月6日に食べるものなんだって！ 王様のお菓子って言われてるものらしいよ〜  王様にはなれなかったけど 被っちゃったーーー😏✨️  #",
+                "sourceID": 64424545963,
+                "sourceURL": "https://instagram.com/p/DEhrzQCT-wz/",
+                "imageURL": "https://storage.googleapis.com/hpblob.yssk22.dev/www.instagram.com/p/DEhrzQCT-wz/0/image.jpg",
+                "assetType": "instagram",
+                "ownerMember": {
+                  "id": "8589934592",
+                  "key": "mizuki_fukumura"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934592",
+                    "key": "mizuki_fukumura"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA41AoXbW/2d9LjU"
+            },
+            {
+              "node": {
+                "id": "94489513221",
+                "postAt": "2025-01-07T13:11:18Z",
+                "myViewHistory": null,
+                "title": "家族旅行 段原瑠々",
+                "sourceID": 12889973779,
+                "sourceURL": "https://ameblo.jp/juicejuice-official/entry-12881584006.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250107/22/juicejuice-official/39/c1/j/o1080143915530728774.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8589934621",
+                  "key": "ruru_dambara"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934621",
+                    "key": "ruru_dambara"
+                  },
+                  {
+                    "id": "8589934633",
+                    "key": "rei_inoue_k"
+                  },
+                  {
+                    "id": "8589934655",
+                    "key": "riho_sayashi"
+                  },
+                  {
+                    "id": "8589934668",
+                    "key": "rei_inoue"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA40FoXbW/2d9J/Y"
+            },
+            {
+              "node": {
+                "id": "94489513204",
+                "postAt": "2025-01-07T13:07:34Z",
+                "myViewHistory": null,
+                "title": "ばあちゃん♡じいちゃん♡工藤由愛",
+                "sourceID": 12889973772,
+                "sourceURL": "https://ameblo.jp/juicejuice-official/entry-12881583834.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250107/22/juicejuice-official/0b/6e/j/o1000133215530728354.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8589934623",
+                  "key": "yume_kudou"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934623",
+                    "key": "yume_kudou"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA4z0oXbW/2d9JxY"
+            },
+            {
+              "node": {
+                "id": "94489513286",
+                "postAt": "2025-01-07T13:05:12Z",
+                "myViewHistory": null,
+                "title": "‎🤍  年末に家族で京都旅行に行きました！    #京都 #天橋立 #juicejuice #段原瑠々",
+                "sourceID": 64424545969,
+                "sourceURL": "https://instagram.com/p/DEhoDZpzmpK/",
+                "imageURL": "https://storage.googleapis.com/hpblob.yssk22.dev/www.instagram.com/p/DEhoDZpzmpK/0/image.jpg",
+                "assetType": "instagram",
+                "ownerMember": {
+                  "id": "8589934621",
+                  "key": "ruru_dambara"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934621",
+                    "key": "ruru_dambara"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA41GoXbW/2d9Jog"
+            },
+            {
+              "node": {
+                "id": "94489513196",
+                "postAt": "2025-01-07T13:02:28Z",
+                "myViewHistory": null,
+                "title": "取材 川嶋美楓",
+                "sourceID": 12889973764,
+                "sourceURL": "https://ameblo.jp/juicejuice-official/entry-12881550754.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250107/17/juicejuice-official/c6/80/j/o1080143915530629703.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8590783744",
+                  "key": "mifu_kawashima"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8590783744",
+                    "key": "mifu_kawashima"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA4zsoXbW/2d9JeQ"
+            },
+            {
+              "node": {
+                "id": "94489513205",
+                "postAt": "2025-01-07T12:58:12Z",
+                "myViewHistory": null,
+                "title": "初売りの話！ 遠藤彩加里",
+                "sourceID": 12889973773,
+                "sourceURL": "https://ameblo.jp/juicejuice-official/entry-12881583377.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250107/21/juicejuice-official/5d/a3/j/o1000133215530727338.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8590222530",
+                  "key": "akari_endo"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8590222530",
+                    "key": "akari_endo"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA4z1oXbW/2d9JOQ"
+            },
+            {
+              "node": {
+                "id": "94489513188",
+                "postAt": "2025-01-07T12:50:01Z",
+                "myViewHistory": null,
+                "title": "問題♪ 島倉りか",
+                "sourceID": 12889973756,
+                "sourceURL": "https://ameblo.jp/beyooooonds-chicatetsu/entry-12881582368.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250107/21/beyooooonds-chicatetsu/af/ba/j/o1000133215530723977.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8589934644",
+                  "key": "rika_shimakura"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934644",
+                    "key": "rika_shimakura"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA4zkoXbW/2d9Ivk"
+            },
+            {
+              "node": {
+                "id": "94489513182",
+                "postAt": "2025-01-07T12:32:41Z",
+                "myViewHistory": null,
+                "title": "はらじゅく!!!⚾   橋田歩果",
+                "sourceID": 12889973750,
+                "sourceURL": "https://ameblo.jp/rosychronicle/entry-12881507755.html",
+                "imageURL": "https://stat.ameba.jp/user_images/20250107/21/rosychronicle/a1/74/j/o0808108015530708060.jpg",
+                "assetType": "ameblo",
+                "ownerMember": {
+                  "id": "8590977222",
+                  "key": "honoka_hashida"
+                },
+                "taggedMembers": [
+                  {
+                    "id": "8589934619",
+                    "key": "karin_miyamoto"
+                  },
+                  {
+                    "id": "8590977222",
+                    "key": "honoka_hashida"
+                  },
+                  {
+                    "id": "8590977226",
+                    "key": "hasumi_uemura"
+                  },
+                  {
+                    "id": "8590977227",
+                    "key": "yulia_matsubara"
+                  }
+                ],
+                "__typename": "HPFeedItem"
+              },
+              "cursor": "gqFp0wAAABYAA4zeoXbW/2d9Huk"
+            }
+          ],
+          "pageInfo": {
+            "endCursor": "gqFp0wAAABYAA4zeoXbW/2d9Huk",
+            "hasNextPage": true
+          }
+        },
+        "id": "helloproject"
+      }
+    }
+  },
+  "variables": {
+    "params": {
+      "assetTypes": [
+        "ameblo",
+        "instagram",
+        "tiktok",
+        "twitter"
+      ],
+      "memberIDs": [
+        "8589934592",
+        "8589934596",
+        "8589934601",
+        "8589934605",
+        "8590783732",
+        "8589934621",
+        "8589934623",
+        "8589934624",
+        "8589934672",
+        "8589934673",
+        "8589934674",
+        "8590222529",
+        "8590222530",
+        "8590783744",
+        "8589934644",
+        "8590977222"
+      ]
+    },
+    "first": 20,
+    "after": null
+  }
+}

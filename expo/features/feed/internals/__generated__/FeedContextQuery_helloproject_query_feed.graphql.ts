@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<08ab86fd0ca1825f545fdf1ffbc8e243>>
+ * @generated SignedSource<<7f13dea9e7d37876bf99814e6698d387>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -15,6 +15,10 @@ export type FeedContextQuery_helloproject_query_feed$data = {
     readonly edges: ReadonlyArray<{
       readonly node: {
         readonly id: string;
+        readonly myViewHistory: {
+          readonly id: string;
+        } | null | undefined;
+        readonly postAt: string;
         readonly " $fragmentSpreads": FragmentRefs<"FeedListItemFragment">;
       } | null | undefined;
     } | null | undefined> | null | undefined;
@@ -116,6 +120,25 @@ return {
               "selections": [
                 (v1/*: any*/),
                 {
+                  "alias": null,
+                  "args": null,
+                  "kind": "ScalarField",
+                  "name": "postAt",
+                  "storageKey": null
+                },
+                {
+                  "alias": null,
+                  "args": null,
+                  "concreteType": "HPViewHistory",
+                  "kind": "LinkedField",
+                  "name": "myViewHistory",
+                  "plural": false,
+                  "selections": [
+                    (v1/*: any*/)
+                  ],
+                  "storageKey": null
+                },
+                {
                   "args": null,
                   "kind": "FragmentSpread",
                   "name": "FeedListItemFragment"
@@ -175,6 +198,6 @@ return {
 };
 })();
 
-(node as any).hash = "8086d44e7fab8a475bc632ea014a3594";
+(node as any).hash = "09e75fce56813c31599288536dca7c20";
 
 export default node;
