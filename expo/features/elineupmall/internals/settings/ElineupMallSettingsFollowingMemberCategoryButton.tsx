@@ -4,7 +4,7 @@ import { HPFollowType, HPMember } from '@hpapp/features/app/user';
 import { useUpsertFollow } from '@hpapp/features/artist';
 import { Text } from '@hpapp/features/common';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
-import { ElineupMallItemCategory } from '@hpapp/features/elineupmall/internal/ElineupMallLimitedTimeItemList';
+import { ElineupMallItemCategory } from '@hpapp/features/elineupmall';
 import { t } from '@hpapp/system/i18n';
 import { Icon } from '@rneui/themed';
 import { ActivityIndicator, StyleSheet, TouchableOpacity, View } from 'react-native';

@@ -1,4 +1,4 @@
-import { useUPFCConfig, useUserConfig } from '@hpapp/features/app/settings';
+import { useCurrentUser, useUPFCConfig, useUserConfig } from '@hpapp/features/app/settings';
 import {
   ElineupMallSiteScraper,
   ElineupMallHttpFetcher,
@@ -11,6 +11,10 @@ import { isEmpty } from '@hpapp/foundation/string';
 import * as logging from '@hpapp/system/logging';
 import CookieManager from '@react-native-cookies/cookies';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { commitMutation, graphql, useRelayEnvironment } from 'react-relay';
+import { IEnvironment } from 'relay-runtime';
+
+import { ElineupMallProviderUpsertPurchaseHistoryMutation } from './__generated__/ElineupMallProviderUpsertPurchaseHistoryMutation.graphql';
 
 export type ElineupMallPurchaseHistoryItem = ElineupMallOrderDetail & { order: ElineupMallOrder };
 
@@ -66,6 +70,9 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
     );
   }, [upfcConfig?.hpUsername, upfcConfig?.hpPassword]);
 
+  const env = useRelayEnvironment();
+  const userId = useCurrentUser()!.id;
+
   const fetchPurchaseHistory = async (nextStatus: ElineupMallStatus = 'ready') => {
     try {
       const from = date.addDate(date.getToday(), -180, 'day');
@@ -92,6 +99,8 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
           num: orderList!.length
         }
       );
+      // do not await the promise since we don't care if server sync succeeds or not.
+      syncToServer(env, userId, orderList!);
     } catch (e) {
       logging.Error('features.elineupmall.scraper.internals.ElineupMallScraperProvider.fetchPurchaseHistory', 'error', {
         error: (e as Error).toString()
@@ -193,4 +202,64 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
 
 export function useElineupMall() {
   return useContext(contextObj);
+}
+
+const ElineupMallProviderUpsertPurchaseHistoryMutationGraphQL = graphql`
+  mutation ElineupMallProviderUpsertPurchaseHistoryMutation(
+    $params: HPElineupMallItemPurchaseHistoryUpsertParamsInput!
+  ) {
+    me {
+      upsertElineupmallPurchaseHistories(params: $params) {
+        id
+      }
+    }
+  }
+`;
+
+async function syncToServer(env: IEnvironment, userId: string, orderList: ElineupMallOrder[]): Promise<void> {
+  const orders = orderList
+    .map((order) => {
+      return order.details.map((detail) => {
+        return {
+          orderId: order.id,
+          permalink: detail.link,
+          name: detail.name,
+          price: detail.unitPrice,
+          num: detail.num,
+          orderedAt: date.toNullableQueryString(order.orderedAt)!
+        };
+      });
+    })
+    .flat();
+  return new Promise((resolve) => {
+    commitMutation<ElineupMallProviderUpsertPurchaseHistoryMutation>(env, {
+      mutation: ElineupMallProviderUpsertPurchaseHistoryMutationGraphQL,
+      variables: {
+        params: {
+          userId: parseInt(userId, 10),
+          orders
+        }
+      },
+      onCompleted: (response, errors) => {
+        if (errors) {
+          logging.Info('features.elineupmall.internals.ElineupMallProvider.syncToServer', 'failed', {
+            numHistories: orders.length,
+            error: errors.map((e) => e.message).join(',')
+          });
+        } else {
+          logging.Info('features.elineupmall.internals.ElineupMallProvider.syncToServer', 'completed', {
+            numHistories: orders.length
+          });
+        }
+        resolve();
+      },
+      onError: (error) => {
+        logging.Info('features.elineupmall.internals.ElineupMallProvider.syncToServer', 'failed', {
+          numApplications: orders.length,
+          error: error.message
+        });
+        resolve();
+      }
+    });
+  });
 }
