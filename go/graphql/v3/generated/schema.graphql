@@ -70,6 +70,7 @@ type MeQuery implements Node @goModel(model: "github.com/yssk22/hpapp/go/graphql
   notificationSettings(slug: String!): [UserNotificationSetting]
   followings: [HPFollow]
   sortHistories(after: Cursor, first: Int, before: Cursor, last: Int): HPSortHistoryConnection
+  elineupMallPurchaseHistories(after: Cursor, first: Int, before: Cursor, last: Int): HPElineupMallItemPurchaseHistoryConnection
   events(after: Cursor, first: Int, before: Cursor, last: Int): HPEventConnection
   favorites(params: MeFavoriteQueryParamsInput!, after: Cursor, first: Int, before: Cursor, last: Int): HPFeedItemConnection
 }

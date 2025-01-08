@@ -58,17 +58,13 @@ func (HPElineupMallItemPurchaseHistory) Edges() []ent.Edge {
 	return []ent.Edge{
 		edge.From("elineup_mall_item", HPElineupMallItem.Type).
 			Field("purchased_item_id").
-			Annotations(entgql.Skip(entgql.SkipAll)).
 			Ref("purchase_histories").
-			Annotations(entgql.Skip(entgql.SkipAll)).
 			Unique(),
 		edge.From("owner", User.Type).
 			Required().
 			Field("owner_user_id").
-			Annotations(entgql.Skip(entgql.SkipAll)).
 			Required().
 			Ref("elineup_mall_purchase_histories").
-			Annotations(entgql.Skip(entgql.SkipAll)).
 			Unique(),
 	}
 }

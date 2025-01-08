@@ -196,11 +196,13 @@ type ComplexityRoot struct {
 
 	HPElineupMallItemPurchaseHistory struct {
 		CreatedAt       func(childComplexity int) int
+		ElineupMallItem func(childComplexity int) int
 		ID              func(childComplexity int) int
 		Name            func(childComplexity int) int
 		Num             func(childComplexity int) int
 		OrderID         func(childComplexity int) int
 		OrderedAt       func(childComplexity int) int
+		Owner           func(childComplexity int) int
 		OwnerUserID     func(childComplexity int) int
 		Permalink       func(childComplexity int) int
 		Price           func(childComplexity int) int
@@ -493,18 +495,19 @@ type ComplexityRoot struct {
 	}
 
 	MeQuery struct {
-		Authentications      func(childComplexity int) int
-		ClientID             func(childComplexity int) int
-		ClientIsVerified     func(childComplexity int) int
-		ClientName           func(childComplexity int) int
-		Events               func(childComplexity int, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
-		Favorites            func(childComplexity int, params me.MeFavoriteQueryParams, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
-		Followings           func(childComplexity int) int
-		ID                   func(childComplexity int) int
-		NotificationSettings func(childComplexity int, slug string) int
-		SortHistories        func(childComplexity int, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
-		UserID               func(childComplexity int) int
-		Username             func(childComplexity int) int
+		Authentications              func(childComplexity int) int
+		ClientID                     func(childComplexity int) int
+		ClientIsVerified             func(childComplexity int) int
+		ClientName                   func(childComplexity int) int
+		ElineupMallPurchaseHistories func(childComplexity int, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
+		Events                       func(childComplexity int, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
+		Favorites                    func(childComplexity int, params me.MeFavoriteQueryParams, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
+		Followings                   func(childComplexity int) int
+		ID                           func(childComplexity int) int
+		NotificationSettings         func(childComplexity int, slug string) int
+		SortHistories                func(childComplexity int, after *entgql.Cursor[int], first *int, before *entgql.Cursor[int], last *int) int
+		UserID                       func(childComplexity int) int
+		Username                     func(childComplexity int) int
 	}
 
 	Media struct {
@@ -1366,6 +1369,13 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.HPElineupMallItemPurchaseHistory.CreatedAt(childComplexity), true
 
+	case "HPElineupMallItemPurchaseHistory.elineupMallItem":
+		if e.complexity.HPElineupMallItemPurchaseHistory.ElineupMallItem == nil {
+			break
+		}
+
+		return e.complexity.HPElineupMallItemPurchaseHistory.ElineupMallItem(childComplexity), true
+
 	case "HPElineupMallItemPurchaseHistory.id":
 		if e.complexity.HPElineupMallItemPurchaseHistory.ID == nil {
 			break
@@ -1400,6 +1410,13 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.HPElineupMallItemPurchaseHistory.OrderedAt(childComplexity), true
+
+	case "HPElineupMallItemPurchaseHistory.owner":
+		if e.complexity.HPElineupMallItemPurchaseHistory.Owner == nil {
+			break
+		}
+
+		return e.complexity.HPElineupMallItemPurchaseHistory.Owner(childComplexity), true
 
 	case "HPElineupMallItemPurchaseHistory.ownerUserID":
 		if e.complexity.HPElineupMallItemPurchaseHistory.OwnerUserID == nil {
@@ -2914,6 +2931,18 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.MeQuery.ClientName(childComplexity), true
 
+	case "MeQuery.elineupMallPurchaseHistories":
+		if e.complexity.MeQuery.ElineupMallPurchaseHistories == nil {
+			break
+		}
+
+		args, err := ec.field_MeQuery_elineupMallPurchaseHistories_args(context.TODO(), rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.MeQuery.ElineupMallPurchaseHistories(childComplexity, args["after"].(*entgql.Cursor[int]), args["first"].(*int), args["before"].(*entgql.Cursor[int]), args["last"].(*int)), true
+
 	case "MeQuery.events":
 		if e.complexity.MeQuery.Events == nil {
 			break
@@ -3778,6 +3807,48 @@ func (ec *executionContext) field_MeMutation_upsertViewHistory_args(ctx context.
 		}
 	}
 	args["params"] = arg0
+	return args, nil
+}
+
+func (ec *executionContext) field_MeQuery_elineupMallPurchaseHistories_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
+	var err error
+	args := map[string]interface{}{}
+	var arg0 *entgql.Cursor[int]
+	if tmp, ok := rawArgs["after"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("after"))
+		arg0, err = ec.unmarshalOCursor2ᚖentgoᚗioᚋcontribᚋentgqlᚐCursor(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["after"] = arg0
+	var arg1 *int
+	if tmp, ok := rawArgs["first"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("first"))
+		arg1, err = ec.unmarshalOInt2ᚖint(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["first"] = arg1
+	var arg2 *entgql.Cursor[int]
+	if tmp, ok := rawArgs["before"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("before"))
+		arg2, err = ec.unmarshalOCursor2ᚖentgoᚗioᚋcontribᚋentgqlᚐCursor(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["before"] = arg2
+	var arg3 *int
+	if tmp, ok := rawArgs["last"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("last"))
+		arg3, err = ec.unmarshalOInt2ᚖint(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["last"] = arg3
 	return args, nil
 }
 
@@ -8793,6 +8864,10 @@ func (ec *executionContext) fieldContext_HPElineupMallItem_purchaseHistories(ctx
 				return ec.fieldContext_HPElineupMallItemPurchaseHistory_purchasedItemID(ctx, field)
 			case "ownerUserID":
 				return ec.fieldContext_HPElineupMallItemPurchaseHistory_ownerUserID(ctx, field)
+			case "elineupMallItem":
+				return ec.fieldContext_HPElineupMallItemPurchaseHistory_elineupMallItem(ctx, field)
+			case "owner":
+				return ec.fieldContext_HPElineupMallItemPurchaseHistory_owner(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPElineupMallItemPurchaseHistory", field.Name)
 		},
@@ -9549,6 +9624,161 @@ func (ec *executionContext) fieldContext_HPElineupMallItemPurchaseHistory_ownerU
 	return fc, nil
 }
 
+func (ec *executionContext) _HPElineupMallItemPurchaseHistory_elineupMallItem(ctx context.Context, field graphql.CollectedField, obj *ent.HPElineupMallItemPurchaseHistory) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPElineupMallItemPurchaseHistory_elineupMallItem(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupMallItem(ctx)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*ent.HPElineupMallItem)
+	fc.Result = res
+	return ec.marshalOHPElineupMallItem2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItem(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPElineupMallItemPurchaseHistory_elineupMallItem(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPElineupMallItemPurchaseHistory",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "id":
+				return ec.fieldContext_HPElineupMallItem_id(ctx, field)
+			case "crawledAt":
+				return ec.fieldContext_HPElineupMallItem_crawledAt(ctx, field)
+			case "errorCount":
+				return ec.fieldContext_HPElineupMallItem_errorCount(ctx, field)
+			case "lastErrorMessage":
+				return ec.fieldContext_HPElineupMallItem_lastErrorMessage(ctx, field)
+			case "recrawlRequired":
+				return ec.fieldContext_HPElineupMallItem_recrawlRequired(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_HPElineupMallItem_createdAt(ctx, field)
+			case "updatedAt":
+				return ec.fieldContext_HPElineupMallItem_updatedAt(ctx, field)
+			case "permalink":
+				return ec.fieldContext_HPElineupMallItem_permalink(ctx, field)
+			case "name":
+				return ec.fieldContext_HPElineupMallItem_name(ctx, field)
+			case "description":
+				return ec.fieldContext_HPElineupMallItem_description(ctx, field)
+			case "supplier":
+				return ec.fieldContext_HPElineupMallItem_supplier(ctx, field)
+			case "price":
+				return ec.fieldContext_HPElineupMallItem_price(ctx, field)
+			case "isLimitedToFc":
+				return ec.fieldContext_HPElineupMallItem_isLimitedToFc(ctx, field)
+			case "isOutOfStock":
+				return ec.fieldContext_HPElineupMallItem_isOutOfStock(ctx, field)
+			case "images":
+				return ec.fieldContext_HPElineupMallItem_images(ctx, field)
+			case "category":
+				return ec.fieldContext_HPElineupMallItem_category(ctx, field)
+			case "orderStartAt":
+				return ec.fieldContext_HPElineupMallItem_orderStartAt(ctx, field)
+			case "orderEndAt":
+				return ec.fieldContext_HPElineupMallItem_orderEndAt(ctx, field)
+			case "taggedArtists":
+				return ec.fieldContext_HPElineupMallItem_taggedArtists(ctx, field)
+			case "taggedMembers":
+				return ec.fieldContext_HPElineupMallItem_taggedMembers(ctx, field)
+			case "purchaseHistories":
+				return ec.fieldContext_HPElineupMallItem_purchaseHistories(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type HPElineupMallItem", field.Name)
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPElineupMallItemPurchaseHistory_owner(ctx context.Context, field graphql.CollectedField, obj *ent.HPElineupMallItemPurchaseHistory) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPElineupMallItemPurchaseHistory_owner(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Owner(ctx)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(*ent.User)
+	fc.Result = res
+	return ec.marshalNUser2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐUser(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPElineupMallItemPurchaseHistory_owner(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPElineupMallItemPurchaseHistory",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "id":
+				return ec.fieldContext_User_id(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_User_createdAt(ctx, field)
+			case "updatedAt":
+				return ec.fieldContext_User_updatedAt(ctx, field)
+			case "username":
+				return ec.fieldContext_User_username(ctx, field)
+			case "accessToken":
+				return ec.fieldContext_User_accessToken(ctx, field)
+			case "auth":
+				return ec.fieldContext_User_auth(ctx, field)
+			case "notificationSettings":
+				return ec.fieldContext_User_notificationSettings(ctx, field)
+			case "hpviewHistory":
+				return ec.fieldContext_User_hpviewHistory(ctx, field)
+			case "hpmemberFollowing":
+				return ec.fieldContext_User_hpmemberFollowing(ctx, field)
+			case "hpsortHistory":
+				return ec.fieldContext_User_hpsortHistory(ctx, field)
+			case "hpfcEventTickets":
+				return ec.fieldContext_User_hpfcEventTickets(ctx, field)
+			case "elineupMallPurchaseHistories":
+				return ec.fieldContext_User_elineupMallPurchaseHistories(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type User", field.Name)
+		},
+	}
+	return fc, nil
+}
+
 func (ec *executionContext) _HPElineupMallItemPurchaseHistoryConnection_edges(ctx context.Context, field graphql.CollectedField, obj *ent.HPElineupMallItemPurchaseHistoryConnection) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_HPElineupMallItemPurchaseHistoryConnection_edges(ctx, field)
 	if err != nil {
@@ -9752,6 +9982,10 @@ func (ec *executionContext) fieldContext_HPElineupMallItemPurchaseHistoryEdge_no
 				return ec.fieldContext_HPElineupMallItemPurchaseHistory_purchasedItemID(ctx, field)
 			case "ownerUserID":
 				return ec.fieldContext_HPElineupMallItemPurchaseHistory_ownerUserID(ctx, field)
+			case "elineupMallItem":
+				return ec.fieldContext_HPElineupMallItemPurchaseHistory_elineupMallItem(ctx, field)
+			case "owner":
+				return ec.fieldContext_HPElineupMallItemPurchaseHistory_owner(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPElineupMallItemPurchaseHistory", field.Name)
 		},
@@ -19384,6 +19618,10 @@ func (ec *executionContext) fieldContext_MeMutation_upsertElineupmallPurchaseHis
 				return ec.fieldContext_HPElineupMallItemPurchaseHistory_purchasedItemID(ctx, field)
 			case "ownerUserID":
 				return ec.fieldContext_HPElineupMallItemPurchaseHistory_ownerUserID(ctx, field)
+			case "elineupMallItem":
+				return ec.fieldContext_HPElineupMallItemPurchaseHistory_elineupMallItem(ctx, field)
+			case "owner":
+				return ec.fieldContext_HPElineupMallItemPurchaseHistory_owner(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPElineupMallItemPurchaseHistory", field.Name)
 		},
@@ -20003,6 +20241,66 @@ func (ec *executionContext) fieldContext_MeQuery_sortHistories(ctx context.Conte
 	}()
 	ctx = graphql.WithFieldContext(ctx, fc)
 	if fc.Args, err = ec.field_MeQuery_sortHistories_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _MeQuery_elineupMallPurchaseHistories(ctx context.Context, field graphql.CollectedField, obj *me.MeQuery) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_MeQuery_elineupMallPurchaseHistories(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ElineupMallPurchaseHistories(ctx, fc.Args["after"].(*entgql.Cursor[int]), fc.Args["first"].(*int), fc.Args["before"].(*entgql.Cursor[int]), fc.Args["last"].(*int))
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*ent.HPElineupMallItemPurchaseHistoryConnection)
+	fc.Result = res
+	return ec.marshalOHPElineupMallItemPurchaseHistoryConnection2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItemPurchaseHistoryConnection(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_MeQuery_elineupMallPurchaseHistories(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "MeQuery",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "edges":
+				return ec.fieldContext_HPElineupMallItemPurchaseHistoryConnection_edges(ctx, field)
+			case "pageInfo":
+				return ec.fieldContext_HPElineupMallItemPurchaseHistoryConnection_pageInfo(ctx, field)
+			case "totalCount":
+				return ec.fieldContext_HPElineupMallItemPurchaseHistoryConnection_totalCount(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type HPElineupMallItemPurchaseHistoryConnection", field.Name)
+		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_MeQuery_elineupMallPurchaseHistories_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
 		ec.Error(ctx, err)
 		return
 	}
@@ -21435,6 +21733,8 @@ func (ec *executionContext) fieldContext_Query_me(ctx context.Context, field gra
 				return ec.fieldContext_MeQuery_followings(ctx, field)
 			case "sortHistories":
 				return ec.fieldContext_MeQuery_sortHistories(ctx, field)
+			case "elineupMallPurchaseHistories":
+				return ec.fieldContext_MeQuery_elineupMallPurchaseHistories(ctx, field)
 			case "events":
 				return ec.fieldContext_MeQuery_events(ctx, field)
 			case "favorites":
@@ -22462,6 +22762,10 @@ func (ec *executionContext) fieldContext_User_elineupMallPurchaseHistories(ctx c
 				return ec.fieldContext_HPElineupMallItemPurchaseHistory_purchasedItemID(ctx, field)
 			case "ownerUserID":
 				return ec.fieldContext_HPElineupMallItemPurchaseHistory_ownerUserID(ctx, field)
+			case "elineupMallItem":
+				return ec.fieldContext_HPElineupMallItemPurchaseHistory_elineupMallItem(ctx, field)
+			case "owner":
+				return ec.fieldContext_HPElineupMallItemPurchaseHistory_owner(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPElineupMallItemPurchaseHistory", field.Name)
 		},
@@ -27095,7 +27399,7 @@ func (ec *executionContext) _HPElineupMallItemPurchaseHistory(ctx context.Contex
 			out.Values[i] = ec._HPElineupMallItemPurchaseHistory_id(ctx, field, obj)
 
 			if out.Values[i] == graphql.Null {
-				invalids++
+				atomic.AddUint32(&invalids, 1)
 			}
 		case "createdAt":
 
@@ -27110,42 +27414,42 @@ func (ec *executionContext) _HPElineupMallItemPurchaseHistory(ctx context.Contex
 			out.Values[i] = ec._HPElineupMallItemPurchaseHistory_orderID(ctx, field, obj)
 
 			if out.Values[i] == graphql.Null {
-				invalids++
+				atomic.AddUint32(&invalids, 1)
 			}
 		case "num":
 
 			out.Values[i] = ec._HPElineupMallItemPurchaseHistory_num(ctx, field, obj)
 
 			if out.Values[i] == graphql.Null {
-				invalids++
+				atomic.AddUint32(&invalids, 1)
 			}
 		case "price":
 
 			out.Values[i] = ec._HPElineupMallItemPurchaseHistory_price(ctx, field, obj)
 
 			if out.Values[i] == graphql.Null {
-				invalids++
+				atomic.AddUint32(&invalids, 1)
 			}
 		case "orderedAt":
 
 			out.Values[i] = ec._HPElineupMallItemPurchaseHistory_orderedAt(ctx, field, obj)
 
 			if out.Values[i] == graphql.Null {
-				invalids++
+				atomic.AddUint32(&invalids, 1)
 			}
 		case "permalink":
 
 			out.Values[i] = ec._HPElineupMallItemPurchaseHistory_permalink(ctx, field, obj)
 
 			if out.Values[i] == graphql.Null {
-				invalids++
+				atomic.AddUint32(&invalids, 1)
 			}
 		case "name":
 
 			out.Values[i] = ec._HPElineupMallItemPurchaseHistory_name(ctx, field, obj)
 
 			if out.Values[i] == graphql.Null {
-				invalids++
+				atomic.AddUint32(&invalids, 1)
 			}
 		case "purchasedItemID":
 
@@ -27156,8 +27460,45 @@ func (ec *executionContext) _HPElineupMallItemPurchaseHistory(ctx context.Contex
 			out.Values[i] = ec._HPElineupMallItemPurchaseHistory_ownerUserID(ctx, field, obj)
 
 			if out.Values[i] == graphql.Null {
-				invalids++
+				atomic.AddUint32(&invalids, 1)
 			}
+		case "elineupMallItem":
+			field := field
+
+			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._HPElineupMallItemPurchaseHistory_elineupMallItem(ctx, field, obj)
+				return res
+			}
+
+			out.Concurrently(i, func() graphql.Marshaler {
+				return innerFunc(ctx)
+
+			})
+		case "owner":
+			field := field
+
+			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._HPElineupMallItemPurchaseHistory_owner(ctx, field, obj)
+				if res == graphql.Null {
+					atomic.AddUint32(&invalids, 1)
+				}
+				return res
+			}
+
+			out.Concurrently(i, func() graphql.Marshaler {
+				return innerFunc(ctx)
+
+			})
 		default:
 			panic("unknown field " + strconv.Quote(field.Name))
 		}
@@ -29467,6 +29808,23 @@ func (ec *executionContext) _MeQuery(ctx context.Context, sel ast.SelectionSet, 
 					}
 				}()
 				res = ec._MeQuery_sortHistories(ctx, field, obj)
+				return res
+			}
+
+			out.Concurrently(i, func() graphql.Marshaler {
+				return innerFunc(ctx)
+
+			})
+		case "elineupMallPurchaseHistories":
+			field := field
+
+			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._MeQuery_elineupMallPurchaseHistories(ctx, field, obj)
 				return res
 			}
 
@@ -32421,6 +32779,13 @@ func (ec *executionContext) marshalOHPElineupMallItemPurchaseHistory2ᚖgithub�
 		return graphql.Null
 	}
 	return ec._HPElineupMallItemPurchaseHistory(ctx, sel, v)
+}
+
+func (ec *executionContext) marshalOHPElineupMallItemPurchaseHistoryConnection2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItemPurchaseHistoryConnection(ctx context.Context, sel ast.SelectionSet, v *ent.HPElineupMallItemPurchaseHistoryConnection) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._HPElineupMallItemPurchaseHistoryConnection(ctx, sel, v)
 }
 
 func (ec *executionContext) marshalOHPElineupMallItemPurchaseHistoryEdge2ᚕᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPElineupMallItemPurchaseHistoryEdge(ctx context.Context, sel ast.SelectionSet, v []*ent.HPElineupMallItemPurchaseHistoryEdge) graphql.Marshaler {

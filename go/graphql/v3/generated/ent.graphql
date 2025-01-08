@@ -257,6 +257,8 @@ type HPElineupMallItemPurchaseHistory implements Node {
   name: String!
   purchasedItemID: ID
   ownerUserID: ID!
+  elineupMallItem: HPElineupMallItem
+  owner: User!
 }
 """A connection to a list of items."""
 type HPElineupMallItemPurchaseHistoryConnection {
