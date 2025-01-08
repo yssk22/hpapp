@@ -294,6 +294,30 @@ func (f HPElineupMallItemMutationRuleFunc) EvalMutation(ctx context.Context, m e
 	return Denyf("ent/privacy: unexpected mutation type %T, expect *ent.HPElineupMallItemMutation", m)
 }
 
+// The HPElineupMallItemPurchaseHistoryQueryRuleFunc type is an adapter to allow the use of ordinary
+// functions as a query rule.
+type HPElineupMallItemPurchaseHistoryQueryRuleFunc func(context.Context, *ent.HPElineupMallItemPurchaseHistoryQuery) error
+
+// EvalQuery return f(ctx, q).
+func (f HPElineupMallItemPurchaseHistoryQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error {
+	if q, ok := q.(*ent.HPElineupMallItemPurchaseHistoryQuery); ok {
+		return f(ctx, q)
+	}
+	return Denyf("ent/privacy: unexpected query type %T, expect *ent.HPElineupMallItemPurchaseHistoryQuery", q)
+}
+
+// The HPElineupMallItemPurchaseHistoryMutationRuleFunc type is an adapter to allow the use of ordinary
+// functions as a mutation rule.
+type HPElineupMallItemPurchaseHistoryMutationRuleFunc func(context.Context, *ent.HPElineupMallItemPurchaseHistoryMutation) error
+
+// EvalMutation calls f(ctx, m).
+func (f HPElineupMallItemPurchaseHistoryMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error {
+	if m, ok := m.(*ent.HPElineupMallItemPurchaseHistoryMutation); ok {
+		return f(ctx, m)
+	}
+	return Denyf("ent/privacy: unexpected mutation type %T, expect *ent.HPElineupMallItemPurchaseHistoryMutation", m)
+}
+
 // The HPEventQueryRuleFunc type is an adapter to allow the use of ordinary
 // functions as a query rule.
 type HPEventQueryRuleFunc func(context.Context, *ent.HPEventQuery) error
@@ -629,6 +653,8 @@ func queryFilter(q ent.Query) (Filter, error) {
 		return q.Filter(), nil
 	case *ent.HPElineupMallItemQuery:
 		return q.Filter(), nil
+	case *ent.HPElineupMallItemPurchaseHistoryQuery:
+		return q.Filter(), nil
 	case *ent.HPEventQuery:
 		return q.Filter(), nil
 	case *ent.HPFCEventTicketQuery:
@@ -671,6 +697,8 @@ func mutationFilter(m ent.Mutation) (Filter, error) {
 	case *ent.HPBlobMutation:
 		return m.Filter(), nil
 	case *ent.HPElineupMallItemMutation:
+		return m.Filter(), nil
+	case *ent.HPElineupMallItemPurchaseHistoryMutation:
 		return m.Filter(), nil
 	case *ent.HPEventMutation:
 		return m.Filter(), nil

@@ -57,6 +57,8 @@ const (
 	EdgeTaggedArtists = "tagged_artists"
 	// EdgeTaggedMembers holds the string denoting the tagged_members edge name in mutations.
 	EdgeTaggedMembers = "tagged_members"
+	// EdgePurchaseHistories holds the string denoting the purchase_histories edge name in mutations.
+	EdgePurchaseHistories = "purchase_histories"
 	// Table holds the table name of the hpelineupmallitem in the database.
 	Table = "hp_elineup_mall_items"
 	// TaggedArtistsTable is the table that holds the tagged_artists relation/edge. The primary key declared below.
@@ -69,6 +71,13 @@ const (
 	// TaggedMembersInverseTable is the table name for the HPMember entity.
 	// It exists in this package in order to avoid circular dependency with the "hpmember" package.
 	TaggedMembersInverseTable = "hp_members"
+	// PurchaseHistoriesTable is the table that holds the purchase_histories relation/edge.
+	PurchaseHistoriesTable = "hp_elineup_mall_item_purchase_histories"
+	// PurchaseHistoriesInverseTable is the table name for the HPElineupMallItemPurchaseHistory entity.
+	// It exists in this package in order to avoid circular dependency with the "hpelineupmallitempurchasehistory" package.
+	PurchaseHistoriesInverseTable = "hp_elineup_mall_item_purchase_histories"
+	// PurchaseHistoriesColumn is the table column denoting the purchase_histories relation/edge.
+	PurchaseHistoriesColumn = "purchased_item_id"
 )
 
 // Columns holds all SQL columns for hpelineupmallitem fields.
@@ -255,6 +264,20 @@ func ByTaggedMembers(term sql.OrderTerm, terms ...sql.OrderTerm) Order {
 		sqlgraph.OrderByNeighborTerms(s, newTaggedMembersStep(), append([]sql.OrderTerm{term}, terms...)...)
 	}
 }
+
+// ByPurchaseHistoriesCount orders the results by purchase_histories count.
+func ByPurchaseHistoriesCount(opts ...sql.OrderTermOption) Order {
+	return func(s *sql.Selector) {
+		sqlgraph.OrderByNeighborsCount(s, newPurchaseHistoriesStep(), opts...)
+	}
+}
+
+// ByPurchaseHistories orders the results by purchase_histories terms.
+func ByPurchaseHistories(term sql.OrderTerm, terms ...sql.OrderTerm) Order {
+	return func(s *sql.Selector) {
+		sqlgraph.OrderByNeighborTerms(s, newPurchaseHistoriesStep(), append([]sql.OrderTerm{term}, terms...)...)
+	}
+}
 func newTaggedArtistsStep() *sqlgraph.Step {
 	return sqlgraph.NewStep(
 		sqlgraph.From(Table, FieldID),
@@ -267,6 +290,13 @@ func newTaggedMembersStep() *sqlgraph.Step {
 		sqlgraph.From(Table, FieldID),
 		sqlgraph.To(TaggedMembersInverseTable, FieldID),
 		sqlgraph.Edge(sqlgraph.M2M, true, TaggedMembersTable, TaggedMembersPrimaryKey...),
+	)
+}
+func newPurchaseHistoriesStep() *sqlgraph.Step {
+	return sqlgraph.NewStep(
+		sqlgraph.From(Table, FieldID),
+		sqlgraph.To(PurchaseHistoriesInverseTable, FieldID),
+		sqlgraph.Edge(sqlgraph.O2M, false, PurchaseHistoriesTable, PurchaseHistoriesColumn),
 	)
 }
 

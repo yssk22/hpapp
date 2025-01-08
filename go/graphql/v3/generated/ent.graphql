@@ -186,6 +186,7 @@ type HPElineupMallItem implements Node {
   orderEndAt: Time
   taggedArtists: [HPArtist!]
   taggedMembers: [HPMember!]
+  purchaseHistories: [HPElineupMallItemPurchaseHistory!]
 }
 """A connection to a list of items."""
 type HPElineupMallItemConnection {
@@ -243,6 +244,48 @@ enum HPElineupMallItemOrderField {
   updatedAt
   orderStartAt
   orderEndAt
+}
+type HPElineupMallItemPurchaseHistory implements Node {
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  orderID: String!
+  num: Int!
+  price: Int!
+  orderedAt: Time!
+  permalink: String!
+  name: String!
+  purchasedItemID: ID
+  ownerUserID: ID!
+}
+"""A connection to a list of items."""
+type HPElineupMallItemPurchaseHistoryConnection {
+  """A list of edges."""
+  edges: [HPElineupMallItemPurchaseHistoryEdge]
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+  """Identifies the total count of items in the connection."""
+  totalCount: Int!
+}
+"""An edge in a connection."""
+type HPElineupMallItemPurchaseHistoryEdge {
+  """The item at the end of the edge."""
+  node: HPElineupMallItemPurchaseHistory
+  """A cursor for use in pagination."""
+  cursor: Cursor!
+}
+"""Ordering options for HPElineupMallItemPurchaseHistory connections"""
+input HPElineupMallItemPurchaseHistoryOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order HPElineupMallItemPurchaseHistories."""
+  field: HPElineupMallItemPurchaseHistoryOrderField!
+}
+"""Properties by which HPElineupMallItemPurchaseHistory connections can be ordered."""
+enum HPElineupMallItemPurchaseHistoryOrderField {
+  createdAt
+  updatedAt
+  orderedAt
 }
 type HPEvent implements Node {
   id: ID!
@@ -676,6 +719,7 @@ type User implements Node {
   hpmemberFollowing: [HPFollow!]
   hpsortHistory: [HPSortHistory!]
   hpfcEventTickets: [HPFCEventTicket!]
+  elineupMallPurchaseHistories: [HPElineupMallItemPurchaseHistory!]
 }
 type UserNotificationSetting implements Node {
   id: ID!

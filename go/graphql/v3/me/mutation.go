@@ -5,6 +5,7 @@ import (
 
 	"github.com/yssk22/hpapp/go/service/auth/appuser"
 	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/helloproject/elineupmall"
 	"github.com/yssk22/hpapp/go/service/helloproject/feed"
 	"github.com/yssk22/hpapp/go/service/helloproject/upfc"
 	"github.com/yssk22/hpapp/go/service/helloproject/user"
@@ -52,6 +53,10 @@ func (h *MeMutation) UpsertEvents(ctx context.Context, params upfc.HPFCEventTick
 
 func (h *MeMutation) UpsertViewHistory(ctx context.Context, params feed.HPViewHistoryUpsertParams) (*ent.HPViewHistory, error) {
 	return feed.UpsertViewHistory(ctx, params)
+}
+
+func (h *MeMutation) UpsertElineupmallPurchaseHistories(ctx context.Context, params elineupmall.HPElineupMallItemPurchaseHistoryUpsertParams) ([]*ent.HPElineupMallItemPurchaseHistory, error) {
+	return elineupmall.UpsertPurchaseHistories(ctx, params)
 }
 
 func (h *MeMutation) CreateSortHistory(ctx context.Context, params user.HPSortHistoryCreateParams) (*ent.HPSortHistory, error) {

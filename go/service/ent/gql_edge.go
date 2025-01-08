@@ -136,6 +136,18 @@ func (hemi *HPElineupMallItem) TaggedMembers(ctx context.Context) (result []*HPM
 	return result, err
 }
 
+func (hemi *HPElineupMallItem) PurchaseHistories(ctx context.Context) (result []*HPElineupMallItemPurchaseHistory, err error) {
+	if fc := graphql.GetFieldContext(ctx); fc != nil && fc.Field.Alias != "" {
+		result, err = hemi.NamedPurchaseHistories(graphql.GetFieldContext(ctx).Field.Alias)
+	} else {
+		result, err = hemi.Edges.PurchaseHistoriesOrErr()
+	}
+	if IsNotLoaded(err) {
+		result, err = hemi.QueryPurchaseHistories().All(ctx)
+	}
+	return result, err
+}
+
 func (hfi *HPFeedItem) OwnerArtist(ctx context.Context) (*HPArtist, error) {
 	result, err := hfi.Edges.OwnerArtistOrErr()
 	if IsNotLoaded(err) {
@@ -336,6 +348,18 @@ func (u *User) HpfcEventTickets(ctx context.Context) (result []*HPFCEventTicket,
 	}
 	if IsNotLoaded(err) {
 		result, err = u.QueryHpfcEventTickets().All(ctx)
+	}
+	return result, err
+}
+
+func (u *User) ElineupMallPurchaseHistories(ctx context.Context) (result []*HPElineupMallItemPurchaseHistory, err error) {
+	if fc := graphql.GetFieldContext(ctx); fc != nil && fc.Field.Alias != "" {
+		result, err = u.NamedElineupMallPurchaseHistories(graphql.GetFieldContext(ctx).Field.Alias)
+	} else {
+		result, err = u.Edges.ElineupMallPurchaseHistoriesOrErr()
+	}
+	if IsNotLoaded(err) {
+		result, err = u.QueryElineupMallPurchaseHistories().All(ctx)
 	}
 	return result, err
 }

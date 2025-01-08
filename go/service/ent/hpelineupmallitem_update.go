@@ -14,6 +14,7 @@ import (
 	"entgo.io/ent/schema/field"
 	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/predicate"
 	"github.com/yssk22/hpapp/go/service/schema/enums"
@@ -299,6 +300,21 @@ func (hemiu *HPElineupMallItemUpdate) AddTaggedMembers(h ...*HPMember) *HPElineu
 	return hemiu.AddTaggedMemberIDs(ids...)
 }
 
+// AddPurchaseHistoryIDs adds the "purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity by IDs.
+func (hemiu *HPElineupMallItemUpdate) AddPurchaseHistoryIDs(ids ...int) *HPElineupMallItemUpdate {
+	hemiu.mutation.AddPurchaseHistoryIDs(ids...)
+	return hemiu
+}
+
+// AddPurchaseHistories adds the "purchase_histories" edges to the HPElineupMallItemPurchaseHistory entity.
+func (hemiu *HPElineupMallItemUpdate) AddPurchaseHistories(h ...*HPElineupMallItemPurchaseHistory) *HPElineupMallItemUpdate {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return hemiu.AddPurchaseHistoryIDs(ids...)
+}
+
 // Mutation returns the HPElineupMallItemMutation object of the builder.
 func (hemiu *HPElineupMallItemUpdate) Mutation() *HPElineupMallItemMutation {
 	return hemiu.mutation
@@ -344,6 +360,27 @@ func (hemiu *HPElineupMallItemUpdate) RemoveTaggedMembers(h ...*HPMember) *HPEli
 		ids[i] = h[i].ID
 	}
 	return hemiu.RemoveTaggedMemberIDs(ids...)
+}
+
+// ClearPurchaseHistories clears all "purchase_histories" edges to the HPElineupMallItemPurchaseHistory entity.
+func (hemiu *HPElineupMallItemUpdate) ClearPurchaseHistories() *HPElineupMallItemUpdate {
+	hemiu.mutation.ClearPurchaseHistories()
+	return hemiu
+}
+
+// RemovePurchaseHistoryIDs removes the "purchase_histories" edge to HPElineupMallItemPurchaseHistory entities by IDs.
+func (hemiu *HPElineupMallItemUpdate) RemovePurchaseHistoryIDs(ids ...int) *HPElineupMallItemUpdate {
+	hemiu.mutation.RemovePurchaseHistoryIDs(ids...)
+	return hemiu
+}
+
+// RemovePurchaseHistories removes "purchase_histories" edges to HPElineupMallItemPurchaseHistory entities.
+func (hemiu *HPElineupMallItemUpdate) RemovePurchaseHistories(h ...*HPElineupMallItemPurchaseHistory) *HPElineupMallItemUpdate {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return hemiu.RemovePurchaseHistoryIDs(ids...)
 }
 
 // Save executes the query and returns the number of nodes affected by the update operation.
@@ -564,6 +601,51 @@ func (hemiu *HPElineupMallItemUpdate) sqlSave(ctx context.Context) (n int, err e
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpmember.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
+	if hemiu.mutation.PurchaseHistoriesCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpelineupmallitem.PurchaseHistoriesTable,
+			Columns: []string{hpelineupmallitem.PurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := hemiu.mutation.RemovedPurchaseHistoriesIDs(); len(nodes) > 0 && !hemiu.mutation.PurchaseHistoriesCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpelineupmallitem.PurchaseHistoriesTable,
+			Columns: []string{hpelineupmallitem.PurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := hemiu.mutation.PurchaseHistoriesIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpelineupmallitem.PurchaseHistoriesTable,
+			Columns: []string{hpelineupmallitem.PurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
 			},
 		}
 		for _, k := range nodes {
@@ -857,6 +939,21 @@ func (hemiuo *HPElineupMallItemUpdateOne) AddTaggedMembers(h ...*HPMember) *HPEl
 	return hemiuo.AddTaggedMemberIDs(ids...)
 }
 
+// AddPurchaseHistoryIDs adds the "purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity by IDs.
+func (hemiuo *HPElineupMallItemUpdateOne) AddPurchaseHistoryIDs(ids ...int) *HPElineupMallItemUpdateOne {
+	hemiuo.mutation.AddPurchaseHistoryIDs(ids...)
+	return hemiuo
+}
+
+// AddPurchaseHistories adds the "purchase_histories" edges to the HPElineupMallItemPurchaseHistory entity.
+func (hemiuo *HPElineupMallItemUpdateOne) AddPurchaseHistories(h ...*HPElineupMallItemPurchaseHistory) *HPElineupMallItemUpdateOne {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return hemiuo.AddPurchaseHistoryIDs(ids...)
+}
+
 // Mutation returns the HPElineupMallItemMutation object of the builder.
 func (hemiuo *HPElineupMallItemUpdateOne) Mutation() *HPElineupMallItemMutation {
 	return hemiuo.mutation
@@ -902,6 +999,27 @@ func (hemiuo *HPElineupMallItemUpdateOne) RemoveTaggedMembers(h ...*HPMember) *H
 		ids[i] = h[i].ID
 	}
 	return hemiuo.RemoveTaggedMemberIDs(ids...)
+}
+
+// ClearPurchaseHistories clears all "purchase_histories" edges to the HPElineupMallItemPurchaseHistory entity.
+func (hemiuo *HPElineupMallItemUpdateOne) ClearPurchaseHistories() *HPElineupMallItemUpdateOne {
+	hemiuo.mutation.ClearPurchaseHistories()
+	return hemiuo
+}
+
+// RemovePurchaseHistoryIDs removes the "purchase_histories" edge to HPElineupMallItemPurchaseHistory entities by IDs.
+func (hemiuo *HPElineupMallItemUpdateOne) RemovePurchaseHistoryIDs(ids ...int) *HPElineupMallItemUpdateOne {
+	hemiuo.mutation.RemovePurchaseHistoryIDs(ids...)
+	return hemiuo
+}
+
+// RemovePurchaseHistories removes "purchase_histories" edges to HPElineupMallItemPurchaseHistory entities.
+func (hemiuo *HPElineupMallItemUpdateOne) RemovePurchaseHistories(h ...*HPElineupMallItemPurchaseHistory) *HPElineupMallItemUpdateOne {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return hemiuo.RemovePurchaseHistoryIDs(ids...)
 }
 
 // Where appends a list predicates to the HPElineupMallItemUpdate builder.
@@ -1152,6 +1270,51 @@ func (hemiuo *HPElineupMallItemUpdateOne) sqlSave(ctx context.Context) (_node *H
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpmember.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
+	if hemiuo.mutation.PurchaseHistoriesCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpelineupmallitem.PurchaseHistoriesTable,
+			Columns: []string{hpelineupmallitem.PurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := hemiuo.mutation.RemovedPurchaseHistoriesIDs(); len(nodes) > 0 && !hemiuo.mutation.PurchaseHistoriesCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpelineupmallitem.PurchaseHistoriesTable,
+			Columns: []string{hpelineupmallitem.PurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := hemiuo.mutation.PurchaseHistoriesIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpelineupmallitem.PurchaseHistoriesTable,
+			Columns: []string{hpelineupmallitem.PurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
 			},
 		}
 		for _, k := range nodes {

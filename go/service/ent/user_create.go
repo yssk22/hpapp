@@ -12,6 +12,7 @@ import (
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/yssk22/hpapp/go/service/ent/auth"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
@@ -156,6 +157,21 @@ func (uc *UserCreate) AddHpfcEventTickets(h ...*HPFCEventTicket) *UserCreate {
 		ids[i] = h[i].ID
 	}
 	return uc.AddHpfcEventTicketIDs(ids...)
+}
+
+// AddElineupMallPurchaseHistoryIDs adds the "elineup_mall_purchase_histories" edge to the HPElineupMallItemPurchaseHistory entity by IDs.
+func (uc *UserCreate) AddElineupMallPurchaseHistoryIDs(ids ...int) *UserCreate {
+	uc.mutation.AddElineupMallPurchaseHistoryIDs(ids...)
+	return uc
+}
+
+// AddElineupMallPurchaseHistories adds the "elineup_mall_purchase_histories" edges to the HPElineupMallItemPurchaseHistory entity.
+func (uc *UserCreate) AddElineupMallPurchaseHistories(h ...*HPElineupMallItemPurchaseHistory) *UserCreate {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return uc.AddElineupMallPurchaseHistoryIDs(ids...)
 }
 
 // Mutation returns the UserMutation object of the builder.
@@ -330,6 +346,22 @@ func (uc *UserCreate) createSpec() (*User, *sqlgraph.CreateSpec) {
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpfceventticket.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges = append(_spec.Edges, edge)
+	}
+	if nodes := uc.mutation.ElineupMallPurchaseHistoriesIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.ElineupMallPurchaseHistoriesTable,
+			Columns: []string{user.ElineupMallPurchaseHistoriesColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
 			},
 		}
 		for _, k := range nodes {

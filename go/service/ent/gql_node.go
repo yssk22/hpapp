@@ -19,6 +19,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpblob"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpevent"
 	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
@@ -51,6 +52,9 @@ func (n *HPBlob) IsNode() {}
 
 // IsNode implements the Node interface check for GQLGen.
 func (n *HPElineupMallItem) IsNode() {}
+
+// IsNode implements the Node interface check for GQLGen.
+func (n *HPElineupMallItemPurchaseHistory) IsNode() {}
 
 // IsNode implements the Node interface check for GQLGen.
 func (n *HPEvent) IsNode() {}
@@ -192,6 +196,18 @@ func (c *Client) noder(ctx context.Context, table string, id int) (Noder, error)
 		query := c.HPElineupMallItem.Query().
 			Where(hpelineupmallitem.ID(id))
 		query, err := query.CollectFields(ctx, "HPElineupMallItem")
+		if err != nil {
+			return nil, err
+		}
+		n, err := query.Only(ctx)
+		if err != nil {
+			return nil, err
+		}
+		return n, nil
+	case hpelineupmallitempurchasehistory.Table:
+		query := c.HPElineupMallItemPurchaseHistory.Query().
+			Where(hpelineupmallitempurchasehistory.ID(id))
+		query, err := query.CollectFields(ctx, "HPElineupMallItemPurchaseHistory")
 		if err != nil {
 			return nil, err
 		}
@@ -461,6 +477,22 @@ func (c *Client) noders(ctx context.Context, table string, ids []int) ([]Noder, 
 		query := c.HPElineupMallItem.Query().
 			Where(hpelineupmallitem.IDIn(ids...))
 		query, err := query.CollectFields(ctx, "HPElineupMallItem")
+		if err != nil {
+			return nil, err
+		}
+		nodes, err := query.All(ctx)
+		if err != nil {
+			return nil, err
+		}
+		for _, node := range nodes {
+			for _, noder := range idmap[node.ID] {
+				*noder = node
+			}
+		}
+	case hpelineupmallitempurchasehistory.Table:
+		query := c.HPElineupMallItemPurchaseHistory.Query().
+			Where(hpelineupmallitempurchasehistory.IDIn(ids...))
+		query, err := query.CollectFields(ctx, "HPElineupMallItemPurchaseHistory")
 		if err != nil {
 			return nil, err
 		}

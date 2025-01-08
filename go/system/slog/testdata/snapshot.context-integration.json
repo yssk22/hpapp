@@ -1,14 +1,14 @@
 {
   "value": {
     "name": "unknown",
-    "source_path": "/workspaces/sites/oss/github.com/yssk22/hpapp/go/system/slog/slog_test.go",
+    "source_path": "/workspaces/hpapp/go/system/slog/slog_test.go",
     "source_line": 26,
     "severity": "INFO",
-    "timestamp": "2023-05-19T02:57:21.189258829Z",
+    "timestamp": "2025-01-08T07:09:29.73802261Z",
     "message": "test1",
     "context_instance": {
       "id": "TBD",
-      "timestamp": "2023-05-19T02:57:21.189228943Z",
+      "timestamp": "2025-01-08T07:09:29.738014134Z",
       "attributes": {
         "foo": "bar"
       }

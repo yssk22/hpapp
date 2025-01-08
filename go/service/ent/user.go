@@ -45,18 +45,21 @@ type UserEdges struct {
 	HpsortHistory []*HPSortHistory `json:"hpsort_history,omitempty"`
 	// HpfcEventTickets holds the value of the hpfc_event_tickets edge.
 	HpfcEventTickets []*HPFCEventTicket `json:"hpfc_event_tickets,omitempty"`
+	// ElineupMallPurchaseHistories holds the value of the elineup_mall_purchase_histories edge.
+	ElineupMallPurchaseHistories []*HPElineupMallItemPurchaseHistory `json:"elineup_mall_purchase_histories,omitempty"`
 	// loadedTypes holds the information for reporting if a
 	// type was loaded (or requested) in eager-loading or not.
-	loadedTypes [6]bool
+	loadedTypes [7]bool
 	// totalCount holds the count of the edges above.
-	totalCount [6]map[string]int
+	totalCount [7]map[string]int
 
-	namedAuth                 map[string][]*Auth
-	namedNotificationSettings map[string][]*UserNotificationSetting
-	namedHpviewHistory        map[string][]*HPViewHistory
-	namedHpmemberFollowing    map[string][]*HPFollow
-	namedHpsortHistory        map[string][]*HPSortHistory
-	namedHpfcEventTickets     map[string][]*HPFCEventTicket
+	namedAuth                         map[string][]*Auth
+	namedNotificationSettings         map[string][]*UserNotificationSetting
+	namedHpviewHistory                map[string][]*HPViewHistory
+	namedHpmemberFollowing            map[string][]*HPFollow
+	namedHpsortHistory                map[string][]*HPSortHistory
+	namedHpfcEventTickets             map[string][]*HPFCEventTicket
+	namedElineupMallPurchaseHistories map[string][]*HPElineupMallItemPurchaseHistory
 }
 
 // AuthOrErr returns the Auth value or an error if the edge
@@ -111,6 +114,15 @@ func (e UserEdges) HpfcEventTicketsOrErr() ([]*HPFCEventTicket, error) {
 		return e.HpfcEventTickets, nil
 	}
 	return nil, &NotLoadedError{edge: "hpfc_event_tickets"}
+}
+
+// ElineupMallPurchaseHistoriesOrErr returns the ElineupMallPurchaseHistories value or an error if the edge
+// was not loaded in eager-loading.
+func (e UserEdges) ElineupMallPurchaseHistoriesOrErr() ([]*HPElineupMallItemPurchaseHistory, error) {
+	if e.loadedTypes[6] {
+		return e.ElineupMallPurchaseHistories, nil
+	}
+	return nil, &NotLoadedError{edge: "elineup_mall_purchase_histories"}
 }
 
 // scanValues returns the types for scanning values from sql.Rows.
@@ -210,6 +222,11 @@ func (u *User) QueryHpsortHistory() *HPSortHistoryQuery {
 // QueryHpfcEventTickets queries the "hpfc_event_tickets" edge of the User entity.
 func (u *User) QueryHpfcEventTickets() *HPFCEventTicketQuery {
 	return NewUserClient(u.config).QueryHpfcEventTickets(u)
+}
+
+// QueryElineupMallPurchaseHistories queries the "elineup_mall_purchase_histories" edge of the User entity.
+func (u *User) QueryElineupMallPurchaseHistories() *HPElineupMallItemPurchaseHistoryQuery {
+	return NewUserClient(u.config).QueryElineupMallPurchaseHistories(u)
 }
 
 // Update returns a builder for updating this User.
@@ -391,6 +408,30 @@ func (u *User) appendNamedHpfcEventTickets(name string, edges ...*HPFCEventTicke
 		u.Edges.namedHpfcEventTickets[name] = []*HPFCEventTicket{}
 	} else {
 		u.Edges.namedHpfcEventTickets[name] = append(u.Edges.namedHpfcEventTickets[name], edges...)
+	}
+}
+
+// NamedElineupMallPurchaseHistories returns the ElineupMallPurchaseHistories named value or an error if the edge was not
+// loaded in eager-loading with this name.
+func (u *User) NamedElineupMallPurchaseHistories(name string) ([]*HPElineupMallItemPurchaseHistory, error) {
+	if u.Edges.namedElineupMallPurchaseHistories == nil {
+		return nil, &NotLoadedError{edge: name}
+	}
+	nodes, ok := u.Edges.namedElineupMallPurchaseHistories[name]
+	if !ok {
+		return nil, &NotLoadedError{edge: name}
+	}
+	return nodes, nil
+}
+
+func (u *User) appendNamedElineupMallPurchaseHistories(name string, edges ...*HPElineupMallItemPurchaseHistory) {
+	if u.Edges.namedElineupMallPurchaseHistories == nil {
+		u.Edges.namedElineupMallPurchaseHistories = make(map[string][]*HPElineupMallItemPurchaseHistory)
+	}
+	if len(edges) == 0 {
+		u.Edges.namedElineupMallPurchaseHistories[name] = []*HPElineupMallItemPurchaseHistory{}
+	} else {
+		u.Edges.namedElineupMallPurchaseHistories[name] = append(u.Edges.namedElineupMallPurchaseHistories[name], edges...)
 	}
 }
 

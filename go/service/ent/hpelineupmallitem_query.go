@@ -13,6 +13,7 @@ import (
 	"entgo.io/ent/schema/field"
 	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/predicate"
 )
@@ -20,16 +21,18 @@ import (
 // HPElineupMallItemQuery is the builder for querying HPElineupMallItem entities.
 type HPElineupMallItemQuery struct {
 	config
-	ctx                    *QueryContext
-	order                  []hpelineupmallitem.Order
-	inters                 []Interceptor
-	predicates             []predicate.HPElineupMallItem
-	withTaggedArtists      *HPArtistQuery
-	withTaggedMembers      *HPMemberQuery
-	modifiers              []func(*sql.Selector)
-	loadTotal              []func(context.Context, []*HPElineupMallItem) error
-	withNamedTaggedArtists map[string]*HPArtistQuery
-	withNamedTaggedMembers map[string]*HPMemberQuery
+	ctx                        *QueryContext
+	order                      []hpelineupmallitem.Order
+	inters                     []Interceptor
+	predicates                 []predicate.HPElineupMallItem
+	withTaggedArtists          *HPArtistQuery
+	withTaggedMembers          *HPMemberQuery
+	withPurchaseHistories      *HPElineupMallItemPurchaseHistoryQuery
+	modifiers                  []func(*sql.Selector)
+	loadTotal                  []func(context.Context, []*HPElineupMallItem) error
+	withNamedTaggedArtists     map[string]*HPArtistQuery
+	withNamedTaggedMembers     map[string]*HPMemberQuery
+	withNamedPurchaseHistories map[string]*HPElineupMallItemPurchaseHistoryQuery
 	// intermediate query (i.e. traversal path).
 	sql  *sql.Selector
 	path func(context.Context) (*sql.Selector, error)
@@ -103,6 +106,28 @@ func (hemiq *HPElineupMallItemQuery) QueryTaggedMembers() *HPMemberQuery {
 			sqlgraph.From(hpelineupmallitem.Table, hpelineupmallitem.FieldID, selector),
 			sqlgraph.To(hpmember.Table, hpmember.FieldID),
 			sqlgraph.Edge(sqlgraph.M2M, true, hpelineupmallitem.TaggedMembersTable, hpelineupmallitem.TaggedMembersPrimaryKey...),
+		)
+		fromU = sqlgraph.SetNeighbors(hemiq.driver.Dialect(), step)
+		return fromU, nil
+	}
+	return query
+}
+
+// QueryPurchaseHistories chains the current query on the "purchase_histories" edge.
+func (hemiq *HPElineupMallItemQuery) QueryPurchaseHistories() *HPElineupMallItemPurchaseHistoryQuery {
+	query := (&HPElineupMallItemPurchaseHistoryClient{config: hemiq.config}).Query()
+	query.path = func(ctx context.Context) (fromU *sql.Selector, err error) {
+		if err := hemiq.prepareQuery(ctx); err != nil {
+			return nil, err
+		}
+		selector := hemiq.sqlQuery(ctx)
+		if err := selector.Err(); err != nil {
+			return nil, err
+		}
+		step := sqlgraph.NewStep(
+			sqlgraph.From(hpelineupmallitem.Table, hpelineupmallitem.FieldID, selector),
+			sqlgraph.To(hpelineupmallitempurchasehistory.Table, hpelineupmallitempurchasehistory.FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, hpelineupmallitem.PurchaseHistoriesTable, hpelineupmallitem.PurchaseHistoriesColumn),
 		)
 		fromU = sqlgraph.SetNeighbors(hemiq.driver.Dialect(), step)
 		return fromU, nil
@@ -297,13 +322,14 @@ func (hemiq *HPElineupMallItemQuery) Clone() *HPElineupMallItemQuery {
 		return nil
 	}
 	return &HPElineupMallItemQuery{
-		config:            hemiq.config,
-		ctx:               hemiq.ctx.Clone(),
-		order:             append([]hpelineupmallitem.Order{}, hemiq.order...),
-		inters:            append([]Interceptor{}, hemiq.inters...),
-		predicates:        append([]predicate.HPElineupMallItem{}, hemiq.predicates...),
-		withTaggedArtists: hemiq.withTaggedArtists.Clone(),
-		withTaggedMembers: hemiq.withTaggedMembers.Clone(),
+		config:                hemiq.config,
+		ctx:                   hemiq.ctx.Clone(),
+		order:                 append([]hpelineupmallitem.Order{}, hemiq.order...),
+		inters:                append([]Interceptor{}, hemiq.inters...),
+		predicates:            append([]predicate.HPElineupMallItem{}, hemiq.predicates...),
+		withTaggedArtists:     hemiq.withTaggedArtists.Clone(),
+		withTaggedMembers:     hemiq.withTaggedMembers.Clone(),
+		withPurchaseHistories: hemiq.withPurchaseHistories.Clone(),
 		// clone intermediate query.
 		sql:  hemiq.sql.Clone(),
 		path: hemiq.path,
@@ -329,6 +355,17 @@ func (hemiq *HPElineupMallItemQuery) WithTaggedMembers(opts ...func(*HPMemberQue
 		opt(query)
 	}
 	hemiq.withTaggedMembers = query
+	return hemiq
+}
+
+// WithPurchaseHistories tells the query-builder to eager-load the nodes that are connected to
+// the "purchase_histories" edge. The optional arguments are used to configure the query builder of the edge.
+func (hemiq *HPElineupMallItemQuery) WithPurchaseHistories(opts ...func(*HPElineupMallItemPurchaseHistoryQuery)) *HPElineupMallItemQuery {
+	query := (&HPElineupMallItemPurchaseHistoryClient{config: hemiq.config}).Query()
+	for _, opt := range opts {
+		opt(query)
+	}
+	hemiq.withPurchaseHistories = query
 	return hemiq
 }
 
@@ -410,9 +447,10 @@ func (hemiq *HPElineupMallItemQuery) sqlAll(ctx context.Context, hooks ...queryH
 	var (
 		nodes       = []*HPElineupMallItem{}
 		_spec       = hemiq.querySpec()
-		loadedTypes = [2]bool{
+		loadedTypes = [3]bool{
 			hemiq.withTaggedArtists != nil,
 			hemiq.withTaggedMembers != nil,
+			hemiq.withPurchaseHistories != nil,
 		}
 	)
 	_spec.ScanValues = func(columns []string) ([]any, error) {
@@ -450,6 +488,15 @@ func (hemiq *HPElineupMallItemQuery) sqlAll(ctx context.Context, hooks ...queryH
 			return nil, err
 		}
 	}
+	if query := hemiq.withPurchaseHistories; query != nil {
+		if err := hemiq.loadPurchaseHistories(ctx, query, nodes,
+			func(n *HPElineupMallItem) { n.Edges.PurchaseHistories = []*HPElineupMallItemPurchaseHistory{} },
+			func(n *HPElineupMallItem, e *HPElineupMallItemPurchaseHistory) {
+				n.Edges.PurchaseHistories = append(n.Edges.PurchaseHistories, e)
+			}); err != nil {
+			return nil, err
+		}
+	}
 	for name, query := range hemiq.withNamedTaggedArtists {
 		if err := hemiq.loadTaggedArtists(ctx, query, nodes,
 			func(n *HPElineupMallItem) { n.appendNamedTaggedArtists(name) },
@@ -461,6 +508,15 @@ func (hemiq *HPElineupMallItemQuery) sqlAll(ctx context.Context, hooks ...queryH
 		if err := hemiq.loadTaggedMembers(ctx, query, nodes,
 			func(n *HPElineupMallItem) { n.appendNamedTaggedMembers(name) },
 			func(n *HPElineupMallItem, e *HPMember) { n.appendNamedTaggedMembers(name, e) }); err != nil {
+			return nil, err
+		}
+	}
+	for name, query := range hemiq.withNamedPurchaseHistories {
+		if err := hemiq.loadPurchaseHistories(ctx, query, nodes,
+			func(n *HPElineupMallItem) { n.appendNamedPurchaseHistories(name) },
+			func(n *HPElineupMallItem, e *HPElineupMallItemPurchaseHistory) {
+				n.appendNamedPurchaseHistories(name, e)
+			}); err != nil {
 			return nil, err
 		}
 	}
@@ -594,6 +650,36 @@ func (hemiq *HPElineupMallItemQuery) loadTaggedMembers(ctx context.Context, quer
 	}
 	return nil
 }
+func (hemiq *HPElineupMallItemQuery) loadPurchaseHistories(ctx context.Context, query *HPElineupMallItemPurchaseHistoryQuery, nodes []*HPElineupMallItem, init func(*HPElineupMallItem), assign func(*HPElineupMallItem, *HPElineupMallItemPurchaseHistory)) error {
+	fks := make([]driver.Value, 0, len(nodes))
+	nodeids := make(map[int]*HPElineupMallItem)
+	for i := range nodes {
+		fks = append(fks, nodes[i].ID)
+		nodeids[nodes[i].ID] = nodes[i]
+		if init != nil {
+			init(nodes[i])
+		}
+	}
+	query.Where(predicate.HPElineupMallItemPurchaseHistory(func(s *sql.Selector) {
+		s.Where(sql.InValues(hpelineupmallitem.PurchaseHistoriesColumn, fks...))
+	}))
+	neighbors, err := query.All(ctx)
+	if err != nil {
+		return err
+	}
+	for _, n := range neighbors {
+		fk := n.PurchasedItemID
+		if fk == nil {
+			return fmt.Errorf(`foreign-key "purchased_item_id" is nil for node %v`, n.ID)
+		}
+		node, ok := nodeids[*fk]
+		if !ok {
+			return fmt.Errorf(`unexpected foreign-key "purchased_item_id" returned %v for node %v`, *fk, n.ID)
+		}
+		assign(node, n)
+	}
+	return nil
+}
 
 func (hemiq *HPElineupMallItemQuery) sqlCount(ctx context.Context) (int, error) {
 	_spec := hemiq.querySpec()
@@ -704,6 +790,20 @@ func (hemiq *HPElineupMallItemQuery) WithNamedTaggedMembers(name string, opts ..
 		hemiq.withNamedTaggedMembers = make(map[string]*HPMemberQuery)
 	}
 	hemiq.withNamedTaggedMembers[name] = query
+	return hemiq
+}
+
+// WithNamedPurchaseHistories tells the query-builder to eager-load the nodes that are connected to the "purchase_histories"
+// edge with the given name. The optional arguments are used to configure the query builder of the edge.
+func (hemiq *HPElineupMallItemQuery) WithNamedPurchaseHistories(name string, opts ...func(*HPElineupMallItemPurchaseHistoryQuery)) *HPElineupMallItemQuery {
+	query := (&HPElineupMallItemPurchaseHistoryClient{config: hemiq.config}).Query()
+	for _, opt := range opts {
+		opt(query)
+	}
+	if hemiq.withNamedPurchaseHistories == nil {
+		hemiq.withNamedPurchaseHistories = make(map[string]*HPElineupMallItemPurchaseHistoryQuery)
+	}
+	hemiq.withNamedPurchaseHistories[name] = query
 	return hemiq
 }
 

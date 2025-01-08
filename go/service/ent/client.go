@@ -20,6 +20,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpasset"
 	"github.com/yssk22/hpapp/go/service/ent/hpblob"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
+	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitempurchasehistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpevent"
 	"github.com/yssk22/hpapp/go/service/ent/hpfceventticket"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
@@ -51,6 +52,8 @@ type Client struct {
 	HPBlob *HPBlobClient
 	// HPElineupMallItem is the client for interacting with the HPElineupMallItem builders.
 	HPElineupMallItem *HPElineupMallItemClient
+	// HPElineupMallItemPurchaseHistory is the client for interacting with the HPElineupMallItemPurchaseHistory builders.
+	HPElineupMallItemPurchaseHistory *HPElineupMallItemPurchaseHistoryClient
 	// HPEvent is the client for interacting with the HPEvent builders.
 	HPEvent *HPEventClient
 	// HPFCEventTicket is the client for interacting with the HPFCEventTicket builders.
@@ -96,6 +99,7 @@ func (c *Client) init() {
 	c.HPAsset = NewHPAssetClient(c.config)
 	c.HPBlob = NewHPBlobClient(c.config)
 	c.HPElineupMallItem = NewHPElineupMallItemClient(c.config)
+	c.HPElineupMallItemPurchaseHistory = NewHPElineupMallItemPurchaseHistoryClient(c.config)
 	c.HPEvent = NewHPEventClient(c.config)
 	c.HPFCEventTicket = NewHPFCEventTicketClient(c.config)
 	c.HPFeedItem = NewHPFeedItemClient(c.config)
@@ -188,26 +192,27 @@ func (c *Client) Tx(ctx context.Context) (*Tx, error) {
 	cfg := c.config
 	cfg.driver = tx
 	return &Tx{
-		ctx:                     ctx,
-		config:                  cfg,
-		Auth:                    NewAuthClient(cfg),
-		HPAmebloPost:            NewHPAmebloPostClient(cfg),
-		HPArtist:                NewHPArtistClient(cfg),
-		HPAsset:                 NewHPAssetClient(cfg),
-		HPBlob:                  NewHPBlobClient(cfg),
-		HPElineupMallItem:       NewHPElineupMallItemClient(cfg),
-		HPEvent:                 NewHPEventClient(cfg),
-		HPFCEventTicket:         NewHPFCEventTicketClient(cfg),
-		HPFeedItem:              NewHPFeedItemClient(cfg),
-		HPFollow:                NewHPFollowClient(cfg),
-		HPIgPost:                NewHPIgPostClient(cfg),
-		HPMember:                NewHPMemberClient(cfg),
-		HPSortHistory:           NewHPSortHistoryClient(cfg),
-		HPViewHistory:           NewHPViewHistoryClient(cfg),
-		TestEnt:                 NewTestEntClient(cfg),
-		User:                    NewUserClient(cfg),
-		UserNotificationLog:     NewUserNotificationLogClient(cfg),
-		UserNotificationSetting: NewUserNotificationSettingClient(cfg),
+		ctx:                              ctx,
+		config:                           cfg,
+		Auth:                             NewAuthClient(cfg),
+		HPAmebloPost:                     NewHPAmebloPostClient(cfg),
+		HPArtist:                         NewHPArtistClient(cfg),
+		HPAsset:                          NewHPAssetClient(cfg),
+		HPBlob:                           NewHPBlobClient(cfg),
+		HPElineupMallItem:                NewHPElineupMallItemClient(cfg),
+		HPElineupMallItemPurchaseHistory: NewHPElineupMallItemPurchaseHistoryClient(cfg),
+		HPEvent:                          NewHPEventClient(cfg),
+		HPFCEventTicket:                  NewHPFCEventTicketClient(cfg),
+		HPFeedItem:                       NewHPFeedItemClient(cfg),
+		HPFollow:                         NewHPFollowClient(cfg),
+		HPIgPost:                         NewHPIgPostClient(cfg),
+		HPMember:                         NewHPMemberClient(cfg),
+		HPSortHistory:                    NewHPSortHistoryClient(cfg),
+		HPViewHistory:                    NewHPViewHistoryClient(cfg),
+		TestEnt:                          NewTestEntClient(cfg),
+		User:                             NewUserClient(cfg),
+		UserNotificationLog:              NewUserNotificationLogClient(cfg),
+		UserNotificationSetting:          NewUserNotificationSettingClient(cfg),
 	}, nil
 }
 
@@ -225,26 +230,27 @@ func (c *Client) BeginTx(ctx context.Context, opts *sql.TxOptions) (*Tx, error) 
 	cfg := c.config
 	cfg.driver = &txDriver{tx: tx, drv: c.driver}
 	return &Tx{
-		ctx:                     ctx,
-		config:                  cfg,
-		Auth:                    NewAuthClient(cfg),
-		HPAmebloPost:            NewHPAmebloPostClient(cfg),
-		HPArtist:                NewHPArtistClient(cfg),
-		HPAsset:                 NewHPAssetClient(cfg),
-		HPBlob:                  NewHPBlobClient(cfg),
-		HPElineupMallItem:       NewHPElineupMallItemClient(cfg),
-		HPEvent:                 NewHPEventClient(cfg),
-		HPFCEventTicket:         NewHPFCEventTicketClient(cfg),
-		HPFeedItem:              NewHPFeedItemClient(cfg),
-		HPFollow:                NewHPFollowClient(cfg),
-		HPIgPost:                NewHPIgPostClient(cfg),
-		HPMember:                NewHPMemberClient(cfg),
-		HPSortHistory:           NewHPSortHistoryClient(cfg),
-		HPViewHistory:           NewHPViewHistoryClient(cfg),
-		TestEnt:                 NewTestEntClient(cfg),
-		User:                    NewUserClient(cfg),
-		UserNotificationLog:     NewUserNotificationLogClient(cfg),
-		UserNotificationSetting: NewUserNotificationSettingClient(cfg),
+		ctx:                              ctx,
+		config:                           cfg,
+		Auth:                             NewAuthClient(cfg),
+		HPAmebloPost:                     NewHPAmebloPostClient(cfg),
+		HPArtist:                         NewHPArtistClient(cfg),
+		HPAsset:                          NewHPAssetClient(cfg),
+		HPBlob:                           NewHPBlobClient(cfg),
+		HPElineupMallItem:                NewHPElineupMallItemClient(cfg),
+		HPElineupMallItemPurchaseHistory: NewHPElineupMallItemPurchaseHistoryClient(cfg),
+		HPEvent:                          NewHPEventClient(cfg),
+		HPFCEventTicket:                  NewHPFCEventTicketClient(cfg),
+		HPFeedItem:                       NewHPFeedItemClient(cfg),
+		HPFollow:                         NewHPFollowClient(cfg),
+		HPIgPost:                         NewHPIgPostClient(cfg),
+		HPMember:                         NewHPMemberClient(cfg),
+		HPSortHistory:                    NewHPSortHistoryClient(cfg),
+		HPViewHistory:                    NewHPViewHistoryClient(cfg),
+		TestEnt:                          NewTestEntClient(cfg),
+		User:                             NewUserClient(cfg),
+		UserNotificationLog:              NewUserNotificationLogClient(cfg),
+		UserNotificationSetting:          NewUserNotificationSettingClient(cfg),
 	}, nil
 }
 
@@ -275,9 +281,9 @@ func (c *Client) Close() error {
 func (c *Client) Use(hooks ...Hook) {
 	for _, n := range []interface{ Use(...Hook) }{
 		c.Auth, c.HPAmebloPost, c.HPArtist, c.HPAsset, c.HPBlob, c.HPElineupMallItem,
-		c.HPEvent, c.HPFCEventTicket, c.HPFeedItem, c.HPFollow, c.HPIgPost, c.HPMember,
-		c.HPSortHistory, c.HPViewHistory, c.TestEnt, c.User, c.UserNotificationLog,
-		c.UserNotificationSetting,
+		c.HPElineupMallItemPurchaseHistory, c.HPEvent, c.HPFCEventTicket, c.HPFeedItem,
+		c.HPFollow, c.HPIgPost, c.HPMember, c.HPSortHistory, c.HPViewHistory,
+		c.TestEnt, c.User, c.UserNotificationLog, c.UserNotificationSetting,
 	} {
 		n.Use(hooks...)
 	}
@@ -288,9 +294,9 @@ func (c *Client) Use(hooks ...Hook) {
 func (c *Client) Intercept(interceptors ...Interceptor) {
 	for _, n := range []interface{ Intercept(...Interceptor) }{
 		c.Auth, c.HPAmebloPost, c.HPArtist, c.HPAsset, c.HPBlob, c.HPElineupMallItem,
-		c.HPEvent, c.HPFCEventTicket, c.HPFeedItem, c.HPFollow, c.HPIgPost, c.HPMember,
-		c.HPSortHistory, c.HPViewHistory, c.TestEnt, c.User, c.UserNotificationLog,
-		c.UserNotificationSetting,
+		c.HPElineupMallItemPurchaseHistory, c.HPEvent, c.HPFCEventTicket, c.HPFeedItem,
+		c.HPFollow, c.HPIgPost, c.HPMember, c.HPSortHistory, c.HPViewHistory,
+		c.TestEnt, c.User, c.UserNotificationLog, c.UserNotificationSetting,
 	} {
 		n.Intercept(interceptors...)
 	}
@@ -311,6 +317,8 @@ func (c *Client) Mutate(ctx context.Context, m Mutation) (Value, error) {
 		return c.HPBlob.mutate(ctx, m)
 	case *HPElineupMallItemMutation:
 		return c.HPElineupMallItem.mutate(ctx, m)
+	case *HPElineupMallItemPurchaseHistoryMutation:
+		return c.HPElineupMallItemPurchaseHistory.mutate(ctx, m)
 	case *HPEventMutation:
 		return c.HPEvent.mutate(ctx, m)
 	case *HPFCEventTicketMutation:
@@ -1443,6 +1451,22 @@ func (c *HPElineupMallItemClient) QueryTaggedMembers(hemi *HPElineupMallItem) *H
 	return query
 }
 
+// QueryPurchaseHistories queries the purchase_histories edge of a HPElineupMallItem.
+func (c *HPElineupMallItemClient) QueryPurchaseHistories(hemi *HPElineupMallItem) *HPElineupMallItemPurchaseHistoryQuery {
+	query := (&HPElineupMallItemPurchaseHistoryClient{config: c.config}).Query()
+	query.path = func(context.Context) (fromV *sql.Selector, _ error) {
+		id := hemi.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(hpelineupmallitem.Table, hpelineupmallitem.FieldID, id),
+			sqlgraph.To(hpelineupmallitempurchasehistory.Table, hpelineupmallitempurchasehistory.FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, hpelineupmallitem.PurchaseHistoriesTable, hpelineupmallitem.PurchaseHistoriesColumn),
+		)
+		fromV = sqlgraph.Neighbors(hemi.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
 // Hooks returns the client hooks.
 func (c *HPElineupMallItemClient) Hooks() []Hook {
 	hooks := c.hooks.HPElineupMallItem
@@ -1466,6 +1490,157 @@ func (c *HPElineupMallItemClient) mutate(ctx context.Context, m *HPElineupMallIt
 		return (&HPElineupMallItemDelete{config: c.config, hooks: c.Hooks(), mutation: m}).Exec(ctx)
 	default:
 		return nil, fmt.Errorf("ent: unknown HPElineupMallItem mutation op: %q", m.Op())
+	}
+}
+
+// HPElineupMallItemPurchaseHistoryClient is a client for the HPElineupMallItemPurchaseHistory schema.
+type HPElineupMallItemPurchaseHistoryClient struct {
+	config
+}
+
+// NewHPElineupMallItemPurchaseHistoryClient returns a client for the HPElineupMallItemPurchaseHistory from the given config.
+func NewHPElineupMallItemPurchaseHistoryClient(c config) *HPElineupMallItemPurchaseHistoryClient {
+	return &HPElineupMallItemPurchaseHistoryClient{config: c}
+}
+
+// Use adds a list of mutation hooks to the hooks stack.
+// A call to `Use(f, g, h)` equals to `hpelineupmallitempurchasehistory.Hooks(f(g(h())))`.
+func (c *HPElineupMallItemPurchaseHistoryClient) Use(hooks ...Hook) {
+	c.hooks.HPElineupMallItemPurchaseHistory = append(c.hooks.HPElineupMallItemPurchaseHistory, hooks...)
+}
+
+// Intercept adds a list of query interceptors to the interceptors stack.
+// A call to `Intercept(f, g, h)` equals to `hpelineupmallitempurchasehistory.Intercept(f(g(h())))`.
+func (c *HPElineupMallItemPurchaseHistoryClient) Intercept(interceptors ...Interceptor) {
+	c.inters.HPElineupMallItemPurchaseHistory = append(c.inters.HPElineupMallItemPurchaseHistory, interceptors...)
+}
+
+// Create returns a builder for creating a HPElineupMallItemPurchaseHistory entity.
+func (c *HPElineupMallItemPurchaseHistoryClient) Create() *HPElineupMallItemPurchaseHistoryCreate {
+	mutation := newHPElineupMallItemPurchaseHistoryMutation(c.config, OpCreate)
+	return &HPElineupMallItemPurchaseHistoryCreate{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// CreateBulk returns a builder for creating a bulk of HPElineupMallItemPurchaseHistory entities.
+func (c *HPElineupMallItemPurchaseHistoryClient) CreateBulk(builders ...*HPElineupMallItemPurchaseHistoryCreate) *HPElineupMallItemPurchaseHistoryCreateBulk {
+	return &HPElineupMallItemPurchaseHistoryCreateBulk{config: c.config, builders: builders}
+}
+
+// Update returns an update builder for HPElineupMallItemPurchaseHistory.
+func (c *HPElineupMallItemPurchaseHistoryClient) Update() *HPElineupMallItemPurchaseHistoryUpdate {
+	mutation := newHPElineupMallItemPurchaseHistoryMutation(c.config, OpUpdate)
+	return &HPElineupMallItemPurchaseHistoryUpdate{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// UpdateOne returns an update builder for the given entity.
+func (c *HPElineupMallItemPurchaseHistoryClient) UpdateOne(hemiph *HPElineupMallItemPurchaseHistory) *HPElineupMallItemPurchaseHistoryUpdateOne {
+	mutation := newHPElineupMallItemPurchaseHistoryMutation(c.config, OpUpdateOne, withHPElineupMallItemPurchaseHistory(hemiph))
+	return &HPElineupMallItemPurchaseHistoryUpdateOne{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// UpdateOneID returns an update builder for the given id.
+func (c *HPElineupMallItemPurchaseHistoryClient) UpdateOneID(id int) *HPElineupMallItemPurchaseHistoryUpdateOne {
+	mutation := newHPElineupMallItemPurchaseHistoryMutation(c.config, OpUpdateOne, withHPElineupMallItemPurchaseHistoryID(id))
+	return &HPElineupMallItemPurchaseHistoryUpdateOne{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// Delete returns a delete builder for HPElineupMallItemPurchaseHistory.
+func (c *HPElineupMallItemPurchaseHistoryClient) Delete() *HPElineupMallItemPurchaseHistoryDelete {
+	mutation := newHPElineupMallItemPurchaseHistoryMutation(c.config, OpDelete)
+	return &HPElineupMallItemPurchaseHistoryDelete{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// DeleteOne returns a builder for deleting the given entity.
+func (c *HPElineupMallItemPurchaseHistoryClient) DeleteOne(hemiph *HPElineupMallItemPurchaseHistory) *HPElineupMallItemPurchaseHistoryDeleteOne {
+	return c.DeleteOneID(hemiph.ID)
+}
+
+// DeleteOneID returns a builder for deleting the given entity by its id.
+func (c *HPElineupMallItemPurchaseHistoryClient) DeleteOneID(id int) *HPElineupMallItemPurchaseHistoryDeleteOne {
+	builder := c.Delete().Where(hpelineupmallitempurchasehistory.ID(id))
+	builder.mutation.id = &id
+	builder.mutation.op = OpDeleteOne
+	return &HPElineupMallItemPurchaseHistoryDeleteOne{builder}
+}
+
+// Query returns a query builder for HPElineupMallItemPurchaseHistory.
+func (c *HPElineupMallItemPurchaseHistoryClient) Query() *HPElineupMallItemPurchaseHistoryQuery {
+	return &HPElineupMallItemPurchaseHistoryQuery{
+		config: c.config,
+		ctx:    &QueryContext{Type: TypeHPElineupMallItemPurchaseHistory},
+		inters: c.Interceptors(),
+	}
+}
+
+// Get returns a HPElineupMallItemPurchaseHistory entity by its id.
+func (c *HPElineupMallItemPurchaseHistoryClient) Get(ctx context.Context, id int) (*HPElineupMallItemPurchaseHistory, error) {
+	return c.Query().Where(hpelineupmallitempurchasehistory.ID(id)).Only(ctx)
+}
+
+// GetX is like Get, but panics if an error occurs.
+func (c *HPElineupMallItemPurchaseHistoryClient) GetX(ctx context.Context, id int) *HPElineupMallItemPurchaseHistory {
+	obj, err := c.Get(ctx, id)
+	if err != nil {
+		panic(err)
+	}
+	return obj
+}
+
+// QueryElineupMallItem queries the elineup_mall_item edge of a HPElineupMallItemPurchaseHistory.
+func (c *HPElineupMallItemPurchaseHistoryClient) QueryElineupMallItem(hemiph *HPElineupMallItemPurchaseHistory) *HPElineupMallItemQuery {
+	query := (&HPElineupMallItemClient{config: c.config}).Query()
+	query.path = func(context.Context) (fromV *sql.Selector, _ error) {
+		id := hemiph.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(hpelineupmallitempurchasehistory.Table, hpelineupmallitempurchasehistory.FieldID, id),
+			sqlgraph.To(hpelineupmallitem.Table, hpelineupmallitem.FieldID),
+			sqlgraph.Edge(sqlgraph.M2O, true, hpelineupmallitempurchasehistory.ElineupMallItemTable, hpelineupmallitempurchasehistory.ElineupMallItemColumn),
+		)
+		fromV = sqlgraph.Neighbors(hemiph.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
+// QueryOwner queries the owner edge of a HPElineupMallItemPurchaseHistory.
+func (c *HPElineupMallItemPurchaseHistoryClient) QueryOwner(hemiph *HPElineupMallItemPurchaseHistory) *UserQuery {
+	query := (&UserClient{config: c.config}).Query()
+	query.path = func(context.Context) (fromV *sql.Selector, _ error) {
+		id := hemiph.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(hpelineupmallitempurchasehistory.Table, hpelineupmallitempurchasehistory.FieldID, id),
+			sqlgraph.To(user.Table, user.FieldID),
+			sqlgraph.Edge(sqlgraph.M2O, true, hpelineupmallitempurchasehistory.OwnerTable, hpelineupmallitempurchasehistory.OwnerColumn),
+		)
+		fromV = sqlgraph.Neighbors(hemiph.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
+// Hooks returns the client hooks.
+func (c *HPElineupMallItemPurchaseHistoryClient) Hooks() []Hook {
+	hooks := c.hooks.HPElineupMallItemPurchaseHistory
+	return append(hooks[:len(hooks):len(hooks)], hpelineupmallitempurchasehistory.Hooks[:]...)
+}
+
+// Interceptors returns the client interceptors.
+func (c *HPElineupMallItemPurchaseHistoryClient) Interceptors() []Interceptor {
+	return c.inters.HPElineupMallItemPurchaseHistory
+}
+
+func (c *HPElineupMallItemPurchaseHistoryClient) mutate(ctx context.Context, m *HPElineupMallItemPurchaseHistoryMutation) (Value, error) {
+	switch m.Op() {
+	case OpCreate:
+		return (&HPElineupMallItemPurchaseHistoryCreate{config: c.config, hooks: c.Hooks(), mutation: m}).Save(ctx)
+	case OpUpdate:
+		return (&HPElineupMallItemPurchaseHistoryUpdate{config: c.config, hooks: c.Hooks(), mutation: m}).Save(ctx)
+	case OpUpdateOne:
+		return (&HPElineupMallItemPurchaseHistoryUpdateOne{config: c.config, hooks: c.Hooks(), mutation: m}).Save(ctx)
+	case OpDelete, OpDeleteOne:
+		return (&HPElineupMallItemPurchaseHistoryDelete{config: c.config, hooks: c.Hooks(), mutation: m}).Exec(ctx)
+	default:
+		return nil, fmt.Errorf("ent: unknown HPElineupMallItemPurchaseHistory mutation op: %q", m.Op())
 	}
 }
 
@@ -3224,6 +3399,22 @@ func (c *UserClient) QueryHpfcEventTickets(u *User) *HPFCEventTicketQuery {
 	return query
 }
 
+// QueryElineupMallPurchaseHistories queries the elineup_mall_purchase_histories edge of a User.
+func (c *UserClient) QueryElineupMallPurchaseHistories(u *User) *HPElineupMallItemPurchaseHistoryQuery {
+	query := (&HPElineupMallItemPurchaseHistoryClient{config: c.config}).Query()
+	query.path = func(context.Context) (fromV *sql.Selector, _ error) {
+		id := u.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(user.Table, user.FieldID, id),
+			sqlgraph.To(hpelineupmallitempurchasehistory.Table, hpelineupmallitempurchasehistory.FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, user.ElineupMallPurchaseHistoriesTable, user.ElineupMallPurchaseHistoriesColumn),
+		)
+		fromV = sqlgraph.Neighbors(u.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
 // Hooks returns the client hooks.
 func (c *UserClient) Hooks() []Hook {
 	hooks := c.hooks.User
@@ -3539,15 +3730,15 @@ func (c *UserNotificationSettingClient) mutate(ctx context.Context, m *UserNotif
 // hooks and interceptors per client, for fast access.
 type (
 	hooks struct {
-		Auth, HPAmebloPost, HPArtist, HPAsset, HPBlob, HPElineupMallItem, HPEvent,
-		HPFCEventTicket, HPFeedItem, HPFollow, HPIgPost, HPMember, HPSortHistory,
-		HPViewHistory, TestEnt, User, UserNotificationLog,
-		UserNotificationSetting []ent.Hook
+		Auth, HPAmebloPost, HPArtist, HPAsset, HPBlob, HPElineupMallItem,
+		HPElineupMallItemPurchaseHistory, HPEvent, HPFCEventTicket, HPFeedItem,
+		HPFollow, HPIgPost, HPMember, HPSortHistory, HPViewHistory, TestEnt, User,
+		UserNotificationLog, UserNotificationSetting []ent.Hook
 	}
 	inters struct {
-		Auth, HPAmebloPost, HPArtist, HPAsset, HPBlob, HPElineupMallItem, HPEvent,
-		HPFCEventTicket, HPFeedItem, HPFollow, HPIgPost, HPMember, HPSortHistory,
-		HPViewHistory, TestEnt, User, UserNotificationLog,
-		UserNotificationSetting []ent.Interceptor
+		Auth, HPAmebloPost, HPArtist, HPAsset, HPBlob, HPElineupMallItem,
+		HPElineupMallItemPurchaseHistory, HPEvent, HPFCEventTicket, HPFeedItem,
+		HPFollow, HPIgPost, HPMember, HPSortHistory, HPViewHistory, TestEnt, User,
+		UserNotificationLog, UserNotificationSetting []ent.Interceptor
 	}
 )

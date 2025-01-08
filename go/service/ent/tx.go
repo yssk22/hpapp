@@ -24,6 +24,8 @@ type Tx struct {
 	HPBlob *HPBlobClient
 	// HPElineupMallItem is the client for interacting with the HPElineupMallItem builders.
 	HPElineupMallItem *HPElineupMallItemClient
+	// HPElineupMallItemPurchaseHistory is the client for interacting with the HPElineupMallItemPurchaseHistory builders.
+	HPElineupMallItemPurchaseHistory *HPElineupMallItemPurchaseHistoryClient
 	// HPEvent is the client for interacting with the HPEvent builders.
 	HPEvent *HPEventClient
 	// HPFCEventTicket is the client for interacting with the HPFCEventTicket builders.
@@ -185,6 +187,7 @@ func (tx *Tx) init() {
 	tx.HPAsset = NewHPAssetClient(tx.config)
 	tx.HPBlob = NewHPBlobClient(tx.config)
 	tx.HPElineupMallItem = NewHPElineupMallItemClient(tx.config)
+	tx.HPElineupMallItemPurchaseHistory = NewHPElineupMallItemPurchaseHistoryClient(tx.config)
 	tx.HPEvent = NewHPEventClient(tx.config)
 	tx.HPFCEventTicket = NewHPFCEventTicketClient(tx.config)
 	tx.HPFeedItem = NewHPFeedItemClient(tx.config)

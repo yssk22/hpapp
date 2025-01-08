@@ -304,6 +304,72 @@ var (
 			},
 		},
 	}
+	// HpElineupMallItemPurchaseHistoriesColumns holds the columns for the "hp_elineup_mall_item_purchase_histories" table.
+	HpElineupMallItemPurchaseHistoriesColumns = []*schema.Column{
+		{Name: "id", Type: field.TypeInt, Increment: true},
+		{Name: "created_at", Type: field.TypeTime, Nullable: true},
+		{Name: "updated_at", Type: field.TypeTime, Nullable: true},
+		{Name: "order_id", Type: field.TypeString},
+		{Name: "num", Type: field.TypeInt},
+		{Name: "price", Type: field.TypeInt},
+		{Name: "ordered_at", Type: field.TypeTime},
+		{Name: "permalink", Type: field.TypeString},
+		{Name: "name", Type: field.TypeString},
+		{Name: "purchased_item_id", Type: field.TypeInt, Nullable: true},
+		{Name: "owner_user_id", Type: field.TypeInt},
+	}
+	// HpElineupMallItemPurchaseHistoriesTable holds the schema information for the "hp_elineup_mall_item_purchase_histories" table.
+	HpElineupMallItemPurchaseHistoriesTable = &schema.Table{
+		Name:       "hp_elineup_mall_item_purchase_histories",
+		Columns:    HpElineupMallItemPurchaseHistoriesColumns,
+		PrimaryKey: []*schema.Column{HpElineupMallItemPurchaseHistoriesColumns[0]},
+		ForeignKeys: []*schema.ForeignKey{
+			{
+				Symbol:     "hp_elineup_mall_item_purchase_histories_hp_elineup_mall_items_purchase_histories",
+				Columns:    []*schema.Column{HpElineupMallItemPurchaseHistoriesColumns[9]},
+				RefColumns: []*schema.Column{HpElineupMallItemsColumns[0]},
+				OnDelete:   schema.SetNull,
+			},
+			{
+				Symbol:     "hp_elineup_mall_item_purchase_histories_users_elineup_mall_purchase_histories",
+				Columns:    []*schema.Column{HpElineupMallItemPurchaseHistoriesColumns[10]},
+				RefColumns: []*schema.Column{UsersColumns[0]},
+				OnDelete:   schema.Cascade,
+			},
+		},
+		Indexes: []*schema.Index{
+			{
+				Name:    "hpelineupmallitempurchasehistory_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpElineupMallItemPurchaseHistoriesColumns[1]},
+			},
+			{
+				Name:    "hpelineupmallitempurchasehistory_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpElineupMallItemPurchaseHistoriesColumns[2]},
+			},
+			{
+				Name:    "hpelineupmallitempurchasehistory_permalink_owner_user_id_order_id",
+				Unique:  true,
+				Columns: []*schema.Column{HpElineupMallItemPurchaseHistoriesColumns[7], HpElineupMallItemPurchaseHistoriesColumns[10], HpElineupMallItemPurchaseHistoriesColumns[3]},
+			},
+			{
+				Name:    "hpelineupmallitempurchasehistory_purchased_item_id_ordered_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpElineupMallItemPurchaseHistoriesColumns[9], HpElineupMallItemPurchaseHistoriesColumns[6]},
+			},
+			{
+				Name:    "hpelineupmallitempurchasehistory_purchased_item_id_owner_user_id_ordered_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpElineupMallItemPurchaseHistoriesColumns[9], HpElineupMallItemPurchaseHistoriesColumns[10], HpElineupMallItemPurchaseHistoriesColumns[6]},
+			},
+			{
+				Name:    "hpelineupmallitempurchasehistory_owner_user_id_ordered_at",
+				Unique:  false,
+				Columns: []*schema.Column{HpElineupMallItemPurchaseHistoriesColumns[10], HpElineupMallItemPurchaseHistoriesColumns[6]},
+			},
+		},
+	}
 	// HpEventsColumns holds the columns for the "hp_events" table.
 	HpEventsColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeInt, Increment: true},
@@ -1173,6 +1239,7 @@ var (
 		HpAssetsTable,
 		HpBlobsTable,
 		HpElineupMallItemsTable,
+		HpElineupMallItemPurchaseHistoriesTable,
 		HpEventsTable,
 		HpfcEventTicketsTable,
 		HpFeedItemsTable,
@@ -1209,6 +1276,8 @@ func init() {
 	HpAssetsTable.ForeignKeys[0].RefTable = HpArtistsTable
 	HpBlobsTable.ForeignKeys[0].RefTable = HpArtistsTable
 	HpBlobsTable.ForeignKeys[1].RefTable = HpMembersTable
+	HpElineupMallItemPurchaseHistoriesTable.ForeignKeys[0].RefTable = HpElineupMallItemsTable
+	HpElineupMallItemPurchaseHistoriesTable.ForeignKeys[1].RefTable = UsersTable
 	HpfcEventTicketsTable.ForeignKeys[0].RefTable = HpEventsTable
 	HpfcEventTicketsTable.ForeignKeys[1].RefTable = UsersTable
 	HpFeedItemsTable.ForeignKeys[0].RefTable = HpArtistsTable
