@@ -1,3 +1,4 @@
+import * as date from '@hpapp/foundation/date';
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { fetchQuery, graphql, usePaginationFragment, useRelayEnvironment } from 'react-relay';
 import { usePaginationFragmentHookType } from 'react-relay/relay-hooks/usePaginationFragment';
@@ -26,6 +27,10 @@ const FeedContextQueryFragmentGraphQL = graphql`
       edges {
         node {
           id
+          postAt
+          myViewHistory {
+            id
+          }
           ...FeedListItemFragment
         }
       }
@@ -49,6 +54,7 @@ type FeedContextProviderProps = {
 
 type FeedContextModel = {
   data: HPFeedItem[] | null;
+  badgeCount: number | undefined;
   isLoading: boolean;
   hasNext: boolean;
   reload: () => void;
@@ -58,6 +64,7 @@ type FeedContextModel = {
 function createFeedContext(): [(props: FeedContextProviderProps) => React.JSX.Element, () => FeedContextModel] {
   const feedContext = createContext<FeedContextModel>({
     data: null,
+    badgeCount: 0,
     isLoading: false,
     hasNext: false,
     reload: () => {},
@@ -155,8 +162,24 @@ function createFeedContext(): [(props: FeedContextProviderProps) => React.JSX.El
     >;
   }) {
     const ctxValue = useMemo(() => {
+      let badgeCount = undefined;
+      const minPostAt = date.addDate(new Date(), -1, 'day');
+      if (data?.data?.feed?.edges?.length !== undefined) {
+        badgeCount = 0;
+        for (let i = 0; i < (data?.data?.feed?.edges?.length ?? 0); i++) {
+          const node = data!.data!.feed!.edges![i]!.node!;
+          // stop iterating for posts before 24 hours.
+          if (new Date(node.postAt).getTime() < minPostAt.getTime()) {
+            break;
+          }
+          if ((node.myViewHistory ?? null) === null) {
+            badgeCount++;
+          }
+        }
+      }
       return {
         data: data?.data?.feed?.edges?.map((e) => e!.node!) ?? null,
+        badgeCount,
         isLoading,
         hasNext: data?.hasNext ?? false,
         reload,

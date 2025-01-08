@@ -4,7 +4,7 @@ import UPFCSettingsScreen from '@hpapp/features/upfc/UPFCSettingsScreen';
 import { act, fireEvent, waitFor } from '@testing-library/react-native';
 
 import HomeTabUPFC from './HomeTabUPFC';
-import HomeTabProvider from '../HomeTabProvider';
+import HomeTabProvider from '../HomeProvider';
 // import UPFCSettingsScreen from '@hpapp/features/upfc/UPFCSettingsScreen';
 
 describe('HomeTabUPFC', () => {

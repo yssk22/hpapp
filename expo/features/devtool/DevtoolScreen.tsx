@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import { ScrollView } from 'react-native';
 
 import DevtoolListItem from './internals/DevtoolListItem';
+import DevtoolListItemResetBadge from './internals/DevtoolListItemResetBadge';
 import DevtoolListItemResetOnboardingFlow from './internals/DevtoolListItemResetOnboardingFlow';
 import DevtoolUserConfigForm from './internals/DevtoolUserConfigForm';
 
@@ -64,6 +65,8 @@ export default defineScreen('/devtool/', function DevtoolScreen() {
       <DevtoolListItemResetOnboardingFlow />
       <Divider />
       <ListItemClearCache />
+      <Divider />
+      <DevtoolListItemResetBadge />
       <Divider />
       <DevtoolUserConfigForm />
       <AuthGateByRole allow={['admin', 'developer']}>

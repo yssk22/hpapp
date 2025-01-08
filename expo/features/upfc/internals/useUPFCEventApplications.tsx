@@ -50,6 +50,7 @@ export type UPFCEventApplicationsResult = {
   hpError: Error | undefined;
   mlError: Error | undefined;
   useDemo: boolean;
+  badgeCount: number;
 };
 
 export default function useUPFCEventApplications(): ReloadableAysncResult<
@@ -139,7 +140,8 @@ async function fetchApplications({
     applications,
     hpError: result[0].error,
     mlError: result[1].error,
-    useDemo
+    useDemo,
+    badgeCount: applications.filter((a) => a.tickets.some((t) => t.status === '入金待')).length
   };
 }
 
@@ -437,7 +439,8 @@ async function cacheLoadFn(value: string) {
     }),
     hpError: result.hpError ? new Error(result.hpError.message) : undefined,
     mlError: result.mlError ? new Error(result.mlError.message) : undefined,
-    useDemo: result.useDemo
+    useDemo: result.useDemo,
+    badgeCount: result.badgeCount
   };
 }
 

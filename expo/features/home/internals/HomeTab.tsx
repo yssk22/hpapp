@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React, { ComponentProps, Suspense } from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import HomeTabProvider from './HomeTabProvider';
+import { useHomeContext } from './HomeProvider';
 import HomeTabArtist from './artist/HomeTabArtist';
 import HomeTabGoods from './goods/HomeTabGoods';
 import HomeTabHome from './home/HomeTabHome';
@@ -18,43 +18,43 @@ import HomeTabUPFC from './upfc/HomeTabUPFC';
 export default function HomeTab() {
   useNavigationOption({ headerShown: false });
   const [primary, contrast] = useThemeColor('primary');
+  const ctx = useHomeContext();
   return (
-    <HomeTabProvider>
-      <Tab.Navigator
-        screenListeners={{
-          state: (e) => {
-            logEvent('home_tab_view', {
-              tabName: e.data.state.routes[e.data.state.index].name
-            });
+    <Tab.Navigator
+      screenListeners={{
+        state: (e) => {
+          logEvent('home_tab_view', {
+            tabName: e.data.state.routes[e.data.state.index].name
+          });
+        }
+      }}
+      screenOptions={({ route }) => {
+        return {
+          headerStyle: {
+            backgroundColor: primary
+          },
+          headerTintColor: contrast,
+          headerTitleStyle: {
+            fontWeight: 'bold'
           }
-        }}
-        screenOptions={({ route }) => {
-          return {
-            headerStyle: {
-              backgroundColor: primary
-            },
-            headerTintColor: contrast,
-            headerTitleStyle: {
-              fontWeight: 'bold'
-            }
-          };
-        }}
-      >
-        {Tabs.map((tab) => {
-          return (
-            <Tab.Screen
-              key={tab.name}
-              // eslint-disable-next-line local-rules/no-translation-entry
-              name={t(tab.name)}
-              component={tabComponent(tab.component)}
-              options={{
-                tabBarIcon: getTabBarIconFn(tab.icon)
-              }}
-            />
-          );
-        })}
-      </Tab.Navigator>
-    </HomeTabProvider>
+        };
+      }}
+    >
+      {Tabs.map((tab) => {
+        return (
+          <Tab.Screen
+            key={tab.name}
+            // eslint-disable-next-line local-rules/no-translation-entry
+            name={t(tab.name)}
+            component={tabComponent(tab.component)}
+            options={{
+              tabBarIcon: getTabBarIconFn(tab.icon),
+              tabBarBadge: tab.badgeCountFn ? tab.badgeCountFn(ctx) : undefined
+            }}
+          />
+        );
+      })}
+    </Tab.Navigator>
   );
 }
 
@@ -72,13 +72,15 @@ type TabSpec = {
   name: string;
   component: TabComponent;
   icon: IconName;
+  badgeCountFn?: (ctx: ReturnType<typeof useHomeContext>) => number | undefined;
 };
 
 const Tabs: TabSpec[] = [
   {
     name: 'Home',
     component: HomeTabHome,
-    icon: 'home'
+    icon: 'home',
+    badgeCountFn: (ctx) => ctx.feed.badgeCount
   },
   {
     name: 'Artists',
@@ -88,7 +90,8 @@ const Tabs: TabSpec[] = [
   {
     name: 'Fan Club',
     component: HomeTabUPFC,
-    icon: 'calendar'
+    icon: 'calendar',
+    badgeCountFn: (ctx) => ctx.upfc.data?.badgeCount
   },
   {
     name: 'Goods',

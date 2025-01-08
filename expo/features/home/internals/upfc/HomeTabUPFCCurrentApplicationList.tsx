@@ -6,7 +6,7 @@ import { FlatList, ListRenderItemInfo, RefreshControl, View } from 'react-native
 
 import UPFCApplicationCard from './HomeTabUPFCApplicationCard';
 import HomeTabUPFCStatusHeader from './HomeTabUPFCStatusHeader';
-import { useHomeTabContext } from '../HomeTabProvider';
+import { useHomeContext } from '../HomeProvider';
 
 function keyExtractor(event: UPFCEventApplicationTickets) {
   return `${event.site}-${event.name}`; // just in case if two sites have the same name of event
@@ -17,7 +17,7 @@ function renderItem(event: ListRenderItemInfo<UPFCEventApplicationTickets>) {
 }
 
 export default function HomeTabUPFCCurrentApplicationList() {
-  const { upfc } = useHomeTabContext();
+  const { upfc } = useHomeContext();
   const applications = useMemo(() => {
     if (upfc.error) {
       return null;

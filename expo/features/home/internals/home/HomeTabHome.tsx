@@ -9,12 +9,12 @@ import { useMemo } from 'react';
 import HomeTabHomeFeedItemListSection from './HomeTabHomeFeedItemListSection';
 import HomeTabHomeUPFCNextEventsSection from './HomeTabHomeUPFCNextEventsSection';
 import HomeTabHomeUPFCPendingPaymentsSection from './HomeTabHomeUPFCPendingPaymentsSection';
-import { useHomeTabContext } from '../HomeTabProvider';
+import { useHomeContext } from '../HomeProvider';
 
 export default function HomeTabHome() {
   const openUPFCWebView = useUPFCWebView();
   const [primary] = useThemeColor('primary');
-  const { feed, upfc } = useHomeTabContext();
+  const { feed, upfc } = useHomeContext();
   const sections: SectionListRenderer<unknown>[] = useMemo(() => {
     const list: SectionListRenderer<unknown>[] = [];
     if (upfc.data !== null) {
