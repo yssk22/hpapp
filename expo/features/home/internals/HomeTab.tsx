@@ -1,12 +1,10 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useThemeColor } from '@hpapp/features/app/theme';
-import { Loading } from '@hpapp/features/common/';
 import { useNavigationOption } from '@hpapp/features/common/stack';
 import { logEvent } from '@hpapp/system/firebase';
 import { t } from '@hpapp/system/i18n';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React, { ComponentProps, Suspense } from 'react';
-import { View, StyleSheet } from 'react-native';
+import React, { ComponentProps } from 'react';
 
 import { useHomeContext } from './HomeProvider';
 import HomeTabArtist from './artist/HomeTabArtist';
@@ -40,79 +38,55 @@ export default function HomeTab() {
         };
       }}
     >
-      {Tabs.map((tab) => {
-        return (
-          <Tab.Screen
-            key={tab.name}
-            // eslint-disable-next-line local-rules/no-translation-entry
-            name={t(tab.name)}
-            component={tabComponent(tab.component)}
-            options={{
-              tabBarIcon: getTabBarIconFn(tab.icon),
-              tabBarBadge: tab.badgeCountFn ? tab.badgeCountFn(ctx) : undefined
-            }}
-          />
-        );
-      })}
+      <Tab.Screen
+        name={t('Home')}
+        component={HomeTabHome}
+        options={{
+          tabBarIcon: getTabBarIconFn('home'),
+          tabBarBadge: getTabBarBadge(ctx.feed.badgeCount)
+        }}
+      />
+      <Tab.Screen
+        name={t('Artists')}
+        component={HomeTabArtist}
+        options={{
+          tabBarIcon: getTabBarIconFn('people')
+        }}
+      />
+      <Tab.Screen
+        name={t('Fan Club')}
+        component={HomeTabUPFC}
+        options={{
+          tabBarIcon: getTabBarIconFn('calendar'),
+          tabBarBadge: getTabBarBadge(ctx.upfc.data?.badgeCount)
+        }}
+      />
+      <Tab.Screen
+        name={t('Goods')}
+        component={HomeTabGoods}
+        options={{
+          tabBarIcon: getTabBarIconFn('cart')
+        }}
+      />
+      <Tab.Screen
+        name={t('Menu')}
+        component={HomeTabSettings}
+        options={{
+          tabBarIcon: getTabBarIconFn('menu')
+        }}
+      />
     </Tab.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  tab: {
-    flex: 1
-  }
-});
-
 const Tab = createBottomTabNavigator();
-type TabComponent = NonNullable<React.ComponentProps<typeof Tab.Screen>['component']>;
 type IconName = ComponentProps<typeof Ionicons>['name'];
 
-type TabSpec = {
-  name: string;
-  component: TabComponent;
-  icon: IconName;
-  badgeCountFn?: (ctx: ReturnType<typeof useHomeContext>) => number | undefined;
-};
-
-const Tabs: TabSpec[] = [
-  {
-    name: 'Home',
-    component: HomeTabHome,
-    icon: 'home',
-    badgeCountFn: (ctx) => ctx.feed.badgeCount
-  },
-  {
-    name: 'Artists',
-    component: HomeTabArtist,
-    icon: 'people'
-  },
-  {
-    name: 'Fan Club',
-    component: HomeTabUPFC,
-    icon: 'calendar',
-    badgeCountFn: (ctx) => ctx.upfc.data?.badgeCount
-  },
-  {
-    name: 'Goods',
-    component: HomeTabGoods,
-    icon: 'cart'
-  },
-  {
-    name: 'Menu',
-    component: HomeTabSettings,
-    icon: 'menu'
+function getTabBarBadge(value: number | undefined) {
+  if ((value ?? 0) > 0) {
+    return value;
   }
-];
-
-function tabComponent(c: React.ElementType<any>) {
-  return function TabComponent() {
-    return (
-      <View style={styles.tab}>
-        <Suspense fallback={<Loading />}>{React.createElement(c)}</Suspense>
-      </View>
-    );
-  };
+  return undefined;
 }
 
 function getTabBarIconFn(iconName: IconName) {

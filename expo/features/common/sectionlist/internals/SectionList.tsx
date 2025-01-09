@@ -27,7 +27,10 @@ export default function SectionList<T>({ sections, isLoading, reload, ...props }
     <SectionListOrig
       {...props}
       sections={sections}
-      keyExtractor={(item, index) => `hometabsectionlist-${index}`}
+      // keyExtractor={(item, index) => {
+      //   console.log(item, index);
+      //   return 'key' + index;
+      // }}
       renderSectionHeader={({ section }) => {
         return section.renderSectionHeader();
       }}

@@ -9,6 +9,10 @@ export default class HomeTabHomeFeedItemListSection implements SectionListRender
     this.data = data;
   }
 
+  keyExtractor(item: HPFeedItem, index: number) {
+    return `HomeTabHomeFeedItemListSection-${index}`;
+  }
+
   renderSectionHeader() {
     return <SectionListHeader>{t('Latest Posts')}</SectionListHeader>;
   }

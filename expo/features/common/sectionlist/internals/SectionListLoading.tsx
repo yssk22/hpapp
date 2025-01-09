@@ -17,7 +17,11 @@ export default class SectionListLoading implements SectionListRenderer<any> {
 
   constructor(props: SectionListLoadingProps) {
     this.props = props;
-    this.data = [null];
+    this.data = [];
+  }
+
+  keyExtractor(item: any, index: number): string {
+    return `SectionListLoading-${index}`;
   }
 
   renderSectionHeader() {
