@@ -42,6 +42,10 @@ export default class HomeTabHomeUPFCNextEventsSection implements SectionListRend
       });
   }
 
+  keyExtractor(item: ApplicationEventTicket, index: number): string {
+    return `HomeTabHomeUPFCNextEventsSection-${index}`;
+  }
+
   renderSectionHeader() {
     if (this.data.length > 0) {
       return <SectionListHeader>{t('Next Events')}</SectionListHeader>;

@@ -43,6 +43,10 @@ export default class HomeTabHomeUPFCPendingPaymentsSection implements SectionLis
       .filter((event) => event.tickets.length > 0);
   }
 
+  keyExtractor(item: UPFCEventApplicationTickets, index: number): string {
+    return `HomeTabHomeUPFCPendingPaymentsSection-${index}`;
+  }
+
   renderSectionHeader() {
     if (this.data.length > 0) {
       return <SectionListHeader>{t('Pending Payments')}</SectionListHeader>;
