@@ -1,7 +1,6 @@
 import analytics from '@react-native-firebase/analytics';
 import appcheck from '@react-native-firebase/app-check';
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
-import { useEffect } from 'react';
 import { Platform } from 'react-native';
 
 if (Platform.OS !== 'web') {
@@ -68,10 +67,12 @@ export async function logLogout(): Promise<void> {
   analytics().setUserId(null);
 }
 
-export async function useSetUserId(userId: string | null) {
-  useEffect(() => {
-    analytics().setUserId(userId);
-  }, [userId]);
+export async function updateUserProperties(
+  userId: string | null,
+  properties: Record<string, string | null>
+): Promise<void> {
+  const a = analytics();
+  await Promise.all([a.setUserId(userId), a.setUserProperties(properties)]);
 }
 
 export async function logScreenView(screen: string) {

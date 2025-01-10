@@ -160,28 +160,6 @@ exports[`HomeTabMenuVersionSignature Basic 1`] = `
                   ios-unknown
                   )
                 </Text>
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "black",
-                      },
-                      {
-                        "fontSize": 14,
-                      },
-                      {
-                        "fontSize": 12,
-                        "fontStyle": "italic",
-                      },
-                    ]
-                  }
-                >
-                  ID: 
-                  1
-                   (
-                  user
-                  )
-                </Text>
               </View>
             </View>
           </View>

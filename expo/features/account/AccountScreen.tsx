@@ -1,5 +1,5 @@
 import { useCurrentUser } from '@hpapp/features/app/settings';
-import { useUserRoles } from '@hpapp/features/auth';
+import { UserRole, useUserRoles } from '@hpapp/features/auth';
 import { Spacing } from '@hpapp/features/common/constants';
 import { ListItemKeyValue } from '@hpapp/features/common/list';
 import { defineScreen, useScreenTitle } from '@hpapp/features/common/stack';
@@ -14,13 +14,15 @@ export default defineScreen('/account/', function AccountScreen() {
   useScreenTitle(t('Account'));
   const user = useCurrentUser();
   const roles = useUserRoles();
+  const keys = Object.keys(roles).filter((key) => roles[key as UserRole]);
+
   return (
     <ScrollView>
       <ListItemKeyValue name={t('User ID')} value={user!.id} />
       <Divider />
       <ListItemKeyValue name={t('User Name')} value={user!.username} />
       <Divider />
-      <ListItemKeyValue name={t('User Role')} value={roles.join(', ')} />
+      <ListItemKeyValue name={t('User Role')} value={keys.join(', ')} />
       <Divider />
       <ListItemKeyValue
         name={t('Access Token')}
