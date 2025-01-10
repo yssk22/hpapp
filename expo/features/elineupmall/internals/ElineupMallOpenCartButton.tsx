@@ -2,6 +2,7 @@ import { useThemeColor } from '@hpapp/features/app/theme';
 import { Spacing } from '@hpapp/features/common/constants';
 import { useNavigation } from '@hpapp/features/common/stack';
 import ElineupMallWebViewScreen from '@hpapp/features/elineupmall/ElineupMallWebViewScreen';
+import { logEvent } from '@hpapp/system/firebase';
 import CookieManager from '@react-native-cookies/cookies';
 import { Button, Icon } from '@rneui/themed';
 import { useCallback } from 'react';
@@ -28,8 +29,17 @@ export default function ElineupMallOpenCartButton() {
         navigation.push(ElineupMallWebViewScreen, {
           uri: 'https://www.elineupmall.com/'
         });
+        logEvent('elineupmall_open_webview', {
+          feature: 'elineupmall',
+          uri: 'https://www.elineupmall.com/'
+        });
         break;
       case 'ready':
+        logEvent('elineupmall_open_webview', {
+          feature: 'elineupmall',
+          uri: numberOfItems > 0 ? 'https://www.elineupmall.com/cart/' : 'https://www.elineupmall.com/',
+          login: true
+        });
         navigation.push(ElineupMallWebViewScreen, {
           uri: numberOfItems > 0 ? 'https://www.elineupmall.com/cart/' : 'https://www.elineupmall.com/',
           login: true

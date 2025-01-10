@@ -4,6 +4,7 @@ import { Text } from '@hpapp/features/common';
 import { useNavigation } from '@hpapp/features/common/stack';
 import { HPSortResultListView } from '@hpapp/features/hpsort';
 import HPSortNewScreen from '@hpapp/features/hpsort/HPSortNewScreen';
+import { logEvent } from '@hpapp/system/firebase';
 import { t } from '@hpapp/system/i18n';
 import { FAB, Icon } from '@rneui/themed';
 import { RefreshControl, ScrollView, StyleSheet, View } from 'react-native';
@@ -20,6 +21,9 @@ export default function HomeTabArtistBySortView() {
       style={styles.fab}
       icon={<Icon name="sort-numeric-asc" type="font-awesome" color={contrast} />}
       onPress={() => {
+        logEvent('sort_start', {
+          feature: 'sort'
+        });
         navigation.push(HPSortNewScreen);
       }}
     />

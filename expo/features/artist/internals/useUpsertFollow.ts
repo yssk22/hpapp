@@ -1,3 +1,4 @@
+import { logEvent } from '@hpapp/system/firebase';
 import { useCallback } from 'react';
 import { graphql, useMutation } from 'react-relay';
 
@@ -165,6 +166,19 @@ const useUpsertFollow = (): [
                 case 't_shirt':
                   record.setValue('elineupmallTShirt', param.followType);
                   break;
+              }
+              if (elineupMallFollowParams) {
+                logEvent('artist_follow_member', {
+                  feature: 'artist',
+                  memberId,
+                  followType
+                });
+              } else {
+                logEvent('elineupmall_follow_member_and_category', {
+                  feature: 'elineupmall',
+                  memberId,
+                  elineupMallFollowParams
+                });
               }
             });
           }

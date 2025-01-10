@@ -170,7 +170,11 @@ async function fetchApplicationsFromSite(
   }
   try {
     const applications = await scraper.getEventApplications();
-    logEvent('upfc_authenticated', { site, num_apps: applications.length });
+    logEvent('upfc_authenticate', {
+      feature: 'upfc',
+      site,
+      num_apps: applications.length
+    });
     return {
       error: undefined,
       applications

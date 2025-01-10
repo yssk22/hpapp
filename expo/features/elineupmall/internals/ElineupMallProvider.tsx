@@ -8,6 +8,7 @@ import {
 } from '@hpapp/features/elineupmall/scraper/';
 import * as date from '@hpapp/foundation/date';
 import { isEmpty } from '@hpapp/foundation/string';
+import { logEvent } from '@hpapp/system/firebase';
 import * as logging from '@hpapp/system/logging';
 import CookieManager from '@react-native-cookies/cookies';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
@@ -85,6 +86,9 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
         }
         return false;
       }
+      logEvent('elineupmall_authenticate', {
+        feature: 'elineupmall'
+      });
       const map = new Map<string, ElineupMallPurchaseHistoryItem>();
       for (const order of orderList!) {
         for (const detail of order.details) {
@@ -155,6 +159,10 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
       setStatus('ready');
       return false;
     }
+    logEvent('elineupmall_add_to_cart', {
+      feature: 'elineupmall',
+      link
+    });
     return true;
   };
   const removeFromCart = async (orderDetail: ElineupMallOrderDetail) => {
