@@ -52,7 +52,11 @@ export default function FeedItem({ feedId }: FeedItemProps) {
     title: data.node!.title
   });
   useEffect(() => {
-    logEvent('view_feed_item', { feedId, title: data.node!.title });
+    logEvent('feed_view_item', {
+      feature: 'feed',
+      feedId,
+      title: data.node!.title
+    });
   }, []);
 
   const ownerName = data.node!.ownerMember?.name ?? 'unknown';

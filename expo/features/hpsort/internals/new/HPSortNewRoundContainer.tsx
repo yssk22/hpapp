@@ -24,9 +24,6 @@ export default function HPSortNewRoundContainer({ config }: HPSortNewRoundContai
   const hp = useHelloProject();
   const members = hp.useMembers(false);
   const list = useMemo(() => {
-    logEvent('hpsort_start', {
-      num_members_to_select: config.numMembersToSelect
-    });
     return object.shuffle([...members]).map((m) => new HPSortMemberNode(m));
   }, [members]);
   const [sorter, setSorter] = useState<HPSortBase<HPSortMemberNode>>(new HPSortClassicMergeSort(list));
@@ -42,7 +39,8 @@ export default function HPSortNewRoundContainer({ config }: HPSortNewRoundContai
         <HPSortNewResult
           sorter={sorter}
           onRetryPress={() => {
-            logEvent('hpsort_retry', {
+            logEvent('sort_retry', {
+              feature: 'sort',
               num_members_to_select: config.numMembersToSelect
             });
             setSorter(new HPSortClassicMergeSort(list));
@@ -53,7 +51,8 @@ export default function HPSortNewRoundContainer({ config }: HPSortNewRoundContai
             });
           }}
           onSave={() => {
-            logEvent('hpsort_saved', {
+            logEvent('sort_saved', {
+              feature: 'sort',
               num_members_to_select: config.numMembersToSelect
             });
             navigation.goBack();
@@ -73,7 +72,8 @@ export default function HPSortNewRoundContainer({ config }: HPSortNewRoundContai
             onSelect={(selections) => {
               sorter.select(...selections);
               const endTime = sorter.getComparable() === null ? new Date() : null;
-              logEvent('hpsort_complete', {
+              logEvent('sort_complete', {
+                feature: 'sort',
                 num_members_to_select: config.numMembersToSelect
               });
               setStats({
