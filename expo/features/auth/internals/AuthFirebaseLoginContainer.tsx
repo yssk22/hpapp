@@ -1,6 +1,7 @@
 import { useCurrentUserUpdator } from '@hpapp/features/app/settings';
 import { useErrorMessage } from '@hpapp/features/common';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
+import { logEvent } from '@hpapp/system/firebase';
 import { Icon } from '@rneui/themed';
 import { useState, useCallback } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
@@ -26,8 +27,12 @@ export default function AuthFirebaseLoginContainer() {
         return;
       }
       const result = await auth({});
+      logEvent('login_completed');
       update(result.authenticate!);
-    } catch (e) {
+    } catch (e: any) {
+      logEvent('login_failed', {
+        error: e.toString()
+      });
       setError(e);
       setIsAuthenticating(false);
     }

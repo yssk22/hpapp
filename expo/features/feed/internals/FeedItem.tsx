@@ -2,8 +2,10 @@ import { useUserRoles } from '@hpapp/features/auth';
 import { AmebloIcon } from '@hpapp/features/common';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
 import { useNavigation } from '@hpapp/features/common/stack';
+import { logEvent } from '@hpapp/system/firebase';
 import { t } from '@hpapp/system/i18n';
 import { Icon } from '@rneui/themed';
+import { useEffect } from 'react';
 import { Linking, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { graphql, useLazyLoadQuery } from 'react-relay';
@@ -49,10 +51,14 @@ export default function FeedItem({ feedId }: FeedItemProps) {
   navigation.setOptions({
     title: data.node!.title
   });
+  useEffect(() => {
+    logEvent('view_feed_item', { feedId, title: data.node!.title });
+  }, []);
+
   const ownerName = data.node!.ownerMember?.name ?? 'unknown';
   const urls = data.node!.media?.map((m) => m.url) ?? [];
   const albumName = `hellofanapp.${ownerName}`;
-  const optimize = roles.includes('fcmember');
+  const optimize = roles['fcmember'] === true;
   return (
     <View style={styles.container}>
       <View style={styles.content}>

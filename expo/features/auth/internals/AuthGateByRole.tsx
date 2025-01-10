@@ -17,21 +17,19 @@ export default function AuthGateByRole({
   return useMemo(() => {
     if (allow) {
       const allowedRoles = object.normalizeA(allow);
-      const role = roles.find((r) => {
-        return object.isIn(r, ...allowedRoles);
-      });
-      if (role) {
-        return <>{children}</>;
+      for (const role of allowedRoles) {
+        if (roles[role]) {
+          return <>{children}</>;
+        }
       }
       return <></>;
     }
     if (deny) {
       const deniedRoles = object.normalizeA(deny);
-      const role = roles.find((r) => {
-        return object.isIn(r, ...deniedRoles);
-      });
-      if (role) {
-        return <></>;
+      for (const role of deniedRoles) {
+        if (roles[role]) {
+          return <></>;
+        }
       }
       return <>{children}</>;
     }

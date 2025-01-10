@@ -1,4 +1,4 @@
-import { useCurrentUser, useUserConfig } from '@hpapp/features/app/settings';
+import { useUserConfig } from '@hpapp/features/app/settings';
 import { Initializer, Loading } from '@hpapp/features/common';
 import { Screen, ScreenParams, createStackNavigator } from '@hpapp/features/common/stack';
 import {
@@ -7,7 +7,7 @@ import {
   PushNotificationData,
   PushNotificationHandler
 } from '@hpapp/features/push';
-import { logScreenView, useSetUserId } from '@hpapp/system/firebase';
+import { logScreenView } from '@hpapp/system/firebase';
 import * as logging from '@hpapp/system/logging';
 import { init as initURICache } from '@hpapp/system/uricache';
 import { useNavigationContainerRef } from '@react-navigation/native';
@@ -40,8 +40,6 @@ export default function UserRoot({ screens = Screens }: UserRootProps) {
       tokenUpdator(token.data);
     }
   }, [token.data]);
-  const currentUser = useCurrentUser();
-  useSetUserId(currentUser?.id ?? null);
   const onData = useCallback((data: PushNotificationData) => {
     // TODO: if navigation is not ready, we should wait for it, and navigate after it's ready.
     const nav = navigation?.current;

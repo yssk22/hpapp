@@ -30,7 +30,7 @@ export default function AccountDeletionButton() {
         text: t('OK'),
         style: 'destructive',
         onPress: () => {
-          if (roles.includes('admin')) {
+          if (roles['admin']) {
             Toast.show('Cannot delete admin account', { duration: Toast.durations.LONG });
             logout();
             return;

@@ -68,7 +68,8 @@ jest.mock('@react-native-firebase/analytics', () => () => {
     logEvent: jest.fn(),
     logLogin: jest.fn(),
     logScreenView: jest.fn(),
-    setUserId: jest.fn()
+    setUserId: jest.fn(),
+    setUserProperties: jest.fn()
   };
 });
 
