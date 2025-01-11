@@ -26,18 +26,8 @@ export function useHomeContext() {
   const upfc = useHomeUPFC();
   const elineupMall = useElineupMall();
   useEffect(() => {
-    let total = 0;
-    let shouldUpdate = false;
-    if (feed.badgeCount) {
-      shouldUpdate = true;
-      total += feed.badgeCount;
-    }
-    if (upfc.data?.badgeCount) {
-      shouldUpdate = true;
-      total += upfc.data.badgeCount;
-    }
-    if (shouldUpdate) {
-      setBadgeCountAsync(total);
+    if (feed.badgeCount !== undefined || upfc.data?.badgeCount !== undefined) {
+      setBadgeCountAsync((feed.badgeCount ?? 0) + (upfc?.data?.badgeCount ?? 0));
     }
   }, [feed.badgeCount, upfc.data?.badgeCount]);
   return useMemo(() => {
