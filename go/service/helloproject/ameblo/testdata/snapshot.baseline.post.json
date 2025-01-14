@@ -7,7 +7,6 @@
     "path": "/morningmusume-9ki/entry-12599278025.html",
     "next_path": "/morningmusume-9ki/entry-12599451395.html",
     "prev_path": "/morningmusume-9ki/entry-12599261142.html",
-    "artist_key": "morningmusume",
     "member_key": "mizuki_fukumura",
     "title": "ハロプロみんなで☆譜久村聖",
     "description": "こんばんぽ(*ˊ∀ˋ*)ﾉん YouTube BEYOOOOONDS公式チャンネルに｢お家でもびよんず学校 特別授業#6-2｣公開されました 普通にお話が楽し…",
@@ -33,20 +32,8 @@
     "likes": 698,
     "comments": 107,
     "reblogs": 7,
-    "owner_artist_id": 1,
     "owner_member_id": 8589934592,
     "edges": {
-      "owner_artist": {
-        "id": 1,
-        "crawled_at": "2023-04-14T01:30:00Z",
-        "last_error_message": "",
-        "created_at": "2019-11-28T03:01:24Z",
-        "updated_at": "2023-04-14T01:30:13Z",
-        "key": "morningmusume",
-        "name": "モーニング娘。'23",
-        "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/a2b54229290db6b0794c5b21fca2320fae829f58.jpg",
-        "edges": {}
-      },
       "owner_member": {
         "id": 8589934592,
         "crawled_at": "2023-04-14T01:30:00Z",
@@ -137,7 +124,6 @@
           "type": "text",
           "sub_type": "html",
           "size": 82981,
-          "owner_artist_id": 1,
           "owner_member_id": 8589934592,
           "faces": {
             "left": 0,
@@ -147,17 +133,6 @@
           },
           "face_recognition_status": "unknown",
           "edges": {
-            "owner_artist": {
-              "id": 1,
-              "crawled_at": "2023-04-14T01:30:00Z",
-              "last_error_message": "",
-              "created_at": "2019-11-28T03:01:24Z",
-              "updated_at": "2023-04-14T01:30:13Z",
-              "key": "morningmusume",
-              "name": "モーニング娘。'23",
-              "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/a2b54229290db6b0794c5b21fca2320fae829f58.jpg",
-              "edges": {}
-            },
             "owner_member": {
               "id": 8589934592,
               "crawled_at": "2023-04-14T01:30:00Z",
@@ -192,7 +167,6 @@
           "width": 1080,
           "height": 809,
           "size": 141263,
-          "owner_artist_id": 1,
           "owner_member_id": 8589934592,
           "faces": {
             "left": 0,
@@ -202,17 +176,6 @@
           },
           "face_recognition_status": "unknown",
           "edges": {
-            "owner_artist": {
-              "id": 1,
-              "crawled_at": "2023-04-14T01:30:00Z",
-              "last_error_message": "",
-              "created_at": "2019-11-28T03:01:24Z",
-              "updated_at": "2023-04-14T01:30:13Z",
-              "key": "morningmusume",
-              "name": "モーニング娘。'23",
-              "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/a2b54229290db6b0794c5b21fca2320fae829f58.jpg",
-              "edges": {}
-            },
             "owner_member": {
               "id": 8589934592,
               "crawled_at": "2023-04-14T01:30:00Z",
@@ -247,7 +210,6 @@
           "width": 1080,
           "height": 809,
           "size": 207073,
-          "owner_artist_id": 1,
           "owner_member_id": 8589934592,
           "faces": {
             "left": 0,
@@ -257,17 +219,6 @@
           },
           "face_recognition_status": "unknown",
           "edges": {
-            "owner_artist": {
-              "id": 1,
-              "crawled_at": "2023-04-14T01:30:00Z",
-              "last_error_message": "",
-              "created_at": "2019-11-28T03:01:24Z",
-              "updated_at": "2023-04-14T01:30:13Z",
-              "key": "morningmusume",
-              "name": "モーニング娘。'23",
-              "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/a2b54229290db6b0794c5b21fca2320fae829f58.jpg",
-              "edges": {}
-            },
             "owner_member": {
               "id": 8589934592,
               "crawled_at": "2023-04-14T01:30:00Z",

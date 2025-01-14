@@ -43,7 +43,7 @@ type HPAmebloPost struct {
 	// PrevPath holds the value of the "prev_path" field.
 	PrevPath *string `json:"prev_path,omitempty"`
 	// ArtistKey holds the value of the "artist_key" field.
-	ArtistKey string `json:"artist_key,omitempty"`
+	ArtistKey *string `json:"artist_key,omitempty"`
 	// MemberKey holds the value of the "member_key" field.
 	MemberKey *string `json:"member_key,omitempty"`
 	// Title holds the value of the "title" field.
@@ -274,7 +274,8 @@ func (hap *HPAmebloPost) assignValues(columns []string, values []any) error {
 			if value, ok := values[i].(*sql.NullString); !ok {
 				return fmt.Errorf("unexpected type %T for field artist_key", values[i])
 			} else if value.Valid {
-				hap.ArtistKey = value.String
+				hap.ArtistKey = new(string)
+				*hap.ArtistKey = value.String
 			}
 		case hpameblopost.FieldMemberKey:
 			if value, ok := values[i].(*sql.NullString); !ok {
@@ -468,8 +469,10 @@ func (hap *HPAmebloPost) String() string {
 		builder.WriteString(*v)
 	}
 	builder.WriteString(", ")
-	builder.WriteString("artist_key=")
-	builder.WriteString(hap.ArtistKey)
+	if v := hap.ArtistKey; v != nil {
+		builder.WriteString("artist_key=")
+		builder.WriteString(*v)
+	}
 	builder.WriteString(", ")
 	if v := hap.MemberKey; v != nil {
 		builder.WriteString("member_key=")

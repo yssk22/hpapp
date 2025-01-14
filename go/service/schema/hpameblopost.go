@@ -27,7 +27,7 @@ func (HPAmebloPost) Fields() []ent.Field {
 		field.String("path").Unique(),
 		field.String("next_path").Optional().Nillable(),
 		field.String("prev_path").Optional().Nillable(),
-		field.String("artist_key"),
+		field.String("artist_key").Optional().Nillable(),
 		field.String("member_key").Optional().Nillable(),
 		field.String("title"),
 		field.Text("description"),

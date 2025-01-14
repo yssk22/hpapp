@@ -94,20 +94,6 @@
         "asset_type": "instagram",
         "edges": {}
       },
-      "tagged_artists": [
-        {
-          "id": 3,
-          "crawled_at": "2023-04-14T01:30:00Z",
-          "last_error_message": "",
-          "created_at": "2019-11-28T03:01:46Z",
-          "updated_at": "2023-04-14T01:30:35Z",
-          "key": "juicejuice",
-          "name": "Juice=Juice",
-          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/e8c5fc90c206cb0c0496600d85534cb7a2eaa6b8.jpg",
-          "index": 2,
-          "edges": {}
-        }
-      ],
       "tagged_members": [
         {
           "id": 8589934633,

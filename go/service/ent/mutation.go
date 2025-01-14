@@ -1678,7 +1678,7 @@ func (m *HPAmebloPostMutation) ArtistKey() (r string, exists bool) {
 // OldArtistKey returns the old "artist_key" field's value of the HPAmebloPost entity.
 // If the HPAmebloPost object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
-func (m *HPAmebloPostMutation) OldArtistKey(ctx context.Context) (v string, err error) {
+func (m *HPAmebloPostMutation) OldArtistKey(ctx context.Context) (v *string, err error) {
 	if !m.op.Is(OpUpdateOne) {
 		return v, errors.New("OldArtistKey is only allowed on UpdateOne operations")
 	}
@@ -1692,9 +1692,22 @@ func (m *HPAmebloPostMutation) OldArtistKey(ctx context.Context) (v string, err 
 	return oldValue.ArtistKey, nil
 }
 
+// ClearArtistKey clears the value of the "artist_key" field.
+func (m *HPAmebloPostMutation) ClearArtistKey() {
+	m.artist_key = nil
+	m.clearedFields[hpameblopost.FieldArtistKey] = struct{}{}
+}
+
+// ArtistKeyCleared returns if the "artist_key" field was cleared in this mutation.
+func (m *HPAmebloPostMutation) ArtistKeyCleared() bool {
+	_, ok := m.clearedFields[hpameblopost.FieldArtistKey]
+	return ok
+}
+
 // ResetArtistKey resets all changes to the "artist_key" field.
 func (m *HPAmebloPostMutation) ResetArtistKey() {
 	m.artist_key = nil
+	delete(m.clearedFields, hpameblopost.FieldArtistKey)
 }
 
 // SetMemberKey sets the "member_key" field.
@@ -3053,6 +3066,9 @@ func (m *HPAmebloPostMutation) ClearedFields() []string {
 	if m.FieldCleared(hpameblopost.FieldPrevPath) {
 		fields = append(fields, hpameblopost.FieldPrevPath)
 	}
+	if m.FieldCleared(hpameblopost.FieldArtistKey) {
+		fields = append(fields, hpameblopost.FieldArtistKey)
+	}
 	if m.FieldCleared(hpameblopost.FieldMemberKey) {
 		fields = append(fields, hpameblopost.FieldMemberKey)
 	}
@@ -3114,6 +3130,9 @@ func (m *HPAmebloPostMutation) ClearField(name string) error {
 		return nil
 	case hpameblopost.FieldPrevPath:
 		m.ClearPrevPath()
+		return nil
+	case hpameblopost.FieldArtistKey:
+		m.ClearArtistKey()
 		return nil
 	case hpameblopost.FieldMemberKey:
 		m.ClearMemberKey()

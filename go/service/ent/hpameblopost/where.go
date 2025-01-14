@@ -720,6 +720,16 @@ func ArtistKeyHasSuffix(v string) predicate.HPAmebloPost {
 	return predicate.HPAmebloPost(sql.FieldHasSuffix(FieldArtistKey, v))
 }
 
+// ArtistKeyIsNil applies the IsNil predicate on the "artist_key" field.
+func ArtistKeyIsNil() predicate.HPAmebloPost {
+	return predicate.HPAmebloPost(sql.FieldIsNull(FieldArtistKey))
+}
+
+// ArtistKeyNotNil applies the NotNil predicate on the "artist_key" field.
+func ArtistKeyNotNil() predicate.HPAmebloPost {
+	return predicate.HPAmebloPost(sql.FieldNotNull(FieldArtistKey))
+}
+
 // ArtistKeyEqualFold applies the EqualFold predicate on the "artist_key" field.
 func ArtistKeyEqualFold(v string) predicate.HPAmebloPost {
 	return predicate.HPAmebloPost(sql.FieldEqualFold(FieldArtistKey, v))

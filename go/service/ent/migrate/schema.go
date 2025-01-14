@@ -65,7 +65,7 @@ var (
 		{Name: "path", Type: field.TypeString, Unique: true},
 		{Name: "next_path", Type: field.TypeString, Nullable: true},
 		{Name: "prev_path", Type: field.TypeString, Nullable: true},
-		{Name: "artist_key", Type: field.TypeString},
+		{Name: "artist_key", Type: field.TypeString, Nullable: true},
 		{Name: "member_key", Type: field.TypeString, Nullable: true},
 		{Name: "title", Type: field.TypeString},
 		{Name: "description", Type: field.TypeString, Size: 2147483647},

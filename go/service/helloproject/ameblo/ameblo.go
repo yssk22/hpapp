@@ -411,7 +411,7 @@ func upsertHPAmebloPost(ctx context.Context, entblob *ent.HPBlob, rawPost *postE
 	if ownerMember != nil {
 		err := entclient.HPBlob.Update().
 			Where(hpblob.IDIn(blobIds...)).
-			SetOwnerArtistID(*ownerMember.ArtistID).SetOwnerMemberID(ownerMember.ID).Exec(ctx)
+			SetOwnerMemberID(ownerMember.ID).Exec(ctx)
 		if err != nil {
 			slog.Warning(ctx, "failed to update blob ownership",
 				slog.Name("helloproject.ameblo.upsertHPAmebloPost"),
@@ -437,13 +437,15 @@ func upsertHPAmebloPost(ctx context.Context, entblob *ent.HPBlob, rawPost *postE
 		SetImages(jsonImages).
 		AddBlobs(blobs...).
 		SetAssetID(asset.ID).
-		SetArtistKey(asset.Edges.Artist.Key).
-		SetOwnerArtistID(asset.Edges.Artist.ID).
 		AddTaggedMembers(taggedMembers...)
 
 	if ownerMember != nil {
 		create = create.SetMemberKey(ownerMember.Key).
 			SetOwnerMemberID(ownerMember.ID)
+	} else {
+		create = create.
+			SetArtistKey(asset.Edges.Artist.Key).
+			SetOwnerArtistID(asset.Edges.Artist.ID)
 	}
 
 	entpost, err := create.Save(ctx)
@@ -490,13 +492,20 @@ func upsertHPAmebloPost(ctx context.Context, entblob *ent.HPBlob, rawPost *postE
 		AddTaggedMembers(taggedMembers...).
 		ClearBlobs().
 		AddBlobs(blobs...).
-		SetAssetID(asset.ID).
-		SetOwnerArtistID(asset.Edges.Artist.ID).
-		SetArtistKey(asset.Edges.Artist.Key)
+		SetAssetID(asset.ID)
+
 	if ownerMember != nil {
 		update = update.
+			ClearArtistKey().
+			ClearOwnerArtistID().
 			SetMemberKey(ownerMember.Key).
 			SetOwnerMemberID(ownerMember.ID)
+	} else {
+		update = update.
+			ClearMemberKey().
+			ClearOwnerMemberID().
+			SetArtistKey(asset.Edges.Artist.Key).
+			SetOwnerArtistID(asset.Edges.Artist.ID)
 	}
 	return update.Save(ctx)
 }
