@@ -199,6 +199,20 @@ func (hapu *HPAmebloPostUpdate) SetArtistKey(s string) *HPAmebloPostUpdate {
 	return hapu
 }
 
+// SetNillableArtistKey sets the "artist_key" field if the given value is not nil.
+func (hapu *HPAmebloPostUpdate) SetNillableArtistKey(s *string) *HPAmebloPostUpdate {
+	if s != nil {
+		hapu.SetArtistKey(*s)
+	}
+	return hapu
+}
+
+// ClearArtistKey clears the value of the "artist_key" field.
+func (hapu *HPAmebloPostUpdate) ClearArtistKey() *HPAmebloPostUpdate {
+	hapu.mutation.ClearArtistKey()
+	return hapu
+}
+
 // SetMemberKey sets the "member_key" field.
 func (hapu *HPAmebloPostUpdate) SetMemberKey(s string) *HPAmebloPostUpdate {
 	hapu.mutation.SetMemberKey(s)
@@ -668,6 +682,9 @@ func (hapu *HPAmebloPostUpdate) sqlSave(ctx context.Context) (n int, err error) 
 	if value, ok := hapu.mutation.ArtistKey(); ok {
 		_spec.SetField(hpameblopost.FieldArtistKey, field.TypeString, value)
 	}
+	if hapu.mutation.ArtistKeyCleared() {
+		_spec.ClearField(hpameblopost.FieldArtistKey, field.TypeString)
+	}
 	if value, ok := hapu.mutation.MemberKey(); ok {
 		_spec.SetField(hpameblopost.FieldMemberKey, field.TypeString, value)
 	}
@@ -1134,6 +1151,20 @@ func (hapuo *HPAmebloPostUpdateOne) ClearPrevPath() *HPAmebloPostUpdateOne {
 // SetArtistKey sets the "artist_key" field.
 func (hapuo *HPAmebloPostUpdateOne) SetArtistKey(s string) *HPAmebloPostUpdateOne {
 	hapuo.mutation.SetArtistKey(s)
+	return hapuo
+}
+
+// SetNillableArtistKey sets the "artist_key" field if the given value is not nil.
+func (hapuo *HPAmebloPostUpdateOne) SetNillableArtistKey(s *string) *HPAmebloPostUpdateOne {
+	if s != nil {
+		hapuo.SetArtistKey(*s)
+	}
+	return hapuo
+}
+
+// ClearArtistKey clears the value of the "artist_key" field.
+func (hapuo *HPAmebloPostUpdateOne) ClearArtistKey() *HPAmebloPostUpdateOne {
+	hapuo.mutation.ClearArtistKey()
 	return hapuo
 }
 
@@ -1635,6 +1666,9 @@ func (hapuo *HPAmebloPostUpdateOne) sqlSave(ctx context.Context) (_node *HPAmebl
 	}
 	if value, ok := hapuo.mutation.ArtistKey(); ok {
 		_spec.SetField(hpameblopost.FieldArtistKey, field.TypeString, value)
+	}
+	if hapuo.mutation.ArtistKeyCleared() {
+		_spec.ClearField(hpameblopost.FieldArtistKey, field.TypeString)
 	}
 	if value, ok := hapuo.mutation.MemberKey(); ok {
 		_spec.SetField(hpameblopost.FieldMemberKey, field.TypeString, value)

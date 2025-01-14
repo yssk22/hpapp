@@ -352,8 +352,10 @@ func (ig *igService) upsertHPIgPost(ctx context.Context, entAsset *ent.HPAsset, 
 		if recrawlRequired {
 			create = create.SetLastErrorMessage(validationError.Error())
 		}
-		create = create.SetAsset(entAsset).SetOwnerArtist(entAsset.Edges.Artist).AddTaggedArtists([]*ent.HPArtist{entAsset.Edges.Artist}...)
-		if len(entAsset.Edges.Members) == 1 {
+		create = create.SetAsset(entAsset)
+		if len(entAsset.Edges.Members) == 0 {
+			create = create.SetOwnerArtist(entAsset.Edges.Artist)
+		} else {
 			create = create.SetOwnerMember(entAsset.Edges.Members[0])
 		}
 		// this could cause ConstraintError since another batch may create a post with the same shortcode.
@@ -397,8 +399,10 @@ func (ig *igService) upsertHPIgPost(ctx context.Context, entAsset *ent.HPAsset, 
 			update = update.SetRecrawlArgs(nil)
 		}
 	}
-	update = update.SetAsset(entAsset).SetOwnerArtist(entAsset.Edges.Artist).ClearTaggedArtists().AddTaggedArtists([]*ent.HPArtist{entAsset.Edges.Artist}...)
-	if len(entAsset.Edges.Members) > 0 {
+	update = update.SetAsset(entAsset)
+	if len(entAsset.Edges.Members) == 0 {
+		update = update.SetOwnerArtist(entAsset.Edges.Artist)
+	} else {
 		update = update.SetOwnerMember(entAsset.Edges.Members[0])
 	}
 	return update.Save(ctx)

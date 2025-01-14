@@ -18,20 +18,8 @@
     ],
     "likes": 8288,
     "comments": 120,
-    "owner_artist_id": 1,
     "owner_member_id": 8589934592,
     "edges": {
-      "owner_artist": {
-        "id": 1,
-        "crawled_at": "2023-04-14T01:30:00Z",
-        "last_error_message": "",
-        "created_at": "2019-11-28T03:01:24Z",
-        "updated_at": "2023-04-14T01:30:13Z",
-        "key": "morningmusume",
-        "name": "モーニング娘。'23",
-        "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/a2b54229290db6b0794c5b21fca2320fae829f58.jpg",
-        "edges": {}
-      },
       "owner_member": {
         "id": 8589934592,
         "crawled_at": "2023-04-14T01:30:00Z",
@@ -57,19 +45,6 @@
         "asset_type": "instagram",
         "edges": {}
       },
-      "tagged_artists": [
-        {
-          "id": 1,
-          "crawled_at": "2023-04-14T01:30:00Z",
-          "last_error_message": "",
-          "created_at": "2019-11-28T03:01:24Z",
-          "updated_at": "2023-04-14T01:30:13Z",
-          "key": "morningmusume",
-          "name": "モーニング娘。'23",
-          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/a2b54229290db6b0794c5b21fca2320fae829f58.jpg",
-          "edges": {}
-        }
-      ],
       "tagged_members": [
         {
           "id": 8589934592,

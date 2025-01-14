@@ -65,7 +65,7 @@ func AddFeedSyncHook[T any](f Feedable[T]) {
 				update.SetOwnerArtist(item.OwnerArtist).SetOwnerArtistID(item.OwnerArtist.ID)
 			}
 			if item.OwnerMember != nil {
-				update.SetOwnerMember(item.OwnerMember).SetOwnerArtistID(*item.OwnerMember.ArtistID)
+				update.SetOwnerMember(item.OwnerMember)
 			}
 			return update.Exec(ctx)
 		}
@@ -87,7 +87,7 @@ func AddFeedSyncHook[T any](f Feedable[T]) {
 			create.SetOwnerArtist(item.OwnerArtist).SetOwnerArtistID(item.OwnerArtist.ID)
 		}
 		if item.OwnerMember != nil {
-			create.SetOwnerMember(item.OwnerMember).SetOwnerArtistID(*item.OwnerMember.ArtistID)
+			create.SetOwnerMember(item.OwnerMember)
 		}
 		return create.Exec(ctx)
 	})

@@ -157,6 +157,14 @@ func (hapc *HPAmebloPostCreate) SetArtistKey(s string) *HPAmebloPostCreate {
 	return hapc
 }
 
+// SetNillableArtistKey sets the "artist_key" field if the given value is not nil.
+func (hapc *HPAmebloPostCreate) SetNillableArtistKey(s *string) *HPAmebloPostCreate {
+	if s != nil {
+		hapc.SetArtistKey(*s)
+	}
+	return hapc
+}
+
 // SetMemberKey sets the "member_key" field.
 func (hapc *HPAmebloPostCreate) SetMemberKey(s string) *HPAmebloPostCreate {
 	hapc.mutation.SetMemberKey(s)
@@ -415,9 +423,6 @@ func (hapc *HPAmebloPostCreate) check() error {
 	if _, ok := hapc.mutation.Path(); !ok {
 		return &ValidationError{Name: "path", err: errors.New(`ent: missing required field "HPAmebloPost.path"`)}
 	}
-	if _, ok := hapc.mutation.ArtistKey(); !ok {
-		return &ValidationError{Name: "artist_key", err: errors.New(`ent: missing required field "HPAmebloPost.artist_key"`)}
-	}
 	if _, ok := hapc.mutation.Title(); !ok {
 		return &ValidationError{Name: "title", err: errors.New(`ent: missing required field "HPAmebloPost.title"`)}
 	}
@@ -504,7 +509,7 @@ func (hapc *HPAmebloPostCreate) createSpec() (*HPAmebloPost, *sqlgraph.CreateSpe
 	}
 	if value, ok := hapc.mutation.ArtistKey(); ok {
 		_spec.SetField(hpameblopost.FieldArtistKey, field.TypeString, value)
-		_node.ArtistKey = value
+		_node.ArtistKey = &value
 	}
 	if value, ok := hapc.mutation.MemberKey(); ok {
 		_spec.SetField(hpameblopost.FieldMemberKey, field.TypeString, value)
@@ -862,6 +867,12 @@ func (u *HPAmebloPostUpsert) SetArtistKey(v string) *HPAmebloPostUpsert {
 // UpdateArtistKey sets the "artist_key" field to the value that was provided on create.
 func (u *HPAmebloPostUpsert) UpdateArtistKey() *HPAmebloPostUpsert {
 	u.SetExcluded(hpameblopost.FieldArtistKey)
+	return u
+}
+
+// ClearArtistKey clears the value of the "artist_key" field.
+func (u *HPAmebloPostUpsert) ClearArtistKey() *HPAmebloPostUpsert {
+	u.SetNull(hpameblopost.FieldArtistKey)
 	return u
 }
 
@@ -1313,6 +1324,13 @@ func (u *HPAmebloPostUpsertOne) SetArtistKey(v string) *HPAmebloPostUpsertOne {
 func (u *HPAmebloPostUpsertOne) UpdateArtistKey() *HPAmebloPostUpsertOne {
 	return u.Update(func(s *HPAmebloPostUpsert) {
 		s.UpdateArtistKey()
+	})
+}
+
+// ClearArtistKey clears the value of the "artist_key" field.
+func (u *HPAmebloPostUpsertOne) ClearArtistKey() *HPAmebloPostUpsertOne {
+	return u.Update(func(s *HPAmebloPostUpsert) {
+		s.ClearArtistKey()
 	})
 }
 
@@ -1961,6 +1979,13 @@ func (u *HPAmebloPostUpsertBulk) SetArtistKey(v string) *HPAmebloPostUpsertBulk 
 func (u *HPAmebloPostUpsertBulk) UpdateArtistKey() *HPAmebloPostUpsertBulk {
 	return u.Update(func(s *HPAmebloPostUpsert) {
 		s.UpdateArtistKey()
+	})
+}
+
+// ClearArtistKey clears the value of the "artist_key" field.
+func (u *HPAmebloPostUpsertBulk) ClearArtistKey() *HPAmebloPostUpsertBulk {
+	return u.Update(func(s *HPAmebloPostUpsert) {
+		s.ClearArtistKey()
 	})
 }
 
