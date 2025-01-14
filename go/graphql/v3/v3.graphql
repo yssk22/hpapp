@@ -8,6 +8,10 @@ scalar Upload
 scalar Any
 scalar Map
 
+extend type HPArtist {
+  myFollowStatus: HPFollow
+}
+
 extend type HPMember {
   myFollowStatus: HPFollow
 }

@@ -11,6 +11,7 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
+	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/user"
@@ -420,9 +421,36 @@ func (hfc *HPFollowCreate) SetMemberID(id int) *HPFollowCreate {
 	return hfc
 }
 
+// SetNillableMemberID sets the "member" edge to the HPMember entity by ID if the given value is not nil.
+func (hfc *HPFollowCreate) SetNillableMemberID(id *int) *HPFollowCreate {
+	if id != nil {
+		hfc = hfc.SetMemberID(*id)
+	}
+	return hfc
+}
+
 // SetMember sets the "member" edge to the HPMember entity.
 func (hfc *HPFollowCreate) SetMember(h *HPMember) *HPFollowCreate {
 	return hfc.SetMemberID(h.ID)
+}
+
+// SetArtistID sets the "artist" edge to the HPArtist entity by ID.
+func (hfc *HPFollowCreate) SetArtistID(id int) *HPFollowCreate {
+	hfc.mutation.SetArtistID(id)
+	return hfc
+}
+
+// SetNillableArtistID sets the "artist" edge to the HPArtist entity by ID if the given value is not nil.
+func (hfc *HPFollowCreate) SetNillableArtistID(id *int) *HPFollowCreate {
+	if id != nil {
+		hfc = hfc.SetArtistID(*id)
+	}
+	return hfc
+}
+
+// SetArtist sets the "artist" edge to the HPArtist entity.
+func (hfc *HPFollowCreate) SetArtist(h *HPArtist) *HPFollowCreate {
+	return hfc.SetArtistID(h.ID)
 }
 
 // Mutation returns the HPFollowMutation object of the builder.
@@ -770,9 +798,6 @@ func (hfc *HPFollowCreate) check() error {
 	if _, ok := hfc.mutation.UserID(); !ok {
 		return &ValidationError{Name: "user", err: errors.New(`ent: missing required edge "HPFollow.user"`)}
 	}
-	if _, ok := hfc.mutation.MemberID(); !ok {
-		return &ValidationError{Name: "member", err: errors.New(`ent: missing required edge "HPFollow.member"`)}
-	}
 	return nil
 }
 
@@ -928,7 +953,7 @@ func (hfc *HPFollowCreate) createSpec() (*HPFollow, *sqlgraph.CreateSpec) {
 	if nodes := hfc.mutation.MemberIDs(); len(nodes) > 0 {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.M2O,
-			Inverse: false,
+			Inverse: true,
 			Table:   hpfollow.MemberTable,
 			Columns: []string{hpfollow.MemberColumn},
 			Bidi:    false,
@@ -940,6 +965,23 @@ func (hfc *HPFollowCreate) createSpec() (*HPFollow, *sqlgraph.CreateSpec) {
 			edge.Target.Nodes = append(edge.Target.Nodes, k)
 		}
 		_node.hp_follow_member = &nodes[0]
+		_spec.Edges = append(_spec.Edges, edge)
+	}
+	if nodes := hfc.mutation.ArtistIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   hpfollow.ArtistTable,
+			Columns: []string{hpfollow.ArtistColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpartist.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_node.hp_follow_artist = &nodes[0]
 		_spec.Edges = append(_spec.Edges, edge)
 	}
 	return _node, _spec

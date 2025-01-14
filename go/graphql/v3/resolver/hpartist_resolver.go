@@ -10,10 +10,10 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/user"
 )
 
-// HPMemberResolver is a custom resolver to expose the follow status for the current user.
-type HPMemberResolver struct{}
+// HPArtistResolver is a custom resolver to expose the follow status for the current user.
+type HPArtistResolver struct{}
 
-func (r *HPMemberResolver) MyFollowStatus(ctx context.Context, obj *ent.HPMember) (result *ent.HPFollow, err error) {
+func (r *HPArtistResolver) MyFollowStatus(ctx context.Context, obj *ent.HPArtist) (result *ent.HPFollow, err error) {
 	var follow []*ent.HPFollow
 	if fc := graphql.GetFieldContext(ctx); fc != nil && fc.Field.Alias != "" {
 		follow, err = obj.NamedFollowedBy(graphql.GetFieldContext(ctx).Field.Alias)

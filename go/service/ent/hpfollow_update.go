@@ -11,6 +11,7 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
+	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/predicate"
@@ -418,9 +419,36 @@ func (hfu *HPFollowUpdate) SetMemberID(id int) *HPFollowUpdate {
 	return hfu
 }
 
+// SetNillableMemberID sets the "member" edge to the HPMember entity by ID if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableMemberID(id *int) *HPFollowUpdate {
+	if id != nil {
+		hfu = hfu.SetMemberID(*id)
+	}
+	return hfu
+}
+
 // SetMember sets the "member" edge to the HPMember entity.
 func (hfu *HPFollowUpdate) SetMember(h *HPMember) *HPFollowUpdate {
 	return hfu.SetMemberID(h.ID)
+}
+
+// SetArtistID sets the "artist" edge to the HPArtist entity by ID.
+func (hfu *HPFollowUpdate) SetArtistID(id int) *HPFollowUpdate {
+	hfu.mutation.SetArtistID(id)
+	return hfu
+}
+
+// SetNillableArtistID sets the "artist" edge to the HPArtist entity by ID if the given value is not nil.
+func (hfu *HPFollowUpdate) SetNillableArtistID(id *int) *HPFollowUpdate {
+	if id != nil {
+		hfu = hfu.SetArtistID(*id)
+	}
+	return hfu
+}
+
+// SetArtist sets the "artist" edge to the HPArtist entity.
+func (hfu *HPFollowUpdate) SetArtist(h *HPArtist) *HPFollowUpdate {
+	return hfu.SetArtistID(h.ID)
 }
 
 // Mutation returns the HPFollowMutation object of the builder.
@@ -437,6 +465,12 @@ func (hfu *HPFollowUpdate) ClearUser() *HPFollowUpdate {
 // ClearMember clears the "member" edge to the HPMember entity.
 func (hfu *HPFollowUpdate) ClearMember() *HPFollowUpdate {
 	hfu.mutation.ClearMember()
+	return hfu
+}
+
+// ClearArtist clears the "artist" edge to the HPArtist entity.
+func (hfu *HPFollowUpdate) ClearArtist() *HPFollowUpdate {
+	hfu.mutation.ClearArtist()
 	return hfu
 }
 
@@ -597,9 +631,6 @@ func (hfu *HPFollowUpdate) check() error {
 	if _, ok := hfu.mutation.UserID(); hfu.mutation.UserCleared() && !ok {
 		return errors.New(`ent: clearing a required unique edge "HPFollow.user"`)
 	}
-	if _, ok := hfu.mutation.MemberID(); hfu.mutation.MemberCleared() && !ok {
-		return errors.New(`ent: clearing a required unique edge "HPFollow.member"`)
-	}
 	return nil
 }
 
@@ -731,7 +762,7 @@ func (hfu *HPFollowUpdate) sqlSave(ctx context.Context) (n int, err error) {
 	if hfu.mutation.MemberCleared() {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.M2O,
-			Inverse: false,
+			Inverse: true,
 			Table:   hpfollow.MemberTable,
 			Columns: []string{hpfollow.MemberColumn},
 			Bidi:    false,
@@ -744,12 +775,41 @@ func (hfu *HPFollowUpdate) sqlSave(ctx context.Context) (n int, err error) {
 	if nodes := hfu.mutation.MemberIDs(); len(nodes) > 0 {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.M2O,
-			Inverse: false,
+			Inverse: true,
 			Table:   hpfollow.MemberTable,
 			Columns: []string{hpfollow.MemberColumn},
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpmember.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
+	if hfu.mutation.ArtistCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   hpfollow.ArtistTable,
+			Columns: []string{hpfollow.ArtistColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpartist.FieldID, field.TypeInt),
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := hfu.mutation.ArtistIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   hpfollow.ArtistTable,
+			Columns: []string{hpfollow.ArtistColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpartist.FieldID, field.TypeInt),
 			},
 		}
 		for _, k := range nodes {
@@ -1164,9 +1224,36 @@ func (hfuo *HPFollowUpdateOne) SetMemberID(id int) *HPFollowUpdateOne {
 	return hfuo
 }
 
+// SetNillableMemberID sets the "member" edge to the HPMember entity by ID if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableMemberID(id *int) *HPFollowUpdateOne {
+	if id != nil {
+		hfuo = hfuo.SetMemberID(*id)
+	}
+	return hfuo
+}
+
 // SetMember sets the "member" edge to the HPMember entity.
 func (hfuo *HPFollowUpdateOne) SetMember(h *HPMember) *HPFollowUpdateOne {
 	return hfuo.SetMemberID(h.ID)
+}
+
+// SetArtistID sets the "artist" edge to the HPArtist entity by ID.
+func (hfuo *HPFollowUpdateOne) SetArtistID(id int) *HPFollowUpdateOne {
+	hfuo.mutation.SetArtistID(id)
+	return hfuo
+}
+
+// SetNillableArtistID sets the "artist" edge to the HPArtist entity by ID if the given value is not nil.
+func (hfuo *HPFollowUpdateOne) SetNillableArtistID(id *int) *HPFollowUpdateOne {
+	if id != nil {
+		hfuo = hfuo.SetArtistID(*id)
+	}
+	return hfuo
+}
+
+// SetArtist sets the "artist" edge to the HPArtist entity.
+func (hfuo *HPFollowUpdateOne) SetArtist(h *HPArtist) *HPFollowUpdateOne {
+	return hfuo.SetArtistID(h.ID)
 }
 
 // Mutation returns the HPFollowMutation object of the builder.
@@ -1183,6 +1270,12 @@ func (hfuo *HPFollowUpdateOne) ClearUser() *HPFollowUpdateOne {
 // ClearMember clears the "member" edge to the HPMember entity.
 func (hfuo *HPFollowUpdateOne) ClearMember() *HPFollowUpdateOne {
 	hfuo.mutation.ClearMember()
+	return hfuo
+}
+
+// ClearArtist clears the "artist" edge to the HPArtist entity.
+func (hfuo *HPFollowUpdateOne) ClearArtist() *HPFollowUpdateOne {
+	hfuo.mutation.ClearArtist()
 	return hfuo
 }
 
@@ -1356,9 +1449,6 @@ func (hfuo *HPFollowUpdateOne) check() error {
 	if _, ok := hfuo.mutation.UserID(); hfuo.mutation.UserCleared() && !ok {
 		return errors.New(`ent: clearing a required unique edge "HPFollow.user"`)
 	}
-	if _, ok := hfuo.mutation.MemberID(); hfuo.mutation.MemberCleared() && !ok {
-		return errors.New(`ent: clearing a required unique edge "HPFollow.member"`)
-	}
 	return nil
 }
 
@@ -1507,7 +1597,7 @@ func (hfuo *HPFollowUpdateOne) sqlSave(ctx context.Context) (_node *HPFollow, er
 	if hfuo.mutation.MemberCleared() {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.M2O,
-			Inverse: false,
+			Inverse: true,
 			Table:   hpfollow.MemberTable,
 			Columns: []string{hpfollow.MemberColumn},
 			Bidi:    false,
@@ -1520,12 +1610,41 @@ func (hfuo *HPFollowUpdateOne) sqlSave(ctx context.Context) (_node *HPFollow, er
 	if nodes := hfuo.mutation.MemberIDs(); len(nodes) > 0 {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.M2O,
-			Inverse: false,
+			Inverse: true,
 			Table:   hpfollow.MemberTable,
 			Columns: []string{hpfollow.MemberColumn},
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpmember.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
+	if hfuo.mutation.ArtistCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   hpfollow.ArtistTable,
+			Columns: []string{hpfollow.ArtistColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpartist.FieldID, field.TypeInt),
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := hfuo.mutation.ArtistIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   hpfollow.ArtistTable,
+			Columns: []string{hpfollow.ArtistColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpartist.FieldID, field.TypeInt),
 			},
 		}
 		for _, k := range nodes {

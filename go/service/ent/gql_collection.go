@@ -1587,6 +1587,16 @@ func (hf *HPFollowQuery) collectField(ctx context.Context, opCtx *graphql.Operat
 				return err
 			}
 			hf.withMember = query
+		case "artist":
+			var (
+				alias = field.Alias
+				path  = append(path, alias)
+				query = (&HPArtistClient{config: hf.config}).Query()
+			)
+			if err := query.collectField(ctx, opCtx, field, path, satisfies...); err != nil {
+				return err
+			}
+			hf.withArtist = query
 		case "createdAt":
 			if _, ok := fieldSeen[hpfollow.FieldCreatedAt]; !ok {
 				selectedFields = append(selectedFields, hpfollow.FieldCreatedAt)
@@ -2460,7 +2470,7 @@ func (u *UserQuery) collectField(ctx context.Context, opCtx *graphql.OperationCo
 			u.WithNamedHpviewHistory(alias, func(wq *HPViewHistoryQuery) {
 				*wq = *query
 			})
-		case "hpmemberFollowing":
+		case "hpfollow":
 			var (
 				alias = field.Alias
 				path  = append(path, alias)
@@ -2469,7 +2479,7 @@ func (u *UserQuery) collectField(ctx context.Context, opCtx *graphql.OperationCo
 			if err := query.collectField(ctx, opCtx, field, path, satisfies...); err != nil {
 				return err
 			}
-			u.WithNamedHpmemberFollowing(alias, func(wq *HPFollowQuery) {
+			u.WithNamedHpfollow(alias, func(wq *HPFollowQuery) {
 				*wq = *query
 			})
 		case "hpsortHistory":

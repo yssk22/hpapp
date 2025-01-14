@@ -3,6 +3,7 @@ package schema
 import (
 	"entgo.io/contrib/entgql"
 	"entgo.io/ent"
+	"entgo.io/ent/dialect/entsql"
 	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
@@ -81,7 +82,12 @@ func (HPMember) Edges() []ent.Edge {
 			edge.Columns("hp_member_id", "hp_elineup_mall_item_id"),
 		).Annotations(entgql.Skip(entgql.SkipAll)),
 
-		edge.From("followed_by", HPFollow.Type).Annotations(entgql.Skip(entgql.SkipAll)).Ref("member"),
+		edge.To("followed_by", HPFollow.Type).StorageKey(
+			edge.Column("hp_follow_member"),
+		).Annotations(entsql.Annotation{
+			OnDelete: entsql.Cascade,
+		}, entgql.Skip(entgql.SkipAll),
+		),
 	}
 }
 

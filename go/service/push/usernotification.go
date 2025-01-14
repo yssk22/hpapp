@@ -4,6 +4,7 @@ import (
 	"context"
 
 	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/predicate"
@@ -32,8 +33,8 @@ func GetNotificationSettings(ctx context.Context, userId int, slug string) ([]*e
 	return all, errors.Wrap(ctx, err)
 }
 
-// GetFollowerNotifications returns the all notification settings for the people who follow the member.
-func GetFollowerNotifications(ctx context.Context, memberId int, ps ...predicate.UserNotificationSetting) ([]*ent.UserNotificationSetting, error) {
+// GetFollowerNotifications returns the all notification settings for the people who follow the member or the artist.
+func GetFollowerNotifications(ctx context.Context, artistIdOrMemberId int, ps ...predicate.UserNotificationSetting) ([]*ent.UserNotificationSetting, error) {
 	entclient := entutil.NewClient(ctx)
 	users, err := entclient.User.Query().WithNotificationSettings(
 		// a user might have multiple settings with different configurations so make sure to apply the ps condition not to take unnecessary settings.
@@ -41,10 +42,16 @@ func GetFollowerNotifications(ctx context.Context, memberId int, ps ...predicate
 			q.Where(ps...)
 		},
 	).Where(
-		user.HasHpmemberFollowingWith(
-			hpfollow.And(
-				hpfollow.HasMemberWith(hpmember.IDEQ(memberId)),
-				hpfollow.TypeEQ(enums.HPFollowTypeFollowWithNotification),
+		user.HasHpfollowWith(
+			hpfollow.Or(
+				hpfollow.And(
+					hpfollow.HasMemberWith(hpmember.IDEQ(artistIdOrMemberId)),
+					hpfollow.TypeEQ(enums.HPFollowTypeFollowWithNotification),
+				),
+				hpfollow.And(
+					hpfollow.HasArtistWith(hpartist.IDEQ(artistIdOrMemberId)),
+					hpfollow.TypeEQ(enums.HPFollowTypeFollowWithNotification),
+				),
 			),
 		),
 		user.HasNotificationSettingsWith(ps...),

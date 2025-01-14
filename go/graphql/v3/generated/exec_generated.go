@@ -51,6 +51,7 @@ type Config struct {
 }
 
 type ResolverRoot interface {
+	HPArtist() HPArtistResolver
 	HPEvent() HPEventResolver
 	HPFeedItem() HPFeedItemResolver
 	HPMember() HPMemberResolver
@@ -119,6 +120,7 @@ type ComplexityRoot struct {
 		Key              func(childComplexity int) int
 		LastErrorMessage func(childComplexity int) int
 		Members          func(childComplexity int) int
+		MyFollowStatus   func(childComplexity int) int
 		Name             func(childComplexity int) int
 		RecrawlRequired  func(childComplexity int) int
 		ThumbnailURL     func(childComplexity int) int
@@ -294,6 +296,7 @@ type ComplexityRoot struct {
 	}
 
 	HPFollow struct {
+		Artist                            func(childComplexity int) int
 		CreatedAt                         func(childComplexity int) int
 		ElineupmallBlueray                func(childComplexity int) int
 		ElineupmallClearFile              func(childComplexity int) int
@@ -569,7 +572,7 @@ type ComplexityRoot struct {
 		CreatedAt                    func(childComplexity int) int
 		ElineupMallPurchaseHistories func(childComplexity int) int
 		HpfcEventTickets             func(childComplexity int) int
-		HpmemberFollowing            func(childComplexity int) int
+		Hpfollow                     func(childComplexity int) int
 		HpsortHistory                func(childComplexity int) int
 		HpviewHistory                func(childComplexity int) int
 		ID                           func(childComplexity int) int
@@ -592,6 +595,9 @@ type ComplexityRoot struct {
 	}
 }
 
+type HPArtistResolver interface {
+	MyFollowStatus(ctx context.Context, obj *ent.HPArtist) (*ent.HPFollow, error)
+}
 type HPEventResolver interface {
 	Tickets(ctx context.Context, obj *ent.HPEvent) ([]*ent.HPFCEventTicket, error)
 }
@@ -955,6 +961,13 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.HPArtist.Members(childComplexity), true
+
+	case "HPArtist.myFollowStatus":
+		if e.complexity.HPArtist.MyFollowStatus == nil {
+			break
+		}
+
+		return e.complexity.HPArtist.MyFollowStatus(childComplexity), true
 
 	case "HPArtist.name":
 		if e.complexity.HPArtist.Name == nil {
@@ -1844,6 +1857,13 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.HPFeedItemEdge.Node(childComplexity), true
+
+	case "HPFollow.artist":
+		if e.complexity.HPFollow.Artist == nil {
+			break
+		}
+
+		return e.complexity.HPFollow.Artist(childComplexity), true
 
 	case "HPFollow.createdAt":
 		if e.complexity.HPFollow.CreatedAt == nil {
@@ -3293,12 +3313,12 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.User.HpfcEventTickets(childComplexity), true
 
-	case "User.hpmemberFollowing":
-		if e.complexity.User.HpmemberFollowing == nil {
+	case "User.hpfollow":
+		if e.complexity.User.Hpfollow == nil {
 			break
 		}
 
-		return e.complexity.User.HpmemberFollowing(childComplexity), true
+		return e.complexity.User.Hpfollow(childComplexity), true
 
 	case "User.hpsortHistory":
 		if e.complexity.User.HpsortHistory == nil {
@@ -3530,6 +3550,10 @@ scalar Time
 scalar Upload
 scalar Any
 scalar Map
+
+extend type HPArtist {
+  myFollowStatus: HPFollow
+}
 
 extend type HPMember {
   myFollowStatus: HPFollow
@@ -5620,6 +5644,8 @@ func (ec *executionContext) fieldContext_HPAmebloPost_ownerArtist(ctx context.Co
 				return ec.fieldContext_HPArtist_index(ctx, field)
 			case "members":
 				return ec.fieldContext_HPArtist_members(ctx, field)
+			case "myFollowStatus":
+				return ec.fieldContext_HPArtist_myFollowStatus(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPArtist", field.Name)
 		},
@@ -5770,6 +5796,8 @@ func (ec *executionContext) fieldContext_HPAmebloPost_taggedArtists(ctx context.
 				return ec.fieldContext_HPArtist_index(ctx, field)
 			case "members":
 				return ec.fieldContext_HPArtist_members(ctx, field)
+			case "myFollowStatus":
+				return ec.fieldContext_HPArtist_myFollowStatus(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPArtist", field.Name)
 		},
@@ -6498,6 +6526,111 @@ func (ec *executionContext) fieldContext_HPArtist_members(ctx context.Context, f
 				return ec.fieldContext_HPMember_myFollowStatus(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPMember", field.Name)
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPArtist_myFollowStatus(ctx context.Context, field graphql.CollectedField, obj *ent.HPArtist) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPArtist_myFollowStatus(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return ec.resolvers.HPArtist().MyFollowStatus(rctx, obj)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*ent.HPFollow)
+	fc.Result = res
+	return ec.marshalOHPFollow2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPFollow(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPArtist_myFollowStatus(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPArtist",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: true,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "id":
+				return ec.fieldContext_HPFollow_id(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_HPFollow_createdAt(ctx, field)
+			case "updatedAt":
+				return ec.fieldContext_HPFollow_updatedAt(ctx, field)
+			case "type":
+				return ec.fieldContext_HPFollow_type(ctx, field)
+			case "elineupmallOther":
+				return ec.fieldContext_HPFollow_elineupmallOther(ctx, field)
+			case "elineupmallPhotoDaily":
+				return ec.fieldContext_HPFollow_elineupmallPhotoDaily(ctx, field)
+			case "elineupmallPhotoA4":
+				return ec.fieldContext_HPFollow_elineupmallPhotoA4(ctx, field)
+			case "elineupmallPhotoA5":
+				return ec.fieldContext_HPFollow_elineupmallPhotoA5(ctx, field)
+			case "elineupmallPhoto2l":
+				return ec.fieldContext_HPFollow_elineupmallPhoto2l(ctx, field)
+			case "elineupmallPhotoOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoOther(ctx, field)
+			case "elineupmallPhotoAlbum":
+				return ec.fieldContext_HPFollow_elineupmallPhotoAlbum(ctx, field)
+			case "elineupmallPhotoAlbumOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoAlbumOther(ctx, field)
+			case "elineupmallPhotoBook":
+				return ec.fieldContext_HPFollow_elineupmallPhotoBook(ctx, field)
+			case "elineupmallPhotoBookOther":
+				return ec.fieldContext_HPFollow_elineupmallPhotoBookOther(ctx, field)
+			case "elineupmallDvd":
+				return ec.fieldContext_HPFollow_elineupmallDvd(ctx, field)
+			case "elineupmallDvdMagazine":
+				return ec.fieldContext_HPFollow_elineupmallDvdMagazine(ctx, field)
+			case "elineupmallDvdMagazineOther":
+				return ec.fieldContext_HPFollow_elineupmallDvdMagazineOther(ctx, field)
+			case "elineupmallBlueray":
+				return ec.fieldContext_HPFollow_elineupmallBlueray(ctx, field)
+			case "elineupmallPenlight":
+				return ec.fieldContext_HPFollow_elineupmallPenlight(ctx, field)
+			case "elineupmallCollectionPinnapPoster":
+				return ec.fieldContext_HPFollow_elineupmallCollectionPinnapPoster(ctx, field)
+			case "elineupmallCollectionPhoto":
+				return ec.fieldContext_HPFollow_elineupmallCollectionPhoto(ctx, field)
+			case "elineupmallCollectionOther":
+				return ec.fieldContext_HPFollow_elineupmallCollectionOther(ctx, field)
+			case "elineupmallTshirt":
+				return ec.fieldContext_HPFollow_elineupmallTshirt(ctx, field)
+			case "elineupmallMicrofiberTowel":
+				return ec.fieldContext_HPFollow_elineupmallMicrofiberTowel(ctx, field)
+			case "elineupmallMufflerTowel":
+				return ec.fieldContext_HPFollow_elineupmallMufflerTowel(ctx, field)
+			case "elineupmallFsk":
+				return ec.fieldContext_HPFollow_elineupmallFsk(ctx, field)
+			case "elineupmallKeyringOther":
+				return ec.fieldContext_HPFollow_elineupmallKeyringOther(ctx, field)
+			case "elineupmallClearFile":
+				return ec.fieldContext_HPFollow_elineupmallClearFile(ctx, field)
+			case "user":
+				return ec.fieldContext_HPFollow_user(ctx, field)
+			case "member":
+				return ec.fieldContext_HPFollow_member(ctx, field)
+			case "artist":
+				return ec.fieldContext_HPFollow_artist(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type HPFollow", field.Name)
 		},
 	}
 	return fc, nil
@@ -7414,6 +7547,8 @@ func (ec *executionContext) fieldContext_HPBlob_ownerArtist(ctx context.Context,
 				return ec.fieldContext_HPArtist_index(ctx, field)
 			case "members":
 				return ec.fieldContext_HPArtist_members(ctx, field)
+			case "myFollowStatus":
+				return ec.fieldContext_HPArtist_myFollowStatus(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPArtist", field.Name)
 		},
@@ -8713,6 +8848,8 @@ func (ec *executionContext) fieldContext_HPElineupMallItem_taggedArtists(ctx con
 				return ec.fieldContext_HPArtist_index(ctx, field)
 			case "members":
 				return ec.fieldContext_HPArtist_members(ctx, field)
+			case "myFollowStatus":
+				return ec.fieldContext_HPArtist_myFollowStatus(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPArtist", field.Name)
 		},
@@ -9761,8 +9898,8 @@ func (ec *executionContext) fieldContext_HPElineupMallItemPurchaseHistory_owner(
 				return ec.fieldContext_User_notificationSettings(ctx, field)
 			case "hpviewHistory":
 				return ec.fieldContext_User_hpviewHistory(ctx, field)
-			case "hpmemberFollowing":
-				return ec.fieldContext_User_hpmemberFollowing(ctx, field)
+			case "hpfollow":
+				return ec.fieldContext_User_hpfollow(ctx, field)
 			case "hpsortHistory":
 				return ec.fieldContext_User_hpsortHistory(ctx, field)
 			case "hpfcEventTickets":
@@ -11930,6 +12067,8 @@ func (ec *executionContext) fieldContext_HPFeedItem_ownerArtist(ctx context.Cont
 				return ec.fieldContext_HPArtist_index(ctx, field)
 			case "members":
 				return ec.fieldContext_HPArtist_members(ctx, field)
+			case "myFollowStatus":
+				return ec.fieldContext_HPArtist_myFollowStatus(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPArtist", field.Name)
 		},
@@ -12080,6 +12219,8 @@ func (ec *executionContext) fieldContext_HPFeedItem_taggedArtists(ctx context.Co
 				return ec.fieldContext_HPArtist_index(ctx, field)
 			case "members":
 				return ec.fieldContext_HPArtist_members(ctx, field)
+			case "myFollowStatus":
+				return ec.fieldContext_HPArtist_myFollowStatus(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPArtist", field.Name)
 		},
@@ -13776,8 +13917,8 @@ func (ec *executionContext) fieldContext_HPFollow_user(ctx context.Context, fiel
 				return ec.fieldContext_User_notificationSettings(ctx, field)
 			case "hpviewHistory":
 				return ec.fieldContext_User_hpviewHistory(ctx, field)
-			case "hpmemberFollowing":
-				return ec.fieldContext_User_hpmemberFollowing(ctx, field)
+			case "hpfollow":
+				return ec.fieldContext_User_hpfollow(ctx, field)
 			case "hpsortHistory":
 				return ec.fieldContext_User_hpsortHistory(ctx, field)
 			case "hpfcEventTickets":
@@ -13812,14 +13953,11 @@ func (ec *executionContext) _HPFollow_member(ctx context.Context, field graphql.
 		return graphql.Null
 	}
 	if resTmp == nil {
-		if !graphql.HasFieldError(ctx, fc) {
-			ec.Errorf(ctx, "must not be null")
-		}
 		return graphql.Null
 	}
 	res := resTmp.(*ent.HPMember)
 	fc.Result = res
-	return ec.marshalNHPMember2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPMember(ctx, field.Selections, res)
+	return ec.marshalOHPMember2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPMember(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_HPFollow_member(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -13872,6 +14010,75 @@ func (ec *executionContext) fieldContext_HPFollow_member(ctx context.Context, fi
 				return ec.fieldContext_HPMember_myFollowStatus(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPMember", field.Name)
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPFollow_artist(ctx context.Context, field graphql.CollectedField, obj *ent.HPFollow) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPFollow_artist(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Artist(ctx)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*ent.HPArtist)
+	fc.Result = res
+	return ec.marshalOHPArtist2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPArtist(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPFollow_artist(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPFollow",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "id":
+				return ec.fieldContext_HPArtist_id(ctx, field)
+			case "crawledAt":
+				return ec.fieldContext_HPArtist_crawledAt(ctx, field)
+			case "errorCount":
+				return ec.fieldContext_HPArtist_errorCount(ctx, field)
+			case "lastErrorMessage":
+				return ec.fieldContext_HPArtist_lastErrorMessage(ctx, field)
+			case "recrawlRequired":
+				return ec.fieldContext_HPArtist_recrawlRequired(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_HPArtist_createdAt(ctx, field)
+			case "updatedAt":
+				return ec.fieldContext_HPArtist_updatedAt(ctx, field)
+			case "key":
+				return ec.fieldContext_HPArtist_key(ctx, field)
+			case "name":
+				return ec.fieldContext_HPArtist_name(ctx, field)
+			case "thumbnailURL":
+				return ec.fieldContext_HPArtist_thumbnailURL(ctx, field)
+			case "index":
+				return ec.fieldContext_HPArtist_index(ctx, field)
+			case "members":
+				return ec.fieldContext_HPArtist_members(ctx, field)
+			case "myFollowStatus":
+				return ec.fieldContext_HPArtist_myFollowStatus(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type HPArtist", field.Name)
 		},
 	}
 	return fc, nil
@@ -15507,6 +15714,8 @@ func (ec *executionContext) fieldContext_HPIgPost_ownerArtist(ctx context.Contex
 				return ec.fieldContext_HPArtist_index(ctx, field)
 			case "members":
 				return ec.fieldContext_HPArtist_members(ctx, field)
+			case "myFollowStatus":
+				return ec.fieldContext_HPArtist_myFollowStatus(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPArtist", field.Name)
 		},
@@ -15657,6 +15866,8 @@ func (ec *executionContext) fieldContext_HPIgPost_taggedArtists(ctx context.Cont
 				return ec.fieldContext_HPArtist_index(ctx, field)
 			case "members":
 				return ec.fieldContext_HPArtist_members(ctx, field)
+			case "myFollowStatus":
+				return ec.fieldContext_HPArtist_myFollowStatus(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPArtist", field.Name)
 		},
@@ -16940,6 +17151,8 @@ func (ec *executionContext) fieldContext_HPMember_artist(ctx context.Context, fi
 				return ec.fieldContext_HPArtist_index(ctx, field)
 			case "members":
 				return ec.fieldContext_HPArtist_members(ctx, field)
+			case "myFollowStatus":
+				return ec.fieldContext_HPArtist_myFollowStatus(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPArtist", field.Name)
 		},
@@ -17043,6 +17256,8 @@ func (ec *executionContext) fieldContext_HPMember_myFollowStatus(ctx context.Con
 				return ec.fieldContext_HPFollow_user(ctx, field)
 			case "member":
 				return ec.fieldContext_HPFollow_member(ctx, field)
+			case "artist":
+				return ec.fieldContext_HPFollow_artist(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPFollow", field.Name)
 		},
@@ -17548,8 +17763,8 @@ func (ec *executionContext) fieldContext_HPSortHistory_owner(ctx context.Context
 				return ec.fieldContext_User_notificationSettings(ctx, field)
 			case "hpviewHistory":
 				return ec.fieldContext_User_hpviewHistory(ctx, field)
-			case "hpmemberFollowing":
-				return ec.fieldContext_User_hpmemberFollowing(ctx, field)
+			case "hpfollow":
+				return ec.fieldContext_User_hpfollow(ctx, field)
 			case "hpsortHistory":
 				return ec.fieldContext_User_hpsortHistory(ctx, field)
 			case "hpfcEventTickets":
@@ -18849,6 +19064,8 @@ func (ec *executionContext) fieldContext_HelloProjectQuery_artists(ctx context.C
 				return ec.fieldContext_HPArtist_index(ctx, field)
 			case "members":
 				return ec.fieldContext_HPArtist_members(ctx, field)
+			case "myFollowStatus":
+				return ec.fieldContext_HPArtist_myFollowStatus(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPArtist", field.Name)
 		},
@@ -19039,8 +19256,8 @@ func (ec *executionContext) fieldContext_MeMutation_authenticate(ctx context.Con
 				return ec.fieldContext_User_notificationSettings(ctx, field)
 			case "hpviewHistory":
 				return ec.fieldContext_User_hpviewHistory(ctx, field)
-			case "hpmemberFollowing":
-				return ec.fieldContext_User_hpmemberFollowing(ctx, field)
+			case "hpfollow":
+				return ec.fieldContext_User_hpfollow(ctx, field)
 			case "hpsortHistory":
 				return ec.fieldContext_User_hpsortHistory(ctx, field)
 			case "hpfcEventTickets":
@@ -19393,6 +19610,8 @@ func (ec *executionContext) fieldContext_MeMutation_upsertFollow(ctx context.Con
 				return ec.fieldContext_HPFollow_user(ctx, field)
 			case "member":
 				return ec.fieldContext_HPFollow_member(ctx, field)
+			case "artist":
+				return ec.fieldContext_HPFollow_artist(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPFollow", field.Name)
 		},
@@ -20177,6 +20396,8 @@ func (ec *executionContext) fieldContext_MeQuery_followings(ctx context.Context,
 				return ec.fieldContext_HPFollow_user(ctx, field)
 			case "member":
 				return ec.fieldContext_HPFollow_member(ctx, field)
+			case "artist":
+				return ec.fieldContext_HPFollow_artist(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPFollow", field.Name)
 		},
@@ -21262,8 +21483,8 @@ func (ec *executionContext) fieldContext_Mutation_authenticate(ctx context.Conte
 				return ec.fieldContext_User_notificationSettings(ctx, field)
 			case "hpviewHistory":
 				return ec.fieldContext_User_hpviewHistory(ctx, field)
-			case "hpmemberFollowing":
-				return ec.fieldContext_User_hpmemberFollowing(ctx, field)
+			case "hpfollow":
+				return ec.fieldContext_User_hpfollow(ctx, field)
 			case "hpsortHistory":
 				return ec.fieldContext_User_hpsortHistory(ctx, field)
 			case "hpfcEventTickets":
@@ -22476,8 +22697,8 @@ func (ec *executionContext) fieldContext_User_hpviewHistory(ctx context.Context,
 	return fc, nil
 }
 
-func (ec *executionContext) _User_hpmemberFollowing(ctx context.Context, field graphql.CollectedField, obj *ent.User) (ret graphql.Marshaler) {
-	fc, err := ec.fieldContext_User_hpmemberFollowing(ctx, field)
+func (ec *executionContext) _User_hpfollow(ctx context.Context, field graphql.CollectedField, obj *ent.User) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_User_hpfollow(ctx, field)
 	if err != nil {
 		return graphql.Null
 	}
@@ -22490,7 +22711,7 @@ func (ec *executionContext) _User_hpmemberFollowing(ctx context.Context, field g
 	}()
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
 		ctx = rctx // use context from middleware stack in children
-		return obj.HpmemberFollowing(ctx)
+		return obj.Hpfollow(ctx)
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -22504,7 +22725,7 @@ func (ec *executionContext) _User_hpmemberFollowing(ctx context.Context, field g
 	return ec.marshalOHPFollow2ᚕᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPFollowᚄ(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_User_hpmemberFollowing(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_User_hpfollow(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "User",
 		Field:      field,
@@ -22572,6 +22793,8 @@ func (ec *executionContext) fieldContext_User_hpmemberFollowing(ctx context.Cont
 				return ec.fieldContext_HPFollow_user(ctx, field)
 			case "member":
 				return ec.fieldContext_HPFollow_member(ctx, field)
+			case "artist":
+				return ec.fieldContext_HPFollow_artist(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type HPFollow", field.Name)
 		},
@@ -23212,8 +23435,8 @@ func (ec *executionContext) fieldContext_UserNotificationSetting_user(ctx contex
 				return ec.fieldContext_User_notificationSettings(ctx, field)
 			case "hpviewHistory":
 				return ec.fieldContext_User_hpviewHistory(ctx, field)
-			case "hpmemberFollowing":
-				return ec.fieldContext_User_hpmemberFollowing(ctx, field)
+			case "hpfollow":
+				return ec.fieldContext_User_hpfollow(ctx, field)
 			case "hpsortHistory":
 				return ec.fieldContext_User_hpsortHistory(ctx, field)
 			case "hpfcEventTickets":
@@ -25839,18 +26062,26 @@ func (ec *executionContext) unmarshalInputHPFollowUpsertParamsInput(ctx context.
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"memberId", "followType", "elineupMallFollowParams"}
+	fieldsInOrder := [...]string{"artistId", "memberId", "followType", "elineupMallFollowParams"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
 			continue
 		}
 		switch k {
+		case "artistId":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("artistId"))
+			it.ArtistId, err = ec.unmarshalOInt2ᚖint(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "memberId":
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("memberId"))
-			it.MemberId, err = ec.unmarshalNInt2int(ctx, v)
+			it.MemberId, err = ec.unmarshalOInt2ᚖint(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -26873,6 +27104,23 @@ func (ec *executionContext) _HPArtist(ctx context.Context, sel ast.SelectionSet,
 					}
 				}()
 				res = ec._HPArtist_members(ctx, field, obj)
+				return res
+			}
+
+			out.Concurrently(i, func() graphql.Marshaler {
+				return innerFunc(ctx)
+
+			})
+		case "myFollowStatus":
+			field := field
+
+			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._HPArtist_myFollowStatus(ctx, field, obj)
 				return res
 			}
 
@@ -28312,9 +28560,23 @@ func (ec *executionContext) _HPFollow(ctx context.Context, sel ast.SelectionSet,
 					}
 				}()
 				res = ec._HPFollow_member(ctx, field, obj)
-				if res == graphql.Null {
-					atomic.AddUint32(&invalids, 1)
-				}
+				return res
+			}
+
+			out.Concurrently(i, func() graphql.Marshaler {
+				return innerFunc(ctx)
+
+			})
+		case "artist":
+			field := field
+
+			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._HPFollow_artist(ctx, field, obj)
 				return res
 			}
 
@@ -30416,7 +30678,7 @@ func (ec *executionContext) _User(ctx context.Context, sel ast.SelectionSet, obj
 				return innerFunc(ctx)
 
 			})
-		case "hpmemberFollowing":
+		case "hpfollow":
 			field := field
 
 			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
@@ -30425,7 +30687,7 @@ func (ec *executionContext) _User(ctx context.Context, sel ast.SelectionSet, obj
 						ec.Error(ctx, ec.Recover(ctx, r))
 					}
 				}()
-				res = ec._User_hpmemberFollowing(ctx, field, obj)
+				res = ec._User_hpfollow(ctx, field, obj)
 				return res
 			}
 

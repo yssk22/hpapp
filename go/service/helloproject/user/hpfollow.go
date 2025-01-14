@@ -20,7 +20,8 @@ func GetFollowings(ctx context.Context, userId int) ([]*ent.HPFollow, error) {
 }
 
 type HPFollowUpsertParams struct {
-	MemberId                int
+	ArtistId                *int
+	MemberId                *int
 	FollowType              enums.HPFollowType
 	ElineupMallFollowParams []HPFollowElineupMallParams
 }
@@ -35,8 +36,14 @@ func UpsertFollow(ctx context.Context, userId int, params HPFollowUpsertParams) 
 	entclient := entutil.NewClient(ctx)
 	create := entclient.HPFollow.Create().
 		SetUserID(userId).
-		SetMemberID(params.MemberId).
 		SetType(params.FollowType)
+	if params.ArtistId != nil {
+		create = create.SetArtistID(*params.ArtistId)
+	} else if params.MemberId != nil {
+		create = create.SetMemberID(*params.MemberId)
+	} else {
+		return nil, errors.New("either ArtistId or MemberId must be set")
+	}
 	for _, e := range params.ElineupMallFollowParams {
 		switch e.Category {
 		case enums.HPElineupMallItemCategoryBlueray:
@@ -89,8 +96,13 @@ func UpsertFollow(ctx context.Context, userId int, params HPFollowUpsertParams) 
 			create = create.SetElineupmallTshirt(e.FollowType)
 		}
 	}
-	update := create.OnConflictColumns(hpfollow.UserColumn, hpfollow.MemberColumn).
-		SetType(params.FollowType)
+	var update *ent.HPFollowUpsertOne
+	if params.ArtistId != nil {
+		update = create.OnConflictColumns(hpfollow.UserColumn, hpfollow.ArtistColumn)
+	} else {
+		update = create.OnConflictColumns(hpfollow.UserColumn, hpfollow.MemberColumn)
+	}
+	update = update.SetType(params.FollowType)
 	for _, e := range params.ElineupMallFollowParams {
 		switch e.Category {
 		case enums.HPElineupMallItemCategoryBlueray:

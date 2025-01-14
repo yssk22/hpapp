@@ -670,7 +670,7 @@ func (hmc *HPMemberCreate) createSpec() (*HPMember, *sqlgraph.CreateSpec) {
 	if nodes := hmc.mutation.FollowedByIDs(); len(nodes) > 0 {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
-			Inverse: true,
+			Inverse: false,
 			Table:   hpmember.FollowedByTable,
 			Columns: []string{hpmember.FollowedByColumn},
 			Bidi:    false,

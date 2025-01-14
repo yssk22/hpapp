@@ -33,7 +33,7 @@ type UserQuery struct {
 	withAuth                              *AuthQuery
 	withNotificationSettings              *UserNotificationSettingQuery
 	withHpviewHistory                     *HPViewHistoryQuery
-	withHpmemberFollowing                 *HPFollowQuery
+	withHpfollow                          *HPFollowQuery
 	withHpsortHistory                     *HPSortHistoryQuery
 	withHpfcEventTickets                  *HPFCEventTicketQuery
 	withElineupMallPurchaseHistories      *HPElineupMallItemPurchaseHistoryQuery
@@ -42,7 +42,7 @@ type UserQuery struct {
 	withNamedAuth                         map[string]*AuthQuery
 	withNamedNotificationSettings         map[string]*UserNotificationSettingQuery
 	withNamedHpviewHistory                map[string]*HPViewHistoryQuery
-	withNamedHpmemberFollowing            map[string]*HPFollowQuery
+	withNamedHpfollow                     map[string]*HPFollowQuery
 	withNamedHpsortHistory                map[string]*HPSortHistoryQuery
 	withNamedHpfcEventTickets             map[string]*HPFCEventTicketQuery
 	withNamedElineupMallPurchaseHistories map[string]*HPElineupMallItemPurchaseHistoryQuery
@@ -148,8 +148,8 @@ func (uq *UserQuery) QueryHpviewHistory() *HPViewHistoryQuery {
 	return query
 }
 
-// QueryHpmemberFollowing chains the current query on the "hpmember_following" edge.
-func (uq *UserQuery) QueryHpmemberFollowing() *HPFollowQuery {
+// QueryHpfollow chains the current query on the "hpfollow" edge.
+func (uq *UserQuery) QueryHpfollow() *HPFollowQuery {
 	query := (&HPFollowClient{config: uq.config}).Query()
 	query.path = func(ctx context.Context) (fromU *sql.Selector, err error) {
 		if err := uq.prepareQuery(ctx); err != nil {
@@ -162,7 +162,7 @@ func (uq *UserQuery) QueryHpmemberFollowing() *HPFollowQuery {
 		step := sqlgraph.NewStep(
 			sqlgraph.From(user.Table, user.FieldID, selector),
 			sqlgraph.To(hpfollow.Table, hpfollow.FieldID),
-			sqlgraph.Edge(sqlgraph.O2M, false, user.HpmemberFollowingTable, user.HpmemberFollowingColumn),
+			sqlgraph.Edge(sqlgraph.O2M, false, user.HpfollowTable, user.HpfollowColumn),
 		)
 		fromU = sqlgraph.SetNeighbors(uq.driver.Dialect(), step)
 		return fromU, nil
@@ -431,7 +431,7 @@ func (uq *UserQuery) Clone() *UserQuery {
 		withAuth:                         uq.withAuth.Clone(),
 		withNotificationSettings:         uq.withNotificationSettings.Clone(),
 		withHpviewHistory:                uq.withHpviewHistory.Clone(),
-		withHpmemberFollowing:            uq.withHpmemberFollowing.Clone(),
+		withHpfollow:                     uq.withHpfollow.Clone(),
 		withHpsortHistory:                uq.withHpsortHistory.Clone(),
 		withHpfcEventTickets:             uq.withHpfcEventTickets.Clone(),
 		withElineupMallPurchaseHistories: uq.withElineupMallPurchaseHistories.Clone(),
@@ -474,14 +474,14 @@ func (uq *UserQuery) WithHpviewHistory(opts ...func(*HPViewHistoryQuery)) *UserQ
 	return uq
 }
 
-// WithHpmemberFollowing tells the query-builder to eager-load the nodes that are connected to
-// the "hpmember_following" edge. The optional arguments are used to configure the query builder of the edge.
-func (uq *UserQuery) WithHpmemberFollowing(opts ...func(*HPFollowQuery)) *UserQuery {
+// WithHpfollow tells the query-builder to eager-load the nodes that are connected to
+// the "hpfollow" edge. The optional arguments are used to configure the query builder of the edge.
+func (uq *UserQuery) WithHpfollow(opts ...func(*HPFollowQuery)) *UserQuery {
 	query := (&HPFollowClient{config: uq.config}).Query()
 	for _, opt := range opts {
 		opt(query)
 	}
-	uq.withHpmemberFollowing = query
+	uq.withHpfollow = query
 	return uq
 }
 
@@ -606,7 +606,7 @@ func (uq *UserQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*User, e
 			uq.withAuth != nil,
 			uq.withNotificationSettings != nil,
 			uq.withHpviewHistory != nil,
-			uq.withHpmemberFollowing != nil,
+			uq.withHpfollow != nil,
 			uq.withHpsortHistory != nil,
 			uq.withHpfcEventTickets != nil,
 			uq.withElineupMallPurchaseHistories != nil,
@@ -656,10 +656,10 @@ func (uq *UserQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*User, e
 			return nil, err
 		}
 	}
-	if query := uq.withHpmemberFollowing; query != nil {
-		if err := uq.loadHpmemberFollowing(ctx, query, nodes,
-			func(n *User) { n.Edges.HpmemberFollowing = []*HPFollow{} },
-			func(n *User, e *HPFollow) { n.Edges.HpmemberFollowing = append(n.Edges.HpmemberFollowing, e) }); err != nil {
+	if query := uq.withHpfollow; query != nil {
+		if err := uq.loadHpfollow(ctx, query, nodes,
+			func(n *User) { n.Edges.Hpfollow = []*HPFollow{} },
+			func(n *User, e *HPFollow) { n.Edges.Hpfollow = append(n.Edges.Hpfollow, e) }); err != nil {
 			return nil, err
 		}
 	}
@@ -707,10 +707,10 @@ func (uq *UserQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*User, e
 			return nil, err
 		}
 	}
-	for name, query := range uq.withNamedHpmemberFollowing {
-		if err := uq.loadHpmemberFollowing(ctx, query, nodes,
-			func(n *User) { n.appendNamedHpmemberFollowing(name) },
-			func(n *User, e *HPFollow) { n.appendNamedHpmemberFollowing(name, e) }); err != nil {
+	for name, query := range uq.withNamedHpfollow {
+		if err := uq.loadHpfollow(ctx, query, nodes,
+			func(n *User) { n.appendNamedHpfollow(name) },
+			func(n *User, e *HPFollow) { n.appendNamedHpfollow(name, e) }); err != nil {
 			return nil, err
 		}
 	}
@@ -828,7 +828,7 @@ func (uq *UserQuery) loadHpviewHistory(ctx context.Context, query *HPViewHistory
 	}
 	return nil
 }
-func (uq *UserQuery) loadHpmemberFollowing(ctx context.Context, query *HPFollowQuery, nodes []*User, init func(*User), assign func(*User, *HPFollow)) error {
+func (uq *UserQuery) loadHpfollow(ctx context.Context, query *HPFollowQuery, nodes []*User, init func(*User), assign func(*User, *HPFollow)) error {
 	fks := make([]driver.Value, 0, len(nodes))
 	nodeids := make(map[int]*User)
 	for i := range nodes {
@@ -840,7 +840,7 @@ func (uq *UserQuery) loadHpmemberFollowing(ctx context.Context, query *HPFollowQ
 	}
 	query.withFKs = true
 	query.Where(predicate.HPFollow(func(s *sql.Selector) {
-		s.Where(sql.InValues(user.HpmemberFollowingColumn, fks...))
+		s.Where(sql.InValues(user.HpfollowColumn, fks...))
 	}))
 	neighbors, err := query.All(ctx)
 	if err != nil {
@@ -1071,17 +1071,17 @@ func (uq *UserQuery) WithNamedHpviewHistory(name string, opts ...func(*HPViewHis
 	return uq
 }
 
-// WithNamedHpmemberFollowing tells the query-builder to eager-load the nodes that are connected to the "hpmember_following"
+// WithNamedHpfollow tells the query-builder to eager-load the nodes that are connected to the "hpfollow"
 // edge with the given name. The optional arguments are used to configure the query builder of the edge.
-func (uq *UserQuery) WithNamedHpmemberFollowing(name string, opts ...func(*HPFollowQuery)) *UserQuery {
+func (uq *UserQuery) WithNamedHpfollow(name string, opts ...func(*HPFollowQuery)) *UserQuery {
 	query := (&HPFollowClient{config: uq.config}).Query()
 	for _, opt := range opts {
 		opt(query)
 	}
-	if uq.withNamedHpmemberFollowing == nil {
-		uq.withNamedHpmemberFollowing = make(map[string]*HPFollowQuery)
+	if uq.withNamedHpfollow == nil {
+		uq.withNamedHpfollow = make(map[string]*HPFollowQuery)
 	}
-	uq.withNamedHpmemberFollowing[name] = query
+	uq.withNamedHpfollow[name] = query
 	return uq
 }
 

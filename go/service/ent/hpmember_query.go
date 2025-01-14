@@ -300,7 +300,7 @@ func (hmq *HPMemberQuery) QueryFollowedBy() *HPFollowQuery {
 		step := sqlgraph.NewStep(
 			sqlgraph.From(hpmember.Table, hpmember.FieldID, selector),
 			sqlgraph.To(hpfollow.Table, hpfollow.FieldID),
-			sqlgraph.Edge(sqlgraph.O2M, true, hpmember.FollowedByTable, hpmember.FollowedByColumn),
+			sqlgraph.Edge(sqlgraph.O2M, false, hpmember.FollowedByTable, hpmember.FollowedByColumn),
 		)
 		fromU = sqlgraph.SetNeighbors(hmq.driver.Dialect(), step)
 		return fromU, nil

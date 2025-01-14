@@ -703,6 +703,18 @@ var schemaGraph = func() *sqlgraph.Schema {
 		"HPElineupMallItem",
 	)
 	graph.MustAddE(
+		"followed_by",
+		&sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpartist.FollowedByTable,
+			Columns: []string{hpartist.FollowedByColumn},
+			Bidi:    false,
+		},
+		"HPArtist",
+		"HPFollow",
+	)
+	graph.MustAddE(
 		"artist",
 		&sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.M2O,
@@ -994,13 +1006,25 @@ var schemaGraph = func() *sqlgraph.Schema {
 		"member",
 		&sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.M2O,
-			Inverse: false,
+			Inverse: true,
 			Table:   hpfollow.MemberTable,
 			Columns: []string{hpfollow.MemberColumn},
 			Bidi:    false,
 		},
 		"HPFollow",
 		"HPMember",
+	)
+	graph.MustAddE(
+		"artist",
+		&sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   hpfollow.ArtistTable,
+			Columns: []string{hpfollow.ArtistColumn},
+			Bidi:    false,
+		},
+		"HPFollow",
+		"HPArtist",
 	)
 	graph.MustAddE(
 		"owner_artist",
@@ -1186,7 +1210,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 		"followed_by",
 		&sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
-			Inverse: true,
+			Inverse: false,
 			Table:   hpmember.FollowedByTable,
 			Columns: []string{hpmember.FollowedByColumn},
 			Bidi:    false,
@@ -1267,12 +1291,12 @@ var schemaGraph = func() *sqlgraph.Schema {
 		"HPViewHistory",
 	)
 	graph.MustAddE(
-		"hpmember_following",
+		"hpfollow",
 		&sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
 			Inverse: false,
-			Table:   user.HpmemberFollowingTable,
-			Columns: []string{user.HpmemberFollowingColumn},
+			Table:   user.HpfollowTable,
+			Columns: []string{user.HpfollowColumn},
 			Bidi:    false,
 		},
 		"User",
@@ -1912,6 +1936,20 @@ func (f *HPArtistFilter) WhereHasTaggedElineupMallItems() {
 // WhereHasTaggedElineupMallItemsWith applies a predicate to check if query has an edge tagged_elineup_mall_items with a given conditions (other predicates).
 func (f *HPArtistFilter) WhereHasTaggedElineupMallItemsWith(preds ...predicate.HPElineupMallItem) {
 	f.Where(entql.HasEdgeWith("tagged_elineup_mall_items", sqlgraph.WrapFunc(func(s *sql.Selector) {
+		for _, p := range preds {
+			p(s)
+		}
+	})))
+}
+
+// WhereHasFollowedBy applies a predicate to check if query has an edge followed_by.
+func (f *HPArtistFilter) WhereHasFollowedBy() {
+	f.Where(entql.HasEdge("followed_by"))
+}
+
+// WhereHasFollowedByWith applies a predicate to check if query has an edge followed_by with a given conditions (other predicates).
+func (f *HPArtistFilter) WhereHasFollowedByWith(preds ...predicate.HPFollow) {
+	f.Where(entql.HasEdgeWith("followed_by", sqlgraph.WrapFunc(func(s *sql.Selector) {
 		for _, p := range preds {
 			p(s)
 		}
@@ -3138,6 +3176,20 @@ func (f *HPFollowFilter) WhereHasMemberWith(preds ...predicate.HPMember) {
 	})))
 }
 
+// WhereHasArtist applies a predicate to check if query has an edge artist.
+func (f *HPFollowFilter) WhereHasArtist() {
+	f.Where(entql.HasEdge("artist"))
+}
+
+// WhereHasArtistWith applies a predicate to check if query has an edge artist with a given conditions (other predicates).
+func (f *HPFollowFilter) WhereHasArtistWith(preds ...predicate.HPArtist) {
+	f.Where(entql.HasEdgeWith("artist", sqlgraph.WrapFunc(func(s *sql.Selector) {
+		for _, p := range preds {
+			p(s)
+		}
+	})))
+}
+
 // addPredicate implements the predicateAdder interface.
 func (hipq *HPIgPostQuery) addPredicate(pred func(s *sql.Selector)) {
 	hipq.predicates = append(hipq.predicates, pred)
@@ -3981,14 +4033,14 @@ func (f *UserFilter) WhereHasHpviewHistoryWith(preds ...predicate.HPViewHistory)
 	})))
 }
 
-// WhereHasHpmemberFollowing applies a predicate to check if query has an edge hpmember_following.
-func (f *UserFilter) WhereHasHpmemberFollowing() {
-	f.Where(entql.HasEdge("hpmember_following"))
+// WhereHasHpfollow applies a predicate to check if query has an edge hpfollow.
+func (f *UserFilter) WhereHasHpfollow() {
+	f.Where(entql.HasEdge("hpfollow"))
 }
 
-// WhereHasHpmemberFollowingWith applies a predicate to check if query has an edge hpmember_following with a given conditions (other predicates).
-func (f *UserFilter) WhereHasHpmemberFollowingWith(preds ...predicate.HPFollow) {
-	f.Where(entql.HasEdgeWith("hpmember_following", sqlgraph.WrapFunc(func(s *sql.Selector) {
+// WhereHasHpfollowWith applies a predicate to check if query has an edge hpfollow with a given conditions (other predicates).
+func (f *UserFilter) WhereHasHpfollowWith(preds ...predicate.HPFollow) {
+	f.Where(entql.HasEdgeWith("hpfollow", sqlgraph.WrapFunc(func(s *sql.Selector) {
 		for _, p := range preds {
 			p(s)
 		}

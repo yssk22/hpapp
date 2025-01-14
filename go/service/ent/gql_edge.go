@@ -217,7 +217,15 @@ func (hf *HPFollow) Member(ctx context.Context) (*HPMember, error) {
 	if IsNotLoaded(err) {
 		result, err = hf.QueryMember().Only(ctx)
 	}
-	return result, err
+	return result, MaskNotFound(err)
+}
+
+func (hf *HPFollow) Artist(ctx context.Context) (*HPArtist, error) {
+	result, err := hf.Edges.ArtistOrErr()
+	if IsNotLoaded(err) {
+		result, err = hf.QueryArtist().Only(ctx)
+	}
+	return result, MaskNotFound(err)
 }
 
 func (hip *HPIgPost) OwnerArtist(ctx context.Context) (*HPArtist, error) {
@@ -332,14 +340,14 @@ func (u *User) HpviewHistory(ctx context.Context) (result []*HPViewHistory, err 
 	return result, err
 }
 
-func (u *User) HpmemberFollowing(ctx context.Context) (result []*HPFollow, err error) {
+func (u *User) Hpfollow(ctx context.Context) (result []*HPFollow, err error) {
 	if fc := graphql.GetFieldContext(ctx); fc != nil && fc.Field.Alias != "" {
-		result, err = u.NamedHpmemberFollowing(graphql.GetFieldContext(ctx).Field.Alias)
+		result, err = u.NamedHpfollow(graphql.GetFieldContext(ctx).Field.Alias)
 	} else {
-		result, err = u.Edges.HpmemberFollowingOrErr()
+		result, err = u.Edges.HpfollowOrErr()
 	}
 	if IsNotLoaded(err) {
-		result, err = u.QueryHpmemberFollowing().All(ctx)
+		result, err = u.QueryHpfollow().All(ctx)
 	}
 	return result, err
 }

@@ -16,6 +16,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpasset"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
+	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpigpost"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/schema/jsonfields"
@@ -276,6 +277,21 @@ func (hac *HPArtistCreate) AddTaggedElineupMallItems(h ...*HPElineupMallItem) *H
 		ids[i] = h[i].ID
 	}
 	return hac.AddTaggedElineupMallItemIDs(ids...)
+}
+
+// AddFollowedByIDs adds the "followed_by" edge to the HPFollow entity by IDs.
+func (hac *HPArtistCreate) AddFollowedByIDs(ids ...int) *HPArtistCreate {
+	hac.mutation.AddFollowedByIDs(ids...)
+	return hac
+}
+
+// AddFollowedBy adds the "followed_by" edges to the HPFollow entity.
+func (hac *HPArtistCreate) AddFollowedBy(h ...*HPFollow) *HPArtistCreate {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return hac.AddFollowedByIDs(ids...)
 }
 
 // Mutation returns the HPArtistMutation object of the builder.
@@ -551,6 +567,22 @@ func (hac *HPArtistCreate) createSpec() (*HPArtist, *sqlgraph.CreateSpec) {
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitem.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges = append(_spec.Edges, edge)
+	}
+	if nodes := hac.mutation.FollowedByIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpartist.FollowedByTable,
+			Columns: []string{hpartist.FollowedByColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),
 			},
 		}
 		for _, k := range nodes {

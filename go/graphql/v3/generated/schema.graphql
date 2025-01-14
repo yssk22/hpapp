@@ -111,7 +111,8 @@ input NotificationSettingsInput @goModel(model: "github.com/yssk22/hpapp/go/serv
 }
 
 input HPFollowUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/user.HPFollowUpsertParams") {
-  memberId: Int!
+  artistId: Int
+  memberId: Int
   followType: HPFollowType!
   elineupMallFollowParams: [HPFollowElineupMallParamsInput!]
 }

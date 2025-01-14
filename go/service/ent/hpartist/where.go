@@ -842,6 +842,29 @@ func HasTaggedElineupMallItemsWith(preds ...predicate.HPElineupMallItem) predica
 	})
 }
 
+// HasFollowedBy applies the HasEdge predicate on the "followed_by" edge.
+func HasFollowedBy() predicate.HPArtist {
+	return predicate.HPArtist(func(s *sql.Selector) {
+		step := sqlgraph.NewStep(
+			sqlgraph.From(Table, FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, FollowedByTable, FollowedByColumn),
+		)
+		sqlgraph.HasNeighbors(s, step)
+	})
+}
+
+// HasFollowedByWith applies the HasEdge predicate on the "followed_by" edge with a given conditions (other predicates).
+func HasFollowedByWith(preds ...predicate.HPFollow) predicate.HPArtist {
+	return predicate.HPArtist(func(s *sql.Selector) {
+		step := newFollowedByStep()
+		sqlgraph.HasNeighborsWith(s, step, func(s *sql.Selector) {
+			for _, p := range preds {
+				p(s)
+			}
+		})
+	})
+}
+
 // And groups predicates with the AND operator between them.
 func And(predicates ...predicate.HPArtist) predicate.HPArtist {
 	return predicate.HPArtist(func(s *sql.Selector) {
