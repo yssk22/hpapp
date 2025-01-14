@@ -27,8 +27,8 @@ const (
 	EdgeNotificationSettings = "notification_settings"
 	// EdgeHpviewHistory holds the string denoting the hpview_history edge name in mutations.
 	EdgeHpviewHistory = "hpview_history"
-	// EdgeHpmemberFollowing holds the string denoting the hpmember_following edge name in mutations.
-	EdgeHpmemberFollowing = "hpmember_following"
+	// EdgeHpfollow holds the string denoting the hpfollow edge name in mutations.
+	EdgeHpfollow = "hpfollow"
 	// EdgeHpsortHistory holds the string denoting the hpsort_history edge name in mutations.
 	EdgeHpsortHistory = "hpsort_history"
 	// EdgeHpfcEventTickets holds the string denoting the hpfc_event_tickets edge name in mutations.
@@ -58,13 +58,13 @@ const (
 	HpviewHistoryInverseTable = "hp_view_histories"
 	// HpviewHistoryColumn is the table column denoting the hpview_history relation/edge.
 	HpviewHistoryColumn = "user_hpview_history"
-	// HpmemberFollowingTable is the table that holds the hpmember_following relation/edge.
-	HpmemberFollowingTable = "hp_follows"
-	// HpmemberFollowingInverseTable is the table name for the HPFollow entity.
+	// HpfollowTable is the table that holds the hpfollow relation/edge.
+	HpfollowTable = "hp_follows"
+	// HpfollowInverseTable is the table name for the HPFollow entity.
 	// It exists in this package in order to avoid circular dependency with the "hpfollow" package.
-	HpmemberFollowingInverseTable = "hp_follows"
-	// HpmemberFollowingColumn is the table column denoting the hpmember_following relation/edge.
-	HpmemberFollowingColumn = "user_hpmember_following"
+	HpfollowInverseTable = "hp_follows"
+	// HpfollowColumn is the table column denoting the hpfollow relation/edge.
+	HpfollowColumn = "user_hpmember_following"
 	// HpsortHistoryTable is the table that holds the hpsort_history relation/edge.
 	HpsortHistoryTable = "hp_sort_histories"
 	// HpsortHistoryInverseTable is the table name for the HPSortHistory entity.
@@ -187,17 +187,17 @@ func ByHpviewHistory(term sql.OrderTerm, terms ...sql.OrderTerm) Order {
 	}
 }
 
-// ByHpmemberFollowingCount orders the results by hpmember_following count.
-func ByHpmemberFollowingCount(opts ...sql.OrderTermOption) Order {
+// ByHpfollowCount orders the results by hpfollow count.
+func ByHpfollowCount(opts ...sql.OrderTermOption) Order {
 	return func(s *sql.Selector) {
-		sqlgraph.OrderByNeighborsCount(s, newHpmemberFollowingStep(), opts...)
+		sqlgraph.OrderByNeighborsCount(s, newHpfollowStep(), opts...)
 	}
 }
 
-// ByHpmemberFollowing orders the results by hpmember_following terms.
-func ByHpmemberFollowing(term sql.OrderTerm, terms ...sql.OrderTerm) Order {
+// ByHpfollow orders the results by hpfollow terms.
+func ByHpfollow(term sql.OrderTerm, terms ...sql.OrderTerm) Order {
 	return func(s *sql.Selector) {
-		sqlgraph.OrderByNeighborTerms(s, newHpmemberFollowingStep(), append([]sql.OrderTerm{term}, terms...)...)
+		sqlgraph.OrderByNeighborTerms(s, newHpfollowStep(), append([]sql.OrderTerm{term}, terms...)...)
 	}
 }
 
@@ -263,11 +263,11 @@ func newHpviewHistoryStep() *sqlgraph.Step {
 		sqlgraph.Edge(sqlgraph.O2M, false, HpviewHistoryTable, HpviewHistoryColumn),
 	)
 }
-func newHpmemberFollowingStep() *sqlgraph.Step {
+func newHpfollowStep() *sqlgraph.Step {
 	return sqlgraph.NewStep(
 		sqlgraph.From(Table, FieldID),
-		sqlgraph.To(HpmemberFollowingInverseTable, FieldID),
-		sqlgraph.Edge(sqlgraph.O2M, false, HpmemberFollowingTable, HpmemberFollowingColumn),
+		sqlgraph.To(HpfollowInverseTable, FieldID),
+		sqlgraph.Edge(sqlgraph.O2M, false, HpfollowTable, HpfollowColumn),
 	)
 }
 func newHpsortHistoryStep() *sqlgraph.Step {

@@ -1272,7 +1272,7 @@ func HasFollowedBy() predicate.HPMember {
 	return predicate.HPMember(func(s *sql.Selector) {
 		step := sqlgraph.NewStep(
 			sqlgraph.From(Table, FieldID),
-			sqlgraph.Edge(sqlgraph.O2M, true, FollowedByTable, FollowedByColumn),
+			sqlgraph.Edge(sqlgraph.O2M, false, FollowedByTable, FollowedByColumn),
 		)
 		sqlgraph.HasNeighbors(s, step)
 	})

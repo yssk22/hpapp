@@ -462,7 +462,8 @@ type HPFollow implements Node {
   elineupmallKeyringOther: HPFollowHPFollowType!
   elineupmallClearFile: HPFollowHPFollowType!
   user: User!
-  member: HPMember!
+  member: HPMember
+  artist: HPArtist
 }
 """HPFollowHPFollowType is enum for the field type"""
 enum HPFollowHPFollowType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPFollowType") {
@@ -718,7 +719,7 @@ type User implements Node {
   auth: [Auth!]
   notificationSettings: [UserNotificationSetting!]
   hpviewHistory: [HPViewHistory!]
-  hpmemberFollowing: [HPFollow!]
+  hpfollow: [HPFollow!]
   hpsortHistory: [HPSortHistory!]
   hpfcEventTickets: [HPFCEventTicket!]
   elineupMallPurchaseHistories: [HPElineupMallItemPurchaseHistory!]

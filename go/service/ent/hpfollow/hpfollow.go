@@ -75,6 +75,8 @@ const (
 	EdgeUser = "user"
 	// EdgeMember holds the string denoting the member edge name in mutations.
 	EdgeMember = "member"
+	// EdgeArtist holds the string denoting the artist edge name in mutations.
+	EdgeArtist = "artist"
 	// Table holds the table name of the hpfollow in the database.
 	Table = "hp_follows"
 	// UserTable is the table that holds the user relation/edge.
@@ -91,6 +93,13 @@ const (
 	MemberInverseTable = "hp_members"
 	// MemberColumn is the table column denoting the member relation/edge.
 	MemberColumn = "hp_follow_member"
+	// ArtistTable is the table that holds the artist relation/edge.
+	ArtistTable = "hp_follows"
+	// ArtistInverseTable is the table name for the HPArtist entity.
+	// It exists in this package in order to avoid circular dependency with the "hpartist" package.
+	ArtistInverseTable = "hp_artists"
+	// ArtistColumn is the table column denoting the artist relation/edge.
+	ArtistColumn = "hp_follow_artist"
 )
 
 // Columns holds all SQL columns for hpfollow fields.
@@ -128,6 +137,7 @@ var Columns = []string{
 // ForeignKeys holds the SQL foreign-keys that are owned by the "hp_follows"
 // table and are not defined as standalone fields in the schema.
 var ForeignKeys = []string{
+	"hp_follow_artist",
 	"hp_follow_member",
 	"user_hpmember_following",
 }
@@ -612,6 +622,13 @@ func ByMemberField(field string, opts ...sql.OrderTermOption) Order {
 		sqlgraph.OrderByNeighborTerms(s, newMemberStep(), sql.OrderByField(field, opts...))
 	}
 }
+
+// ByArtistField orders the results by artist field.
+func ByArtistField(field string, opts ...sql.OrderTermOption) Order {
+	return func(s *sql.Selector) {
+		sqlgraph.OrderByNeighborTerms(s, newArtistStep(), sql.OrderByField(field, opts...))
+	}
+}
 func newUserStep() *sqlgraph.Step {
 	return sqlgraph.NewStep(
 		sqlgraph.From(Table, FieldID),
@@ -623,7 +640,14 @@ func newMemberStep() *sqlgraph.Step {
 	return sqlgraph.NewStep(
 		sqlgraph.From(Table, FieldID),
 		sqlgraph.To(MemberInverseTable, FieldID),
-		sqlgraph.Edge(sqlgraph.M2O, false, MemberTable, MemberColumn),
+		sqlgraph.Edge(sqlgraph.M2O, true, MemberTable, MemberColumn),
+	)
+}
+func newArtistStep() *sqlgraph.Step {
+	return sqlgraph.NewStep(
+		sqlgraph.From(Table, FieldID),
+		sqlgraph.To(ArtistInverseTable, FieldID),
+		sqlgraph.Edge(sqlgraph.M2O, true, ArtistTable, ArtistColumn),
 	)
 }
 

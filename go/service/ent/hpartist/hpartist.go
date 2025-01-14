@@ -53,6 +53,8 @@ const (
 	EdgeTaggedAmebloPosts = "tagged_ameblo_posts"
 	// EdgeTaggedElineupMallItems holds the string denoting the tagged_elineup_mall_items edge name in mutations.
 	EdgeTaggedElineupMallItems = "tagged_elineup_mall_items"
+	// EdgeFollowedBy holds the string denoting the followed_by edge name in mutations.
+	EdgeFollowedBy = "followed_by"
 	// Table holds the table name of the hpartist in the database.
 	Table = "hp_artists"
 	// MembersTable is the table that holds the members relation/edge.
@@ -110,6 +112,13 @@ const (
 	// TaggedElineupMallItemsInverseTable is the table name for the HPElineupMallItem entity.
 	// It exists in this package in order to avoid circular dependency with the "hpelineupmallitem" package.
 	TaggedElineupMallItemsInverseTable = "hp_elineup_mall_items"
+	// FollowedByTable is the table that holds the followed_by relation/edge.
+	FollowedByTable = "hp_follows"
+	// FollowedByInverseTable is the table name for the HPFollow entity.
+	// It exists in this package in order to avoid circular dependency with the "hpfollow" package.
+	FollowedByInverseTable = "hp_follows"
+	// FollowedByColumn is the table column denoting the followed_by relation/edge.
+	FollowedByColumn = "hp_follow_artist"
 )
 
 // Columns holds all SQL columns for hpartist fields.
@@ -361,6 +370,20 @@ func ByTaggedElineupMallItems(term sql.OrderTerm, terms ...sql.OrderTerm) Order 
 		sqlgraph.OrderByNeighborTerms(s, newTaggedElineupMallItemsStep(), append([]sql.OrderTerm{term}, terms...)...)
 	}
 }
+
+// ByFollowedByCount orders the results by followed_by count.
+func ByFollowedByCount(opts ...sql.OrderTermOption) Order {
+	return func(s *sql.Selector) {
+		sqlgraph.OrderByNeighborsCount(s, newFollowedByStep(), opts...)
+	}
+}
+
+// ByFollowedBy orders the results by followed_by terms.
+func ByFollowedBy(term sql.OrderTerm, terms ...sql.OrderTerm) Order {
+	return func(s *sql.Selector) {
+		sqlgraph.OrderByNeighborTerms(s, newFollowedByStep(), append([]sql.OrderTerm{term}, terms...)...)
+	}
+}
 func newMembersStep() *sqlgraph.Step {
 	return sqlgraph.NewStep(
 		sqlgraph.From(Table, FieldID),
@@ -422,5 +445,12 @@ func newTaggedElineupMallItemsStep() *sqlgraph.Step {
 		sqlgraph.From(Table, FieldID),
 		sqlgraph.To(TaggedElineupMallItemsInverseTable, FieldID),
 		sqlgraph.Edge(sqlgraph.M2M, false, TaggedElineupMallItemsTable, TaggedElineupMallItemsPrimaryKey...),
+	)
+}
+func newFollowedByStep() *sqlgraph.Step {
+	return sqlgraph.NewStep(
+		sqlgraph.From(Table, FieldID),
+		sqlgraph.To(FollowedByInverseTable, FieldID),
+		sqlgraph.Edge(sqlgraph.O2M, false, FollowedByTable, FollowedByColumn),
 	)
 }

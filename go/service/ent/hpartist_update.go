@@ -16,6 +16,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpasset"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
+	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpigpost"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/predicate"
@@ -314,6 +315,21 @@ func (hau *HPArtistUpdate) AddTaggedElineupMallItems(h ...*HPElineupMallItem) *H
 	return hau.AddTaggedElineupMallItemIDs(ids...)
 }
 
+// AddFollowedByIDs adds the "followed_by" edge to the HPFollow entity by IDs.
+func (hau *HPArtistUpdate) AddFollowedByIDs(ids ...int) *HPArtistUpdate {
+	hau.mutation.AddFollowedByIDs(ids...)
+	return hau
+}
+
+// AddFollowedBy adds the "followed_by" edges to the HPFollow entity.
+func (hau *HPArtistUpdate) AddFollowedBy(h ...*HPFollow) *HPArtistUpdate {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return hau.AddFollowedByIDs(ids...)
+}
+
 // Mutation returns the HPArtistMutation object of the builder.
 func (hau *HPArtistUpdate) Mutation() *HPArtistMutation {
 	return hau.mutation
@@ -506,6 +522,27 @@ func (hau *HPArtistUpdate) RemoveTaggedElineupMallItems(h ...*HPElineupMallItem)
 		ids[i] = h[i].ID
 	}
 	return hau.RemoveTaggedElineupMallItemIDs(ids...)
+}
+
+// ClearFollowedBy clears all "followed_by" edges to the HPFollow entity.
+func (hau *HPArtistUpdate) ClearFollowedBy() *HPArtistUpdate {
+	hau.mutation.ClearFollowedBy()
+	return hau
+}
+
+// RemoveFollowedByIDs removes the "followed_by" edge to HPFollow entities by IDs.
+func (hau *HPArtistUpdate) RemoveFollowedByIDs(ids ...int) *HPArtistUpdate {
+	hau.mutation.RemoveFollowedByIDs(ids...)
+	return hau
+}
+
+// RemoveFollowedBy removes "followed_by" edges to HPFollow entities.
+func (hau *HPArtistUpdate) RemoveFollowedBy(h ...*HPFollow) *HPArtistUpdate {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return hau.RemoveFollowedByIDs(ids...)
 }
 
 // Save executes the query and returns the number of nodes affected by the update operation.
@@ -1003,6 +1040,51 @@ func (hau *HPArtistUpdate) sqlSave(ctx context.Context) (n int, err error) {
 		}
 		_spec.Edges.Add = append(_spec.Edges.Add, edge)
 	}
+	if hau.mutation.FollowedByCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpartist.FollowedByTable,
+			Columns: []string{hpartist.FollowedByColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := hau.mutation.RemovedFollowedByIDs(); len(nodes) > 0 && !hau.mutation.FollowedByCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpartist.FollowedByTable,
+			Columns: []string{hpartist.FollowedByColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := hau.mutation.FollowedByIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpartist.FollowedByTable,
+			Columns: []string{hpartist.FollowedByColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
 	if n, err = sqlgraph.UpdateNodes(ctx, hau.driver, _spec); err != nil {
 		if _, ok := err.(*sqlgraph.NotFoundError); ok {
 			err = &NotFoundError{hpartist.Label}
@@ -1302,6 +1384,21 @@ func (hauo *HPArtistUpdateOne) AddTaggedElineupMallItems(h ...*HPElineupMallItem
 	return hauo.AddTaggedElineupMallItemIDs(ids...)
 }
 
+// AddFollowedByIDs adds the "followed_by" edge to the HPFollow entity by IDs.
+func (hauo *HPArtistUpdateOne) AddFollowedByIDs(ids ...int) *HPArtistUpdateOne {
+	hauo.mutation.AddFollowedByIDs(ids...)
+	return hauo
+}
+
+// AddFollowedBy adds the "followed_by" edges to the HPFollow entity.
+func (hauo *HPArtistUpdateOne) AddFollowedBy(h ...*HPFollow) *HPArtistUpdateOne {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return hauo.AddFollowedByIDs(ids...)
+}
+
 // Mutation returns the HPArtistMutation object of the builder.
 func (hauo *HPArtistUpdateOne) Mutation() *HPArtistMutation {
 	return hauo.mutation
@@ -1494,6 +1591,27 @@ func (hauo *HPArtistUpdateOne) RemoveTaggedElineupMallItems(h ...*HPElineupMallI
 		ids[i] = h[i].ID
 	}
 	return hauo.RemoveTaggedElineupMallItemIDs(ids...)
+}
+
+// ClearFollowedBy clears all "followed_by" edges to the HPFollow entity.
+func (hauo *HPArtistUpdateOne) ClearFollowedBy() *HPArtistUpdateOne {
+	hauo.mutation.ClearFollowedBy()
+	return hauo
+}
+
+// RemoveFollowedByIDs removes the "followed_by" edge to HPFollow entities by IDs.
+func (hauo *HPArtistUpdateOne) RemoveFollowedByIDs(ids ...int) *HPArtistUpdateOne {
+	hauo.mutation.RemoveFollowedByIDs(ids...)
+	return hauo
+}
+
+// RemoveFollowedBy removes "followed_by" edges to HPFollow entities.
+func (hauo *HPArtistUpdateOne) RemoveFollowedBy(h ...*HPFollow) *HPArtistUpdateOne {
+	ids := make([]int, len(h))
+	for i := range h {
+		ids[i] = h[i].ID
+	}
+	return hauo.RemoveFollowedByIDs(ids...)
 }
 
 // Where appends a list predicates to the HPArtistUpdate builder.
@@ -2014,6 +2132,51 @@ func (hauo *HPArtistUpdateOne) sqlSave(ctx context.Context) (_node *HPArtist, er
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitem.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
+	if hauo.mutation.FollowedByCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpartist.FollowedByTable,
+			Columns: []string{hpartist.FollowedByColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := hauo.mutation.RemovedFollowedByIDs(); len(nodes) > 0 && !hauo.mutation.FollowedByCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpartist.FollowedByTable,
+			Columns: []string{hpartist.FollowedByColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := hauo.mutation.FollowedByIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   hpartist.FollowedByTable,
+			Columns: []string{hpartist.FollowedByColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),
 			},
 		}
 		for _, k := range nodes {

@@ -374,21 +374,21 @@ func HasHpviewHistoryWith(preds ...predicate.HPViewHistory) predicate.User {
 	})
 }
 
-// HasHpmemberFollowing applies the HasEdge predicate on the "hpmember_following" edge.
-func HasHpmemberFollowing() predicate.User {
+// HasHpfollow applies the HasEdge predicate on the "hpfollow" edge.
+func HasHpfollow() predicate.User {
 	return predicate.User(func(s *sql.Selector) {
 		step := sqlgraph.NewStep(
 			sqlgraph.From(Table, FieldID),
-			sqlgraph.Edge(sqlgraph.O2M, false, HpmemberFollowingTable, HpmemberFollowingColumn),
+			sqlgraph.Edge(sqlgraph.O2M, false, HpfollowTable, HpfollowColumn),
 		)
 		sqlgraph.HasNeighbors(s, step)
 	})
 }
 
-// HasHpmemberFollowingWith applies the HasEdge predicate on the "hpmember_following" edge with a given conditions (other predicates).
-func HasHpmemberFollowingWith(preds ...predicate.HPFollow) predicate.User {
+// HasHpfollowWith applies the HasEdge predicate on the "hpfollow" edge with a given conditions (other predicates).
+func HasHpfollowWith(preds ...predicate.HPFollow) predicate.User {
 	return predicate.User(func(s *sql.Selector) {
-		step := newHpmemberFollowingStep()
+		step := newHpfollowStep()
 		sqlgraph.HasNeighborsWith(s, step, func(s *sql.Selector) {
 			for _, p := range preds {
 				p(s)

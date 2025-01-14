@@ -68,9 +68,11 @@ type HPArtistEdges struct {
 	TaggedAmebloPosts []*HPAmebloPost `json:"tagged_ameblo_posts,omitempty"`
 	// TaggedElineupMallItems holds the value of the tagged_elineup_mall_items edge.
 	TaggedElineupMallItems []*HPElineupMallItem `json:"tagged_elineup_mall_items,omitempty"`
+	// FollowedBy holds the value of the followed_by edge.
+	FollowedBy []*HPFollow `json:"followed_by,omitempty"`
 	// loadedTypes holds the information for reporting if a
 	// type was loaded (or requested) in eager-loading or not.
-	loadedTypes [9]bool
+	loadedTypes [10]bool
 	// totalCount holds the count of the edges above.
 	totalCount [1]map[string]int
 
@@ -83,6 +85,7 @@ type HPArtistEdges struct {
 	namedOwningAmebloPosts      map[string][]*HPAmebloPost
 	namedTaggedAmebloPosts      map[string][]*HPAmebloPost
 	namedTaggedElineupMallItems map[string][]*HPElineupMallItem
+	namedFollowedBy             map[string][]*HPFollow
 }
 
 // MembersOrErr returns the Members value or an error if the edge
@@ -164,6 +167,15 @@ func (e HPArtistEdges) TaggedElineupMallItemsOrErr() ([]*HPElineupMallItem, erro
 		return e.TaggedElineupMallItems, nil
 	}
 	return nil, &NotLoadedError{edge: "tagged_elineup_mall_items"}
+}
+
+// FollowedByOrErr returns the FollowedBy value or an error if the edge
+// was not loaded in eager-loading.
+func (e HPArtistEdges) FollowedByOrErr() ([]*HPFollow, error) {
+	if e.loadedTypes[9] {
+		return e.FollowedBy, nil
+	}
+	return nil, &NotLoadedError{edge: "followed_by"}
 }
 
 // scanValues returns the types for scanning values from sql.Rows.
@@ -337,6 +349,11 @@ func (ha *HPArtist) QueryTaggedAmebloPosts() *HPAmebloPostQuery {
 // QueryTaggedElineupMallItems queries the "tagged_elineup_mall_items" edge of the HPArtist entity.
 func (ha *HPArtist) QueryTaggedElineupMallItems() *HPElineupMallItemQuery {
 	return NewHPArtistClient(ha.config).QueryTaggedElineupMallItems(ha)
+}
+
+// QueryFollowedBy queries the "followed_by" edge of the HPArtist entity.
+func (ha *HPArtist) QueryFollowedBy() *HPFollowQuery {
+	return NewHPArtistClient(ha.config).QueryFollowedBy(ha)
 }
 
 // Update returns a builder for updating this HPArtist.
@@ -615,6 +632,30 @@ func (ha *HPArtist) appendNamedTaggedElineupMallItems(name string, edges ...*HPE
 		ha.Edges.namedTaggedElineupMallItems[name] = []*HPElineupMallItem{}
 	} else {
 		ha.Edges.namedTaggedElineupMallItems[name] = append(ha.Edges.namedTaggedElineupMallItems[name], edges...)
+	}
+}
+
+// NamedFollowedBy returns the FollowedBy named value or an error if the edge was not
+// loaded in eager-loading with this name.
+func (ha *HPArtist) NamedFollowedBy(name string) ([]*HPFollow, error) {
+	if ha.Edges.namedFollowedBy == nil {
+		return nil, &NotLoadedError{edge: name}
+	}
+	nodes, ok := ha.Edges.namedFollowedBy[name]
+	if !ok {
+		return nil, &NotLoadedError{edge: name}
+	}
+	return nodes, nil
+}
+
+func (ha *HPArtist) appendNamedFollowedBy(name string, edges ...*HPFollow) {
+	if ha.Edges.namedFollowedBy == nil {
+		ha.Edges.namedFollowedBy = make(map[string][]*HPFollow)
+	}
+	if len(edges) == 0 {
+		ha.Edges.namedFollowedBy[name] = []*HPFollow{}
+	} else {
+		ha.Edges.namedFollowedBy[name] = append(ha.Edges.namedFollowedBy[name], edges...)
 	}
 }
 

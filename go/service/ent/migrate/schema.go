@@ -558,7 +558,8 @@ var (
 		{Name: "elineupmall_fsk", Type: field.TypeEnum, Enums: []string{"follow", "follow_with_notification", "unfollow", "unknown"}, Default: "unknown"},
 		{Name: "elineupmall_keyring_other", Type: field.TypeEnum, Enums: []string{"follow", "follow_with_notification", "unfollow", "unknown"}, Default: "unknown"},
 		{Name: "elineupmall_clear_file", Type: field.TypeEnum, Enums: []string{"follow", "follow_with_notification", "unfollow", "unknown"}, Default: "unknown"},
-		{Name: "hp_follow_member", Type: field.TypeInt},
+		{Name: "hp_follow_artist", Type: field.TypeInt, Nullable: true},
+		{Name: "hp_follow_member", Type: field.TypeInt, Nullable: true},
 		{Name: "user_hpmember_following", Type: field.TypeInt},
 	}
 	// HpFollowsTable holds the schema information for the "hp_follows" table.
@@ -568,14 +569,20 @@ var (
 		PrimaryKey: []*schema.Column{HpFollowsColumns[0]},
 		ForeignKeys: []*schema.ForeignKey{
 			{
-				Symbol:     "hp_follows_hp_members_member",
+				Symbol:     "hp_follows_hp_artists_followed_by",
 				Columns:    []*schema.Column{HpFollowsColumns[28]},
-				RefColumns: []*schema.Column{HpMembersColumns[0]},
-				OnDelete:   schema.NoAction,
+				RefColumns: []*schema.Column{HpArtistsColumns[0]},
+				OnDelete:   schema.Cascade,
 			},
 			{
-				Symbol:     "hp_follows_users_hpmember_following",
+				Symbol:     "hp_follows_hp_members_followed_by",
 				Columns:    []*schema.Column{HpFollowsColumns[29]},
+				RefColumns: []*schema.Column{HpMembersColumns[0]},
+				OnDelete:   schema.Cascade,
+			},
+			{
+				Symbol:     "hp_follows_users_hpfollow",
+				Columns:    []*schema.Column{HpFollowsColumns[30]},
 				RefColumns: []*schema.Column{UsersColumns[0]},
 				OnDelete:   schema.Cascade,
 			},
@@ -594,12 +601,17 @@ var (
 			{
 				Name:    "hpfollow_hp_follow_member",
 				Unique:  false,
-				Columns: []*schema.Column{HpFollowsColumns[28]},
+				Columns: []*schema.Column{HpFollowsColumns[29]},
 			},
 			{
 				Name:    "hpfollow_user_hpmember_following_hp_follow_member",
 				Unique:  true,
-				Columns: []*schema.Column{HpFollowsColumns[29], HpFollowsColumns[28]},
+				Columns: []*schema.Column{HpFollowsColumns[30], HpFollowsColumns[29]},
+			},
+			{
+				Name:    "hpfollow_user_hpmember_following_hp_follow_artist",
+				Unique:  true,
+				Columns: []*schema.Column{HpFollowsColumns[30], HpFollowsColumns[28]},
 			},
 		},
 	}
@@ -1282,8 +1294,9 @@ func init() {
 	HpfcEventTicketsTable.ForeignKeys[1].RefTable = UsersTable
 	HpFeedItemsTable.ForeignKeys[0].RefTable = HpArtistsTable
 	HpFeedItemsTable.ForeignKeys[1].RefTable = HpMembersTable
-	HpFollowsTable.ForeignKeys[0].RefTable = HpMembersTable
-	HpFollowsTable.ForeignKeys[1].RefTable = UsersTable
+	HpFollowsTable.ForeignKeys[0].RefTable = HpArtistsTable
+	HpFollowsTable.ForeignKeys[1].RefTable = HpMembersTable
+	HpFollowsTable.ForeignKeys[2].RefTable = UsersTable
 	HpIgPostsTable.ForeignKeys[0].RefTable = HpArtistsTable
 	HpIgPostsTable.ForeignKeys[1].RefTable = HpAssetsTable
 	HpIgPostsTable.ForeignKeys[2].RefTable = HpMembersTable

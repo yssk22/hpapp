@@ -9,6 +9,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
+	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/user"
@@ -77,6 +78,7 @@ type HPFollow struct {
 	// Edges holds the relations/edges for other nodes in the graph.
 	// The values are being populated by the HPFollowQuery when eager-loading is set.
 	Edges                   HPFollowEdges `json:"edges"`
+	hp_follow_artist        *int
 	hp_follow_member        *int
 	user_hpmember_following *int
 	selectValues            sql.SelectValues
@@ -88,11 +90,13 @@ type HPFollowEdges struct {
 	User *User `json:"user,omitempty"`
 	// Member holds the value of the member edge.
 	Member *HPMember `json:"member,omitempty"`
+	// Artist holds the value of the artist edge.
+	Artist *HPArtist `json:"artist,omitempty"`
 	// loadedTypes holds the information for reporting if a
 	// type was loaded (or requested) in eager-loading or not.
-	loadedTypes [2]bool
+	loadedTypes [3]bool
 	// totalCount holds the count of the edges above.
-	totalCount [2]map[string]int
+	totalCount [3]map[string]int
 }
 
 // UserOrErr returns the User value or an error if the edge
@@ -121,6 +125,19 @@ func (e HPFollowEdges) MemberOrErr() (*HPMember, error) {
 	return nil, &NotLoadedError{edge: "member"}
 }
 
+// ArtistOrErr returns the Artist value or an error if the edge
+// was not loaded in eager-loading, or loaded but was not found.
+func (e HPFollowEdges) ArtistOrErr() (*HPArtist, error) {
+	if e.loadedTypes[2] {
+		if e.Artist == nil {
+			// Edge was loaded but was not found.
+			return nil, &NotFoundError{label: hpartist.Label}
+		}
+		return e.Artist, nil
+	}
+	return nil, &NotLoadedError{edge: "artist"}
+}
+
 // scanValues returns the types for scanning values from sql.Rows.
 func (*HPFollow) scanValues(columns []string) ([]any, error) {
 	values := make([]any, len(columns))
@@ -132,9 +149,11 @@ func (*HPFollow) scanValues(columns []string) ([]any, error) {
 			values[i] = new(sql.NullString)
 		case hpfollow.FieldCreatedAt, hpfollow.FieldUpdatedAt:
 			values[i] = new(sql.NullTime)
-		case hpfollow.ForeignKeys[0]: // hp_follow_member
+		case hpfollow.ForeignKeys[0]: // hp_follow_artist
 			values[i] = new(sql.NullInt64)
-		case hpfollow.ForeignKeys[1]: // user_hpmember_following
+		case hpfollow.ForeignKeys[1]: // hp_follow_member
+			values[i] = new(sql.NullInt64)
+		case hpfollow.ForeignKeys[2]: // user_hpmember_following
 			values[i] = new(sql.NullInt64)
 		default:
 			values[i] = new(sql.UnknownType)
@@ -321,12 +340,19 @@ func (hf *HPFollow) assignValues(columns []string, values []any) error {
 			}
 		case hpfollow.ForeignKeys[0]:
 			if value, ok := values[i].(*sql.NullInt64); !ok {
+				return fmt.Errorf("unexpected type %T for edge-field hp_follow_artist", value)
+			} else if value.Valid {
+				hf.hp_follow_artist = new(int)
+				*hf.hp_follow_artist = int(value.Int64)
+			}
+		case hpfollow.ForeignKeys[1]:
+			if value, ok := values[i].(*sql.NullInt64); !ok {
 				return fmt.Errorf("unexpected type %T for edge-field hp_follow_member", value)
 			} else if value.Valid {
 				hf.hp_follow_member = new(int)
 				*hf.hp_follow_member = int(value.Int64)
 			}
-		case hpfollow.ForeignKeys[1]:
+		case hpfollow.ForeignKeys[2]:
 			if value, ok := values[i].(*sql.NullInt64); !ok {
 				return fmt.Errorf("unexpected type %T for edge-field user_hpmember_following", value)
 			} else if value.Valid {
@@ -354,6 +380,11 @@ func (hf *HPFollow) QueryUser() *UserQuery {
 // QueryMember queries the "member" edge of the HPFollow entity.
 func (hf *HPFollow) QueryMember() *HPMemberQuery {
 	return NewHPFollowClient(hf.config).QueryMember(hf)
+}
+
+// QueryArtist queries the "artist" edge of the HPFollow entity.
+func (hf *HPFollow) QueryArtist() *HPArtistQuery {
+	return NewHPFollowClient(hf.config).QueryArtist(hf)
 }
 
 // Update returns a builder for updating this HPFollow.

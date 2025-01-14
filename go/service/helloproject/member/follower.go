@@ -17,7 +17,7 @@ import (
 func GetFollowers(ctx context.Context, memberId int, followType enums.HPFollowType) ([]*ent.User, error) {
 	entclient := entutil.NewClient(ctx)
 	followers, err := entclient.User.Query().Where(
-		user.HasHpmemberFollowingWith(
+		user.HasHpfollowWith(
 			hpfollow.And(
 				hpfollow.HasMemberWith(hpmember.IDEQ(memberId)),
 				hpfollow.TypeEQ(followType),
@@ -37,7 +37,7 @@ func GetFollowerNotificationSettings(ctx context.Context, memberId int, preds ..
 			q.Where(preds...)
 		},
 	).Where(
-		user.HasHpmemberFollowingWith(
+		user.HasHpfollowWith(
 			hpfollow.And(
 				hpfollow.HasMemberWith(hpmember.IDEQ(memberId)),
 				hpfollow.TypeEQ(enums.HPFollowTypeFollowWithNotification),

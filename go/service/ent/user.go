@@ -39,8 +39,8 @@ type UserEdges struct {
 	NotificationSettings []*UserNotificationSetting `json:"notification_settings,omitempty"`
 	// HpviewHistory holds the value of the hpview_history edge.
 	HpviewHistory []*HPViewHistory `json:"hpview_history,omitempty"`
-	// HpmemberFollowing holds the value of the hpmember_following edge.
-	HpmemberFollowing []*HPFollow `json:"hpmember_following,omitempty"`
+	// Hpfollow holds the value of the hpfollow edge.
+	Hpfollow []*HPFollow `json:"hpfollow,omitempty"`
 	// HpsortHistory holds the value of the hpsort_history edge.
 	HpsortHistory []*HPSortHistory `json:"hpsort_history,omitempty"`
 	// HpfcEventTickets holds the value of the hpfc_event_tickets edge.
@@ -56,7 +56,7 @@ type UserEdges struct {
 	namedAuth                         map[string][]*Auth
 	namedNotificationSettings         map[string][]*UserNotificationSetting
 	namedHpviewHistory                map[string][]*HPViewHistory
-	namedHpmemberFollowing            map[string][]*HPFollow
+	namedHpfollow                     map[string][]*HPFollow
 	namedHpsortHistory                map[string][]*HPSortHistory
 	namedHpfcEventTickets             map[string][]*HPFCEventTicket
 	namedElineupMallPurchaseHistories map[string][]*HPElineupMallItemPurchaseHistory
@@ -89,13 +89,13 @@ func (e UserEdges) HpviewHistoryOrErr() ([]*HPViewHistory, error) {
 	return nil, &NotLoadedError{edge: "hpview_history"}
 }
 
-// HpmemberFollowingOrErr returns the HpmemberFollowing value or an error if the edge
+// HpfollowOrErr returns the Hpfollow value or an error if the edge
 // was not loaded in eager-loading.
-func (e UserEdges) HpmemberFollowingOrErr() ([]*HPFollow, error) {
+func (e UserEdges) HpfollowOrErr() ([]*HPFollow, error) {
 	if e.loadedTypes[3] {
-		return e.HpmemberFollowing, nil
+		return e.Hpfollow, nil
 	}
-	return nil, &NotLoadedError{edge: "hpmember_following"}
+	return nil, &NotLoadedError{edge: "hpfollow"}
 }
 
 // HpsortHistoryOrErr returns the HpsortHistory value or an error if the edge
@@ -209,9 +209,9 @@ func (u *User) QueryHpviewHistory() *HPViewHistoryQuery {
 	return NewUserClient(u.config).QueryHpviewHistory(u)
 }
 
-// QueryHpmemberFollowing queries the "hpmember_following" edge of the User entity.
-func (u *User) QueryHpmemberFollowing() *HPFollowQuery {
-	return NewUserClient(u.config).QueryHpmemberFollowing(u)
+// QueryHpfollow queries the "hpfollow" edge of the User entity.
+func (u *User) QueryHpfollow() *HPFollowQuery {
+	return NewUserClient(u.config).QueryHpfollow(u)
 }
 
 // QueryHpsortHistory queries the "hpsort_history" edge of the User entity.
@@ -339,27 +339,27 @@ func (u *User) appendNamedHpviewHistory(name string, edges ...*HPViewHistory) {
 	}
 }
 
-// NamedHpmemberFollowing returns the HpmemberFollowing named value or an error if the edge was not
+// NamedHpfollow returns the Hpfollow named value or an error if the edge was not
 // loaded in eager-loading with this name.
-func (u *User) NamedHpmemberFollowing(name string) ([]*HPFollow, error) {
-	if u.Edges.namedHpmemberFollowing == nil {
+func (u *User) NamedHpfollow(name string) ([]*HPFollow, error) {
+	if u.Edges.namedHpfollow == nil {
 		return nil, &NotLoadedError{edge: name}
 	}
-	nodes, ok := u.Edges.namedHpmemberFollowing[name]
+	nodes, ok := u.Edges.namedHpfollow[name]
 	if !ok {
 		return nil, &NotLoadedError{edge: name}
 	}
 	return nodes, nil
 }
 
-func (u *User) appendNamedHpmemberFollowing(name string, edges ...*HPFollow) {
-	if u.Edges.namedHpmemberFollowing == nil {
-		u.Edges.namedHpmemberFollowing = make(map[string][]*HPFollow)
+func (u *User) appendNamedHpfollow(name string, edges ...*HPFollow) {
+	if u.Edges.namedHpfollow == nil {
+		u.Edges.namedHpfollow = make(map[string][]*HPFollow)
 	}
 	if len(edges) == 0 {
-		u.Edges.namedHpmemberFollowing[name] = []*HPFollow{}
+		u.Edges.namedHpfollow[name] = []*HPFollow{}
 	} else {
-		u.Edges.namedHpmemberFollowing[name] = append(u.Edges.namedHpmemberFollowing[name], edges...)
+		u.Edges.namedHpfollow[name] = append(u.Edges.namedHpfollow[name], edges...)
 	}
 }
 

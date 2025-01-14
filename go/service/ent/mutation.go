@@ -3476,6 +3476,9 @@ type HPArtistMutation struct {
 	tagged_elineup_mall_items        map[int]struct{}
 	removedtagged_elineup_mall_items map[int]struct{}
 	clearedtagged_elineup_mall_items bool
+	followed_by                      map[int]struct{}
+	removedfollowed_by               map[int]struct{}
+	clearedfollowed_by               bool
 	done                             bool
 	oldValue                         func(context.Context) (*HPArtist, error)
 	predicates                       []predicate.HPArtist
@@ -4579,6 +4582,60 @@ func (m *HPArtistMutation) ResetTaggedElineupMallItems() {
 	m.removedtagged_elineup_mall_items = nil
 }
 
+// AddFollowedByIDs adds the "followed_by" edge to the HPFollow entity by ids.
+func (m *HPArtistMutation) AddFollowedByIDs(ids ...int) {
+	if m.followed_by == nil {
+		m.followed_by = make(map[int]struct{})
+	}
+	for i := range ids {
+		m.followed_by[ids[i]] = struct{}{}
+	}
+}
+
+// ClearFollowedBy clears the "followed_by" edge to the HPFollow entity.
+func (m *HPArtistMutation) ClearFollowedBy() {
+	m.clearedfollowed_by = true
+}
+
+// FollowedByCleared reports if the "followed_by" edge to the HPFollow entity was cleared.
+func (m *HPArtistMutation) FollowedByCleared() bool {
+	return m.clearedfollowed_by
+}
+
+// RemoveFollowedByIDs removes the "followed_by" edge to the HPFollow entity by IDs.
+func (m *HPArtistMutation) RemoveFollowedByIDs(ids ...int) {
+	if m.removedfollowed_by == nil {
+		m.removedfollowed_by = make(map[int]struct{})
+	}
+	for i := range ids {
+		delete(m.followed_by, ids[i])
+		m.removedfollowed_by[ids[i]] = struct{}{}
+	}
+}
+
+// RemovedFollowedBy returns the removed IDs of the "followed_by" edge to the HPFollow entity.
+func (m *HPArtistMutation) RemovedFollowedByIDs() (ids []int) {
+	for id := range m.removedfollowed_by {
+		ids = append(ids, id)
+	}
+	return
+}
+
+// FollowedByIDs returns the "followed_by" edge IDs in the mutation.
+func (m *HPArtistMutation) FollowedByIDs() (ids []int) {
+	for id := range m.followed_by {
+		ids = append(ids, id)
+	}
+	return
+}
+
+// ResetFollowedBy resets all changes to the "followed_by" edge.
+func (m *HPArtistMutation) ResetFollowedBy() {
+	m.followed_by = nil
+	m.clearedfollowed_by = false
+	m.removedfollowed_by = nil
+}
+
 // Where appends a list predicates to the HPArtistMutation builder.
 func (m *HPArtistMutation) Where(ps ...predicate.HPArtist) {
 	m.predicates = append(m.predicates, ps...)
@@ -4948,7 +5005,7 @@ func (m *HPArtistMutation) ResetField(name string) error {
 
 // AddedEdges returns all edge names that were set/added in this mutation.
 func (m *HPArtistMutation) AddedEdges() []string {
-	edges := make([]string, 0, 9)
+	edges := make([]string, 0, 10)
 	if m.members != nil {
 		edges = append(edges, hpartist.EdgeMembers)
 	}
@@ -4975,6 +5032,9 @@ func (m *HPArtistMutation) AddedEdges() []string {
 	}
 	if m.tagged_elineup_mall_items != nil {
 		edges = append(edges, hpartist.EdgeTaggedElineupMallItems)
+	}
+	if m.followed_by != nil {
+		edges = append(edges, hpartist.EdgeFollowedBy)
 	}
 	return edges
 }
@@ -5037,13 +5097,19 @@ func (m *HPArtistMutation) AddedIDs(name string) []ent.Value {
 			ids = append(ids, id)
 		}
 		return ids
+	case hpartist.EdgeFollowedBy:
+		ids := make([]ent.Value, 0, len(m.followed_by))
+		for id := range m.followed_by {
+			ids = append(ids, id)
+		}
+		return ids
 	}
 	return nil
 }
 
 // RemovedEdges returns all edge names that were removed in this mutation.
 func (m *HPArtistMutation) RemovedEdges() []string {
-	edges := make([]string, 0, 9)
+	edges := make([]string, 0, 10)
 	if m.removedmembers != nil {
 		edges = append(edges, hpartist.EdgeMembers)
 	}
@@ -5070,6 +5136,9 @@ func (m *HPArtistMutation) RemovedEdges() []string {
 	}
 	if m.removedtagged_elineup_mall_items != nil {
 		edges = append(edges, hpartist.EdgeTaggedElineupMallItems)
+	}
+	if m.removedfollowed_by != nil {
+		edges = append(edges, hpartist.EdgeFollowedBy)
 	}
 	return edges
 }
@@ -5132,13 +5201,19 @@ func (m *HPArtistMutation) RemovedIDs(name string) []ent.Value {
 			ids = append(ids, id)
 		}
 		return ids
+	case hpartist.EdgeFollowedBy:
+		ids := make([]ent.Value, 0, len(m.removedfollowed_by))
+		for id := range m.removedfollowed_by {
+			ids = append(ids, id)
+		}
+		return ids
 	}
 	return nil
 }
 
 // ClearedEdges returns all edge names that were cleared in this mutation.
 func (m *HPArtistMutation) ClearedEdges() []string {
-	edges := make([]string, 0, 9)
+	edges := make([]string, 0, 10)
 	if m.clearedmembers {
 		edges = append(edges, hpartist.EdgeMembers)
 	}
@@ -5166,6 +5241,9 @@ func (m *HPArtistMutation) ClearedEdges() []string {
 	if m.clearedtagged_elineup_mall_items {
 		edges = append(edges, hpartist.EdgeTaggedElineupMallItems)
 	}
+	if m.clearedfollowed_by {
+		edges = append(edges, hpartist.EdgeFollowedBy)
+	}
 	return edges
 }
 
@@ -5191,6 +5269,8 @@ func (m *HPArtistMutation) EdgeCleared(name string) bool {
 		return m.clearedtagged_ameblo_posts
 	case hpartist.EdgeTaggedElineupMallItems:
 		return m.clearedtagged_elineup_mall_items
+	case hpartist.EdgeFollowedBy:
+		return m.clearedfollowed_by
 	}
 	return false
 }
@@ -5233,6 +5313,9 @@ func (m *HPArtistMutation) ResetEdge(name string) error {
 		return nil
 	case hpartist.EdgeTaggedElineupMallItems:
 		m.ResetTaggedElineupMallItems()
+		return nil
+	case hpartist.EdgeFollowedBy:
+		m.ResetFollowedBy()
 		return nil
 	}
 	return fmt.Errorf("unknown HPArtist edge %s", name)
@@ -14605,6 +14688,8 @@ type HPFollowMutation struct {
 	cleareduser                          bool
 	member                               *int
 	clearedmember                        bool
+	artist                               *int
+	clearedartist                        bool
 	done                                 bool
 	oldValue                             func(context.Context) (*HPFollow, error)
 	predicates                           []predicate.HPFollow
@@ -15784,6 +15869,45 @@ func (m *HPFollowMutation) ResetMember() {
 	m.clearedmember = false
 }
 
+// SetArtistID sets the "artist" edge to the HPArtist entity by id.
+func (m *HPFollowMutation) SetArtistID(id int) {
+	m.artist = &id
+}
+
+// ClearArtist clears the "artist" edge to the HPArtist entity.
+func (m *HPFollowMutation) ClearArtist() {
+	m.clearedartist = true
+}
+
+// ArtistCleared reports if the "artist" edge to the HPArtist entity was cleared.
+func (m *HPFollowMutation) ArtistCleared() bool {
+	return m.clearedartist
+}
+
+// ArtistID returns the "artist" edge ID in the mutation.
+func (m *HPFollowMutation) ArtistID() (id int, exists bool) {
+	if m.artist != nil {
+		return *m.artist, true
+	}
+	return
+}
+
+// ArtistIDs returns the "artist" edge IDs in the mutation.
+// Note that IDs always returns len(IDs) <= 1 for unique edges, and you should use
+// ArtistID instead. It exists only for internal usage by the builders.
+func (m *HPFollowMutation) ArtistIDs() (ids []int) {
+	if id := m.artist; id != nil {
+		ids = append(ids, *id)
+	}
+	return
+}
+
+// ResetArtist resets all changes to the "artist" edge.
+func (m *HPFollowMutation) ResetArtist() {
+	m.artist = nil
+	m.clearedartist = false
+}
+
 // Where appends a list predicates to the HPFollowMutation builder.
 func (m *HPFollowMutation) Where(ps ...predicate.HPFollow) {
 	m.predicates = append(m.predicates, ps...)
@@ -16374,12 +16498,15 @@ func (m *HPFollowMutation) ResetField(name string) error {
 
 // AddedEdges returns all edge names that were set/added in this mutation.
 func (m *HPFollowMutation) AddedEdges() []string {
-	edges := make([]string, 0, 2)
+	edges := make([]string, 0, 3)
 	if m.user != nil {
 		edges = append(edges, hpfollow.EdgeUser)
 	}
 	if m.member != nil {
 		edges = append(edges, hpfollow.EdgeMember)
+	}
+	if m.artist != nil {
+		edges = append(edges, hpfollow.EdgeArtist)
 	}
 	return edges
 }
@@ -16396,13 +16523,17 @@ func (m *HPFollowMutation) AddedIDs(name string) []ent.Value {
 		if id := m.member; id != nil {
 			return []ent.Value{*id}
 		}
+	case hpfollow.EdgeArtist:
+		if id := m.artist; id != nil {
+			return []ent.Value{*id}
+		}
 	}
 	return nil
 }
 
 // RemovedEdges returns all edge names that were removed in this mutation.
 func (m *HPFollowMutation) RemovedEdges() []string {
-	edges := make([]string, 0, 2)
+	edges := make([]string, 0, 3)
 	return edges
 }
 
@@ -16414,12 +16545,15 @@ func (m *HPFollowMutation) RemovedIDs(name string) []ent.Value {
 
 // ClearedEdges returns all edge names that were cleared in this mutation.
 func (m *HPFollowMutation) ClearedEdges() []string {
-	edges := make([]string, 0, 2)
+	edges := make([]string, 0, 3)
 	if m.cleareduser {
 		edges = append(edges, hpfollow.EdgeUser)
 	}
 	if m.clearedmember {
 		edges = append(edges, hpfollow.EdgeMember)
+	}
+	if m.clearedartist {
+		edges = append(edges, hpfollow.EdgeArtist)
 	}
 	return edges
 }
@@ -16432,6 +16566,8 @@ func (m *HPFollowMutation) EdgeCleared(name string) bool {
 		return m.cleareduser
 	case hpfollow.EdgeMember:
 		return m.clearedmember
+	case hpfollow.EdgeArtist:
+		return m.clearedartist
 	}
 	return false
 }
@@ -16446,6 +16582,9 @@ func (m *HPFollowMutation) ClearEdge(name string) error {
 	case hpfollow.EdgeMember:
 		m.ClearMember()
 		return nil
+	case hpfollow.EdgeArtist:
+		m.ClearArtist()
+		return nil
 	}
 	return fmt.Errorf("unknown HPFollow unique edge %s", name)
 }
@@ -16459,6 +16598,9 @@ func (m *HPFollowMutation) ResetEdge(name string) error {
 		return nil
 	case hpfollow.EdgeMember:
 		m.ResetMember()
+		return nil
+	case hpfollow.EdgeArtist:
+		m.ResetArtist()
 		return nil
 	}
 	return fmt.Errorf("unknown HPFollow edge %s", name)
@@ -23155,9 +23297,9 @@ type UserMutation struct {
 	hpview_history                         map[int]struct{}
 	removedhpview_history                  map[int]struct{}
 	clearedhpview_history                  bool
-	hpmember_following                     map[int]struct{}
-	removedhpmember_following              map[int]struct{}
-	clearedhpmember_following              bool
+	hpfollow                               map[int]struct{}
+	removedhpfollow                        map[int]struct{}
+	clearedhpfollow                        bool
 	hpsort_history                         map[int]struct{}
 	removedhpsort_history                  map[int]struct{}
 	clearedhpsort_history                  bool
@@ -23602,58 +23744,58 @@ func (m *UserMutation) ResetHpviewHistory() {
 	m.removedhpview_history = nil
 }
 
-// AddHpmemberFollowingIDs adds the "hpmember_following" edge to the HPFollow entity by ids.
-func (m *UserMutation) AddHpmemberFollowingIDs(ids ...int) {
-	if m.hpmember_following == nil {
-		m.hpmember_following = make(map[int]struct{})
+// AddHpfollowIDs adds the "hpfollow" edge to the HPFollow entity by ids.
+func (m *UserMutation) AddHpfollowIDs(ids ...int) {
+	if m.hpfollow == nil {
+		m.hpfollow = make(map[int]struct{})
 	}
 	for i := range ids {
-		m.hpmember_following[ids[i]] = struct{}{}
+		m.hpfollow[ids[i]] = struct{}{}
 	}
 }
 
-// ClearHpmemberFollowing clears the "hpmember_following" edge to the HPFollow entity.
-func (m *UserMutation) ClearHpmemberFollowing() {
-	m.clearedhpmember_following = true
+// ClearHpfollow clears the "hpfollow" edge to the HPFollow entity.
+func (m *UserMutation) ClearHpfollow() {
+	m.clearedhpfollow = true
 }
 
-// HpmemberFollowingCleared reports if the "hpmember_following" edge to the HPFollow entity was cleared.
-func (m *UserMutation) HpmemberFollowingCleared() bool {
-	return m.clearedhpmember_following
+// HpfollowCleared reports if the "hpfollow" edge to the HPFollow entity was cleared.
+func (m *UserMutation) HpfollowCleared() bool {
+	return m.clearedhpfollow
 }
 
-// RemoveHpmemberFollowingIDs removes the "hpmember_following" edge to the HPFollow entity by IDs.
-func (m *UserMutation) RemoveHpmemberFollowingIDs(ids ...int) {
-	if m.removedhpmember_following == nil {
-		m.removedhpmember_following = make(map[int]struct{})
+// RemoveHpfollowIDs removes the "hpfollow" edge to the HPFollow entity by IDs.
+func (m *UserMutation) RemoveHpfollowIDs(ids ...int) {
+	if m.removedhpfollow == nil {
+		m.removedhpfollow = make(map[int]struct{})
 	}
 	for i := range ids {
-		delete(m.hpmember_following, ids[i])
-		m.removedhpmember_following[ids[i]] = struct{}{}
+		delete(m.hpfollow, ids[i])
+		m.removedhpfollow[ids[i]] = struct{}{}
 	}
 }
 
-// RemovedHpmemberFollowing returns the removed IDs of the "hpmember_following" edge to the HPFollow entity.
-func (m *UserMutation) RemovedHpmemberFollowingIDs() (ids []int) {
-	for id := range m.removedhpmember_following {
+// RemovedHpfollow returns the removed IDs of the "hpfollow" edge to the HPFollow entity.
+func (m *UserMutation) RemovedHpfollowIDs() (ids []int) {
+	for id := range m.removedhpfollow {
 		ids = append(ids, id)
 	}
 	return
 }
 
-// HpmemberFollowingIDs returns the "hpmember_following" edge IDs in the mutation.
-func (m *UserMutation) HpmemberFollowingIDs() (ids []int) {
-	for id := range m.hpmember_following {
+// HpfollowIDs returns the "hpfollow" edge IDs in the mutation.
+func (m *UserMutation) HpfollowIDs() (ids []int) {
+	for id := range m.hpfollow {
 		ids = append(ids, id)
 	}
 	return
 }
 
-// ResetHpmemberFollowing resets all changes to the "hpmember_following" edge.
-func (m *UserMutation) ResetHpmemberFollowing() {
-	m.hpmember_following = nil
-	m.clearedhpmember_following = false
-	m.removedhpmember_following = nil
+// ResetHpfollow resets all changes to the "hpfollow" edge.
+func (m *UserMutation) ResetHpfollow() {
+	m.hpfollow = nil
+	m.clearedhpfollow = false
+	m.removedhpfollow = nil
 }
 
 // AddHpsortHistoryIDs adds the "hpsort_history" edge to the HPSortHistory entity by ids.
@@ -24027,8 +24169,8 @@ func (m *UserMutation) AddedEdges() []string {
 	if m.hpview_history != nil {
 		edges = append(edges, user.EdgeHpviewHistory)
 	}
-	if m.hpmember_following != nil {
-		edges = append(edges, user.EdgeHpmemberFollowing)
+	if m.hpfollow != nil {
+		edges = append(edges, user.EdgeHpfollow)
 	}
 	if m.hpsort_history != nil {
 		edges = append(edges, user.EdgeHpsortHistory)
@@ -24064,9 +24206,9 @@ func (m *UserMutation) AddedIDs(name string) []ent.Value {
 			ids = append(ids, id)
 		}
 		return ids
-	case user.EdgeHpmemberFollowing:
-		ids := make([]ent.Value, 0, len(m.hpmember_following))
-		for id := range m.hpmember_following {
+	case user.EdgeHpfollow:
+		ids := make([]ent.Value, 0, len(m.hpfollow))
+		for id := range m.hpfollow {
 			ids = append(ids, id)
 		}
 		return ids
@@ -24104,8 +24246,8 @@ func (m *UserMutation) RemovedEdges() []string {
 	if m.removedhpview_history != nil {
 		edges = append(edges, user.EdgeHpviewHistory)
 	}
-	if m.removedhpmember_following != nil {
-		edges = append(edges, user.EdgeHpmemberFollowing)
+	if m.removedhpfollow != nil {
+		edges = append(edges, user.EdgeHpfollow)
 	}
 	if m.removedhpsort_history != nil {
 		edges = append(edges, user.EdgeHpsortHistory)
@@ -24141,9 +24283,9 @@ func (m *UserMutation) RemovedIDs(name string) []ent.Value {
 			ids = append(ids, id)
 		}
 		return ids
-	case user.EdgeHpmemberFollowing:
-		ids := make([]ent.Value, 0, len(m.removedhpmember_following))
-		for id := range m.removedhpmember_following {
+	case user.EdgeHpfollow:
+		ids := make([]ent.Value, 0, len(m.removedhpfollow))
+		for id := range m.removedhpfollow {
 			ids = append(ids, id)
 		}
 		return ids
@@ -24181,8 +24323,8 @@ func (m *UserMutation) ClearedEdges() []string {
 	if m.clearedhpview_history {
 		edges = append(edges, user.EdgeHpviewHistory)
 	}
-	if m.clearedhpmember_following {
-		edges = append(edges, user.EdgeHpmemberFollowing)
+	if m.clearedhpfollow {
+		edges = append(edges, user.EdgeHpfollow)
 	}
 	if m.clearedhpsort_history {
 		edges = append(edges, user.EdgeHpsortHistory)
@@ -24206,8 +24348,8 @@ func (m *UserMutation) EdgeCleared(name string) bool {
 		return m.clearednotification_settings
 	case user.EdgeHpviewHistory:
 		return m.clearedhpview_history
-	case user.EdgeHpmemberFollowing:
-		return m.clearedhpmember_following
+	case user.EdgeHpfollow:
+		return m.clearedhpfollow
 	case user.EdgeHpsortHistory:
 		return m.clearedhpsort_history
 	case user.EdgeHpfcEventTickets:
@@ -24239,8 +24381,8 @@ func (m *UserMutation) ResetEdge(name string) error {
 	case user.EdgeHpviewHistory:
 		m.ResetHpviewHistory()
 		return nil
-	case user.EdgeHpmemberFollowing:
-		m.ResetHpmemberFollowing()
+	case user.EdgeHpfollow:
+		m.ResetHpfollow()
 		return nil
 	case user.EdgeHpsortHistory:
 		m.ResetHpsortHistory()

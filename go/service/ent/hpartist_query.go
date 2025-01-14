@@ -17,6 +17,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpasset"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
+	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpigpost"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/predicate"
@@ -38,6 +39,7 @@ type HPArtistQuery struct {
 	withOwningAmebloPosts           *HPAmebloPostQuery
 	withTaggedAmebloPosts           *HPAmebloPostQuery
 	withTaggedElineupMallItems      *HPElineupMallItemQuery
+	withFollowedBy                  *HPFollowQuery
 	withFKs                         bool
 	modifiers                       []func(*sql.Selector)
 	loadTotal                       []func(context.Context, []*HPArtist) error
@@ -50,6 +52,7 @@ type HPArtistQuery struct {
 	withNamedOwningAmebloPosts      map[string]*HPAmebloPostQuery
 	withNamedTaggedAmebloPosts      map[string]*HPAmebloPostQuery
 	withNamedTaggedElineupMallItems map[string]*HPElineupMallItemQuery
+	withNamedFollowedBy             map[string]*HPFollowQuery
 	// intermediate query (i.e. traversal path).
 	sql  *sql.Selector
 	path func(context.Context) (*sql.Selector, error)
@@ -284,6 +287,28 @@ func (haq *HPArtistQuery) QueryTaggedElineupMallItems() *HPElineupMallItemQuery 
 	return query
 }
 
+// QueryFollowedBy chains the current query on the "followed_by" edge.
+func (haq *HPArtistQuery) QueryFollowedBy() *HPFollowQuery {
+	query := (&HPFollowClient{config: haq.config}).Query()
+	query.path = func(ctx context.Context) (fromU *sql.Selector, err error) {
+		if err := haq.prepareQuery(ctx); err != nil {
+			return nil, err
+		}
+		selector := haq.sqlQuery(ctx)
+		if err := selector.Err(); err != nil {
+			return nil, err
+		}
+		step := sqlgraph.NewStep(
+			sqlgraph.From(hpartist.Table, hpartist.FieldID, selector),
+			sqlgraph.To(hpfollow.Table, hpfollow.FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, hpartist.FollowedByTable, hpartist.FollowedByColumn),
+		)
+		fromU = sqlgraph.SetNeighbors(haq.driver.Dialect(), step)
+		return fromU, nil
+	}
+	return query
+}
+
 // First returns the first HPArtist entity from the query.
 // Returns a *NotFoundError when no HPArtist was found.
 func (haq *HPArtistQuery) First(ctx context.Context) (*HPArtist, error) {
@@ -485,6 +510,7 @@ func (haq *HPArtistQuery) Clone() *HPArtistQuery {
 		withOwningAmebloPosts:      haq.withOwningAmebloPosts.Clone(),
 		withTaggedAmebloPosts:      haq.withTaggedAmebloPosts.Clone(),
 		withTaggedElineupMallItems: haq.withTaggedElineupMallItems.Clone(),
+		withFollowedBy:             haq.withFollowedBy.Clone(),
 		// clone intermediate query.
 		sql:  haq.sql.Clone(),
 		path: haq.path,
@@ -590,6 +616,17 @@ func (haq *HPArtistQuery) WithTaggedElineupMallItems(opts ...func(*HPElineupMall
 	return haq
 }
 
+// WithFollowedBy tells the query-builder to eager-load the nodes that are connected to
+// the "followed_by" edge. The optional arguments are used to configure the query builder of the edge.
+func (haq *HPArtistQuery) WithFollowedBy(opts ...func(*HPFollowQuery)) *HPArtistQuery {
+	query := (&HPFollowClient{config: haq.config}).Query()
+	for _, opt := range opts {
+		opt(query)
+	}
+	haq.withFollowedBy = query
+	return haq
+}
+
 // GroupBy is used to group vertices by one or more fields/columns.
 // It is often used with aggregate functions, like: count, max, mean, min, sum.
 //
@@ -675,7 +712,7 @@ func (haq *HPArtistQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*HP
 		nodes       = []*HPArtist{}
 		withFKs     = haq.withFKs
 		_spec       = haq.querySpec()
-		loadedTypes = [9]bool{
+		loadedTypes = [10]bool{
 			haq.withMembers != nil,
 			haq.withAssets != nil,
 			haq.withOwningFeed != nil,
@@ -685,6 +722,7 @@ func (haq *HPArtistQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*HP
 			haq.withOwningAmebloPosts != nil,
 			haq.withTaggedAmebloPosts != nil,
 			haq.withTaggedElineupMallItems != nil,
+			haq.withFollowedBy != nil,
 		}
 	)
 	if withFKs {
@@ -776,6 +814,13 @@ func (haq *HPArtistQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*HP
 			return nil, err
 		}
 	}
+	if query := haq.withFollowedBy; query != nil {
+		if err := haq.loadFollowedBy(ctx, query, nodes,
+			func(n *HPArtist) { n.Edges.FollowedBy = []*HPFollow{} },
+			func(n *HPArtist, e *HPFollow) { n.Edges.FollowedBy = append(n.Edges.FollowedBy, e) }); err != nil {
+			return nil, err
+		}
+	}
 	for name, query := range haq.withNamedMembers {
 		if err := haq.loadMembers(ctx, query, nodes,
 			func(n *HPArtist) { n.appendNamedMembers(name) },
@@ -836,6 +881,13 @@ func (haq *HPArtistQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*HP
 		if err := haq.loadTaggedElineupMallItems(ctx, query, nodes,
 			func(n *HPArtist) { n.appendNamedTaggedElineupMallItems(name) },
 			func(n *HPArtist, e *HPElineupMallItem) { n.appendNamedTaggedElineupMallItems(name, e) }); err != nil {
+			return nil, err
+		}
+	}
+	for name, query := range haq.withNamedFollowedBy {
+		if err := haq.loadFollowedBy(ctx, query, nodes,
+			func(n *HPArtist) { n.appendNamedFollowedBy(name) },
+			func(n *HPArtist, e *HPFollow) { n.appendNamedFollowedBy(name, e) }); err != nil {
 			return nil, err
 		}
 	}
@@ -1245,6 +1297,37 @@ func (haq *HPArtistQuery) loadTaggedElineupMallItems(ctx context.Context, query 
 	}
 	return nil
 }
+func (haq *HPArtistQuery) loadFollowedBy(ctx context.Context, query *HPFollowQuery, nodes []*HPArtist, init func(*HPArtist), assign func(*HPArtist, *HPFollow)) error {
+	fks := make([]driver.Value, 0, len(nodes))
+	nodeids := make(map[int]*HPArtist)
+	for i := range nodes {
+		fks = append(fks, nodes[i].ID)
+		nodeids[nodes[i].ID] = nodes[i]
+		if init != nil {
+			init(nodes[i])
+		}
+	}
+	query.withFKs = true
+	query.Where(predicate.HPFollow(func(s *sql.Selector) {
+		s.Where(sql.InValues(hpartist.FollowedByColumn, fks...))
+	}))
+	neighbors, err := query.All(ctx)
+	if err != nil {
+		return err
+	}
+	for _, n := range neighbors {
+		fk := n.hp_follow_artist
+		if fk == nil {
+			return fmt.Errorf(`foreign-key "hp_follow_artist" is nil for node %v`, n.ID)
+		}
+		node, ok := nodeids[*fk]
+		if !ok {
+			return fmt.Errorf(`unexpected foreign-key "hp_follow_artist" returned %v for node %v`, *fk, n.ID)
+		}
+		assign(node, n)
+	}
+	return nil
+}
 
 func (haq *HPArtistQuery) sqlCount(ctx context.Context) (int, error) {
 	_spec := haq.querySpec()
@@ -1453,6 +1536,20 @@ func (haq *HPArtistQuery) WithNamedTaggedElineupMallItems(name string, opts ...f
 		haq.withNamedTaggedElineupMallItems = make(map[string]*HPElineupMallItemQuery)
 	}
 	haq.withNamedTaggedElineupMallItems[name] = query
+	return haq
+}
+
+// WithNamedFollowedBy tells the query-builder to eager-load the nodes that are connected to the "followed_by"
+// edge with the given name. The optional arguments are used to configure the query builder of the edge.
+func (haq *HPArtistQuery) WithNamedFollowedBy(name string, opts ...func(*HPFollowQuery)) *HPArtistQuery {
+	query := (&HPFollowClient{config: haq.config}).Query()
+	for _, opt := range opts {
+		opt(query)
+	}
+	if haq.withNamedFollowedBy == nil {
+		haq.withNamedFollowedBy = make(map[string]*HPFollowQuery)
+	}
+	haq.withNamedFollowedBy[name] = query
 	return haq
 }
 

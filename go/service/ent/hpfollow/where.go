@@ -944,7 +944,7 @@ func HasMember() predicate.HPFollow {
 	return predicate.HPFollow(func(s *sql.Selector) {
 		step := sqlgraph.NewStep(
 			sqlgraph.From(Table, FieldID),
-			sqlgraph.Edge(sqlgraph.M2O, false, MemberTable, MemberColumn),
+			sqlgraph.Edge(sqlgraph.M2O, true, MemberTable, MemberColumn),
 		)
 		sqlgraph.HasNeighbors(s, step)
 	})
@@ -954,6 +954,29 @@ func HasMember() predicate.HPFollow {
 func HasMemberWith(preds ...predicate.HPMember) predicate.HPFollow {
 	return predicate.HPFollow(func(s *sql.Selector) {
 		step := newMemberStep()
+		sqlgraph.HasNeighborsWith(s, step, func(s *sql.Selector) {
+			for _, p := range preds {
+				p(s)
+			}
+		})
+	})
+}
+
+// HasArtist applies the HasEdge predicate on the "artist" edge.
+func HasArtist() predicate.HPFollow {
+	return predicate.HPFollow(func(s *sql.Selector) {
+		step := sqlgraph.NewStep(
+			sqlgraph.From(Table, FieldID),
+			sqlgraph.Edge(sqlgraph.M2O, true, ArtistTable, ArtistColumn),
+		)
+		sqlgraph.HasNeighbors(s, step)
+	})
+}
+
+// HasArtistWith applies the HasEdge predicate on the "artist" edge with a given conditions (other predicates).
+func HasArtistWith(preds ...predicate.HPArtist) predicate.HPFollow {
+	return predicate.HPFollow(func(s *sql.Selector) {
+		step := newArtistStep()
 		sqlgraph.HasNeighborsWith(s, step, func(s *sql.Selector) {
 			for _, p := range preds {
 				p(s)

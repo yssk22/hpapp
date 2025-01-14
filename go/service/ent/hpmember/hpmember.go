@@ -501,6 +501,6 @@ func newFollowedByStep() *sqlgraph.Step {
 	return sqlgraph.NewStep(
 		sqlgraph.From(Table, FieldID),
 		sqlgraph.To(FollowedByInverseTable, FieldID),
-		sqlgraph.Edge(sqlgraph.O2M, true, FollowedByTable, FollowedByColumn),
+		sqlgraph.Edge(sqlgraph.O2M, false, FollowedByTable, FollowedByColumn),
 	)
 }

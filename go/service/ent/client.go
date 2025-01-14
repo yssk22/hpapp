@@ -935,6 +935,22 @@ func (c *HPArtistClient) QueryTaggedElineupMallItems(ha *HPArtist) *HPElineupMal
 	return query
 }
 
+// QueryFollowedBy queries the followed_by edge of a HPArtist.
+func (c *HPArtistClient) QueryFollowedBy(ha *HPArtist) *HPFollowQuery {
+	query := (&HPFollowClient{config: c.config}).Query()
+	query.path = func(context.Context) (fromV *sql.Selector, _ error) {
+		id := ha.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(hpartist.Table, hpartist.FieldID, id),
+			sqlgraph.To(hpfollow.Table, hpfollow.FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, hpartist.FollowedByTable, hpartist.FollowedByColumn),
+		)
+		fromV = sqlgraph.Neighbors(ha.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
 // Hooks returns the client hooks.
 func (c *HPArtistClient) Hooks() []Hook {
 	hooks := c.hooks.HPArtist
@@ -2278,7 +2294,23 @@ func (c *HPFollowClient) QueryMember(hf *HPFollow) *HPMemberQuery {
 		step := sqlgraph.NewStep(
 			sqlgraph.From(hpfollow.Table, hpfollow.FieldID, id),
 			sqlgraph.To(hpmember.Table, hpmember.FieldID),
-			sqlgraph.Edge(sqlgraph.M2O, false, hpfollow.MemberTable, hpfollow.MemberColumn),
+			sqlgraph.Edge(sqlgraph.M2O, true, hpfollow.MemberTable, hpfollow.MemberColumn),
+		)
+		fromV = sqlgraph.Neighbors(hf.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
+// QueryArtist queries the artist edge of a HPFollow.
+func (c *HPFollowClient) QueryArtist(hf *HPFollow) *HPArtistQuery {
+	query := (&HPArtistClient{config: c.config}).Query()
+	query.path = func(context.Context) (fromV *sql.Selector, _ error) {
+		id := hf.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(hpfollow.Table, hpfollow.FieldID, id),
+			sqlgraph.To(hpartist.Table, hpartist.FieldID),
+			sqlgraph.Edge(sqlgraph.M2O, true, hpfollow.ArtistTable, hpfollow.ArtistColumn),
 		)
 		fromV = sqlgraph.Neighbors(hf.driver.Dialect(), step)
 		return fromV, nil
@@ -2772,7 +2804,7 @@ func (c *HPMemberClient) QueryFollowedBy(hm *HPMember) *HPFollowQuery {
 		step := sqlgraph.NewStep(
 			sqlgraph.From(hpmember.Table, hpmember.FieldID, id),
 			sqlgraph.To(hpfollow.Table, hpfollow.FieldID),
-			sqlgraph.Edge(sqlgraph.O2M, true, hpmember.FollowedByTable, hpmember.FollowedByColumn),
+			sqlgraph.Edge(sqlgraph.O2M, false, hpmember.FollowedByTable, hpmember.FollowedByColumn),
 		)
 		fromV = sqlgraph.Neighbors(hm.driver.Dialect(), step)
 		return fromV, nil
@@ -3351,15 +3383,15 @@ func (c *UserClient) QueryHpviewHistory(u *User) *HPViewHistoryQuery {
 	return query
 }
 
-// QueryHpmemberFollowing queries the hpmember_following edge of a User.
-func (c *UserClient) QueryHpmemberFollowing(u *User) *HPFollowQuery {
+// QueryHpfollow queries the hpfollow edge of a User.
+func (c *UserClient) QueryHpfollow(u *User) *HPFollowQuery {
 	query := (&HPFollowClient{config: c.config}).Query()
 	query.path = func(context.Context) (fromV *sql.Selector, _ error) {
 		id := u.ID
 		step := sqlgraph.NewStep(
 			sqlgraph.From(user.Table, user.FieldID, id),
 			sqlgraph.To(hpfollow.Table, hpfollow.FieldID),
-			sqlgraph.Edge(sqlgraph.O2M, false, user.HpmemberFollowingTable, user.HpmemberFollowingColumn),
+			sqlgraph.Edge(sqlgraph.O2M, false, user.HpfollowTable, user.HpfollowColumn),
 		)
 		fromV = sqlgraph.Neighbors(u.driver.Dialect(), step)
 		return fromV, nil

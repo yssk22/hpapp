@@ -1100,7 +1100,7 @@ func (hmu *HPMemberUpdate) sqlSave(ctx context.Context) (n int, err error) {
 	if hmu.mutation.FollowedByCleared() {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
-			Inverse: true,
+			Inverse: false,
 			Table:   hpmember.FollowedByTable,
 			Columns: []string{hpmember.FollowedByColumn},
 			Bidi:    false,
@@ -1113,7 +1113,7 @@ func (hmu *HPMemberUpdate) sqlSave(ctx context.Context) (n int, err error) {
 	if nodes := hmu.mutation.RemovedFollowedByIDs(); len(nodes) > 0 && !hmu.mutation.FollowedByCleared() {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
-			Inverse: true,
+			Inverse: false,
 			Table:   hpmember.FollowedByTable,
 			Columns: []string{hpmember.FollowedByColumn},
 			Bidi:    false,
@@ -1129,7 +1129,7 @@ func (hmu *HPMemberUpdate) sqlSave(ctx context.Context) (n int, err error) {
 	if nodes := hmu.mutation.FollowedByIDs(); len(nodes) > 0 {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
-			Inverse: true,
+			Inverse: false,
 			Table:   hpmember.FollowedByTable,
 			Columns: []string{hpmember.FollowedByColumn},
 			Bidi:    false,
@@ -2256,7 +2256,7 @@ func (hmuo *HPMemberUpdateOne) sqlSave(ctx context.Context) (_node *HPMember, er
 	if hmuo.mutation.FollowedByCleared() {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
-			Inverse: true,
+			Inverse: false,
 			Table:   hpmember.FollowedByTable,
 			Columns: []string{hpmember.FollowedByColumn},
 			Bidi:    false,
@@ -2269,7 +2269,7 @@ func (hmuo *HPMemberUpdateOne) sqlSave(ctx context.Context) (_node *HPMember, er
 	if nodes := hmuo.mutation.RemovedFollowedByIDs(); len(nodes) > 0 && !hmuo.mutation.FollowedByCleared() {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
-			Inverse: true,
+			Inverse: false,
 			Table:   hpmember.FollowedByTable,
 			Columns: []string{hpmember.FollowedByColumn},
 			Bidi:    false,
@@ -2285,7 +2285,7 @@ func (hmuo *HPMemberUpdateOne) sqlSave(ctx context.Context) (_node *HPMember, er
 	if nodes := hmuo.mutation.FollowedByIDs(); len(nodes) > 0 {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
-			Inverse: true,
+			Inverse: false,
 			Table:   hpmember.FollowedByTable,
 			Columns: []string{hpmember.FollowedByColumn},
 			Bidi:    false,

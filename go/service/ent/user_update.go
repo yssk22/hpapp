@@ -112,19 +112,19 @@ func (uu *UserUpdate) AddHpviewHistory(h ...*HPViewHistory) *UserUpdate {
 	return uu.AddHpviewHistoryIDs(ids...)
 }
 
-// AddHpmemberFollowingIDs adds the "hpmember_following" edge to the HPFollow entity by IDs.
-func (uu *UserUpdate) AddHpmemberFollowingIDs(ids ...int) *UserUpdate {
-	uu.mutation.AddHpmemberFollowingIDs(ids...)
+// AddHpfollowIDs adds the "hpfollow" edge to the HPFollow entity by IDs.
+func (uu *UserUpdate) AddHpfollowIDs(ids ...int) *UserUpdate {
+	uu.mutation.AddHpfollowIDs(ids...)
 	return uu
 }
 
-// AddHpmemberFollowing adds the "hpmember_following" edges to the HPFollow entity.
-func (uu *UserUpdate) AddHpmemberFollowing(h ...*HPFollow) *UserUpdate {
+// AddHpfollow adds the "hpfollow" edges to the HPFollow entity.
+func (uu *UserUpdate) AddHpfollow(h ...*HPFollow) *UserUpdate {
 	ids := make([]int, len(h))
 	for i := range h {
 		ids[i] = h[i].ID
 	}
-	return uu.AddHpmemberFollowingIDs(ids...)
+	return uu.AddHpfollowIDs(ids...)
 }
 
 // AddHpsortHistoryIDs adds the "hpsort_history" edge to the HPSortHistory entity by IDs.
@@ -240,25 +240,25 @@ func (uu *UserUpdate) RemoveHpviewHistory(h ...*HPViewHistory) *UserUpdate {
 	return uu.RemoveHpviewHistoryIDs(ids...)
 }
 
-// ClearHpmemberFollowing clears all "hpmember_following" edges to the HPFollow entity.
-func (uu *UserUpdate) ClearHpmemberFollowing() *UserUpdate {
-	uu.mutation.ClearHpmemberFollowing()
+// ClearHpfollow clears all "hpfollow" edges to the HPFollow entity.
+func (uu *UserUpdate) ClearHpfollow() *UserUpdate {
+	uu.mutation.ClearHpfollow()
 	return uu
 }
 
-// RemoveHpmemberFollowingIDs removes the "hpmember_following" edge to HPFollow entities by IDs.
-func (uu *UserUpdate) RemoveHpmemberFollowingIDs(ids ...int) *UserUpdate {
-	uu.mutation.RemoveHpmemberFollowingIDs(ids...)
+// RemoveHpfollowIDs removes the "hpfollow" edge to HPFollow entities by IDs.
+func (uu *UserUpdate) RemoveHpfollowIDs(ids ...int) *UserUpdate {
+	uu.mutation.RemoveHpfollowIDs(ids...)
 	return uu
 }
 
-// RemoveHpmemberFollowing removes "hpmember_following" edges to HPFollow entities.
-func (uu *UserUpdate) RemoveHpmemberFollowing(h ...*HPFollow) *UserUpdate {
+// RemoveHpfollow removes "hpfollow" edges to HPFollow entities.
+func (uu *UserUpdate) RemoveHpfollow(h ...*HPFollow) *UserUpdate {
 	ids := make([]int, len(h))
 	for i := range h {
 		ids[i] = h[i].ID
 	}
-	return uu.RemoveHpmemberFollowingIDs(ids...)
+	return uu.RemoveHpfollowIDs(ids...)
 }
 
 // ClearHpsortHistory clears all "hpsort_history" edges to the HPSortHistory entity.
@@ -510,12 +510,12 @@ func (uu *UserUpdate) sqlSave(ctx context.Context) (n int, err error) {
 		}
 		_spec.Edges.Add = append(_spec.Edges.Add, edge)
 	}
-	if uu.mutation.HpmemberFollowingCleared() {
+	if uu.mutation.HpfollowCleared() {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
 			Inverse: false,
-			Table:   user.HpmemberFollowingTable,
-			Columns: []string{user.HpmemberFollowingColumn},
+			Table:   user.HpfollowTable,
+			Columns: []string{user.HpfollowColumn},
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),
@@ -523,12 +523,12 @@ func (uu *UserUpdate) sqlSave(ctx context.Context) (n int, err error) {
 		}
 		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
 	}
-	if nodes := uu.mutation.RemovedHpmemberFollowingIDs(); len(nodes) > 0 && !uu.mutation.HpmemberFollowingCleared() {
+	if nodes := uu.mutation.RemovedHpfollowIDs(); len(nodes) > 0 && !uu.mutation.HpfollowCleared() {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
 			Inverse: false,
-			Table:   user.HpmemberFollowingTable,
-			Columns: []string{user.HpmemberFollowingColumn},
+			Table:   user.HpfollowTable,
+			Columns: []string{user.HpfollowColumn},
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),
@@ -539,12 +539,12 @@ func (uu *UserUpdate) sqlSave(ctx context.Context) (n int, err error) {
 		}
 		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
 	}
-	if nodes := uu.mutation.HpmemberFollowingIDs(); len(nodes) > 0 {
+	if nodes := uu.mutation.HpfollowIDs(); len(nodes) > 0 {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
 			Inverse: false,
-			Table:   user.HpmemberFollowingTable,
-			Columns: []string{user.HpmemberFollowingColumn},
+			Table:   user.HpfollowTable,
+			Columns: []string{user.HpfollowColumn},
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),
@@ -787,19 +787,19 @@ func (uuo *UserUpdateOne) AddHpviewHistory(h ...*HPViewHistory) *UserUpdateOne {
 	return uuo.AddHpviewHistoryIDs(ids...)
 }
 
-// AddHpmemberFollowingIDs adds the "hpmember_following" edge to the HPFollow entity by IDs.
-func (uuo *UserUpdateOne) AddHpmemberFollowingIDs(ids ...int) *UserUpdateOne {
-	uuo.mutation.AddHpmemberFollowingIDs(ids...)
+// AddHpfollowIDs adds the "hpfollow" edge to the HPFollow entity by IDs.
+func (uuo *UserUpdateOne) AddHpfollowIDs(ids ...int) *UserUpdateOne {
+	uuo.mutation.AddHpfollowIDs(ids...)
 	return uuo
 }
 
-// AddHpmemberFollowing adds the "hpmember_following" edges to the HPFollow entity.
-func (uuo *UserUpdateOne) AddHpmemberFollowing(h ...*HPFollow) *UserUpdateOne {
+// AddHpfollow adds the "hpfollow" edges to the HPFollow entity.
+func (uuo *UserUpdateOne) AddHpfollow(h ...*HPFollow) *UserUpdateOne {
 	ids := make([]int, len(h))
 	for i := range h {
 		ids[i] = h[i].ID
 	}
-	return uuo.AddHpmemberFollowingIDs(ids...)
+	return uuo.AddHpfollowIDs(ids...)
 }
 
 // AddHpsortHistoryIDs adds the "hpsort_history" edge to the HPSortHistory entity by IDs.
@@ -915,25 +915,25 @@ func (uuo *UserUpdateOne) RemoveHpviewHistory(h ...*HPViewHistory) *UserUpdateOn
 	return uuo.RemoveHpviewHistoryIDs(ids...)
 }
 
-// ClearHpmemberFollowing clears all "hpmember_following" edges to the HPFollow entity.
-func (uuo *UserUpdateOne) ClearHpmemberFollowing() *UserUpdateOne {
-	uuo.mutation.ClearHpmemberFollowing()
+// ClearHpfollow clears all "hpfollow" edges to the HPFollow entity.
+func (uuo *UserUpdateOne) ClearHpfollow() *UserUpdateOne {
+	uuo.mutation.ClearHpfollow()
 	return uuo
 }
 
-// RemoveHpmemberFollowingIDs removes the "hpmember_following" edge to HPFollow entities by IDs.
-func (uuo *UserUpdateOne) RemoveHpmemberFollowingIDs(ids ...int) *UserUpdateOne {
-	uuo.mutation.RemoveHpmemberFollowingIDs(ids...)
+// RemoveHpfollowIDs removes the "hpfollow" edge to HPFollow entities by IDs.
+func (uuo *UserUpdateOne) RemoveHpfollowIDs(ids ...int) *UserUpdateOne {
+	uuo.mutation.RemoveHpfollowIDs(ids...)
 	return uuo
 }
 
-// RemoveHpmemberFollowing removes "hpmember_following" edges to HPFollow entities.
-func (uuo *UserUpdateOne) RemoveHpmemberFollowing(h ...*HPFollow) *UserUpdateOne {
+// RemoveHpfollow removes "hpfollow" edges to HPFollow entities.
+func (uuo *UserUpdateOne) RemoveHpfollow(h ...*HPFollow) *UserUpdateOne {
 	ids := make([]int, len(h))
 	for i := range h {
 		ids[i] = h[i].ID
 	}
-	return uuo.RemoveHpmemberFollowingIDs(ids...)
+	return uuo.RemoveHpfollowIDs(ids...)
 }
 
 // ClearHpsortHistory clears all "hpsort_history" edges to the HPSortHistory entity.
@@ -1215,12 +1215,12 @@ func (uuo *UserUpdateOne) sqlSave(ctx context.Context) (_node *User, err error) 
 		}
 		_spec.Edges.Add = append(_spec.Edges.Add, edge)
 	}
-	if uuo.mutation.HpmemberFollowingCleared() {
+	if uuo.mutation.HpfollowCleared() {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
 			Inverse: false,
-			Table:   user.HpmemberFollowingTable,
-			Columns: []string{user.HpmemberFollowingColumn},
+			Table:   user.HpfollowTable,
+			Columns: []string{user.HpfollowColumn},
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),
@@ -1228,12 +1228,12 @@ func (uuo *UserUpdateOne) sqlSave(ctx context.Context) (_node *User, err error) 
 		}
 		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
 	}
-	if nodes := uuo.mutation.RemovedHpmemberFollowingIDs(); len(nodes) > 0 && !uuo.mutation.HpmemberFollowingCleared() {
+	if nodes := uuo.mutation.RemovedHpfollowIDs(); len(nodes) > 0 && !uuo.mutation.HpfollowCleared() {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
 			Inverse: false,
-			Table:   user.HpmemberFollowingTable,
-			Columns: []string{user.HpmemberFollowingColumn},
+			Table:   user.HpfollowTable,
+			Columns: []string{user.HpfollowColumn},
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),
@@ -1244,12 +1244,12 @@ func (uuo *UserUpdateOne) sqlSave(ctx context.Context) (_node *User, err error) 
 		}
 		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
 	}
-	if nodes := uuo.mutation.HpmemberFollowingIDs(); len(nodes) > 0 {
+	if nodes := uuo.mutation.HpfollowIDs(); len(nodes) > 0 {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
 			Inverse: false,
-			Table:   user.HpmemberFollowingTable,
-			Columns: []string{user.HpmemberFollowingColumn},
+			Table:   user.HpfollowTable,
+			Columns: []string{user.HpfollowColumn},
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),

@@ -10,6 +10,7 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
+	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/predicate"
@@ -25,6 +26,7 @@ type HPFollowQuery struct {
 	predicates []predicate.HPFollow
 	withUser   *UserQuery
 	withMember *HPMemberQuery
+	withArtist *HPArtistQuery
 	withFKs    bool
 	modifiers  []func(*sql.Selector)
 	loadTotal  []func(context.Context, []*HPFollow) error
@@ -100,7 +102,29 @@ func (hfq *HPFollowQuery) QueryMember() *HPMemberQuery {
 		step := sqlgraph.NewStep(
 			sqlgraph.From(hpfollow.Table, hpfollow.FieldID, selector),
 			sqlgraph.To(hpmember.Table, hpmember.FieldID),
-			sqlgraph.Edge(sqlgraph.M2O, false, hpfollow.MemberTable, hpfollow.MemberColumn),
+			sqlgraph.Edge(sqlgraph.M2O, true, hpfollow.MemberTable, hpfollow.MemberColumn),
+		)
+		fromU = sqlgraph.SetNeighbors(hfq.driver.Dialect(), step)
+		return fromU, nil
+	}
+	return query
+}
+
+// QueryArtist chains the current query on the "artist" edge.
+func (hfq *HPFollowQuery) QueryArtist() *HPArtistQuery {
+	query := (&HPArtistClient{config: hfq.config}).Query()
+	query.path = func(ctx context.Context) (fromU *sql.Selector, err error) {
+		if err := hfq.prepareQuery(ctx); err != nil {
+			return nil, err
+		}
+		selector := hfq.sqlQuery(ctx)
+		if err := selector.Err(); err != nil {
+			return nil, err
+		}
+		step := sqlgraph.NewStep(
+			sqlgraph.From(hpfollow.Table, hpfollow.FieldID, selector),
+			sqlgraph.To(hpartist.Table, hpartist.FieldID),
+			sqlgraph.Edge(sqlgraph.M2O, true, hpfollow.ArtistTable, hpfollow.ArtistColumn),
 		)
 		fromU = sqlgraph.SetNeighbors(hfq.driver.Dialect(), step)
 		return fromU, nil
@@ -302,6 +326,7 @@ func (hfq *HPFollowQuery) Clone() *HPFollowQuery {
 		predicates: append([]predicate.HPFollow{}, hfq.predicates...),
 		withUser:   hfq.withUser.Clone(),
 		withMember: hfq.withMember.Clone(),
+		withArtist: hfq.withArtist.Clone(),
 		// clone intermediate query.
 		sql:  hfq.sql.Clone(),
 		path: hfq.path,
@@ -327,6 +352,17 @@ func (hfq *HPFollowQuery) WithMember(opts ...func(*HPMemberQuery)) *HPFollowQuer
 		opt(query)
 	}
 	hfq.withMember = query
+	return hfq
+}
+
+// WithArtist tells the query-builder to eager-load the nodes that are connected to
+// the "artist" edge. The optional arguments are used to configure the query builder of the edge.
+func (hfq *HPFollowQuery) WithArtist(opts ...func(*HPArtistQuery)) *HPFollowQuery {
+	query := (&HPArtistClient{config: hfq.config}).Query()
+	for _, opt := range opts {
+		opt(query)
+	}
+	hfq.withArtist = query
 	return hfq
 }
 
@@ -409,12 +445,13 @@ func (hfq *HPFollowQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*HP
 		nodes       = []*HPFollow{}
 		withFKs     = hfq.withFKs
 		_spec       = hfq.querySpec()
-		loadedTypes = [2]bool{
+		loadedTypes = [3]bool{
 			hfq.withUser != nil,
 			hfq.withMember != nil,
+			hfq.withArtist != nil,
 		}
 	)
-	if hfq.withUser != nil || hfq.withMember != nil {
+	if hfq.withUser != nil || hfq.withMember != nil || hfq.withArtist != nil {
 		withFKs = true
 	}
 	if withFKs {
@@ -450,6 +487,12 @@ func (hfq *HPFollowQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*HP
 	if query := hfq.withMember; query != nil {
 		if err := hfq.loadMember(ctx, query, nodes, nil,
 			func(n *HPFollow, e *HPMember) { n.Edges.Member = e }); err != nil {
+			return nil, err
+		}
+	}
+	if query := hfq.withArtist; query != nil {
+		if err := hfq.loadArtist(ctx, query, nodes, nil,
+			func(n *HPFollow, e *HPArtist) { n.Edges.Artist = e }); err != nil {
 			return nil, err
 		}
 	}
@@ -518,6 +561,38 @@ func (hfq *HPFollowQuery) loadMember(ctx context.Context, query *HPMemberQuery, 
 		nodes, ok := nodeids[n.ID]
 		if !ok {
 			return fmt.Errorf(`unexpected foreign-key "hp_follow_member" returned %v`, n.ID)
+		}
+		for i := range nodes {
+			assign(nodes[i], n)
+		}
+	}
+	return nil
+}
+func (hfq *HPFollowQuery) loadArtist(ctx context.Context, query *HPArtistQuery, nodes []*HPFollow, init func(*HPFollow), assign func(*HPFollow, *HPArtist)) error {
+	ids := make([]int, 0, len(nodes))
+	nodeids := make(map[int][]*HPFollow)
+	for i := range nodes {
+		if nodes[i].hp_follow_artist == nil {
+			continue
+		}
+		fk := *nodes[i].hp_follow_artist
+		if _, ok := nodeids[fk]; !ok {
+			ids = append(ids, fk)
+		}
+		nodeids[fk] = append(nodeids[fk], nodes[i])
+	}
+	if len(ids) == 0 {
+		return nil
+	}
+	query.Where(hpartist.IDIn(ids...))
+	neighbors, err := query.All(ctx)
+	if err != nil {
+		return err
+	}
+	for _, n := range neighbors {
+		nodes, ok := nodeids[n.ID]
+		if !ok {
+			return fmt.Errorf(`unexpected foreign-key "hp_follow_artist" returned %v`, n.ID)
 		}
 		for i := range nodes {
 			assign(nodes[i], n)

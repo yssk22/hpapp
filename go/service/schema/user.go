@@ -53,7 +53,7 @@ func (User) Edges() []ent.Edge {
 		edge.To("hpview_history", HPViewHistory.Type).Annotations(entsql.Annotation{
 			OnDelete: entsql.Cascade,
 		}),
-		edge.To("hpmember_following", HPFollow.Type).Annotations(entsql.Annotation{
+		edge.To("hpfollow", HPFollow.Type).StorageKey(edge.Column("user_hpmember_following")).Annotations(entsql.Annotation{
 			OnDelete: entsql.Cascade,
 		}),
 		edge.To("hpsort_history", HPSortHistory.Type).Annotations(entsql.Annotation{

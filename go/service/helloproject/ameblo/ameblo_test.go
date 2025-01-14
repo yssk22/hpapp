@@ -277,15 +277,15 @@ func TestAmeblo(t *testing.T) {
 			assert.X(push.UpsertNotificationSettings(appuser.WithUser(ctx, follower2), appuser.EntID(follower2), "ExponentPushToken[follower2-token]", push.NotificationSettings{EnableNewPosts: object.NullableFalse}))
 			assert.X(push.UpsertNotificationSettings(appuser.WithUser(ctx, follower3), appuser.EntID(follower3), "ExponentPushToken[follower3-token]", push.NotificationSettings{EnableNewPosts: object.NullableTrue}))
 			assert.X(user.UpsertFollow(ctx, appuser.EntID(follower1), user.HPFollowUpsertParams{
-				MemberId:   mizuki.ID,
+				MemberId:   &(mizuki.ID),
 				FollowType: enums.HPFollowTypeFollowWithNotification,
 			}))
 			assert.X(user.UpsertFollow(ctx, appuser.EntID(follower2), user.HPFollowUpsertParams{
-				MemberId:   mizuki.ID,
+				MemberId:   &(mizuki.ID),
 				FollowType: enums.HPFollowTypeFollowWithNotification,
 			}))
 			assert.X(user.UpsertFollow(ctx, appuser.EntID(follower3), user.HPFollowUpsertParams{
-				MemberId:   mizuki.ID,
+				MemberId:   &(mizuki.ID),
 				FollowType: enums.HPFollowTypeFollow,
 			}))
 

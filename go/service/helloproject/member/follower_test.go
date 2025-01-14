@@ -30,15 +30,15 @@ func TestMember(t *testing.T) {
 		userB := test.MakeTestUser(ctx)
 		userC := test.MakeTestUser(ctx)
 		a.NotNil(user.UpsertFollow(ctx, appuser.EntID(userA), user.HPFollowUpsertParams{
-			MemberId:   mizuki.ID,
+			MemberId:   &(mizuki.ID),
 			FollowType: enums.HPFollowTypeFollowWithNotification,
 		}))
 		a.NotNil(user.UpsertFollow(ctx, appuser.EntID(userB), user.HPFollowUpsertParams{
-			MemberId:   mizuki.ID,
+			MemberId:   &(mizuki.ID),
 			FollowType: enums.HPFollowTypeFollowWithNotification,
 		}))
 		a.NotNil(user.UpsertFollow(ctx, appuser.EntID(userC), user.HPFollowUpsertParams{
-			MemberId:   mizuki.ID,
+			MemberId:   &(mizuki.ID),
 			FollowType: enums.HPFollowTypeFollow,
 		}))
 

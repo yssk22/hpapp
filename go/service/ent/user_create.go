@@ -114,19 +114,19 @@ func (uc *UserCreate) AddHpviewHistory(h ...*HPViewHistory) *UserCreate {
 	return uc.AddHpviewHistoryIDs(ids...)
 }
 
-// AddHpmemberFollowingIDs adds the "hpmember_following" edge to the HPFollow entity by IDs.
-func (uc *UserCreate) AddHpmemberFollowingIDs(ids ...int) *UserCreate {
-	uc.mutation.AddHpmemberFollowingIDs(ids...)
+// AddHpfollowIDs adds the "hpfollow" edge to the HPFollow entity by IDs.
+func (uc *UserCreate) AddHpfollowIDs(ids ...int) *UserCreate {
+	uc.mutation.AddHpfollowIDs(ids...)
 	return uc
 }
 
-// AddHpmemberFollowing adds the "hpmember_following" edges to the HPFollow entity.
-func (uc *UserCreate) AddHpmemberFollowing(h ...*HPFollow) *UserCreate {
+// AddHpfollow adds the "hpfollow" edges to the HPFollow entity.
+func (uc *UserCreate) AddHpfollow(h ...*HPFollow) *UserCreate {
 	ids := make([]int, len(h))
 	for i := range h {
 		ids[i] = h[i].ID
 	}
-	return uc.AddHpmemberFollowingIDs(ids...)
+	return uc.AddHpfollowIDs(ids...)
 }
 
 // AddHpsortHistoryIDs adds the "hpsort_history" edge to the HPSortHistory entity by IDs.
@@ -305,12 +305,12 @@ func (uc *UserCreate) createSpec() (*User, *sqlgraph.CreateSpec) {
 		}
 		_spec.Edges = append(_spec.Edges, edge)
 	}
-	if nodes := uc.mutation.HpmemberFollowingIDs(); len(nodes) > 0 {
+	if nodes := uc.mutation.HpfollowIDs(); len(nodes) > 0 {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
 			Inverse: false,
-			Table:   user.HpmemberFollowingTable,
-			Columns: []string{user.HpmemberFollowingColumn},
+			Table:   user.HpfollowTable,
+			Columns: []string{user.HpfollowColumn},
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpfollow.FieldID, field.TypeInt),

@@ -2,7 +2,6 @@ package schema
 
 import (
 	"entgo.io/ent"
-	"entgo.io/ent/dialect/entsql"
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
 	"entgo.io/ent/schema/index"
@@ -19,6 +18,8 @@ func (HPFollow) Indexes() []ent.Index {
 	return []ent.Index{
 		index.Edges("member"),
 		index.Edges("user", "member").Unique(),
+		index.Edges("user", "artist").Unique(),
+		// index.Edges("user", "member", "artist").Unique(), // for upsert
 	}
 }
 
@@ -124,9 +125,9 @@ func (HPFollow) Fields() []ent.Field {
 
 func (HPFollow) Edges() []ent.Edge {
 	return []ent.Edge{
-		edge.From("user", User.Type).Ref("hpmember_following").Unique().Required().Annotations(entsql.Annotation{
-			OnDelete: entsql.Cascade,
-		}),
-		edge.To("member", HPMember.Type).Unique().Required(),
+		edge.From("user", User.Type).Ref("hpfollow").Unique().Required(),
+
+		edge.From("member", HPMember.Type).Ref("followed_by").Unique(),
+		edge.From("artist", HPArtist.Type).Ref("followed_by").Unique(),
 	}
 }
