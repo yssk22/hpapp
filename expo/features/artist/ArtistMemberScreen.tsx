@@ -1,4 +1,4 @@
-import { useHelloProject } from '@hpapp/features/app/user';
+import { useArtist, useMember } from '@hpapp/features/app/user';
 import { defineScreen, useNavigation } from '@hpapp/features/common/stack';
 import { HPAssetType } from '@hpapp/features/feed';
 import { useEffect, useState } from 'react';
@@ -12,9 +12,8 @@ export type ArtistMemberScreenProps = {
 };
 
 export default defineScreen('/arttist/member/', function ArtistMemberScreen(props: ArtistMemberScreenProps) {
-  const hp = useHelloProject();
-  const member = hp.useMember(props.memberId);
-  const artist = hp.useArtist(member!.artistID!);
+  const member = useMember(props.memberId);
+  const artist = useArtist(member!.artistID!);
   const [assetType, setAssetType] = useState<HPAssetType>('ameblo');
 
   const navigation = useNavigation();

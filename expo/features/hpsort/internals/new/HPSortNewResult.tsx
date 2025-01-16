@@ -1,8 +1,8 @@
-import { useHelloProject, useUserRootReloader } from '@hpapp/features/app/user';
+import { useMemberMap, useReloadUserContext } from '@hpapp/features/app/user';
 import { Spacing } from '@hpapp/features/common/constants';
 import { t } from '@hpapp/system/i18n';
 import { Button } from '@rneui/themed';
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import { graphql, useMutation } from 'react-relay';
 
@@ -38,16 +38,37 @@ export type HPSortNewResultProps = {
 
 export default function HPSortNewResult({ sorter, onRetryPress, onSave }: HPSortNewResultProps) {
   const [save, isSaving] = useMutation<HPSortNewResultSaveMutation>(HPSortNewResultSaveMutationGraphQL);
-  const hp = useHelloProject();
-  const [reload, isReloading] = useUserRootReloader();
+  const [reload, isReloading] = useReloadUserContext();
+  const memberMap = useMemberMap();
   const result = useMemo(() => {
     return sorter.getResult().map((v) => {
-      const member = hp.useMember(v.value.member.id)!;
       return {
         memberId: v.value.member.id,
-        memberKey: member.key,
         rank: v.rank
       };
+    });
+  }, [sorter]);
+  const onSaveButtonPress = useCallback(() => {
+    save({
+      variables: {
+        input: {
+          records: result.map((v) => {
+            const member = memberMap.get(v.memberId)!;
+            return {
+              ...v,
+              artistId: parseInt(member.artistID!, 10),
+              artistKey: member.artistKey,
+              memberId: parseInt(member.id, 10),
+              memberKey: member.key,
+              rank: v.rank
+            };
+          })
+        }
+      },
+      onCompleted: () => {
+        reload();
+        onSave();
+      }
     });
   }, [sorter]);
   return (
@@ -59,33 +80,7 @@ export default function HPSortNewResult({ sorter, onRetryPress, onSave }: HPSort
         <Button containerStyle={styles.button} type="outline" onPress={onRetryPress} disabled={isSaving || isReloading}>
           {t('Retry')}
         </Button>
-        <Button
-          containerStyle={styles.button}
-          disabled={isSaving || isReloading}
-          onPress={() => {
-            save({
-              variables: {
-                input: {
-                  records: result.map((v) => {
-                    const member = hp.useMember(v.memberId)!;
-                    return {
-                      ...v,
-                      artistId: parseInt(member.artistID!, 10),
-                      artistKey: member.artistKey,
-                      memberId: parseInt(member.id, 10),
-                      memberKey: member.key,
-                      rank: v.rank
-                    };
-                  })
-                }
-              },
-              onCompleted: () => {
-                reload();
-                onSave();
-              }
-            });
-          }}
-        >
+        <Button containerStyle={styles.button} disabled={isSaving || isReloading} onPress={onSaveButtonPress}>
           {t('Save')}
         </Button>
       </View>

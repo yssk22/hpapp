@@ -1,5 +1,5 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
-import { HPFollowType, HPMember, useHelloProject } from '@hpapp/features/app/user';
+import { HPFollowType, useMember } from '@hpapp/features/app/user';
 import { ExternalImage } from '@hpapp/features/common';
 import { IconSize } from '@hpapp/features/common/constants';
 import { Icon } from '@rneui/themed';
@@ -15,7 +15,7 @@ export enum ArtistMemberIconSize {
 }
 
 export type ArtistMemberIconProps = {
-  member: HPMember | string;
+  memberId: string;
   size?: ArtistMemberIconSize | number;
   circle?: boolean;
   showFollowIcon?: boolean;
@@ -23,15 +23,14 @@ export type ArtistMemberIconProps = {
 };
 
 export default function ArtistMemberIcon({
-  member,
+  memberId,
   size = ArtistMemberIconSize.Medium,
   circle = false,
   showFollowIcon = false,
   onPress
 }: ArtistMemberIconProps) {
   const [color, contrast] = useThemeColor('secondary');
-  const hp = useHelloProject();
-  const m = hp.useMember(member);
+  const m = useMember(memberId);
   const iconName = getFollowIconName(m?.myFollowStatus?.type);
   const circleProps = circle ? { borderRadius: size * 2 } : {};
   if (onPress === undefined) {

@@ -1,5 +1,5 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
-import { useHelloProject } from '@hpapp/features/app/user';
+import { useArtistList } from '@hpapp/features/app/user';
 import { ArtistCard, useUpsertFollow } from '@hpapp/features/artist';
 import { Text } from '@hpapp/features/common';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
@@ -9,8 +9,7 @@ import { StyleSheet, View } from 'react-native';
 
 export default function OnboardingStepFollowMembers() {
   const [color] = useThemeColor('secondary');
-  const hp = useHelloProject();
-  const artists = hp.useArtists(false);
+  const artists = useArtistList(false);
   const [upsertFollow] = useUpsertFollow();
   return (
     <>

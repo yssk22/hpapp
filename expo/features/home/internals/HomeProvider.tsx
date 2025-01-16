@@ -1,4 +1,4 @@
-import { useHelloProject } from '@hpapp/features/app/user';
+import { useFollowingMemberList } from '@hpapp/features/app/user';
 import { ElineupMallProvider, useElineupMall } from '@hpapp/features/elineupmall';
 import { createFeedContext } from '@hpapp/features/feed';
 import { setBadgeCountAsync } from 'expo-notifications';
@@ -9,11 +9,12 @@ import HomeUPFCProvider, { useHomeUPFC } from './HomeUPFCProvider';
 const [HomeFeedProvider, useHomeFeed] = createFeedContext();
 
 export default function HomeProvider({ children }: { children: React.ReactElement }) {
-  const followings = useHelloProject()!
-    .useFollowingMembers(true)
-    .map((m) => m.id);
+  const followings = useFollowingMemberList(true);
+  const memberIDs = useMemo(() => {
+    return followings.map((f) => f.id);
+  }, [followings]);
   return (
-    <HomeFeedProvider assetTypes={['ameblo', 'instagram', 'tiktok', 'twitter']} memberIDs={followings}>
+    <HomeFeedProvider assetTypes={['ameblo', 'instagram', 'tiktok', 'twitter']} memberIDs={memberIDs}>
       <HomeUPFCProvider>
         <ElineupMallProvider>{children}</ElineupMallProvider>
       </HomeUPFCProvider>

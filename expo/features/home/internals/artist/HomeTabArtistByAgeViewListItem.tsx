@@ -29,7 +29,7 @@ export default function HomeTabArtistByAgeViewListItem({ label, members }: { lab
                 }}
               >
                 <ListItem key={m.key} containerStyle={styles.memberListItem}>
-                  <ArtistMemberIcon member={m} size={ArtistMemberIconSize.Small} />
+                  <ArtistMemberIcon memberId={m.id} size={ArtistMemberIconSize.Small} />
                   <ListItem.Content>
                     <ListItem.Title style={styles.memberName}>
                       <Text style={styles.memberNameText}>{m.name}</Text>

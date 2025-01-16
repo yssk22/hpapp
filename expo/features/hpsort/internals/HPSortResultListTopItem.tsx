@@ -1,4 +1,4 @@
-import { useHelloProject } from '@hpapp/features/app/user';
+import { useMember } from '@hpapp/features/app/user';
 import { ArtistMemberIcon, ArtistMemberIconSize } from '@hpapp/features/artist';
 import ArtistMemberScreen from '@hpapp/features/artist/ArtistMemberScreen';
 import { Text } from '@hpapp/features/common';
@@ -21,8 +21,7 @@ export default function HPSortResultListTopItem({
   enableMemberNavigation?: boolean;
 }) {
   const navigation = useNavigation();
-  const hp = useHelloProject();
-  const member = hp.useMember(memberId);
+  const member = useMember(memberId);
   const iconColor = rank === 1 ? 'gold' : rank === 2 ? 'silver' : '#cd7f32';
   const rankDiff = previousRank !== undefined ? previousRank - rank : undefined;
   const content = (
@@ -37,7 +36,7 @@ export default function HPSortResultListTopItem({
         </View>
         <Text style={styles.labelHeaderText}>{member!.name}</Text>
       </View>
-      <ArtistMemberIcon member={memberId} size={ArtistMemberIconSize.Medium} showFollowIcon />
+      <ArtistMemberIcon memberId={memberId} size={ArtistMemberIconSize.Medium} showFollowIcon />
     </>
   );
   if (enableMemberNavigation) {

@@ -1,125 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`user should return Me object 1`] = `
-<View
-  style={
-    [
-      {
-        "flex": 1,
-      },
-      undefined,
-    ]
-  }
->
-  <RNSScreenStack
-    style={
-      {
-        "flex": 1,
-      }
-    }
-  >
-    <RNSScreen
-      collapsable={false}
-      fullScreenSwipeShadowEnabled={false}
-      gestureResponseDistance={
-        {
-          "bottom": -1,
-          "end": -1,
-          "start": -1,
-          "top": -1,
-        }
-      }
-      hasLargeHeader={false}
-      nativeBackButtonDismissalEnabled={false}
-      onAppear={[Function]}
-      onDisappear={[Function]}
-      onDismissed={[Function]}
-      onGestureCancel={[Function]}
-      onHeaderBackButtonClicked={[Function]}
-      onNativeDismissCancelled={[Function]}
-      onTransitionProgress={[Function]}
-      onWillAppear={[Function]}
-      onWillDisappear={[Function]}
-      replaceAnimation="push"
-      sheetAllowedDetents="large"
-      sheetCornerRadius={-1}
-      sheetExpandsWhenScrolledToEdge={true}
-      sheetGrabberVisible={false}
-      sheetLargestUndimmedDetent="all"
-      stackPresentation="push"
-      style={
-        {
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        }
-      }
-      swipeDirection="horizontal"
-    >
-      <View
-        accessibilityElementsHidden={false}
-        importantForAccessibility="auto"
-        style={
-          {
-            "flex": 1,
-            "flexDirection": "column-reverse",
-          }
-        }
-      >
-        <View
-          collapsable={false}
-          style={
-            [
-              {
-                "flex": 1,
-              },
-              {
-                "backgroundColor": "white",
-              },
-              undefined,
-            ]
-          }
-        >
-          <View
-            style={
-              {
-                "backgroundColor": "#ffffff",
-                "flex": 1,
-              }
-            }
-          >
-            <Text
-              testID="user.test.username"
-            >
-              yssk22
-            </Text>
-          </View>
-        </View>
-      </View>
-      <RNSScreenStackHeaderConfig
-        backButtonInCustomView={false}
-        backTitle=""
-        backTitleVisible={false}
-        backgroundColor="#0075c2"
-        color="white"
-        direction="ltr"
-        disableBackButtonMenu={false}
-        hidden={false}
-        hideBackButton={false}
-        largeTitleHideShadow={false}
-        title="/"
-        titleColor="white"
-        topInsetEnabled={false}
-        translucent={false}
-      />
-    </RNSScreen>
-  </RNSScreenStack>
-</View>
-`;
-
-exports[`user useHelloProject 1`] = `
+exports[`user hooks 1`] = `
 <View
   style={
     [
@@ -215,9 +96,14 @@ exports[`user useHelloProject 1`] = `
               morningmusume
             </Text>
             <Text
-              testID="user.test.useMember"
+              testID="user.test.useMember.mizuki"
             >
               mizuki_fukumura
+            </Text>
+            <Text
+              testID="user.test.useMember.risa"
+            >
+              risa_irie
             </Text>
             <Text
               testID="user.test.useArtists"
@@ -304,6 +190,125 @@ yulia_matsubara
 hana_shimakawa
 rena_kamimura
 yume_soma
+            </Text>
+          </View>
+        </View>
+      </View>
+      <RNSScreenStackHeaderConfig
+        backButtonInCustomView={false}
+        backTitle=""
+        backTitleVisible={false}
+        backgroundColor="#0075c2"
+        color="white"
+        direction="ltr"
+        disableBackButtonMenu={false}
+        hidden={false}
+        hideBackButton={false}
+        largeTitleHideShadow={false}
+        title="/"
+        titleColor="white"
+        topInsetEnabled={false}
+        translucent={false}
+      />
+    </RNSScreen>
+  </RNSScreenStack>
+</View>
+`;
+
+exports[`user should return Me object 1`] = `
+<View
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <RNSScreenStack
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <RNSScreen
+      collapsable={false}
+      fullScreenSwipeShadowEnabled={false}
+      gestureResponseDistance={
+        {
+          "bottom": -1,
+          "end": -1,
+          "start": -1,
+          "top": -1,
+        }
+      }
+      hasLargeHeader={false}
+      nativeBackButtonDismissalEnabled={false}
+      onAppear={[Function]}
+      onDisappear={[Function]}
+      onDismissed={[Function]}
+      onGestureCancel={[Function]}
+      onHeaderBackButtonClicked={[Function]}
+      onNativeDismissCancelled={[Function]}
+      onTransitionProgress={[Function]}
+      onWillAppear={[Function]}
+      onWillDisappear={[Function]}
+      replaceAnimation="push"
+      sheetAllowedDetents="large"
+      sheetCornerRadius={-1}
+      sheetExpandsWhenScrolledToEdge={true}
+      sheetGrabberVisible={false}
+      sheetLargestUndimmedDetent="all"
+      stackPresentation="push"
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      swipeDirection="horizontal"
+    >
+      <View
+        accessibilityElementsHidden={false}
+        importantForAccessibility="auto"
+        style={
+          {
+            "flex": 1,
+            "flexDirection": "column-reverse",
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            [
+              {
+                "flex": 1,
+              },
+              {
+                "backgroundColor": "white",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              {
+                "backgroundColor": "#ffffff",
+                "flex": 1,
+              }
+            }
+          >
+            <Text
+              testID="user.test.username"
+            >
+              yssk22
             </Text>
           </View>
         </View>

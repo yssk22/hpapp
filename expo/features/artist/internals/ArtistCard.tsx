@@ -52,7 +52,7 @@ export default function ArtistCard({
             return (
               <View style={styles.memberIcon} key={m.key}>
                 <ArtistMemberIcon
-                  member={m}
+                  memberId={m.id}
                   size={ArtistMemberIconSize.Medium}
                   circle={memberIconCircle}
                   showFollowIcon={memberIconShowFollow}

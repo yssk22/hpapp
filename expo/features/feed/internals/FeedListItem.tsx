@@ -47,7 +47,7 @@ export default function FeedListItem({ data }: { data: FeedListItemFragment$key 
         containerStyle={styles.container}
         rightContent={
           isEmpty(imageUrl) ? (
-            <ArtistMemberIcon member={item.ownerMember!.id} size={80} />
+            <ArtistMemberIcon memberId={item.ownerMember!.id} size={80} />
           ) : (
             <ExternalImage
               uri={getOptimizedImageUrl(imageUrl)}
