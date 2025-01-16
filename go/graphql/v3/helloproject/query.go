@@ -9,6 +9,7 @@ import (
 	"github.com/yssk22/hpapp/go/foundation/slice"
 	"github.com/yssk22/hpapp/go/graphql/common"
 	"github.com/yssk22/hpapp/go/service/ent"
+	"github.com/yssk22/hpapp/go/service/ent/hpartist"
 	"github.com/yssk22/hpapp/go/service/ent/hpelineupmallitem"
 	"github.com/yssk22/hpapp/go/service/ent/hpfeeditem"
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
@@ -33,6 +34,7 @@ func (h *HelloProjectQuery) Artists(ctx context.Context, after *ent.Cursor, firs
 
 type HPFeedQueryParams struct {
 	MemberIDs         []string
+	ArtistIDs         []string
 	AssetTypes        []enums.HPAssetType
 	UseMemberTaggings *bool
 	MinPostAt         *time.Time
@@ -43,12 +45,18 @@ func (h *HelloProjectQuery) Feed(ctx context.Context, params HPFeedQueryParams, 
 	first = common.First(first, 20)
 	q := client.HPFeedItem.Query()
 	memberIds := assert.X(slice.MapStringToInt(params.MemberIDs))
+	artistIds := assert.X(slice.MapStringToInt(params.ArtistIDs))
 	if params.UseMemberTaggings != nil && *params.UseMemberTaggings {
 		// TODO: #28 Revisit Tagged Feed Feature
 		// The following query doesn't genereate an optimisitic SQL so we adds post_at filter to narrow down the scope of row scan.
 		q.Where(hpfeeditem.HasTaggedMembersWith(hpmember.IDIn(memberIds...)))
 	} else {
-		q.Where(hpfeeditem.OwnerMemberIDIn(memberIds...))
+		q.Where(
+			hpfeeditem.Or(
+				hpfeeditem.OwnerMemberIDIn(memberIds...),
+				hpfeeditem.OwnerArtistIDIn(artistIds...),
+			),
+		)
 	}
 	q.Where(hpfeeditem.AssetTypeIn(params.AssetTypes...))
 	if params.MinPostAt != nil {
@@ -63,11 +71,17 @@ func (h *HelloProjectQuery) Feed(ctx context.Context, params HPFeedQueryParams, 
 }
 
 type HPElineumpMallItemsParams struct {
+	ArtistIDs        []string
 	MemberIDs        []string
 	Categories       []enums.HPElineupMallItemCategory
 	MemberCategories []HPElineumpMallItemsParamsMemberCategories
+	ArtistCategories []HPElineumpMallItemsParamsArtistCategories
 }
 
+type HPElineumpMallItemsParamsArtistCategories struct {
+	ArtistID   string
+	Categories []enums.HPElineupMallItemCategory
+}
 type HPElineumpMallItemsParamsMemberCategories struct {
 	MemberID   string
 	Categories []enums.HPElineupMallItemCategory
@@ -79,10 +93,18 @@ func (h *HelloProjectQuery) ElineupMallItems(ctx context.Context, params HPEline
 	first = common.First(first, 20)
 	conditions := []predicate.HPElineupMallItem{}
 	memberIds := assert.X(slice.MapStringToInt(params.MemberIDs))
+	artistIds := assert.X(slice.MapStringToInt(params.ArtistIDs))
 	for _, id := range memberIds {
 		conditions = append(conditions,
 			hpelineupmallitem.And(
 				hpelineupmallitem.HasTaggedMembersWith(hpmember.ID(id)),
+			),
+		)
+	}
+	for _, id := range artistIds {
+		conditions = append(conditions,
+			hpelineupmallitem.And(
+				hpelineupmallitem.HasTaggedArtistsWith(hpartist.ID(id)),
 			),
 		)
 	}
@@ -92,6 +114,15 @@ func (h *HelloProjectQuery) ElineupMallItems(ctx context.Context, params HPEline
 			hpelineupmallitem.And(
 				hpelineupmallitem.HasTaggedMembersWith(hpmember.ID(memberId)),
 				hpelineupmallitem.CategoryIn(mc.Categories...),
+			),
+		)
+	}
+	for _, ac := range params.ArtistCategories {
+		artistId := assert.X(strconv.Atoi(ac.ArtistID))
+		conditions = append(conditions,
+			hpelineupmallitem.And(
+				hpelineupmallitem.HasTaggedArtistsWith(hpartist.ID(artistId)),
+				hpelineupmallitem.CategoryIn(ac.Categories...),
 			),
 		)
 	}
