@@ -1,5 +1,5 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
-import { useMe, useUserRootReloader } from '@hpapp/features/app/user';
+import { useMe, useReloadUserContext } from '@hpapp/features/app/user';
 import { Text } from '@hpapp/features/common';
 import { useNavigation } from '@hpapp/features/common/stack';
 import { HPSortResultListView } from '@hpapp/features/hpsort';
@@ -12,7 +12,7 @@ import { RefreshControl, ScrollView, StyleSheet, View } from 'react-native';
 export default function HomeTabArtistBySortView() {
   const [color, contrast] = useThemeColor('secondary');
   const me = useMe()!;
-  const [reload, isLoading] = useUserRootReloader();
+  const [reload, isLoading] = useReloadUserContext();
   const navigation = useNavigation();
   const fab = (
     <FAB

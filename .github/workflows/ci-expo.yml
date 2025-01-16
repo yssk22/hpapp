@@ -26,5 +26,7 @@ jobs:
           cache-dependency-path: "expo/package.json"
       - run: cd expo && cp config/dev/icon.png assets/
       - run: cd expo && cp config/dev/splash.png assets/
-      - run: cd expo && yarn install && yarn test
+      - run: cd expo && yarn install
+      - run: cd expo && yarn typecheck
       - run: cd expo && yarn lint
+      - run: cd expo && yarn test

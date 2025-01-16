@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<6869002b4daf4e1f7d845fb5c73fcb25>>
+ * @generated SignedSource<<a56a13f77ea2ddcaa1c45e19a64a968a>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -13,9 +13,10 @@ export type HPElineupMallItemCategory = "blueray" | "clear_file" | "colllection_
 export type HPFollowHPFollowType = "follow" | "follow_with_notification" | "unfollow" | "unknown" | "%future added value";
 export type HPFollowType = "follow" | "follow_with_notification" | "unfollow" | "unknown" | "%future added value";
 export type HPFollowUpsertParamsInput = {
+  artistId?: number | null | undefined;
   elineupMallFollowParams?: ReadonlyArray<HPFollowElineupMallParamsInput> | null | undefined;
   followType: HPFollowType;
-  memberId: number;
+  memberId?: number | null | undefined;
 };
 export type HPFollowElineupMallParamsInput = {
   category: HPElineupMallItemCategory;
@@ -54,7 +55,7 @@ export type useUpsertFollowMutation$data = {
       readonly id: string;
       readonly member: {
         readonly id: string;
-      };
+      } | null | undefined;
       readonly type: HPFollowHPFollowType;
     } | null | undefined;
   } | null | undefined;

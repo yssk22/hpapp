@@ -25,6 +25,22 @@ scalar Any
 
 scalar Map
 
+type HPArtist implements Node {
+  myFollowStatus: HPFollow
+  id: ID!
+  crawledAt: Time
+  errorCount: Int!
+  lastErrorMessage: String
+  recrawlRequired: Boolean
+  createdAt: Time
+  updatedAt: Time
+  key: String!
+  name: String!
+  thumbnailURL: String!
+  index: Int!
+  members: [HPMember!]
+}
+
 type HPMember implements Node {
   myFollowStatus: HPFollow
   id: ID!
@@ -121,7 +137,7 @@ type HPAmebloPost implements Node {
   path: String!
   nextPath: String
   prevPath: String
-  artistKey: String!
+  artistKey: String
   memberKey: String
   title: String!
   description: String!
@@ -160,21 +176,6 @@ enum HPAmebloPostSource @goModel(model: "github.com/yssk22/hpapp/go/service/ent/
   rss
   list
   entry
-}
-
-type HPArtist implements Node {
-  id: ID!
-  crawledAt: Time
-  errorCount: Int!
-  lastErrorMessage: String
-  recrawlRequired: Boolean
-  createdAt: Time
-  updatedAt: Time
-  key: String!
-  name: String!
-  thumbnailURL: String!
-  index: Int!
-  members: [HPMember!]
 }
 
 """Ordering options for HPArtist connections"""
@@ -568,7 +569,8 @@ type HPFollow implements Node {
   elineupmallKeyringOther: HPFollowHPFollowType!
   elineupmallClearFile: HPFollowHPFollowType!
   user: User!
-  member: HPMember!
+  member: HPMember
+  artist: HPArtist
 }
 
 """HPFollowHPFollowType is enum for the field type"""
@@ -820,7 +822,7 @@ type User implements Node {
   auth: [Auth!]
   notificationSettings: [UserNotificationSetting!]
   hpviewHistory: [HPViewHistory!]
-  hpmemberFollowing: [HPFollow!]
+  hpfollow: [HPFollow!]
   hpsortHistory: [HPSortHistory!]
   hpfcEventTickets: [HPFCEventTicket!]
   elineupMallPurchaseHistories: [HPElineupMallItemPurchaseHistory!]
@@ -988,7 +990,8 @@ input NotificationSettingsInput @goModel(model: "github.com/yssk22/hpapp/go/serv
 }
 
 input HPFollowUpsertParamsInput @goModel(model: "github.com/yssk22/hpapp/go/service/helloproject/user.HPFollowUpsertParams") {
-  memberId: Int!
+  artistId: Int
+  memberId: Int
   followType: HPFollowType!
   elineupMallFollowParams: [HPFollowElineupMallParamsInput!]
 }

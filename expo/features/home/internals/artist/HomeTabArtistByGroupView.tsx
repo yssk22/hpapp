@@ -1,4 +1,4 @@
-import { HPMember, useHelloProject } from '@hpapp/features/app/user';
+import { HPMember, useArtistList } from '@hpapp/features/app/user';
 import { ArtistCard } from '@hpapp/features/artist';
 import ArtistMemberScreen from '@hpapp/features/artist/ArtistMemberScreen';
 import { useNavigation } from '@hpapp/features/common/stack';
@@ -6,8 +6,7 @@ import { FlatList } from 'react-native';
 
 export default function HomeTabArtistByGroupView() {
   const navigation = useNavigation();
-  const hp = useHelloProject();
-  const artists = hp.useArtists(false);
+  const artists = useArtistList(false);
   return (
     <FlatList
       testID="HomeTabArtistByGroupView.FlatList"

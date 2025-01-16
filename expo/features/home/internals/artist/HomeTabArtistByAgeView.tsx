@@ -1,4 +1,4 @@
-import { HPMember, useHelloProject } from '@hpapp/features/app/user';
+import { HPMember, useMemberList } from '@hpapp/features/app/user';
 import { getSchoolGrade } from '@hpapp/foundation/date';
 import { useMemo } from 'react';
 import { FlatList } from 'react-native';
@@ -6,8 +6,7 @@ import { FlatList } from 'react-native';
 import HomeTabArtistByAgeViewListItem from './HomeTabArtistByAgeViewListItem';
 
 export default function HomeTabArtistByAgeView() {
-  const hp = useHelloProject();
-  const members = hp.useMembers(false);
+  const members = useMemberList(false);
   const sorted = useMemo(() => {
     return [...members].sort((m1, m2) => {
       const d1 = new Date(m1.dateOfBirth).getTime();

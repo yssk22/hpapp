@@ -1164,7 +1164,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 source={
                                   [
                                     {
-                                      "uri": "https://cdn.helloproject.com/img/artist/m/0ffb0d3959b77dd4c9bf96a6736fc34bb6a85ff7.jpg",
+                                      "uri": "https://cdn.helloproject.com/img/artist/m/026a8cc4a047b8dcb769c262d962243fde67f22f.jpg",
                                     },
                                   ]
                                 }
@@ -1544,7 +1544,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 source={
                                   [
                                     {
-                                      "uri": "https://cdn.helloproject.com/img/artist/m/96918635cd1540932e5ceb3727db4ffb5cf498fe.jpg",
+                                      "uri": "https://cdn.helloproject.com/img/artist/m/74f9d7ee39636aa22b8325f02ba01fcd7aab03ee.jpg",
                                     },
                                   ]
                                 }
@@ -1712,7 +1712,7 @@ exports[`HomeTabArtist tab 1`] = `
                               source={
                                 [
                                   {
-                                    "uri": "https://cdn.helloproject.com/img/artist/m/bb75f62a9ff5473eaba71bf69069ec116d268a4a.jpg",
+                                    "uri": "https://cdn.helloproject.com/img/artist/m/71404a688728ce2dcc5839db925410ea4e124495.jpg",
                                   },
                                 ]
                               }
@@ -2072,7 +2072,7 @@ exports[`HomeTabArtist tab 1`] = `
                               source={
                                 [
                                   {
-                                    "uri": "https://cdn.helloproject.com/img/artist/m/9020babf1afe1101cd6c9e38843ff71ea3e20be8.jpg",
+                                    "uri": "https://cdn.helloproject.com/img/artist/m/54c538e1329793ade4360433a3b7738fb1f3569a.jpg",
                                   },
                                 ]
                               }
@@ -2253,7 +2253,7 @@ exports[`HomeTabArtist tab 1`] = `
                               source={
                                 [
                                   {
-                                    "uri": "https://cdn.helloproject.com/img/artist/m/5b0eaf840c393d9296635128921412a146a1a015.jpg",
+                                    "uri": "https://cdn.helloproject.com/img/artist/m/3acff305835d01ba6987aaeffef34f1299799e8d.jpg",
                                   },
                                 ]
                               }
@@ -2796,7 +2796,7 @@ exports[`HomeTabArtist tab 1`] = `
                               source={
                                 [
                                   {
-                                    "uri": "https://cdn.helloproject.com/img/artist/m/a069bb1f932be748008694204cbf0763049b2635.jpg",
+                                    "uri": "https://cdn.helloproject.com/img/artist/m/74a55660fc2a438417af77bd96283f5f96062317.jpg",
                                   },
                                 ]
                               }
@@ -2977,7 +2977,7 @@ exports[`HomeTabArtist tab 1`] = `
                               source={
                                 [
                                   {
-                                    "uri": "https://cdn.helloproject.com/img/artist/m/acff7e0af241a30011643aa303f1cbff9c064a3c.jpg",
+                                    "uri": "https://cdn.helloproject.com/img/artist/m/67fee9fe36f0d1ce6120ced4e7b7ff9bf4db5ffb.jpg",
                                   },
                                 ]
                               }
@@ -3157,7 +3157,7 @@ exports[`HomeTabArtist tab 1`] = `
                               source={
                                 [
                                   {
-                                    "uri": "https://cdn.helloproject.com/img/artist/m/7ea0ac7a56efac310beb619216ac1165db31c9fc.jpg",
+                                    "uri": "https://cdn.helloproject.com/img/artist/m/8179a428d2d7ca8a6ba66231c138d41392029acf.jpg",
                                   },
                                 ]
                               }
@@ -4032,7 +4032,7 @@ exports[`HomeTabArtist tab 1`] = `
                               source={
                                 [
                                   {
-                                    "uri": "https://cdn.helloproject.com/img/artist/m/2d08875bb8172ce45acd0cbcdc7f9bb14ad2652a.jpg",
+                                    "uri": "https://cdn.helloproject.com/img/artist/m/af0b841c54fc52f5edcc2c0cbdc553e307c57756.jpg",
                                   },
                                 ]
                               }
@@ -4371,7 +4371,7 @@ exports[`HomeTabArtist tab 1`] = `
                               source={
                                 [
                                   {
-                                    "uri": "https://cdn.helloproject.com/img/artist/m/b73339df75264e1455c3cd9b780bf3a96628f57f.jpg",
+                                    "uri": "https://cdn.helloproject.com/img/artist/m/b2f38ec78cee837fe57b238fb3b1aff77136e21a.jpg",
                                   },
                                 ]
                               }
@@ -13450,47 +13450,6 @@ exports[`HomeTabArtist tab 1`] = `
                               {
                                 "artistID": "1",
                                 "artistKey": "morningmusume",
-                                "bloodType": "O",
-                                "dateOfBirth": "1996-10-29T15:00:00Z",
-                                "graduateAt": "2023-11-30T23:59:59Z",
-                                "id": "8589934592",
-                                "joinAt": "2011-01-01T15:00:00Z",
-                                "key": "mizuki_fukumura",
-                                "myFollowStatus": {
-                                  "elineupmallBlueray": "unknown",
-                                  "elineupmallClearFile": "unknown",
-                                  "elineupmallCollectionOther": "unknown",
-                                  "elineupmallCollectionPhoto": "unknown",
-                                  "elineupmallCollectionPinnapPoster": "unknown",
-                                  "elineupmallDvd": "unknown",
-                                  "elineupmallDvdMagazine": "unknown",
-                                  "elineupmallDvdMagazineOther": "unknown",
-                                  "elineupmallFsk": "unknown",
-                                  "elineupmallKeyringOther": "unknown",
-                                  "elineupmallMicrofiberTowel": "unknown",
-                                  "elineupmallMufflerTowel": "unknown",
-                                  "elineupmallOther": "unknown",
-                                  "elineupmallPenlight": "unknown",
-                                  "elineupmallPhoto2l": "unknown",
-                                  "elineupmallPhotoA4": "unknown",
-                                  "elineupmallPhotoA5": "unknown",
-                                  "elineupmallPhotoAlbum": "unknown",
-                                  "elineupmallPhotoAlbumOther": "unknown",
-                                  "elineupmallPhotoBook": "unknown",
-                                  "elineupmallPhotoBookOther": "unknown",
-                                  "elineupmallPhotoDaily": "unknown",
-                                  "elineupmallPhotoOther": "unknown",
-                                  "elineupmallTshirt": "unknown",
-                                  "id": "55834574890",
-                                  "type": "follow_with_notification",
-                                },
-                                "name": "譜久村聖",
-                                "nameKana": "フクムラミズキ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/8bf17e09fa5cb3e62ad57617c81e1b6c8f9958f6.jpg",
-                              },
-                              {
-                                "artistID": "1",
-                                "artistKey": "morningmusume",
                                 "bloodType": "A",
                                 "dateOfBirth": "1997-07-06T15:00:00Z",
                                 "graduateAt": null,
@@ -13532,61 +13491,6 @@ exports[`HomeTabArtist tab 1`] = `
                               {
                                 "artistID": "1",
                                 "artistKey": "morningmusume",
-                                "bloodType": "O",
-                                "dateOfBirth": "1997-01-06T15:00:00Z",
-                                "graduateAt": "2024-12-09T23:59:59Z",
-                                "id": "8589934594",
-                                "joinAt": "2011-09-28T15:00:00Z",
-                                "key": "ayumi_ishida",
-                                "myFollowStatus": {
-                                  "elineupmallBlueray": "unknown",
-                                  "elineupmallClearFile": "unknown",
-                                  "elineupmallCollectionOther": "unknown",
-                                  "elineupmallCollectionPhoto": "unknown",
-                                  "elineupmallCollectionPinnapPoster": "unknown",
-                                  "elineupmallDvd": "unknown",
-                                  "elineupmallDvdMagazine": "unknown",
-                                  "elineupmallDvdMagazineOther": "unknown",
-                                  "elineupmallFsk": "unknown",
-                                  "elineupmallKeyringOther": "unknown",
-                                  "elineupmallMicrofiberTowel": "unknown",
-                                  "elineupmallMufflerTowel": "unknown",
-                                  "elineupmallOther": "unknown",
-                                  "elineupmallPenlight": "unknown",
-                                  "elineupmallPhoto2l": "unknown",
-                                  "elineupmallPhotoA4": "unknown",
-                                  "elineupmallPhotoA5": "unknown",
-                                  "elineupmallPhotoAlbum": "unknown",
-                                  "elineupmallPhotoAlbumOther": "unknown",
-                                  "elineupmallPhotoBook": "unknown",
-                                  "elineupmallPhotoBookOther": "unknown",
-                                  "elineupmallPhotoDaily": "unknown",
-                                  "elineupmallPhotoOther": "unknown",
-                                  "elineupmallTshirt": "unknown",
-                                  "id": "55834574888",
-                                  "type": "unfollow",
-                                },
-                                "name": "石田亜佑美",
-                                "nameKana": "イシダアユミ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/74d9d095df3d33020622eedddcd100f623d80f31.jpg",
-                              },
-                              {
-                                "artistID": "1",
-                                "artistKey": "morningmusume",
-                                "bloodType": "A",
-                                "dateOfBirth": "1999-05-06T15:00:00Z",
-                                "graduateAt": "2021-12-14T23:59:59Z",
-                                "id": "8589934595",
-                                "joinAt": "2011-09-28T15:00:00Z",
-                                "key": "masaki_satou",
-                                "myFollowStatus": null,
-                                "name": "佐藤優樹",
-                                "nameKana": "サトウマサキ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/c28f02d1a45bb3b97a6dd5c6431a9ddd5bacc92b.jpg",
-                              },
-                              {
-                                "artistID": "1",
-                                "artistKey": "morningmusume",
                                 "bloodType": "A",
                                 "dateOfBirth": "1999-03-11T15:00:00Z",
                                 "graduateAt": null,
@@ -13606,8 +13510,8 @@ exports[`HomeTabArtist tab 1`] = `
                                   "elineupmallKeyringOther": "unknown",
                                   "elineupmallMicrofiberTowel": "unknown",
                                   "elineupmallMufflerTowel": "unknown",
-                                  "elineupmallOther": "unknown",
-                                  "elineupmallPenlight": "unknown",
+                                  "elineupmallOther": "unfollow",
+                                  "elineupmallPenlight": "unfollow",
                                   "elineupmallPhoto2l": "unknown",
                                   "elineupmallPhotoA4": "unknown",
                                   "elineupmallPhotoA5": "unknown",
@@ -13697,20 +13601,6 @@ exports[`HomeTabArtist tab 1`] = `
                               {
                                 "artistID": "1",
                                 "artistKey": "morningmusume",
-                                "bloodType": "A",
-                                "dateOfBirth": "1999-11-29T15:00:00Z",
-                                "graduateAt": "2022-12-12T23:59:59Z",
-                                "id": "8589934600",
-                                "joinAt": "2016-12-11T15:00:00Z",
-                                "key": "kaede_kaga",
-                                "myFollowStatus": null,
-                                "name": "加賀楓",
-                                "nameKana": "カガカエデ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/06e556832d22b4579a9c72caed347fc447f67443.jpg",
-                              },
-                              {
-                                "artistID": "1",
-                                "artistKey": "morningmusume",
                                 "bloodType": "O",
                                 "dateOfBirth": "2001-02-21T15:00:00Z",
                                 "graduateAt": null,
@@ -13730,7 +13620,7 @@ exports[`HomeTabArtist tab 1`] = `
                                   "elineupmallKeyringOther": "unknown",
                                   "elineupmallMicrofiberTowel": "unknown",
                                   "elineupmallMufflerTowel": "unknown",
-                                  "elineupmallOther": "unknown",
+                                  "elineupmallOther": "unfollow",
                                   "elineupmallPenlight": "unknown",
                                   "elineupmallPhoto2l": "unknown",
                                   "elineupmallPhotoA4": "unknown",
@@ -13748,20 +13638,6 @@ exports[`HomeTabArtist tab 1`] = `
                                 "name": "横山玲奈",
                                 "nameKana": "ヨコヤマレイナ",
                                 "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/86cca7ef647c1beef4ab23805e1daa1e08916302.jpg",
-                              },
-                              {
-                                "artistID": "1",
-                                "artistKey": "morningmusume",
-                                "bloodType": "A",
-                                "dateOfBirth": "2000-02-18T15:00:00Z",
-                                "graduateAt": "2022-06-21T23:59:59Z",
-                                "id": "8589934602",
-                                "joinAt": "2014-11-04T15:00:00Z",
-                                "key": "chisaki_morito_m",
-                                "myFollowStatus": null,
-                                "name": "森戸知沙希",
-                                "nameKana": "モリトチサキ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/3a1fc2e04f0254a18f857a8809963c2fc8f8ffad.jpg",
                               },
                               {
                                 "artistID": "1",
@@ -13889,76 +13765,6 @@ exports[`HomeTabArtist tab 1`] = `
                               {
                                 "artistID": "1",
                                 "artistKey": "morningmusume",
-                                "bloodType": "AB",
-                                "dateOfBirth": "1998-05-27T15:00:00Z",
-                                "graduateAt": "2015-12-30T15:00:00Z",
-                                "id": "8589934655",
-                                "joinAt": "2012-01-01T15:00:00Z",
-                                "key": "riho_sayashi",
-                                "myFollowStatus": null,
-                                "name": "鞘師里保",
-                                "nameKana": "サヤシリホ",
-                                "thumbnailURL": "https://wao-entertainment.com/wp-content/uploads/2018/12/SS-2018-12-08-9.06.08.jpg",
-                              },
-                              {
-                                "artistID": "1",
-                                "artistKey": "morningmusume",
-                                "bloodType": "B",
-                                "dateOfBirth": "1998-08-04T15:00:00Z",
-                                "graduateAt": "2016-05-30T15:00:00Z",
-                                "id": "8589934656",
-                                "joinAt": "2012-01-01T15:00:00Z",
-                                "key": "kanon_suzuki",
-                                "myFollowStatus": null,
-                                "name": "鈴木香音",
-                                "nameKana": "スズキカノン",
-                                "thumbnailURL": "https://pbs.twimg.com/media/CgpjYliU4AMA3EB?format=jpg&name=small",
-                              },
-                              {
-                                "artistID": "1",
-                                "artistKey": "morningmusume",
-                                "bloodType": "O",
-                                "dateOfBirth": "1994-11-06T15:00:00Z",
-                                "graduateAt": "2018-12-15T15:00:00Z",
-                                "id": "8589934657",
-                                "joinAt": "2011-09-28T15:00:00Z",
-                                "key": "haruna_iikubo",
-                                "myFollowStatus": null,
-                                "name": "飯窪春菜",
-                                "nameKana": "イイクボハルナ",
-                                "thumbnailURL": "http://saraca.mokuren.ne.jp/mem/g/c201805-mm-03.jpg",
-                              },
-                              {
-                                "artistID": "1",
-                                "artistKey": "morningmusume",
-                                "bloodType": "A",
-                                "dateOfBirth": "1999-10-26T15:00:00Z",
-                                "graduateAt": "2017-12-10T15:00:00Z",
-                                "id": "8589934658",
-                                "joinAt": "2011-09-28T15:00:00Z",
-                                "key": "haruka_kudo",
-                                "myFollowStatus": null,
-                                "name": "工藤遥",
-                                "nameKana": "クドウハルカ",
-                                "thumbnailURL": "https://cdn-ak.f.st-hatena.com/images/fotolife/r/risacchi/20171104/20171104000854.jpg",
-                              },
-                              {
-                                "artistID": "1",
-                                "artistKey": "morningmusume",
-                                "bloodType": "A",
-                                "dateOfBirth": "1999-02-14T15:00:00Z",
-                                "graduateAt": "2018-06-19T15:00:00Z",
-                                "id": "8589934659",
-                                "joinAt": "2014-09-29T15:00:00Z",
-                                "key": "haruna_ogata",
-                                "myFollowStatus": null,
-                                "name": "尾形春水",
-                                "nameKana": "オガタハルナ",
-                                "thumbnailURL": "https://sunshine-sakae.jp/img02/image/818.jpg",
-                              },
-                              {
-                                "artistID": "1",
-                                "artistKey": "morningmusume",
                                 "bloodType": "O",
                                 "dateOfBirth": "2005-11-10T15:00:00Z",
                                 "graduateAt": null,
@@ -14026,83 +13832,14 @@ exports[`HomeTabArtist tab 1`] = `
                                 "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/aa545c402a4dc9cbe9c567fb917634567bfd2370.jpg",
                               },
                             ],
-                            "name": "モーニング娘。'24",
+                            "myFollowStatus": null,
+                            "name": "モーニング娘。'25",
                             "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/f4a3851cb1316d2ed013553fcecba1155cdf91a3.jpg",
                           },
                           {
                             "id": "2",
                             "key": "angerme",
                             "members": [
-                              {
-                                "artistID": "2",
-                                "artistKey": "angerme",
-                                "bloodType": "O",
-                                "dateOfBirth": "1997-11-22T15:00:00Z",
-                                "graduateAt": "2023-06-22T23:59:59Z",
-                                "id": "8589934606",
-                                "joinAt": "2011-08-13T15:00:00Z",
-                                "key": "akari_takeuchi",
-                                "myFollowStatus": null,
-                                "name": "竹内朱莉",
-                                "nameKana": "タケウチアカリ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/8f6e0c19b53350d6c39d1e1d9d2c589f99a139b9.jpg",
-                              },
-                              {
-                                "artistID": "2",
-                                "artistKey": "angerme",
-                                "bloodType": "A",
-                                "dateOfBirth": "1997-06-03T15:00:00Z",
-                                "graduateAt": "2019-12-09T15:00:00Z",
-                                "id": "8589934607",
-                                "joinAt": "2011-08-13T15:00:00Z",
-                                "key": "kana_nakanishi",
-                                "myFollowStatus": null,
-                                "name": "中西香菜",
-                                "nameKana": "ナカニシカナ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/d432937b7d73553154eb0376984f69f68c85fb2c.jpg",
-                              },
-                              {
-                                "artistID": "2",
-                                "artistKey": "angerme",
-                                "bloodType": "A",
-                                "dateOfBirth": "1999-07-06T15:00:00Z",
-                                "graduateAt": "2024-11-29T23:59:59Z",
-                                "id": "8589934608",
-                                "joinAt": "2017-06-25T15:00:00Z",
-                                "key": "ayano_kawamura",
-                                "myFollowStatus": null,
-                                "name": "川村文乃",
-                                "nameKana": "カワムラアヤノ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/9feb914740768983053403d10b1c4946f6319490.jpg",
-                              },
-                              {
-                                "artistID": "2",
-                                "artistKey": "angerme",
-                                "bloodType": "AB",
-                                "dateOfBirth": "1998-06-11T15:00:00Z",
-                                "graduateAt": "2020-03-23T23:59:59Z",
-                                "id": "8589934609",
-                                "joinAt": "2014-10-03T15:00:00Z",
-                                "key": "mizuki_murota",
-                                "myFollowStatus": null,
-                                "name": "室田瑞希",
-                                "nameKana": "ムロタミズキ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/e96c5b700569d80f4b1a7faafa3f4aa7d2e1825d.jpg",
-                              },
-                              {
-                                "artistID": "2",
-                                "artistKey": "angerme",
-                                "bloodType": "A",
-                                "dateOfBirth": "2001-05-27T15:00:00Z",
-                                "graduateAt": "2024-06-20T23:59:59Z",
-                                "id": "8589934610",
-                                "joinAt": "2014-10-03T15:00:00Z",
-                                "key": "rikako_sasaki",
-                                "myFollowStatus": null,
-                                "name": "佐々木莉佳子",
-                                "nameKana": "ササキリカコ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/ac7a97007a64dde0b580efdca18d0335a2ca9275.jpg",
-                              },
                               {
                                 "artistID": "2",
                                 "artistKey": "angerme",
@@ -14143,48 +13880,6 @@ exports[`HomeTabArtist tab 1`] = `
                                 "name": "上國料萌衣",
                                 "nameKana": "カミコクリョウモエ",
                                 "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/44874dac618de45c52456b8f2a0103c06ec8a760.jpg",
-                              },
-                              {
-                                "artistID": "2",
-                                "artistKey": "angerme",
-                                "bloodType": "A",
-                                "dateOfBirth": "2003-10-21T15:00:00Z",
-                                "graduateAt": "2021-11-16T23:59:59Z",
-                                "id": "8589934612",
-                                "joinAt": "2016-07-15T15:00:00Z",
-                                "key": "momona_kasahara",
-                                "myFollowStatus": null,
-                                "name": "笠原桃奈",
-                                "nameKana": "カサハラモモナ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/af37b232f383c2c746d8d2d5fa4ad8b203bae8b2.jpg",
-                              },
-                              {
-                                "artistID": "2",
-                                "artistKey": "angerme",
-                                "bloodType": "O",
-                                "dateOfBirth": "2002-05-09T15:00:00Z",
-                                "graduateAt": "2020-12-10T23:59:59Z",
-                                "id": "8589934613",
-                                "joinAt": "2017-06-25T15:00:00Z",
-                                "key": "musubu_funaki_a",
-                                "myFollowStatus": null,
-                                "name": "船木結",
-                                "nameKana": "フナキムスブ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/38f312f66bdce6cff3f8c8fae7c426394b2d3490.jpg",
-                              },
-                              {
-                                "artistID": "2",
-                                "artistKey": "angerme",
-                                "bloodType": "B",
-                                "dateOfBirth": "2003-10-20T15:00:00Z",
-                                "graduateAt": "2020-10-13T23:59:59Z",
-                                "id": "8589934614",
-                                "joinAt": "2018-11-22T15:00:00Z",
-                                "key": "haruka_oota",
-                                "myFollowStatus": null,
-                                "name": "太田遥香",
-                                "nameKana": "オオタハルカ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/0cec151a243d45d7aa10462af6896e7699f62aaf.jpg",
                               },
                               {
                                 "artistID": "2",
@@ -14240,48 +13935,6 @@ exports[`HomeTabArtist tab 1`] = `
                                 "name": "橋迫鈴",
                                 "nameKana": "ハシサコリン",
                                 "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/39ead44736c03f4e24a5779a505b0045641cf56d.jpg",
-                              },
-                              {
-                                "artistID": "2",
-                                "artistKey": "angerme",
-                                "bloodType": "A",
-                                "dateOfBirth": "1998-04-05T15:00:00Z",
-                                "graduateAt": "2019-09-24T15:00:00Z",
-                                "id": "8589934660",
-                                "joinAt": "2011-08-13T15:00:00Z",
-                                "key": "rina_katsuta",
-                                "myFollowStatus": null,
-                                "name": "勝田里奈",
-                                "nameKana": "カツタリナ",
-                                "thumbnailURL": "https://www.entamealive.com/wp-content/uploads/2019/07/katsuta02.jpg",
-                              },
-                              {
-                                "artistID": "2",
-                                "artistKey": "angerme",
-                                "bloodType": "O",
-                                "dateOfBirth": "1998-10-29T15:00:00Z",
-                                "graduateAt": "2016-05-29T15:00:00Z",
-                                "id": "8589934661",
-                                "joinAt": "2011-08-13T15:00:00Z",
-                                "key": "meimi_tamura",
-                                "myFollowStatus": null,
-                                "name": "田村芽実",
-                                "nameKana": "タムラメイミ",
-                                "thumbnailURL": "https://userdisk.webry.biglobe.ne.jp/004/977/34/N000/000/022/145061832838025154177.jpg",
-                              },
-                              {
-                                "artistID": "2",
-                                "artistKey": "angerme",
-                                "bloodType": "A",
-                                "dateOfBirth": "1999-03-25T15:00:00Z",
-                                "graduateAt": "2017-12-30T15:00:00Z",
-                                "id": "8589934662",
-                                "joinAt": "2014-10-03T15:00:00Z",
-                                "key": "maho_aikata",
-                                "myFollowStatus": null,
-                                "name": "相川茉穂",
-                                "nameKana": "アイカワマホ",
-                                "thumbnailURL": "https://stat.ameba.jp/user_images/20170111/23/offside12/66/47/j/o0475055013843459962.jpg?caw=800",
                               },
                               {
                                 "artistID": "2",
@@ -14361,7 +14014,7 @@ exports[`HomeTabArtist tab 1`] = `
                                   "elineupmallKeyringOther": "follow",
                                   "elineupmallMicrofiberTowel": "follow",
                                   "elineupmallMufflerTowel": "unknown",
-                                  "elineupmallOther": "unknown",
+                                  "elineupmallOther": "follow",
                                   "elineupmallPenlight": "follow",
                                   "elineupmallPhoto2l": "unknown",
                                   "elineupmallPhotoA4": "unknown",
@@ -14395,6 +14048,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/acedbd0e1c17f6e6cf0eb38625e114548ba78ea1.jpg",
                               },
                             ],
+                            "myFollowStatus": null,
                             "name": "アンジュルム",
                             "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/9baf0e0593c774fcb1debcfa6f01daede2e38d03.jpg",
                           },
@@ -14402,62 +14056,6 @@ exports[`HomeTabArtist tab 1`] = `
                             "id": "3",
                             "key": "juicejuice",
                             "members": [
-                              {
-                                "artistID": "3",
-                                "artistKey": "juicejuice",
-                                "bloodType": "B",
-                                "dateOfBirth": "1995-07-01T15:00:00Z",
-                                "graduateAt": "2021-11-25T23:59:59Z",
-                                "id": "8589934617",
-                                "joinAt": "2013-02-24T15:00:00Z",
-                                "key": "tomoko_kanazawa",
-                                "myFollowStatus": null,
-                                "name": "金澤朋子",
-                                "nameKana": "カナザワトモコ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/392d8f9f5473df532be1ef0e20aa2d4555997b2b.jpg",
-                              },
-                              {
-                                "artistID": "3",
-                                "artistKey": "juicejuice",
-                                "bloodType": "A",
-                                "dateOfBirth": "1997-04-20T15:00:00Z",
-                                "graduateAt": "2021-02-12T23:59:59Z",
-                                "id": "8589934618",
-                                "joinAt": "2013-02-24T15:00:00Z",
-                                "key": "sayuki_takagi",
-                                "myFollowStatus": null,
-                                "name": "高木紗友希",
-                                "nameKana": "タカギサユキ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/58e11168849faa85bd5cb227e9c72d7f9d44865e.jpg",
-                              },
-                              {
-                                "artistID": "3",
-                                "artistKey": "juicejuice",
-                                "bloodType": "O",
-                                "dateOfBirth": "1998-11-30T15:00:00Z",
-                                "graduateAt": "2020-12-11T23:59:59Z",
-                                "id": "8589934619",
-                                "joinAt": "2013-02-24T15:00:00Z",
-                                "key": "karin_miyamoto",
-                                "myFollowStatus": null,
-                                "name": "宮本佳林",
-                                "nameKana": "ミヤモトカリン",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/eed0cd62d68c3d48ed89bf18bdad6bf9e779f3a0.jpg",
-                              },
-                              {
-                                "artistID": "3",
-                                "artistKey": "juicejuice",
-                                "bloodType": "O",
-                                "dateOfBirth": "1998-12-29T15:00:00Z",
-                                "graduateAt": "2024-06-17T23:59:59Z",
-                                "id": "8589934620",
-                                "joinAt": "2013-02-24T15:00:00Z",
-                                "key": "akari_uemura",
-                                "myFollowStatus": null,
-                                "name": "植村あかり",
-                                "nameKana": "ウエムラアカリ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/365a21ba927880f37c74909ee3dfc2654034853e.jpg",
-                              },
                               {
                                 "artistID": "3",
                                 "artistKey": "juicejuice",
@@ -14497,21 +14095,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "段原瑠々",
                                 "nameKana": "ダンバラルル",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/acff7e0af241a30011643aa303f1cbff9c064a3c.jpg",
-                              },
-                              {
-                                "artistID": "3",
-                                "artistKey": "juicejuice",
-                                "bloodType": "B",
-                                "dateOfBirth": "1997-12-26T15:00:00Z",
-                                "graduateAt": "2022-05-31T23:59:59Z",
-                                "id": "8589934622",
-                                "joinAt": "2014-11-04T15:00:00Z",
-                                "key": "manaka_inaba",
-                                "myFollowStatus": null,
-                                "name": "稲場愛香",
-                                "nameKana": "イナバマナカ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/41e6b0ace5b82eadb5da6bedda1d29a5f353f18d.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/67fee9fe36f0d1ce6120ced4e7b7ff9bf4db5ffb.jpg",
                               },
                               {
                                 "artistID": "3",
@@ -14552,7 +14136,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "工藤由愛",
                                 "nameKana": "クドウユメ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/9020babf1afe1101cd6c9e38843ff71ea3e20be8.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/54c538e1329793ade4360433a3b7738fb1f3569a.jpg",
                               },
                               {
                                 "artistID": "3",
@@ -14593,35 +14177,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "松永里愛",
                                 "nameKana": "マツナガリアイ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/a069bb1f932be748008694204cbf0763049b2635.jpg",
-                              },
-                              {
-                                "artistID": "3",
-                                "artistKey": "juicejuice",
-                                "bloodType": "O",
-                                "dateOfBirth": "1994-04-01T15:00:00Z",
-                                "graduateAt": "2019-06-16T15:00:00Z",
-                                "id": "8589934666",
-                                "joinAt": "2013-02-24T15:00:00Z",
-                                "key": "yuka_miyazaki",
-                                "myFollowStatus": null,
-                                "name": "宮崎由加",
-                                "nameKana": "ミヤザキユカ",
-                                "thumbnailURL": "https://contents.oricon.co.jp/upimg/news/20181221/2126059_201812210640078001545393929c.jpg",
-                              },
-                              {
-                                "artistID": "3",
-                                "artistKey": "juicejuice",
-                                "bloodType": "A",
-                                "dateOfBirth": "2002-01-05T15:00:00Z",
-                                "graduateAt": "2019-03-10T15:00:00Z",
-                                "id": "8589934667",
-                                "joinAt": "2017-06-25T15:00:00Z",
-                                "key": "yanagawa_nanami",
-                                "myFollowStatus": null,
-                                "name": "梁川奈々美",
-                                "nameKana": "ヤナガワナナミ",
-                                "thumbnailURL": "https://stat.ameba.jp/user_images/20181102/23/toshiki1970/76/bf/j/o0475055014295987031.jpg?caw=800",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/74a55660fc2a438417af77bd96283f5f96062317.jpg",
                               },
                               {
                                 "artistID": "3",
@@ -14635,7 +14191,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 "myFollowStatus": null,
                                 "name": "井上玲音",
                                 "nameKana": "イノウエレイ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/2d08875bb8172ce45acd0cbcdc7f9bb14ad2652a.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/af0b841c54fc52f5edcc2c0cbdc553e307c57756.jpg",
                               },
                               {
                                 "artistID": "3",
@@ -14676,7 +14232,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "有澤一華",
                                 "nameKana": "アリサワイチカ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/5b0eaf840c393d9296635128921412a146a1a015.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/3acff305835d01ba6987aaeffef34f1299799e8d.jpg",
                               },
                               {
                                 "artistID": "3",
@@ -14717,7 +14273,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "入江里咲",
                                 "nameKana": "イリエリサ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/0ffb0d3959b77dd4c9bf96a6736fc34bb6a85ff7.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/026a8cc4a047b8dcb769c262d962243fde67f22f.jpg",
                               },
                               {
                                 "artistID": "3",
@@ -14758,7 +14314,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "江端妃咲",
                                 "nameKana": "エバタキサキ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/bb75f62a9ff5473eaba71bf69069ec116d268a4a.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/71404a688728ce2dcc5839db925410ea4e124495.jpg",
                               },
                               {
                                 "artistID": "3",
@@ -14799,7 +14355,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "石山咲良",
                                 "nameKana": "イシヤマサクラ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/7ea0ac7a56efac310beb619216ac1165db31c9fc.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/8179a428d2d7ca8a6ba66231c138d41392029acf.jpg",
                               },
                               {
                                 "artistID": "3",
@@ -14840,7 +14396,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "遠藤彩加里",
                                 "nameKana": "エンドウアカリ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/96918635cd1540932e5ceb3727db4ffb5cf498fe.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/74f9d7ee39636aa22b8325f02ba01fcd7aab03ee.jpg",
                               },
                               {
                                 "artistID": "3",
@@ -14881,58 +14437,17 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "川嶋美楓",
                                 "nameKana": "カワシマミフ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/b73339df75264e1455c3cd9b780bf3a96628f57f.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/b2f38ec78cee837fe57b238fb3b1aff77136e21a.jpg",
                               },
                             ],
+                            "myFollowStatus": null,
                             "name": "Juice=Juice",
-                            "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/f17cbeb1c69911f548b5ea8ab2be56c7a4eb668d.jpg",
+                            "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/f40c7308015238c8cf248c2d23c68279e3c69e89.jpg",
                           },
                           {
                             "id": "6",
                             "key": "tsubakifactory",
                             "members": [
-                              {
-                                "artistID": "6",
-                                "artistKey": "tsubakifactory",
-                                "bloodType": "B",
-                                "dateOfBirth": "1998-11-23T15:00:00Z",
-                                "graduateAt": "2023-11-07T23:59:59Z",
-                                "id": "8589934634",
-                                "joinAt": "2015-04-28T15:00:00Z",
-                                "key": "riko_yamagishi",
-                                "myFollowStatus": null,
-                                "name": "山岸理子",
-                                "nameKana": "ヤマギシリコ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/94077777418909fcc34f57e994d798870c695bc8.jpg",
-                              },
-                              {
-                                "artistID": "6",
-                                "artistKey": "tsubakifactory",
-                                "bloodType": "A",
-                                "dateOfBirth": "1998-11-04T15:00:00Z",
-                                "graduateAt": "2020-12-28T23:59:59Z",
-                                "id": "8589934635",
-                                "joinAt": "2015-04-28T15:00:00Z",
-                                "key": "risa_ogata",
-                                "myFollowStatus": null,
-                                "name": "小片リサ",
-                                "nameKana": "オガタリサ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/4eaa066845403b6cd5006ccca7a8526618c2d18d.jpg",
-                              },
-                              {
-                                "artistID": "6",
-                                "artistKey": "tsubakifactory",
-                                "bloodType": "O",
-                                "dateOfBirth": "1999-10-19T15:00:00Z",
-                                "graduateAt": "2024-06-11T23:59:59Z",
-                                "id": "8589934636",
-                                "joinAt": "2015-04-28T15:00:00Z",
-                                "key": "kisora_niinuma",
-                                "myFollowStatus": null,
-                                "name": "新沼希空",
-                                "nameKana": "ニイヌマキソラ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/1a332fd76a054f1660bb7cd12a229b526be9b4f6.jpg",
-                              },
                               {
                                 "artistID": "6",
                                 "artistKey": "tsubakifactory",
@@ -14946,34 +14461,6 @@ exports[`HomeTabArtist tab 1`] = `
                                 "name": "谷本安美",
                                 "nameKana": "タニモトアミ",
                                 "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/af6f929a19936a076ec2d1eb3afc01a98823b50e.jpg",
-                              },
-                              {
-                                "artistID": "6",
-                                "artistKey": "tsubakifactory",
-                                "bloodType": "B",
-                                "dateOfBirth": "2000-03-31T15:00:00Z",
-                                "graduateAt": "2023-11-07T23:59:59Z",
-                                "id": "8589934638",
-                                "joinAt": "2015-04-28T15:00:00Z",
-                                "key": "yumeno_kishimoto",
-                                "myFollowStatus": null,
-                                "name": "岸本ゆめの",
-                                "nameKana": "キシモトユメノ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/e0931aa33a6da3118044cd491ab182c4fa00d2c6.jpg",
-                              },
-                              {
-                                "artistID": "6",
-                                "artistKey": "tsubakifactory",
-                                "bloodType": "AB",
-                                "dateOfBirth": "2000-09-02T15:00:00Z",
-                                "graduateAt": "2023-04-03T23:59:59Z",
-                                "id": "8589934639",
-                                "joinAt": "2015-04-28T15:00:00Z",
-                                "key": "kiki_asakura",
-                                "myFollowStatus": null,
-                                "name": "浅倉樹々",
-                                "nameKana": "アサクラキキ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/4a54d3dffc03626f86e6dab1578951712f494965.jpg",
                               },
                               {
                                 "artistID": "6",
@@ -15197,6 +14684,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/0e065d7aff380d4aad730e01b5474689b3f8c35b.jpg",
                               },
                             ],
+                            "myFollowStatus": null,
                             "name": "つばきファクトリー",
                             "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/a3373a457d4b8e2f19932b4d5cc2bcbddf22c65a.jpg",
                           },
@@ -15204,20 +14692,6 @@ exports[`HomeTabArtist tab 1`] = `
                             "id": "7",
                             "key": "beyooooonds",
                             "members": [
-                              {
-                                "artistID": "7",
-                                "artistKey": "beyooooonds",
-                                "bloodType": "A",
-                                "dateOfBirth": "1999-02-24T15:00:00Z",
-                                "graduateAt": "2024-03-01T23:59:59Z",
-                                "id": "8589934643",
-                                "joinAt": "2017-05-04T15:00:00Z",
-                                "key": "reina_ichioka",
-                                "myFollowStatus": null,
-                                "name": "一岡伶奈",
-                                "nameKana": "イチオカレイナ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/ae8afdc41ee4f100f2acbdc646d81a9f64fec1fa.jpg",
-                              },
                               {
                                 "artistID": "7",
                                 "artistKey": "beyooooonds",
@@ -15318,47 +14792,6 @@ exports[`HomeTabArtist tab 1`] = `
                               {
                                 "artistID": "7",
                                 "artistKey": "beyooooonds",
-                                "bloodType": "AB",
-                                "dateOfBirth": "2002-11-04T15:00:00Z",
-                                "graduateAt": "2024-06-28T23:59:59Z",
-                                "id": "8589934649",
-                                "joinAt": "2018-06-08T15:00:00Z",
-                                "key": "yuhane_yamazaki",
-                                "myFollowStatus": {
-                                  "elineupmallBlueray": "unknown",
-                                  "elineupmallClearFile": "unknown",
-                                  "elineupmallCollectionOther": "unknown",
-                                  "elineupmallCollectionPhoto": "unknown",
-                                  "elineupmallCollectionPinnapPoster": "unknown",
-                                  "elineupmallDvd": "unknown",
-                                  "elineupmallDvdMagazine": "unknown",
-                                  "elineupmallDvdMagazineOther": "unknown",
-                                  "elineupmallFsk": "unknown",
-                                  "elineupmallKeyringOther": "unknown",
-                                  "elineupmallMicrofiberTowel": "unknown",
-                                  "elineupmallMufflerTowel": "unknown",
-                                  "elineupmallOther": "unknown",
-                                  "elineupmallPenlight": "unknown",
-                                  "elineupmallPhoto2l": "unknown",
-                                  "elineupmallPhotoA4": "unknown",
-                                  "elineupmallPhotoA5": "unknown",
-                                  "elineupmallPhotoAlbum": "unknown",
-                                  "elineupmallPhotoAlbumOther": "unknown",
-                                  "elineupmallPhotoBook": "unknown",
-                                  "elineupmallPhotoBookOther": "unknown",
-                                  "elineupmallPhotoDaily": "unknown",
-                                  "elineupmallPhotoOther": "unknown",
-                                  "elineupmallTshirt": "unknown",
-                                  "id": "55834574883",
-                                  "type": "unfollow",
-                                },
-                                "name": "山﨑夢羽",
-                                "nameKana": "ヤマザキユハネ",
-                                "thumbnailURL": "http://cdn.helloproject.com/img/artist/m/eb4c87bc0729f5ca99bc6333b34719939197d4ca.jpg",
-                              },
-                              {
-                                "artistID": "7",
-                                "artistKey": "beyooooonds",
                                 "bloodType": "O",
                                 "dateOfBirth": "2004-10-19T15:00:00Z",
                                 "graduateAt": null,
@@ -15454,6 +14887,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/5e4c17a23d5cbd61976a70fdb5f76de54525fdac.jpg",
                               },
                             ],
+                            "myFollowStatus": null,
                             "name": "BEYOOOOONDS",
                             "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/a1972dd22a2f3ba72f0108a7ffdc578b1357d2db.jpg",
                           },
@@ -15602,6 +15036,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/0f27a1b69eb7bdadeb07f7b3e65c65b906a1d4c0.jpg",
                               },
                             ],
+                            "myFollowStatus": null,
                             "name": "OCHA NORMA",
                             "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/ded1aaf87f8d35ae2966ed47a869dde77fd51087.jpg",
                           },
@@ -15763,6 +15198,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/d4ed779321f8324d707569a1039d10f290a2a9be.jpg",
                               },
                             ],
+                            "myFollowStatus": null,
                             "name": "ロージークロニクル",
                             "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/f917ef7f62559e91ae2e9feefa7309a76f30ef28.jpg",
                           },
@@ -15843,7 +15279,7 @@ exports[`HomeTabArtist tab 1`] = `
                                   ]
                                 }
                               >
-                                モーニング娘。'24
+                                モーニング娘。'25
                               </Text>
                             </View>
                             <View>
@@ -18178,7 +17614,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/acff7e0af241a30011643aa303f1cbff9c064a3c.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/67fee9fe36f0d1ce6120ced4e7b7ff9bf4db5ffb.jpg",
                                             },
                                           ]
                                         }
@@ -18294,7 +17730,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/9020babf1afe1101cd6c9e38843ff71ea3e20be8.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/54c538e1329793ade4360433a3b7738fb1f3569a.jpg",
                                             },
                                           ]
                                         }
@@ -18410,7 +17846,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/a069bb1f932be748008694204cbf0763049b2635.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/74a55660fc2a438417af77bd96283f5f96062317.jpg",
                                             },
                                           ]
                                         }
@@ -18526,7 +17962,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/2d08875bb8172ce45acd0cbcdc7f9bb14ad2652a.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/af0b841c54fc52f5edcc2c0cbdc553e307c57756.jpg",
                                             },
                                           ]
                                         }
@@ -18620,7 +18056,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/5b0eaf840c393d9296635128921412a146a1a015.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/3acff305835d01ba6987aaeffef34f1299799e8d.jpg",
                                             },
                                           ]
                                         }
@@ -18736,7 +18172,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/0ffb0d3959b77dd4c9bf96a6736fc34bb6a85ff7.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/026a8cc4a047b8dcb769c262d962243fde67f22f.jpg",
                                             },
                                           ]
                                         }
@@ -18852,7 +18288,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/bb75f62a9ff5473eaba71bf69069ec116d268a4a.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/71404a688728ce2dcc5839db925410ea4e124495.jpg",
                                             },
                                           ]
                                         }
@@ -18968,7 +18404,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/7ea0ac7a56efac310beb619216ac1165db31c9fc.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/8179a428d2d7ca8a6ba66231c138d41392029acf.jpg",
                                             },
                                           ]
                                         }
@@ -19084,7 +18520,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/96918635cd1540932e5ceb3727db4ffb5cf498fe.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/74f9d7ee39636aa22b8325f02ba01fcd7aab03ee.jpg",
                                             },
                                           ]
                                         }
@@ -19200,7 +18636,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/b73339df75264e1455c3cd9b780bf3a96628f57f.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/b2f38ec78cee837fe57b238fb3b1aff77136e21a.jpg",
                                             },
                                           ]
                                         }
@@ -23514,8 +22950,8 @@ exports[`HomeTabArtist tab 1`] = `
                                   "elineupmallKeyringOther": "unknown",
                                   "elineupmallMicrofiberTowel": "unknown",
                                   "elineupmallMufflerTowel": "unknown",
-                                  "elineupmallOther": "unknown",
-                                  "elineupmallPenlight": "unknown",
+                                  "elineupmallOther": "unfollow",
+                                  "elineupmallPenlight": "unfollow",
                                   "elineupmallPhoto2l": "unknown",
                                   "elineupmallPhotoA4": "unknown",
                                   "elineupmallPhotoA5": "unknown",
@@ -23840,7 +23276,7 @@ exports[`HomeTabArtist tab 1`] = `
                                   "elineupmallKeyringOther": "unknown",
                                   "elineupmallMicrofiberTowel": "unknown",
                                   "elineupmallMufflerTowel": "unknown",
-                                  "elineupmallOther": "unknown",
+                                  "elineupmallOther": "unfollow",
                                   "elineupmallPenlight": "unknown",
                                   "elineupmallPhoto2l": "unknown",
                                   "elineupmallPhotoA4": "unknown",
@@ -23903,7 +23339,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "段原瑠々",
                                 "nameKana": "ダンバラルル",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/acff7e0af241a30011643aa303f1cbff9c064a3c.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/67fee9fe36f0d1ce6120ced4e7b7ff9bf4db5ffb.jpg",
                               },
                               {
                                 "artistID": "3",
@@ -23917,7 +23353,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 "myFollowStatus": null,
                                 "name": "井上玲音",
                                 "nameKana": "イノウエレイ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/2d08875bb8172ce45acd0cbcdc7f9bb14ad2652a.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/af0b841c54fc52f5edcc2c0cbdc553e307c57756.jpg",
                               },
                               {
                                 "artistID": "6",
@@ -24149,7 +23585,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "有澤一華",
                                 "nameKana": "アリサワイチカ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/5b0eaf840c393d9296635128921412a146a1a015.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/3acff305835d01ba6987aaeffef34f1299799e8d.jpg",
                               },
                               {
                                 "artistID": "2",
@@ -24245,7 +23681,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "石山咲良",
                                 "nameKana": "イシヤマサクラ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/7ea0ac7a56efac310beb619216ac1165db31c9fc.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/8179a428d2d7ca8a6ba66231c138d41392029acf.jpg",
                               },
                               {
                                 "artistID": "1",
@@ -24374,7 +23810,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "工藤由愛",
                                 "nameKana": "クドウユメ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/9020babf1afe1101cd6c9e38843ff71ea3e20be8.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/54c538e1329793ade4360433a3b7738fb1f3569a.jpg",
                               },
                               {
                                 "artistID": "6",
@@ -24558,7 +23994,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "松永里愛",
                                 "nameKana": "マツナガリアイ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/a069bb1f932be748008694204cbf0763049b2635.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/74a55660fc2a438417af77bd96283f5f96062317.jpg",
                               },
                               {
                                 "artistID": "8",
@@ -24668,7 +24104,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "入江里咲",
                                 "nameKana": "イリエリサ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/0ffb0d3959b77dd4c9bf96a6736fc34bb6a85ff7.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/026a8cc4a047b8dcb769c262d962243fde67f22f.jpg",
                               },
                               {
                                 "artistID": "1",
@@ -24753,7 +24189,7 @@ exports[`HomeTabArtist tab 1`] = `
                                   "elineupmallKeyringOther": "follow",
                                   "elineupmallMicrofiberTowel": "follow",
                                   "elineupmallMufflerTowel": "unknown",
-                                  "elineupmallOther": "unknown",
+                                  "elineupmallOther": "follow",
                                   "elineupmallPenlight": "follow",
                                   "elineupmallPhoto2l": "unknown",
                                   "elineupmallPhotoA4": "unknown",
@@ -24825,7 +24261,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "江端妃咲",
                                 "nameKana": "エバタキサキ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/bb75f62a9ff5473eaba71bf69069ec116d268a4a.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/71404a688728ce2dcc5839db925410ea4e124495.jpg",
                               },
                             ],
                           },
@@ -24913,7 +24349,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "川嶋美楓",
                                 "nameKana": "カワシマミフ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/b73339df75264e1455c3cd9b780bf3a96628f57f.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/b2f38ec78cee837fe57b238fb3b1aff77136e21a.jpg",
                               },
                               {
                                 "artistID": "6",
@@ -25043,7 +24479,7 @@ exports[`HomeTabArtist tab 1`] = `
                                 },
                                 "name": "遠藤彩加里",
                                 "nameKana": "エンドウアカリ",
-                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/96918635cd1540932e5ceb3727db4ffb5cf498fe.jpg",
+                                "thumbnailURL": "https://cdn.helloproject.com/img/artist/m/74f9d7ee39636aa22b8325f02ba01fcd7aab03ee.jpg",
                               },
                               {
                                 "artistID": "2",
@@ -29296,7 +28732,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/acff7e0af241a30011643aa303f1cbff9c064a3c.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/67fee9fe36f0d1ce6120ced4e7b7ff9bf4db5ffb.jpg",
                                             },
                                           ]
                                         }
@@ -29557,7 +28993,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/2d08875bb8172ce45acd0cbcdc7f9bb14ad2652a.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/af0b841c54fc52f5edcc2c0cbdc553e307c57756.jpg",
                                             },
                                           ]
                                         }
@@ -32957,7 +32393,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/5b0eaf840c393d9296635128921412a146a1a015.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/3acff305835d01ba6987aaeffef34f1299799e8d.jpg",
                                             },
                                           ]
                                         }
@@ -33740,7 +33176,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/7ea0ac7a56efac310beb619216ac1165db31c9fc.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/8179a428d2d7ca8a6ba66231c138d41392029acf.jpg",
                                             },
                                           ]
                                         }
@@ -35179,7 +34615,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/9020babf1afe1101cd6c9e38843ff71ea3e20be8.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/54c538e1329793ade4360433a3b7738fb1f3569a.jpg",
                                             },
                                           ]
                                         }
@@ -37140,7 +36576,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/a069bb1f932be748008694204cbf0763049b2635.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/74a55660fc2a438417af77bd96283f5f96062317.jpg",
                                             },
                                           ]
                                         }
@@ -38184,7 +37620,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/0ffb0d3959b77dd4c9bf96a6736fc34bb6a85ff7.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/026a8cc4a047b8dcb769c262d962243fde67f22f.jpg",
                                             },
                                           ]
                                         }
@@ -40145,7 +39581,7 @@ exports[`HomeTabArtist tab 1`] = `
                                         source={
                                           [
                                             {
-                                              "uri": "https://cdn.helloproject.com/img/artist/m/bb75f62a9ff5473eaba71bf69069ec116d268a4a.jpg",
+                                              "uri": "https://cdn.helloproject.com/img/artist/m/71404a688728ce2dcc5839db925410ea4e124495.jpg",
                                             },
                                           ]
                                         }

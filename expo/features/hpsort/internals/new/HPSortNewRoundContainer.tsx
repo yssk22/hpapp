@@ -1,4 +1,4 @@
-import { useHelloProject } from '@hpapp/features/app/user';
+import { useMemberList } from '@hpapp/features/app/user';
 import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { useNavigation } from '@hpapp/features/common/stack';
 import * as object from '@hpapp/foundation/object';
@@ -21,8 +21,7 @@ export type HPSortNewRoundContainerProps = {
 export default function HPSortNewRoundContainer({ config }: HPSortNewRoundContainerProps) {
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
-  const hp = useHelloProject();
-  const members = hp.useMembers(false);
+  const members = useMemberList(false);
   const list = useMemo(() => {
     return object.shuffle([...members]).map((m) => new HPSortMemberNode(m));
   }, [members]);

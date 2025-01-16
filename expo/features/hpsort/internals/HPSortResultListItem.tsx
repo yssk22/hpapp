@@ -1,4 +1,4 @@
-import { useHelloProject } from '@hpapp/features/app/user';
+import { useMember } from '@hpapp/features/app/user';
 import { ArtistMemberFollowIcon, ArtistMemberIcon, ArtistMemberIconSize } from '@hpapp/features/artist';
 import ArtistMemberScreen from '@hpapp/features/artist/ArtistMemberScreen';
 import { Text } from '@hpapp/features/common';
@@ -21,8 +21,7 @@ export default function HPSortResultListItem({
   enableMemberNavigation?: boolean;
 }) {
   const navigation = useNavigation();
-  const hp = useHelloProject();
-  const member = hp.useMember(memberId);
+  const member = useMember(memberId);
   const rankDiff = previousRank !== undefined ? previousRank - rank : undefined;
   const content = (
     <>
@@ -32,12 +31,12 @@ export default function HPSortResultListItem({
       <View style={styles.rankDiff}>
         <HPSortResultRankDiffIcon diff={rankDiff} />
       </View>
-      <ArtistMemberIcon member={memberId} size={ArtistMemberIconSize.Small} />
+      <ArtistMemberIcon memberId={memberId} size={ArtistMemberIconSize.Small} />
       <View style={styles.name}>
         <Text style={styles.nameText}>{member!.name}</Text>
       </View>
       <View style={styles.followIcon}>
-        <ArtistMemberFollowIcon member={memberId} size={IconSize.Small} />
+        <ArtistMemberFollowIcon memberId={memberId} size={IconSize.Small} />
       </View>
     </>
   );

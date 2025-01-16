@@ -15,7 +15,7 @@ export default function ElineupMallSettingsFollowingMember({ member }: ElineupMa
   return (
     <>
       <View style={[styles.memberHeader, { backgroundColor: headerColor }]}>
-        <ArtistMemberIcon member={member} size={ArtistMemberIconSize.Small} />
+        <ArtistMemberIcon memberId={member.id} size={ArtistMemberIconSize.Small} />
         <Text style={[styles.memberHeaderText, { color: headerColorContrast }]}>{member.name}</Text>
       </View>
       <View style={styles.buttons}>

@@ -29,7 +29,7 @@ export default function HPSortHistoryListItem({ createdAt, current, previous }: 
             if (i >= 3) {
               return null;
             }
-            return <ArtistMemberIcon member={v.memberId} key={v.memberId} />;
+            return <ArtistMemberIcon memberId={v.memberId} key={v.memberId} />;
           })}
         </View>
         <View style={styles.sortMetadata}>
