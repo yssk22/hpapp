@@ -3444,6 +3444,7 @@ func (e *executableSchema) Exec(ctx context.Context) graphql.ResponseHandler {
 		ec.unmarshalInputHPAmebloPostOrder,
 		ec.unmarshalInputHPArtistOrder,
 		ec.unmarshalInputHPBlobOrder,
+		ec.unmarshalInputHPElineumpMallItemsParamsArtistCategoriesInput,
 		ec.unmarshalInputHPElineumpMallItemsParamsInput,
 		ec.unmarshalInputHPElineumpMallItemsParamsMemberCategoriesInput,
 		ec.unmarshalInputHPElineupMallItemOrder,
@@ -25383,6 +25384,42 @@ func (ec *executionContext) unmarshalInputHPBlobOrder(ctx context.Context, obj i
 	return it, nil
 }
 
+func (ec *executionContext) unmarshalInputHPElineumpMallItemsParamsArtistCategoriesInput(ctx context.Context, obj interface{}) (helloproject.HPElineumpMallItemsParamsArtistCategories, error) {
+	var it helloproject.HPElineumpMallItemsParamsArtistCategories
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	fieldsInOrder := [...]string{"artistId", "categories"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "artistId":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("artistId"))
+			it.ArtistID, err = ec.unmarshalNString2string(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "categories":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("categories"))
+			it.Categories, err = ec.unmarshalOHPElineupMallItemCategory2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋenumsᚐHPElineupMallItemCategoryᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
 func (ec *executionContext) unmarshalInputHPElineumpMallItemsParamsInput(ctx context.Context, obj interface{}) (helloproject.HPElineumpMallItemsParams, error) {
 	var it helloproject.HPElineumpMallItemsParams
 	asMap := map[string]interface{}{}
@@ -25390,13 +25427,21 @@ func (ec *executionContext) unmarshalInputHPElineumpMallItemsParamsInput(ctx con
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"memberIDs", "categories", "memberCategories"}
+	fieldsInOrder := [...]string{"artistIDs", "memberIDs", "categories", "memberCategories", "artistCategories"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
 			continue
 		}
 		switch k {
+		case "artistIDs":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("artistIDs"))
+			it.ArtistIDs, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "memberIDs":
 			var err error
 
@@ -25418,6 +25463,14 @@ func (ec *executionContext) unmarshalInputHPElineumpMallItemsParamsInput(ctx con
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("memberCategories"))
 			it.MemberCategories, err = ec.unmarshalOHPElineumpMallItemsParamsMemberCategoriesInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParamsMemberCategoriesᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "artistCategories":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("artistCategories"))
+			it.ArtistCategories, err = ec.unmarshalOHPElineumpMallItemsParamsArtistCategoriesInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParamsArtistCategoriesᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -25934,7 +25987,7 @@ func (ec *executionContext) unmarshalInputHPFeedQueryParamsInput(ctx context.Con
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"memberIDs", "assetTypes", "useMemberTaggings", "minPostAt"}
+	fieldsInOrder := [...]string{"memberIDs", "artistIDs", "assetTypes", "useMemberTaggings", "minPostAt"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
@@ -25946,6 +25999,14 @@ func (ec *executionContext) unmarshalInputHPFeedQueryParamsInput(ctx context.Con
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("memberIDs"))
 			it.MemberIDs, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "artistIDs":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("artistIDs"))
+			it.ArtistIDs, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -31363,6 +31424,11 @@ func (ec *executionContext) marshalNHPBlobType2githubᚗcomᚋyssk22ᚋhpappᚋg
 	return v
 }
 
+func (ec *executionContext) unmarshalNHPElineumpMallItemsParamsArtistCategoriesInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParamsArtistCategories(ctx context.Context, v interface{}) (helloproject.HPElineumpMallItemsParamsArtistCategories, error) {
+	res, err := ec.unmarshalInputHPElineumpMallItemsParamsArtistCategoriesInput(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
 func (ec *executionContext) unmarshalNHPElineumpMallItemsParamsInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParams(ctx context.Context, v interface{}) (helloproject.HPElineumpMallItemsParams, error) {
 	res, err := ec.unmarshalInputHPElineumpMallItemsParamsInput(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
@@ -32791,6 +32857,26 @@ func (ec *executionContext) marshalOHPBlobThumbnail2ᚖgithubᚗcomᚋyssk22ᚋh
 		return graphql.Null
 	}
 	return ec._HPBlobThumbnail(ctx, sel, v)
+}
+
+func (ec *executionContext) unmarshalOHPElineumpMallItemsParamsArtistCategoriesInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParamsArtistCategoriesᚄ(ctx context.Context, v interface{}) ([]helloproject.HPElineumpMallItemsParamsArtistCategories, error) {
+	if v == nil {
+		return nil, nil
+	}
+	var vSlice []interface{}
+	if v != nil {
+		vSlice = graphql.CoerceList(v)
+	}
+	var err error
+	res := make([]helloproject.HPElineumpMallItemsParamsArtistCategories, len(vSlice))
+	for i := range vSlice {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithIndex(i))
+		res[i], err = ec.unmarshalNHPElineumpMallItemsParamsArtistCategoriesInput2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParamsArtistCategories(ctx, vSlice[i])
+		if err != nil {
+			return nil, err
+		}
+	}
+	return res, nil
 }
 
 func (ec *executionContext) unmarshalOHPElineumpMallItemsParamsMemberCategoriesInput2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋgraphqlᚋv3ᚋhelloprojectᚐHPElineumpMallItemsParamsMemberCategoriesᚄ(ctx context.Context, v interface{}) ([]helloproject.HPElineumpMallItemsParamsMemberCategories, error) {

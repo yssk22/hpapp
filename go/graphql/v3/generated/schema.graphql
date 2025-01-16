@@ -7,15 +7,18 @@ type HelloProjectQuery implements Node @goModel(model: "github.com/yssk22/hpapp/
 
 input HPFeedQueryParamsInput @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HPFeedQueryParams") {
   memberIDs: [String!]
+  artistIDs: [String!]
   assetTypes: [HPAssetType!]
   useMemberTaggings: Boolean
   minPostAt: Time
 }
 
 input HPElineumpMallItemsParamsInput @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HPElineumpMallItemsParams") {
+  artistIDs: [String!]
   memberIDs: [String!]
   categories: [HPElineupMallItemCategory!]
   memberCategories: [HPElineumpMallItemsParamsMemberCategoriesInput!]
+  artistCategories: [HPElineumpMallItemsParamsArtistCategoriesInput!]
 }
 
 enum HPAssetType @goModel(model: "github.com/yssk22/hpapp/go/service/schema/enums.HPAssetType") {
@@ -56,6 +59,11 @@ enum HPElineupMallItemCategory @goModel(model: "github.com/yssk22/hpapp/go/servi
 
 input HPElineumpMallItemsParamsMemberCategoriesInput @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HPElineumpMallItemsParamsMemberCategories") {
   memberId: String!
+  categories: [HPElineupMallItemCategory!]
+}
+
+input HPElineumpMallItemsParamsArtistCategoriesInput @goModel(model: "github.com/yssk22/hpapp/go/graphql/v3/helloproject.HPElineumpMallItemsParamsArtistCategories") {
+  artistId: String!
   categories: [HPElineupMallItemCategory!]
 }
 
