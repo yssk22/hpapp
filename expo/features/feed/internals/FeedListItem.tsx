@@ -63,7 +63,9 @@ export default function FeedListItem({ data }: { data: FeedListItemFragment$key 
         }}
       >
         <View style={styles.titleAndMetadata}>
-          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.title} numberOfLines={3}>
+            {item.title}
+          </Text>
           <View style={styles.metadata}>
             <AssetIcon type={item.assetType} size={IconSize.Small} />
             <Text style={styles.dateString} numberOfLines={1} ellipsizeMode="tail">

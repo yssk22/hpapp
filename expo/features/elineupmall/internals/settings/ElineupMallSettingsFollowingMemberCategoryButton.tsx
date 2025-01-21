@@ -29,7 +29,11 @@ export default function ElineupMallSettingsFollowingMemberCategoryButton({
   return (
     <TouchableOpacity
       onPress={() => {
-        upsert(member.id, member.myFollowStatus!.type, [{ category, followType: nextValue }]);
+        upsert({
+          obj: member,
+          followType: member.myFollowStatus!.type, // no change in followType
+          elineupMallFollowParams: [{ category, followType: nextValue }]
+        });
       }}
     >
       <Text style={[styles.container, { borderColor: foregroundColor, backgroundColor, color: foregroundColor }]}>

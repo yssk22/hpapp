@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { View } from 'react-native';
 
 import Card from './Card';
-import CardBody from './CardBody';
 
 const CardMeta: Meta<typeof Card> = {
   title: 'common/card/Card',
@@ -19,11 +18,7 @@ const CardMeta: Meta<typeof Card> = {
   args: {
     headerText: 'Card Header Text',
     colorScheme: 'primary',
-    children: (
-      <CardBody>
-        <Text>CardBody component to show the content on the card body</Text>
-      </CardBody>
-    )
+    body: <Text>CardBody component to show the content on the card body</Text>
   },
   decorators: [
     (Story) => (

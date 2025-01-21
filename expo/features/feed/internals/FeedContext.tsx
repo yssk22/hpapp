@@ -44,7 +44,8 @@ type HPFeedItem = NonNullable<
 
 type FeedQueryParams = {
   useMemberTaggings?: boolean;
-  memberIDs: string[];
+  artistIDs?: string[];
+  memberIDs?: string[];
   assetTypes: HPAssetType[];
 };
 
@@ -71,7 +72,13 @@ function createFeedContext(): [(props: FeedContextProviderProps) => React.JSX.El
     loadNext: () => {}
   });
 
-  function FeedContextProvider({ children, assetTypes, memberIDs, useMemberTaggings }: FeedContextProviderProps) {
+  function FeedContextProvider({
+    children,
+    assetTypes,
+    artistIDs,
+    memberIDs,
+    useMemberTaggings
+  }: FeedContextProviderProps) {
     // TODO: #28 Revisit Tagged Feed Feature
     // We use 30 days window when fetching tagged feed to get the items without timeout.
     // but this prevents users from loading items older than 30 days.
@@ -99,6 +106,7 @@ function createFeedContext(): [(props: FeedContextProviderProps) => React.JSX.El
               params: {
                 assetTypes,
                 memberIDs,
+                artistIDs,
                 useMemberTaggings
               }
             },

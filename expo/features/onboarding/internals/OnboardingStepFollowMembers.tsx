@@ -40,13 +40,22 @@ export default function OnboardingStepFollowMembers() {
             onMemberIconPress={async (member) => {
               switch (member.myFollowStatus?.type) {
                 case 'follow':
-                  await upsertFollow(member.id, 'unfollow');
+                  await upsertFollow({
+                    obj: member,
+                    followType: 'unfollow'
+                  });
                   return;
                 case 'follow_with_notification':
-                  await upsertFollow(member.id, 'follow');
+                  await upsertFollow({
+                    obj: member,
+                    followType: 'follow'
+                  });
                   return;
                 default:
-                  await upsertFollow(member.id, 'follow_with_notification');
+                  await upsertFollow({
+                    obj: member,
+                    followType: 'follow_with_notification'
+                  });
               }
             }}
           />

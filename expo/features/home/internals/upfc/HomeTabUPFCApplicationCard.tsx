@@ -1,6 +1,6 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
 import { CalendarDateIcon, Text } from '@hpapp/features/common';
-import { Card, CardBody } from '@hpapp/features/common/card';
+import { Card } from '@hpapp/features/common/card';
 import { FontSize, IconSize, Spacing } from '@hpapp/features/common/constants';
 import { ListItem } from '@hpapp/features/common/list';
 import { UPFCApplicationStatusLabel, useUPFCWebView } from '@hpapp/features/upfc';
@@ -15,7 +15,7 @@ export type UPFCApplicationCardProps = {
 };
 
 export default function UPFCApplicationCard({ event }: UPFCApplicationCardProps) {
-  const [color] = useThemeColor('primary');
+  const [color, contrast] = useThemeColor('primary');
   const openUPFCWebView = useUPFCWebView();
   const paymentWindowString = `${toDateString(event.paymentOpenDate)} ~ ${toDateString(event.paymentDueDate)}`;
   const items = useMemo(() => {
@@ -68,12 +68,16 @@ export default function UPFCApplicationCard({ event }: UPFCApplicationCardProps)
     return null;
   }, [event.paymentDueDate]);
   return (
-    <Card containerStyle={styles.card} headerText={event.name}>
-      <CardBody>
-        <>{items}</>
-        <>{footer}</>
-      </CardBody>
-    </Card>
+    <Card
+      containerStyle={styles.card}
+      header={<Text style={{ color: contrast }}>{event.name}</Text>}
+      body={
+        <>
+          {items}
+          {footer}
+        </>
+      }
+    />
   );
 }
 const styles = StyleSheet.create({

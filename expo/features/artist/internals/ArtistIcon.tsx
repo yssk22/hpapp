@@ -1,8 +1,8 @@
-import { useMember } from '@hpapp/features/app/user';
+import { useArtist } from '@hpapp/features/app/user';
 
 import ArtistBaseIcon from './ArtistBaseIcon';
 
-export enum ArtistMemberIconSize {
+export enum ArtistIconSize {
   // eslint-disable-next-line no-unused-vars
   Small = 32,
   // eslint-disable-next-line no-unused-vars
@@ -12,24 +12,24 @@ export enum ArtistMemberIconSize {
 }
 
 export type ArtistMemberIconProps = {
-  memberId: string;
-  size?: ArtistMemberIconSize | number;
+  artistId: string;
+  size?: ArtistIconSize | number;
   circle?: boolean;
   showFollowIcon?: boolean;
   onPress?: () => void;
 };
 
 export default function ArtistMemberIcon({
-  memberId,
-  size = ArtistMemberIconSize.Medium,
+  artistId,
+  size = ArtistIconSize.Medium,
   circle = false,
   showFollowIcon = false,
   onPress
 }: ArtistMemberIconProps) {
-  const m = useMember(memberId);
+  const a = useArtist(artistId);
   return (
     <ArtistBaseIcon
-      thumbnailUrl={m!.thumbnailURL}
+      thumbnailUrl={a!.thumbnailURL}
       size={size}
       circle={circle}
       showFollowIcon={showFollowIcon}
