@@ -1,3 +1,4 @@
+import { HPArtist, HPMember } from '@hpapp/features/app/user';
 import { logEvent } from '@hpapp/system/firebase';
 import { useCallback } from 'react';
 import { graphql, useMutation } from 'react-relay';
@@ -7,8 +8,6 @@ import {
   HPFollowType,
   HPFollowElineupMallParamsInput
 } from './__generated__/useUpsertFollowMutation.graphql';
-
-//lineupMallFollowParams?: ReadonlyArray<HPFollowElineupMallParamsInput>: case null: case undefined;
 
 const useUpsertFollowMutationGraphQL = graphql`
   mutation useUpsertFollowMutation($params: HPFollowUpsertParamsInput!) {
@@ -48,26 +47,24 @@ const useUpsertFollowMutationGraphQL = graphql`
   }
 `;
 
-const useUpsertFollow = (): [
-  (
-    memberId: string,
-    followType: HPFollowType,
-    elineupMallFollowParams?: HPFollowElineupMallParamsInput[]
-  ) => Promise<string>,
-  boolean
-] => {
+export type UpsertFollowParams = {
+  obj: HPArtist | HPMember;
+  followType: HPFollowType;
+  elineupMallFollowParams?: HPFollowElineupMallParamsInput[];
+};
+
+const useUpsertFollow = (): [(params: UpsertFollowParams) => Promise<string>, boolean] => {
   const [upsertFollow, isUpdating] = useMutation<useUpsertFollowMutation>(useUpsertFollowMutationGraphQL);
   const update = useCallback(
-    async (
-      memberId: string,
-      followType: HPFollowType,
-      elineupMallFollowParams?: HPFollowElineupMallParamsInput[]
-    ): Promise<string> => {
+    async ({ obj, followType, elineupMallFollowParams }: UpsertFollowParams): Promise<string> => {
       const p = new Promise((resolve: (id: string) => void, reject: (err: object) => void) => {
+        const artistId = obj.type === 'artist' ? parseInt(obj.id, 10) : undefined;
+        const memberId = obj.type === 'member' ? parseInt(obj.id, 10) : undefined;
         upsertFollow({
           variables: {
             params: {
-              memberId: parseInt(memberId, 10),
+              artistId,
+              memberId,
               followType,
               elineupMallFollowParams
             }
@@ -85,11 +82,11 @@ const useUpsertFollow = (): [
           },
           updater: (store, payload) => {
             const followId = payload?.me?.upsertFollow?.id;
-            const member = store.get(memberId) ?? undefined;
-            if (followId === undefined || member === undefined) {
+            const aristOrMember = store.get(obj.id) ?? undefined;
+            if (followId === undefined || aristOrMember === undefined) {
               return;
             }
-            const record = member.getOrCreateLinkedRecord('myFollowStatus', 'HPFollow');
+            const record = aristOrMember.getOrCreateLinkedRecord('myFollowStatus', 'HPFollow');
             record.setValue(followId, 'id');
             record.setValue(followType, 'type');
             (elineupMallFollowParams ?? []).forEach((param) => {
@@ -170,12 +167,14 @@ const useUpsertFollow = (): [
               if (elineupMallFollowParams) {
                 logEvent('artist_follow_member', {
                   feature: 'artist',
+                  artistId,
                   memberId,
                   followType
                 });
               } else {
                 logEvent('elineupmall_follow_member_and_category', {
                   feature: 'elineupmall',
+                  artistId,
                   memberId,
                   elineupMallFollowParams
                 });

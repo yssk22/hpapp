@@ -90,10 +90,13 @@ const HelloProjectFragmentGraphQL = graphql`
 
 export type HPMember = NonNullable<
   NonNullable<NonNullable<HelloProjectFragment$data['artists']>[number]>['members']
->[number];
+>[number] & {
+  type: 'member';
+};
 
 export type HPArtist = Omit<NonNullable<NonNullable<HelloProjectFragment$data['artists']>[number]>, 'members'> & {
   members: readonly HPMember[];
+  type: 'artist';
 };
 export type HPFollow = NonNullable<HPArtist['myFollowStatus']>;
 export type HPFollowType = HPFollowHPFollowType;
@@ -127,11 +130,16 @@ export default class HelloProject {
       if (a) {
         const members: HPMember[] = [];
         a.members?.forEach((m) => {
-          members.push(m);
-          memberList.push(m);
-          memberMap.set(m.id, m);
+          const member = {
+            ...m,
+            type: 'member'
+          } as HPMember;
+          members.push(member);
+          memberList.push(member);
+          memberMap.set(member.id, member);
         });
         const artist: HPArtist = {
+          type: 'artist',
           ...a,
           members
         };

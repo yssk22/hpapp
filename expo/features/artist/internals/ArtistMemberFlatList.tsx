@@ -1,21 +1,19 @@
-import { HPMember } from '@hpapp/features/app/user';
 import { ListItemLoadMore } from '@hpapp/features/common/list';
 import { FeedListItem, HPAssetType, HPFeedItem } from '@hpapp/features/feed';
+import React from 'react';
 import { FlatList } from 'react-native';
 
-import { useArtistMemberFeed } from './ArtistMemberContext';
+import { useFeed } from './ArtistContext';
 import ArtistMemberFlatListButtonGroup from './ArtistMemberFlastListButtonGroup';
-import ArtistMemberHeader from './ArtistMemberHeader';
 
 export type ArtistMemberFlatListProps = {
-  member: HPMember;
+  header: React.ReactElement;
   onSelect: (button: HPAssetType) => void;
 };
 
-export default function ArtistMemberFlatList({ member, onSelect }: ArtistMemberFlatListProps) {
-  const header = <ArtistMemberHeader member={member} />;
+export default function ArtistMemberFlatList({ header, onSelect }: ArtistMemberFlatListProps) {
   const buttons = <ArtistMemberFlatListButtonGroup onPress={onSelect} />;
-  const feed = useArtistMemberFeed();
+  const feed = useFeed();
   return (
     <FlatList
       stickyHeaderIndices={[1]}

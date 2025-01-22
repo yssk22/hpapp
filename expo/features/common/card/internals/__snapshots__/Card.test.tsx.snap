@@ -119,15 +119,11 @@ exports[`Card Basic 1`] = `
                       {
                         "padding": 12,
                       },
-                      {
-                        "backgroundColor": "#0075c2",
-                      },
                       undefined,
                     ]
                   }
                 >
                   <Text
-                    numberOfLines={1}
                     style={
                       [
                         {
@@ -136,48 +132,12 @@ exports[`Card Basic 1`] = `
                         {
                           "fontSize": 14,
                         },
-                        [
-                          {
-                            "color": "white",
-                          },
-                          {
-                            "fontSize": 14,
-                            "fontWeight": "bold",
-                          },
-                        ],
-                      ]
-                    }
-                  >
-                    Card Header Text
-                  </Text>
-                </View>
-                <View>
-                  <View
-                    style={
-                      [
-                        {
-                          "padding": 12,
-                        },
                         undefined,
                       ]
                     }
                   >
-                    <Text
-                      style={
-                        [
-                          {
-                            "color": "black",
-                          },
-                          {
-                            "fontSize": 14,
-                          },
-                          undefined,
-                        ]
-                      }
-                    >
-                      CardBody component to show the content on the card body
-                    </Text>
-                  </View>
+                    CardBody component to show the content on the card body
+                  </Text>
                 </View>
               </View>
             </View>
@@ -324,15 +284,11 @@ exports[`Card SubHeader 1`] = `
                       {
                         "padding": 12,
                       },
-                      {
-                        "backgroundColor": "#0075c2",
-                      },
                       undefined,
                     ]
                   }
                 >
                   <Text
-                    numberOfLines={1}
                     style={
                       [
                         {
@@ -340,72 +296,13 @@ exports[`Card SubHeader 1`] = `
                         },
                         {
                           "fontSize": 14,
-                        },
-                        [
-                          {
-                            "color": "white",
-                          },
-                          {
-                            "fontSize": 14,
-                            "fontWeight": "bold",
-                          },
-                        ],
-                      ]
-                    }
-                  >
-                    Card Header Text
-                  </Text>
-                  <Text
-                    numberOfLines={1}
-                    style={
-                      [
-                        {
-                          "color": "black",
-                        },
-                        {
-                          "fontSize": 14,
-                        },
-                        [
-                          {
-                            "color": "white",
-                          },
-                          {
-                            "fontSize": 12,
-                          },
-                        ],
-                      ]
-                    }
-                  >
-                    subheader text can be added in the header container
-                  </Text>
-                </View>
-                <View>
-                  <View
-                    style={
-                      [
-                        {
-                          "padding": 12,
                         },
                         undefined,
                       ]
                     }
                   >
-                    <Text
-                      style={
-                        [
-                          {
-                            "color": "black",
-                          },
-                          {
-                            "fontSize": 14,
-                          },
-                          undefined,
-                        ]
-                      }
-                    >
-                      CardBody component to show the content on the card body
-                    </Text>
-                  </View>
+                    CardBody component to show the content on the card body
+                  </Text>
                 </View>
               </View>
             </View>

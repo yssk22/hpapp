@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<dbb002ec406eef5b75b369fdd30ca29f>>
+ * @generated SignedSource<<292fc0effa05f37a3efce6a11322d67a>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -12,6 +12,8 @@ import { ConcreteRequest } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type HPElineupMallItemCategory = "blueray" | "clear_file" | "colllection_other" | "colllection_photo" | "colllection_pinnap_poster" | "dvd" | "dvd_magazine" | "dvd_magazine_other" | "fsk" | "keyring_other" | "microfiber_towel" | "muffler_towel" | "other" | "penlight" | "photo2_l" | "photo_a4" | "photo_a5" | "photo_album" | "photo_album_other" | "photo_book" | "photo_book_other" | "photo_daily" | "photo_other" | "t_shirt" | "%future added value";
 export type HPElineumpMallItemsParamsInput = {
+  artistCategories?: ReadonlyArray<HPElineumpMallItemsParamsArtistCategoriesInput> | null | undefined;
+  artistIDs?: ReadonlyArray<string> | null | undefined;
   categories?: ReadonlyArray<HPElineupMallItemCategory> | null | undefined;
   memberCategories?: ReadonlyArray<HPElineumpMallItemsParamsMemberCategoriesInput> | null | undefined;
   memberIDs?: ReadonlyArray<string> | null | undefined;
@@ -19,6 +21,10 @@ export type HPElineumpMallItemsParamsInput = {
 export type HPElineumpMallItemsParamsMemberCategoriesInput = {
   categories?: ReadonlyArray<HPElineupMallItemCategory> | null | undefined;
   memberId: string;
+};
+export type HPElineumpMallItemsParamsArtistCategoriesInput = {
+  artistId: string;
+  categories?: ReadonlyArray<HPElineupMallItemCategory> | null | undefined;
 };
 export type ElineupMallLimitedTimeItemListQuery$variables = {
   after?: any | null | undefined;

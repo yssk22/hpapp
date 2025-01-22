@@ -1,5 +1,5 @@
 import { useThemeColor } from '@hpapp/features/app/theme';
-import { HPMember } from '@hpapp/features/app/user';
+import { HPArtist, HPMember } from '@hpapp/features/app/user';
 import { Spacing } from '@hpapp/features/common/constants';
 import { t } from '@hpapp/system/i18n';
 import { Button, Icon } from '@rneui/themed';
@@ -23,14 +23,14 @@ const styles = StyleSheet.create({
   notifyButton: {}
 });
 
-export type ArtistMemberFollowButtonProps = {
-  member: HPMember;
+export type ArtistBaseFollowButtonProps = {
+  obj: HPArtist | HPMember;
 };
 
-export default function ArtistMemberFollowButton({ member }: ArtistMemberFollowButtonProps) {
+export default function ArtistBaseFollowButton({ obj }: ArtistBaseFollowButtonProps) {
   const [color, contrast] = useThemeColor('primary');
-  const [updateFollow, isUpdating] = useUpsertFollow();
-  const followType = member.myFollowStatus?.type ?? 'unfollow';
+  const [upsertFollow, isUpdating] = useUpsertFollow();
+  const followType = obj.myFollowStatus?.type ?? 'unfollow';
   const variant = followType === 'unfollow' ? 'outline' : undefined;
   const followActionType = followType === 'unfollow' ? 'follow' : 'unfollow';
   const bellName = followType === 'follow_with_notification' ? 'bell-check' : 'bell-outline';
@@ -41,8 +41,8 @@ export default function ArtistMemberFollowButton({ member }: ArtistMemberFollowB
         type={variant}
         loading={isUpdating}
         onPress={() => {
-          updateFollow({
-            obj: member,
+          upsertFollow({
+            obj,
             followType: followActionType
           });
         }}
@@ -56,8 +56,8 @@ export default function ArtistMemberFollowButton({ member }: ArtistMemberFollowB
           if (followType === 'unfollow') {
             return;
           }
-          updateFollow({
-            obj: member,
+          upsertFollow({
+            obj,
             followType: followType === 'follow_with_notification' ? 'follow' : 'follow_with_notification'
           });
         }}

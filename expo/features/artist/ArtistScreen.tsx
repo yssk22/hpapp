@@ -1,33 +1,32 @@
-import { useArtist, useMember } from '@hpapp/features/app/user';
+import { useArtist } from '@hpapp/features/app/user';
 import { defineScreen, useNavigation } from '@hpapp/features/common/stack';
 import { HPAssetType } from '@hpapp/features/feed';
 import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import ArtistContextProvider from './internals/ArtistContext';
+import ArtistHeader from './internals/ArtistHeader';
 import ArtistMemberFlatList from './internals/ArtistMemberFlatList';
-import ArtistMemberHeader from './internals/ArtistMemberHeader';
 
 export type ArtistMemberScreenProps = {
-  memberId: string;
+  artistId: string;
 };
 
-export default defineScreen('/artist/member/', function ArtistMemberScreen(props: ArtistMemberScreenProps) {
-  const member = useMember(props.memberId);
-  const artist = useArtist(member!.artistID!);
+export default defineScreen('/artist/', function ArtistScreen(props: ArtistMemberScreenProps) {
+  const artist = useArtist(props.artistId);
   const [assetType, setAssetType] = useState<HPAssetType>('ameblo');
 
   const navigation = useNavigation();
   useEffect(() => {
     navigation.setOptions({
-      title: `${member!.name} / ${artist!.name}`
+      title: artist!.name
     });
-  }, [member!.id]);
+  }, [artist!.id]);
   return (
     <View style={styles.container}>
-      <ArtistContextProvider memberId={member!.id} feedAssetType={assetType}>
+      <ArtistContextProvider artistId={artist!.id} feedAssetType={assetType}>
         <>
-          <ArtistMemberFlatList header={<ArtistMemberHeader member={member!} />} onSelect={setAssetType} />
+          <ArtistMemberFlatList header={<ArtistHeader artist={artist!} />} onSelect={setAssetType} />
         </>
       </ArtistContextProvider>
     </View>

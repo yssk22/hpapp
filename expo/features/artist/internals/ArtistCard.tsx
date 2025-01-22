@@ -1,6 +1,9 @@
+import { useThemeColor } from '@hpapp/features/app/theme';
 import { HPArtist, HPMember } from '@hpapp/features/app/user';
-import { Card, CardBody } from '@hpapp/features/common/card';
-import { Spacing } from '@hpapp/features/common/constants';
+import { ArtistIcon } from '@hpapp/features/artist';
+import { Text } from '@hpapp/features/common';
+import { Card } from '@hpapp/features/common/card';
+import { FontSize, Spacing } from '@hpapp/features/common/constants';
 import { useCallback, useMemo, useState } from 'react';
 import { View, StyleSheet, LayoutChangeEvent } from 'react-native';
 
@@ -13,6 +16,7 @@ export type ArtistCardProps = {
   artist: HPArtist;
   memberIconCircle?: boolean;
   memberIconShowFollow?: boolean;
+  onArtistIconPress?: (artist: HPArtist) => void;
   onMemberIconPress?: (member: HPMember) => void;
 };
 
@@ -20,8 +24,10 @@ export default function ArtistCard({
   artist,
   memberIconCircle,
   memberIconShowFollow,
+  onArtistIconPress,
   onMemberIconPress
 }: ArtistCardProps) {
+  const [, primaryContrast] = useThemeColor('primary');
   const [componentWidth, setComponentWidth] = useState(0);
   const handleLayout = useCallback((event: LayoutChangeEvent) => {
     const { width } = event.nativeEvent.layout;
@@ -45,8 +51,28 @@ export default function ArtistCard({
     return new Array(numPadding).fill(0);
   }, [componentWidth, members]);
   return (
-    <Card key={artist.key} containerStyle={styles.card} headerText={artist.name}>
-      <CardBody>
+    <Card
+      key={artist.key}
+      containerStyle={styles.card}
+      header={
+        <View style={styles.cardHeader}>
+          <Text numberOfLines={1} style={[styles.cardHeaderText, { color: primaryContrast }]}>
+            {artist.name}
+          </Text>
+          <ArtistIcon
+            artistId={artist.id}
+            size={50}
+            onPress={
+              onArtistIconPress
+                ? () => {
+                    onArtistIconPress(artist);
+                  }
+                : undefined
+            }
+          />
+        </View>
+      }
+      body={
         <View style={styles.membersContainer} onLayout={handleLayout}>
           {members.map((m) => {
             return (
@@ -71,8 +97,8 @@ export default function ArtistCard({
             return <View style={[styles.padding, styles.memberIcon]} key={`padding_${i}`} />;
           })}
         </View>
-      </CardBody>
-    </Card>
+      }
+    />
   );
 }
 
@@ -86,10 +112,15 @@ const styles = StyleSheet.create({
   card: {
     padding: 0
   },
-  cardTitle: {
-    paddingTop: Spacing.Small,
-    paddingLeft: Spacing.Medium,
-    paddingRight: Spacing.Medium
+  cardHeader: {
+    margin: 0,
+    padding: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  cardHeaderText: {
+    fontSize: FontSize.MediumLarge
   },
   memberIcon: {
     marginRight: MemberIconMargin,

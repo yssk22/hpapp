@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<644c080cad5cb676dcc0ac06a31863c1>>
+ * @generated SignedSource<<d30e4cefe21c0430e1389bbb1ae7953c>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -12,6 +12,7 @@ import { ConcreteRequest } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type HPAssetType = "ameblo" | "elineup_mall" | "instagram" | "tiktok" | "twitter" | "youtube" | "%future added value";
 export type HPFeedQueryParamsInput = {
+  artistIDs?: ReadonlyArray<string> | null | undefined;
   assetTypes?: ReadonlyArray<HPAssetType> | null | undefined;
   memberIDs?: ReadonlyArray<string> | null | undefined;
   minPostAt?: string | null | undefined;

@@ -330,7 +330,7 @@ exports[`artist ArtistMemberIcon icon no press 1`] = `
                   "width": 64,
                 }
               }
-              testID="ArtistMemberIcon.NoOnPress"
+              testID="ArtistBaseIcon.NoOnPress"
             >
               <ViewManagerAdapter_ExpoImage
                 cachePolicy="disk"
@@ -528,7 +528,7 @@ exports[`artist ArtistMemberIcon icon with press 1`] = `
                   "width": 64,
                 }
               }
-              testID="ArtistMemberIcon"
+              testID="ArtistBaseIcon.OnPress"
             >
               <ViewManagerAdapter_ExpoImage
                 cachePolicy="memory-disk"
