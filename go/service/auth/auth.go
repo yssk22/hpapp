@@ -45,6 +45,7 @@ func (a *authService) Command() *cobra.Command {
 		Use:   "auth",
 		Short: "manage authentication",
 	}
+	cmd.AddCommand(appuser.Command())
 	cmd.AddCommand(extuser.Command())
 	return &cmd
 }
