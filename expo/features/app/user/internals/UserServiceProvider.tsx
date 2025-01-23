@@ -1,3 +1,4 @@
+import { useLogout } from '@hpapp/features/auth';
 import { Loading } from '@hpapp/features/common';
 import { Suspense, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import {
@@ -186,5 +187,15 @@ function RenderServiceRootQuery({
       isReloading
     };
   }, [hp, me, reload, isReloading]);
+
+  const logout = useLogout();
+  useEffect(() => {
+    if (me.username === 'guest') {
+      logout();
+    }
+  }, [me.username]);
+  if (me.username === 'guest') {
+    return null;
+  }
   return <ctx.Provider value={serviceRoot}>{children}</ctx.Provider>;
 }
