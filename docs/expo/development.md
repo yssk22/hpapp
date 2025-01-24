@@ -4,15 +4,11 @@
 
 ### for iOS
 
-Scan the QR code below or open [iTunes Link](itms-services://?action=download-manifest;url=https://storage.googleapis.com/hpapp.yssk22.dev/hpapp-dev.plist) to install the development build.
-
-![iOS QR code](https://storage.googleapis.com/hpapp.yssk22.dev/artifacts/QR-hpapp-dev.png)
+![iOS QR code](https://storage.googleapis.com/hpapp.yssk22.dev/artifacts/QR-hpapp-dev-ios.png)
 
 ### for Android
 
-Scan the QR code below or open [iTunes Link](itms-services://?action=download-manifest;url=https://storage.googleapis.com/hpapp.yssk22.dev/hpapp-dev.plist) to install the development build.
-
-![Android QR](https://storage.googleapis.com/hpapp.yssk22.dev/artifacts/QR-hpapp-android-dev.png)
+![Android QR](https://storage.googleapis.com/hpapp.yssk22.dev/artifacts/QR-hpapp-dev-android.png)
 
 ## Start a development server
 
