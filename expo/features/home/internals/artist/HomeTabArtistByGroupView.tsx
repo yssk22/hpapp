@@ -17,7 +17,7 @@ export default function HomeTabArtistByGroupView() {
         return (
           <ArtistCard
             artist={item.item}
-            memberIconShowFollow
+            iconShowFollow
             onArtistIconPress={(artist: HPArtist) => {
               navigation.push(ArtistScreen, { artistId: artist.id });
             }}

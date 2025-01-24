@@ -14,16 +14,16 @@ const MemberIconMargin = MemberIconSize / 10;
 
 export type ArtistCardProps = {
   artist: HPArtist;
-  memberIconCircle?: boolean;
-  memberIconShowFollow?: boolean;
+  iconCircle?: boolean;
+  iconShowFollow?: boolean;
   onArtistIconPress?: (artist: HPArtist) => void;
   onMemberIconPress?: (member: HPMember) => void;
 };
 
 export default function ArtistCard({
   artist,
-  memberIconCircle,
-  memberIconShowFollow,
+  iconCircle,
+  iconShowFollow,
   onArtistIconPress,
   onMemberIconPress
 }: ArtistCardProps) {
@@ -62,6 +62,8 @@ export default function ArtistCard({
           <ArtistIcon
             artistId={artist.id}
             size={50}
+            followType={artist.myFollowStatus?.type}
+            showFollowIcon={iconShowFollow}
             onPress={
               onArtistIconPress
                 ? () => {
@@ -80,8 +82,8 @@ export default function ArtistCard({
                 <ArtistMemberIcon
                   memberId={m.id}
                   size={ArtistMemberIconSize.Medium}
-                  circle={memberIconCircle}
-                  showFollowIcon={memberIconShowFollow}
+                  circle={iconCircle}
+                  showFollowIcon={iconShowFollow}
                   onPress={
                     onMemberIconPress
                       ? () => {

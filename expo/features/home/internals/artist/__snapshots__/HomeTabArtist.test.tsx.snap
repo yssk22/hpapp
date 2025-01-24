@@ -1182,6 +1182,28 @@ exports[`HomeTabArtist tab 1`] = `
                                 }
                                 width={64}
                               />
+                              <View
+                                style={
+                                  [
+                                    {
+                                      "backgroundColor": "white",
+                                    },
+                                    {
+                                      "alignItems": "flex-end",
+                                      "position": "absolute",
+                                      "right": 0,
+                                      "top": 0,
+                                    },
+                                  ]
+                                }
+                              >
+                                <Icon
+                                  color="#e5007f"
+                                  name="bell-check"
+                                  size={16}
+                                  type="material-community"
+                                />
+                              </View>
                             </View>
                           </View>
                           <View
@@ -1350,6 +1372,28 @@ exports[`HomeTabArtist tab 1`] = `
                                 }
                                 width={64}
                               />
+                              <View
+                                style={
+                                  [
+                                    {
+                                      "backgroundColor": "white",
+                                    },
+                                    {
+                                      "alignItems": "flex-end",
+                                      "position": "absolute",
+                                      "right": 0,
+                                      "top": 0,
+                                    },
+                                  ]
+                                }
+                              >
+                                <Icon
+                                  color="#e5007f"
+                                  name="bell-check"
+                                  size={16}
+                                  type="material-community"
+                                />
+                              </View>
                             </View>
                           </View>
                           <View
@@ -1518,6 +1562,28 @@ exports[`HomeTabArtist tab 1`] = `
                                 }
                                 width={64}
                               />
+                              <View
+                                style={
+                                  [
+                                    {
+                                      "backgroundColor": "white",
+                                    },
+                                    {
+                                      "alignItems": "flex-end",
+                                      "position": "absolute",
+                                      "right": 0,
+                                      "top": 0,
+                                    },
+                                  ]
+                                }
+                              >
+                                <Icon
+                                  color="#e5007f"
+                                  name="bell-check"
+                                  size={16}
+                                  type="material-community"
+                                />
+                              </View>
                             </View>
                           </View>
                         </View>
@@ -15596,6 +15662,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="account-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -15972,6 +16060,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="bell-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -16254,6 +16364,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="account-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -17468,6 +17600,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="bell-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -17836,6 +17990,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="bell-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -17930,6 +18106,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="account-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -18024,6 +18222,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="account-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -18212,6 +18432,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="account-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -18306,6 +18548,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="bell-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -18400,6 +18664,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="bell-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -18494,6 +18780,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="account-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -18588,6 +18896,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="bell-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -18682,6 +19012,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="account-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                               </View>
@@ -20170,6 +20522,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="account-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -22410,6 +22784,28 @@ exports[`HomeTabArtist tab 1`] = `
                                       }
                                       width={64}
                                     />
+                                    <View
+                                      style={
+                                        [
+                                          {
+                                            "backgroundColor": "white",
+                                          },
+                                          {
+                                            "alignItems": "flex-end",
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Icon
+                                        color="#e5007f"
+                                        name="account-check"
+                                        size={16}
+                                        type="material-community"
+                                      />
+                                    </View>
                                   </View>
                                 </View>
                                 <View
