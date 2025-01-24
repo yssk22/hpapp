@@ -16,7 +16,7 @@ export default defineScreen('/onboarding/', function OnboardingScreen() {
           props: {
             title: t('Step 1: Follow Members'),
             description: [
-              t('Tap members you want to follow to get blog and instagram updates.'),
+              t('Tap artists and members you want to follow to get blog and instagram updates.'),
               t('You can also subscribe e-LineUP!Mall goods for your following members.')
             ].join(' '),
             element: <OnboardingStepFollowMembers />

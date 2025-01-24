@@ -1,4 +1,4 @@
-import { useArtist } from '@hpapp/features/app/user';
+import { HPFollowType, useArtist } from '@hpapp/features/app/user';
 
 import ArtistBaseIcon from './ArtistBaseIcon';
 
@@ -15,6 +15,7 @@ export type ArtistMemberIconProps = {
   artistId: string;
   size?: ArtistIconSize | number;
   circle?: boolean;
+  followType?: HPFollowType;
   showFollowIcon?: boolean;
   onPress?: () => void;
 };
@@ -24,6 +25,7 @@ export default function ArtistMemberIcon({
   size = ArtistIconSize.Medium,
   circle = false,
   showFollowIcon = false,
+  followType,
   onPress
 }: ArtistMemberIconProps) {
   const a = useArtist(artistId);
@@ -32,6 +34,7 @@ export default function ArtistMemberIcon({
       thumbnailUrl={a!.thumbnailURL}
       size={size}
       circle={circle}
+      followType={followType}
       showFollowIcon={showFollowIcon}
       onPress={onPress}
     />

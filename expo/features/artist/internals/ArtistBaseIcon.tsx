@@ -6,7 +6,7 @@ import { Icon } from '@rneui/themed';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 export type ArtistBaseIconProps = {
-  folllowType?: HPFollowType;
+  followType?: HPFollowType;
   thumbnailUrl: string;
   size?: number;
   circle?: boolean;
@@ -16,14 +16,14 @@ export type ArtistBaseIconProps = {
 
 export default function ArtistBaseIcon({
   thumbnailUrl,
-  folllowType,
+  followType,
   size = 32,
   circle = false,
   showFollowIcon = false,
   onPress
 }: ArtistBaseIconProps) {
   const [color, contrast] = useThemeColor('secondary');
-  const iconName = getFollowIconName(folllowType);
+  const iconName = getFollowIconName(followType);
   const circleProps = circle ? { borderRadius: size * 2 } : {};
   if (onPress === undefined) {
     return (

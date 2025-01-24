@@ -32,6 +32,7 @@ export default function ArtistMemberIcon({
       thumbnailUrl={m!.thumbnailURL}
       size={size}
       circle={circle}
+      followType={m!.myFollowStatus?.type}
       showFollowIcon={showFollowIcon}
       onPress={onPress}
     />
