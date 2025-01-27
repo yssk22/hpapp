@@ -187,7 +187,10 @@ async function fetchApplicationsFromSite(
   }
 }
 
-type SyncParam = [UPFCEventTicket, string];
+type SyncParam = {
+  applicationName: string;
+  ticket: UPFCEventTicket;
+};
 
 async function syncToCalender(
   calendarId: string,
@@ -224,9 +227,13 @@ async function syncToCalender(
       if (!dateToEvents[d]) {
         dateToEvents[d] = [];
       }
-      dateToEvents[d].push([t, a.name]);
+      dateToEvents[d].push({
+        applicationName: a.name,
+        ticket: t
+      });
     });
   });
+  // do calender sync in parallel per a day
   await Promise.all(
     Object.values(dateToEvents).map(async (params) => {
       return await syncToCalendarEvent(params, calendarId, eventPrefix);
@@ -235,39 +242,43 @@ async function syncToCalender(
 }
 
 async function syncToCalendarEvent(params: SyncParam[], calendarId: string, prefix: string) {
-  const start = date.getDate(params[0][0].startAt);
+  const start = date.getDate(params[0].ticket.startAt);
   const end = date.addDate(start.getTime(), 2, 'day');
   const events = await Calendar.getEventsAsync([calendarId], start, end);
+  // TODO: #229, duplicate calendar events may be registered in a given key. we have to clean up them.
   const keyToEvent = events.reduce(
     (h, e) => {
-      const key = `${e.title}.${date.parseDate(e.startDate).getTime()}.${e.location}`;
-      h[key] = e;
+      const key = `${e.title}.${date.parseDate(e.startDate).getTime()}`;
+      if (h[key] === undefined) {
+        h[key] = [];
+      }
+      h[key].push(e);
       return h;
     },
-    {} as { [key: string]: Calendar.Event }
+    {} as { [key: string]: Calendar.Event[] }
   );
   return Promise.all(
     params.map(async (p) => {
-      const ticket = p[0];
-      const title = prefix === '' ? p[1] : `${prefix} ${p[1]}`;
+      const ticket = p.ticket;
+      const title = prefix === '' ? p.applicationName : `${prefix} ${p.applicationName}`;
       const location = ticket.venue;
       const startDate = ticket.openAt ? ticket.openAt : ticket.startAt;
-      const key = `${title}.${date.parseDate(startDate).getTime()}.${location}`;
+      const key = `${title}.${date.parseDate(startDate).getTime()}`;
       // old app uses event title with '■ ' prefix from the ticket page so we have to take care of.
-      const oldTitle = prefix === '' ? p[1] : `${prefix} ■ ${p[1]}`;
-      const oldKey = `${oldTitle}.${date.parseDate(startDate).getTime()}.${location}`;
-      const calendarEvent = keyToEvent[key] || keyToEvent[oldKey];
+      const oldTitle = prefix === '' ? p.applicationName : `${prefix} ■ ${p.applicationName}`;
+      const oldKey = `${oldTitle}.${date.parseDate(startDate).getTime()}`;
+      const calendarEvents = keyToEvent[key] || keyToEvent[oldKey];
       // TODO: i18n
       const notes = `${ticket.status} 開演: ${date.toTimeString(
         ticket.startAt
       )} (ハロー！ファンにより自動的に追加されました)`;
-      if (calendarEvent) {
+      if (calendarEvents) {
         // 2 possible actions for events which already exist::
         //   - delete if status gets '落選' or '入金忘'
         //   - update if title or notes including status are different.
         if (ticket.status === '落選' || ticket.status === '入金忘') {
           try {
-            await Calendar.deleteEventAsync(calendarEvent.id);
+            await Promise.all(calendarEvents.map((e) => Calendar.deleteEventAsync(e.id)));
             logging.Info('features.upfc.internals.useUPFCEventApplications.syncToCalendarEvent', 'delete', {
               calendarId
             });
@@ -277,12 +288,16 @@ async function syncToCalendarEvent(params: SyncParam[], calendarId: string, pref
               error: (e as any).toString()
             });
           }
-        } else if (notes !== calendarEvent.notes || title !== calendarEvent.title) {
+        } else if (notes !== calendarEvents[0].notes) {
           try {
-            await Calendar.updateEventAsync(calendarEvent.id, {
+            await Calendar.updateEventAsync(calendarEvents[0].id, {
               title,
               notes
             });
+            // TODO: #229, duplicate calendar events to be removed
+            if (calendarEvents.length > 1) {
+              await Promise.all(calendarEvents.slice(1).map((e) => Calendar.deleteEventAsync(e.id)));
+            }
             logging.Info('features.upfc.internals.useUPFCEventApplications.syncToCalendarEvent', 'update', {
               calendarId
             });
