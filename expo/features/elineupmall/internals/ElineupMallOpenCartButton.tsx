@@ -6,7 +6,7 @@ import { logEvent } from '@hpapp/system/firebase';
 import CookieManager from '@react-native-cookies/cookies';
 import { Button, Icon } from '@rneui/themed';
 import { useCallback } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Alert } from 'react-native';
 
 import { useElineupMall } from './ElineupMallProvider';
 import ElineupMallStatusIcon from './ElineupMallStatusIcon';
@@ -23,16 +23,14 @@ export default function ElineupMallOpenCartButton() {
     CookieManager.clearAll();
     switch (elineupmall.status) {
       case 'error_not_opted_in':
+        break;
       case 'error_upfc_is_empty':
+        break;
       case 'error_unknown':
+        Alert.alert('e-Lineup!Mall', 'error_unknown');
+        break;
       case 'error_authenticate':
-        navigation.push(ElineupMallWebViewScreen, {
-          uri: 'https://www.elineupmall.com/'
-        });
-        logEvent('elineupmall_open_webview', {
-          feature: 'elineupmall',
-          uri: 'https://www.elineupmall.com/'
-        });
+        Alert.alert('e-Lineup!Mall', 'error_authenticate');
         break;
       case 'ready':
         logEvent('elineupmall_open_webview', {
