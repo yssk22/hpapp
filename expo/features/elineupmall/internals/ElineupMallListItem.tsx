@@ -37,44 +37,50 @@ export default function ElineupMallListItem({
         containerStyle={styles.container}
         rightContent={
           <View style={styles.right}>
-            {imageUrl && (
-              <>
-                <TouchableOpacity
-                  onPress={() => {
-                    setModalVisible(true);
-                  }}
-                >
-                  <ExternalImage
-                    uri={imageUrl}
-                    style={styles.image}
-                    width={tuhmbnailImageSize}
-                    height={tuhmbnailImageSize}
-                    cachePolicy="memory-disk"
-                  />
-                </TouchableOpacity>
-                <Modal visible={isModalVisible} animationType="fade" transparent>
-                  <View style={styles.modalContainer}>
-                    <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
-                      <View style={{ flex: 1 }} />
-                    </TouchableWithoutFeedback>
-                    <View style={styles.modalImageContainer}>
-                      <ExternalImage
-                        uri={imageUrl}
-                        style={styles.modalImage}
-                        width={modalImageSize}
-                        height={modalImageSize}
-                        cachePolicy="memory-disk"
-                      />
+            <View style={styles.imageContainer}>
+              {imageUrl && (
+                <>
+                  <TouchableOpacity
+                    onPress={() => {
+                      setModalVisible(true);
+                    }}
+                  >
+                    <ExternalImage
+                      uri={imageUrl}
+                      style={styles.image}
+                      width={tuhmbnailImageSize}
+                      height={tuhmbnailImageSize}
+                      cachePolicy="memory-disk"
+                    />
+                  </TouchableOpacity>
+                  <Modal visible={isModalVisible} animationType="fade" transparent>
+                    <View style={styles.modalContainer}>
+                      <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
+                        <View style={{ flex: 1 }} />
+                      </TouchableWithoutFeedback>
+                      <View style={styles.modalImageContainer}>
+                        <ExternalImage
+                          uri={imageUrl}
+                          style={styles.modalImage}
+                          width={modalImageSize}
+                          height={modalImageSize}
+                          cachePolicy="memory-disk"
+                        />
+                      </View>
+                      <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
+                        <View style={{ flex: 1 }} />
+                      </TouchableWithoutFeedback>
                     </View>
-                    <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
-                      <View style={{ flex: 1 }} />
-                    </TouchableWithoutFeedback>
-                  </View>
-                </Modal>
-              </>
+                  </Modal>
+                </>
+              )}
+              {imageUrl === undefined && <NoImage width={tuhmbnailImageSize} height={tuhmbnailImageSize} />}
+            </View>
+            {enableCartMutation && (
+              <View style={styles.addToCardButton}>
+                <ElineupMallCartMutationButton link={permalink} />
+              </View>
             )}
-            {imageUrl === undefined && <NoImage width={tuhmbnailImageSize} height={tuhmbnailImageSize} />}
-            {enableCartMutation && <ElineupMallCartMutationButton link={permalink} />}
           </View>
         }
       >
@@ -111,7 +117,9 @@ const styles = StyleSheet.create({
     minHeight: 180,
     padding: Spacing.Small
   },
-  right: {},
+  right: {
+    width: 200
+  },
   modalContainer: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.5)'
@@ -125,9 +133,16 @@ const styles = StyleSheet.create({
     width: modalImageSize,
     height: modalImageSize
   },
+  imageContainer: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   image: {
     width: tuhmbnailImageSize,
     height: tuhmbnailImageSize
+  },
+  addToCardButton: {
+    marginTop: Spacing.Small
   },
   nameAndMetadata: {
     flexDirection: 'column',
