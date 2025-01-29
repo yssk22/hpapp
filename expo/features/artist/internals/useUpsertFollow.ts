@@ -82,12 +82,15 @@ const useUpsertFollow = (): [(params: UpsertFollowParams) => Promise<string>, bo
           },
           updater: (store, payload) => {
             const followId = payload?.me?.upsertFollow?.id;
-            const aristOrMember = store.get(obj.id) ?? undefined;
-            if (followId === undefined || aristOrMember === undefined) {
+            const artistOrMember = store.get(obj.id) ?? undefined;
+            if (followId === undefined || artistOrMember === undefined) {
               return;
             }
-            const record = aristOrMember.getOrCreateLinkedRecord('myFollowStatus', 'HPFollow');
-            record.setValue(followId, 'id');
+            const record = store.get(followId);
+            if (record === undefined || record === null) {
+              return;
+            }
+            artistOrMember.setLinkedRecord(record, 'myFollowStatus');
             record.setValue(followType, 'type');
             (elineupMallFollowParams ?? []).forEach((param) => {
               switch (param.category) {
