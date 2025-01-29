@@ -694,6 +694,8 @@ var (
 		{Name: "hometown", Type: field.TypeString},
 		{Name: "join_at", Type: field.TypeTime, Nullable: true},
 		{Name: "graduate_at", Type: field.TypeTime, Nullable: true},
+		{Name: "color_rgb", Type: field.TypeString, Default: ""},
+		{Name: "color_name", Type: field.TypeString, Default: ""},
 		{Name: "hp_artist_members", Type: field.TypeInt, Nullable: true},
 		{Name: "hp_event_members", Type: field.TypeInt, Nullable: true},
 	}
@@ -705,13 +707,13 @@ var (
 		ForeignKeys: []*schema.ForeignKey{
 			{
 				Symbol:     "hp_members_hp_artists_members",
-				Columns:    []*schema.Column{HpMembersColumns[18]},
+				Columns:    []*schema.Column{HpMembersColumns[20]},
 				RefColumns: []*schema.Column{HpArtistsColumns[0]},
 				OnDelete:   schema.SetNull,
 			},
 			{
 				Symbol:     "hp_members_hp_events_members",
-				Columns:    []*schema.Column{HpMembersColumns[19]},
+				Columns:    []*schema.Column{HpMembersColumns[21]},
 				RefColumns: []*schema.Column{HpEventsColumns[0]},
 				OnDelete:   schema.SetNull,
 			},

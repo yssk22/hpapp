@@ -237,6 +237,34 @@ func (hmu *HPMemberUpdate) ClearGraduateAt() *HPMemberUpdate {
 	return hmu
 }
 
+// SetColorRgb sets the "color_rgb" field.
+func (hmu *HPMemberUpdate) SetColorRgb(s string) *HPMemberUpdate {
+	hmu.mutation.SetColorRgb(s)
+	return hmu
+}
+
+// SetNillableColorRgb sets the "color_rgb" field if the given value is not nil.
+func (hmu *HPMemberUpdate) SetNillableColorRgb(s *string) *HPMemberUpdate {
+	if s != nil {
+		hmu.SetColorRgb(*s)
+	}
+	return hmu
+}
+
+// SetColorName sets the "color_name" field.
+func (hmu *HPMemberUpdate) SetColorName(s string) *HPMemberUpdate {
+	hmu.mutation.SetColorName(s)
+	return hmu
+}
+
+// SetNillableColorName sets the "color_name" field if the given value is not nil.
+func (hmu *HPMemberUpdate) SetNillableColorName(s *string) *HPMemberUpdate {
+	if s != nil {
+		hmu.SetColorName(*s)
+	}
+	return hmu
+}
+
 // SetArtistID sets the "artist_id" field.
 func (hmu *HPMemberUpdate) SetArtistID(i int) *HPMemberUpdate {
 	hmu.mutation.SetArtistID(i)
@@ -707,6 +735,12 @@ func (hmu *HPMemberUpdate) sqlSave(ctx context.Context) (n int, err error) {
 	}
 	if hmu.mutation.GraduateAtCleared() {
 		_spec.ClearField(hpmember.FieldGraduateAt, field.TypeTime)
+	}
+	if value, ok := hmu.mutation.ColorRgb(); ok {
+		_spec.SetField(hpmember.FieldColorRgb, field.TypeString, value)
+	}
+	if value, ok := hmu.mutation.ColorName(); ok {
+		_spec.SetField(hpmember.FieldColorName, field.TypeString, value)
 	}
 	if hmu.mutation.AssetsCleared() {
 		edge := &sqlgraph.EdgeSpec{
@@ -1363,6 +1397,34 @@ func (hmuo *HPMemberUpdateOne) ClearGraduateAt() *HPMemberUpdateOne {
 	return hmuo
 }
 
+// SetColorRgb sets the "color_rgb" field.
+func (hmuo *HPMemberUpdateOne) SetColorRgb(s string) *HPMemberUpdateOne {
+	hmuo.mutation.SetColorRgb(s)
+	return hmuo
+}
+
+// SetNillableColorRgb sets the "color_rgb" field if the given value is not nil.
+func (hmuo *HPMemberUpdateOne) SetNillableColorRgb(s *string) *HPMemberUpdateOne {
+	if s != nil {
+		hmuo.SetColorRgb(*s)
+	}
+	return hmuo
+}
+
+// SetColorName sets the "color_name" field.
+func (hmuo *HPMemberUpdateOne) SetColorName(s string) *HPMemberUpdateOne {
+	hmuo.mutation.SetColorName(s)
+	return hmuo
+}
+
+// SetNillableColorName sets the "color_name" field if the given value is not nil.
+func (hmuo *HPMemberUpdateOne) SetNillableColorName(s *string) *HPMemberUpdateOne {
+	if s != nil {
+		hmuo.SetColorName(*s)
+	}
+	return hmuo
+}
+
 // SetArtistID sets the "artist_id" field.
 func (hmuo *HPMemberUpdateOne) SetArtistID(i int) *HPMemberUpdateOne {
 	hmuo.mutation.SetArtistID(i)
@@ -1863,6 +1925,12 @@ func (hmuo *HPMemberUpdateOne) sqlSave(ctx context.Context) (_node *HPMember, er
 	}
 	if hmuo.mutation.GraduateAtCleared() {
 		_spec.ClearField(hpmember.FieldGraduateAt, field.TypeTime)
+	}
+	if value, ok := hmuo.mutation.ColorRgb(); ok {
+		_spec.SetField(hpmember.FieldColorRgb, field.TypeString, value)
+	}
+	if value, ok := hmuo.mutation.ColorName(); ok {
+		_spec.SetField(hpmember.FieldColorName, field.TypeString, value)
 	}
 	if hmuo.mutation.AssetsCleared() {
 		edge := &sqlgraph.EdgeSpec{

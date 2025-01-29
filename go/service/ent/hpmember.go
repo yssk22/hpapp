@@ -54,6 +54,10 @@ type HPMember struct {
 	JoinAt *time.Time `json:"join_at,omitempty"`
 	// GraduateAt holds the value of the "graduate_at" field.
 	GraduateAt *time.Time `json:"graduate_at,omitempty"`
+	// ColorRgb holds the value of the "color_rgb" field.
+	ColorRgb string `json:"color_rgb,omitempty"`
+	// ColorName holds the value of the "color_name" field.
+	ColorName string `json:"color_name,omitempty"`
 	// ArtistID holds the value of the "artist_id" field.
 	ArtistID *int `json:"artist_id,omitempty"`
 	// Edges holds the relations/edges for other nodes in the graph.
@@ -207,7 +211,7 @@ func (*HPMember) scanValues(columns []string) ([]any, error) {
 			values[i] = new(sql.NullBool)
 		case hpmember.FieldID, hpmember.FieldErrorCount, hpmember.FieldArtistID:
 			values[i] = new(sql.NullInt64)
-		case hpmember.FieldLastErrorMessage, hpmember.FieldKey, hpmember.FieldArtistKey, hpmember.FieldName, hpmember.FieldNameKana, hpmember.FieldThumbnailURL, hpmember.FieldBloodType, hpmember.FieldHometown:
+		case hpmember.FieldLastErrorMessage, hpmember.FieldKey, hpmember.FieldArtistKey, hpmember.FieldName, hpmember.FieldNameKana, hpmember.FieldThumbnailURL, hpmember.FieldBloodType, hpmember.FieldHometown, hpmember.FieldColorRgb, hpmember.FieldColorName:
 			values[i] = new(sql.NullString)
 		case hpmember.FieldCrawledAt, hpmember.FieldCreatedAt, hpmember.FieldUpdatedAt, hpmember.FieldDateOfBirth, hpmember.FieldJoinAt, hpmember.FieldGraduateAt:
 			values[i] = new(sql.NullTime)
@@ -341,6 +345,18 @@ func (hm *HPMember) assignValues(columns []string, values []any) error {
 			} else if value.Valid {
 				hm.GraduateAt = new(time.Time)
 				*hm.GraduateAt = value.Time
+			}
+		case hpmember.FieldColorRgb:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field color_rgb", values[i])
+			} else if value.Valid {
+				hm.ColorRgb = value.String
+			}
+		case hpmember.FieldColorName:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field color_name", values[i])
+			} else if value.Valid {
+				hm.ColorName = value.String
 			}
 		case hpmember.FieldArtistID:
 			if value, ok := values[i].(*sql.NullInt64); !ok {
@@ -500,6 +516,12 @@ func (hm *HPMember) String() string {
 		builder.WriteString("graduate_at=")
 		builder.WriteString(v.Format(time.ANSIC))
 	}
+	builder.WriteString(", ")
+	builder.WriteString("color_rgb=")
+	builder.WriteString(hm.ColorRgb)
+	builder.WriteString(", ")
+	builder.WriteString("color_name=")
+	builder.WriteString(hm.ColorName)
 	builder.WriteString(", ")
 	if v := hm.ArtistID; v != nil {
 		builder.WriteString("artist_id=")

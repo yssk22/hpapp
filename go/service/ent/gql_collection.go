@@ -2123,6 +2123,16 @@ func (hm *HPMemberQuery) collectField(ctx context.Context, opCtx *graphql.Operat
 				selectedFields = append(selectedFields, hpmember.FieldGraduateAt)
 				fieldSeen[hpmember.FieldGraduateAt] = struct{}{}
 			}
+		case "colorRgb":
+			if _, ok := fieldSeen[hpmember.FieldColorRgb]; !ok {
+				selectedFields = append(selectedFields, hpmember.FieldColorRgb)
+				fieldSeen[hpmember.FieldColorRgb] = struct{}{}
+			}
+		case "colorName":
+			if _, ok := fieldSeen[hpmember.FieldColorName]; !ok {
+				selectedFields = append(selectedFields, hpmember.FieldColorName)
+				fieldSeen[hpmember.FieldColorName] = struct{}{}
+			}
 		case "artistID":
 			if _, ok := fieldSeen[hpmember.FieldArtistID]; !ok {
 				selectedFields = append(selectedFields, hpmember.FieldArtistID)

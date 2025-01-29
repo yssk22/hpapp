@@ -394,6 +394,8 @@ type ComplexityRoot struct {
 		ArtistID         func(childComplexity int) int
 		ArtistKey        func(childComplexity int) int
 		BloodType        func(childComplexity int) int
+		ColorName        func(childComplexity int) int
+		ColorRgb         func(childComplexity int) int
 		CrawledAt        func(childComplexity int) int
 		CreatedAt        func(childComplexity int) int
 		DateOfBirth      func(childComplexity int) int
@@ -2417,6 +2419,20 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.HPMember.BloodType(childComplexity), true
+
+	case "HPMember.colorName":
+		if e.complexity.HPMember.ColorName == nil {
+			break
+		}
+
+		return e.complexity.HPMember.ColorName(childComplexity), true
+
+	case "HPMember.colorRgb":
+		if e.complexity.HPMember.ColorRgb == nil {
+			break
+		}
+
+		return e.complexity.HPMember.ColorRgb(childComplexity), true
 
 	case "HPMember.crawledAt":
 		if e.complexity.HPMember.CrawledAt == nil {
@@ -5724,6 +5740,10 @@ func (ec *executionContext) fieldContext_HPAmebloPost_ownerMember(ctx context.Co
 				return ec.fieldContext_HPMember_joinAt(ctx, field)
 			case "graduateAt":
 				return ec.fieldContext_HPMember_graduateAt(ctx, field)
+			case "colorRgb":
+				return ec.fieldContext_HPMember_colorRgb(ctx, field)
+			case "colorName":
+				return ec.fieldContext_HPMember_colorName(ctx, field)
 			case "artistID":
 				return ec.fieldContext_HPMember_artistID(ctx, field)
 			case "artist":
@@ -5876,6 +5896,10 @@ func (ec *executionContext) fieldContext_HPAmebloPost_taggedMembers(ctx context.
 				return ec.fieldContext_HPMember_joinAt(ctx, field)
 			case "graduateAt":
 				return ec.fieldContext_HPMember_graduateAt(ctx, field)
+			case "colorRgb":
+				return ec.fieldContext_HPMember_colorRgb(ctx, field)
+			case "colorName":
+				return ec.fieldContext_HPMember_colorName(ctx, field)
 			case "artistID":
 				return ec.fieldContext_HPMember_artistID(ctx, field)
 			case "artist":
@@ -6519,6 +6543,10 @@ func (ec *executionContext) fieldContext_HPArtist_members(ctx context.Context, f
 				return ec.fieldContext_HPMember_joinAt(ctx, field)
 			case "graduateAt":
 				return ec.fieldContext_HPMember_graduateAt(ctx, field)
+			case "colorRgb":
+				return ec.fieldContext_HPMember_colorRgb(ctx, field)
+			case "colorName":
+				return ec.fieldContext_HPMember_colorName(ctx, field)
 			case "artistID":
 				return ec.fieldContext_HPMember_artistID(ctx, field)
 			case "artist":
@@ -7627,6 +7655,10 @@ func (ec *executionContext) fieldContext_HPBlob_ownerMember(ctx context.Context,
 				return ec.fieldContext_HPMember_joinAt(ctx, field)
 			case "graduateAt":
 				return ec.fieldContext_HPMember_graduateAt(ctx, field)
+			case "colorRgb":
+				return ec.fieldContext_HPMember_colorRgb(ctx, field)
+			case "colorName":
+				return ec.fieldContext_HPMember_colorName(ctx, field)
 			case "artistID":
 				return ec.fieldContext_HPMember_artistID(ctx, field)
 			case "artist":
@@ -8928,6 +8960,10 @@ func (ec *executionContext) fieldContext_HPElineupMallItem_taggedMembers(ctx con
 				return ec.fieldContext_HPMember_joinAt(ctx, field)
 			case "graduateAt":
 				return ec.fieldContext_HPMember_graduateAt(ctx, field)
+			case "colorRgb":
+				return ec.fieldContext_HPMember_colorRgb(ctx, field)
+			case "colorName":
+				return ec.fieldContext_HPMember_colorName(ctx, field)
 			case "artistID":
 				return ec.fieldContext_HPMember_artistID(ctx, field)
 			case "artist":
@@ -12147,6 +12183,10 @@ func (ec *executionContext) fieldContext_HPFeedItem_ownerMember(ctx context.Cont
 				return ec.fieldContext_HPMember_joinAt(ctx, field)
 			case "graduateAt":
 				return ec.fieldContext_HPMember_graduateAt(ctx, field)
+			case "colorRgb":
+				return ec.fieldContext_HPMember_colorRgb(ctx, field)
+			case "colorName":
+				return ec.fieldContext_HPMember_colorName(ctx, field)
 			case "artistID":
 				return ec.fieldContext_HPMember_artistID(ctx, field)
 			case "artist":
@@ -12299,6 +12339,10 @@ func (ec *executionContext) fieldContext_HPFeedItem_taggedMembers(ctx context.Co
 				return ec.fieldContext_HPMember_joinAt(ctx, field)
 			case "graduateAt":
 				return ec.fieldContext_HPMember_graduateAt(ctx, field)
+			case "colorRgb":
+				return ec.fieldContext_HPMember_colorRgb(ctx, field)
+			case "colorName":
+				return ec.fieldContext_HPMember_colorName(ctx, field)
 			case "artistID":
 				return ec.fieldContext_HPMember_artistID(ctx, field)
 			case "artist":
@@ -14003,6 +14047,10 @@ func (ec *executionContext) fieldContext_HPFollow_member(ctx context.Context, fi
 				return ec.fieldContext_HPMember_joinAt(ctx, field)
 			case "graduateAt":
 				return ec.fieldContext_HPMember_graduateAt(ctx, field)
+			case "colorRgb":
+				return ec.fieldContext_HPMember_colorRgb(ctx, field)
+			case "colorName":
+				return ec.fieldContext_HPMember_colorName(ctx, field)
 			case "artistID":
 				return ec.fieldContext_HPMember_artistID(ctx, field)
 			case "artist":
@@ -15794,6 +15842,10 @@ func (ec *executionContext) fieldContext_HPIgPost_ownerMember(ctx context.Contex
 				return ec.fieldContext_HPMember_joinAt(ctx, field)
 			case "graduateAt":
 				return ec.fieldContext_HPMember_graduateAt(ctx, field)
+			case "colorRgb":
+				return ec.fieldContext_HPMember_colorRgb(ctx, field)
+			case "colorName":
+				return ec.fieldContext_HPMember_colorName(ctx, field)
 			case "artistID":
 				return ec.fieldContext_HPMember_artistID(ctx, field)
 			case "artist":
@@ -15946,6 +15998,10 @@ func (ec *executionContext) fieldContext_HPIgPost_taggedMembers(ctx context.Cont
 				return ec.fieldContext_HPMember_joinAt(ctx, field)
 			case "graduateAt":
 				return ec.fieldContext_HPMember_graduateAt(ctx, field)
+			case "colorRgb":
+				return ec.fieldContext_HPMember_colorRgb(ctx, field)
+			case "colorName":
+				return ec.fieldContext_HPMember_colorName(ctx, field)
 			case "artistID":
 				return ec.fieldContext_HPMember_artistID(ctx, field)
 			case "artist":
@@ -17051,6 +17107,94 @@ func (ec *executionContext) fieldContext_HPMember_graduateAt(ctx context.Context
 	return fc, nil
 }
 
+func (ec *executionContext) _HPMember_colorRgb(ctx context.Context, field graphql.CollectedField, obj *ent.HPMember) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPMember_colorRgb(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ColorRgb, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPMember_colorRgb(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPMember",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type String does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _HPMember_colorName(ctx context.Context, field graphql.CollectedField, obj *ent.HPMember) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_HPMember_colorName(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ColorName, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_HPMember_colorName(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "HPMember",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type String does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
 func (ec *executionContext) _HPMember_artistID(ctx context.Context, field graphql.CollectedField, obj *ent.HPMember) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_HPMember_artistID(ctx, field)
 	if err != nil {
@@ -17481,6 +17625,10 @@ func (ec *executionContext) fieldContext_HPMemberEdge_node(ctx context.Context, 
 				return ec.fieldContext_HPMember_joinAt(ctx, field)
 			case "graduateAt":
 				return ec.fieldContext_HPMember_graduateAt(ctx, field)
+			case "colorRgb":
+				return ec.fieldContext_HPMember_colorRgb(ctx, field)
+			case "colorName":
+				return ec.fieldContext_HPMember_colorName(ctx, field)
 			case "artistID":
 				return ec.fieldContext_HPMember_artistID(ctx, field)
 			case "artist":
@@ -29198,6 +29346,20 @@ func (ec *executionContext) _HPMember(ctx context.Context, sel ast.SelectionSet,
 
 			out.Values[i] = ec._HPMember_graduateAt(ctx, field, obj)
 
+		case "colorRgb":
+
+			out.Values[i] = ec._HPMember_colorRgb(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
+		case "colorName":
+
+			out.Values[i] = ec._HPMember_colorName(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				atomic.AddUint32(&invalids, 1)
+			}
 		case "artistID":
 
 			out.Values[i] = ec._HPMember_artistID(ctx, field, obj)

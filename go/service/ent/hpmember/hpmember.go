@@ -47,6 +47,10 @@ const (
 	FieldJoinAt = "join_at"
 	// FieldGraduateAt holds the string denoting the graduate_at field in the database.
 	FieldGraduateAt = "graduate_at"
+	// FieldColorRgb holds the string denoting the color_rgb field in the database.
+	FieldColorRgb = "color_rgb"
+	// FieldColorName holds the string denoting the color_name field in the database.
+	FieldColorName = "color_name"
 	// FieldArtistID holds the string denoting the artist_id field in the database.
 	FieldArtistID = "hp_artist_members"
 	// EdgeAssets holds the string denoting the assets edge name in mutations.
@@ -153,6 +157,8 @@ var Columns = []string{
 	FieldHometown,
 	FieldJoinAt,
 	FieldGraduateAt,
+	FieldColorRgb,
+	FieldColorName,
 	FieldArtistID,
 }
 
@@ -207,6 +213,10 @@ var (
 	DefaultErrorCount int
 	// DefaultRecrawlRequired holds the default value on creation for the "recrawl_required" field.
 	DefaultRecrawlRequired bool
+	// DefaultColorRgb holds the default value on creation for the "color_rgb" field.
+	DefaultColorRgb string
+	// DefaultColorName holds the default value on creation for the "color_name" field.
+	DefaultColorName string
 )
 
 // Order defines the ordering method for the HPMember queries.
@@ -295,6 +305,16 @@ func ByJoinAt(opts ...sql.OrderTermOption) Order {
 // ByGraduateAt orders the results by the graduate_at field.
 func ByGraduateAt(opts ...sql.OrderTermOption) Order {
 	return sql.OrderByField(FieldGraduateAt, opts...).ToFunc()
+}
+
+// ByColorRgb orders the results by the color_rgb field.
+func ByColorRgb(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldColorRgb, opts...).ToFunc()
+}
+
+// ByColorName orders the results by the color_name field.
+func ByColorName(opts ...sql.OrderTermOption) Order {
+	return sql.OrderByField(FieldColorName, opts...).ToFunc()
 }
 
 // ByArtistID orders the results by the artist_id field.
