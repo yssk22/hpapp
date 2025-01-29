@@ -221,6 +221,9 @@
   "Fetch Elnieup Mall Purchase History": {
     "ja": "e-Lineup!Mallの購入履歴を取得"
   },
+  "Buy on Elnieup Mall": {
+    "ja": "e-Lineup!Mallで購入"
+  },
   "Already In Cart": {
     "ja": "すでにカートに入っています"
   },
@@ -239,8 +242,8 @@
   "When you enable this, your purchase history will also be automatically uploaded to our server.": {
     "ja": "これを有効にすると、購入履歴は自動的にサーバーにアップロードされます。"
   },
-  "Following settings per a member per a category": {
-    "ja": "メンバーごとのカテゴリごとのフォロー設定"
+  "Following settings per a category": {
+    "ja": "カテゴリごとのフォロー設定"
   },
   "Order End On": {
     "ja": "販売終了日"

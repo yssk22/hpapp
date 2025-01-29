@@ -1,3 +1,5 @@
+import { useNavigation } from '@hpapp/features/common/stack';
+import ElineupMallWebViewScreen from '@hpapp/features/elineupmall/ElineupMallWebViewScreen';
 import * as date from '@hpapp/foundation/date';
 import { isEmpty } from '@hpapp/foundation/string';
 import { t } from '@hpapp/system/i18n';
@@ -11,20 +13,26 @@ export type ElineupMallCartMutationButtonProps = {
 
 export default function ElineupMallCartMutationButton({ link }: ElineupMallCartMutationButtonProps) {
   const elineupmall = useElineupMall();
+  const navigation = useNavigation();
   let text = '';
   let disabled = true;
   let loading = true;
   let onPress = () => {};
   switch (elineupmall.status) {
-    // if status is 'error_*', we don't show the button itself.
+    // if status is 'error_*', we show the button but open the webview.
     case 'error_not_opted_in':
-      return null;
     case 'error_upfc_is_empty':
-      return null;
     case 'error_unknown':
-      return null;
     case 'error_authenticate':
-      return null;
+      loading = false;
+      disabled = false;
+      text = t('Buy on Elnieup Mall');
+      onPress = () => {
+        navigation.push(ElineupMallWebViewScreen, {
+          uri: link
+        });
+      };
+      break;
     // Show 'Add To Cart' or 'Remove From Cart' only when status is 'ready' to avoid concurrent mutations.
     case 'ready': {
       loading = false;
