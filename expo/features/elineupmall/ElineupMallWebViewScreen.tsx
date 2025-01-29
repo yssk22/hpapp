@@ -24,12 +24,14 @@ export default defineScreen(
     const username = config?.hpUsername ?? '';
     const password = config?.hpPassword ?? '';
     const onLoadEnd = useCallback(() => {
-      webview?.current?.injectJavaScript(`(function(){
-        document.querySelector('#account_info_3 .ty-account-info__buttons a.ty-btn.ty-btn__secondary').click()
-        document.querySelectorAll('input[name="user_login"]').forEach((elem)=> {elem.value=${JSON.stringify(username)}});
-        document.querySelectorAll('input[name="password"]').forEach((elem)=> {elem.value=${JSON.stringify(password)}});
-      })();
-`);
+      if (login) {
+        webview?.current?.injectJavaScript(`(function(){
+          document.querySelector('#account_info_3 .ty-account-info__buttons a.ty-btn.ty-btn__secondary').click()
+          document.querySelectorAll('input[name="user_login"]').forEach((elem)=> {elem.value=${JSON.stringify(username)}});
+          document.querySelectorAll('input[name="password"]').forEach((elem)=> {elem.value=${JSON.stringify(password)}});
+        })();
+  `);
+      }
     }, [uri, username, password, webview]);
     return (
       <>

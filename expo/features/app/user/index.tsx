@@ -8,6 +8,7 @@ import UserServiceProvider, {
   useMember,
   useMemberList,
   useMemberMap,
+  useFollowingArtistList,
   useFollowingMemberList,
   useMe,
   useReloadUserContext
@@ -28,6 +29,7 @@ export {
   useMember,
   useMemberList,
   useMemberMap,
+  useFollowingArtistList,
   useFollowingMemberList,
   useMe,
   useReloadUserContext

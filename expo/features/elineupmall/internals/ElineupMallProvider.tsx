@@ -6,6 +6,7 @@ import {
   ElineupMallOrderDetail,
   ElineupMallSiteAuthError
 } from '@hpapp/features/elineupmall/scraper/';
+import { UPFCDemoScraper } from '@hpapp/features/upfc/scraper';
 import * as date from '@hpapp/foundation/date';
 import { isEmpty } from '@hpapp/foundation/string';
 import { logEvent } from '@hpapp/system/firebase';
@@ -188,7 +189,11 @@ export default function ElineupMallScraperProvider({ children }: { children: Rea
         setStatus('error_not_opted_in');
         return;
       }
-      if (isEmpty(upfcConfig?.hpUsername) || isEmpty(upfcConfig?.hpPassword)) {
+      if (
+        isEmpty(upfcConfig?.hpUsername) ||
+        isEmpty(upfcConfig?.hpPassword) ||
+        upfcConfig?.hpUsername === UPFCDemoScraper.Username
+      ) {
         setStatus('error_upfc_is_empty');
         return;
       }

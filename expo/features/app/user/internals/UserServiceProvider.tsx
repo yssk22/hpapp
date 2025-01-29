@@ -146,6 +146,15 @@ export function useMember(id: string): HPMember | null {
   }, [hp, id]);
 }
 
+export function useFollowingArtistList(includeOG: boolean = false) {
+  const artists = useArtistList(includeOG);
+  return useMemo(() => {
+    return artists.filter(
+      (a) => a.myFollowStatus?.type === 'follow' || a.myFollowStatus?.type === 'follow_with_notification'
+    );
+  }, [artists]);
+}
+
 export function useFollowingMemberList(includeOG: boolean = false) {
   const members = useMemberList(includeOG);
   return useMemo(() => {

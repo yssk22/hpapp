@@ -40,6 +40,11 @@ const numPerFetch = 20;
 export type ElineupMallItemCategory = HPElineupMallItemCategory;
 
 export type ElineupMallLimitedTimeItemListProps = {
+  artistCategories: {
+    artistId: string;
+    categories: ElineupMallItemCategory[];
+  }[];
+  artistIds: string[];
   memberCategories: {
     memberId: string;
     categories: ElineupMallItemCategory[];
@@ -49,6 +54,8 @@ export type ElineupMallLimitedTimeItemListProps = {
 };
 
 export default function ElineupMallLimitedTimeItemList({
+  artistCategories,
+  artistIds,
   memberCategories,
   memberIds,
   categories
@@ -59,6 +66,8 @@ export default function ElineupMallLimitedTimeItemList({
     {
       first: numPerFetch,
       params: {
+        artistIDs: artistIds,
+        artistCategories,
         memberIDs: memberIds,
         categories,
         memberCategories

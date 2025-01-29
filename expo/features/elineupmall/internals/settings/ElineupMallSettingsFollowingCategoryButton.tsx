@@ -1,6 +1,6 @@
 /* eslint-disable local-rules/no-translation-entry */
 import { useThemeColor } from '@hpapp/features/app/theme';
-import { HPFollowType, HPMember } from '@hpapp/features/app/user';
+import { HPArtist, HPFollowType, HPMember } from '@hpapp/features/app/user';
 import { useUpsertFollow } from '@hpapp/features/artist';
 import { Text } from '@hpapp/features/common';
 import { IconSize, Spacing } from '@hpapp/features/common/constants';
@@ -9,17 +9,17 @@ import { t } from '@hpapp/system/i18n';
 import { Icon } from '@rneui/themed';
 import { ActivityIndicator, StyleSheet, TouchableOpacity, View } from 'react-native';
 
-export type ElineupMallSettingsFollowingMemberCategoryButtonProps = {
+export type ElineupMallSettingsFollowingCategoryButtonProps = {
   category: ElineupMallItemCategory;
   value?: HPFollowType;
-  member: HPMember;
+  obj: HPArtist | HPMember;
 };
 
-export default function ElineupMallSettingsFollowingMemberCategoryButton({
+export default function ElineupMallSettingsFollowingCategoryButton({
   category,
   value,
-  member
-}: ElineupMallSettingsFollowingMemberCategoryButtonProps) {
+  obj
+}: ElineupMallSettingsFollowingCategoryButtonProps) {
   const [upsert, isSaving] = useUpsertFollow();
   const isUnfollow = value === undefined || value === 'unknown' || value === 'unfollow';
   const nextValue: HPFollowType = isUnfollow ? 'follow' : value === 'follow' ? 'follow_with_notification' : 'unfollow';
@@ -30,8 +30,8 @@ export default function ElineupMallSettingsFollowingMemberCategoryButton({
     <TouchableOpacity
       onPress={() => {
         upsert({
-          obj: member,
-          followType: member.myFollowStatus!.type, // no change in followType
+          obj,
+          followType: obj.myFollowStatus!.type, // no change in followType
           elineupMallFollowParams: [{ category, followType: nextValue }]
         });
       }}

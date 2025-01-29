@@ -6,7 +6,7 @@ import { t } from '@hpapp/system/i18n';
 import { Divider } from '@rneui/themed';
 import { ScrollView, StyleSheet, Text } from 'react-native';
 
-import ElineupMallSettingsFollowings from './internals/settings/ElineupMallSettingsFollowings';
+import ElineupMallSettingsFollowingList from './internals/settings/ElineupMallSettingsFollowingList';
 
 export default defineScreen('/elineupmall/settings/', function ElineupMallSettingsScreen() {
   useScreenTitle(t('Elineup Mall Settings'));
@@ -36,9 +36,9 @@ export default defineScreen('/elineupmall/settings/', function ElineupMallSettin
       />
       <Divider />
       <ListItem>
-        <Text>{t('Following settings per a member per a category')}</Text>
+        <Text>{t('Following settings per a category')}</Text>
       </ListItem>
-      <ElineupMallSettingsFollowings />
+      <ElineupMallSettingsFollowingList />
     </ScrollView>
   );
 });
