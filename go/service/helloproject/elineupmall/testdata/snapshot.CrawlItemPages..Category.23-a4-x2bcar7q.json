@@ -19,36 +19,25 @@
     "category": "PhotoA4",
     "order_end_at": "2023-05-30T23:59:00+09:00",
     "edges": {
-      "tagged_artists": [
-        {
-          "id": 1,
-          "crawled_at": "2023-04-14T01:30:00Z",
-          "last_error_message": "",
-          "created_at": "2019-11-28T03:01:24Z",
-          "updated_at": "2023-04-14T01:30:13Z",
-          "key": "morningmusume",
-          "name": "モーニング娘。'23",
-          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/a2b54229290db6b0794c5b21fca2320fae829f58.jpg",
-          "edges": {}
-        }
-      ],
       "tagged_members": [
         {
           "id": 8589934604,
-          "crawled_at": "2023-04-14T01:30:00Z",
+          "crawled_at": "2025-01-30T02:01:01Z",
           "error_count": 1,
           "last_error_message": "not crawled",
           "created_at": "2019-11-28T03:01:32Z",
-          "updated_at": "2023-04-14T01:31:12Z",
+          "updated_at": "2025-01-30T02:01:07Z",
           "key": "homare_okamura",
           "artist_key": "morningmusume",
           "name": "岡村ほまれ",
           "name_kana": "オカムラホマレ",
-          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/5fd2b829ba5435613ca5ac64dbbb24d342a865b2.jpg",
+          "thumbnail_url": "https://cdn.helloproject.com/img/artist/m/0841a20c0f9a00441ad889b38053a318516bd1ff.jpg",
           "date_of_birth": "2005-05-08T15:00:00Z",
           "blood_type": "A",
           "hometown": "東京都",
           "join_at": "2019-06-21T15:00:00Z",
+          "color_rgb": "#ffffe0",
+          "color_name": "デイジー",
           "artist_id": 1,
           "edges": {}
         }

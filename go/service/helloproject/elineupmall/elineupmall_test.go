@@ -299,7 +299,7 @@ func TestElineupmall(t *testing.T) {
 			}{
 				{
 					link:             "https://www.elineupmall.com/c720/c2766/202411-winter-62-b0g2ys51/",
-					numTaggedMembers: 55,
+					numTaggedMembers: 63,
 				},
 				{
 					link:             "https://www.elineupmall.com/c720/c2766/202411-6cmqyuve/",

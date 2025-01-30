@@ -22,13 +22,13 @@
       "tagged_artists": [
         {
           "id": 2,
-          "crawled_at": "2023-04-14T01:30:00Z",
+          "crawled_at": "2025-01-30T02:01:01Z",
           "last_error_message": "",
           "created_at": "2019-11-28T03:01:37Z",
-          "updated_at": "2023-04-14T01:30:24Z",
+          "updated_at": "2023-05-10T07:30:59Z",
           "key": "angerme",
           "name": "アンジュルム",
-          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/9cfe6de40ddf271dbcf8d86e025ca8bad7cc85b3.jpg",
+          "thumbnail_url": "https://cdn.helloproject.com/img/artist/m/9baf0e0593c774fcb1debcfa6f01daede2e38d03.jpg",
           "index": 1,
           "edges": {}
         }
@@ -36,20 +36,20 @@
       "tagged_members": [
         {
           "id": 8589934606,
-          "crawled_at": "2023-04-14T01:30:00Z",
-          "error_count": 1,
+          "crawled_at": "2023-06-22T00:01:02Z",
           "last_error_message": "not crawled",
           "created_at": "2019-11-28T03:01:38Z",
-          "updated_at": "2023-04-14T01:31:12Z",
+          "updated_at": "2023-06-22T06:01:13Z",
           "key": "akari_takeuchi",
           "artist_key": "angerme",
           "name": "竹内朱莉",
           "name_kana": "タケウチアカリ",
-          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/11fa80e37b00f1a1d665f766fcf43a0ef639dd13.jpg",
+          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/8f6e0c19b53350d6c39d1e1d9d2c589f99a139b9.jpg",
           "date_of_birth": "1997-11-22T15:00:00Z",
           "blood_type": "O",
           "hometown": "埼玉県",
           "join_at": "2011-08-13T15:00:00Z",
+          "graduate_at": "2023-06-22T23:59:59Z",
           "artist_id": 2,
           "edges": {}
         }
