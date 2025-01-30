@@ -23,20 +23,22 @@
       "tagged_members": [
         {
           "id": 8589934596,
-          "crawled_at": "2023-04-14T01:30:00Z",
+          "crawled_at": "2025-01-30T02:01:01Z",
           "error_count": 1,
           "last_error_message": "not crawled",
           "created_at": "2019-11-28T03:01:27Z",
-          "updated_at": "2023-04-14T01:31:12Z",
+          "updated_at": "2025-01-30T02:01:07Z",
           "key": "sakura_oda",
           "artist_key": "morningmusume",
           "name": "小田さくら",
           "name_kana": "オダサクラ",
-          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/7a61d348bda6b56aafa4cec98bb55c417ca42c48.jpg",
+          "thumbnail_url": "https://cdn.helloproject.com/img/artist/m/1af9ae3666b51a17ccd5a7c4a0e0292c2cef3a2f.jpg",
           "date_of_birth": "1999-03-11T15:00:00Z",
           "blood_type": "A",
           "hometown": "神奈川県",
           "join_at": "2012-09-13T15:00:00Z",
+          "color_rgb": "#e6e6fa",
+          "color_name": "ラベンダー",
           "artist_id": 1,
           "edges": {}
         }

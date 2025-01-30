@@ -18466,6 +18466,8 @@ type HPMemberMutation struct {
 	hometown                         *string
 	join_at                          *time.Time
 	graduate_at                      *time.Time
+	color_rgb                        *string
+	color_name                       *string
 	clearedFields                    map[string]struct{}
 	assets                           map[int]struct{}
 	removedassets                    map[int]struct{}
@@ -19335,6 +19337,78 @@ func (m *HPMemberMutation) ResetGraduateAt() {
 	delete(m.clearedFields, hpmember.FieldGraduateAt)
 }
 
+// SetColorRgb sets the "color_rgb" field.
+func (m *HPMemberMutation) SetColorRgb(s string) {
+	m.color_rgb = &s
+}
+
+// ColorRgb returns the value of the "color_rgb" field in the mutation.
+func (m *HPMemberMutation) ColorRgb() (r string, exists bool) {
+	v := m.color_rgb
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldColorRgb returns the old "color_rgb" field's value of the HPMember entity.
+// If the HPMember object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPMemberMutation) OldColorRgb(ctx context.Context) (v string, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldColorRgb is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldColorRgb requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldColorRgb: %w", err)
+	}
+	return oldValue.ColorRgb, nil
+}
+
+// ResetColorRgb resets all changes to the "color_rgb" field.
+func (m *HPMemberMutation) ResetColorRgb() {
+	m.color_rgb = nil
+}
+
+// SetColorName sets the "color_name" field.
+func (m *HPMemberMutation) SetColorName(s string) {
+	m.color_name = &s
+}
+
+// ColorName returns the value of the "color_name" field in the mutation.
+func (m *HPMemberMutation) ColorName() (r string, exists bool) {
+	v := m.color_name
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldColorName returns the old "color_name" field's value of the HPMember entity.
+// If the HPMember object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *HPMemberMutation) OldColorName(ctx context.Context) (v string, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldColorName is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldColorName requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldColorName: %w", err)
+	}
+	return oldValue.ColorName, nil
+}
+
+// ResetColorName resets all changes to the "color_name" field.
+func (m *HPMemberMutation) ResetColorName() {
+	m.color_name = nil
+}
+
 // SetArtistID sets the "artist_id" field.
 func (m *HPMemberMutation) SetArtistID(i int) {
 	m.artist = &i
@@ -19930,7 +20004,7 @@ func (m *HPMemberMutation) Type() string {
 // order to get all numeric fields that were incremented/decremented, call
 // AddedFields().
 func (m *HPMemberMutation) Fields() []string {
-	fields := make([]string, 0, 18)
+	fields := make([]string, 0, 20)
 	if m.crawled_at != nil {
 		fields = append(fields, hpmember.FieldCrawledAt)
 	}
@@ -19982,6 +20056,12 @@ func (m *HPMemberMutation) Fields() []string {
 	if m.graduate_at != nil {
 		fields = append(fields, hpmember.FieldGraduateAt)
 	}
+	if m.color_rgb != nil {
+		fields = append(fields, hpmember.FieldColorRgb)
+	}
+	if m.color_name != nil {
+		fields = append(fields, hpmember.FieldColorName)
+	}
 	if m.artist != nil {
 		fields = append(fields, hpmember.FieldArtistID)
 	}
@@ -20027,6 +20107,10 @@ func (m *HPMemberMutation) Field(name string) (ent.Value, bool) {
 		return m.JoinAt()
 	case hpmember.FieldGraduateAt:
 		return m.GraduateAt()
+	case hpmember.FieldColorRgb:
+		return m.ColorRgb()
+	case hpmember.FieldColorName:
+		return m.ColorName()
 	case hpmember.FieldArtistID:
 		return m.ArtistID()
 	}
@@ -20072,6 +20156,10 @@ func (m *HPMemberMutation) OldField(ctx context.Context, name string) (ent.Value
 		return m.OldJoinAt(ctx)
 	case hpmember.FieldGraduateAt:
 		return m.OldGraduateAt(ctx)
+	case hpmember.FieldColorRgb:
+		return m.OldColorRgb(ctx)
+	case hpmember.FieldColorName:
+		return m.OldColorName(ctx)
 	case hpmember.FieldArtistID:
 		return m.OldArtistID(ctx)
 	}
@@ -20201,6 +20289,20 @@ func (m *HPMemberMutation) SetField(name string, value ent.Value) error {
 			return fmt.Errorf("unexpected type %T for field %s", value, name)
 		}
 		m.SetGraduateAt(v)
+		return nil
+	case hpmember.FieldColorRgb:
+		v, ok := value.(string)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetColorRgb(v)
+		return nil
+	case hpmember.FieldColorName:
+		v, ok := value.(string)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetColorName(v)
 		return nil
 	case hpmember.FieldArtistID:
 		v, ok := value.(int)
@@ -20380,6 +20482,12 @@ func (m *HPMemberMutation) ResetField(name string) error {
 		return nil
 	case hpmember.FieldGraduateAt:
 		m.ResetGraduateAt()
+		return nil
+	case hpmember.FieldColorRgb:
+		m.ResetColorRgb()
+		return nil
+	case hpmember.FieldColorName:
+		m.ResetColorName()
 		return nil
 	case hpmember.FieldArtistID:
 		m.ResetArtistID()

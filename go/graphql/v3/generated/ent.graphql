@@ -553,6 +553,8 @@ type HPMember implements Node {
   hometown: String!
   joinAt: Time
   graduateAt: Time
+  colorRgb: String!
+  colorName: String!
   artistID: ID
   artist: HPArtist
 }

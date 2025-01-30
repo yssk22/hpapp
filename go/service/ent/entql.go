@@ -386,6 +386,8 @@ var schemaGraph = func() *sqlgraph.Schema {
 			hpmember.FieldHometown:         {Type: field.TypeString, Column: hpmember.FieldHometown},
 			hpmember.FieldJoinAt:           {Type: field.TypeTime, Column: hpmember.FieldJoinAt},
 			hpmember.FieldGraduateAt:       {Type: field.TypeTime, Column: hpmember.FieldGraduateAt},
+			hpmember.FieldColorRgb:         {Type: field.TypeString, Column: hpmember.FieldColorRgb},
+			hpmember.FieldColorName:        {Type: field.TypeString, Column: hpmember.FieldColorName},
 			hpmember.FieldArtistID:         {Type: field.TypeInt, Column: hpmember.FieldArtistID},
 		},
 	}
@@ -3517,6 +3519,16 @@ func (f *HPMemberFilter) WhereJoinAt(p entql.TimeP) {
 // WhereGraduateAt applies the entql time.Time predicate on the graduate_at field.
 func (f *HPMemberFilter) WhereGraduateAt(p entql.TimeP) {
 	f.Where(p.Field(hpmember.FieldGraduateAt))
+}
+
+// WhereColorRgb applies the entql string predicate on the color_rgb field.
+func (f *HPMemberFilter) WhereColorRgb(p entql.StringP) {
+	f.Where(p.Field(hpmember.FieldColorRgb))
+}
+
+// WhereColorName applies the entql string predicate on the color_name field.
+func (f *HPMemberFilter) WhereColorName(p entql.StringP) {
+	f.Where(p.Field(hpmember.FieldColorName))
 }
 
 // WhereArtistID applies the entql int predicate on the artist_id field.

@@ -196,6 +196,34 @@ func (hmc *HPMemberCreate) SetNillableGraduateAt(t *time.Time) *HPMemberCreate {
 	return hmc
 }
 
+// SetColorRgb sets the "color_rgb" field.
+func (hmc *HPMemberCreate) SetColorRgb(s string) *HPMemberCreate {
+	hmc.mutation.SetColorRgb(s)
+	return hmc
+}
+
+// SetNillableColorRgb sets the "color_rgb" field if the given value is not nil.
+func (hmc *HPMemberCreate) SetNillableColorRgb(s *string) *HPMemberCreate {
+	if s != nil {
+		hmc.SetColorRgb(*s)
+	}
+	return hmc
+}
+
+// SetColorName sets the "color_name" field.
+func (hmc *HPMemberCreate) SetColorName(s string) *HPMemberCreate {
+	hmc.mutation.SetColorName(s)
+	return hmc
+}
+
+// SetNillableColorName sets the "color_name" field if the given value is not nil.
+func (hmc *HPMemberCreate) SetNillableColorName(s *string) *HPMemberCreate {
+	if s != nil {
+		hmc.SetColorName(*s)
+	}
+	return hmc
+}
+
 // SetArtistID sets the "artist_id" field.
 func (hmc *HPMemberCreate) SetArtistID(i int) *HPMemberCreate {
 	hmc.mutation.SetArtistID(i)
@@ -395,6 +423,14 @@ func (hmc *HPMemberCreate) defaults() error {
 		v := hpmember.DefaultRecrawlRequired
 		hmc.mutation.SetRecrawlRequired(v)
 	}
+	if _, ok := hmc.mutation.ColorRgb(); !ok {
+		v := hpmember.DefaultColorRgb
+		hmc.mutation.SetColorRgb(v)
+	}
+	if _, ok := hmc.mutation.ColorName(); !ok {
+		v := hpmember.DefaultColorName
+		hmc.mutation.SetColorName(v)
+	}
 	return nil
 }
 
@@ -426,6 +462,12 @@ func (hmc *HPMemberCreate) check() error {
 	}
 	if _, ok := hmc.mutation.Hometown(); !ok {
 		return &ValidationError{Name: "hometown", err: errors.New(`ent: missing required field "HPMember.hometown"`)}
+	}
+	if _, ok := hmc.mutation.ColorRgb(); !ok {
+		return &ValidationError{Name: "color_rgb", err: errors.New(`ent: missing required field "HPMember.color_rgb"`)}
+	}
+	if _, ok := hmc.mutation.ColorName(); !ok {
+		return &ValidationError{Name: "color_name", err: errors.New(`ent: missing required field "HPMember.color_name"`)}
 	}
 	return nil
 }
@@ -521,6 +563,14 @@ func (hmc *HPMemberCreate) createSpec() (*HPMember, *sqlgraph.CreateSpec) {
 	if value, ok := hmc.mutation.GraduateAt(); ok {
 		_spec.SetField(hpmember.FieldGraduateAt, field.TypeTime, value)
 		_node.GraduateAt = &value
+	}
+	if value, ok := hmc.mutation.ColorRgb(); ok {
+		_spec.SetField(hpmember.FieldColorRgb, field.TypeString, value)
+		_node.ColorRgb = value
+	}
+	if value, ok := hmc.mutation.ColorName(); ok {
+		_spec.SetField(hpmember.FieldColorName, field.TypeString, value)
+		_node.ColorName = value
 	}
 	if nodes := hmc.mutation.AssetsIDs(); len(nodes) > 0 {
 		edge := &sqlgraph.EdgeSpec{
@@ -975,6 +1025,30 @@ func (u *HPMemberUpsert) ClearGraduateAt() *HPMemberUpsert {
 	return u
 }
 
+// SetColorRgb sets the "color_rgb" field.
+func (u *HPMemberUpsert) SetColorRgb(v string) *HPMemberUpsert {
+	u.Set(hpmember.FieldColorRgb, v)
+	return u
+}
+
+// UpdateColorRgb sets the "color_rgb" field to the value that was provided on create.
+func (u *HPMemberUpsert) UpdateColorRgb() *HPMemberUpsert {
+	u.SetExcluded(hpmember.FieldColorRgb)
+	return u
+}
+
+// SetColorName sets the "color_name" field.
+func (u *HPMemberUpsert) SetColorName(v string) *HPMemberUpsert {
+	u.Set(hpmember.FieldColorName, v)
+	return u
+}
+
+// UpdateColorName sets the "color_name" field to the value that was provided on create.
+func (u *HPMemberUpsert) UpdateColorName() *HPMemberUpsert {
+	u.SetExcluded(hpmember.FieldColorName)
+	return u
+}
+
 // SetArtistID sets the "artist_id" field.
 func (u *HPMemberUpsert) SetArtistID(v int) *HPMemberUpsert {
 	u.Set(hpmember.FieldArtistID, v)
@@ -1315,6 +1389,34 @@ func (u *HPMemberUpsertOne) UpdateGraduateAt() *HPMemberUpsertOne {
 func (u *HPMemberUpsertOne) ClearGraduateAt() *HPMemberUpsertOne {
 	return u.Update(func(s *HPMemberUpsert) {
 		s.ClearGraduateAt()
+	})
+}
+
+// SetColorRgb sets the "color_rgb" field.
+func (u *HPMemberUpsertOne) SetColorRgb(v string) *HPMemberUpsertOne {
+	return u.Update(func(s *HPMemberUpsert) {
+		s.SetColorRgb(v)
+	})
+}
+
+// UpdateColorRgb sets the "color_rgb" field to the value that was provided on create.
+func (u *HPMemberUpsertOne) UpdateColorRgb() *HPMemberUpsertOne {
+	return u.Update(func(s *HPMemberUpsert) {
+		s.UpdateColorRgb()
+	})
+}
+
+// SetColorName sets the "color_name" field.
+func (u *HPMemberUpsertOne) SetColorName(v string) *HPMemberUpsertOne {
+	return u.Update(func(s *HPMemberUpsert) {
+		s.SetColorName(v)
+	})
+}
+
+// UpdateColorName sets the "color_name" field to the value that was provided on create.
+func (u *HPMemberUpsertOne) UpdateColorName() *HPMemberUpsertOne {
+	return u.Update(func(s *HPMemberUpsert) {
+		s.UpdateColorName()
 	})
 }
 
@@ -1823,6 +1925,34 @@ func (u *HPMemberUpsertBulk) UpdateGraduateAt() *HPMemberUpsertBulk {
 func (u *HPMemberUpsertBulk) ClearGraduateAt() *HPMemberUpsertBulk {
 	return u.Update(func(s *HPMemberUpsert) {
 		s.ClearGraduateAt()
+	})
+}
+
+// SetColorRgb sets the "color_rgb" field.
+func (u *HPMemberUpsertBulk) SetColorRgb(v string) *HPMemberUpsertBulk {
+	return u.Update(func(s *HPMemberUpsert) {
+		s.SetColorRgb(v)
+	})
+}
+
+// UpdateColorRgb sets the "color_rgb" field to the value that was provided on create.
+func (u *HPMemberUpsertBulk) UpdateColorRgb() *HPMemberUpsertBulk {
+	return u.Update(func(s *HPMemberUpsert) {
+		s.UpdateColorRgb()
+	})
+}
+
+// SetColorName sets the "color_name" field.
+func (u *HPMemberUpsertBulk) SetColorName(v string) *HPMemberUpsertBulk {
+	return u.Update(func(s *HPMemberUpsert) {
+		s.SetColorName(v)
+	})
+}
+
+// UpdateColorName sets the "color_name" field to the value that was provided on create.
+func (u *HPMemberUpsertBulk) UpdateColorName() *HPMemberUpsertBulk {
+	return u.Update(func(s *HPMemberUpsert) {
+		s.UpdateColorName()
 	})
 }
 

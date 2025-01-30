@@ -207,6 +207,14 @@ func init() {
 	hpmemberDescRecrawlRequired := hpmemberMixinFields0[4].Descriptor()
 	// hpmember.DefaultRecrawlRequired holds the default value on creation for the recrawl_required field.
 	hpmember.DefaultRecrawlRequired = hpmemberDescRecrawlRequired.Default.(bool)
+	// hpmemberDescColorRgb is the schema descriptor for color_rgb field.
+	hpmemberDescColorRgb := hpmemberFields[10].Descriptor()
+	// hpmember.DefaultColorRgb holds the default value on creation for the color_rgb field.
+	hpmember.DefaultColorRgb = hpmemberDescColorRgb.Default.(string)
+	// hpmemberDescColorName is the schema descriptor for color_name field.
+	hpmemberDescColorName := hpmemberFields[11].Descriptor()
+	// hpmember.DefaultColorName holds the default value on creation for the color_name field.
+	hpmember.DefaultColorName = hpmemberDescColorName.Default.(string)
 	hpsorthistoryMixin := schema.HPSortHistory{}.Mixin()
 	hpsorthistory.Policy = privacy.NewPolicies(schema.HPSortHistory{})
 	hpsorthistory.Hooks[0] = func(next ent.Mutator) ent.Mutator {

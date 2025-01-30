@@ -2,11 +2,15 @@ package member
 
 import (
 	"context"
+	"encoding/json"
+	"fmt"
+	"os"
 
 	"github.com/spf13/cobra"
 	"github.com/yssk22/hpapp/go/foundation/assert"
 	"github.com/yssk22/hpapp/go/foundation/slice"
 	"github.com/yssk22/hpapp/go/service/auth"
+	"github.com/yssk22/hpapp/go/service/auth/appuser"
 	"github.com/yssk22/hpapp/go/service/bootstrap/config"
 	"github.com/yssk22/hpapp/go/service/bootstrap/http/middleware"
 	"github.com/yssk22/hpapp/go/service/bootstrap/http/task"
@@ -34,7 +38,39 @@ func (*memberService) Tasks() []task.Task {
 }
 
 func (*memberService) Command() *cobra.Command {
-	return nil
+	cmd := cobra.Command{
+		Use:   "hpmember",
+		Short: "hpmember related commands",
+	}
+	cmd.AddCommand(&cobra.Command{
+		Use:   "update-colors",
+		Short: "Update member colors from a file",
+		Args:  cobra.ExactArgs(1),
+		RunE: func(cmd *cobra.Command, args []string) error {
+			file, err := os.Open(args[0])
+			if err != nil {
+				return err
+			}
+			defer file.Close()
+
+			var members []struct {
+				Name  string `json:"name"`
+				Color string `json:"color"`
+				Rgb   string `json:"rgb"`
+			}
+			if err := json.NewDecoder(file).Decode(&members); err != nil {
+				return err
+			}
+			ctx := appuser.WithAdmin(cmd.Context())
+			client := entutil.NewClient(ctx)
+			for _, m := range members {
+				client.HPMember.Query().Where(hpmember.NameEQ(m.Name)).FirstX(ctx).Update().SetColorName(m.Color).SetColorRgb(m.Rgb).ExecX(ctx)
+				fmt.Println("Updated", m.Name, m.Color, m.Rgb)
+			}
+			return nil
+		},
+	})
+	return &cmd
 }
 
 // GetAllArtists returns the list of artists with members. If includeOGs is false, OGs are not included and artists without members are removed.

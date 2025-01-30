@@ -22,6 +22,7 @@ func TestCrawlArtists(t *testing.T) {
 		"crawl",
 		test.WithContextTime(time.Date(2023, time.October, 30, 0, 0, 0, 0, timeutil.JST)),
 		test.WithNow(time.Date(2023, time.October, 30, 0, 0, 10, 0, timeutil.JST)),
+		test.WithAdmin(),
 	).Run(t, func(ctx context.Context, t *testing.T) {
 		a := assert.NewTestAssert(t)
 		err := CrawlArtists(ctx, nil)
@@ -56,6 +57,7 @@ func TestCrawlArtists(t *testing.T) {
 		test.WithHPMaster(),
 		test.WithContextTime(time.Date(2023, time.October, 30, 0, 0, 0, 0, timeutil.JST)),
 		test.WithNow(time.Date(2023, time.October, 30, 0, 0, 10, 0, timeutil.JST)),
+		test.WithAdmin(),
 	).Run(t, func(ctx context.Context, t *testing.T) {
 		a := assert.NewTestAssert(t)
 		entclient := entutil.NewClient(ctx)

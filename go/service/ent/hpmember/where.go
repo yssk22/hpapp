@@ -135,6 +135,16 @@ func GraduateAt(v time.Time) predicate.HPMember {
 	return predicate.HPMember(sql.FieldEQ(FieldGraduateAt, v))
 }
 
+// ColorRgb applies equality check predicate on the "color_rgb" field. It's identical to ColorRgbEQ.
+func ColorRgb(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldEQ(FieldColorRgb, v))
+}
+
+// ColorName applies equality check predicate on the "color_name" field. It's identical to ColorNameEQ.
+func ColorName(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldEQ(FieldColorName, v))
+}
+
 // ArtistID applies equality check predicate on the "artist_id" field. It's identical to ArtistIDEQ.
 func ArtistID(v int) predicate.HPMember {
 	return predicate.HPMember(sql.FieldEQ(FieldArtistID, v))
@@ -1028,6 +1038,136 @@ func GraduateAtIsNil() predicate.HPMember {
 // GraduateAtNotNil applies the NotNil predicate on the "graduate_at" field.
 func GraduateAtNotNil() predicate.HPMember {
 	return predicate.HPMember(sql.FieldNotNull(FieldGraduateAt))
+}
+
+// ColorRgbEQ applies the EQ predicate on the "color_rgb" field.
+func ColorRgbEQ(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldEQ(FieldColorRgb, v))
+}
+
+// ColorRgbNEQ applies the NEQ predicate on the "color_rgb" field.
+func ColorRgbNEQ(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldNEQ(FieldColorRgb, v))
+}
+
+// ColorRgbIn applies the In predicate on the "color_rgb" field.
+func ColorRgbIn(vs ...string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldIn(FieldColorRgb, vs...))
+}
+
+// ColorRgbNotIn applies the NotIn predicate on the "color_rgb" field.
+func ColorRgbNotIn(vs ...string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldNotIn(FieldColorRgb, vs...))
+}
+
+// ColorRgbGT applies the GT predicate on the "color_rgb" field.
+func ColorRgbGT(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldGT(FieldColorRgb, v))
+}
+
+// ColorRgbGTE applies the GTE predicate on the "color_rgb" field.
+func ColorRgbGTE(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldGTE(FieldColorRgb, v))
+}
+
+// ColorRgbLT applies the LT predicate on the "color_rgb" field.
+func ColorRgbLT(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldLT(FieldColorRgb, v))
+}
+
+// ColorRgbLTE applies the LTE predicate on the "color_rgb" field.
+func ColorRgbLTE(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldLTE(FieldColorRgb, v))
+}
+
+// ColorRgbContains applies the Contains predicate on the "color_rgb" field.
+func ColorRgbContains(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldContains(FieldColorRgb, v))
+}
+
+// ColorRgbHasPrefix applies the HasPrefix predicate on the "color_rgb" field.
+func ColorRgbHasPrefix(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldHasPrefix(FieldColorRgb, v))
+}
+
+// ColorRgbHasSuffix applies the HasSuffix predicate on the "color_rgb" field.
+func ColorRgbHasSuffix(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldHasSuffix(FieldColorRgb, v))
+}
+
+// ColorRgbEqualFold applies the EqualFold predicate on the "color_rgb" field.
+func ColorRgbEqualFold(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldEqualFold(FieldColorRgb, v))
+}
+
+// ColorRgbContainsFold applies the ContainsFold predicate on the "color_rgb" field.
+func ColorRgbContainsFold(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldContainsFold(FieldColorRgb, v))
+}
+
+// ColorNameEQ applies the EQ predicate on the "color_name" field.
+func ColorNameEQ(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldEQ(FieldColorName, v))
+}
+
+// ColorNameNEQ applies the NEQ predicate on the "color_name" field.
+func ColorNameNEQ(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldNEQ(FieldColorName, v))
+}
+
+// ColorNameIn applies the In predicate on the "color_name" field.
+func ColorNameIn(vs ...string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldIn(FieldColorName, vs...))
+}
+
+// ColorNameNotIn applies the NotIn predicate on the "color_name" field.
+func ColorNameNotIn(vs ...string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldNotIn(FieldColorName, vs...))
+}
+
+// ColorNameGT applies the GT predicate on the "color_name" field.
+func ColorNameGT(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldGT(FieldColorName, v))
+}
+
+// ColorNameGTE applies the GTE predicate on the "color_name" field.
+func ColorNameGTE(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldGTE(FieldColorName, v))
+}
+
+// ColorNameLT applies the LT predicate on the "color_name" field.
+func ColorNameLT(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldLT(FieldColorName, v))
+}
+
+// ColorNameLTE applies the LTE predicate on the "color_name" field.
+func ColorNameLTE(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldLTE(FieldColorName, v))
+}
+
+// ColorNameContains applies the Contains predicate on the "color_name" field.
+func ColorNameContains(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldContains(FieldColorName, v))
+}
+
+// ColorNameHasPrefix applies the HasPrefix predicate on the "color_name" field.
+func ColorNameHasPrefix(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldHasPrefix(FieldColorName, v))
+}
+
+// ColorNameHasSuffix applies the HasSuffix predicate on the "color_name" field.
+func ColorNameHasSuffix(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldHasSuffix(FieldColorName, v))
+}
+
+// ColorNameEqualFold applies the EqualFold predicate on the "color_name" field.
+func ColorNameEqualFold(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldEqualFold(FieldColorName, v))
+}
+
+// ColorNameContainsFold applies the ContainsFold predicate on the "color_name" field.
+func ColorNameContainsFold(v string) predicate.HPMember {
+	return predicate.HPMember(sql.FieldContainsFold(FieldColorName, v))
 }
 
 // ArtistIDEQ applies the EQ predicate on the "artist_id" field.

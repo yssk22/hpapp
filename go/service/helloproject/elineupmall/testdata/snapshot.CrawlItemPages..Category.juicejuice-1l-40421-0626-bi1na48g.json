@@ -22,13 +22,13 @@
       "tagged_artists": [
         {
           "id": 3,
-          "crawled_at": "2023-04-14T01:30:00Z",
+          "crawled_at": "2025-01-30T02:01:01Z",
           "last_error_message": "",
           "created_at": "2019-11-28T03:01:46Z",
-          "updated_at": "2023-04-14T01:30:35Z",
+          "updated_at": "2023-05-10T07:31:10Z",
           "key": "juicejuice",
           "name": "Juice=Juice",
-          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/e8c5fc90c206cb0c0496600d85534cb7a2eaa6b8.jpg",
+          "thumbnail_url": "https://cdn.helloproject.com/img/artist/m/f40c7308015238c8cf248c2d23c68279e3c69e89.jpg",
           "index": 2,
           "edges": {}
         }
@@ -36,20 +36,22 @@
       "tagged_members": [
         {
           "id": 8589934623,
-          "crawled_at": "2023-04-14T01:30:00Z",
+          "crawled_at": "2025-01-30T02:01:01Z",
           "error_count": 1,
           "last_error_message": "not crawled",
           "created_at": "2019-11-28T03:01:51Z",
-          "updated_at": "2023-04-14T01:31:12Z",
+          "updated_at": "2025-01-30T02:01:16Z",
           "key": "yume_kudou",
           "artist_key": "juicejuice",
           "name": "工藤由愛",
           "name_kana": "クドウユメ",
-          "thumbnail_url": "http://cdn.helloproject.com/img/artist/m/76c48a3d838713c29034644bb2e7b271080f00b9.jpg",
+          "thumbnail_url": "https://cdn.helloproject.com/img/artist/m/54c538e1329793ade4360433a3b7738fb1f3569a.jpg",
           "date_of_birth": "2004-09-27T15:00:00Z",
           "blood_type": "A",
           "hometown": "北海道",
           "join_at": "2019-06-13T15:00:00Z",
+          "color_rgb": "#ffc0cb",
+          "color_name": "ピンク",
           "artist_id": 3,
           "edges": {}
         }

@@ -7,6 +7,7 @@ import (
 	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
+	"github.com/yssk22/hpapp/go/service/auth/appuser"
 	"github.com/yssk22/hpapp/go/service/ent/privacy"
 	"github.com/yssk22/hpapp/go/service/schema/mixin"
 )
@@ -36,6 +37,8 @@ func (HPMember) Fields() []ent.Field {
 		field.String("hometown"),
 		field.Time("join_at").Optional().Nillable(),
 		field.Time("graduate_at").Optional().Nillable(),
+		field.String("color_rgb").Default(""),
+		field.String("color_name").Default(""),
 
 		field.Int("artist_id").StorageKey("hp_artist_members").Nillable().Optional(),
 	}
@@ -98,5 +101,10 @@ func (HPMember) Annotations() []schema.Annotation {
 }
 
 func (HPMember) Policy() ent.Policy {
-	return privacy.Policy{}
+	return privacy.Policy{
+		Mutation: privacy.MutationPolicy{
+			appuser.AlloIfAdmin(),
+			appuser.AlwaysDeny(),
+		},
+	}
 }
