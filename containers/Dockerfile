@@ -1,4 +1,4 @@
-FROM gcr.io/cloudsql-docker/gce-proxy:1.09 AS gce-proxy
+FROM gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.14.0 AS cloud-sql-proxy
 FROM golang:1.22.4 AS go
 FROM node:22.3.0 AS node
 FROM google/cloud-sdk:latest AS cloud-sdk
@@ -7,7 +7,7 @@ ENV ANDROID_HOME /opt/android-sdk
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 
-COPY --from=gce-proxy /cloud_sql_proxy /usr/local/bin/cloud_sql_proxy
+COPY --from=cloud-sql-proxy /cloud-sql-proxy /usr/local/bin/cloud-sql-proxy
 COPY --from=go /usr/local/go /usr/local/go
 COPY --from=node /usr/local/bin/ /usr/local/bin/
 COPY --from=node /usr/local/lib/node_modules/ /usr/local/lib/node_modules/
