@@ -27,6 +27,8 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/metric"
+	"github.com/yssk22/hpapp/go/service/ent/metricdryrun"
 	"github.com/yssk22/hpapp/go/service/ent/testent"
 	"github.com/yssk22/hpapp/go/service/ent/user"
 	"github.com/yssk22/hpapp/go/service/ent/usernotificationlog"
@@ -106,6 +108,8 @@ func checkColumn(table, column string) error {
 			hpmember.Table:                         hpmember.ValidColumn,
 			hpsorthistory.Table:                    hpsorthistory.ValidColumn,
 			hpviewhistory.Table:                    hpviewhistory.ValidColumn,
+			metric.Table:                           metric.ValidColumn,
+			metricdryrun.Table:                     metricdryrun.ValidColumn,
 			testent.Table:                          testent.ValidColumn,
 			user.Table:                             user.ValidColumn,
 			usernotificationlog.Table:              usernotificationlog.ValidColumn,

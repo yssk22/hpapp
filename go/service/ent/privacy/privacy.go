@@ -510,6 +510,54 @@ func (f HPViewHistoryMutationRuleFunc) EvalMutation(ctx context.Context, m ent.M
 	return Denyf("ent/privacy: unexpected mutation type %T, expect *ent.HPViewHistoryMutation", m)
 }
 
+// The MetricQueryRuleFunc type is an adapter to allow the use of ordinary
+// functions as a query rule.
+type MetricQueryRuleFunc func(context.Context, *ent.MetricQuery) error
+
+// EvalQuery return f(ctx, q).
+func (f MetricQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error {
+	if q, ok := q.(*ent.MetricQuery); ok {
+		return f(ctx, q)
+	}
+	return Denyf("ent/privacy: unexpected query type %T, expect *ent.MetricQuery", q)
+}
+
+// The MetricMutationRuleFunc type is an adapter to allow the use of ordinary
+// functions as a mutation rule.
+type MetricMutationRuleFunc func(context.Context, *ent.MetricMutation) error
+
+// EvalMutation calls f(ctx, m).
+func (f MetricMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error {
+	if m, ok := m.(*ent.MetricMutation); ok {
+		return f(ctx, m)
+	}
+	return Denyf("ent/privacy: unexpected mutation type %T, expect *ent.MetricMutation", m)
+}
+
+// The MetricDryRunQueryRuleFunc type is an adapter to allow the use of ordinary
+// functions as a query rule.
+type MetricDryRunQueryRuleFunc func(context.Context, *ent.MetricDryRunQuery) error
+
+// EvalQuery return f(ctx, q).
+func (f MetricDryRunQueryRuleFunc) EvalQuery(ctx context.Context, q ent.Query) error {
+	if q, ok := q.(*ent.MetricDryRunQuery); ok {
+		return f(ctx, q)
+	}
+	return Denyf("ent/privacy: unexpected query type %T, expect *ent.MetricDryRunQuery", q)
+}
+
+// The MetricDryRunMutationRuleFunc type is an adapter to allow the use of ordinary
+// functions as a mutation rule.
+type MetricDryRunMutationRuleFunc func(context.Context, *ent.MetricDryRunMutation) error
+
+// EvalMutation calls f(ctx, m).
+func (f MetricDryRunMutationRuleFunc) EvalMutation(ctx context.Context, m ent.Mutation) error {
+	if m, ok := m.(*ent.MetricDryRunMutation); ok {
+		return f(ctx, m)
+	}
+	return Denyf("ent/privacy: unexpected mutation type %T, expect *ent.MetricDryRunMutation", m)
+}
+
 // The TestEntQueryRuleFunc type is an adapter to allow the use of ordinary
 // functions as a query rule.
 type TestEntQueryRuleFunc func(context.Context, *ent.TestEntQuery) error
@@ -671,6 +719,10 @@ func queryFilter(q ent.Query) (Filter, error) {
 		return q.Filter(), nil
 	case *ent.HPViewHistoryQuery:
 		return q.Filter(), nil
+	case *ent.MetricQuery:
+		return q.Filter(), nil
+	case *ent.MetricDryRunQuery:
+		return q.Filter(), nil
 	case *ent.TestEntQuery:
 		return q.Filter(), nil
 	case *ent.UserQuery:
@@ -715,6 +767,10 @@ func mutationFilter(m ent.Mutation) (Filter, error) {
 	case *ent.HPSortHistoryMutation:
 		return m.Filter(), nil
 	case *ent.HPViewHistoryMutation:
+		return m.Filter(), nil
+	case *ent.MetricMutation:
+		return m.Filter(), nil
+	case *ent.MetricDryRunMutation:
 		return m.Filter(), nil
 	case *ent.TestEntMutation:
 		return m.Filter(), nil

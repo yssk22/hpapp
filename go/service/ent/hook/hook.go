@@ -189,6 +189,30 @@ func (f HPViewHistoryFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Valu
 	return nil, fmt.Errorf("unexpected mutation type %T. expect *ent.HPViewHistoryMutation", m)
 }
 
+// The MetricFunc type is an adapter to allow the use of ordinary
+// function as Metric mutator.
+type MetricFunc func(context.Context, *ent.MetricMutation) (ent.Value, error)
+
+// Mutate calls f(ctx, m).
+func (f MetricFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error) {
+	if mv, ok := m.(*ent.MetricMutation); ok {
+		return f(ctx, mv)
+	}
+	return nil, fmt.Errorf("unexpected mutation type %T. expect *ent.MetricMutation", m)
+}
+
+// The MetricDryRunFunc type is an adapter to allow the use of ordinary
+// function as MetricDryRun mutator.
+type MetricDryRunFunc func(context.Context, *ent.MetricDryRunMutation) (ent.Value, error)
+
+// Mutate calls f(ctx, m).
+func (f MetricDryRunFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error) {
+	if mv, ok := m.(*ent.MetricDryRunMutation); ok {
+		return f(ctx, mv)
+	}
+	return nil, fmt.Errorf("unexpected mutation type %T. expect *ent.MetricDryRunMutation", m)
+}
+
 // The TestEntFunc type is an adapter to allow the use of ordinary
 // function as TestEnt mutator.
 type TestEntFunc func(context.Context, *ent.TestEntMutation) (ent.Value, error)

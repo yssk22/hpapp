@@ -19,6 +19,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/helloproject/ig/apify"
 	"github.com/yssk22/hpapp/go/service/helloproject/member"
 	"github.com/yssk22/hpapp/go/service/helloproject/upfc"
+	"github.com/yssk22/hpapp/go/service/metrics"
 	"github.com/yssk22/hpapp/go/service/push"
 	"github.com/yssk22/hpapp/go/system/environment"
 	"github.com/yssk22/hpapp/go/system/environment/devcontainer"
@@ -100,6 +101,7 @@ func newProduction() *bootstrap {
 			),
 			upfc.NewService(),
 			entutil.NewService(),
+			metrics.NewService(),
 			healthcheck.NewService(),
 		},
 	}

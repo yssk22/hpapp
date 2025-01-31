@@ -51,6 +51,12 @@ type HPSortHistory func(*sql.Selector)
 // HPViewHistory is the predicate function for hpviewhistory builders.
 type HPViewHistory func(*sql.Selector)
 
+// Metric is the predicate function for metric builders.
+type Metric func(*sql.Selector)
+
+// MetricDryRun is the predicate function for metricdryrun builders.
+type MetricDryRun func(*sql.Selector)
+
 // TestEnt is the predicate function for testent builders.
 type TestEnt func(*sql.Selector)
 

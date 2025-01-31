@@ -22,6 +22,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/metric"
 	"github.com/yssk22/hpapp/go/service/ent/user"
 	"github.com/yssk22/hpapp/go/service/ent/usernotificationsetting"
 )
@@ -2424,6 +2425,110 @@ func newHPViewHistoryPaginateArgs(rv map[string]interface{}) *hpviewhistoryPagin
 }
 
 // CollectFields tells the query-builder to eagerly load connected nodes by resolver context.
+func (m *MetricQuery) CollectFields(ctx context.Context, satisfies ...string) (*MetricQuery, error) {
+	fc := graphql.GetFieldContext(ctx)
+	if fc == nil {
+		return m, nil
+	}
+	if err := m.collectField(ctx, graphql.GetOperationContext(ctx), fc.Field, nil, satisfies...); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (m *MetricQuery) collectField(ctx context.Context, opCtx *graphql.OperationContext, collected graphql.CollectedField, path []string, satisfies ...string) error {
+	path = append([]string(nil), path...)
+	var (
+		unknownSeen    bool
+		fieldSeen      = make(map[string]struct{}, len(metric.Columns))
+		selectedFields = []string{metric.FieldID}
+	)
+	for _, field := range graphql.CollectFields(opCtx, collected.Selections, satisfies) {
+		switch field.Name {
+		case "createdAt":
+			if _, ok := fieldSeen[metric.FieldCreatedAt]; !ok {
+				selectedFields = append(selectedFields, metric.FieldCreatedAt)
+				fieldSeen[metric.FieldCreatedAt] = struct{}{}
+			}
+		case "updatedAt":
+			if _, ok := fieldSeen[metric.FieldUpdatedAt]; !ok {
+				selectedFields = append(selectedFields, metric.FieldUpdatedAt)
+				fieldSeen[metric.FieldUpdatedAt] = struct{}{}
+			}
+		case "metricName":
+			if _, ok := fieldSeen[metric.FieldMetricName]; !ok {
+				selectedFields = append(selectedFields, metric.FieldMetricName)
+				fieldSeen[metric.FieldMetricName] = struct{}{}
+			}
+		case "date":
+			if _, ok := fieldSeen[metric.FieldDate]; !ok {
+				selectedFields = append(selectedFields, metric.FieldDate)
+				fieldSeen[metric.FieldDate] = struct{}{}
+			}
+		case "value":
+			if _, ok := fieldSeen[metric.FieldValue]; !ok {
+				selectedFields = append(selectedFields, metric.FieldValue)
+				fieldSeen[metric.FieldValue] = struct{}{}
+			}
+		default:
+			unknownSeen = true
+		}
+	}
+	if !unknownSeen {
+		m.Select(selectedFields...)
+	}
+	return nil
+}
+
+type metricPaginateArgs struct {
+	first, last   *int
+	after, before *Cursor
+	opts          []MetricPaginateOption
+}
+
+func newMetricPaginateArgs(rv map[string]interface{}) *metricPaginateArgs {
+	args := &metricPaginateArgs{}
+	if rv == nil {
+		return args
+	}
+	if v := rv[firstField]; v != nil {
+		args.first = v.(*int)
+	}
+	if v := rv[lastField]; v != nil {
+		args.last = v.(*int)
+	}
+	if v := rv[afterField]; v != nil {
+		args.after = v.(*Cursor)
+	}
+	if v := rv[beforeField]; v != nil {
+		args.before = v.(*Cursor)
+	}
+	if v, ok := rv[orderByField]; ok {
+		switch v := v.(type) {
+		case map[string]interface{}:
+			var (
+				err1, err2 error
+				order      = &MetricOrder{Field: &MetricOrderField{}, Direction: entgql.OrderDirectionAsc}
+			)
+			if d, ok := v[directionField]; ok {
+				err1 = order.Direction.UnmarshalGQL(d)
+			}
+			if f, ok := v[fieldField]; ok {
+				err2 = order.Field.UnmarshalGQL(f)
+			}
+			if err1 == nil && err2 == nil {
+				args.opts = append(args.opts, WithMetricOrder(order))
+			}
+		case *MetricOrder:
+			if v != nil {
+				args.opts = append(args.opts, WithMetricOrder(v))
+			}
+		}
+	}
+	return args
+}
+
+// CollectFields tells the query-builder to eagerly load connected nodes by resolver context.
 func (u *UserQuery) CollectFields(ctx context.Context, satisfies ...string) (*UserQuery, error) {
 	fc := graphql.GetFieldContext(ctx)
 	if fc == nil {
@@ -2526,6 +2631,18 @@ func (u *UserQuery) collectField(ctx context.Context, opCtx *graphql.OperationCo
 				return err
 			}
 			u.WithNamedElineupMallPurchaseHistories(alias, func(wq *HPElineupMallItemPurchaseHistoryQuery) {
+				*wq = *query
+			})
+		case "metrics":
+			var (
+				alias = field.Alias
+				path  = append(path, alias)
+				query = (&MetricClient{config: u.config}).Query()
+			)
+			if err := query.collectField(ctx, opCtx, field, path, satisfies...); err != nil {
+				return err
+			}
+			u.WithNamedMetrics(alias, func(wq *MetricQuery) {
 				*wq = *query
 			})
 		case "createdAt":

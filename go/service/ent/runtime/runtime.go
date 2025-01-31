@@ -20,6 +20,8 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/metric"
+	"github.com/yssk22/hpapp/go/service/ent/metricdryrun"
 	"github.com/yssk22/hpapp/go/service/ent/testent"
 	"github.com/yssk22/hpapp/go/service/ent/user"
 	"github.com/yssk22/hpapp/go/service/ent/usernotificationlog"
@@ -247,6 +249,32 @@ func init() {
 	hpviewhistoryDescIsFavorite := hpviewhistoryFields[3].Descriptor()
 	// hpviewhistory.DefaultIsFavorite holds the default value on creation for the is_favorite field.
 	hpviewhistory.DefaultIsFavorite = hpviewhistoryDescIsFavorite.Default.(bool)
+	metricMixin := schema.Metric{}.Mixin()
+	metric.Policy = privacy.NewPolicies(schema.Metric{})
+	metric.Hooks[0] = func(next ent.Mutator) ent.Mutator {
+		return ent.MutateFunc(func(ctx context.Context, m ent.Mutation) (ent.Value, error) {
+			if err := metric.Policy.EvalMutation(ctx, m); err != nil {
+				return nil, err
+			}
+			return next.Mutate(ctx, m)
+		})
+	}
+	metricMixinHooks0 := metricMixin[0].Hooks()
+
+	metric.Hooks[1] = metricMixinHooks0[0]
+	metricdryrunMixin := schema.MetricDryRun{}.Mixin()
+	metricdryrun.Policy = privacy.NewPolicies(schema.MetricDryRun{})
+	metricdryrun.Hooks[0] = func(next ent.Mutator) ent.Mutator {
+		return ent.MutateFunc(func(ctx context.Context, m ent.Mutation) (ent.Value, error) {
+			if err := metricdryrun.Policy.EvalMutation(ctx, m); err != nil {
+				return nil, err
+			}
+			return next.Mutate(ctx, m)
+		})
+	}
+	metricdryrunMixinHooks0 := metricdryrunMixin[0].Hooks()
+
+	metricdryrun.Hooks[1] = metricdryrunMixinHooks0[0]
 	testentFields := schema.TestEnt{}.Fields()
 	_ = testentFields
 	// testentDescStringField is the schema descriptor for string_field field.

@@ -26,6 +26,8 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/metric"
+	"github.com/yssk22/hpapp/go/service/ent/metricdryrun"
 	"github.com/yssk22/hpapp/go/service/ent/predicate"
 	"github.com/yssk22/hpapp/go/service/ent/testent"
 	"github.com/yssk22/hpapp/go/service/ent/user"
@@ -59,6 +61,8 @@ const (
 	TypeHPMember                         = "HPMember"
 	TypeHPSortHistory                    = "HPSortHistory"
 	TypeHPViewHistory                    = "HPViewHistory"
+	TypeMetric                           = "Metric"
+	TypeMetricDryRun                     = "MetricDryRun"
 	TypeTestEnt                          = "TestEnt"
 	TypeUser                             = "User"
 	TypeUserNotificationLog              = "UserNotificationLog"
@@ -22275,6 +22279,1490 @@ func (m *HPViewHistoryMutation) ResetEdge(name string) error {
 	return fmt.Errorf("unknown HPViewHistory edge %s", name)
 }
 
+// MetricMutation represents an operation that mutates the Metric nodes in the graph.
+type MetricMutation struct {
+	config
+	op            Op
+	typ           string
+	id            *int
+	created_at    *time.Time
+	updated_at    *time.Time
+	metric_name   *string
+	date          *string
+	value         *float64
+	addvalue      *float64
+	clearedFields map[string]struct{}
+	user          *int
+	cleareduser   bool
+	done          bool
+	oldValue      func(context.Context) (*Metric, error)
+	predicates    []predicate.Metric
+}
+
+var _ ent.Mutation = (*MetricMutation)(nil)
+
+// metricOption allows management of the mutation configuration using functional options.
+type metricOption func(*MetricMutation)
+
+// newMetricMutation creates new mutation for the Metric entity.
+func newMetricMutation(c config, op Op, opts ...metricOption) *MetricMutation {
+	m := &MetricMutation{
+		config:        c,
+		op:            op,
+		typ:           TypeMetric,
+		clearedFields: make(map[string]struct{}),
+	}
+	for _, opt := range opts {
+		opt(m)
+	}
+	return m
+}
+
+// withMetricID sets the ID field of the mutation.
+func withMetricID(id int) metricOption {
+	return func(m *MetricMutation) {
+		var (
+			err   error
+			once  sync.Once
+			value *Metric
+		)
+		m.oldValue = func(ctx context.Context) (*Metric, error) {
+			once.Do(func() {
+				if m.done {
+					err = errors.New("querying old values post mutation is not allowed")
+				} else {
+					value, err = m.Client().Metric.Get(ctx, id)
+				}
+			})
+			return value, err
+		}
+		m.id = &id
+	}
+}
+
+// withMetric sets the old Metric of the mutation.
+func withMetric(node *Metric) metricOption {
+	return func(m *MetricMutation) {
+		m.oldValue = func(context.Context) (*Metric, error) {
+			return node, nil
+		}
+		m.id = &node.ID
+	}
+}
+
+// Client returns a new `ent.Client` from the mutation. If the mutation was
+// executed in a transaction (ent.Tx), a transactional client is returned.
+func (m MetricMutation) Client() *Client {
+	client := &Client{config: m.config}
+	client.init()
+	return client
+}
+
+// Tx returns an `ent.Tx` for mutations that were executed in transactions;
+// it returns an error otherwise.
+func (m MetricMutation) Tx() (*Tx, error) {
+	if _, ok := m.driver.(*txDriver); !ok {
+		return nil, errors.New("ent: mutation is not running in a transaction")
+	}
+	tx := &Tx{config: m.config}
+	tx.init()
+	return tx, nil
+}
+
+// ID returns the ID value in the mutation. Note that the ID is only available
+// if it was provided to the builder or after it was returned from the database.
+func (m *MetricMutation) ID() (id int, exists bool) {
+	if m.id == nil {
+		return
+	}
+	return *m.id, true
+}
+
+// IDs queries the database and returns the entity ids that match the mutation's predicate.
+// That means, if the mutation is applied within a transaction with an isolation level such
+// as sql.LevelSerializable, the returned ids match the ids of the rows that will be updated
+// or updated by the mutation.
+func (m *MetricMutation) IDs(ctx context.Context) ([]int, error) {
+	switch {
+	case m.op.Is(OpUpdateOne | OpDeleteOne):
+		id, exists := m.ID()
+		if exists {
+			return []int{id}, nil
+		}
+		fallthrough
+	case m.op.Is(OpUpdate | OpDelete):
+		return m.Client().Metric.Query().Where(m.predicates...).IDs(ctx)
+	default:
+		return nil, fmt.Errorf("IDs is not allowed on %s operations", m.op)
+	}
+}
+
+// SetCreatedAt sets the "created_at" field.
+func (m *MetricMutation) SetCreatedAt(t time.Time) {
+	m.created_at = &t
+}
+
+// CreatedAt returns the value of the "created_at" field in the mutation.
+func (m *MetricMutation) CreatedAt() (r time.Time, exists bool) {
+	v := m.created_at
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldCreatedAt returns the old "created_at" field's value of the Metric entity.
+// If the Metric object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *MetricMutation) OldCreatedAt(ctx context.Context) (v time.Time, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldCreatedAt is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldCreatedAt requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldCreatedAt: %w", err)
+	}
+	return oldValue.CreatedAt, nil
+}
+
+// ClearCreatedAt clears the value of the "created_at" field.
+func (m *MetricMutation) ClearCreatedAt() {
+	m.created_at = nil
+	m.clearedFields[metric.FieldCreatedAt] = struct{}{}
+}
+
+// CreatedAtCleared returns if the "created_at" field was cleared in this mutation.
+func (m *MetricMutation) CreatedAtCleared() bool {
+	_, ok := m.clearedFields[metric.FieldCreatedAt]
+	return ok
+}
+
+// ResetCreatedAt resets all changes to the "created_at" field.
+func (m *MetricMutation) ResetCreatedAt() {
+	m.created_at = nil
+	delete(m.clearedFields, metric.FieldCreatedAt)
+}
+
+// SetUpdatedAt sets the "updated_at" field.
+func (m *MetricMutation) SetUpdatedAt(t time.Time) {
+	m.updated_at = &t
+}
+
+// UpdatedAt returns the value of the "updated_at" field in the mutation.
+func (m *MetricMutation) UpdatedAt() (r time.Time, exists bool) {
+	v := m.updated_at
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldUpdatedAt returns the old "updated_at" field's value of the Metric entity.
+// If the Metric object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *MetricMutation) OldUpdatedAt(ctx context.Context) (v time.Time, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldUpdatedAt is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldUpdatedAt requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldUpdatedAt: %w", err)
+	}
+	return oldValue.UpdatedAt, nil
+}
+
+// ClearUpdatedAt clears the value of the "updated_at" field.
+func (m *MetricMutation) ClearUpdatedAt() {
+	m.updated_at = nil
+	m.clearedFields[metric.FieldUpdatedAt] = struct{}{}
+}
+
+// UpdatedAtCleared returns if the "updated_at" field was cleared in this mutation.
+func (m *MetricMutation) UpdatedAtCleared() bool {
+	_, ok := m.clearedFields[metric.FieldUpdatedAt]
+	return ok
+}
+
+// ResetUpdatedAt resets all changes to the "updated_at" field.
+func (m *MetricMutation) ResetUpdatedAt() {
+	m.updated_at = nil
+	delete(m.clearedFields, metric.FieldUpdatedAt)
+}
+
+// SetMetricName sets the "metric_name" field.
+func (m *MetricMutation) SetMetricName(s string) {
+	m.metric_name = &s
+}
+
+// MetricName returns the value of the "metric_name" field in the mutation.
+func (m *MetricMutation) MetricName() (r string, exists bool) {
+	v := m.metric_name
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldMetricName returns the old "metric_name" field's value of the Metric entity.
+// If the Metric object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *MetricMutation) OldMetricName(ctx context.Context) (v string, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldMetricName is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldMetricName requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldMetricName: %w", err)
+	}
+	return oldValue.MetricName, nil
+}
+
+// ResetMetricName resets all changes to the "metric_name" field.
+func (m *MetricMutation) ResetMetricName() {
+	m.metric_name = nil
+}
+
+// SetDate sets the "date" field.
+func (m *MetricMutation) SetDate(s string) {
+	m.date = &s
+}
+
+// Date returns the value of the "date" field in the mutation.
+func (m *MetricMutation) Date() (r string, exists bool) {
+	v := m.date
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldDate returns the old "date" field's value of the Metric entity.
+// If the Metric object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *MetricMutation) OldDate(ctx context.Context) (v string, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldDate is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldDate requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldDate: %w", err)
+	}
+	return oldValue.Date, nil
+}
+
+// ResetDate resets all changes to the "date" field.
+func (m *MetricMutation) ResetDate() {
+	m.date = nil
+}
+
+// SetValue sets the "value" field.
+func (m *MetricMutation) SetValue(f float64) {
+	m.value = &f
+	m.addvalue = nil
+}
+
+// Value returns the value of the "value" field in the mutation.
+func (m *MetricMutation) Value() (r float64, exists bool) {
+	v := m.value
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldValue returns the old "value" field's value of the Metric entity.
+// If the Metric object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *MetricMutation) OldValue(ctx context.Context) (v float64, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldValue is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldValue requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldValue: %w", err)
+	}
+	return oldValue.Value, nil
+}
+
+// AddValue adds f to the "value" field.
+func (m *MetricMutation) AddValue(f float64) {
+	if m.addvalue != nil {
+		*m.addvalue += f
+	} else {
+		m.addvalue = &f
+	}
+}
+
+// AddedValue returns the value that was added to the "value" field in this mutation.
+func (m *MetricMutation) AddedValue() (r float64, exists bool) {
+	v := m.addvalue
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// ResetValue resets all changes to the "value" field.
+func (m *MetricMutation) ResetValue() {
+	m.value = nil
+	m.addvalue = nil
+}
+
+// SetOwnerUserID sets the "owner_user_id" field.
+func (m *MetricMutation) SetOwnerUserID(i int) {
+	m.user = &i
+}
+
+// OwnerUserID returns the value of the "owner_user_id" field in the mutation.
+func (m *MetricMutation) OwnerUserID() (r int, exists bool) {
+	v := m.user
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldOwnerUserID returns the old "owner_user_id" field's value of the Metric entity.
+// If the Metric object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *MetricMutation) OldOwnerUserID(ctx context.Context) (v int, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldOwnerUserID is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldOwnerUserID requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldOwnerUserID: %w", err)
+	}
+	return oldValue.OwnerUserID, nil
+}
+
+// ClearOwnerUserID clears the value of the "owner_user_id" field.
+func (m *MetricMutation) ClearOwnerUserID() {
+	m.user = nil
+	m.clearedFields[metric.FieldOwnerUserID] = struct{}{}
+}
+
+// OwnerUserIDCleared returns if the "owner_user_id" field was cleared in this mutation.
+func (m *MetricMutation) OwnerUserIDCleared() bool {
+	_, ok := m.clearedFields[metric.FieldOwnerUserID]
+	return ok
+}
+
+// ResetOwnerUserID resets all changes to the "owner_user_id" field.
+func (m *MetricMutation) ResetOwnerUserID() {
+	m.user = nil
+	delete(m.clearedFields, metric.FieldOwnerUserID)
+}
+
+// SetUserID sets the "user" edge to the User entity by id.
+func (m *MetricMutation) SetUserID(id int) {
+	m.user = &id
+}
+
+// ClearUser clears the "user" edge to the User entity.
+func (m *MetricMutation) ClearUser() {
+	m.cleareduser = true
+}
+
+// UserCleared reports if the "user" edge to the User entity was cleared.
+func (m *MetricMutation) UserCleared() bool {
+	return m.OwnerUserIDCleared() || m.cleareduser
+}
+
+// UserID returns the "user" edge ID in the mutation.
+func (m *MetricMutation) UserID() (id int, exists bool) {
+	if m.user != nil {
+		return *m.user, true
+	}
+	return
+}
+
+// UserIDs returns the "user" edge IDs in the mutation.
+// Note that IDs always returns len(IDs) <= 1 for unique edges, and you should use
+// UserID instead. It exists only for internal usage by the builders.
+func (m *MetricMutation) UserIDs() (ids []int) {
+	if id := m.user; id != nil {
+		ids = append(ids, *id)
+	}
+	return
+}
+
+// ResetUser resets all changes to the "user" edge.
+func (m *MetricMutation) ResetUser() {
+	m.user = nil
+	m.cleareduser = false
+}
+
+// Where appends a list predicates to the MetricMutation builder.
+func (m *MetricMutation) Where(ps ...predicate.Metric) {
+	m.predicates = append(m.predicates, ps...)
+}
+
+// WhereP appends storage-level predicates to the MetricMutation builder. Using this method,
+// users can use type-assertion to append predicates that do not depend on any generated package.
+func (m *MetricMutation) WhereP(ps ...func(*sql.Selector)) {
+	p := make([]predicate.Metric, len(ps))
+	for i := range ps {
+		p[i] = ps[i]
+	}
+	m.Where(p...)
+}
+
+// Op returns the operation name.
+func (m *MetricMutation) Op() Op {
+	return m.op
+}
+
+// SetOp allows setting the mutation operation.
+func (m *MetricMutation) SetOp(op Op) {
+	m.op = op
+}
+
+// Type returns the node type of this mutation (Metric).
+func (m *MetricMutation) Type() string {
+	return m.typ
+}
+
+// Fields returns all fields that were changed during this mutation. Note that in
+// order to get all numeric fields that were incremented/decremented, call
+// AddedFields().
+func (m *MetricMutation) Fields() []string {
+	fields := make([]string, 0, 6)
+	if m.created_at != nil {
+		fields = append(fields, metric.FieldCreatedAt)
+	}
+	if m.updated_at != nil {
+		fields = append(fields, metric.FieldUpdatedAt)
+	}
+	if m.metric_name != nil {
+		fields = append(fields, metric.FieldMetricName)
+	}
+	if m.date != nil {
+		fields = append(fields, metric.FieldDate)
+	}
+	if m.value != nil {
+		fields = append(fields, metric.FieldValue)
+	}
+	if m.user != nil {
+		fields = append(fields, metric.FieldOwnerUserID)
+	}
+	return fields
+}
+
+// Field returns the value of a field with the given name. The second boolean
+// return value indicates that this field was not set, or was not defined in the
+// schema.
+func (m *MetricMutation) Field(name string) (ent.Value, bool) {
+	switch name {
+	case metric.FieldCreatedAt:
+		return m.CreatedAt()
+	case metric.FieldUpdatedAt:
+		return m.UpdatedAt()
+	case metric.FieldMetricName:
+		return m.MetricName()
+	case metric.FieldDate:
+		return m.Date()
+	case metric.FieldValue:
+		return m.Value()
+	case metric.FieldOwnerUserID:
+		return m.OwnerUserID()
+	}
+	return nil, false
+}
+
+// OldField returns the old value of the field from the database. An error is
+// returned if the mutation operation is not UpdateOne, or the query to the
+// database failed.
+func (m *MetricMutation) OldField(ctx context.Context, name string) (ent.Value, error) {
+	switch name {
+	case metric.FieldCreatedAt:
+		return m.OldCreatedAt(ctx)
+	case metric.FieldUpdatedAt:
+		return m.OldUpdatedAt(ctx)
+	case metric.FieldMetricName:
+		return m.OldMetricName(ctx)
+	case metric.FieldDate:
+		return m.OldDate(ctx)
+	case metric.FieldValue:
+		return m.OldValue(ctx)
+	case metric.FieldOwnerUserID:
+		return m.OldOwnerUserID(ctx)
+	}
+	return nil, fmt.Errorf("unknown Metric field %s", name)
+}
+
+// SetField sets the value of a field with the given name. It returns an error if
+// the field is not defined in the schema, or if the type mismatched the field
+// type.
+func (m *MetricMutation) SetField(name string, value ent.Value) error {
+	switch name {
+	case metric.FieldCreatedAt:
+		v, ok := value.(time.Time)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetCreatedAt(v)
+		return nil
+	case metric.FieldUpdatedAt:
+		v, ok := value.(time.Time)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetUpdatedAt(v)
+		return nil
+	case metric.FieldMetricName:
+		v, ok := value.(string)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetMetricName(v)
+		return nil
+	case metric.FieldDate:
+		v, ok := value.(string)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetDate(v)
+		return nil
+	case metric.FieldValue:
+		v, ok := value.(float64)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetValue(v)
+		return nil
+	case metric.FieldOwnerUserID:
+		v, ok := value.(int)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetOwnerUserID(v)
+		return nil
+	}
+	return fmt.Errorf("unknown Metric field %s", name)
+}
+
+// AddedFields returns all numeric fields that were incremented/decremented during
+// this mutation.
+func (m *MetricMutation) AddedFields() []string {
+	var fields []string
+	if m.addvalue != nil {
+		fields = append(fields, metric.FieldValue)
+	}
+	return fields
+}
+
+// AddedField returns the numeric value that was incremented/decremented on a field
+// with the given name. The second boolean return value indicates that this field
+// was not set, or was not defined in the schema.
+func (m *MetricMutation) AddedField(name string) (ent.Value, bool) {
+	switch name {
+	case metric.FieldValue:
+		return m.AddedValue()
+	}
+	return nil, false
+}
+
+// AddField adds the value to the field with the given name. It returns an error if
+// the field is not defined in the schema, or if the type mismatched the field
+// type.
+func (m *MetricMutation) AddField(name string, value ent.Value) error {
+	switch name {
+	case metric.FieldValue:
+		v, ok := value.(float64)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.AddValue(v)
+		return nil
+	}
+	return fmt.Errorf("unknown Metric numeric field %s", name)
+}
+
+// ClearedFields returns all nullable fields that were cleared during this
+// mutation.
+func (m *MetricMutation) ClearedFields() []string {
+	var fields []string
+	if m.FieldCleared(metric.FieldCreatedAt) {
+		fields = append(fields, metric.FieldCreatedAt)
+	}
+	if m.FieldCleared(metric.FieldUpdatedAt) {
+		fields = append(fields, metric.FieldUpdatedAt)
+	}
+	if m.FieldCleared(metric.FieldOwnerUserID) {
+		fields = append(fields, metric.FieldOwnerUserID)
+	}
+	return fields
+}
+
+// FieldCleared returns a boolean indicating if a field with the given name was
+// cleared in this mutation.
+func (m *MetricMutation) FieldCleared(name string) bool {
+	_, ok := m.clearedFields[name]
+	return ok
+}
+
+// ClearField clears the value of the field with the given name. It returns an
+// error if the field is not defined in the schema.
+func (m *MetricMutation) ClearField(name string) error {
+	switch name {
+	case metric.FieldCreatedAt:
+		m.ClearCreatedAt()
+		return nil
+	case metric.FieldUpdatedAt:
+		m.ClearUpdatedAt()
+		return nil
+	case metric.FieldOwnerUserID:
+		m.ClearOwnerUserID()
+		return nil
+	}
+	return fmt.Errorf("unknown Metric nullable field %s", name)
+}
+
+// ResetField resets all changes in the mutation for the field with the given name.
+// It returns an error if the field is not defined in the schema.
+func (m *MetricMutation) ResetField(name string) error {
+	switch name {
+	case metric.FieldCreatedAt:
+		m.ResetCreatedAt()
+		return nil
+	case metric.FieldUpdatedAt:
+		m.ResetUpdatedAt()
+		return nil
+	case metric.FieldMetricName:
+		m.ResetMetricName()
+		return nil
+	case metric.FieldDate:
+		m.ResetDate()
+		return nil
+	case metric.FieldValue:
+		m.ResetValue()
+		return nil
+	case metric.FieldOwnerUserID:
+		m.ResetOwnerUserID()
+		return nil
+	}
+	return fmt.Errorf("unknown Metric field %s", name)
+}
+
+// AddedEdges returns all edge names that were set/added in this mutation.
+func (m *MetricMutation) AddedEdges() []string {
+	edges := make([]string, 0, 1)
+	if m.user != nil {
+		edges = append(edges, metric.EdgeUser)
+	}
+	return edges
+}
+
+// AddedIDs returns all IDs (to other nodes) that were added for the given edge
+// name in this mutation.
+func (m *MetricMutation) AddedIDs(name string) []ent.Value {
+	switch name {
+	case metric.EdgeUser:
+		if id := m.user; id != nil {
+			return []ent.Value{*id}
+		}
+	}
+	return nil
+}
+
+// RemovedEdges returns all edge names that were removed in this mutation.
+func (m *MetricMutation) RemovedEdges() []string {
+	edges := make([]string, 0, 1)
+	return edges
+}
+
+// RemovedIDs returns all IDs (to other nodes) that were removed for the edge with
+// the given name in this mutation.
+func (m *MetricMutation) RemovedIDs(name string) []ent.Value {
+	return nil
+}
+
+// ClearedEdges returns all edge names that were cleared in this mutation.
+func (m *MetricMutation) ClearedEdges() []string {
+	edges := make([]string, 0, 1)
+	if m.cleareduser {
+		edges = append(edges, metric.EdgeUser)
+	}
+	return edges
+}
+
+// EdgeCleared returns a boolean which indicates if the edge with the given name
+// was cleared in this mutation.
+func (m *MetricMutation) EdgeCleared(name string) bool {
+	switch name {
+	case metric.EdgeUser:
+		return m.cleareduser
+	}
+	return false
+}
+
+// ClearEdge clears the value of the edge with the given name. It returns an error
+// if that edge is not defined in the schema.
+func (m *MetricMutation) ClearEdge(name string) error {
+	switch name {
+	case metric.EdgeUser:
+		m.ClearUser()
+		return nil
+	}
+	return fmt.Errorf("unknown Metric unique edge %s", name)
+}
+
+// ResetEdge resets all changes to the edge with the given name in this mutation.
+// It returns an error if the edge is not defined in the schema.
+func (m *MetricMutation) ResetEdge(name string) error {
+	switch name {
+	case metric.EdgeUser:
+		m.ResetUser()
+		return nil
+	}
+	return fmt.Errorf("unknown Metric edge %s", name)
+}
+
+// MetricDryRunMutation represents an operation that mutates the MetricDryRun nodes in the graph.
+type MetricDryRunMutation struct {
+	config
+	op               Op
+	typ              string
+	id               *int
+	created_at       *time.Time
+	updated_at       *time.Time
+	metric_name      *string
+	date             *string
+	value            *float64
+	addvalue         *float64
+	owner_user_id    *int
+	addowner_user_id *int
+	clearedFields    map[string]struct{}
+	done             bool
+	oldValue         func(context.Context) (*MetricDryRun, error)
+	predicates       []predicate.MetricDryRun
+}
+
+var _ ent.Mutation = (*MetricDryRunMutation)(nil)
+
+// metricdryrunOption allows management of the mutation configuration using functional options.
+type metricdryrunOption func(*MetricDryRunMutation)
+
+// newMetricDryRunMutation creates new mutation for the MetricDryRun entity.
+func newMetricDryRunMutation(c config, op Op, opts ...metricdryrunOption) *MetricDryRunMutation {
+	m := &MetricDryRunMutation{
+		config:        c,
+		op:            op,
+		typ:           TypeMetricDryRun,
+		clearedFields: make(map[string]struct{}),
+	}
+	for _, opt := range opts {
+		opt(m)
+	}
+	return m
+}
+
+// withMetricDryRunID sets the ID field of the mutation.
+func withMetricDryRunID(id int) metricdryrunOption {
+	return func(m *MetricDryRunMutation) {
+		var (
+			err   error
+			once  sync.Once
+			value *MetricDryRun
+		)
+		m.oldValue = func(ctx context.Context) (*MetricDryRun, error) {
+			once.Do(func() {
+				if m.done {
+					err = errors.New("querying old values post mutation is not allowed")
+				} else {
+					value, err = m.Client().MetricDryRun.Get(ctx, id)
+				}
+			})
+			return value, err
+		}
+		m.id = &id
+	}
+}
+
+// withMetricDryRun sets the old MetricDryRun of the mutation.
+func withMetricDryRun(node *MetricDryRun) metricdryrunOption {
+	return func(m *MetricDryRunMutation) {
+		m.oldValue = func(context.Context) (*MetricDryRun, error) {
+			return node, nil
+		}
+		m.id = &node.ID
+	}
+}
+
+// Client returns a new `ent.Client` from the mutation. If the mutation was
+// executed in a transaction (ent.Tx), a transactional client is returned.
+func (m MetricDryRunMutation) Client() *Client {
+	client := &Client{config: m.config}
+	client.init()
+	return client
+}
+
+// Tx returns an `ent.Tx` for mutations that were executed in transactions;
+// it returns an error otherwise.
+func (m MetricDryRunMutation) Tx() (*Tx, error) {
+	if _, ok := m.driver.(*txDriver); !ok {
+		return nil, errors.New("ent: mutation is not running in a transaction")
+	}
+	tx := &Tx{config: m.config}
+	tx.init()
+	return tx, nil
+}
+
+// ID returns the ID value in the mutation. Note that the ID is only available
+// if it was provided to the builder or after it was returned from the database.
+func (m *MetricDryRunMutation) ID() (id int, exists bool) {
+	if m.id == nil {
+		return
+	}
+	return *m.id, true
+}
+
+// IDs queries the database and returns the entity ids that match the mutation's predicate.
+// That means, if the mutation is applied within a transaction with an isolation level such
+// as sql.LevelSerializable, the returned ids match the ids of the rows that will be updated
+// or updated by the mutation.
+func (m *MetricDryRunMutation) IDs(ctx context.Context) ([]int, error) {
+	switch {
+	case m.op.Is(OpUpdateOne | OpDeleteOne):
+		id, exists := m.ID()
+		if exists {
+			return []int{id}, nil
+		}
+		fallthrough
+	case m.op.Is(OpUpdate | OpDelete):
+		return m.Client().MetricDryRun.Query().Where(m.predicates...).IDs(ctx)
+	default:
+		return nil, fmt.Errorf("IDs is not allowed on %s operations", m.op)
+	}
+}
+
+// SetCreatedAt sets the "created_at" field.
+func (m *MetricDryRunMutation) SetCreatedAt(t time.Time) {
+	m.created_at = &t
+}
+
+// CreatedAt returns the value of the "created_at" field in the mutation.
+func (m *MetricDryRunMutation) CreatedAt() (r time.Time, exists bool) {
+	v := m.created_at
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldCreatedAt returns the old "created_at" field's value of the MetricDryRun entity.
+// If the MetricDryRun object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *MetricDryRunMutation) OldCreatedAt(ctx context.Context) (v time.Time, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldCreatedAt is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldCreatedAt requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldCreatedAt: %w", err)
+	}
+	return oldValue.CreatedAt, nil
+}
+
+// ClearCreatedAt clears the value of the "created_at" field.
+func (m *MetricDryRunMutation) ClearCreatedAt() {
+	m.created_at = nil
+	m.clearedFields[metricdryrun.FieldCreatedAt] = struct{}{}
+}
+
+// CreatedAtCleared returns if the "created_at" field was cleared in this mutation.
+func (m *MetricDryRunMutation) CreatedAtCleared() bool {
+	_, ok := m.clearedFields[metricdryrun.FieldCreatedAt]
+	return ok
+}
+
+// ResetCreatedAt resets all changes to the "created_at" field.
+func (m *MetricDryRunMutation) ResetCreatedAt() {
+	m.created_at = nil
+	delete(m.clearedFields, metricdryrun.FieldCreatedAt)
+}
+
+// SetUpdatedAt sets the "updated_at" field.
+func (m *MetricDryRunMutation) SetUpdatedAt(t time.Time) {
+	m.updated_at = &t
+}
+
+// UpdatedAt returns the value of the "updated_at" field in the mutation.
+func (m *MetricDryRunMutation) UpdatedAt() (r time.Time, exists bool) {
+	v := m.updated_at
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldUpdatedAt returns the old "updated_at" field's value of the MetricDryRun entity.
+// If the MetricDryRun object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *MetricDryRunMutation) OldUpdatedAt(ctx context.Context) (v time.Time, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldUpdatedAt is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldUpdatedAt requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldUpdatedAt: %w", err)
+	}
+	return oldValue.UpdatedAt, nil
+}
+
+// ClearUpdatedAt clears the value of the "updated_at" field.
+func (m *MetricDryRunMutation) ClearUpdatedAt() {
+	m.updated_at = nil
+	m.clearedFields[metricdryrun.FieldUpdatedAt] = struct{}{}
+}
+
+// UpdatedAtCleared returns if the "updated_at" field was cleared in this mutation.
+func (m *MetricDryRunMutation) UpdatedAtCleared() bool {
+	_, ok := m.clearedFields[metricdryrun.FieldUpdatedAt]
+	return ok
+}
+
+// ResetUpdatedAt resets all changes to the "updated_at" field.
+func (m *MetricDryRunMutation) ResetUpdatedAt() {
+	m.updated_at = nil
+	delete(m.clearedFields, metricdryrun.FieldUpdatedAt)
+}
+
+// SetMetricName sets the "metric_name" field.
+func (m *MetricDryRunMutation) SetMetricName(s string) {
+	m.metric_name = &s
+}
+
+// MetricName returns the value of the "metric_name" field in the mutation.
+func (m *MetricDryRunMutation) MetricName() (r string, exists bool) {
+	v := m.metric_name
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldMetricName returns the old "metric_name" field's value of the MetricDryRun entity.
+// If the MetricDryRun object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *MetricDryRunMutation) OldMetricName(ctx context.Context) (v string, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldMetricName is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldMetricName requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldMetricName: %w", err)
+	}
+	return oldValue.MetricName, nil
+}
+
+// ResetMetricName resets all changes to the "metric_name" field.
+func (m *MetricDryRunMutation) ResetMetricName() {
+	m.metric_name = nil
+}
+
+// SetDate sets the "date" field.
+func (m *MetricDryRunMutation) SetDate(s string) {
+	m.date = &s
+}
+
+// Date returns the value of the "date" field in the mutation.
+func (m *MetricDryRunMutation) Date() (r string, exists bool) {
+	v := m.date
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldDate returns the old "date" field's value of the MetricDryRun entity.
+// If the MetricDryRun object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *MetricDryRunMutation) OldDate(ctx context.Context) (v string, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldDate is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldDate requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldDate: %w", err)
+	}
+	return oldValue.Date, nil
+}
+
+// ResetDate resets all changes to the "date" field.
+func (m *MetricDryRunMutation) ResetDate() {
+	m.date = nil
+}
+
+// SetValue sets the "value" field.
+func (m *MetricDryRunMutation) SetValue(f float64) {
+	m.value = &f
+	m.addvalue = nil
+}
+
+// Value returns the value of the "value" field in the mutation.
+func (m *MetricDryRunMutation) Value() (r float64, exists bool) {
+	v := m.value
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldValue returns the old "value" field's value of the MetricDryRun entity.
+// If the MetricDryRun object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *MetricDryRunMutation) OldValue(ctx context.Context) (v float64, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldValue is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldValue requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldValue: %w", err)
+	}
+	return oldValue.Value, nil
+}
+
+// AddValue adds f to the "value" field.
+func (m *MetricDryRunMutation) AddValue(f float64) {
+	if m.addvalue != nil {
+		*m.addvalue += f
+	} else {
+		m.addvalue = &f
+	}
+}
+
+// AddedValue returns the value that was added to the "value" field in this mutation.
+func (m *MetricDryRunMutation) AddedValue() (r float64, exists bool) {
+	v := m.addvalue
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// ResetValue resets all changes to the "value" field.
+func (m *MetricDryRunMutation) ResetValue() {
+	m.value = nil
+	m.addvalue = nil
+}
+
+// SetOwnerUserID sets the "owner_user_id" field.
+func (m *MetricDryRunMutation) SetOwnerUserID(i int) {
+	m.owner_user_id = &i
+	m.addowner_user_id = nil
+}
+
+// OwnerUserID returns the value of the "owner_user_id" field in the mutation.
+func (m *MetricDryRunMutation) OwnerUserID() (r int, exists bool) {
+	v := m.owner_user_id
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldOwnerUserID returns the old "owner_user_id" field's value of the MetricDryRun entity.
+// If the MetricDryRun object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *MetricDryRunMutation) OldOwnerUserID(ctx context.Context) (v int, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, errors.New("OldOwnerUserID is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, errors.New("OldOwnerUserID requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldOwnerUserID: %w", err)
+	}
+	return oldValue.OwnerUserID, nil
+}
+
+// AddOwnerUserID adds i to the "owner_user_id" field.
+func (m *MetricDryRunMutation) AddOwnerUserID(i int) {
+	if m.addowner_user_id != nil {
+		*m.addowner_user_id += i
+	} else {
+		m.addowner_user_id = &i
+	}
+}
+
+// AddedOwnerUserID returns the value that was added to the "owner_user_id" field in this mutation.
+func (m *MetricDryRunMutation) AddedOwnerUserID() (r int, exists bool) {
+	v := m.addowner_user_id
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// ClearOwnerUserID clears the value of the "owner_user_id" field.
+func (m *MetricDryRunMutation) ClearOwnerUserID() {
+	m.owner_user_id = nil
+	m.addowner_user_id = nil
+	m.clearedFields[metricdryrun.FieldOwnerUserID] = struct{}{}
+}
+
+// OwnerUserIDCleared returns if the "owner_user_id" field was cleared in this mutation.
+func (m *MetricDryRunMutation) OwnerUserIDCleared() bool {
+	_, ok := m.clearedFields[metricdryrun.FieldOwnerUserID]
+	return ok
+}
+
+// ResetOwnerUserID resets all changes to the "owner_user_id" field.
+func (m *MetricDryRunMutation) ResetOwnerUserID() {
+	m.owner_user_id = nil
+	m.addowner_user_id = nil
+	delete(m.clearedFields, metricdryrun.FieldOwnerUserID)
+}
+
+// Where appends a list predicates to the MetricDryRunMutation builder.
+func (m *MetricDryRunMutation) Where(ps ...predicate.MetricDryRun) {
+	m.predicates = append(m.predicates, ps...)
+}
+
+// WhereP appends storage-level predicates to the MetricDryRunMutation builder. Using this method,
+// users can use type-assertion to append predicates that do not depend on any generated package.
+func (m *MetricDryRunMutation) WhereP(ps ...func(*sql.Selector)) {
+	p := make([]predicate.MetricDryRun, len(ps))
+	for i := range ps {
+		p[i] = ps[i]
+	}
+	m.Where(p...)
+}
+
+// Op returns the operation name.
+func (m *MetricDryRunMutation) Op() Op {
+	return m.op
+}
+
+// SetOp allows setting the mutation operation.
+func (m *MetricDryRunMutation) SetOp(op Op) {
+	m.op = op
+}
+
+// Type returns the node type of this mutation (MetricDryRun).
+func (m *MetricDryRunMutation) Type() string {
+	return m.typ
+}
+
+// Fields returns all fields that were changed during this mutation. Note that in
+// order to get all numeric fields that were incremented/decremented, call
+// AddedFields().
+func (m *MetricDryRunMutation) Fields() []string {
+	fields := make([]string, 0, 6)
+	if m.created_at != nil {
+		fields = append(fields, metricdryrun.FieldCreatedAt)
+	}
+	if m.updated_at != nil {
+		fields = append(fields, metricdryrun.FieldUpdatedAt)
+	}
+	if m.metric_name != nil {
+		fields = append(fields, metricdryrun.FieldMetricName)
+	}
+	if m.date != nil {
+		fields = append(fields, metricdryrun.FieldDate)
+	}
+	if m.value != nil {
+		fields = append(fields, metricdryrun.FieldValue)
+	}
+	if m.owner_user_id != nil {
+		fields = append(fields, metricdryrun.FieldOwnerUserID)
+	}
+	return fields
+}
+
+// Field returns the value of a field with the given name. The second boolean
+// return value indicates that this field was not set, or was not defined in the
+// schema.
+func (m *MetricDryRunMutation) Field(name string) (ent.Value, bool) {
+	switch name {
+	case metricdryrun.FieldCreatedAt:
+		return m.CreatedAt()
+	case metricdryrun.FieldUpdatedAt:
+		return m.UpdatedAt()
+	case metricdryrun.FieldMetricName:
+		return m.MetricName()
+	case metricdryrun.FieldDate:
+		return m.Date()
+	case metricdryrun.FieldValue:
+		return m.Value()
+	case metricdryrun.FieldOwnerUserID:
+		return m.OwnerUserID()
+	}
+	return nil, false
+}
+
+// OldField returns the old value of the field from the database. An error is
+// returned if the mutation operation is not UpdateOne, or the query to the
+// database failed.
+func (m *MetricDryRunMutation) OldField(ctx context.Context, name string) (ent.Value, error) {
+	switch name {
+	case metricdryrun.FieldCreatedAt:
+		return m.OldCreatedAt(ctx)
+	case metricdryrun.FieldUpdatedAt:
+		return m.OldUpdatedAt(ctx)
+	case metricdryrun.FieldMetricName:
+		return m.OldMetricName(ctx)
+	case metricdryrun.FieldDate:
+		return m.OldDate(ctx)
+	case metricdryrun.FieldValue:
+		return m.OldValue(ctx)
+	case metricdryrun.FieldOwnerUserID:
+		return m.OldOwnerUserID(ctx)
+	}
+	return nil, fmt.Errorf("unknown MetricDryRun field %s", name)
+}
+
+// SetField sets the value of a field with the given name. It returns an error if
+// the field is not defined in the schema, or if the type mismatched the field
+// type.
+func (m *MetricDryRunMutation) SetField(name string, value ent.Value) error {
+	switch name {
+	case metricdryrun.FieldCreatedAt:
+		v, ok := value.(time.Time)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetCreatedAt(v)
+		return nil
+	case metricdryrun.FieldUpdatedAt:
+		v, ok := value.(time.Time)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetUpdatedAt(v)
+		return nil
+	case metricdryrun.FieldMetricName:
+		v, ok := value.(string)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetMetricName(v)
+		return nil
+	case metricdryrun.FieldDate:
+		v, ok := value.(string)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetDate(v)
+		return nil
+	case metricdryrun.FieldValue:
+		v, ok := value.(float64)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetValue(v)
+		return nil
+	case metricdryrun.FieldOwnerUserID:
+		v, ok := value.(int)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetOwnerUserID(v)
+		return nil
+	}
+	return fmt.Errorf("unknown MetricDryRun field %s", name)
+}
+
+// AddedFields returns all numeric fields that were incremented/decremented during
+// this mutation.
+func (m *MetricDryRunMutation) AddedFields() []string {
+	var fields []string
+	if m.addvalue != nil {
+		fields = append(fields, metricdryrun.FieldValue)
+	}
+	if m.addowner_user_id != nil {
+		fields = append(fields, metricdryrun.FieldOwnerUserID)
+	}
+	return fields
+}
+
+// AddedField returns the numeric value that was incremented/decremented on a field
+// with the given name. The second boolean return value indicates that this field
+// was not set, or was not defined in the schema.
+func (m *MetricDryRunMutation) AddedField(name string) (ent.Value, bool) {
+	switch name {
+	case metricdryrun.FieldValue:
+		return m.AddedValue()
+	case metricdryrun.FieldOwnerUserID:
+		return m.AddedOwnerUserID()
+	}
+	return nil, false
+}
+
+// AddField adds the value to the field with the given name. It returns an error if
+// the field is not defined in the schema, or if the type mismatched the field
+// type.
+func (m *MetricDryRunMutation) AddField(name string, value ent.Value) error {
+	switch name {
+	case metricdryrun.FieldValue:
+		v, ok := value.(float64)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.AddValue(v)
+		return nil
+	case metricdryrun.FieldOwnerUserID:
+		v, ok := value.(int)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.AddOwnerUserID(v)
+		return nil
+	}
+	return fmt.Errorf("unknown MetricDryRun numeric field %s", name)
+}
+
+// ClearedFields returns all nullable fields that were cleared during this
+// mutation.
+func (m *MetricDryRunMutation) ClearedFields() []string {
+	var fields []string
+	if m.FieldCleared(metricdryrun.FieldCreatedAt) {
+		fields = append(fields, metricdryrun.FieldCreatedAt)
+	}
+	if m.FieldCleared(metricdryrun.FieldUpdatedAt) {
+		fields = append(fields, metricdryrun.FieldUpdatedAt)
+	}
+	if m.FieldCleared(metricdryrun.FieldOwnerUserID) {
+		fields = append(fields, metricdryrun.FieldOwnerUserID)
+	}
+	return fields
+}
+
+// FieldCleared returns a boolean indicating if a field with the given name was
+// cleared in this mutation.
+func (m *MetricDryRunMutation) FieldCleared(name string) bool {
+	_, ok := m.clearedFields[name]
+	return ok
+}
+
+// ClearField clears the value of the field with the given name. It returns an
+// error if the field is not defined in the schema.
+func (m *MetricDryRunMutation) ClearField(name string) error {
+	switch name {
+	case metricdryrun.FieldCreatedAt:
+		m.ClearCreatedAt()
+		return nil
+	case metricdryrun.FieldUpdatedAt:
+		m.ClearUpdatedAt()
+		return nil
+	case metricdryrun.FieldOwnerUserID:
+		m.ClearOwnerUserID()
+		return nil
+	}
+	return fmt.Errorf("unknown MetricDryRun nullable field %s", name)
+}
+
+// ResetField resets all changes in the mutation for the field with the given name.
+// It returns an error if the field is not defined in the schema.
+func (m *MetricDryRunMutation) ResetField(name string) error {
+	switch name {
+	case metricdryrun.FieldCreatedAt:
+		m.ResetCreatedAt()
+		return nil
+	case metricdryrun.FieldUpdatedAt:
+		m.ResetUpdatedAt()
+		return nil
+	case metricdryrun.FieldMetricName:
+		m.ResetMetricName()
+		return nil
+	case metricdryrun.FieldDate:
+		m.ResetDate()
+		return nil
+	case metricdryrun.FieldValue:
+		m.ResetValue()
+		return nil
+	case metricdryrun.FieldOwnerUserID:
+		m.ResetOwnerUserID()
+		return nil
+	}
+	return fmt.Errorf("unknown MetricDryRun field %s", name)
+}
+
+// AddedEdges returns all edge names that were set/added in this mutation.
+func (m *MetricDryRunMutation) AddedEdges() []string {
+	edges := make([]string, 0, 0)
+	return edges
+}
+
+// AddedIDs returns all IDs (to other nodes) that were added for the given edge
+// name in this mutation.
+func (m *MetricDryRunMutation) AddedIDs(name string) []ent.Value {
+	return nil
+}
+
+// RemovedEdges returns all edge names that were removed in this mutation.
+func (m *MetricDryRunMutation) RemovedEdges() []string {
+	edges := make([]string, 0, 0)
+	return edges
+}
+
+// RemovedIDs returns all IDs (to other nodes) that were removed for the edge with
+// the given name in this mutation.
+func (m *MetricDryRunMutation) RemovedIDs(name string) []ent.Value {
+	return nil
+}
+
+// ClearedEdges returns all edge names that were cleared in this mutation.
+func (m *MetricDryRunMutation) ClearedEdges() []string {
+	edges := make([]string, 0, 0)
+	return edges
+}
+
+// EdgeCleared returns a boolean which indicates if the edge with the given name
+// was cleared in this mutation.
+func (m *MetricDryRunMutation) EdgeCleared(name string) bool {
+	return false
+}
+
+// ClearEdge clears the value of the edge with the given name. It returns an error
+// if that edge is not defined in the schema.
+func (m *MetricDryRunMutation) ClearEdge(name string) error {
+	return fmt.Errorf("unknown MetricDryRun unique edge %s", name)
+}
+
+// ResetEdge resets all changes to the edge with the given name in this mutation.
+// It returns an error if the edge is not defined in the schema.
+func (m *MetricDryRunMutation) ResetEdge(name string) error {
+	return fmt.Errorf("unknown MetricDryRun edge %s", name)
+}
+
 // TestEntMutation represents an operation that mutates the TestEnt nodes in the graph.
 type TestEntMutation struct {
 	config
@@ -23417,6 +24905,9 @@ type UserMutation struct {
 	elineup_mall_purchase_histories        map[int]struct{}
 	removedelineup_mall_purchase_histories map[int]struct{}
 	clearedelineup_mall_purchase_histories bool
+	metrics                                map[int]struct{}
+	removedmetrics                         map[int]struct{}
+	clearedmetrics                         bool
 	done                                   bool
 	oldValue                               func(context.Context) (*User, error)
 	predicates                             []predicate.User
@@ -24068,6 +25559,60 @@ func (m *UserMutation) ResetElineupMallPurchaseHistories() {
 	m.removedelineup_mall_purchase_histories = nil
 }
 
+// AddMetricIDs adds the "metrics" edge to the Metric entity by ids.
+func (m *UserMutation) AddMetricIDs(ids ...int) {
+	if m.metrics == nil {
+		m.metrics = make(map[int]struct{})
+	}
+	for i := range ids {
+		m.metrics[ids[i]] = struct{}{}
+	}
+}
+
+// ClearMetrics clears the "metrics" edge to the Metric entity.
+func (m *UserMutation) ClearMetrics() {
+	m.clearedmetrics = true
+}
+
+// MetricsCleared reports if the "metrics" edge to the Metric entity was cleared.
+func (m *UserMutation) MetricsCleared() bool {
+	return m.clearedmetrics
+}
+
+// RemoveMetricIDs removes the "metrics" edge to the Metric entity by IDs.
+func (m *UserMutation) RemoveMetricIDs(ids ...int) {
+	if m.removedmetrics == nil {
+		m.removedmetrics = make(map[int]struct{})
+	}
+	for i := range ids {
+		delete(m.metrics, ids[i])
+		m.removedmetrics[ids[i]] = struct{}{}
+	}
+}
+
+// RemovedMetrics returns the removed IDs of the "metrics" edge to the Metric entity.
+func (m *UserMutation) RemovedMetricsIDs() (ids []int) {
+	for id := range m.removedmetrics {
+		ids = append(ids, id)
+	}
+	return
+}
+
+// MetricsIDs returns the "metrics" edge IDs in the mutation.
+func (m *UserMutation) MetricsIDs() (ids []int) {
+	for id := range m.metrics {
+		ids = append(ids, id)
+	}
+	return
+}
+
+// ResetMetrics resets all changes to the "metrics" edge.
+func (m *UserMutation) ResetMetrics() {
+	m.metrics = nil
+	m.clearedmetrics = false
+	m.removedmetrics = nil
+}
+
 // Where appends a list predicates to the UserMutation builder.
 func (m *UserMutation) Where(ps ...predicate.User) {
 	m.predicates = append(m.predicates, ps...)
@@ -24267,7 +25812,7 @@ func (m *UserMutation) ResetField(name string) error {
 
 // AddedEdges returns all edge names that were set/added in this mutation.
 func (m *UserMutation) AddedEdges() []string {
-	edges := make([]string, 0, 7)
+	edges := make([]string, 0, 8)
 	if m.auth != nil {
 		edges = append(edges, user.EdgeAuth)
 	}
@@ -24288,6 +25833,9 @@ func (m *UserMutation) AddedEdges() []string {
 	}
 	if m.elineup_mall_purchase_histories != nil {
 		edges = append(edges, user.EdgeElineupMallPurchaseHistories)
+	}
+	if m.metrics != nil {
+		edges = append(edges, user.EdgeMetrics)
 	}
 	return edges
 }
@@ -24338,13 +25886,19 @@ func (m *UserMutation) AddedIDs(name string) []ent.Value {
 			ids = append(ids, id)
 		}
 		return ids
+	case user.EdgeMetrics:
+		ids := make([]ent.Value, 0, len(m.metrics))
+		for id := range m.metrics {
+			ids = append(ids, id)
+		}
+		return ids
 	}
 	return nil
 }
 
 // RemovedEdges returns all edge names that were removed in this mutation.
 func (m *UserMutation) RemovedEdges() []string {
-	edges := make([]string, 0, 7)
+	edges := make([]string, 0, 8)
 	if m.removedauth != nil {
 		edges = append(edges, user.EdgeAuth)
 	}
@@ -24365,6 +25919,9 @@ func (m *UserMutation) RemovedEdges() []string {
 	}
 	if m.removedelineup_mall_purchase_histories != nil {
 		edges = append(edges, user.EdgeElineupMallPurchaseHistories)
+	}
+	if m.removedmetrics != nil {
+		edges = append(edges, user.EdgeMetrics)
 	}
 	return edges
 }
@@ -24415,13 +25972,19 @@ func (m *UserMutation) RemovedIDs(name string) []ent.Value {
 			ids = append(ids, id)
 		}
 		return ids
+	case user.EdgeMetrics:
+		ids := make([]ent.Value, 0, len(m.removedmetrics))
+		for id := range m.removedmetrics {
+			ids = append(ids, id)
+		}
+		return ids
 	}
 	return nil
 }
 
 // ClearedEdges returns all edge names that were cleared in this mutation.
 func (m *UserMutation) ClearedEdges() []string {
-	edges := make([]string, 0, 7)
+	edges := make([]string, 0, 8)
 	if m.clearedauth {
 		edges = append(edges, user.EdgeAuth)
 	}
@@ -24442,6 +26005,9 @@ func (m *UserMutation) ClearedEdges() []string {
 	}
 	if m.clearedelineup_mall_purchase_histories {
 		edges = append(edges, user.EdgeElineupMallPurchaseHistories)
+	}
+	if m.clearedmetrics {
+		edges = append(edges, user.EdgeMetrics)
 	}
 	return edges
 }
@@ -24464,6 +26030,8 @@ func (m *UserMutation) EdgeCleared(name string) bool {
 		return m.clearedhpfc_event_tickets
 	case user.EdgeElineupMallPurchaseHistories:
 		return m.clearedelineup_mall_purchase_histories
+	case user.EdgeMetrics:
+		return m.clearedmetrics
 	}
 	return false
 }
@@ -24500,6 +26068,9 @@ func (m *UserMutation) ResetEdge(name string) error {
 		return nil
 	case user.EdgeElineupMallPurchaseHistories:
 		m.ResetElineupMallPurchaseHistories()
+		return nil
+	case user.EdgeMetrics:
+		m.ResetMetrics()
 		return nil
 	}
 	return fmt.Errorf("unknown User edge %s", name)

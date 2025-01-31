@@ -388,6 +388,18 @@ func (u *User) ElineupMallPurchaseHistories(ctx context.Context) (result []*HPEl
 	return result, err
 }
 
+func (u *User) Metrics(ctx context.Context) (result []*Metric, err error) {
+	if fc := graphql.GetFieldContext(ctx); fc != nil && fc.Field.Alias != "" {
+		result, err = u.NamedMetrics(graphql.GetFieldContext(ctx).Field.Alias)
+	} else {
+		result, err = u.Edges.MetricsOrErr()
+	}
+	if IsNotLoaded(err) {
+		result, err = u.QueryMetrics().All(ctx)
+	}
+	return result, err
+}
+
 func (uns *UserNotificationSetting) User(ctx context.Context) (*User, error) {
 	result, err := uns.Edges.UserOrErr()
 	if IsNotLoaded(err) {

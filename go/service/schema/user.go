@@ -69,6 +69,10 @@ func (User) Edges() []ent.Edge {
 		edge.To("elineup_mall_purchase_histories", HPElineupMallItemPurchaseHistory.Type).Annotations(entsql.Annotation{
 			OnDelete: entsql.Cascade,
 		}),
+
+		edge.To("metrics", Metric.Type).Annotations(entsql.Annotation{
+			OnDelete: entsql.Cascade,
+		}),
 	}
 }
 
