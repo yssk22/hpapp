@@ -18,6 +18,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/metric"
 	"github.com/yssk22/hpapp/go/service/ent/predicate"
 	"github.com/yssk22/hpapp/go/service/ent/user"
 	"github.com/yssk22/hpapp/go/service/ent/usernotificationsetting"
@@ -37,6 +38,7 @@ type UserQuery struct {
 	withHpsortHistory                     *HPSortHistoryQuery
 	withHpfcEventTickets                  *HPFCEventTicketQuery
 	withElineupMallPurchaseHistories      *HPElineupMallItemPurchaseHistoryQuery
+	withMetrics                           *MetricQuery
 	modifiers                             []func(*sql.Selector)
 	loadTotal                             []func(context.Context, []*User) error
 	withNamedAuth                         map[string]*AuthQuery
@@ -46,6 +48,7 @@ type UserQuery struct {
 	withNamedHpsortHistory                map[string]*HPSortHistoryQuery
 	withNamedHpfcEventTickets             map[string]*HPFCEventTicketQuery
 	withNamedElineupMallPurchaseHistories map[string]*HPElineupMallItemPurchaseHistoryQuery
+	withNamedMetrics                      map[string]*MetricQuery
 	// intermediate query (i.e. traversal path).
 	sql  *sql.Selector
 	path func(context.Context) (*sql.Selector, error)
@@ -229,6 +232,28 @@ func (uq *UserQuery) QueryElineupMallPurchaseHistories() *HPElineupMallItemPurch
 			sqlgraph.From(user.Table, user.FieldID, selector),
 			sqlgraph.To(hpelineupmallitempurchasehistory.Table, hpelineupmallitempurchasehistory.FieldID),
 			sqlgraph.Edge(sqlgraph.O2M, false, user.ElineupMallPurchaseHistoriesTable, user.ElineupMallPurchaseHistoriesColumn),
+		)
+		fromU = sqlgraph.SetNeighbors(uq.driver.Dialect(), step)
+		return fromU, nil
+	}
+	return query
+}
+
+// QueryMetrics chains the current query on the "metrics" edge.
+func (uq *UserQuery) QueryMetrics() *MetricQuery {
+	query := (&MetricClient{config: uq.config}).Query()
+	query.path = func(ctx context.Context) (fromU *sql.Selector, err error) {
+		if err := uq.prepareQuery(ctx); err != nil {
+			return nil, err
+		}
+		selector := uq.sqlQuery(ctx)
+		if err := selector.Err(); err != nil {
+			return nil, err
+		}
+		step := sqlgraph.NewStep(
+			sqlgraph.From(user.Table, user.FieldID, selector),
+			sqlgraph.To(metric.Table, metric.FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, user.MetricsTable, user.MetricsColumn),
 		)
 		fromU = sqlgraph.SetNeighbors(uq.driver.Dialect(), step)
 		return fromU, nil
@@ -435,6 +460,7 @@ func (uq *UserQuery) Clone() *UserQuery {
 		withHpsortHistory:                uq.withHpsortHistory.Clone(),
 		withHpfcEventTickets:             uq.withHpfcEventTickets.Clone(),
 		withElineupMallPurchaseHistories: uq.withElineupMallPurchaseHistories.Clone(),
+		withMetrics:                      uq.withMetrics.Clone(),
 		// clone intermediate query.
 		sql:  uq.sql.Clone(),
 		path: uq.path,
@@ -515,6 +541,17 @@ func (uq *UserQuery) WithElineupMallPurchaseHistories(opts ...func(*HPElineupMal
 		opt(query)
 	}
 	uq.withElineupMallPurchaseHistories = query
+	return uq
+}
+
+// WithMetrics tells the query-builder to eager-load the nodes that are connected to
+// the "metrics" edge. The optional arguments are used to configure the query builder of the edge.
+func (uq *UserQuery) WithMetrics(opts ...func(*MetricQuery)) *UserQuery {
+	query := (&MetricClient{config: uq.config}).Query()
+	for _, opt := range opts {
+		opt(query)
+	}
+	uq.withMetrics = query
 	return uq
 }
 
@@ -602,7 +639,7 @@ func (uq *UserQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*User, e
 	var (
 		nodes       = []*User{}
 		_spec       = uq.querySpec()
-		loadedTypes = [7]bool{
+		loadedTypes = [8]bool{
 			uq.withAuth != nil,
 			uq.withNotificationSettings != nil,
 			uq.withHpviewHistory != nil,
@@ -610,6 +647,7 @@ func (uq *UserQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*User, e
 			uq.withHpsortHistory != nil,
 			uq.withHpfcEventTickets != nil,
 			uq.withElineupMallPurchaseHistories != nil,
+			uq.withMetrics != nil,
 		}
 	)
 	_spec.ScanValues = func(columns []string) ([]any, error) {
@@ -686,6 +724,13 @@ func (uq *UserQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*User, e
 			return nil, err
 		}
 	}
+	if query := uq.withMetrics; query != nil {
+		if err := uq.loadMetrics(ctx, query, nodes,
+			func(n *User) { n.Edges.Metrics = []*Metric{} },
+			func(n *User, e *Metric) { n.Edges.Metrics = append(n.Edges.Metrics, e) }); err != nil {
+			return nil, err
+		}
+	}
 	for name, query := range uq.withNamedAuth {
 		if err := uq.loadAuth(ctx, query, nodes,
 			func(n *User) { n.appendNamedAuth(name) },
@@ -732,6 +777,13 @@ func (uq *UserQuery) sqlAll(ctx context.Context, hooks ...queryHook) ([]*User, e
 		if err := uq.loadElineupMallPurchaseHistories(ctx, query, nodes,
 			func(n *User) { n.appendNamedElineupMallPurchaseHistories(name) },
 			func(n *User, e *HPElineupMallItemPurchaseHistory) { n.appendNamedElineupMallPurchaseHistories(name, e) }); err != nil {
+			return nil, err
+		}
+	}
+	for name, query := range uq.withNamedMetrics {
+		if err := uq.loadMetrics(ctx, query, nodes,
+			func(n *User) { n.appendNamedMetrics(name) },
+			func(n *User, e *Metric) { n.appendNamedMetrics(name, e) }); err != nil {
 			return nil, err
 		}
 	}
@@ -944,6 +996,33 @@ func (uq *UserQuery) loadElineupMallPurchaseHistories(ctx context.Context, query
 	}
 	return nil
 }
+func (uq *UserQuery) loadMetrics(ctx context.Context, query *MetricQuery, nodes []*User, init func(*User), assign func(*User, *Metric)) error {
+	fks := make([]driver.Value, 0, len(nodes))
+	nodeids := make(map[int]*User)
+	for i := range nodes {
+		fks = append(fks, nodes[i].ID)
+		nodeids[nodes[i].ID] = nodes[i]
+		if init != nil {
+			init(nodes[i])
+		}
+	}
+	query.Where(predicate.Metric(func(s *sql.Selector) {
+		s.Where(sql.InValues(user.MetricsColumn, fks...))
+	}))
+	neighbors, err := query.All(ctx)
+	if err != nil {
+		return err
+	}
+	for _, n := range neighbors {
+		fk := n.OwnerUserID
+		node, ok := nodeids[fk]
+		if !ok {
+			return fmt.Errorf(`unexpected foreign-key "owner_user_id" returned %v for node %v`, fk, n.ID)
+		}
+		assign(node, n)
+	}
+	return nil
+}
 
 func (uq *UserQuery) sqlCount(ctx context.Context) (int, error) {
 	_spec := uq.querySpec()
@@ -1124,6 +1203,20 @@ func (uq *UserQuery) WithNamedElineupMallPurchaseHistories(name string, opts ...
 		uq.withNamedElineupMallPurchaseHistories = make(map[string]*HPElineupMallItemPurchaseHistoryQuery)
 	}
 	uq.withNamedElineupMallPurchaseHistories[name] = query
+	return uq
+}
+
+// WithNamedMetrics tells the query-builder to eager-load the nodes that are connected to the "metrics"
+// edge with the given name. The optional arguments are used to configure the query builder of the edge.
+func (uq *UserQuery) WithNamedMetrics(name string, opts ...func(*MetricQuery)) *UserQuery {
+	query := (&MetricClient{config: uq.config}).Query()
+	for _, opt := range opts {
+		opt(query)
+	}
+	if uq.withNamedMetrics == nil {
+		uq.withNamedMetrics = make(map[string]*MetricQuery)
+	}
+	uq.withNamedMetrics[name] = query
 	return uq
 }
 

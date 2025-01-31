@@ -28,6 +28,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/metric"
 	"github.com/yssk22/hpapp/go/service/ent/user"
 	"github.com/yssk22/hpapp/go/service/ent/usernotificationsetting"
 	"golang.org/x/sync/semaphore"
@@ -79,6 +80,9 @@ func (n *HPSortHistory) IsNode() {}
 
 // IsNode implements the Node interface check for GQLGen.
 func (n *HPViewHistory) IsNode() {}
+
+// IsNode implements the Node interface check for GQLGen.
+func (n *Metric) IsNode() {}
 
 // IsNode implements the Node interface check for GQLGen.
 func (n *User) IsNode() {}
@@ -304,6 +308,18 @@ func (c *Client) noder(ctx context.Context, table string, id int) (Noder, error)
 		query := c.HPViewHistory.Query().
 			Where(hpviewhistory.ID(id))
 		query, err := query.CollectFields(ctx, "HPViewHistory")
+		if err != nil {
+			return nil, err
+		}
+		n, err := query.Only(ctx)
+		if err != nil {
+			return nil, err
+		}
+		return n, nil
+	case metric.Table:
+		query := c.Metric.Query().
+			Where(metric.ID(id))
+		query, err := query.CollectFields(ctx, "Metric")
 		if err != nil {
 			return nil, err
 		}
@@ -621,6 +637,22 @@ func (c *Client) noders(ctx context.Context, table string, ids []int) ([]Noder, 
 		query := c.HPViewHistory.Query().
 			Where(hpviewhistory.IDIn(ids...))
 		query, err := query.CollectFields(ctx, "HPViewHistory")
+		if err != nil {
+			return nil, err
+		}
+		nodes, err := query.All(ctx)
+		if err != nil {
+			return nil, err
+		}
+		for _, node := range nodes {
+			for _, noder := range idmap[node.ID] {
+				*noder = node
+			}
+		}
+	case metric.Table:
+		query := c.Metric.Query().
+			Where(metric.IDIn(ids...))
+		query, err := query.CollectFields(ctx, "Metric")
 		if err != nil {
 			return nil, err
 		}

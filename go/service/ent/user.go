@@ -47,11 +47,13 @@ type UserEdges struct {
 	HpfcEventTickets []*HPFCEventTicket `json:"hpfc_event_tickets,omitempty"`
 	// ElineupMallPurchaseHistories holds the value of the elineup_mall_purchase_histories edge.
 	ElineupMallPurchaseHistories []*HPElineupMallItemPurchaseHistory `json:"elineup_mall_purchase_histories,omitempty"`
+	// Metrics holds the value of the metrics edge.
+	Metrics []*Metric `json:"metrics,omitempty"`
 	// loadedTypes holds the information for reporting if a
 	// type was loaded (or requested) in eager-loading or not.
-	loadedTypes [7]bool
+	loadedTypes [8]bool
 	// totalCount holds the count of the edges above.
-	totalCount [7]map[string]int
+	totalCount [8]map[string]int
 
 	namedAuth                         map[string][]*Auth
 	namedNotificationSettings         map[string][]*UserNotificationSetting
@@ -60,6 +62,7 @@ type UserEdges struct {
 	namedHpsortHistory                map[string][]*HPSortHistory
 	namedHpfcEventTickets             map[string][]*HPFCEventTicket
 	namedElineupMallPurchaseHistories map[string][]*HPElineupMallItemPurchaseHistory
+	namedMetrics                      map[string][]*Metric
 }
 
 // AuthOrErr returns the Auth value or an error if the edge
@@ -123,6 +126,15 @@ func (e UserEdges) ElineupMallPurchaseHistoriesOrErr() ([]*HPElineupMallItemPurc
 		return e.ElineupMallPurchaseHistories, nil
 	}
 	return nil, &NotLoadedError{edge: "elineup_mall_purchase_histories"}
+}
+
+// MetricsOrErr returns the Metrics value or an error if the edge
+// was not loaded in eager-loading.
+func (e UserEdges) MetricsOrErr() ([]*Metric, error) {
+	if e.loadedTypes[7] {
+		return e.Metrics, nil
+	}
+	return nil, &NotLoadedError{edge: "metrics"}
 }
 
 // scanValues returns the types for scanning values from sql.Rows.
@@ -227,6 +239,11 @@ func (u *User) QueryHpfcEventTickets() *HPFCEventTicketQuery {
 // QueryElineupMallPurchaseHistories queries the "elineup_mall_purchase_histories" edge of the User entity.
 func (u *User) QueryElineupMallPurchaseHistories() *HPElineupMallItemPurchaseHistoryQuery {
 	return NewUserClient(u.config).QueryElineupMallPurchaseHistories(u)
+}
+
+// QueryMetrics queries the "metrics" edge of the User entity.
+func (u *User) QueryMetrics() *MetricQuery {
+	return NewUserClient(u.config).QueryMetrics(u)
 }
 
 // Update returns a builder for updating this User.
@@ -432,6 +449,30 @@ func (u *User) appendNamedElineupMallPurchaseHistories(name string, edges ...*HP
 		u.Edges.namedElineupMallPurchaseHistories[name] = []*HPElineupMallItemPurchaseHistory{}
 	} else {
 		u.Edges.namedElineupMallPurchaseHistories[name] = append(u.Edges.namedElineupMallPurchaseHistories[name], edges...)
+	}
+}
+
+// NamedMetrics returns the Metrics named value or an error if the edge was not
+// loaded in eager-loading with this name.
+func (u *User) NamedMetrics(name string) ([]*Metric, error) {
+	if u.Edges.namedMetrics == nil {
+		return nil, &NotLoadedError{edge: name}
+	}
+	nodes, ok := u.Edges.namedMetrics[name]
+	if !ok {
+		return nil, &NotLoadedError{edge: name}
+	}
+	return nodes, nil
+}
+
+func (u *User) appendNamedMetrics(name string, edges ...*Metric) {
+	if u.Edges.namedMetrics == nil {
+		u.Edges.namedMetrics = make(map[string][]*Metric)
+	}
+	if len(edges) == 0 {
+		u.Edges.namedMetrics[name] = []*Metric{}
+	} else {
+		u.Edges.namedMetrics[name] = append(u.Edges.namedMetrics[name], edges...)
 	}
 }
 

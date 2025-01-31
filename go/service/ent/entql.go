@@ -18,6 +18,8 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/metric"
+	"github.com/yssk22/hpapp/go/service/ent/metricdryrun"
 	"github.com/yssk22/hpapp/go/service/ent/predicate"
 	"github.com/yssk22/hpapp/go/service/ent/testent"
 	"github.com/yssk22/hpapp/go/service/ent/user"
@@ -32,7 +34,7 @@ import (
 
 // schemaGraph holds a representation of ent/schema at runtime.
 var schemaGraph = func() *sqlgraph.Schema {
-	graph := &sqlgraph.Schema{Nodes: make([]*sqlgraph.Node, 19)}
+	graph := &sqlgraph.Schema{Nodes: make([]*sqlgraph.Node, 21)}
 	graph.Nodes[0] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   auth.Table,
@@ -430,6 +432,44 @@ var schemaGraph = func() *sqlgraph.Schema {
 	}
 	graph.Nodes[15] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
+			Table:   metric.Table,
+			Columns: metric.Columns,
+			ID: &sqlgraph.FieldSpec{
+				Type:   field.TypeInt,
+				Column: metric.FieldID,
+			},
+		},
+		Type: "Metric",
+		Fields: map[string]*sqlgraph.FieldSpec{
+			metric.FieldCreatedAt:   {Type: field.TypeTime, Column: metric.FieldCreatedAt},
+			metric.FieldUpdatedAt:   {Type: field.TypeTime, Column: metric.FieldUpdatedAt},
+			metric.FieldMetricName:  {Type: field.TypeString, Column: metric.FieldMetricName},
+			metric.FieldDate:        {Type: field.TypeString, Column: metric.FieldDate},
+			metric.FieldValue:       {Type: field.TypeFloat64, Column: metric.FieldValue},
+			metric.FieldOwnerUserID: {Type: field.TypeInt, Column: metric.FieldOwnerUserID},
+		},
+	}
+	graph.Nodes[16] = &sqlgraph.Node{
+		NodeSpec: sqlgraph.NodeSpec{
+			Table:   metricdryrun.Table,
+			Columns: metricdryrun.Columns,
+			ID: &sqlgraph.FieldSpec{
+				Type:   field.TypeInt,
+				Column: metricdryrun.FieldID,
+			},
+		},
+		Type: "MetricDryRun",
+		Fields: map[string]*sqlgraph.FieldSpec{
+			metricdryrun.FieldCreatedAt:   {Type: field.TypeTime, Column: metricdryrun.FieldCreatedAt},
+			metricdryrun.FieldUpdatedAt:   {Type: field.TypeTime, Column: metricdryrun.FieldUpdatedAt},
+			metricdryrun.FieldMetricName:  {Type: field.TypeString, Column: metricdryrun.FieldMetricName},
+			metricdryrun.FieldDate:        {Type: field.TypeString, Column: metricdryrun.FieldDate},
+			metricdryrun.FieldValue:       {Type: field.TypeFloat64, Column: metricdryrun.FieldValue},
+			metricdryrun.FieldOwnerUserID: {Type: field.TypeInt, Column: metricdryrun.FieldOwnerUserID},
+		},
+	}
+	graph.Nodes[17] = &sqlgraph.Node{
+		NodeSpec: sqlgraph.NodeSpec{
 			Table:   testent.Table,
 			Columns: testent.Columns,
 			ID: &sqlgraph.FieldSpec{
@@ -451,7 +491,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			testent.FieldEnumField:   {Type: field.TypeEnum, Column: testent.FieldEnumField},
 		},
 	}
-	graph.Nodes[16] = &sqlgraph.Node{
+	graph.Nodes[18] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   user.Table,
 			Columns: user.Columns,
@@ -468,7 +508,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			user.FieldAccessToken: {Type: field.TypeString, Column: user.FieldAccessToken},
 		},
 	}
-	graph.Nodes[17] = &sqlgraph.Node{
+	graph.Nodes[19] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   usernotificationlog.Table,
 			Columns: usernotificationlog.Columns,
@@ -490,7 +530,7 @@ var schemaGraph = func() *sqlgraph.Schema {
 			usernotificationlog.FieldStatusMessage:          {Type: field.TypeString, Column: usernotificationlog.FieldStatusMessage},
 		},
 	}
-	graph.Nodes[18] = &sqlgraph.Node{
+	graph.Nodes[20] = &sqlgraph.Node{
 		NodeSpec: sqlgraph.NodeSpec{
 			Table:   usernotificationsetting.Table,
 			Columns: usernotificationsetting.Columns,
@@ -1257,6 +1297,18 @@ var schemaGraph = func() *sqlgraph.Schema {
 		"User",
 	)
 	graph.MustAddE(
+		"user",
+		&sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   metric.UserTable,
+			Columns: []string{metric.UserColumn},
+			Bidi:    false,
+		},
+		"Metric",
+		"User",
+	)
+	graph.MustAddE(
 		"auth",
 		&sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.O2M,
@@ -1339,6 +1391,18 @@ var schemaGraph = func() *sqlgraph.Schema {
 		},
 		"User",
 		"HPElineupMallItemPurchaseHistory",
+	)
+	graph.MustAddE(
+		"metrics",
+		&sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.MetricsTable,
+			Columns: []string{user.MetricsColumn},
+			Bidi:    false,
+		},
+		"User",
+		"Metric",
 	)
 	graph.MustAddE(
 		"receivers",
@@ -3854,6 +3918,160 @@ func (f *HPViewHistoryFilter) WhereHasUserWith(preds ...predicate.User) {
 }
 
 // addPredicate implements the predicateAdder interface.
+func (mq *MetricQuery) addPredicate(pred func(s *sql.Selector)) {
+	mq.predicates = append(mq.predicates, pred)
+}
+
+// Filter returns a Filter implementation to apply filters on the MetricQuery builder.
+func (mq *MetricQuery) Filter() *MetricFilter {
+	return &MetricFilter{config: mq.config, predicateAdder: mq}
+}
+
+// addPredicate implements the predicateAdder interface.
+func (m *MetricMutation) addPredicate(pred func(s *sql.Selector)) {
+	m.predicates = append(m.predicates, pred)
+}
+
+// Filter returns an entql.Where implementation to apply filters on the MetricMutation builder.
+func (m *MetricMutation) Filter() *MetricFilter {
+	return &MetricFilter{config: m.config, predicateAdder: m}
+}
+
+// MetricFilter provides a generic filtering capability at runtime for MetricQuery.
+type MetricFilter struct {
+	predicateAdder
+	config
+}
+
+// Where applies the entql predicate on the query filter.
+func (f *MetricFilter) Where(p entql.P) {
+	f.addPredicate(func(s *sql.Selector) {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[15].Type, p, s); err != nil {
+			s.AddError(err)
+		}
+	})
+}
+
+// WhereID applies the entql int predicate on the id field.
+func (f *MetricFilter) WhereID(p entql.IntP) {
+	f.Where(p.Field(metric.FieldID))
+}
+
+// WhereCreatedAt applies the entql time.Time predicate on the created_at field.
+func (f *MetricFilter) WhereCreatedAt(p entql.TimeP) {
+	f.Where(p.Field(metric.FieldCreatedAt))
+}
+
+// WhereUpdatedAt applies the entql time.Time predicate on the updated_at field.
+func (f *MetricFilter) WhereUpdatedAt(p entql.TimeP) {
+	f.Where(p.Field(metric.FieldUpdatedAt))
+}
+
+// WhereMetricName applies the entql string predicate on the metric_name field.
+func (f *MetricFilter) WhereMetricName(p entql.StringP) {
+	f.Where(p.Field(metric.FieldMetricName))
+}
+
+// WhereDate applies the entql string predicate on the date field.
+func (f *MetricFilter) WhereDate(p entql.StringP) {
+	f.Where(p.Field(metric.FieldDate))
+}
+
+// WhereValue applies the entql float64 predicate on the value field.
+func (f *MetricFilter) WhereValue(p entql.Float64P) {
+	f.Where(p.Field(metric.FieldValue))
+}
+
+// WhereOwnerUserID applies the entql int predicate on the owner_user_id field.
+func (f *MetricFilter) WhereOwnerUserID(p entql.IntP) {
+	f.Where(p.Field(metric.FieldOwnerUserID))
+}
+
+// WhereHasUser applies a predicate to check if query has an edge user.
+func (f *MetricFilter) WhereHasUser() {
+	f.Where(entql.HasEdge("user"))
+}
+
+// WhereHasUserWith applies a predicate to check if query has an edge user with a given conditions (other predicates).
+func (f *MetricFilter) WhereHasUserWith(preds ...predicate.User) {
+	f.Where(entql.HasEdgeWith("user", sqlgraph.WrapFunc(func(s *sql.Selector) {
+		for _, p := range preds {
+			p(s)
+		}
+	})))
+}
+
+// addPredicate implements the predicateAdder interface.
+func (mdrq *MetricDryRunQuery) addPredicate(pred func(s *sql.Selector)) {
+	mdrq.predicates = append(mdrq.predicates, pred)
+}
+
+// Filter returns a Filter implementation to apply filters on the MetricDryRunQuery builder.
+func (mdrq *MetricDryRunQuery) Filter() *MetricDryRunFilter {
+	return &MetricDryRunFilter{config: mdrq.config, predicateAdder: mdrq}
+}
+
+// addPredicate implements the predicateAdder interface.
+func (m *MetricDryRunMutation) addPredicate(pred func(s *sql.Selector)) {
+	m.predicates = append(m.predicates, pred)
+}
+
+// Filter returns an entql.Where implementation to apply filters on the MetricDryRunMutation builder.
+func (m *MetricDryRunMutation) Filter() *MetricDryRunFilter {
+	return &MetricDryRunFilter{config: m.config, predicateAdder: m}
+}
+
+// MetricDryRunFilter provides a generic filtering capability at runtime for MetricDryRunQuery.
+type MetricDryRunFilter struct {
+	predicateAdder
+	config
+}
+
+// Where applies the entql predicate on the query filter.
+func (f *MetricDryRunFilter) Where(p entql.P) {
+	f.addPredicate(func(s *sql.Selector) {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[16].Type, p, s); err != nil {
+			s.AddError(err)
+		}
+	})
+}
+
+// WhereID applies the entql int predicate on the id field.
+func (f *MetricDryRunFilter) WhereID(p entql.IntP) {
+	f.Where(p.Field(metricdryrun.FieldID))
+}
+
+// WhereCreatedAt applies the entql time.Time predicate on the created_at field.
+func (f *MetricDryRunFilter) WhereCreatedAt(p entql.TimeP) {
+	f.Where(p.Field(metricdryrun.FieldCreatedAt))
+}
+
+// WhereUpdatedAt applies the entql time.Time predicate on the updated_at field.
+func (f *MetricDryRunFilter) WhereUpdatedAt(p entql.TimeP) {
+	f.Where(p.Field(metricdryrun.FieldUpdatedAt))
+}
+
+// WhereMetricName applies the entql string predicate on the metric_name field.
+func (f *MetricDryRunFilter) WhereMetricName(p entql.StringP) {
+	f.Where(p.Field(metricdryrun.FieldMetricName))
+}
+
+// WhereDate applies the entql string predicate on the date field.
+func (f *MetricDryRunFilter) WhereDate(p entql.StringP) {
+	f.Where(p.Field(metricdryrun.FieldDate))
+}
+
+// WhereValue applies the entql float64 predicate on the value field.
+func (f *MetricDryRunFilter) WhereValue(p entql.Float64P) {
+	f.Where(p.Field(metricdryrun.FieldValue))
+}
+
+// WhereOwnerUserID applies the entql int predicate on the owner_user_id field.
+func (f *MetricDryRunFilter) WhereOwnerUserID(p entql.IntP) {
+	f.Where(p.Field(metricdryrun.FieldOwnerUserID))
+}
+
+// addPredicate implements the predicateAdder interface.
 func (teq *TestEntQuery) addPredicate(pred func(s *sql.Selector)) {
 	teq.predicates = append(teq.predicates, pred)
 }
@@ -3882,7 +4100,7 @@ type TestEntFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *TestEntFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[15].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[17].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -3972,7 +4190,7 @@ type UserFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *UserFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[16].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[18].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -4101,6 +4319,20 @@ func (f *UserFilter) WhereHasElineupMallPurchaseHistoriesWith(preds ...predicate
 	})))
 }
 
+// WhereHasMetrics applies a predicate to check if query has an edge metrics.
+func (f *UserFilter) WhereHasMetrics() {
+	f.Where(entql.HasEdge("metrics"))
+}
+
+// WhereHasMetricsWith applies a predicate to check if query has an edge metrics with a given conditions (other predicates).
+func (f *UserFilter) WhereHasMetricsWith(preds ...predicate.Metric) {
+	f.Where(entql.HasEdgeWith("metrics", sqlgraph.WrapFunc(func(s *sql.Selector) {
+		for _, p := range preds {
+			p(s)
+		}
+	})))
+}
+
 // addPredicate implements the predicateAdder interface.
 func (unlq *UserNotificationLogQuery) addPredicate(pred func(s *sql.Selector)) {
 	unlq.predicates = append(unlq.predicates, pred)
@@ -4130,7 +4362,7 @@ type UserNotificationLogFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *UserNotificationLogFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[17].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[19].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})
@@ -4229,7 +4461,7 @@ type UserNotificationSettingFilter struct {
 // Where applies the entql predicate on the query filter.
 func (f *UserNotificationSettingFilter) Where(p entql.P) {
 	f.addPredicate(func(s *sql.Selector) {
-		if err := schemaGraph.EvalP(schemaGraph.Nodes[18].Type, p, s); err != nil {
+		if err := schemaGraph.EvalP(schemaGraph.Nodes[20].Type, p, s); err != nil {
 			s.AddError(err)
 		}
 	})

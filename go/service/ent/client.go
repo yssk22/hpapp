@@ -29,6 +29,8 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/metric"
+	"github.com/yssk22/hpapp/go/service/ent/metricdryrun"
 	"github.com/yssk22/hpapp/go/service/ent/testent"
 	"github.com/yssk22/hpapp/go/service/ent/user"
 	"github.com/yssk22/hpapp/go/service/ent/usernotificationlog"
@@ -70,6 +72,10 @@ type Client struct {
 	HPSortHistory *HPSortHistoryClient
 	// HPViewHistory is the client for interacting with the HPViewHistory builders.
 	HPViewHistory *HPViewHistoryClient
+	// Metric is the client for interacting with the Metric builders.
+	Metric *MetricClient
+	// MetricDryRun is the client for interacting with the MetricDryRun builders.
+	MetricDryRun *MetricDryRunClient
 	// TestEnt is the client for interacting with the TestEnt builders.
 	TestEnt *TestEntClient
 	// User is the client for interacting with the User builders.
@@ -108,6 +114,8 @@ func (c *Client) init() {
 	c.HPMember = NewHPMemberClient(c.config)
 	c.HPSortHistory = NewHPSortHistoryClient(c.config)
 	c.HPViewHistory = NewHPViewHistoryClient(c.config)
+	c.Metric = NewMetricClient(c.config)
+	c.MetricDryRun = NewMetricDryRunClient(c.config)
 	c.TestEnt = NewTestEntClient(c.config)
 	c.User = NewUserClient(c.config)
 	c.UserNotificationLog = NewUserNotificationLogClient(c.config)
@@ -209,6 +217,8 @@ func (c *Client) Tx(ctx context.Context) (*Tx, error) {
 		HPMember:                         NewHPMemberClient(cfg),
 		HPSortHistory:                    NewHPSortHistoryClient(cfg),
 		HPViewHistory:                    NewHPViewHistoryClient(cfg),
+		Metric:                           NewMetricClient(cfg),
+		MetricDryRun:                     NewMetricDryRunClient(cfg),
 		TestEnt:                          NewTestEntClient(cfg),
 		User:                             NewUserClient(cfg),
 		UserNotificationLog:              NewUserNotificationLogClient(cfg),
@@ -247,6 +257,8 @@ func (c *Client) BeginTx(ctx context.Context, opts *sql.TxOptions) (*Tx, error) 
 		HPMember:                         NewHPMemberClient(cfg),
 		HPSortHistory:                    NewHPSortHistoryClient(cfg),
 		HPViewHistory:                    NewHPViewHistoryClient(cfg),
+		Metric:                           NewMetricClient(cfg),
+		MetricDryRun:                     NewMetricDryRunClient(cfg),
 		TestEnt:                          NewTestEntClient(cfg),
 		User:                             NewUserClient(cfg),
 		UserNotificationLog:              NewUserNotificationLogClient(cfg),
@@ -282,8 +294,9 @@ func (c *Client) Use(hooks ...Hook) {
 	for _, n := range []interface{ Use(...Hook) }{
 		c.Auth, c.HPAmebloPost, c.HPArtist, c.HPAsset, c.HPBlob, c.HPElineupMallItem,
 		c.HPElineupMallItemPurchaseHistory, c.HPEvent, c.HPFCEventTicket, c.HPFeedItem,
-		c.HPFollow, c.HPIgPost, c.HPMember, c.HPSortHistory, c.HPViewHistory,
-		c.TestEnt, c.User, c.UserNotificationLog, c.UserNotificationSetting,
+		c.HPFollow, c.HPIgPost, c.HPMember, c.HPSortHistory, c.HPViewHistory, c.Metric,
+		c.MetricDryRun, c.TestEnt, c.User, c.UserNotificationLog,
+		c.UserNotificationSetting,
 	} {
 		n.Use(hooks...)
 	}
@@ -295,8 +308,9 @@ func (c *Client) Intercept(interceptors ...Interceptor) {
 	for _, n := range []interface{ Intercept(...Interceptor) }{
 		c.Auth, c.HPAmebloPost, c.HPArtist, c.HPAsset, c.HPBlob, c.HPElineupMallItem,
 		c.HPElineupMallItemPurchaseHistory, c.HPEvent, c.HPFCEventTicket, c.HPFeedItem,
-		c.HPFollow, c.HPIgPost, c.HPMember, c.HPSortHistory, c.HPViewHistory,
-		c.TestEnt, c.User, c.UserNotificationLog, c.UserNotificationSetting,
+		c.HPFollow, c.HPIgPost, c.HPMember, c.HPSortHistory, c.HPViewHistory, c.Metric,
+		c.MetricDryRun, c.TestEnt, c.User, c.UserNotificationLog,
+		c.UserNotificationSetting,
 	} {
 		n.Intercept(interceptors...)
 	}
@@ -335,6 +349,10 @@ func (c *Client) Mutate(ctx context.Context, m Mutation) (Value, error) {
 		return c.HPSortHistory.mutate(ctx, m)
 	case *HPViewHistoryMutation:
 		return c.HPViewHistory.mutate(ctx, m)
+	case *MetricMutation:
+		return c.Metric.mutate(ctx, m)
+	case *MetricDryRunMutation:
+		return c.MetricDryRun.mutate(ctx, m)
 	case *TestEntMutation:
 		return c.TestEnt.mutate(ctx, m)
 	case *UserMutation:
@@ -3124,6 +3142,260 @@ func (c *HPViewHistoryClient) mutate(ctx context.Context, m *HPViewHistoryMutati
 	}
 }
 
+// MetricClient is a client for the Metric schema.
+type MetricClient struct {
+	config
+}
+
+// NewMetricClient returns a client for the Metric from the given config.
+func NewMetricClient(c config) *MetricClient {
+	return &MetricClient{config: c}
+}
+
+// Use adds a list of mutation hooks to the hooks stack.
+// A call to `Use(f, g, h)` equals to `metric.Hooks(f(g(h())))`.
+func (c *MetricClient) Use(hooks ...Hook) {
+	c.hooks.Metric = append(c.hooks.Metric, hooks...)
+}
+
+// Intercept adds a list of query interceptors to the interceptors stack.
+// A call to `Intercept(f, g, h)` equals to `metric.Intercept(f(g(h())))`.
+func (c *MetricClient) Intercept(interceptors ...Interceptor) {
+	c.inters.Metric = append(c.inters.Metric, interceptors...)
+}
+
+// Create returns a builder for creating a Metric entity.
+func (c *MetricClient) Create() *MetricCreate {
+	mutation := newMetricMutation(c.config, OpCreate)
+	return &MetricCreate{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// CreateBulk returns a builder for creating a bulk of Metric entities.
+func (c *MetricClient) CreateBulk(builders ...*MetricCreate) *MetricCreateBulk {
+	return &MetricCreateBulk{config: c.config, builders: builders}
+}
+
+// Update returns an update builder for Metric.
+func (c *MetricClient) Update() *MetricUpdate {
+	mutation := newMetricMutation(c.config, OpUpdate)
+	return &MetricUpdate{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// UpdateOne returns an update builder for the given entity.
+func (c *MetricClient) UpdateOne(m *Metric) *MetricUpdateOne {
+	mutation := newMetricMutation(c.config, OpUpdateOne, withMetric(m))
+	return &MetricUpdateOne{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// UpdateOneID returns an update builder for the given id.
+func (c *MetricClient) UpdateOneID(id int) *MetricUpdateOne {
+	mutation := newMetricMutation(c.config, OpUpdateOne, withMetricID(id))
+	return &MetricUpdateOne{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// Delete returns a delete builder for Metric.
+func (c *MetricClient) Delete() *MetricDelete {
+	mutation := newMetricMutation(c.config, OpDelete)
+	return &MetricDelete{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// DeleteOne returns a builder for deleting the given entity.
+func (c *MetricClient) DeleteOne(m *Metric) *MetricDeleteOne {
+	return c.DeleteOneID(m.ID)
+}
+
+// DeleteOneID returns a builder for deleting the given entity by its id.
+func (c *MetricClient) DeleteOneID(id int) *MetricDeleteOne {
+	builder := c.Delete().Where(metric.ID(id))
+	builder.mutation.id = &id
+	builder.mutation.op = OpDeleteOne
+	return &MetricDeleteOne{builder}
+}
+
+// Query returns a query builder for Metric.
+func (c *MetricClient) Query() *MetricQuery {
+	return &MetricQuery{
+		config: c.config,
+		ctx:    &QueryContext{Type: TypeMetric},
+		inters: c.Interceptors(),
+	}
+}
+
+// Get returns a Metric entity by its id.
+func (c *MetricClient) Get(ctx context.Context, id int) (*Metric, error) {
+	return c.Query().Where(metric.ID(id)).Only(ctx)
+}
+
+// GetX is like Get, but panics if an error occurs.
+func (c *MetricClient) GetX(ctx context.Context, id int) *Metric {
+	obj, err := c.Get(ctx, id)
+	if err != nil {
+		panic(err)
+	}
+	return obj
+}
+
+// QueryUser queries the user edge of a Metric.
+func (c *MetricClient) QueryUser(m *Metric) *UserQuery {
+	query := (&UserClient{config: c.config}).Query()
+	query.path = func(context.Context) (fromV *sql.Selector, _ error) {
+		id := m.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(metric.Table, metric.FieldID, id),
+			sqlgraph.To(user.Table, user.FieldID),
+			sqlgraph.Edge(sqlgraph.M2O, true, metric.UserTable, metric.UserColumn),
+		)
+		fromV = sqlgraph.Neighbors(m.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
+// Hooks returns the client hooks.
+func (c *MetricClient) Hooks() []Hook {
+	hooks := c.hooks.Metric
+	return append(hooks[:len(hooks):len(hooks)], metric.Hooks[:]...)
+}
+
+// Interceptors returns the client interceptors.
+func (c *MetricClient) Interceptors() []Interceptor {
+	return c.inters.Metric
+}
+
+func (c *MetricClient) mutate(ctx context.Context, m *MetricMutation) (Value, error) {
+	switch m.Op() {
+	case OpCreate:
+		return (&MetricCreate{config: c.config, hooks: c.Hooks(), mutation: m}).Save(ctx)
+	case OpUpdate:
+		return (&MetricUpdate{config: c.config, hooks: c.Hooks(), mutation: m}).Save(ctx)
+	case OpUpdateOne:
+		return (&MetricUpdateOne{config: c.config, hooks: c.Hooks(), mutation: m}).Save(ctx)
+	case OpDelete, OpDeleteOne:
+		return (&MetricDelete{config: c.config, hooks: c.Hooks(), mutation: m}).Exec(ctx)
+	default:
+		return nil, fmt.Errorf("ent: unknown Metric mutation op: %q", m.Op())
+	}
+}
+
+// MetricDryRunClient is a client for the MetricDryRun schema.
+type MetricDryRunClient struct {
+	config
+}
+
+// NewMetricDryRunClient returns a client for the MetricDryRun from the given config.
+func NewMetricDryRunClient(c config) *MetricDryRunClient {
+	return &MetricDryRunClient{config: c}
+}
+
+// Use adds a list of mutation hooks to the hooks stack.
+// A call to `Use(f, g, h)` equals to `metricdryrun.Hooks(f(g(h())))`.
+func (c *MetricDryRunClient) Use(hooks ...Hook) {
+	c.hooks.MetricDryRun = append(c.hooks.MetricDryRun, hooks...)
+}
+
+// Intercept adds a list of query interceptors to the interceptors stack.
+// A call to `Intercept(f, g, h)` equals to `metricdryrun.Intercept(f(g(h())))`.
+func (c *MetricDryRunClient) Intercept(interceptors ...Interceptor) {
+	c.inters.MetricDryRun = append(c.inters.MetricDryRun, interceptors...)
+}
+
+// Create returns a builder for creating a MetricDryRun entity.
+func (c *MetricDryRunClient) Create() *MetricDryRunCreate {
+	mutation := newMetricDryRunMutation(c.config, OpCreate)
+	return &MetricDryRunCreate{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// CreateBulk returns a builder for creating a bulk of MetricDryRun entities.
+func (c *MetricDryRunClient) CreateBulk(builders ...*MetricDryRunCreate) *MetricDryRunCreateBulk {
+	return &MetricDryRunCreateBulk{config: c.config, builders: builders}
+}
+
+// Update returns an update builder for MetricDryRun.
+func (c *MetricDryRunClient) Update() *MetricDryRunUpdate {
+	mutation := newMetricDryRunMutation(c.config, OpUpdate)
+	return &MetricDryRunUpdate{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// UpdateOne returns an update builder for the given entity.
+func (c *MetricDryRunClient) UpdateOne(mdr *MetricDryRun) *MetricDryRunUpdateOne {
+	mutation := newMetricDryRunMutation(c.config, OpUpdateOne, withMetricDryRun(mdr))
+	return &MetricDryRunUpdateOne{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// UpdateOneID returns an update builder for the given id.
+func (c *MetricDryRunClient) UpdateOneID(id int) *MetricDryRunUpdateOne {
+	mutation := newMetricDryRunMutation(c.config, OpUpdateOne, withMetricDryRunID(id))
+	return &MetricDryRunUpdateOne{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// Delete returns a delete builder for MetricDryRun.
+func (c *MetricDryRunClient) Delete() *MetricDryRunDelete {
+	mutation := newMetricDryRunMutation(c.config, OpDelete)
+	return &MetricDryRunDelete{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// DeleteOne returns a builder for deleting the given entity.
+func (c *MetricDryRunClient) DeleteOne(mdr *MetricDryRun) *MetricDryRunDeleteOne {
+	return c.DeleteOneID(mdr.ID)
+}
+
+// DeleteOneID returns a builder for deleting the given entity by its id.
+func (c *MetricDryRunClient) DeleteOneID(id int) *MetricDryRunDeleteOne {
+	builder := c.Delete().Where(metricdryrun.ID(id))
+	builder.mutation.id = &id
+	builder.mutation.op = OpDeleteOne
+	return &MetricDryRunDeleteOne{builder}
+}
+
+// Query returns a query builder for MetricDryRun.
+func (c *MetricDryRunClient) Query() *MetricDryRunQuery {
+	return &MetricDryRunQuery{
+		config: c.config,
+		ctx:    &QueryContext{Type: TypeMetricDryRun},
+		inters: c.Interceptors(),
+	}
+}
+
+// Get returns a MetricDryRun entity by its id.
+func (c *MetricDryRunClient) Get(ctx context.Context, id int) (*MetricDryRun, error) {
+	return c.Query().Where(metricdryrun.ID(id)).Only(ctx)
+}
+
+// GetX is like Get, but panics if an error occurs.
+func (c *MetricDryRunClient) GetX(ctx context.Context, id int) *MetricDryRun {
+	obj, err := c.Get(ctx, id)
+	if err != nil {
+		panic(err)
+	}
+	return obj
+}
+
+// Hooks returns the client hooks.
+func (c *MetricDryRunClient) Hooks() []Hook {
+	hooks := c.hooks.MetricDryRun
+	return append(hooks[:len(hooks):len(hooks)], metricdryrun.Hooks[:]...)
+}
+
+// Interceptors returns the client interceptors.
+func (c *MetricDryRunClient) Interceptors() []Interceptor {
+	return c.inters.MetricDryRun
+}
+
+func (c *MetricDryRunClient) mutate(ctx context.Context, m *MetricDryRunMutation) (Value, error) {
+	switch m.Op() {
+	case OpCreate:
+		return (&MetricDryRunCreate{config: c.config, hooks: c.Hooks(), mutation: m}).Save(ctx)
+	case OpUpdate:
+		return (&MetricDryRunUpdate{config: c.config, hooks: c.Hooks(), mutation: m}).Save(ctx)
+	case OpUpdateOne:
+		return (&MetricDryRunUpdateOne{config: c.config, hooks: c.Hooks(), mutation: m}).Save(ctx)
+	case OpDelete, OpDeleteOne:
+		return (&MetricDryRunDelete{config: c.config, hooks: c.Hooks(), mutation: m}).Exec(ctx)
+	default:
+		return nil, fmt.Errorf("ent: unknown MetricDryRun mutation op: %q", m.Op())
+	}
+}
+
 // TestEntClient is a client for the TestEnt schema.
 type TestEntClient struct {
 	config
@@ -3440,6 +3712,22 @@ func (c *UserClient) QueryElineupMallPurchaseHistories(u *User) *HPElineupMallIt
 			sqlgraph.From(user.Table, user.FieldID, id),
 			sqlgraph.To(hpelineupmallitempurchasehistory.Table, hpelineupmallitempurchasehistory.FieldID),
 			sqlgraph.Edge(sqlgraph.O2M, false, user.ElineupMallPurchaseHistoriesTable, user.ElineupMallPurchaseHistoriesColumn),
+		)
+		fromV = sqlgraph.Neighbors(u.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
+// QueryMetrics queries the metrics edge of a User.
+func (c *UserClient) QueryMetrics(u *User) *MetricQuery {
+	query := (&MetricClient{config: c.config}).Query()
+	query.path = func(context.Context) (fromV *sql.Selector, _ error) {
+		id := u.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(user.Table, user.FieldID, id),
+			sqlgraph.To(metric.Table, metric.FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, user.MetricsTable, user.MetricsColumn),
 		)
 		fromV = sqlgraph.Neighbors(u.driver.Dialect(), step)
 		return fromV, nil
@@ -3764,13 +4052,15 @@ type (
 	hooks struct {
 		Auth, HPAmebloPost, HPArtist, HPAsset, HPBlob, HPElineupMallItem,
 		HPElineupMallItemPurchaseHistory, HPEvent, HPFCEventTicket, HPFeedItem,
-		HPFollow, HPIgPost, HPMember, HPSortHistory, HPViewHistory, TestEnt, User,
-		UserNotificationLog, UserNotificationSetting []ent.Hook
+		HPFollow, HPIgPost, HPMember, HPSortHistory, HPViewHistory, Metric,
+		MetricDryRun, TestEnt, User, UserNotificationLog,
+		UserNotificationSetting []ent.Hook
 	}
 	inters struct {
 		Auth, HPAmebloPost, HPArtist, HPAsset, HPBlob, HPElineupMallItem,
 		HPElineupMallItemPurchaseHistory, HPEvent, HPFCEventTicket, HPFeedItem,
-		HPFollow, HPIgPost, HPMember, HPSortHistory, HPViewHistory, TestEnt, User,
-		UserNotificationLog, UserNotificationSetting []ent.Interceptor
+		HPFollow, HPIgPost, HPMember, HPSortHistory, HPViewHistory, Metric,
+		MetricDryRun, TestEnt, User, UserNotificationLog,
+		UserNotificationSetting []ent.Interceptor
 	}
 )

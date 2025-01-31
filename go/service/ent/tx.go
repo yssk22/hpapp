@@ -42,6 +42,10 @@ type Tx struct {
 	HPSortHistory *HPSortHistoryClient
 	// HPViewHistory is the client for interacting with the HPViewHistory builders.
 	HPViewHistory *HPViewHistoryClient
+	// Metric is the client for interacting with the Metric builders.
+	Metric *MetricClient
+	// MetricDryRun is the client for interacting with the MetricDryRun builders.
+	MetricDryRun *MetricDryRunClient
 	// TestEnt is the client for interacting with the TestEnt builders.
 	TestEnt *TestEntClient
 	// User is the client for interacting with the User builders.
@@ -196,6 +200,8 @@ func (tx *Tx) init() {
 	tx.HPMember = NewHPMemberClient(tx.config)
 	tx.HPSortHistory = NewHPSortHistoryClient(tx.config)
 	tx.HPViewHistory = NewHPViewHistoryClient(tx.config)
+	tx.Metric = NewMetricClient(tx.config)
+	tx.MetricDryRun = NewMetricDryRunClient(tx.config)
 	tx.TestEnt = NewTestEntClient(tx.config)
 	tx.User = NewUserClient(tx.config)
 	tx.UserNotificationLog = NewUserNotificationLogClient(tx.config)

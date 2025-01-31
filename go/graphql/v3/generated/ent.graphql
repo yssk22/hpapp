@@ -669,6 +669,29 @@ enum HPViewHistoryOrderField {
   createdAt
   updatedAt
 }
+type Metric implements Node {
+  id: ID!
+  createdAt: Time
+  updatedAt: Time
+  """metric name"""
+  metricName: String!
+  """date string"""
+  date: String!
+  """metric value"""
+  value: Float!
+}
+"""Ordering options for Metric connections"""
+input MetricOrder {
+  """The ordering direction."""
+  direction: OrderDirection! = ASC
+  """The field by which to order Metrics."""
+  field: MetricOrderField!
+}
+"""Properties by which Metric connections can be ordered."""
+enum MetricOrderField {
+  createdAt
+  updatedAt
+}
 """
 An object with an ID.
 Follows the [Relay Global Object Identification Specification](https://relay.dev/graphql/objectidentification.htm)
@@ -725,6 +748,7 @@ type User implements Node {
   hpsortHistory: [HPSortHistory!]
   hpfcEventTickets: [HPFCEventTicket!]
   elineupMallPurchaseHistories: [HPElineupMallItemPurchaseHistory!]
+  metrics: [Metric!]
 }
 type UserNotificationSetting implements Node {
   id: ID!

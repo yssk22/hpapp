@@ -819,6 +819,80 @@ var (
 			},
 		},
 	}
+	// MetricsColumns holds the columns for the "metrics" table.
+	MetricsColumns = []*schema.Column{
+		{Name: "id", Type: field.TypeInt, Increment: true},
+		{Name: "created_at", Type: field.TypeTime, Nullable: true},
+		{Name: "updated_at", Type: field.TypeTime, Nullable: true},
+		{Name: "metric_name", Type: field.TypeString},
+		{Name: "date", Type: field.TypeString},
+		{Name: "value", Type: field.TypeFloat64},
+		{Name: "owner_user_id", Type: field.TypeInt, Nullable: true},
+	}
+	// MetricsTable holds the schema information for the "metrics" table.
+	MetricsTable = &schema.Table{
+		Name:       "metrics",
+		Columns:    MetricsColumns,
+		PrimaryKey: []*schema.Column{MetricsColumns[0]},
+		ForeignKeys: []*schema.ForeignKey{
+			{
+				Symbol:     "metrics_users_metrics",
+				Columns:    []*schema.Column{MetricsColumns[6]},
+				RefColumns: []*schema.Column{UsersColumns[0]},
+				OnDelete:   schema.Cascade,
+			},
+		},
+		Indexes: []*schema.Index{
+			{
+				Name:    "metric_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{MetricsColumns[1]},
+			},
+			{
+				Name:    "metric_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{MetricsColumns[2]},
+			},
+			{
+				Name:    "metric_metric_name_date",
+				Unique:  true,
+				Columns: []*schema.Column{MetricsColumns[3], MetricsColumns[4]},
+			},
+		},
+	}
+	// MetricDryRunsColumns holds the columns for the "metric_dry_runs" table.
+	MetricDryRunsColumns = []*schema.Column{
+		{Name: "id", Type: field.TypeInt, Increment: true},
+		{Name: "created_at", Type: field.TypeTime, Nullable: true},
+		{Name: "updated_at", Type: field.TypeTime, Nullable: true},
+		{Name: "metric_name", Type: field.TypeString},
+		{Name: "date", Type: field.TypeString},
+		{Name: "value", Type: field.TypeFloat64},
+		{Name: "owner_user_id", Type: field.TypeInt, Nullable: true},
+	}
+	// MetricDryRunsTable holds the schema information for the "metric_dry_runs" table.
+	MetricDryRunsTable = &schema.Table{
+		Name:       "metric_dry_runs",
+		Columns:    MetricDryRunsColumns,
+		PrimaryKey: []*schema.Column{MetricDryRunsColumns[0]},
+		Indexes: []*schema.Index{
+			{
+				Name:    "metricdryrun_created_at",
+				Unique:  false,
+				Columns: []*schema.Column{MetricDryRunsColumns[1]},
+			},
+			{
+				Name:    "metricdryrun_updated_at",
+				Unique:  false,
+				Columns: []*schema.Column{MetricDryRunsColumns[2]},
+			},
+			{
+				Name:    "metricdryrun_metric_name_date",
+				Unique:  true,
+				Columns: []*schema.Column{MetricDryRunsColumns[3], MetricDryRunsColumns[4]},
+			},
+		},
+	}
 	// TestEntsColumns holds the columns for the "test_ents" table.
 	TestEntsColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeInt, Increment: true},
@@ -1262,6 +1336,8 @@ var (
 		HpMembersTable,
 		HpSortHistoriesTable,
 		HpViewHistoriesTable,
+		MetricsTable,
+		MetricDryRunsTable,
 		TestEntsTable,
 		UsersTable,
 		UserNotificationLogsTable,
@@ -1307,6 +1383,7 @@ func init() {
 	HpSortHistoriesTable.ForeignKeys[0].RefTable = UsersTable
 	HpViewHistoriesTable.ForeignKeys[0].RefTable = HpFeedItemsTable
 	HpViewHistoriesTable.ForeignKeys[1].RefTable = UsersTable
+	MetricsTable.ForeignKeys[0].RefTable = UsersTable
 	UserNotificationSettingsTable.ForeignKeys[0].RefTable = UsersTable
 	HpAmebloPostBlobsTable.ForeignKeys[0].RefTable = HpAmebloPostsTable
 	HpAmebloPostBlobsTable.ForeignKeys[1].RefTable = HpBlobsTable

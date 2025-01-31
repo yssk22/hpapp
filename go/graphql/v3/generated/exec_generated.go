@@ -538,6 +538,15 @@ type ComplexityRoot struct {
 		To         func(childComplexity int) int
 	}
 
+	Metric struct {
+		CreatedAt  func(childComplexity int) int
+		Date       func(childComplexity int) int
+		ID         func(childComplexity int) int
+		MetricName func(childComplexity int) int
+		UpdatedAt  func(childComplexity int) int
+		Value      func(childComplexity int) int
+	}
+
 	Misc struct {
 		Version func(childComplexity int) int
 	}
@@ -578,6 +587,7 @@ type ComplexityRoot struct {
 		HpsortHistory                func(childComplexity int) int
 		HpviewHistory                func(childComplexity int) int
 		ID                           func(childComplexity int) int
+		Metrics                      func(childComplexity int) int
 		NotificationSettings         func(childComplexity int) int
 		UpdatedAt                    func(childComplexity int) int
 		Username                     func(childComplexity int) int
@@ -3174,6 +3184,48 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.Message.To(childComplexity), true
 
+	case "Metric.createdAt":
+		if e.complexity.Metric.CreatedAt == nil {
+			break
+		}
+
+		return e.complexity.Metric.CreatedAt(childComplexity), true
+
+	case "Metric.date":
+		if e.complexity.Metric.Date == nil {
+			break
+		}
+
+		return e.complexity.Metric.Date(childComplexity), true
+
+	case "Metric.id":
+		if e.complexity.Metric.ID == nil {
+			break
+		}
+
+		return e.complexity.Metric.ID(childComplexity), true
+
+	case "Metric.metricName":
+		if e.complexity.Metric.MetricName == nil {
+			break
+		}
+
+		return e.complexity.Metric.MetricName(childComplexity), true
+
+	case "Metric.updatedAt":
+		if e.complexity.Metric.UpdatedAt == nil {
+			break
+		}
+
+		return e.complexity.Metric.UpdatedAt(childComplexity), true
+
+	case "Metric.value":
+		if e.complexity.Metric.Value == nil {
+			break
+		}
+
+		return e.complexity.Metric.Value(childComplexity), true
+
 	case "Misc.version":
 		if e.complexity.Misc.Version == nil {
 			break
@@ -3357,6 +3409,13 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.User.ID(childComplexity), true
 
+	case "User.metrics":
+		if e.complexity.User.Metrics == nil {
+			break
+		}
+
+		return e.complexity.User.Metrics(childComplexity), true
+
 	case "User.notificationSettings":
 		if e.complexity.User.NotificationSettings == nil {
 			break
@@ -3484,6 +3543,7 @@ func (e *executableSchema) Exec(ctx context.Context) graphql.ResponseHandler {
 		ec.unmarshalInputHPViewHistoryOrder,
 		ec.unmarshalInputHPViewHistoryUpsertParamsInput,
 		ec.unmarshalInputMeFavoriteQueryParamsInput,
+		ec.unmarshalInputMetricOrder,
 		ec.unmarshalInputNotificationSettingsInput,
 		ec.unmarshalInputUserNotificationSettingOrder,
 		ec.unmarshalInputUserOrder,
@@ -9943,6 +10003,8 @@ func (ec *executionContext) fieldContext_HPElineupMallItemPurchaseHistory_owner(
 				return ec.fieldContext_User_hpfcEventTickets(ctx, field)
 			case "elineupMallPurchaseHistories":
 				return ec.fieldContext_User_elineupMallPurchaseHistories(ctx, field)
+			case "metrics":
+				return ec.fieldContext_User_metrics(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type User", field.Name)
 		},
@@ -13970,6 +14032,8 @@ func (ec *executionContext) fieldContext_HPFollow_user(ctx context.Context, fiel
 				return ec.fieldContext_User_hpfcEventTickets(ctx, field)
 			case "elineupMallPurchaseHistories":
 				return ec.fieldContext_User_elineupMallPurchaseHistories(ctx, field)
+			case "metrics":
+				return ec.fieldContext_User_metrics(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type User", field.Name)
 		},
@@ -17920,6 +17984,8 @@ func (ec *executionContext) fieldContext_HPSortHistory_owner(ctx context.Context
 				return ec.fieldContext_User_hpfcEventTickets(ctx, field)
 			case "elineupMallPurchaseHistories":
 				return ec.fieldContext_User_elineupMallPurchaseHistories(ctx, field)
+			case "metrics":
+				return ec.fieldContext_User_metrics(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type User", field.Name)
 		},
@@ -19413,6 +19479,8 @@ func (ec *executionContext) fieldContext_MeMutation_authenticate(ctx context.Con
 				return ec.fieldContext_User_hpfcEventTickets(ctx, field)
 			case "elineupMallPurchaseHistories":
 				return ec.fieldContext_User_elineupMallPurchaseHistories(ctx, field)
+			case "metrics":
+				return ec.fieldContext_User_metrics(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type User", field.Name)
 		},
@@ -21536,6 +21604,264 @@ func (ec *executionContext) fieldContext_Message_data(ctx context.Context, field
 	return fc, nil
 }
 
+func (ec *executionContext) _Metric_id(ctx context.Context, field graphql.CollectedField, obj *ent.Metric) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Metric_id(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ID, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(int)
+	fc.Result = res
+	return ec.marshalNID2int(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_Metric_id(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Metric",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type ID does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _Metric_createdAt(ctx context.Context, field graphql.CollectedField, obj *ent.Metric) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Metric_createdAt(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.CreatedAt, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(time.Time)
+	fc.Result = res
+	return ec.marshalOTime2timeᚐTime(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_Metric_createdAt(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Metric",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Time does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _Metric_updatedAt(ctx context.Context, field graphql.CollectedField, obj *ent.Metric) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Metric_updatedAt(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.UpdatedAt, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(time.Time)
+	fc.Result = res
+	return ec.marshalOTime2timeᚐTime(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_Metric_updatedAt(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Metric",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Time does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _Metric_metricName(ctx context.Context, field graphql.CollectedField, obj *ent.Metric) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Metric_metricName(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.MetricName, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_Metric_metricName(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Metric",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type String does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _Metric_date(ctx context.Context, field graphql.CollectedField, obj *ent.Metric) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Metric_date(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Date, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_Metric_date(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Metric",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type String does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _Metric_value(ctx context.Context, field graphql.CollectedField, obj *ent.Metric) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Metric_value(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Value, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(float64)
+	fc.Result = res
+	return ec.marshalNFloat2float64(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_Metric_value(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Metric",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Float does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
 func (ec *executionContext) _Misc_version(ctx context.Context, field graphql.CollectedField, obj *v3.Misc) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_Misc_version(ctx, field)
 	if err != nil {
@@ -21640,6 +21966,8 @@ func (ec *executionContext) fieldContext_Mutation_authenticate(ctx context.Conte
 				return ec.fieldContext_User_hpfcEventTickets(ctx, field)
 			case "elineupMallPurchaseHistories":
 				return ec.fieldContext_User_elineupMallPurchaseHistories(ctx, field)
+			case "metrics":
+				return ec.fieldContext_User_metrics(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type User", field.Name)
 		},
@@ -23142,6 +23470,61 @@ func (ec *executionContext) fieldContext_User_elineupMallPurchaseHistories(ctx c
 	return fc, nil
 }
 
+func (ec *executionContext) _User_metrics(ctx context.Context, field graphql.CollectedField, obj *ent.User) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_User_metrics(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Metrics(ctx)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.([]*ent.Metric)
+	fc.Result = res
+	return ec.marshalOMetric2ᚕᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐMetricᚄ(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_User_metrics(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "User",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "id":
+				return ec.fieldContext_Metric_id(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_Metric_createdAt(ctx, field)
+			case "updatedAt":
+				return ec.fieldContext_Metric_updatedAt(ctx, field)
+			case "metricName":
+				return ec.fieldContext_Metric_metricName(ctx, field)
+			case "date":
+				return ec.fieldContext_Metric_date(ctx, field)
+			case "value":
+				return ec.fieldContext_Metric_value(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type Metric", field.Name)
+		},
+	}
+	return fc, nil
+}
+
 func (ec *executionContext) _UserNotificationSetting_id(ctx context.Context, field graphql.CollectedField, obj *ent.UserNotificationSetting) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_UserNotificationSetting_id(ctx, field)
 	if err != nil {
@@ -23592,6 +23975,8 @@ func (ec *executionContext) fieldContext_UserNotificationSetting_user(ctx contex
 				return ec.fieldContext_User_hpfcEventTickets(ctx, field)
 			case "elineupMallPurchaseHistories":
 				return ec.fieldContext_User_elineupMallPurchaseHistories(ctx, field)
+			case "metrics":
+				return ec.fieldContext_User_metrics(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type User", field.Name)
 		},
@@ -26652,6 +27037,46 @@ func (ec *executionContext) unmarshalInputMeFavoriteQueryParamsInput(ctx context
 	return it, nil
 }
 
+func (ec *executionContext) unmarshalInputMetricOrder(ctx context.Context, obj interface{}) (ent.MetricOrder, error) {
+	var it ent.MetricOrder
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	if _, present := asMap["direction"]; !present {
+		asMap["direction"] = "ASC"
+	}
+
+	fieldsInOrder := [...]string{"direction", "field"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "direction":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
+			it.Direction, err = ec.unmarshalNOrderDirection2entgoᚗioᚋcontribᚋentgqlᚐOrderDirection(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "field":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
+			it.Field, err = ec.unmarshalNMetricOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐMetricOrderField(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
 func (ec *executionContext) unmarshalInputNotificationSettingsInput(ctx context.Context, obj interface{}) (push.NotificationSettings, error) {
 	var it push.NotificationSettings
 	asMap := map[string]interface{}{}
@@ -26880,6 +27305,11 @@ func (ec *executionContext) _Node(ctx context.Context, sel ast.SelectionSet, obj
 			return graphql.Null
 		}
 		return ec._HPViewHistory(ctx, sel, obj)
+	case *ent.Metric:
+		if obj == nil {
+			return graphql.Null
+		}
+		return ec._Metric(ctx, sel, obj)
 	case *ent.User:
 		if obj == nil {
 			return graphql.Null
@@ -30511,6 +30941,63 @@ func (ec *executionContext) _Message(ctx context.Context, sel ast.SelectionSet, 
 	return out
 }
 
+var metricImplementors = []string{"Metric", "Node"}
+
+func (ec *executionContext) _Metric(ctx context.Context, sel ast.SelectionSet, obj *ent.Metric) graphql.Marshaler {
+	fields := graphql.CollectFields(ec.OperationContext, sel, metricImplementors)
+	out := graphql.NewFieldSet(fields)
+	var invalids uint32
+	for i, field := range fields {
+		switch field.Name {
+		case "__typename":
+			out.Values[i] = graphql.MarshalString("Metric")
+		case "id":
+
+			out.Values[i] = ec._Metric_id(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				invalids++
+			}
+		case "createdAt":
+
+			out.Values[i] = ec._Metric_createdAt(ctx, field, obj)
+
+		case "updatedAt":
+
+			out.Values[i] = ec._Metric_updatedAt(ctx, field, obj)
+
+		case "metricName":
+
+			out.Values[i] = ec._Metric_metricName(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				invalids++
+			}
+		case "date":
+
+			out.Values[i] = ec._Metric_date(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				invalids++
+			}
+		case "value":
+
+			out.Values[i] = ec._Metric_value(ctx, field, obj)
+
+			if out.Values[i] == graphql.Null {
+				invalids++
+			}
+		default:
+			panic("unknown field " + strconv.Quote(field.Name))
+		}
+	}
+	out.Dispatch()
+	if invalids > 0 {
+		return graphql.Null
+	}
+	return out
+}
+
 var miscImplementors = []string{"Misc"}
 
 func (ec *executionContext) _Misc(ctx context.Context, sel ast.SelectionSet, obj *v3.Misc) graphql.Marshaler {
@@ -30962,6 +31449,23 @@ func (ec *executionContext) _User(ctx context.Context, sel ast.SelectionSet, obj
 					}
 				}()
 				res = ec._User_elineupMallPurchaseHistories(ctx, field, obj)
+				return res
+			}
+
+			out.Concurrently(i, func() graphql.Marshaler {
+				return innerFunc(ctx)
+
+			})
+		case "metrics":
+			field := field
+
+			innerFunc := func(ctx context.Context) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._User_metrics(ctx, field, obj)
 				return res
 			}
 
@@ -31446,6 +31950,21 @@ func (ec *executionContext) marshalNCursor2entgoᚗioᚋcontribᚋentgqlᚐCurso
 
 func (ec *executionContext) marshalNExpoPushMessage2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋschemaᚋjsonfieldsᚐExpoPushMessage(ctx context.Context, sel ast.SelectionSet, v jsonfields.ExpoPushMessage) graphql.Marshaler {
 	return ec._ExpoPushMessage(ctx, sel, &v)
+}
+
+func (ec *executionContext) unmarshalNFloat2float64(ctx context.Context, v interface{}) (float64, error) {
+	res, err := graphql.UnmarshalFloatContext(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNFloat2float64(ctx context.Context, sel ast.SelectionSet, v float64) graphql.Marshaler {
+	res := graphql.MarshalFloatContext(v)
+	if res == graphql.Null {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+	}
+	return graphql.WrapContextMarshaler(ctx, res)
 }
 
 func (ec *executionContext) marshalNHPAmebloPost2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐHPAmebloPost(ctx context.Context, sel ast.SelectionSet, v *ent.HPAmebloPost) graphql.Marshaler {
@@ -32175,6 +32694,32 @@ func (ec *executionContext) marshalNMessagePriority2githubᚗcomᚋyssk22ᚋhpap
 		}
 	}
 	return res
+}
+
+func (ec *executionContext) marshalNMetric2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐMetric(ctx context.Context, sel ast.SelectionSet, v *ent.Metric) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._Metric(ctx, sel, v)
+}
+
+func (ec *executionContext) unmarshalNMetricOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐMetricOrderField(ctx context.Context, v interface{}) (*ent.MetricOrderField, error) {
+	var res = new(ent.MetricOrderField)
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNMetricOrderField2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐMetricOrderField(ctx context.Context, sel ast.SelectionSet, v *ent.MetricOrderField) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return v
 }
 
 func (ec *executionContext) marshalNNode2ᚕgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐNoder(ctx context.Context, sel ast.SelectionSet, v []ent.Noder) graphql.Marshaler {
@@ -34380,6 +34925,53 @@ func (ec *executionContext) marshalOMessage2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋg
 		return graphql.Null
 	}
 	return ec._Message(ctx, sel, v)
+}
+
+func (ec *executionContext) marshalOMetric2ᚕᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐMetricᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.Metric) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	ret := make(graphql.Array, len(v))
+	var wg sync.WaitGroup
+	isLen1 := len(v) == 1
+	if !isLen1 {
+		wg.Add(len(v))
+	}
+	for i := range v {
+		i := i
+		fc := &graphql.FieldContext{
+			Index:  &i,
+			Result: &v[i],
+		}
+		ctx := graphql.WithFieldContext(ctx, fc)
+		f := func(i int) {
+			defer func() {
+				if r := recover(); r != nil {
+					ec.Error(ctx, ec.Recover(ctx, r))
+					ret = nil
+				}
+			}()
+			if !isLen1 {
+				defer wg.Done()
+			}
+			ret[i] = ec.marshalNMetric2ᚖgithubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐMetric(ctx, sel, v[i])
+		}
+		if isLen1 {
+			f(i)
+		} else {
+			go f(i)
+		}
+
+	}
+	wg.Wait()
+
+	for _, e := range ret {
+		if e == graphql.Null {
+			return graphql.Null
+		}
+	}
+
+	return ret
 }
 
 func (ec *executionContext) marshalONode2githubᚗcomᚋyssk22ᚋhpappᚋgoᚋserviceᚋentᚐNoder(ctx context.Context, sel ast.SelectionSet, v ent.Noder) graphql.Marshaler {

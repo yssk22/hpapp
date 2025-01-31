@@ -17,6 +17,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/metric"
 	"github.com/yssk22/hpapp/go/service/ent/user"
 	"github.com/yssk22/hpapp/go/service/ent/usernotificationsetting"
 )
@@ -172,6 +173,21 @@ func (uc *UserCreate) AddElineupMallPurchaseHistories(h ...*HPElineupMallItemPur
 		ids[i] = h[i].ID
 	}
 	return uc.AddElineupMallPurchaseHistoryIDs(ids...)
+}
+
+// AddMetricIDs adds the "metrics" edge to the Metric entity by IDs.
+func (uc *UserCreate) AddMetricIDs(ids ...int) *UserCreate {
+	uc.mutation.AddMetricIDs(ids...)
+	return uc
+}
+
+// AddMetrics adds the "metrics" edges to the Metric entity.
+func (uc *UserCreate) AddMetrics(m ...*Metric) *UserCreate {
+	ids := make([]int, len(m))
+	for i := range m {
+		ids[i] = m[i].ID
+	}
+	return uc.AddMetricIDs(ids...)
 }
 
 // Mutation returns the UserMutation object of the builder.
@@ -362,6 +378,22 @@ func (uc *UserCreate) createSpec() (*User, *sqlgraph.CreateSpec) {
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges = append(_spec.Edges, edge)
+	}
+	if nodes := uc.mutation.MetricsIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.MetricsTable,
+			Columns: []string{user.MetricsColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(metric.FieldID, field.TypeInt),
 			},
 		}
 		for _, k := range nodes {

@@ -35,6 +35,8 @@ const (
 	EdgeHpfcEventTickets = "hpfc_event_tickets"
 	// EdgeElineupMallPurchaseHistories holds the string denoting the elineup_mall_purchase_histories edge name in mutations.
 	EdgeElineupMallPurchaseHistories = "elineup_mall_purchase_histories"
+	// EdgeMetrics holds the string denoting the metrics edge name in mutations.
+	EdgeMetrics = "metrics"
 	// Table holds the table name of the user in the database.
 	Table = "users"
 	// AuthTable is the table that holds the auth relation/edge.
@@ -86,6 +88,13 @@ const (
 	ElineupMallPurchaseHistoriesInverseTable = "hp_elineup_mall_item_purchase_histories"
 	// ElineupMallPurchaseHistoriesColumn is the table column denoting the elineup_mall_purchase_histories relation/edge.
 	ElineupMallPurchaseHistoriesColumn = "owner_user_id"
+	// MetricsTable is the table that holds the metrics relation/edge.
+	MetricsTable = "metrics"
+	// MetricsInverseTable is the table name for the Metric entity.
+	// It exists in this package in order to avoid circular dependency with the "metric" package.
+	MetricsInverseTable = "metrics"
+	// MetricsColumn is the table column denoting the metrics relation/edge.
+	MetricsColumn = "owner_user_id"
 )
 
 // Columns holds all SQL columns for user fields.
@@ -242,6 +251,20 @@ func ByElineupMallPurchaseHistories(term sql.OrderTerm, terms ...sql.OrderTerm) 
 		sqlgraph.OrderByNeighborTerms(s, newElineupMallPurchaseHistoriesStep(), append([]sql.OrderTerm{term}, terms...)...)
 	}
 }
+
+// ByMetricsCount orders the results by metrics count.
+func ByMetricsCount(opts ...sql.OrderTermOption) Order {
+	return func(s *sql.Selector) {
+		sqlgraph.OrderByNeighborsCount(s, newMetricsStep(), opts...)
+	}
+}
+
+// ByMetrics orders the results by metrics terms.
+func ByMetrics(term sql.OrderTerm, terms ...sql.OrderTerm) Order {
+	return func(s *sql.Selector) {
+		sqlgraph.OrderByNeighborTerms(s, newMetricsStep(), append([]sql.OrderTerm{term}, terms...)...)
+	}
+}
 func newAuthStep() *sqlgraph.Step {
 	return sqlgraph.NewStep(
 		sqlgraph.From(Table, FieldID),
@@ -289,5 +312,12 @@ func newElineupMallPurchaseHistoriesStep() *sqlgraph.Step {
 		sqlgraph.From(Table, FieldID),
 		sqlgraph.To(ElineupMallPurchaseHistoriesInverseTable, FieldID),
 		sqlgraph.Edge(sqlgraph.O2M, false, ElineupMallPurchaseHistoriesTable, ElineupMallPurchaseHistoriesColumn),
+	)
+}
+func newMetricsStep() *sqlgraph.Step {
+	return sqlgraph.NewStep(
+		sqlgraph.From(Table, FieldID),
+		sqlgraph.To(MetricsInverseTable, FieldID),
+		sqlgraph.Edge(sqlgraph.O2M, false, MetricsTable, MetricsColumn),
 	)
 }

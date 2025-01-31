@@ -28,6 +28,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpmember"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/metric"
 	"github.com/yssk22/hpapp/go/service/ent/user"
 	"github.com/yssk22/hpapp/go/service/ent/usernotificationsetting"
 )
@@ -4267,6 +4268,298 @@ func (hvh *HPViewHistory) ToEdge(order *HPViewHistoryOrder) *HPViewHistoryEdge {
 	return &HPViewHistoryEdge{
 		Node:   hvh,
 		Cursor: order.Field.toCursor(hvh),
+	}
+}
+
+// MetricEdge is the edge representation of Metric.
+type MetricEdge struct {
+	Node   *Metric `json:"node"`
+	Cursor Cursor  `json:"cursor"`
+}
+
+// MetricConnection is the connection containing edges to Metric.
+type MetricConnection struct {
+	Edges      []*MetricEdge `json:"edges"`
+	PageInfo   PageInfo      `json:"pageInfo"`
+	TotalCount int           `json:"totalCount"`
+}
+
+func (c *MetricConnection) build(nodes []*Metric, pager *metricPager, after *Cursor, first *int, before *Cursor, last *int) {
+	c.PageInfo.HasNextPage = before != nil
+	c.PageInfo.HasPreviousPage = after != nil
+	if first != nil && *first+1 == len(nodes) {
+		c.PageInfo.HasNextPage = true
+		nodes = nodes[:len(nodes)-1]
+	} else if last != nil && *last+1 == len(nodes) {
+		c.PageInfo.HasPreviousPage = true
+		nodes = nodes[:len(nodes)-1]
+	}
+	var nodeAt func(int) *Metric
+	if last != nil {
+		n := len(nodes) - 1
+		nodeAt = func(i int) *Metric {
+			return nodes[n-i]
+		}
+	} else {
+		nodeAt = func(i int) *Metric {
+			return nodes[i]
+		}
+	}
+	c.Edges = make([]*MetricEdge, len(nodes))
+	for i := range nodes {
+		node := nodeAt(i)
+		c.Edges[i] = &MetricEdge{
+			Node:   node,
+			Cursor: pager.toCursor(node),
+		}
+	}
+	if l := len(c.Edges); l > 0 {
+		c.PageInfo.StartCursor = &c.Edges[0].Cursor
+		c.PageInfo.EndCursor = &c.Edges[l-1].Cursor
+	}
+	if c.TotalCount == 0 {
+		c.TotalCount = len(nodes)
+	}
+}
+
+// MetricPaginateOption enables pagination customization.
+type MetricPaginateOption func(*metricPager) error
+
+// WithMetricOrder configures pagination ordering.
+func WithMetricOrder(order *MetricOrder) MetricPaginateOption {
+	if order == nil {
+		order = DefaultMetricOrder
+	}
+	o := *order
+	return func(pager *metricPager) error {
+		if err := o.Direction.Validate(); err != nil {
+			return err
+		}
+		if o.Field == nil {
+			o.Field = DefaultMetricOrder.Field
+		}
+		pager.order = &o
+		return nil
+	}
+}
+
+// WithMetricFilter configures pagination filter.
+func WithMetricFilter(filter func(*MetricQuery) (*MetricQuery, error)) MetricPaginateOption {
+	return func(pager *metricPager) error {
+		if filter == nil {
+			return errors.New("MetricQuery filter cannot be nil")
+		}
+		pager.filter = filter
+		return nil
+	}
+}
+
+type metricPager struct {
+	reverse bool
+	order   *MetricOrder
+	filter  func(*MetricQuery) (*MetricQuery, error)
+}
+
+func newMetricPager(opts []MetricPaginateOption, reverse bool) (*metricPager, error) {
+	pager := &metricPager{reverse: reverse}
+	for _, opt := range opts {
+		if err := opt(pager); err != nil {
+			return nil, err
+		}
+	}
+	if pager.order == nil {
+		pager.order = DefaultMetricOrder
+	}
+	return pager, nil
+}
+
+func (p *metricPager) applyFilter(query *MetricQuery) (*MetricQuery, error) {
+	if p.filter != nil {
+		return p.filter(query)
+	}
+	return query, nil
+}
+
+func (p *metricPager) toCursor(m *Metric) Cursor {
+	return p.order.Field.toCursor(m)
+}
+
+func (p *metricPager) applyCursors(query *MetricQuery, after, before *Cursor) (*MetricQuery, error) {
+	direction := p.order.Direction
+	if p.reverse {
+		direction = direction.Reverse()
+	}
+	for _, predicate := range entgql.CursorsPredicate(after, before, DefaultMetricOrder.Field.field, p.order.Field.field, direction) {
+		query = query.Where(predicate)
+	}
+	return query, nil
+}
+
+func (p *metricPager) applyOrder(query *MetricQuery) *MetricQuery {
+	direction := p.order.Direction
+	if p.reverse {
+		direction = direction.Reverse()
+	}
+	query = query.Order(orderFunc(direction, p.order.Field.field))
+	if p.order.Field != DefaultMetricOrder.Field {
+		query = query.Order(orderFunc(direction, DefaultMetricOrder.Field.field))
+	}
+	return query
+}
+
+func (p *metricPager) orderExpr() sql.Querier {
+	direction := p.order.Direction
+	if p.reverse {
+		direction = direction.Reverse()
+	}
+	return sql.ExprFunc(func(b *sql.Builder) {
+		b.Ident(p.order.Field.field).Pad().WriteString(string(direction))
+		if p.order.Field != DefaultMetricOrder.Field {
+			b.Comma().Ident(DefaultMetricOrder.Field.field).Pad().WriteString(string(direction))
+		}
+	})
+}
+
+// Paginate executes the query and returns a relay based cursor connection to Metric.
+func (m *MetricQuery) Paginate(
+	ctx context.Context, after *Cursor, first *int,
+	before *Cursor, last *int, opts ...MetricPaginateOption,
+) (*MetricConnection, error) {
+	if err := validateFirstLast(first, last); err != nil {
+		return nil, err
+	}
+	pager, err := newMetricPager(opts, last != nil)
+	if err != nil {
+		return nil, err
+	}
+	if m, err = pager.applyFilter(m); err != nil {
+		return nil, err
+	}
+	conn := &MetricConnection{Edges: []*MetricEdge{}}
+	ignoredEdges := !hasCollectedField(ctx, edgesField)
+	if hasCollectedField(ctx, totalCountField) || hasCollectedField(ctx, pageInfoField) {
+		hasPagination := after != nil || first != nil || before != nil || last != nil
+		if hasPagination || ignoredEdges {
+			if conn.TotalCount, err = m.Clone().Count(ctx); err != nil {
+				return nil, err
+			}
+			conn.PageInfo.HasNextPage = first != nil && conn.TotalCount > 0
+			conn.PageInfo.HasPreviousPage = last != nil && conn.TotalCount > 0
+		}
+	}
+	if ignoredEdges || (first != nil && *first == 0) || (last != nil && *last == 0) {
+		return conn, nil
+	}
+
+	if m, err = pager.applyCursors(m, after, before); err != nil {
+		return nil, err
+	}
+	m = pager.applyOrder(m)
+	if limit := paginateLimit(first, last); limit != 0 {
+		m.Limit(limit)
+	}
+	if field := collectedField(ctx, edgesField, nodeField); field != nil {
+		if err := m.collectField(ctx, graphql.GetOperationContext(ctx), *field, []string{edgesField, nodeField}); err != nil {
+			return nil, err
+		}
+	}
+
+	nodes, err := m.All(ctx)
+	if err != nil {
+		return nil, err
+	}
+	conn.build(nodes, pager, after, first, before, last)
+	return conn, nil
+}
+
+var (
+	// MetricOrderFieldCreatedAt orders Metric by created_at.
+	MetricOrderFieldCreatedAt = &MetricOrderField{
+		field: metric.FieldCreatedAt,
+		toCursor: func(m *Metric) Cursor {
+			return Cursor{
+				ID:    m.ID,
+				Value: m.CreatedAt,
+			}
+		},
+	}
+	// MetricOrderFieldUpdatedAt orders Metric by updated_at.
+	MetricOrderFieldUpdatedAt = &MetricOrderField{
+		field: metric.FieldUpdatedAt,
+		toCursor: func(m *Metric) Cursor {
+			return Cursor{
+				ID:    m.ID,
+				Value: m.UpdatedAt,
+			}
+		},
+	}
+)
+
+// String implement fmt.Stringer interface.
+func (f MetricOrderField) String() string {
+	var str string
+	switch f.field {
+	case metric.FieldCreatedAt:
+		str = "createdAt"
+	case metric.FieldUpdatedAt:
+		str = "updatedAt"
+	}
+	return str
+}
+
+// MarshalGQL implements graphql.Marshaler interface.
+func (f MetricOrderField) MarshalGQL(w io.Writer) {
+	io.WriteString(w, strconv.Quote(f.String()))
+}
+
+// UnmarshalGQL implements graphql.Unmarshaler interface.
+func (f *MetricOrderField) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("MetricOrderField %T must be a string", v)
+	}
+	switch str {
+	case "createdAt":
+		*f = *MetricOrderFieldCreatedAt
+	case "updatedAt":
+		*f = *MetricOrderFieldUpdatedAt
+	default:
+		return fmt.Errorf("%s is not a valid MetricOrderField", str)
+	}
+	return nil
+}
+
+// MetricOrderField defines the ordering field of Metric.
+type MetricOrderField struct {
+	field    string
+	toCursor func(*Metric) Cursor
+}
+
+// MetricOrder defines the ordering of Metric.
+type MetricOrder struct {
+	Direction OrderDirection    `json:"direction"`
+	Field     *MetricOrderField `json:"field"`
+}
+
+// DefaultMetricOrder is the default ordering of Metric.
+var DefaultMetricOrder = &MetricOrder{
+	Direction: entgql.OrderDirectionAsc,
+	Field: &MetricOrderField{
+		field: metric.FieldID,
+		toCursor: func(m *Metric) Cursor {
+			return Cursor{ID: m.ID}
+		},
+	},
+}
+
+// ToEdge converts Metric into MetricEdge.
+func (m *Metric) ToEdge(order *MetricOrder) *MetricEdge {
+	if order == nil {
+		order = DefaultMetricOrder
+	}
+	return &MetricEdge{
+		Node:   m,
+		Cursor: order.Field.toCursor(m),
 	}
 }
 

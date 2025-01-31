@@ -62,7 +62,32 @@ func CanSeeOnlyMine() privacy.QueryRule {
 	})
 }
 
-// CanMutateOnlyMine is a mutation rule that checks `userIdField`` value is equals to the current user id.
+// CanSeeOnlyMineOrPublic is a privacy filter rule that ensure the current user access the records that belongs to them or public records.
+// This rule requires "owner_user_id" filed in the schema
+func CanSeeOnlyMineOrPublic() privacy.QueryRule {
+	return privacy.FilterFunc(func(ctx context.Context, f privacy.Filter) error {
+		uid, err := strconv.Atoi(CurrentUser(ctx).ID())
+		if err != nil {
+			return ErrAuthenticationRequired
+		}
+		af, ok := f.(interface {
+			Where(entql.P)
+			WhereOwnerUserID(entql.IntP)
+		})
+		if !ok {
+			return errors.Wrap(ctx, fmt.Errorf("invalid filter applied: %#v", f))
+		}
+		af.Where(
+			entql.Or(
+				entql.FieldEQ("owner_user_id", uid),
+				entql.FieldNil("owner_user_id"),
+			),
+		)
+		return privacy.Skip
+	})
+}
+
+// CanMutateOnlyMine is a mutation rule that checks `userIdField“ value is equals to the current user id.
 // `userIdField` has to be a storage key, not a virtual edge field name.
 func CanMutateOnlyMine(userIdField string) privacy.MutationRule {
 	return privacy.MutationRuleFunc(func(ctx context.Context, m ent.Mutation) error {

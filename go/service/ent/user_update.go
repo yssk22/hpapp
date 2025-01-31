@@ -17,6 +17,7 @@ import (
 	"github.com/yssk22/hpapp/go/service/ent/hpfollow"
 	"github.com/yssk22/hpapp/go/service/ent/hpsorthistory"
 	"github.com/yssk22/hpapp/go/service/ent/hpviewhistory"
+	"github.com/yssk22/hpapp/go/service/ent/metric"
 	"github.com/yssk22/hpapp/go/service/ent/predicate"
 	"github.com/yssk22/hpapp/go/service/ent/user"
 	"github.com/yssk22/hpapp/go/service/ent/usernotificationsetting"
@@ -172,6 +173,21 @@ func (uu *UserUpdate) AddElineupMallPurchaseHistories(h ...*HPElineupMallItemPur
 	return uu.AddElineupMallPurchaseHistoryIDs(ids...)
 }
 
+// AddMetricIDs adds the "metrics" edge to the Metric entity by IDs.
+func (uu *UserUpdate) AddMetricIDs(ids ...int) *UserUpdate {
+	uu.mutation.AddMetricIDs(ids...)
+	return uu
+}
+
+// AddMetrics adds the "metrics" edges to the Metric entity.
+func (uu *UserUpdate) AddMetrics(m ...*Metric) *UserUpdate {
+	ids := make([]int, len(m))
+	for i := range m {
+		ids[i] = m[i].ID
+	}
+	return uu.AddMetricIDs(ids...)
+}
+
 // Mutation returns the UserMutation object of the builder.
 func (uu *UserUpdate) Mutation() *UserMutation {
 	return uu.mutation
@@ -322,6 +338,27 @@ func (uu *UserUpdate) RemoveElineupMallPurchaseHistories(h ...*HPElineupMallItem
 		ids[i] = h[i].ID
 	}
 	return uu.RemoveElineupMallPurchaseHistoryIDs(ids...)
+}
+
+// ClearMetrics clears all "metrics" edges to the Metric entity.
+func (uu *UserUpdate) ClearMetrics() *UserUpdate {
+	uu.mutation.ClearMetrics()
+	return uu
+}
+
+// RemoveMetricIDs removes the "metrics" edge to Metric entities by IDs.
+func (uu *UserUpdate) RemoveMetricIDs(ids ...int) *UserUpdate {
+	uu.mutation.RemoveMetricIDs(ids...)
+	return uu
+}
+
+// RemoveMetrics removes "metrics" edges to Metric entities.
+func (uu *UserUpdate) RemoveMetrics(m ...*Metric) *UserUpdate {
+	ids := make([]int, len(m))
+	for i := range m {
+		ids[i] = m[i].ID
+	}
+	return uu.RemoveMetricIDs(ids...)
 }
 
 // Save executes the query and returns the number of nodes affected by the update operation.
@@ -690,6 +727,51 @@ func (uu *UserUpdate) sqlSave(ctx context.Context) (n int, err error) {
 		}
 		_spec.Edges.Add = append(_spec.Edges.Add, edge)
 	}
+	if uu.mutation.MetricsCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.MetricsTable,
+			Columns: []string{user.MetricsColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(metric.FieldID, field.TypeInt),
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := uu.mutation.RemovedMetricsIDs(); len(nodes) > 0 && !uu.mutation.MetricsCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.MetricsTable,
+			Columns: []string{user.MetricsColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(metric.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := uu.mutation.MetricsIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.MetricsTable,
+			Columns: []string{user.MetricsColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(metric.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
 	if n, err = sqlgraph.UpdateNodes(ctx, uu.driver, _spec); err != nil {
 		if _, ok := err.(*sqlgraph.NotFoundError); ok {
 			err = &NotFoundError{user.Label}
@@ -847,6 +929,21 @@ func (uuo *UserUpdateOne) AddElineupMallPurchaseHistories(h ...*HPElineupMallIte
 	return uuo.AddElineupMallPurchaseHistoryIDs(ids...)
 }
 
+// AddMetricIDs adds the "metrics" edge to the Metric entity by IDs.
+func (uuo *UserUpdateOne) AddMetricIDs(ids ...int) *UserUpdateOne {
+	uuo.mutation.AddMetricIDs(ids...)
+	return uuo
+}
+
+// AddMetrics adds the "metrics" edges to the Metric entity.
+func (uuo *UserUpdateOne) AddMetrics(m ...*Metric) *UserUpdateOne {
+	ids := make([]int, len(m))
+	for i := range m {
+		ids[i] = m[i].ID
+	}
+	return uuo.AddMetricIDs(ids...)
+}
+
 // Mutation returns the UserMutation object of the builder.
 func (uuo *UserUpdateOne) Mutation() *UserMutation {
 	return uuo.mutation
@@ -997,6 +1094,27 @@ func (uuo *UserUpdateOne) RemoveElineupMallPurchaseHistories(h ...*HPElineupMall
 		ids[i] = h[i].ID
 	}
 	return uuo.RemoveElineupMallPurchaseHistoryIDs(ids...)
+}
+
+// ClearMetrics clears all "metrics" edges to the Metric entity.
+func (uuo *UserUpdateOne) ClearMetrics() *UserUpdateOne {
+	uuo.mutation.ClearMetrics()
+	return uuo
+}
+
+// RemoveMetricIDs removes the "metrics" edge to Metric entities by IDs.
+func (uuo *UserUpdateOne) RemoveMetricIDs(ids ...int) *UserUpdateOne {
+	uuo.mutation.RemoveMetricIDs(ids...)
+	return uuo
+}
+
+// RemoveMetrics removes "metrics" edges to Metric entities.
+func (uuo *UserUpdateOne) RemoveMetrics(m ...*Metric) *UserUpdateOne {
+	ids := make([]int, len(m))
+	for i := range m {
+		ids[i] = m[i].ID
+	}
+	return uuo.RemoveMetricIDs(ids...)
 }
 
 // Where appends a list predicates to the UserUpdate builder.
@@ -1388,6 +1506,51 @@ func (uuo *UserUpdateOne) sqlSave(ctx context.Context) (_node *User, err error) 
 			Bidi:    false,
 			Target: &sqlgraph.EdgeTarget{
 				IDSpec: sqlgraph.NewFieldSpec(hpelineupmallitempurchasehistory.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
+	if uuo.mutation.MetricsCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.MetricsTable,
+			Columns: []string{user.MetricsColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(metric.FieldID, field.TypeInt),
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := uuo.mutation.RemovedMetricsIDs(); len(nodes) > 0 && !uuo.mutation.MetricsCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.MetricsTable,
+			Columns: []string{user.MetricsColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(metric.FieldID, field.TypeInt),
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := uuo.mutation.MetricsIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   user.MetricsTable,
+			Columns: []string{user.MetricsColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: sqlgraph.NewFieldSpec(metric.FieldID, field.TypeInt),
 			},
 		}
 		for _, k := range nodes {
