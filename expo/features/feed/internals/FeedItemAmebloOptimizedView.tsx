@@ -16,28 +16,43 @@ export default function FeedItemAmebloOptimizedView({ url }: FeedItemAmebloOptim
     // TODO: Use the optimized content for web
     return <div>Post content here</div>;
   }
+  if (state.data?.optimizedHtml) {
+    return (
+      <>
+        <WebView source={{ html: state.data?.optimizedHtml }} />
+      </>
+    );
+  }
+  // fallback
   return (
     <>
-      <WebView source={{ html: state.data! }} />
+      <WebView source={{ uri: url }} />
     </>
   );
 }
 
 const UserAgent =
-  'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36';
+  'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1';
 const AmebloEntryIDUrlRegExp = /\/([^/]+)\/entry-(\d+)\.html/;
 const AmebloInitDataRegExp = /\s*window\.INIT_DATA\s*=\s*(\{.*\});\s*window\.RESOURCE_BASE_URL/; // /(?s)window\.INIT_DATA\s*=\s*(\{.*\});\s*window\.RESOURCE_BASE_URL/;
 
-async function getAmebloOptimizedContent(url: string): Promise<string> {
+type AmebloContent = {
+  originalHtml: string;
+  optimizedHtml?: string;
+};
+
+async function getAmebloOptimizedContent(url: string): Promise<AmebloContent> {
   const matched = url.match(AmebloEntryIDUrlRegExp);
   if (matched == null || matched.length < 3) {
-    return '';
+    throw new Error('invalid URL');
   }
   const id = matched[2];
   const { html } = await fetchContent(url);
-  const entryText = extractEntryText(html, id);
-  return `
-        <!DOCTYPE html>
+  try {
+    const entryText = extractEntryText(html, id);
+    return {
+      originalHtml: html,
+      optimizedHtml: `<!DOCTYPE html>
         <html lang="ja" class="no-js">
         <head>
           <meta charset="utf-8" />
@@ -65,7 +80,13 @@ async function getAmebloOptimizedContent(url: string): Promise<string> {
             </article>
           </body>
         </html>
-  `;
+    `
+    };
+  } catch {
+    return {
+      originalHtml: html
+    };
+  }
 }
 
 function extractEntryText(html: string, id: string) {

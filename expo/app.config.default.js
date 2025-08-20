@@ -42,6 +42,7 @@ module.exports = {
         usesNonExemptEncryption: false
       },
       infoPlist: {
+        ITSAppUsesNonExemptEncryption: false,
         CFBundleAllowMixedLocalizations: true,
         NSAppTransportSecurity: {
           NSExceptionDomains: {
