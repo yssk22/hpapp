@@ -78,6 +78,16 @@ async function getAmebloOptimizedContent(url: string): Promise<AmebloContent> {
             <article style="overflow-x: hidden;">
             ${entryText}
             </article>
+            <script>
+              const elems = document.getElementsByClassName("PhotoSwipeImage");
+              for (let i = 0; i < elems.length; i++) {
+                const elem = elems[i];
+                const src = elem.getAttribute("data-src");
+                if (src) {
+                  elem.setAttribute("src", src);
+                }
+              }
+            </script>
           </body>
         </html>
     `
