@@ -9,25 +9,28 @@
         8080,
         8081
     ],
-    "onCreateCommand": ["/bin/bash", "/workspaces/sites/containers/onCreateCommand.sh"],
+    "onCreateCommand": [
+        "/bin/bash",
+        "/workspaces/hpapp/containers/onCreateCommand.sh"
+    ],
     "customizations": {
         "vscode": {
             "extensions": [
                 "dbaeumer.vscode-eslint",
-				"eamodio.gitlens",
-				"esbenp.prettier-vscode",
-				"expo.vscode-expo-tools",
-				"github.copilot",
+                "eamodio.gitlens",
+                "esbenp.prettier-vscode",
+                "expo.vscode-expo-tools",
+                "github.copilot",
                 "github.copilot-chat",
-				"github.vscode-pull-request-github",
-				"golang.go",
+                "github.vscode-pull-request-github",
+                "golang.go",
                 "graphql.vscode-graphql-syntax",
-				"gruntfuggly.todo-tree",
-				"meta.relay",
-				"mhutchie.git-graph",
-				"oderwat.indent-rainbow",
-				"orta.vscode-jest"
-			]
+                "gruntfuggly.todo-tree",
+                "meta.relay",
+                "mhutchie.git-graph",
+                "oderwat.indent-rainbow",
+                "orta.vscode-jest"
+            ]
         }
     },
 }
