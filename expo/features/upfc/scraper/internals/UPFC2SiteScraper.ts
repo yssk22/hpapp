@@ -53,13 +53,7 @@ export default class UPFC2SiteScraper implements UPFCScraper {
   }
 
   parseRedirectPageHTML(text: string) {
-    const doc = parse(text);
-    const meta = doc.getElementsByTagName('title');
-    // confirm login page is not displayed.
-    if (meta.length === 1 && meta[0].innerHTML !== 'ログイン') {
-      return true;
-    }
-    return false;
+    return text.indexOf('継続や種別切替などの各種会員手続きはこちら') >= 0;
   }
 
   async parseEventApplications(eventsHtml: string, ticketsHtml: string): Promise<UPFCEventApplicationTickets[]> {
